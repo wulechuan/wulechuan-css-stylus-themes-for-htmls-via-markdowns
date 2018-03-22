@@ -1,0 +1,116 @@
+{
+    "eslint.enable": true,
+    "express.portNumber": 8787,
+    "express.relativeRoot": "appmall/grafana/examples/wulechuan",
+    "files.exclude": {
+        "**/bin": true
+        , "**/.DS_Store": true
+        , "**/__init__.py": true
+        , "**/*.py": true
+
+        , "**/node_modules": true
+        // , "**/crossflowu*": true
+        // , "**/legal": true
+
+        // , "**/appmall*": true
+        // , "**/auth*": true
+        // , "**/entry*": true
+        // , "**/smartview*": true
+        // , "**/spvdisc*": true
+        // , "**/transdisc*": true
+
+        // , "**/alert*": true
+        // , "**/bigscreen*": true
+        // , "**/datasource*": true
+        // , "**/dashboard*": true
+        // , "**/baseline*": true
+        // , "**/spv": true
+        // , "**/stat": true
+        // , "**/trace*": true
+
+        // , "**/templatetags*": true
+        // , "**/management*": true
+        // , "**/report*": true
+
+        // ---------- BOHR-5722 begin -----------
+        // , "**/js": true
+        // , "**/*.js": true
+        // , "**/*.ejs": true
+        // , "**/*.json": true
+        // , "**/locale": true
+        // , "**/api": true
+        // , "**/fonts": true
+        // , "**/doc": true
+        // , "**/help_doc": true
+        // , "**/docs": true
+        // , "**/legal": true
+        // , "**/img": true
+        // , "**/image": true
+        // , "**/images": true
+        // , "**/dist": true
+        // , "**/templatetags": true
+        // , "**/test": true
+        // , "**/tests": true
+        // , "**/webpack": true
+        , "**/LICENSE": true
+        , "**/robots.txt": true
+        // , "**/*.sh": true
+        // , "**/.eslint*": true
+        // , "**/*.lock": true
+        // , "**/.git*": true
+        // , "**/*.*config": true
+        // , "**/*.*rc": true
+        // , "**/*.map": true
+        // , "**/*.csv": true
+        // , "**/*.md": true
+        // , "**/*.xml": true
+        , "**/*.yml": true
+        // , "**/crossflowui": true
+        // , "**/crossflowui-v*": true
+        // , "**/grafana/**/.js": true
+        // , "**/grafana/**/.json": true
+        // , "**/grafana/**/.jst": true
+        // , "**/grafana/**/.gzip": true
+        // , "**/grafana/**/tests": true
+        // , "**/grafana/**/*plugin*": true
+        // , "**/grafana/benchmarks": true
+        // , "**/grafana/conf": true
+        // , "**/grafana/data": true
+        // , "**/grafana/emails": true
+        // , "**/grafana/examples": true
+        // , "**/grafana/Godeps": true
+        // , "**/grafana/Makefile": true
+        // , "**/grafana/packaging": true
+        // , "**/grafana/pkg": true
+        // , "**/grafana/scripts": true
+        // , "**/grafana/tasks": true
+        // , "**/grafana/vendor": true
+        // , "**/grafana/docker": true
+        // , "**/grafana/*.*": true
+        // , "**/grafana/public/app": true
+        // , "**/grafana/public/dashboards": true
+        // , "**/grafana/public/emails": true
+        // , "**/grafana/public/i18n": true
+        // , "**/grafana/public/vendor": true
+
+        // , "**/datasource": true
+        // , "**/spdmap": true
+        // , "**/fixtures": true
+        // , "**/decode": true
+        // , "**/transtrack": true
+        // , "**/widgets": true
+        // , "**/webportal/.vscode": true
+        // , "**/webportal/alert": true
+        // , "**/webportal/baseline": true
+        // , "**/webportal/bigscreen": true
+        // , "**/webportal/dashboard": true
+        // , "**/webportal/report": true
+        // , "**/webportal/spv": true
+        // , "**/webportal/stat": true
+        // , "webportal/trace": true
+        // , "webportal/manger": true
+        // , "spvdiscovery/webportal": true
+        // , "transdiscovery/webportal": true
+        // ---------- BOHR-5722 end -------------
+    },
+}

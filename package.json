@@ -1,0 +1,33 @@
+{
+  "name": "@wulechuan/css-stylus-markdown-themes",
+  "author": "wulechuan <wulechuan@live.com>",
+  "license": "WTFPL",
+  "version": "1.0.0",
+  "description": "A collection of CSS themes for Markdown generated contents.",
+  "directories": {
+    "dist": "dist",
+    "source": "source"
+  },
+  "main": "dist/markdown-styles-for-vscode-built-in-preview.css",
+  "keywords": [
+    "markdown",
+    "theme",
+    "html",
+    "article"
+  ],
+  "scripts": {
+    "gulp": " gulp --silent --",
+    "gulp2": "gulp --",
+    "start": "npm run gulp",
+    "watch": "npm run gulp",
+    "build": "npm run gulp \"build once\"",
+    "clean": "npm run gulp \"clean\""
+  },
+  "devDependencies": {
+    "@wulechuan/find-package-dot-json": "0.0.5",
+    "@wulechuan/gulp-3-common-pipeline-presets": "^0.1.4",
+    "@wulechuan/scoped-glob-watchers": "^0.2.1",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1"
+  }
+}
