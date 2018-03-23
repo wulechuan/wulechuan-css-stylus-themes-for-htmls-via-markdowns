@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const { sync: deleteFilesSync } = require('del');
 
 const scopedGlobsLazilyWatchingMechanism = require('@wulechuan/scoped-glob-watchers');
 const gulp3CommonPipelines               = require('@wulechuan/gulp-3-common-pipeline-presets');
@@ -27,21 +26,40 @@ const npmProjectRootPath = process.cwd();
 * *****************************************************
 */
 
+const defaultEntryStylusFileBaseName = 'markdown-styles-for-vscode-built-in-preview';
+
+const cssPipelineForDefaultFileOfThisPackage = buildACSSStylusBuildingPipeline({
+	taskNameKeyPart: 'Markdown CSS (default)',
+	sourceBasePath: 'source',
+	outputBasePathOfBuilding: 'dist',
+	buildingEntryGlobsRelativeToSourceBasePath: [ `${defaultEntryStylusFileBaseName}.styl` ],
+	builtSingleFileBaseName: defaultEntryStylusFileBaseName,
+	shouldNotGenerateMinifiedVersions: true,
+	shouldCopyBuiltFileToElsewhere: true,
+	outputBasePathOfCopying: 'dist',
+	optionsOfCopyingFiles: {
+		forSingleInputFileChangeOuputFileBaseNameInto: 'default',
+	},
+});
+
 const allPipelinesForCSSOfDocs = [
-	// 'markdown-styles-for-embedding-github',
-	// 'markdown-styles-for-embedding-bitbucket',
-	// 'markdown-styles-for-embedding-npmjs',
-	'markdown-styles-for-vscode-built-in-preview',
-].map((entryFileBaseName, index) => {
-	return buildACSSStylusBuildingPipeline({
-		taskNameKeyPart: `Markdown CSS (${index})`,
-		sourceBasePath: 'source',
-		outputBasePathOfBuilding: 'dist',
-		buildingEntryGlobsRelativeToSourceBasePath: [ `${entryFileBaseName}.styl` ],
-		builtSingleFileBaseName: entryFileBaseName,
-		shouldNotGenerateMinifiedVersions: false
-	});
-})
+	cssPipelineForDefaultFileOfThisPackage,
+
+	...[
+		// 'markdown-styles-for-embedding-github',
+		// 'markdown-styles-for-embedding-bitbucket',
+		// 'markdown-styles-for-embedding-npmjs',
+	].map((entryStylusFileBaseName, index) => {
+		return buildACSSStylusBuildingPipeline({
+			taskNameKeyPart: `Markdown CSS (${index + 1})`,
+			sourceBasePath: 'source',
+			outputBasePathOfBuilding: 'dist',
+			buildingEntryGlobsRelativeToSourceBasePath: [ `${entryStylusFileBaseName}.styl` ],
+			builtSingleFileBaseName: entryStylusFileBaseName,
+			shouldNotGenerateMinifiedVersions: true,
+		});
+	}),
+];
 
 /*
 *
@@ -79,11 +97,7 @@ forSettingsOfScopedLazyWatchers.appendMoreScopesViaPipelines({
 
 gulp.task('clean', [
 	...allPipelinesForCSSOfDocs,
-].map(pipeline => pipeline.taskNameOfDeletingFiles), thisTaskIsDone => {
-	deleteFilesSync(staticFilesDeploymentRootPath);
-	printCompletionOfOneTask('Delete "static" folder for deployment');
-	thisTaskIsDone();
-});
+].map(pipeline => pipeline.taskNameOfDeletingFiles));
 
 gulp.task('build once', [
 	...allPipelinesForCSSOfDocs,

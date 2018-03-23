@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./dist/markdown-styles-for-vscode-built-in-preview.min.css">
+<link rel="stylesheet" href="./dist/default.css">
 
 # NPM Page
 
