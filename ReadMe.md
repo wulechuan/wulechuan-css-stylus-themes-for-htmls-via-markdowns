@@ -43,3 +43,9 @@ inside Microsoft Visual Studio Code,
 rendered by the built-in markdown preview tool.
 
 ![Markdown Rendered Example 1](./docs/illustrates/markdown-theme-example.png "Markdown Rendered Example 1")
+
+
+
+
+<style type="text/css">
+</style>

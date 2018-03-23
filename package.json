@@ -2,7 +2,7 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "wulechuan <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A collection of CSS themes for Markdown generated HTML contents.",
   "directories": {
     "doc": "docs"
@@ -11,7 +11,10 @@
   "keywords": [
     "markdown",
     "theme",
+    "theming",
+    "styling",
     "html",
+    "css",
     "article"
   ],
   "homepage": "https://github.com/wulechuan/css-stylus-wulechuan-markdown-themes#readme",

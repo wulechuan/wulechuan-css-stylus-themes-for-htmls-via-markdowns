@@ -1,0 +1,71 @@
+& {
+    // Those !important directives below
+    // are for Microsoft Visual Studio Code Previews Environment.
+    chiefColor1 = #1faced !important;
+    chiefColor1Active = (chiefColor1 + 10%) !important;
+    inlineCodeColor = #875179 !important;
+    defaultDividingLineColor = rgba(black, 0.219);
+
+
+    background-color: #d3d3d3;
+
+    a {
+        &,
+        &:visited {
+            color: chiefColor1;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: chiefColor1Active;
+        }
+    }
+
+    img {
+        border-color: rgba(#888, 0.5);
+    }
+
+    h1, h2, h3, h4, h5, h6, dt {
+        color: black;
+    }
+
+    &,
+    strong, b, em,
+    h1, h2, h3, h4, h5, h6, dt,
+    p, li, dd,
+    blockquote, table {
+        color #333;
+
+        > code {
+            color: inlineCodeColor;
+            border-color:     defaultDividingLineColor;
+            background-color: rgba(white, 0.319);
+        }
+    }
+
+    hr {
+        border-color: defaultDividingLineColor;
+        background-color: defaultDividingLineColor;
+    }
+
+    table, td, th {
+        border-color: #999 !important;
+    }
+
+    pre {
+        code {
+            color: white;
+            background-color: rgba(black, 1);
+
+            > * {
+                background-color: transparent !important;
+            }
+        }
+    }
+
+    blockquote {
+        background-color: rgba(#888, 0.1) !important;
+        border-color: chiefColor1;
+    }
+}
