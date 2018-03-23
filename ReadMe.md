@@ -1,5 +1,18 @@
 <link rel="stylesheet" href="./dist/markdown-styles-for-vscode-built-in-preview.min.css">
 
+# NPM Page
+
+<dt>Package Name</dt>
+<dd>
+
+[@wulechuan/css-stylus-markdown-themes](https://www.npmjs.com/package/@wulechuan/css-stylus-markdown-themes)
+
+</dd>
+<dt>Author</dt>
+<dd>南昌吴乐川</dd>
+</dl>
+
+
 # Introduction
 
 This is a collection of themes that each

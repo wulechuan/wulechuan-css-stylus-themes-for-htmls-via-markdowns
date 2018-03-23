@@ -2,12 +2,12 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "wulechuan <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A collection of CSS themes for Markdown generated HTML contents.",
   "directories": {
     "doc": "docs"
   },
-  "main": "dist/markdown-styles-for-vscode-built-in-preview.css",
+  "main": "dist/markdown-styles-for-vscode-built-in-preview.min.css",
   "keywords": [
     "markdown",
     "theme",
