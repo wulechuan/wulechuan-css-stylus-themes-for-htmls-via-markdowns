@@ -30,7 +30,7 @@ const npmProjectRootPath = process.cwd();
 const allPipelinesForCSSOfDocs = [
 	// 'markdown-styles-for-embedding-github',
 	// 'markdown-styles-for-embedding-bitbucket',
-	'markdown-styles-for-embedding-npmjs',
+	// 'markdown-styles-for-embedding-npmjs',
 	'markdown-styles-for-vscode-built-in-preview',
 ].map((entryFileBaseName, index) => {
 	return buildACSSStylusBuildingPipeline({
