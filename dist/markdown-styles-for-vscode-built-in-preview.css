@@ -185,9 +185,6 @@ body dt {
   text-align: left;
   border-width: 0;
 }
-body li {
-  margin: 1em 0 2em;
-}
 body ul,
 body ol,
 body dl,
@@ -199,6 +196,9 @@ body p {
   margin-top: 0.25em;
   margin-bottom: 0.25em;
   padding: 0.25em 0.5em;
+}
+body li {
+  margin: 1em 0 2em;
 }
 body ul,
 body ol {

@@ -185,9 +185,6 @@
   text-align: left;
   border-width: 0;
 }
-.markdown li {
-  margin: 1em 0 2em;
-}
 .markdown ul,
 .markdown ol,
 .markdown dl,
@@ -199,6 +196,9 @@
   margin-top: 0.25em;
   margin-bottom: 0.25em;
   padding: 0.25em 0.5em;
+}
+.markdown li {
+  margin: 1em 0 2em;
 }
 .markdown ul,
 .markdown ol {
