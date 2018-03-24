@@ -53,10 +53,14 @@ body hr + h5 {
 body pre {
   font-size: 24px;
 }
-body kbd,
-body pre,
+body kbd {
+  border-radius: 7.199999999999999px !important;
+}
 body code {
-  border-radius: 6px !important;
+  border-radius: 4.800000000000001px !important;
+}
+body pre {
+  border-radius: 4.800000000000001px !important;
 }
 body table,
 body p,
@@ -112,10 +116,14 @@ body dd {
   body pre {
     font-size: 18px;
   }
-  body kbd,
-  body pre,
+  body kbd {
+    border-radius: 5.399999999999999px !important;
+  }
   body code {
-    border-radius: 4.5px !important;
+    border-radius: 3.6px !important;
+  }
+  body pre {
+    border-radius: 3.6px !important;
   }
   body table,
   body p,
@@ -202,7 +210,8 @@ body img {
   border-width: 8px;
 }
 body a,
-body code {
+body code,
+body kbd {
   font-size: inherit !important;
 }
 body h1,
@@ -249,26 +258,34 @@ body blockquote li:last-child,
 body table li:last-child {
   margin-bottom: 0 !important;
 }
-body code {
+body code,
+body kbd {
   display: inline-block;
+  font-size: inherit !important;
   font-weight: normal;
   font-style: normal;
   border-width: 1px;
   border-style: solid;
-  padding: 0.1em 0.3em;
-  margin: 0 0.1em;
+}
+body kbd {
+  line-height: inherit !important;
+  margin: -1px 0 !important;
+  padding: 0 0.5em;
+}
+body code {
+  line-height: 1.2 !important;
+  margin: -3px 0 !important;
+  padding: 2px 0.3em !important;
 }
 body pre {
   overflow-x: scroll;
 }
 body pre code {
-  line-height: 1.25;
-  border-width: 0;
   display: block;
-}
-body pre code > * {
-  line-height: 1.25;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-width: 0 !important;
+  line-height: 1.33 !important;
 }
 body :first-child {
   margin-top: 0 !important;
@@ -335,6 +352,12 @@ body table > code {
   border-color: rgba(0,0,0,0.219);
   background-color: rgba(255,255,255,0.319);
 }
+body kbd {
+  color: #fff;
+  border-color: #fff;
+  background-color: #789;
+  box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.219);
+}
 body hr {
   border-color: rgba(0,0,0,0.219);
   background-color: rgba(0,0,0,0.219);
@@ -344,9 +367,11 @@ body td,
 body th {
   border-color: #999 !important;
 }
+body pre {
+  background-color: #131313;
+}
 body pre code {
-  color: #fff;
-  background-color: #000;
+  background-color: transparent !important;
 }
 body pre code > * {
   background-color: transparent !important;

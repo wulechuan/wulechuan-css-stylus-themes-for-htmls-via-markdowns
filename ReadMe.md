@@ -32,6 +32,13 @@ it's as easy as adding a markup inside your `Markdown` files, like so:
 <link rel="stylesheet" href="path/to/markdown-styles-for-vscode-built-in-preview.min.css">
 ```
 
+> By the way,
+> to easily open the rendered preview page
+> for a markdown file in Microsoft Visual Studio Code,
+> simply focus the markdown file,
+> and then press <kbd>Ctrl</kbd>+<kbd>k</kbd> and then <kbd>v</kbd>. Notice that the `v` is **not** combind with
+> a `ctrl`.
+
 
 ## Online Usage
 
@@ -50,6 +57,53 @@ See <https://github.com/github/markup> for a reference.
 
 
 # Example
+
+## Some Live Snippets Just for Experiences
+
+A JavaScript Snippet
+```javascript
+module.exports = function isAPromiseObject(input) {
+	return !!input && typeof input.then === 'function' && typeof input.done === 'function';
+};
+```
+
+An HTML Snippet
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wulechuan's Page</title>
+</head>
+<body>
+    <article>Hi! This is wulechuan.</article>
+</body>
+</html>
+```
+
+A CSS Stylus Snippet
+```css
+& {
+    box-sizing: content-box !important;
+    max-width: articleBlockMaxWidth;
+    margin: auto;
+	line-height: 1.5;
+
+    small {
+        font-size: .707em;
+    }
+
+    h1, h2, h3, h4, h5, h6, dt {
+        margin-left:  -0.5rem;
+        margin-right: -0.5rem;
+        padding:       0.5rem;
+    }
+}
+```
+
+## A Snapshot
 
 Below is a snapshot of the rendered look of an `.md` file,
 inside Microsoft Visual Studio Code,

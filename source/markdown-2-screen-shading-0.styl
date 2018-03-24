@@ -38,10 +38,17 @@
         color #333;
 
         > code {
-            color: inlineCodeColor;
+            color:            inlineCodeColor;
             border-color:     defaultDividingLineColor;
             background-color: rgba(white, 0.319);
         }
+    }
+
+    kbd {
+        color:            #fff;
+        border-color:     #fff;
+        background-color: #789;
+        box-shadow: 1px 1px 1px 0 rgba(black, 0.219);
     }
 
     hr {
@@ -54,9 +61,10 @@
     }
 
     pre {
+        background-color: #131313;
+
         code {
-            color: white;
-            background-color: rgba(black, 1);
+            background-color: transparent !important;
 
             > * {
                 background-color: transparent !important;

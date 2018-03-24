@@ -77,10 +77,16 @@ minxin-responsive-measurements(fontSizeAsRem) {
         font-size: 1 * fontSizeAsRem;
     }
 
-    kbd,
-    pre,
+    kbd {
+        border-radius: 0.3 * fontSizeAsRem !important;
+    }
+
     code {
-        border-radius: 0.25 * fontSizeAsRem !important;
+        border-radius: 0.2 * fontSizeAsRem !important;
+    }
+
+    pre {
+        border-radius: 0.2 * fontSizeAsRem !important;
     }
 
     table,
@@ -200,7 +206,7 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
         border-width: 8px;
     }
 
-    a, code {
+    a, code, kbd {
         font-size: inherit !important;
     }
 
@@ -213,6 +219,7 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
     ol,
     dl,
     blockquote {
+        // font-size: inherit !important;
         margin-top: 0.5em;
         margin-bottom: 1.5em;
     }
@@ -246,28 +253,48 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
         }
     }
 
-    code {
+    code,
+    kbd {
         display inline-block;
+        font-size: inherit !important;
         font-weight: normal;
         font-style: normal;
         border-width: 1px;
         border-style: solid;
-        padding: 0.1em  0.3em;
-        margin:  0      0.1em;
+    }
+
+    kbd {
+        line-height: inherit !important;
+        margin: -1px 0 !important;
+        padding: 0 0.5em;
+    }
+
+    code {
+        line-height: 1.2 !important;
+        margin: -3px 0     !important;
+        padding: 2px 0.3em !important;
     }
 
     pre {
         overflow-x: scroll;
 
-        code {
-            line-height: 1.25;
-            border-width: 0;
-            display: block;
+        // &,
+        // code,
+        // code * {
+        //     white-space pre !important;
+        // }
 
-            > * {
-                line-height: 1.25;
-                padding: 0;
-            }
+        // code,
+        // code * {
+        //     padding: 0 !important;
+        // }
+
+        code {
+            display: block;
+            margin:       0    !important;
+            padding:      0    !important;
+            border-width: 0    !important;
+            line-height:  1.33 !important;
         }
     }
 
