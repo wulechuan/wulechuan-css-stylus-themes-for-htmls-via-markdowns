@@ -228,16 +228,16 @@ body p {
   padding: 0.25em 0.5em;
 }
 body li {
-  margin: 1em 0 2em;
+  margin: 1em 0;
 }
 body ul,
 body ol {
-  padding-left: 3em;
+  padding-left: 2em;
 }
 body blockquote,
 body table {
   padding: 0.5em 1em;
-  border-left-width: 0.25em;
+  border-left-width: 0.3rem;
 }
 body blockquote ul:last-child,
 body table ul:last-child,
@@ -255,8 +255,8 @@ body code {
   font-style: normal;
   border-width: 1px;
   border-style: solid;
-  padding: 0.25em 0.5em;
-  margin: 0 0.25em;
+  padding: 0.1em 0.3em;
+  margin: 0 0.1em;
 }
 body pre {
   overflow-x: scroll;
