@@ -1,24 +1,46 @@
 & {
     // Those !important directives below
     // are for Microsoft Visual Studio Code Previews Environment.
-    chiefColor1 = #1faced !important;
-    chiefColor1Active = (chiefColor1 + 10%) !important;
-    inlineCodeColor = #875179 !important;
+    chiefColor1 = #088aee;
+    chiefColor1Active = (chiefColor1 + 10%);
+
+    linkColor = chiefColor1;
+    linkColorActive = chiefColor1Active;
+
+    inSiteLinkColor = #5187b3;
+    inSitelinkColorActive = (inSiteLinkColor + 10%);
+
+    inlineCodeColor = #a34587;
+    snippetBlockCodeDefaultColor = #aaa;
     defaultDividingLineColor = rgba(black, 0.219);
 
 
+    color #333;
     background-color: #d3d3d3;
 
     a {
         &,
         &:visited {
-            color: chiefColor1;
+            color: linkColor;
         }
 
         &:hover,
         &:focus,
         &:active {
-            color: chiefColor1Active;
+            color: linkColorActive;
+        }
+
+        &[href^="#"] {
+            &,
+            &:visited {
+                color: inSiteLinkColor;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: inSitelinkColorActive;
+            }
         }
     }
 
@@ -26,19 +48,27 @@
         border-color: rgba(#888, 0.5);
     }
 
+    strong, b, em,
     h1, h2, h3, h4, h5, h6, dt {
         color: black;
     }
 
-    &,
-    strong, b, em,
-    h1, h2, h3, h4, h5, h6, dt,
-    p, li, dd,
-    blockquote, table {
-        color #333;
+    blockquote {
+        color black;
+    }
 
-        > code {
-            color:            inlineCodeColor;
+    p, ol, ul, dl,
+    table {
+        color #333;
+    }
+
+    strong, b, em,
+    h1, h2, h3, h4, h5, h6,
+    p, ol, ul, dl,
+    blockquote,
+    table {
+        code {
+            color:            inlineCodeColor !important;
             border-color:     defaultDividingLineColor;
             background-color: rgba(white, 0.319);
         }
@@ -47,7 +77,7 @@
     kbd {
         color:            #fff;
         border-color:     #fff;
-        background-color: #789;
+        background-color: #789abc;
         box-shadow: 1px 1px 1px 0 rgba(black, 0.219);
     }
 
@@ -64,6 +94,7 @@
         background-color: #131313;
 
         code {
+            color: snippetBlockCodeDefaultColor !important;
             background-color: transparent !important;
 
             > * {

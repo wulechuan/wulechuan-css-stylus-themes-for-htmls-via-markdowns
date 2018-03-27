@@ -4,16 +4,14 @@ body {
 body kbd,
 body pre,
 body code {
-  font-family: 'PT Mono', 'consolas', 'Courier New', monospace;
+  font-family: 'PT Mono', 'consolas', 'Courier New', monospace, 'Microsoft Yahei UI', '微软雅黑';
 }
 body {
   font-size: 24px;
-  line-height: 1.5;
 }
 body h1 {
   margin-top: 192px !important;
   margin-bottom: 36px !important;
-  font-size: 67.19999999999999px;
 }
 body hr + h1 {
   margin-top: 36px !important;
@@ -21,7 +19,6 @@ body hr + h1 {
 body h2 {
   margin-top: 96px !important;
   margin-bottom: 24px !important;
-  font-size: 43.2px;
 }
 body hr + h2 {
   margin-top: 24px !important;
@@ -29,7 +26,6 @@ body hr + h2 {
 body h3 {
   margin-top: 72px !important;
   margin-bottom: 12px !important;
-  font-size: 28.799999999999997px;
 }
 body hr + h3 {
   margin-top: 12px !important;
@@ -37,7 +33,6 @@ body hr + h3 {
 body h4 {
   margin-top: 48px !important;
   margin-bottom: 12px !important;
-  font-size: 26.400000000000002px;
 }
 body hr + h4 {
   margin-top: 12px !important;
@@ -45,13 +40,9 @@ body hr + h4 {
 body h5 {
   margin-top: 36px !important;
   margin-bottom: 12px !important;
-  font-size: 24px;
 }
 body hr + h5 {
   margin-top: 12px !important;
-}
-body pre {
-  font-size: 24px;
 }
 body kbd {
   border-radius: 7.199999999999999px !important;
@@ -62,21 +53,13 @@ body code {
 body pre {
   border-radius: 4.800000000000001px !important;
 }
-body table,
-body p,
-body li,
-body dd {
-  font-size: 24px;
-}
 @media screen and (max-width: 1440px) {
   body {
     font-size: 18px;
-    line-height: 1.5;
   }
   body h1 {
     margin-top: 144px !important;
     margin-bottom: 27px !important;
-    font-size: 50.4px;
   }
   body hr + h1 {
     margin-top: 27px !important;
@@ -84,7 +67,6 @@ body dd {
   body h2 {
     margin-top: 72px !important;
     margin-bottom: 18px !important;
-    font-size: 32.4px;
   }
   body hr + h2 {
     margin-top: 18px !important;
@@ -92,7 +74,6 @@ body dd {
   body h3 {
     margin-top: 54px !important;
     margin-bottom: 9px !important;
-    font-size: 21.599999999999998px;
   }
   body hr + h3 {
     margin-top: 9px !important;
@@ -100,7 +81,6 @@ body dd {
   body h4 {
     margin-top: 36px !important;
     margin-bottom: 9px !important;
-    font-size: 19.8px;
   }
   body hr + h4 {
     margin-top: 9px !important;
@@ -108,13 +88,9 @@ body dd {
   body h5 {
     margin-top: 27px !important;
     margin-bottom: 9px !important;
-    font-size: 18px;
   }
   body hr + h5 {
     margin-top: 9px !important;
-  }
-  body pre {
-    font-size: 18px;
   }
   body kbd {
     border-radius: 5.399999999999999px !important;
@@ -125,37 +101,38 @@ body dd {
   body pre {
     border-radius: 3.6px !important;
   }
-  body table,
-  body p,
-  body li,
-  body dd {
-    font-size: 18px;
-  }
 }
 body {
   box-sizing: content-box !important;
   max-width: 1440px;
   margin: auto;
   line-height: 1.5;
-  padding: 2em 4em;
+  padding: 2em 5em;
+}
+body small {
+  font-size: 0.707em;
 }
 body h1 {
+  font-size: 280%;
   font-weight: 300;
 }
 body h2 {
+  font-size: 180%;
   font-weight: 300;
 }
 body h3 {
+  font-size: 120%;
   font-weight: 500;
 }
 body h4 {
+  font-size: 110%;
   font-weight: 500;
 }
 body h5 {
   font-weight: 600;
 }
-body small {
-  font-size: 0.707em;
+body pre {
+  font-size: 100%;
 }
 body h1,
 body h2,
@@ -176,7 +153,6 @@ body dd {
   margin-right: 0.5rem;
 }
 body pre {
-  padding: 0 !important;
   margin-left: 1rem;
   margin-right: 1rem;
 }
@@ -265,21 +241,28 @@ body kbd {
   font-size: inherit !important;
   font-weight: normal;
   font-style: normal;
+  line-height: 1 !important;
   border-width: 1px;
   border-style: solid;
 }
 body kbd {
-  line-height: inherit !important;
-  margin: -1px 0 !important;
-  padding: 0 0.5em;
+  margin: -4px 0.1em !important;
+  padding: 3px 0.4em;
 }
 body code {
-  line-height: 1.2 !important;
-  margin: -3px 0 !important;
-  padding: 2px 0.3em !important;
+  margin: -3px 0.1em !important;
+  padding: 2px 0.2em !important;
 }
 body pre {
   overflow-x: scroll;
+  padding: 0.25em !important;
+}
+body pre,
+body pre code,
+body pre code * {
+  white-space: pre !important;
+  word-wrap: none !important;
+  word-break: keep-all !important;
 }
 body pre code {
   display: block;
@@ -292,30 +275,30 @@ body :first-child {
   margin-top: 0 !important;
 }
 body {
+  color: #333;
   background-color: #d3d3d3;
 }
 body a,
 body a:visited {
-  color: #1faced !important;
+  color: #088aee;
 }
 body a:hover,
 body a:focus,
 body a:active {
-  color: #35b4ef !important;
+  color: #1997f7;
+}
+body a[href^="#"],
+body a[href^="#"]:visited {
+  color: #5187b3;
+}
+body a[href^="#"]:hover,
+body a[href^="#"]:focus,
+body a[href^="#"]:active {
+  color: #6293bb;
 }
 body img {
   border-color: rgba(136,136,136,0.5);
 }
-body h1,
-body h2,
-body h3,
-body h4,
-body h5,
-body h6,
-body dt {
-  color: #000;
-}
-body,
 body strong,
 body b,
 body em,
@@ -325,38 +308,42 @@ body h3,
 body h4,
 body h5,
 body h6,
-body dt,
+body dt {
+  color: #000;
+}
+body blockquote {
+  color: #000;
+}
 body p,
-body li,
-body dd,
-body blockquote,
+body ol,
+body ul,
+body dl,
 body table {
   color: #333;
 }
-body > code,
-body strong > code,
-body b > code,
-body em > code,
-body h1 > code,
-body h2 > code,
-body h3 > code,
-body h4 > code,
-body h5 > code,
-body h6 > code,
-body dt > code,
-body p > code,
-body li > code,
-body dd > code,
-body blockquote > code,
-body table > code {
-  color: #875179 !important;
+body strong code,
+body b code,
+body em code,
+body h1 code,
+body h2 code,
+body h3 code,
+body h4 code,
+body h5 code,
+body h6 code,
+body p code,
+body ol code,
+body ul code,
+body dl code,
+body blockquote code,
+body table code {
+  color: #a34587 !important;
   border-color: rgba(0,0,0,0.219);
   background-color: rgba(255,255,255,0.319);
 }
 body kbd {
   color: #fff;
   border-color: #fff;
-  background-color: #789;
+  background-color: #789abc;
   box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.219);
 }
 body hr {
@@ -372,6 +359,7 @@ body pre {
   background-color: #131313;
 }
 body pre code {
+  color: #aaa !important;
   background-color: transparent !important;
 }
 body pre code > * {
@@ -379,7 +367,7 @@ body pre code > * {
 }
 body blockquote {
   background-color: rgba(136,136,136,0.1) !important;
-  border-color: #1faced !important;
+  border-color: #088aee;
 }
 @media print {
   body a,

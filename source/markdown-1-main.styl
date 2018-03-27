@@ -7,7 +7,7 @@
     kbd,
     pre,
     code {
-        font-family: 'PT Mono', 'consolas', 'Courier New', monospace;
+        font-family: 'PT Mono', 'consolas', 'Courier New', monospace, 'Microsoft Yahei UI', '微软雅黑';
     }
 }
 
@@ -20,13 +20,11 @@
 minxin-responsive-measurements(fontSizeAsRem) {
     & {
         font-size: fontSizeAsRem;
-        line-height: 1.5;
     }
 
     h1 {
         margin-top:    8   * fontSizeAsRem !important;
         margin-bottom: 1.5 * fontSizeAsRem !important;
-        font-size:     2.8 * fontSizeAsRem;
     }
 
     hr + h1 {
@@ -36,7 +34,6 @@ minxin-responsive-measurements(fontSizeAsRem) {
     h2 {
         margin-top:    4   * fontSizeAsRem !important;
         margin-bottom: 1   * fontSizeAsRem !important;
-        font-size:     1.8 * fontSizeAsRem;
     }
 
     hr + h2 {
@@ -46,7 +43,6 @@ minxin-responsive-measurements(fontSizeAsRem) {
     h3 {
         margin-top:    3   * fontSizeAsRem !important;
         margin-bottom: 0.5 * fontSizeAsRem !important;
-        font-size:     1.2 * fontSizeAsRem;
     }
 
     hr + h3 {
@@ -56,7 +52,6 @@ minxin-responsive-measurements(fontSizeAsRem) {
     h4 {
         margin-top:    2   * fontSizeAsRem !important;
         margin-bottom: 0.5 * fontSizeAsRem !important;
-        font-size:     1.1 * fontSizeAsRem;
     }
 
     hr + h4 {
@@ -66,15 +61,10 @@ minxin-responsive-measurements(fontSizeAsRem) {
     h5 {
         margin-top:    1.5 * fontSizeAsRem !important;
         margin-bottom: 0.5 * fontSizeAsRem !important;
-        font-size:     1   * fontSizeAsRem;
     }
 
     hr + h5 {
         margin-top:    0.5 * fontSizeAsRem !important;
-    }
-
-    pre {
-        font-size: 1 * fontSizeAsRem;
     }
 
     kbd {
@@ -87,13 +77,6 @@ minxin-responsive-measurements(fontSizeAsRem) {
 
     pre {
         border-radius: 0.2 * fontSizeAsRem !important;
-    }
-
-    table,
-    p,
-    li,
-    dd {
-        font-size: 1 * fontSizeAsRem;
     }
 }
 
@@ -118,31 +101,49 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
     max-width: articleBlockMaxWidth;
     margin: auto;
 	line-height: 1.5;
-    padding: 2em 4em;
+    padding: 2em 5em;
 
-    h1 {
-        font-weight: 300;
-    }
-
-    h2 {
-        font-weight: 300;
-    }
-
-    h3 {
-        font-weight: 500;
-    }
-
-    h4 {
-        font-weight: 500;
-    }
-
-    h5 {
-        font-weight: 600;
-    }
 
     small {
         font-size: .707em;
     }
+
+    h1 {
+        font-size:   280%;
+        font-weight: 300;
+    }
+
+    h2 {
+        font-size:   180%;
+        font-weight: 300;
+    }
+
+    h3 {
+        font-size:   120%;
+        font-weight: 500;
+    }
+
+    h4 {
+        font-size:   110%;
+        font-weight: 500;
+    }
+
+    h5 {
+        // font-size:   100%;
+        font-weight: 600;
+    }
+
+    pre {
+        font-size: 100%;
+    }
+
+    // table,
+    // p,
+    // li,
+    // dd {
+    //     font-size: 100%;
+    // }
+
 
 
 
@@ -162,7 +163,6 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
     }
 
     pre {
-        padding: 0 !important;
         margin-left: 1rem;
         margin-right: 1rem;
     }
@@ -240,7 +240,8 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
         padding-left: 2em;
     }
 
-    blockquote, table {
+    blockquote,
+    table {
         padding: 0.5em 1em;
         border-left-width: 0.3rem;
 
@@ -260,30 +261,32 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
         font-size: inherit !important;
         font-weight: normal;
         font-style: normal;
+        line-height: 1 !important;
         border-width: 1px;
         border-style: solid;
     }
 
     kbd {
-        line-height: inherit !important;
-        margin: -1px 0 !important;
-        padding: 0 0.5em;
+        margin: -4px 0.1em !important;
+        padding: 3px 0.4em;
     }
 
     code {
-        line-height: 1.2 !important;
-        margin: -3px 0     !important;
-        padding: 2px 0.3em !important;
+        margin: -3px 0.1em !important;
+        padding: 2px 0.2em !important;
     }
 
     pre {
         overflow-x: scroll;
+        padding: 0.25em !important;
 
-        // &,
-        // code,
-        // code * {
-        //     white-space pre !important;
-        // }
+        &,
+        code,
+        code * {
+            white-space pre !important;
+            word-wrap none !important;
+            word-break: keep-all !important;
+        }
 
         // code,
         // code * {
