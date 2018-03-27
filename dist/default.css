@@ -7,7 +7,7 @@ body code {
   font-family: 'PT Mono', 'consolas', 'Courier New', monospace;
 }
 body {
-  padding: 48px 72px;
+  font-size: 24px;
   line-height: 1.5;
 }
 body h1 {
@@ -70,7 +70,7 @@ body dd {
 }
 @media screen and (max-width: 1440px) {
   body {
-    padding: 36px 54px;
+    font-size: 18px;
     line-height: 1.5;
   }
   body h1 {
@@ -137,6 +137,7 @@ body {
   max-width: 1440px;
   margin: auto;
   line-height: 1.5;
+  padding: 2em 4em;
 }
 body h1 {
   font-weight: 300;
