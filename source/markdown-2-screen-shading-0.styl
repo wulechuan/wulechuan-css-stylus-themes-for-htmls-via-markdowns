@@ -1,6 +1,8 @@
 & {
     // Those !important directives below
     // are for Microsoft Visual Studio Code Previews Environment.
+    regularTextColor = #333;
+
     chiefColor1 = #088aee;
     chiefColor1Active = (chiefColor1 + 10%);
 
@@ -15,8 +17,8 @@
     defaultDividingLineColor = rgba(black, 0.219);
 
 
-    color #333;
-    background-color: #d3d3d3;
+    color: regularTextColor;
+    background-color: #e8e8e8;
 
     a {
         &,
@@ -57,9 +59,13 @@
         color black;
     }
 
+    em, b, strong {
+        color: black;
+    }
+
     p, ol, ul, dl,
     table {
-        color #333;
+        color: regularTextColor;
     }
 
     strong, b, em,
@@ -91,7 +97,7 @@
     }
 
     pre {
-        background-color: #131313;
+        background-color: #131313 !important;
 
         code {
             color: snippetBlockCodeDefaultColor !important;

@@ -23,8 +23,13 @@ minxin-responsive-measurements(fontSizeAsRem) {
     }
 
     h1 {
-        margin-top:    8   * fontSizeAsRem !important;
+        margin-top:    9   * fontSizeAsRem !important;
         margin-bottom: 1.5 * fontSizeAsRem !important;
+
+        &:first-of-type,
+        &:first-child {
+            margin-top: 6  * fontSizeAsRem !important;
+        }
     }
 
     hr + h1 {
@@ -32,8 +37,12 @@ minxin-responsive-measurements(fontSizeAsRem) {
     }
 
     h2 {
-        margin-top:    4   * fontSizeAsRem !important;
+        margin-top:    5   * fontSizeAsRem !important;
         margin-bottom: 1   * fontSizeAsRem !important;
+    }
+
+    h1 + h2 {
+        margin-top:    2   * fontSizeAsRem !important;
     }
 
     hr + h2 {
@@ -41,8 +50,16 @@ minxin-responsive-measurements(fontSizeAsRem) {
     }
 
     h3 {
-        margin-top:    3   * fontSizeAsRem !important;
+        margin-top:    2.8 * fontSizeAsRem !important;
         margin-bottom: 0.5 * fontSizeAsRem !important;
+    }
+
+    h1 + h3 {
+        margin-top:    2   * fontSizeAsRem !important;
+    }
+
+    h2 + h3 {
+        margin-top:    1   * fontSizeAsRem !important;
     }
 
     hr + h3 {
@@ -100,7 +117,7 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
     box-sizing: content-box !important;
     max-width: articleBlockMaxWidth;
     margin: auto;
-	line-height: 1.5;
+	line-height: 1.75;
     padding: 2em 5em;
 
 
@@ -109,7 +126,7 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
     }
 
     h1 {
-        font-size:   280%;
+        font-size:   300%;
         font-weight: 300;
     }
 
@@ -119,8 +136,8 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
     }
 
     h3 {
-        font-size:   120%;
-        font-weight: 500;
+        font-size:   130%;
+        font-weight: 400;
     }
 
     h4 {
@@ -130,17 +147,10 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
 
     h5 {
         // font-size:   100%;
-        font-weight: 600;
+        font-weight: 700;
     }
 
-    pre {
-        font-size: 100%;
-    }
-
-    // table,
-    // p,
-    // li,
-    // dd {
+    // pre {
     //     font-size: 100%;
     // }
 
@@ -153,6 +163,10 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
         margin-right: -0.5rem;
         padding:       0.5rem;
     }
+
+    // h1, h2, h3, h4, h5, h6 {
+    //     text-align: center;
+    // }
 
     ul,
     ol,
@@ -212,7 +226,6 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
     }
 
     h1, h2, h3, h4, h5, h6, dt {
-        text-align: left;
         border-width: 0;
     }
 
@@ -226,8 +239,8 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
     }
 
     p {
-        margin-top: 0.25em;
-        margin-bottom: 0.25em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
         padding: 0.25em 0.5em;
     }
 
@@ -248,7 +261,8 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
         ul,
         ol,
         dl,
-        li {
+        li,
+        p {
             &:last-child {
                 margin-bottom: 0 !important;
             }
@@ -258,17 +272,21 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
     code,
     kbd {
         display inline-block;
+        vertical-align: baseline;
+        box-sizing: content-box;
+        min-height: 1em;
+        min-width: 0.5em;
+        line-height: 1 !important;
         font-size: inherit !important;
         font-weight: normal;
         font-style: normal;
-        line-height: 1 !important;
         border-width: 1px;
         border-style: solid;
     }
 
     kbd {
-        margin: -4px 0.1em !important;
-        padding: 3px 0.4em;
+        margin: -5px 0.1em !important;
+        padding: 4px 0.3em;
     }
 
     code {
@@ -286,6 +304,7 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
             white-space pre !important;
             word-wrap none !important;
             word-break: keep-all !important;
+            text-align: left !important;
         }
 
         // code,

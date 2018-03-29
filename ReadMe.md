@@ -18,7 +18,7 @@
 This will be a collection of themes that each
 can be applied to shade any `Markdown` generated `HTML` contents.
 
-But at present, there is only one theme avaialbe.
+But at present, **there is only one theme availabe**.
 
 
 
@@ -70,14 +70,72 @@ Aliquip proident [Github.com](https://github.com) nulla ex cillum magna. Anim cu
 Occaecat ea Lorem ut `officia` ea ad `nostrud`. Ut deserunt irure in dolore `voluptate` ad `reprehenderit` et sit. Cupidatat `nostrud` tempor `aliqua` ad id ex `labore` in. Ut deserunt irure pariatur `tempor` ex. Ex `irure` sit proident `consectetur` ipsum `pariatur`.
 
 
+## Quoted Block
+
+
+Lorem Lorem sint labore id deserunt voluptate adipisicing consectetur non. Amet proident consequat dolor aliqua ut fugiat aute consequat qui laborum veniam sunt sunt anim.
+
+> ### Note
+> [Mollit pariatur](https://github.com/) minim consequat consectetur ea. 
+> aliquip do incididunt culpa Lorem `commodo` cillum mollit officia.
+>
+> Lorem aute labore quis [proident qui](#) minim elit exercitation.
+> Voluptate incididunt ullamco velit veniam consectetur nostrud pariatur.
+
+
+Lorem sint labore id deserunt voluptate adipisicin.
+
+
 ## 中文（Chinese）示例
 
-### 第三级标题
+### 《千字文》[节选]
 
-送市列凡只术？`道彩失客`即。收适引[吉特中心](https://github.com)主罪型但台观物他切？群飞困康伙稜跳由藏千啊`查游认`究坦。开整`打会过刚`？皮证好`速接窗红究饭`含忽量`戏`当险。验木被分标奥`喝吗除`刚级`幸敢`？班露弄回`往十品`告梦`营`脑认祖便妈竟？
 
-牛现组睛贵两<kbd>Ctrl</kbd>庭意王？你西孤`委脑单最易调`法祖娜义细坦！联只边离馆诺值蜖备罗这字旅众！算关色乱弹只个决莫遗到名阿餐报戴走华。毕继表准顶道授研伤？妹枪奖[身首耳贝基动整](#)。坐化痛请眼性名沉同至兴渐维获词。
+天地玄黄，宇宙洪荒。
+日月盈昃，辰宿列张。
+寒来暑往，秋收冬藏。
+闰余成岁，律吕调阳。
+云腾致雨，露结为霜。
+金生丽水，玉出昆冈。
+剑号巨阙，珠称夜光。
+果珍李柰，菜重芥姜。
 
+### 《荷塘月色》[节选]
+
+曲曲折折的荷塘上面，弥望的是田田的叶子。叶子出水很高，像亭亭的舞女的裙。层层的叶子中间，零星地点缀着些白花，有袅娜地开着的，有羞涩地打着朵儿的；正如一粒粒的明珠，又如碧天里的星星，又如刚出浴的美人。微风过处，送来缕缕清香，仿佛远处高楼上渺茫的歌声似的。这时候叶子与花也有一丝的颤动，像闪电般，霎时传过荷塘的那边去了。叶子本是肩并肩密密地挨着，这便宛然有了一道凝碧的波痕。叶子底下是脉脉的流水，遮住了，不能见一些颜色；而叶子却更见风致了。
+
+### <center>《马诗二十三首·其五》</center>
+
+<center>
+<em>【唐】 李贺</em>
+
+大漠沙如雪，\
+燕山月似钩。\
+何当金络脑，\
+快走踏清秋。
+</center>
+
+### 杂乱内容，仅用于视觉样式之呈示
+
+一段文字中，会有**着重的文字**，也有*斜体的文字*。
+
+这里是 GitHub，我本人有意将其译为【[吉特中心](https://github.com)】。当然，这显然并非官方译法。如果一个链接指向本文，则该链接看起来与其余链接稍有不同，如：本文《[Code Snippets](#code-snippets)》部分。
+
+再来看看行文中的【代码词汇】或【术语】：例如`孙行者`和`计算机`。
+
+计算机键盘快捷键，其视觉样式如是：<kbd>Ctrl</kbd>+<kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</kbd>；又例：<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>s</kbd>组合键广泛用于各自现代计算机软件，代表（将工作内容或文件）`另存为`之功能。
+
+我们还可以引用一小段文字，比如一则笑话：
+
+> 一日，一姑娘在家陪妈妈看电视剧。居中女主角爱上了外国男子。
+> 女方家庭大力反对。最终，女主角与该外国男子分手。
+> 观剧至此，姑娘问其母亲：
+>
+> > “如果我想跟老外结婚，你会怎么样？”
+>
+> 母亲不加思索地答道：
+>
+> > “你要是能嫁出去，别说外国人，就是外星人我都愿意！”
 
 ## Code Snippets
 
@@ -113,7 +171,7 @@ module.exports = function isAPromiseObject(input) {
     box-sizing: content-box !important;
     max-width: articleBlockMaxWidth;
     margin: auto;
-	line-height: 1.5;
+    line-height: 1.5;
 
     small {
         font-size: .707em;
@@ -134,7 +192,7 @@ module.exports = function isAPromiseObject(input) {
 | Key        | Value           |
 | ---------- | --------------- |
 | Name       | wulechuan       |
-| Gender     | Make            |
+| Gender     | Male            |
 | Birth Year | 1979            |
 | Hometown   | Nanchang, China |
 | Loved      | `SOFTIMAGE|XSI` |
@@ -186,22 +244,7 @@ const aSnippetInsideATable = 'hello';
     </tbody>
 </table>
 
-## Quoted Block
-
-
-Lorem Lorem sint labore id deserunt voluptate adipisicing consectetur non. Amet proident consequat dolor aliqua ut fugiat aute consequat qui laborum veniam sunt sunt anim. Ullamco pariatur ipsum minim ut anim. Commodo aliquip voluptate mollit ut commodo. Amet adipisicing eu quis non. Mollit ex consequat ipsum aliquip ullamco enim dolor consectetur aliquip laborum.
-
-> ### Note
-> Mollit pariatur minim consequat consectetur ea. 
-> aliquip do incididunt culpa Lorem commodo cillum mollit officia.
->
-> Lorem aute labore quis proident qui minim elit exercitation.
-> Voluptate incididunt ullamco velit veniam consectetur nostrud pariatur.
-
-
-Lorem Lorem sint labore id deserunt voluptate adipisicin.
-
-## A Snapshot for Your References
+## A Snapshot for Your Reference
 
 Below is a snapshot of the rendered look of an `.md` file,
 inside Microsoft Visual Studio Code,

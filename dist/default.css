@@ -10,22 +10,35 @@ body {
   font-size: 24px;
 }
 body h1 {
-  margin-top: 192px !important;
+  margin-top: 216px !important;
   margin-bottom: 36px !important;
+}
+body h1:first-of-type,
+body h1:first-child {
+  margin-top: 144px !important;
 }
 body hr + h1 {
   margin-top: 36px !important;
 }
 body h2 {
-  margin-top: 96px !important;
+  margin-top: 120px !important;
   margin-bottom: 24px !important;
+}
+body h1 + h2 {
+  margin-top: 48px !important;
 }
 body hr + h2 {
   margin-top: 24px !important;
 }
 body h3 {
-  margin-top: 72px !important;
+  margin-top: 67.19999999999999px !important;
   margin-bottom: 12px !important;
+}
+body h1 + h3 {
+  margin-top: 48px !important;
+}
+body h2 + h3 {
+  margin-top: 24px !important;
 }
 body hr + h3 {
   margin-top: 12px !important;
@@ -58,22 +71,35 @@ body pre {
     font-size: 18px;
   }
   body h1 {
-    margin-top: 144px !important;
+    margin-top: 162px !important;
     margin-bottom: 27px !important;
+  }
+  body h1:first-of-type,
+  body h1:first-child {
+    margin-top: 108px !important;
   }
   body hr + h1 {
     margin-top: 27px !important;
   }
   body h2 {
-    margin-top: 72px !important;
+    margin-top: 90px !important;
     margin-bottom: 18px !important;
+  }
+  body h1 + h2 {
+    margin-top: 36px !important;
   }
   body hr + h2 {
     margin-top: 18px !important;
   }
   body h3 {
-    margin-top: 54px !important;
+    margin-top: 50.4px !important;
     margin-bottom: 9px !important;
+  }
+  body h1 + h3 {
+    margin-top: 36px !important;
+  }
+  body h2 + h3 {
+    margin-top: 18px !important;
   }
   body hr + h3 {
     margin-top: 9px !important;
@@ -106,14 +132,14 @@ body {
   box-sizing: content-box !important;
   max-width: 1440px;
   margin: auto;
-  line-height: 1.5;
+  line-height: 1.75;
   padding: 2em 5em;
 }
 body small {
   font-size: 0.707em;
 }
 body h1 {
-  font-size: 280%;
+  font-size: 300%;
   font-weight: 300;
 }
 body h2 {
@@ -121,18 +147,15 @@ body h2 {
   font-weight: 300;
 }
 body h3 {
-  font-size: 120%;
-  font-weight: 500;
+  font-size: 130%;
+  font-weight: 400;
 }
 body h4 {
   font-size: 110%;
   font-weight: 500;
 }
 body h5 {
-  font-weight: 600;
-}
-body pre {
-  font-size: 100%;
+  font-weight: 700;
 }
 body h1,
 body h2,
@@ -198,7 +221,6 @@ body h4,
 body h5,
 body h6,
 body dt {
-  text-align: left;
   border-width: 0;
 }
 body ul,
@@ -209,8 +231,8 @@ body blockquote {
   margin-bottom: 1.5em;
 }
 body p {
-  margin-top: 0.25em;
-  margin-bottom: 0.25em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   padding: 0.25em 0.5em;
 }
 body li {
@@ -232,22 +254,28 @@ body table ol:last-child,
 body blockquote dl:last-child,
 body table dl:last-child,
 body blockquote li:last-child,
-body table li:last-child {
+body table li:last-child,
+body blockquote p:last-child,
+body table p:last-child {
   margin-bottom: 0 !important;
 }
 body code,
 body kbd {
   display: inline-block;
+  vertical-align: baseline;
+  box-sizing: content-box;
+  min-height: 1em;
+  min-width: 0.5em;
+  line-height: 1 !important;
   font-size: inherit !important;
   font-weight: normal;
   font-style: normal;
-  line-height: 1 !important;
   border-width: 1px;
   border-style: solid;
 }
 body kbd {
-  margin: -4px 0.1em !important;
-  padding: 3px 0.4em;
+  margin: -5px 0.1em !important;
+  padding: 4px 0.3em;
 }
 body code {
   margin: -3px 0.1em !important;
@@ -263,6 +291,7 @@ body pre code * {
   white-space: pre !important;
   word-wrap: none !important;
   word-break: keep-all !important;
+  text-align: left !important;
 }
 body pre code {
   display: block;
@@ -276,7 +305,7 @@ body :first-child {
 }
 body {
   color: #333;
-  background-color: #d3d3d3;
+  background-color: #e8e8e8;
 }
 body a,
 body a:visited {
@@ -312,6 +341,11 @@ body dt {
   color: #000;
 }
 body blockquote {
+  color: #000;
+}
+body em,
+body b,
+body strong {
   color: #000;
 }
 body p,
@@ -356,7 +390,7 @@ body th {
   border-color: #999 !important;
 }
 body pre {
-  background-color: #131313;
+  background-color: #131313 !important;
 }
 body pre code {
   color: #aaa !important;

@@ -2,7 +2,7 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "wulechuan <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A collection of CSS themes for Markdown generated HTML contents.",
   "directories": {
     "doc": "docs"
@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@wulechuan/find-package-dot-json": "0.0.5",
-    "@wulechuan/gulp-3-common-pipeline-presets": "^0.1.15",
+    "@wulechuan/gulp-3-common-pipeline-presets": "^0.1.16",
     "@wulechuan/scoped-glob-watchers": "^0.2.7",
     "del": "^3.0.0",
     "gulp": "^3.9.1"
