@@ -34,7 +34,7 @@
   },
   "scripts": {
     "gulp": " gulp --silent --",
-    "start": "npm run gulp",
+    "start": "npm run gulp \"build-and-watch\"",
     "build": "npm run gulp \"build-once\"",
     "clean": "npm run gulp \"clean\""
   },

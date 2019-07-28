@@ -95,20 +95,20 @@ Object.keys(cssTasksSettings).forEach(gulpTaskName => {
 
 // Top level tasks
 gulp.task('build-once', Object.keys(cssTasksSettings))
-// gulp.task('build-and-watch', [ 'build-once' ], (onThisTaskDone) => {
-// 	gaze(allGlobsToWatch, (error, watcher) => {
-// 		if (error) {
-// 			throw error
-// 		}
+gulp.task('build-and-watch', [ 'build-once' ], (onThisTaskDone) => {
+	gaze(allGlobsToWatch, (error, watcher) => {
+		if (error) {
+			throw error
+		}
 
-// 		const watchedFiles = watcher.relative()
-// 		console.log('watching:\n', watchedFiles)
+		const watchedFiles = watcher.relative()
+		console.log('watching:\n', watchedFiles)
 
-// 		watcher.on('all', (event, filepath) => {
-// 			gulpSequence('build-once')(onThisTaskDone)
-// 		})
-// 	})
-// })
+		watcher.on('all', (event, filepath) => {
+			gulpSequence('build-once')(onThisTaskDone)
+		})
+	})
+})
 gulp.task('clean', () => {
 	console.log(`Deleting all built files in "${pathBuildRoot}"...`)
 	del(path.join(pathBuildRoot, '**/*'))
