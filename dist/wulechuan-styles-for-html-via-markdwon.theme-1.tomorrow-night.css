@@ -373,70 +373,68 @@ th {
     以下 CSS 为针对由 highlight.js 所构造的代码块的视觉样式之方案。
     其内容之主体，来源于
         https://highlightjs.org/static/demo/
-    中的【Atom One Dark】主题。
+    中的【Tomorrow Night】主题。
 */
 
 pre, .hljs {
-    color: #abb2bf;
-    background-color: #282c34;
+    color: #c5c8c6;
+    background-color: #1d1f21;
 }
 
 .hljs-comment,
 .hljs-quote {
-    color: #000;
-    background-color: #23ff7e;
-    font-style: italic
+    color: #969896
 }
 
-.hljs-doctag,
-.hljs-keyword,
-.hljs-formula {
-    color: #c678dd
-}
-
-.hljs-section,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
 .hljs-name,
-.hljs-selector-tag,
-.hljs-deletion,
-.hljs-subst {
-    color: #e06c75
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+    color: #cc6666
 }
 
-.hljs-literal {
-    color: #56b6c2
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+    color: #de935f
+}
+
+.hljs-attribute {
+    color: #f0c674
 }
 
 .hljs-string,
-.hljs-regexp,
-.hljs-addition,
-.hljs-attribute,
-.hljs-meta-string {
-    color: #98c379
-}
-
-.hljs-built_in,
-.hljs-class .hljs-title {
-    color: #e6c07b
-}
-
-.hljs-attr,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-type,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo,
-.hljs-number {
-    color: #d19a66
-}
-
 .hljs-symbol,
 .hljs-bullet,
-.hljs-link,
-.hljs-meta,
-.hljs-selector-id,
-.hljs-title {
-    color: #61aeee
+.hljs-addition {
+    color: #b5bd68
+}
+
+.hljs-title,
+.hljs-section {
+    color: #81a2be
+}
+
+.hljs-keyword,
+.hljs-selector-tag {
+    color: #b294bb
+}
+
+.hljs {
+    display: block;
+    overflow-x: auto;
+    background: #1d1f21;
+    color: #c5c8c6;
+    padding: .5em
 }
 
 .hljs-emphasis {
@@ -445,10 +443,6 @@ pre, .hljs {
 
 .hljs-strong {
     font-weight: bold
-}
-
-.hljs-link {
-    text-decoration: underline
 }
 
 

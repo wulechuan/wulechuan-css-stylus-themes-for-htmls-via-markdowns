@@ -31,26 +31,45 @@ const sourceRootFolderPath = 'source'
 const outputRootFolderPath = 'dist'
 
 const subPathOfSourceCSS = 'new-version--pure-css'
-const allCSSTasks = [
+
+
+const baseThemeCandidates = [
+	'theme-1',
+]
+const highlightjsThemeCandidates = [
+	'atom-one-dark',
+	'agate',
+	'tomorrow-night',
+]
+
+
+const defaultBaseThemeName = baseThemeCandidates[0]
+const defaultHighlightjsThemeName = highlightjsThemeCandidates[0]
+
+const themeFileSuffixPlaceholderInTemplate = '<output-theme-file-name-suffix>'
+const baseThemeNamePlaceholderInTemplate = '<base-theme-name>'
+const highlightjsThemeNamePlaceholderInTemplate = '<highlightjs-theme-name>'
+
+const allCSSTaskTemplates = [
 	{
-		description: 'Building CSS: the generic version',
+		description: `Building CSS: the generic version, theme "${themeFileSuffixPlaceholderInTemplate}"`,
 		outputFolderPath: outputRootFolderPath,
-		outputFileBaseName: 'wulechuan-styles-for-html-via-markdwon.default',
+		outputFileBaseName: `wulechuan-styles-for-html-via-markdwon.${themeFileSuffixPlaceholderInTemplate}`,
 		sourceGlobsCommonSubPath: subPathOfSourceCSS,
 		sourceRelativeGlobs: [
 			'0-never-change/1-base-and-common.css',
 			'0-never-change/2-customized-selectors.css',
 			'0-never-change/3-small-windows.css',
 			'1-seldom-change/0-tag-names.css',
-			'2-change-from-theme-to-theme/theme-1/**/*.css',
-			'2-change-from-theme-to-theme/highlightjs-themes/atom-one-dark.css',
+			`2-change-from-theme-to-theme/${baseThemeNamePlaceholderInTemplate}/**/*.css`,
+			`2-change-from-theme-to-theme/highlightjs-themes/${highlightjsThemeNamePlaceholderInTemplate}.css`,
 			'3-media-of-printing.css',
 		],
 	},
 	{
-		description: 'Building CSS: specifically for firefox addon "Markdown Viewer Webext"',
+		description: `Building CSS: specifically for firefox addon "Markdown Viewer Webext", theme "${themeFileSuffixPlaceholderInTemplate}"`,
 		outputFolderPath: outputRootFolderPath,
-		outputFileBaseName: 'wulechuan-styles-for-html-via-markdwon--firefox-addon',
+		outputFileBaseName: `wulechuan-styles-for-html-via-markdwon--firefox-addon.${themeFileSuffixPlaceholderInTemplate}`,
 		shouldOutputCompressedVersion: false,
 		sourceGlobsCommonSubPath: subPathOfSourceCSS,
 		sourceRelativeGlobs: [
@@ -59,13 +78,111 @@ const allCSSTasks = [
 			'0-never-change/2-customized-selectors.css',
 			'0-never-change/3-small-windows.css',
 			'1-seldom-change/0-tag-names.css',
-			'2-change-from-theme-to-theme/theme-1/**/*.css',
-			'2-change-from-theme-to-theme/highlightjs-themes/atom-one-dark.css',
+			`2-change-from-theme-to-theme/${baseThemeNamePlaceholderInTemplate}/**/*.css`,
+			`2-change-from-theme-to-theme/highlightjs-themes/${highlightjsThemeNamePlaceholderInTemplate}.css`,
 			'3-media-of-printing.css',
 			'4-firefox-addon-specific.css',
 		],
 	},
 ]
+
+
+
+
+
+
+const allCSSTasks = []
+allCSSTaskTemplates.forEach(template => {
+	const _baseThemeCandidates = [
+		'default',
+		...baseThemeCandidates,
+	]
+	const _highlightjsThemeCandidates = [
+		'default',
+		...highlightjsThemeCandidates,
+	]
+
+	_baseThemeCandidates.forEach(baseThemeName => {
+		_highlightjsThemeCandidates.forEach(hjThemeName => {
+			if (baseThemeName === 'default' && hjThemeName !== 'default') {
+				return
+			}
+
+			if (baseThemeName !== 'default' && hjThemeName === 'default') {
+				return
+			}
+
+			if (baseThemeName === defaultBaseThemeName && hjThemeName === defaultHighlightjsThemeName) {
+				return
+			}
+
+			let _baseThemeName
+			let _hjThemeName
+			let _outputFileNameSuffix
+
+			if (baseThemeName === 'default' && hjThemeName === 'default') {
+				_baseThemeName = defaultBaseThemeName
+				_hjThemeName = defaultHighlightjsThemeName
+				_outputFileNameSuffix = 'default'
+			} else {
+				_baseThemeName = baseThemeName
+				_hjThemeName = hjThemeName
+				_outputFileNameSuffix = `${_baseThemeName}.${_hjThemeName}`
+			}
+
+			const themeSettings = createCSSTaskSettingsForOneTheme(
+				template,
+				_outputFileNameSuffix,
+				_baseThemeName,
+				_hjThemeName
+			)
+
+			allCSSTasks.push(themeSettings)
+		})
+	})
+})
+
+function createCSSTaskSettingsForOneTheme(cssTaskSettingsTemplate, outputFileNameSuffix, baseThemeName, hjThemeName) {
+	const {
+		outputFolderPath,
+		description,
+		outputFileBaseName,
+		sourceRelativeGlobs,
+	} = cssTaskSettingsTemplate
+
+	const cssTaskSettings = {
+		outputFolderPath,
+	}
+
+	if ('shouldNotOutputUncompressedVersion' in cssTaskSettingsTemplate) {
+		cssTaskSettings.shouldNotOutputUncompressedVersion = cssTaskSettingsTemplate.shouldNotOutputUncompressedVersion
+	}
+
+	if ('shouldOutputCompressedVersion' in cssTaskSettingsTemplate) {
+		cssTaskSettings.shouldOutputCompressedVersion = cssTaskSettingsTemplate.shouldOutputCompressedVersion
+	}
+
+	if ('sourceGlobsCommonSubPath' in cssTaskSettingsTemplate) {
+		cssTaskSettings.sourceGlobsCommonSubPath = cssTaskSettingsTemplate.sourceGlobsCommonSubPath
+	}
+
+	if (description) {
+		cssTaskSettings.description = description.replace(themeFileSuffixPlaceholderInTemplate, outputFileNameSuffix)
+	}
+
+	if (outputFileBaseName) {
+		cssTaskSettings.outputFileBaseName = outputFileBaseName.replace(themeFileSuffixPlaceholderInTemplate, outputFileNameSuffix)
+	}
+
+	cssTaskSettings.sourceRelativeGlobs = sourceRelativeGlobs.map(glob => {
+		return glob
+			.replace(baseThemeNamePlaceholderInTemplate, baseThemeName)
+			.replace(highlightjsThemeNamePlaceholderInTemplate, hjThemeName)
+	})
+
+	return cssTaskSettings
+}
+
 
 
 function createGulpTaskBodiesViaSettings(taskSettings) {
@@ -80,6 +197,10 @@ function createGulpTaskBodiesViaSettings(taskSettings) {
 		compressor,
 		compressorOptions,
 	} = taskSettings
+
+	if (!outputFolderPath) {
+		throw TypeError('"outputFolderPath" is required for a task settings object.')
+	}
 
 	if (!sourceRelativeGlobs) {
 		throw TypeError('"sourceRelativeGlobs" is required for a task settings object.')
