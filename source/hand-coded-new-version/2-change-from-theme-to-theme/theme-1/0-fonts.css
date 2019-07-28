@@ -1,0 +1,35 @@
+/* 以下 CSS 定义字体家族，以及文字水平放置之方式。 */
+
+html {
+    font-family: 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
+}
+
+kbd, pre, code {
+  font-family: 'PT Mono', 'consolas', 'Courier New', Courier, monospace, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* h3 {
+} */
+
+h4 {
+  font-weight: bold;
+}
+
+h5 {
+  font-weight: bolder;
+}
+
+/* h6 {
+} */
+
+
+
+

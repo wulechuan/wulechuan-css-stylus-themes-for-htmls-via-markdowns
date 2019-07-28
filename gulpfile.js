@@ -32,19 +32,38 @@ const outputRootFolderPath = 'dist'
 
 const subPathOfSourceCSS = 'hand-coded-new-version'
 const allCSSTasks = [
-	// {
-	// 	description: 'Building CSS: the generic version',
-	// 	sourceGlobsCommonSubPath: subPathOfSourceCSS,
-	// 	sourceRelativeGlobs: [ '*.css' ],
-	// 	outputFolderPath: outputRootFolderPath,
-	// 	outputFileBaseName: 'wulechuan-style-for-html-via-markdwon',
-	// },
+	{
+		description: 'Building CSS: the generic version',
+		outputFolderPath: outputRootFolderPath,
+		outputFileBaseName: 'wulechuan-style-for-html-via-markdwon',
+		sourceGlobsCommonSubPath: subPathOfSourceCSS,
+		sourceRelativeGlobs: [
+			'0-never-change/1-base-and-common.css',
+			'0-never-change/2-customized-selectors.css',
+			'0-never-change/3-small-windows.css',
+			'1-seldom-change/0-tag-names.css',
+			'2-change-from-theme-to-theme/theme-1/**/*.css',
+			'2-change-from-theme-to-theme/highlightjs-themes/atom-one-dark.css',
+			'3-media-of-printing.css',
+		],
+	},
 	{
 		description: 'Building CSS: specifically for firefox addon "Markdown Viewer Webext"',
-		sourceGlobsCommonSubPath: subPathOfSourceCSS,
-		sourceRelativeGlobs: [ '*.css' ],
 		outputFolderPath: outputRootFolderPath,
 		outputFileBaseName: 'wulechuan-style-for-html-via-markdwon--firefox-addon',
+		shouldOutputCompressedVersion: false,
+		sourceGlobsCommonSubPath: subPathOfSourceCSS,
+		sourceRelativeGlobs: [
+			'0-never-change/0-title-for-firefox-addon.css',
+			'0-never-change/1-base-and-common.css',
+			'0-never-change/2-customized-selectors.css',
+			'0-never-change/3-small-windows.css',
+			'1-seldom-change/0-tag-names.css',
+			'2-change-from-theme-to-theme/theme-1/**/*.css',
+			'2-change-from-theme-to-theme/highlightjs-themes/atom-one-dark.css',
+			'3-media-of-printing.css',
+			'4-firefox-addon-specific.css',
+		],
 	},
 ]
 
@@ -86,7 +105,7 @@ function createGulpTaskBodiesViaSettings(taskSettings) {
 	const outputFileName2 = `${outputFileBaseName}.min.${outputFileExt}`
 
 	const outputFileNames = []
-	
+
 	if (!shouldNotOutputUncompressedVersion) {
 		outputFileNames.push(outputFileName1)
 	}
@@ -165,8 +184,13 @@ function createGulpTaskBodiesViaSettings(taskSettings) {
 function createGulpTaskBodiesForBuildingCSS(taskSettings) {
 	taskSettings.outputFileExt = 'css'
 
-	// taskSettings.shouldNotOutputUncompressedVersion = false
-	taskSettings.shouldOutputCompressedVersion = true
+	if (!('shouldNotOutputUncompressedVersion' in taskSettings)) {
+		taskSettings.shouldNotOutputUncompressedVersion = false
+	}
+
+	if (!('shouldOutputCompressedVersion' in taskSettings)) {
+		taskSettings.shouldOutputCompressedVersion = true
+	}
 
 	taskSettings.compressor = minifyCSS
 	taskSettings.compressorOptions = cssminOptions
@@ -183,19 +207,26 @@ allCSSTasks.forEach(createGulpTaskBodiesForBuildingCSS)
 
 // Public tasks
 exports.clean = function () {
-	console.log(`Deleting all built files in "${pathBuildRoot}"...`)
-	del(path.join(pathBuildRoot, '**/*'))
+	console.log(`Deleting all built files in "${outputRootFolderPath}"...`)
+	return del(path.join(outputRootFolderPath, '**/*'))
 }
 
 exports.buildOnce = gulpBuildParallelTasks(
-	allCSSTasks.map(taskSettings => taskSettings.taskBodies.buildOnce)
+	...allCSSTasks.map(taskSettings => taskSettings.taskBodies.buildOnce)
 )
 
-exports.buildAndWatch = gulpBuildParallelTasks(
-	allCSSTasks.map(taskSettings => {
-		return watch(taskSettings.sourceGlobsToWatch, taskSettings.taskBodies.buildOnce)
+exports.buildAndWatch = function (cb) {
+	allCSSTasks.forEach(taskSettings => {
+		watch(
+			taskSettings.sourceGlobsToWatch,
+			{ ignoreInitial: false },
+			taskSettings.taskBodies.buildOnce
+		)
 	})
-)
+	cb()
+}
+
+
 
 
 // The default task

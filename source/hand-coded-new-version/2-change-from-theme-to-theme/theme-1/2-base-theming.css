@@ -1,0 +1,85 @@
+/* 以下 CSS 为除代码块之外的页面整体着色方案。*/
+
+html {
+    background-color: #ddd;
+}
+body {
+    color: #383838;
+    background-color: #fff;
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1);
+}
+
+a,
+a:visited {
+    color: #088aee;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #1997f7;
+}
+
+a[href^="#"],
+a[href^="#"]:visited {
+    color: #5187b3;
+}
+
+a[href^="#"]:hover,
+a[href^="#"]:focus,
+a[href^="#"]:active {
+    color: #6293bb;
+}
+
+img {
+    color: #ccc;
+    background-color: #888;
+    border-color: rgba(128, 128, 128, 0.5);
+}
+
+h1, h2, h3, h4, h5, h6,
+dt {
+    color: #000;
+}
+
+strong,
+b,
+em {
+    /* color: rgb(234, 79, 19); */
+    color: black;
+}
+
+blockquote {
+    color: rgb(51, 45, 219);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: rgba(136, 136, 136, 0.1);
+    border-color: #088aee;
+}
+
+code {
+    color: #a34587;
+    border-color: rgba(0, 0, 0, 0.219);
+    background-color: rgba(255, 255, 255, 0.319);
+}
+
+pre code {
+    color: inherit !important;
+    background-color: transparent !important;
+}
+
+kbd {
+    color: #fff;
+    border-color: #fff;
+    background-color: #789abc;
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.219);
+}
+
+table,
+td,
+th {
+    border-color: #999;
+}
+
+
+
+

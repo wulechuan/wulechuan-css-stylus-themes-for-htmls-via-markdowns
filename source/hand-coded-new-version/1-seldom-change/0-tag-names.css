@@ -1,0 +1,139 @@
+/* 以下 CSS 定义针对可信赖的、无需多做变更的内容。主要涉及网页内容的排版尺寸。 */
+
+html {
+    padding: 3rem 1rem 4rem 1rem;
+}
+
+body {
+    font-size: 0.9rem;
+    padding: 5rem 4rem 6rem 4rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6, dt {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    padding: 0.5em 0.5rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 3em;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1.35rem;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+h5 {
+    font-size: 1rem;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+/* h6 {
+} */
+
+a,
+code,
+kbd {
+    font-size: inherit;
+}
+
+ul, ol, dd {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+p {
+    margin: 0.5em -0.5em;
+    padding: 0.25em 0.5em;
+}
+
+img {
+    border-style: solid;
+    display: block;
+    margin: 0.5rem auto 1rem auto;
+    max-width: 50%;
+    font-size: 80%;
+    text-align: center;
+}
+
+li {
+    margin: 1em 0;
+}
+
+li::marker {
+    margin-right: 1em;
+}
+
+ul, ol {
+    padding-left: 2em;
+}
+
+blockquote {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 1rem;
+    margin-right: 0.8rem;
+    padding: 0.2em 1em;
+}
+
+kbd, code {
+  display: inline-block;
+  vertical-align: baseline;
+  min-height: 1em;
+  min-width: 0.5em;
+  font-weight: normal;
+  font-style: normal;
+  border-style: solid;
+}
+
+pre {
+    display: block;
+    overflow-x: auto !important;
+    padding: 0.5em 1em;
+}
+
+table pre:last-child {
+    margin-bottom: 0;
+}
+
+pre,
+pre > code,
+pre > code * {
+  white-space: pre !important;
+  word-wrap: none !important;
+  word-break: keep-all !important;
+  text-align: left !important;
+}
+
+pre > code {
+    border: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+
+
+
