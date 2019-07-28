@@ -33,18 +33,16 @@
     "url": "https://github.com/wulechuan/css-stylus-wulechuan-markdown-themes/issues"
   },
   "scripts": {
-    "gulp": " gulp --silent --",
-    "start": "npm run gulp \"build-and-watch\"",
-    "build": "npm run gulp \"build-once\"",
-    "clean": "npm run gulp \"clean\""
+    "start": "gulp buildAndWatch",
+    "build": "gulp buildOnce",
+    "clean": "gulp clean"
   },
   "devDependencies": {
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gaze": "^1.1.3",
+    "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-cssmin": "^0.2.0",
-    "gulp-rename": "^1.4.0",
-    "gulp-sequence": "^1.0.0"
+    "gulp-if": "^3.0.0",
+    "gulp-rename": "^1.4.0"
   }
 }
