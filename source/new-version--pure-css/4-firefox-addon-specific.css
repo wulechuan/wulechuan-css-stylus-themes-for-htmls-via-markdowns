@@ -135,8 +135,8 @@ a#__markdown-viewer__download:hover {
 }
 #__markdown-viewer__toc > ul {
     box-sizing: border-box;
-    padding: 0.5rem 0.5rem 1.5rem 0.5rem;
-    height: calc(100% - 1.5rem);
+    padding: 0.5rem 0.5rem 2rem 0.5rem;
+    height: calc(100% - 2rem);
     overflow: auto;
     background-color: rgba(255, 255, 255, 0.1);
 }
