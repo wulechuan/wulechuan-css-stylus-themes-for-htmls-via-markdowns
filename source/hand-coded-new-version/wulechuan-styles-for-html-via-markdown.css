@@ -1,0 +1,600 @@
+/*
+    该 css 备份文件虽然可以通用，但最初之目的是为了美化 FireFox 插件的输出内容。
+    该 FireFox 插件为：【Markdown Viewer Webext】。
+        见：https://addons.mozilla.org/zh-CN/firefox/addon/markdown-viewer-webext/
+*/
+
+html {
+    font-family: 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
+}
+
+kbd, pre, code {
+  font-family: 'PT Mono', 'consolas', 'Courier New', Courier, monospace, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
+}
+
+html {
+    font-size: 20px;
+    padding: 3rem 1rem 4rem 1rem;
+}
+
+body {
+    font-size: 0.9rem;
+    padding: 5rem 4rem 6rem 4rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6, dt {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    padding: 0.5em 0.5rem;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-top: 3em;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.35rem;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 1rem;
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+    font-weight: bolder;
+}
+
+a,
+code,
+kbd {
+    font-size: inherit;
+}
+
+ul, ol, dd {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+p {
+    margin: 0.5em -0.5em;
+    padding: 0.25em 0.5em;
+}
+
+img {
+    border-style: solid;
+    border-width: 0.5rem;
+    display: block;
+    margin: 0.5rem auto 1rem auto;
+    max-width: 50%;
+    font-size: 80%;
+    text-align: center;
+    font-style: italic;
+    font-weight: normal;
+    text-decoration: line-through;
+    color: #ccc;
+    background-color: #888;
+}
+
+li {
+    margin: 1em 0;
+}
+
+li::marker {
+    margin-right: 1em;
+}
+
+ul, ol {
+    padding-left: 2em;
+}
+
+blockquote {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 1rem;
+    margin-right: 0.8rem;
+    padding: 0.2em 1em;
+    border-width: 0 0 0 0.3rem;
+    font-size: 0.8rem;
+    border-radius: 0.3rem;
+}
+
+kbd, code {
+  display: inline-block;
+  vertical-align: baseline;
+  /* box-sizing: content-box; */
+  min-height: 1em;
+  min-width: 0.5em;
+  /* line-height: 1 !important; */
+  font-weight: normal;
+  font-style: normal;
+
+  border-width: 1px;
+  border-style: solid;
+}
+
+kbd {
+    border-radius: 0.2rem;
+    margin: -5px 0.1em;
+    padding: 4px 0.3em;
+}
+
+code {
+    border-radius: 0.2rem;
+    margin: -3px 0.1em;
+    padding: 2px 0.2em;
+}
+
+pre {
+    display: block;
+    border-radius: 0.3rem;
+    overflow-x: auto !important;
+    padding: 0.5em 1em;
+}
+
+table pre:last-child {
+    margin-bottom: 0;
+}
+
+pre,
+pre > code,
+pre > code * {
+  white-space: pre !important;
+  word-wrap: none !important;
+  word-break: keep-all !important;
+  text-align: left !important;
+}
+
+pre > code {
+    border: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
+
+@media (max-width: 900px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+
+
+
+/* 以下 CSS 针对自定义类，并不通用。 */
+
+.document-author {
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+
+
+/* 以下 CSS 为除代码高亮外的着色方案 */
+html {
+    background-color: #ddd;
+}
+body {
+    color: #383838;
+    background-color: #fff;
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1);
+}
+
+a,
+a:visited {
+    color: #088aee;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #1997f7;
+}
+
+a[href^="#"],
+a[href^="#"]:visited {
+    color: #5187b3;
+}
+
+a[href^="#"]:hover,
+a[href^="#"]:focus,
+a[href^="#"]:active {
+    color: #6293bb;
+}
+
+img {
+    border-color: rgba(128, 128, 128, 0.5);
+}
+
+h1, h2, h3, h4, h5, h6,
+dt {
+    color: #000;
+}
+
+strong,
+b,
+em {
+    /* color: rgb(234, 79, 19); */
+    color: black;
+}
+
+blockquote {
+    color: rgb(51, 45, 219);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    background-color: rgba(136, 136, 136, 0.1);
+    border-color: #088aee;
+}
+
+code {
+    color: #a34587;
+    border-color: rgba(0, 0, 0, 0.219);
+    background-color: rgba(255, 255, 255, 0.319);
+}
+
+pre code {
+    color: inherit !important;
+    background-color: transparent !important;
+}
+
+kbd {
+    color: #fff;
+    border-color: #fff;
+    background-color: #789abc;
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.219);
+}
+
+table,
+td,
+th {
+    border-color: #999;
+}
+
+
+
+
+/* 以下 CSS 内容特别针对前述 FireFox 插件 */
+#__markdown-viewer__tools {
+    font-family: 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
+    box-sizing: border-box;
+    max-width: 40%;
+    display: flex;
+    flex-direction: column-reverse;
+    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.319);
+}
+#__markdown-viewer__tools.fixed {
+    top: 2rem;
+    right: 2rem;
+}
+#__markdown-viewer__tools, #__markdown-viewer__tools * {
+    font-size: 0.7rem;
+}
+#__markdown-viewer__tools > label[for] {
+    float: none;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    min-height: 0;
+    min-width: 0;
+    padding: 0;
+    text-align: center;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    border-radius: 50%;
+    z-index: 20;
+    box-shadow: 0 0 0.2rem 0 rgba(255, 255, 255, 0.51);
+}
+#__markdown-viewer__tools > label[for],
+input#__markdown-viewer__show-tools:not(:checked) ~ label {
+    margin: 0;
+}
+#__markdown-viewer__tools > label[for]::after {
+    float: none;
+    right: auto;
+    margin: 0 auto;
+    font-size: inherit;
+}
+#__markdown-viewer__tools .toggleable {
+    display: block;
+    margin: 0 auto 0 auto;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden !important;
+    position: relative;
+    text-align: left;
+    transition: none !important;
+}
+#__markdown-viewer__tools #__markdown-viewer__toc + .toggleable {
+    display: none !important;
+}
+#__markdown-viewer__tools .toggleable::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    box-sizing: content-box;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+#__markdown-viewer__tools #__markdown-viewer__toc::after {
+    content: none;
+}
+#__markdown-viewer__tools .toggleable:last-child {
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+input#__markdown-viewer__show-tools:checked ~ .toggleable {
+    max-width: 100%;
+    max-height: none;
+    width: 100% !important;
+}
+
+#__markdown-viewer__tools .toggleable select {
+    display: block;
+    box-sizing: border-box;
+    height: 2em;
+    margin: 0.5rem auto;
+    padding: 0.2em 0.5em;
+    max-width: 15rem;
+}
+select#__markdown-viewer__mdselect {
+    width: 100%;
+}
+select#__markdown-viewer__hlselect {
+    width: 100%;
+}
+
+a#__markdown-viewer__download {
+    display: inline-block;
+    width: 8rem;
+    margin: 0.25rem auto;
+    padding: 0.2em 1em;
+    border-radius: 0.2rem;
+    color: white;
+    border: 1px solid rgb(36, 241, 36);
+    background-color: rgb(28, 182, 28);
+}
+a#__markdown-viewer__download:hover {
+    border-color: rgb(49, 247, 49);
+    background-color: rgb(80, 206, 80);
+}
+
+#__markdown-viewer__toc {
+    box-sizing: border-box;
+    margin: 0.25rem 0.5rem 0.5rem 0.5rem;
+    overflow: visible;
+    height: 20rem;
+    max-height: none;
+}
+#__markdown-viewer__toc::before {
+    margin: 0 auto 0.5rem auto;
+    text-decoration: none;
+    font-weight: normal;
+    opacity: 0.5;
+}
+#__markdown-viewer__toc ul {
+    /* list-style-position: inside; */
+    list-style-type: none;
+}
+#__markdown-viewer__toc > ul ul {
+    padding-left: 2em;
+}
+#__markdown-viewer__toc > ul {
+    box-sizing: border-box;
+    padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+    height: calc(100% - 1.5rem);
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+#__markdown-viewer__toc li {
+    margin: 0;
+    line-height: 1.5;
+}
+#__markdown-viewer__toc li::marker {
+    margin-right: 0.2em;
+}
+#__markdown-viewer__toc a[href^="#"] {
+    display: block;
+    margin: 0;
+    padding: 0.25em 1em;
+}
+#__markdown-viewer__toc a[href^="#"]:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+@supports (backdrop-filter: blur(15px)) or (-webkit-backdrop-filter: blur(15px)) {
+    #__markdown-viewer__tools {
+        color: black;
+        background-color: rgba(64, 128, 96, 0.128);
+        /* box-shadow: none; */
+    }
+
+    #__markdown-viewer__toc a[href^="#"] {
+        color: black;
+    }
+
+    #__markdown-viewer__tools .toggleable::after {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}
+
+@supports (backdrop-filter: blur(15px)) {
+    #__markdown-viewer__tools {
+        backdrop-filter: blur(15px)
+    }
+}
+
+@supports (-webkit-backdrop-filter: blur(15px)) {
+    #__markdown-viewer__tools {
+        -webkit-backdrop-filter: blur(15px)
+    }
+}
+
+
+
+
+/*
+    以下 CSS 内容之主体，来源于
+        https://highlightjs.org/static/demo/
+    中的【Atom One Dark】主题
+*/
+
+pre, .hljs {
+    color: #abb2bf;
+    background-color: #282c34
+}
+
+.hljs-comment,
+.hljs-quote {
+    color: #000;
+    background-color: #23ff7e;
+    font-style: italic
+}
+
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+    color: #c678dd
+}
+
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+    color: #e06c75
+}
+
+.hljs-literal {
+    color: #56b6c2
+}
+
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+    color: #98c379
+}
+
+.hljs-built_in,
+.hljs-class .hljs-title {
+    color: #e6c07b
+}
+
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+    color: #d19a66
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+    color: #61aeee
+}
+
+.hljs-emphasis {
+    font-style: italic
+}
+
+.hljs-strong {
+    font-weight: bold
+}
+
+.hljs-link {
+    text-decoration: underline
+}
+
+
+
+
+/* 以下是为打印机配置的样式。 */
+
+@media print {
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]::after {
+        content: ' (' attr(href) ')';
+    }
+
+    abbr[title]::after {
+        content: ' (' attr(title) ')';
+    }
+
+    a[href^='#']::after,
+    a[href^='javascript:']::after {
+        content: '';
+    }
+
+    pre,
+    blockquote {
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    h2, h3, p {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2, h3 {
+        page-break-after: avoid;
+    }
+}
