@@ -4,31 +4,63 @@ html {
     font-family: 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
 }
 
+body {
+    line-height: 1.8;
+}
+
+/* body,
+article,
+h1, h2, h3, h4, h5, h6,
+p, blockquote,
+ul, ol, dl,
+table {
+    font-family: 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
+}
+
+body,
+article,
+h1, h2, h3, h4, h5, h6,
+p, blockquote,
+ul, ol, dl,
+table {
+    line-height: 1.8;
+} */
+
 kbd, pre, code {
-  font-family: 'PT Mono', 'consolas', 'Courier New', Courier, monospace, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
+    font-family: 'PT Mono', 'consolas', 'Courier New', Courier, monospace, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
+}
+
+pre {
+    line-height: 2;
 }
 
 h1 {
-  text-align: center;
+    text-align: center;
 }
 
 h2 {
-  text-align: center;
+    text-align: center;
 }
 
 /* h3 {
 } */
 
 h4 {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 h5 {
-  font-weight: bolder;
+    font-weight: bolder;
 }
 
 /* h6 {
 } */
+
+a,
+code,
+kbd {
+    font-size: inherit;
+}
 
 
 

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./dist/default.css">
+<link rel="stylesheet" href="./dist/wulechuan-styles-for-html-via-markdwon.default.css">
 
 # NPM Page
 
@@ -49,7 +49,7 @@ that we can insert customer stylesheets into markdown pages in `github.com` or `
 
 See <https://github.com/github/markup> for a reference.
 
-> 2. The HTML is sanitized, aggressively removing things
+> 1. The HTML is sanitized, aggressively removing things
 >    that could harm you and your kin—such as
 >   `script` tags, `inline-styles`, and `class` or `id` attributes.
 >    See the sanitization filter for the full whitelist.
@@ -64,9 +64,10 @@ See <https://github.com/github/markup> for a reference.
 
 ### Linkages
 
-Aliquip proident [Github.com](https://github.com) nulla ex cillum magna. Anim culpa dolor ullamco nulla culpa labore. Lorem dolor proident qui aliquip nulla. Do ex [nulla](#) anim tempor do veniam duis nulla ut culpa tempor dolore. Labore dolore ex anim [adipisicing esse do](#) id. Anim et ex ex labore cupidatat anim proident laboris amet fugiat aute ad. Reprehenderit dolore cupidatat sit elit esse anim est aute [consequat et nisi est](#).
+Aliquip proident [Github.com](https://github.com) nulla ex cillum magna. Anim culpa dolor ullamco nulla culpa labore. Lorem dolor proident qui aliquip nulla. Do ex [nulla](#fake-id-1) anim tempor do veniam duis nulla ut culpa tempor dolore. Labore dolore ex anim [adipisicing esse do](#fake-id-2) id. Anim et ex ex labore cupidatat anim proident laboris amet fugiat aute ad. Reprehenderit dolore cupidatat sit elit esse anim est aute [consequat et nisi est](#fake-id-3).
 
 ### Inline Codes in Multiple Lines
+
 Occaecat ea Lorem ut `officia` ea ad `nostrud`. Ut deserunt irure in dolore `voluptate` ad `reprehenderit` et sit. Cupidatat `nostrud` tempor `aliqua` ad id ex `labore` in. Ut deserunt irure pariatur `tempor` ex. Ex `irure` sit proident `consectetur` ipsum `pariatur`.
 
 
@@ -76,10 +77,11 @@ Occaecat ea Lorem ut `officia` ea ad `nostrud`. Ut deserunt irure in dolore `vol
 Lorem Lorem sint labore id deserunt voluptate adipisicing consectetur non. Amet proident consequat dolor aliqua ut fugiat aute consequat qui laborum veniam sunt sunt anim.
 
 > ### Note
-> [Mollit pariatur](https://github.com/) minim consequat consectetur ea. 
+>
+> [Mollit pariatur](https://github.com/) minim consequat consectetur ea.
 > aliquip do incididunt culpa Lorem `commodo` cillum mollit officia.
 >
-> Lorem aute labore quis [proident qui](#) minim elit exercitation.
+> Lorem aute labore quis [proident qui](#fake-id) minim elit exercitation.
 > Voluptate incididunt ullamco velit veniam consectetur nostrud pariatur.
 
 
@@ -143,7 +145,7 @@ Lorem sint labore id deserunt voluptate adipisicin.
 
 ```javascript
 module.exports = function isAPromiseObject(input) {
-	return !!input && typeof input.then === 'function' && typeof input.done === 'function';
+    return !!input && typeof input.then === 'function' && typeof input.done === 'function';
 };
 ```
 

@@ -98,7 +98,7 @@ function createGulpTaskBodiesViaSettings(taskSettings) {
 
 
 	const cssSourceGlobs = sourceRelativeGlobs.map(relativeGlob => {
-		return path.join(sourceRootFolderPath, sourceGlobsCommonSubPath, relativeGlob)
+		return path.join(sourceRootFolderPath, sourceGlobsCommonSubPath, relativeGlob).replace(/\\/g, '/')
 	})
 
 	const outputFileName1 = `${outputFileBaseName}.${outputFileExt}`

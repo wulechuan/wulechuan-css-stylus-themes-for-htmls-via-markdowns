@@ -56,6 +56,11 @@ blockquote {
     border-color: #088aee;
 }
 
+code,
+kbd {
+    text-shadow: none !important;
+}
+
 code {
     color: #a34587;
     border-color: rgba(0, 0, 0, 0.219);
