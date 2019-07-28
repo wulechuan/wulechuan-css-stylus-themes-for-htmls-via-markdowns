@@ -7,7 +7,7 @@
   "directories": {
     "doc": "docs"
   },
-  "main": "dist/default.css",
+  "main": "dist/wulechuan-styles-for-html-via-markdwon.default.min.css",
   "keywords": [
     "markdown",
     "html",
@@ -19,7 +19,6 @@
     "style",
     "skin",
     "shading",
-    "coloring",
     "coloring",
     "stylus",
     "css"

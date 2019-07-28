@@ -30,12 +30,12 @@ const cssminOptions = {
 const sourceRootFolderPath = 'source'
 const outputRootFolderPath = 'dist'
 
-const subPathOfSourceCSS = 'hand-coded-new-version'
+const subPathOfSourceCSS = 'new-version--pure-css'
 const allCSSTasks = [
 	{
 		description: 'Building CSS: the generic version',
 		outputFolderPath: outputRootFolderPath,
-		outputFileBaseName: 'wulechuan-style-for-html-via-markdwon',
+		outputFileBaseName: 'wulechuan-styles-for-html-via-markdwon.default',
 		sourceGlobsCommonSubPath: subPathOfSourceCSS,
 		sourceRelativeGlobs: [
 			'0-never-change/1-base-and-common.css',
@@ -50,7 +50,7 @@ const allCSSTasks = [
 	{
 		description: 'Building CSS: specifically for firefox addon "Markdown Viewer Webext"',
 		outputFolderPath: outputRootFolderPath,
-		outputFileBaseName: 'wulechuan-style-for-html-via-markdwon--firefox-addon',
+		outputFileBaseName: 'wulechuan-styles-for-html-via-markdwon--firefox-addon',
 		shouldOutputCompressedVersion: false,
 		sourceGlobsCommonSubPath: subPathOfSourceCSS,
 		sourceRelativeGlobs: [
