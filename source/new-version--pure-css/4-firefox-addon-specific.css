@@ -1,9 +1,10 @@
 /* 以下 CSS 内容特别针对 FireFox 插件【Markdown Viewer Webext】。 */
 
 #__markdown-viewer__tools {
-    font-family: 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
+    font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
     box-sizing: border-box;
     max-width: 40%;
+    min-width: 480px;
     display: flex;
     flex-direction: column-reverse;
     box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.319);
@@ -181,6 +182,20 @@ a#__markdown-viewer__download:hover {
 @supports (-webkit-backdrop-filter: blur(15px)) {
     #__markdown-viewer__tools {
         -webkit-backdrop-filter: blur(15px)
+    }
+}
+
+
+
+@media (max-width: 600px) {
+    #__markdown-viewer__tools {
+        max-width: none;
+        min-width: 90%;
+    }
+
+    #__markdown-viewer__tools.fixed {
+        top: 0.2rem;
+        right: 0.2rem;
     }
 }
 

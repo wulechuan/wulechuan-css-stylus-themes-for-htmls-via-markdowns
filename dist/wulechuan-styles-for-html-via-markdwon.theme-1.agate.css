@@ -22,18 +22,6 @@ html {
 
 
 
-/* 以下 CSS 定义自适应排版规则。主要面向小尺寸屏幕或窗口。 */
-
-@media (max-width: 900px) {
-    html {
-        font-size: 16px;
-    }
-}
-
-
-
-
-
 /* 以下 CSS 定义针对可信赖的、无需多做变更的内容。主要涉及网页内容的排版尺寸。 */
 
 html {
@@ -153,6 +141,11 @@ blockquote {
     padding: 0.2em 1em;
 }
 
+ul blockquote,
+ol blockquote {
+    margin-left: 0;
+}
+
 kbd, code {
   display: inline-block;
   vertical-align: baseline;
@@ -168,6 +161,11 @@ pre {
     display: block;
     overflow-x: auto !important;
     padding: 0.5em 1em;
+}
+
+table {
+    margin: 1rem auto;
+    max-width: 90%;
 }
 
 table pre:last-child {
@@ -189,6 +187,59 @@ pre > code {
     margin: 0;
     padding: 0;
     border-radius: 0;
+}
+
+
+
+
+
+/* 以下 CSS 定义自适应排版规则。主要面向小尺寸屏幕或窗口。 */
+
+@media (max-width: 1000px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+        padding: 0;
+    }
+
+    body {
+        padding: 2rem 1rem 6rem 1rem;
+        box-shadow: none;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    h5 {
+        font-size: 0.9rem;
+    }
+
+    ul, ol {
+        padding-left: 1.5em;
+    }
+    
+    blockquote {
+        margin-left: 0.7rem;
+        margin-right: 0.5rem;
+    }
 }
 
 
@@ -382,6 +433,18 @@ th {
 hr {
     border-color: rgba(0, 0, 0, 0.219);
     background-color: rgba(0, 0, 0, 0.219);
+}
+
+
+
+
+
+/* 以下 CSS 定义自适应排版规则。主要面向小尺寸屏幕或窗口。 */
+
+@media (max-width: 600px) {
+    h1 {
+        font-weight: 400;
+    }
 }
 
 

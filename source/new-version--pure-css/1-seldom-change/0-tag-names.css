@@ -117,6 +117,11 @@ blockquote {
     padding: 0.2em 1em;
 }
 
+ul blockquote,
+ol blockquote {
+    margin-left: 0;
+}
+
 kbd, code {
   display: inline-block;
   vertical-align: baseline;
@@ -132,6 +137,11 @@ pre {
     display: block;
     overflow-x: auto !important;
     padding: 0.5em 1em;
+}
+
+table {
+    margin: 1rem auto;
+    max-width: 90%;
 }
 
 table pre:last-child {

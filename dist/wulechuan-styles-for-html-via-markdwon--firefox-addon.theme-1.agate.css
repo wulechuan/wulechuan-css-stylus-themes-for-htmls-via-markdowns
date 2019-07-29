@@ -16,12 +16,6 @@ html{
     text-align:center;
 }
 
-@media (max-width: 900px){
-    html{
-        font-size:16px;
-    }
-}
-
 html{
     padding:3rem 1rem 4rem 1rem;
 }
@@ -127,6 +121,11 @@ blockquote{
     padding:0.2em 1em;
 }
 
+ul blockquote,
+ol blockquote{
+    margin-left:0;
+}
+
 kbd, code{
   display:inline-block;
   vertical-align:baseline;
@@ -142,6 +141,11 @@ pre{
     display:block;
     overflow-x:auto !important;
     padding:0.5em 1em;
+}
+
+table{
+    margin:1rem auto;
+    max-width:90%;
 }
 
 table pre:last-child{
@@ -163,6 +167,53 @@ pre > code{
     margin:0;
     padding:0;
     border-radius:0;
+}
+
+@media (max-width: 1000px){
+    html{
+        font-size:16px;
+    }
+}
+
+@media (max-width: 600px){
+    html{
+        font-size:15px;
+        padding:0;
+    }
+
+    body{
+        padding:2rem 1rem 6rem 1rem;
+        box-shadow:none;
+    }
+
+    h1{
+        font-size:1.8rem;
+    }
+
+    h2{
+        font-size:1.35rem;
+    }
+
+    h3{
+        font-size:1.2rem;
+    }
+
+    h4{
+        font-size:1rem;
+    }
+
+    h5{
+        font-size:0.9rem;
+    }
+
+    ul, ol{
+        padding-left:1.5em;
+    }
+    
+    blockquote{
+        margin-left:0.7rem;
+        margin-right:0.5rem;
+    }
 }
 
 html{
@@ -327,6 +378,12 @@ hr{
     background-color:rgba(0, 0, 0, 0.219);
 }
 
+@media (max-width: 600px){
+    h1{
+        font-weight:400;
+    }
+}
+
 pre, .hljs{
     color:white;
     background-color:#333;
@@ -459,9 +516,10 @@ pre, .hljs{
 }
 
 #__markdown-viewer__tools{
-    font-family:'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
+    font-family:'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
     box-sizing:border-box;
     max-width:40%;
+    min-width:480px;
     display:flex;
     flex-direction:column-reverse;
     box-shadow:0 0 0.5rem 0 rgba(0, 0, 0, 0.319);
@@ -637,6 +695,20 @@ a#__markdown-viewer__download:hover{
 @supports (-webkit-backdrop-filter: blur(15px)){
     #__markdown-viewer__tools{
         -webkit-backdrop-filter:blur(15px)
+    }
+}
+
+
+
+@media (max-width: 600px){
+    #__markdown-viewer__tools{
+        max-width:none;
+        min-width:90%;
+    }
+
+    #__markdown-viewer__tools.fixed{
+        top:0.2rem;
+        right:0.2rem;
     }
 }
 
