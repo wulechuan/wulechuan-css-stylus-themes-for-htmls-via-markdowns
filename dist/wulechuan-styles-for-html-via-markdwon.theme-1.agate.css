@@ -47,6 +47,19 @@ body {
     margin: 0 auto;
 }
 
+body {
+    line-height: 1.5;
+}
+
+/* body,
+article,
+h1, h2, h3, h4, h5, h6,
+p, blockquote,
+ul, ol, dl,
+table {
+    line-height: 1.5;
+} */
+
 h1, h2, h3, h4, h5, h6, dt {
     margin-left: -0.5rem;
     margin-right: -0.5rem;
@@ -111,6 +124,15 @@ img {
     text-align: center;
 }
 
+hr {
+    margin: 1rem 0;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+}
+
 li {
     margin: 1em 0;
 }
@@ -134,6 +156,7 @@ blockquote {
 kbd, code {
   display: inline-block;
   vertical-align: baseline;
+  line-height: 1;
   min-height: 1em;
   min-width: 0.5em;
   font-weight: normal;
@@ -161,6 +184,7 @@ pre > code * {
 }
 
 pre > code {
+    line-height: 1.33;
     border: none;
     margin: 0;
     padding: 0;
@@ -174,11 +198,7 @@ pre > code {
 /* 以下 CSS 定义字体家族，以及文字水平放置之方式。 */
 
 html {
-    font-family: 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
-}
-
-body {
-    line-height: 1.8;
+    font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
 }
 
 /* body,
@@ -187,16 +207,7 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote,
 ul, ol, dl,
 table {
-    font-family: 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
-}
-
-body,
-article,
-h1, h2, h3, h4, h5, h6,
-p, blockquote,
-ul, ol, dl,
-table {
-    line-height: 1.8;
+    font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
 } */
 
 kbd, pre, code {
@@ -208,15 +219,18 @@ pre {
 }
 
 h1 {
+    font-weight: 300;
     text-align: center;
 }
 
 h2 {
+    font-weight: 400;
     text-align: center;
 }
 
-/* h3 {
-} */
+h3 {
+    font-weight: 500;
+}
 
 h4 {
     font-weight: bold;
@@ -253,8 +267,8 @@ kbd, code {
 
 kbd {
     border-radius: 0.2rem;
-    margin: -5px 0.1em;
-    padding: 4px 0.3em;
+    margin: -3px 0.1em;
+    padding: 2px 0.3em;
 }
 
 code {
@@ -363,6 +377,11 @@ table,
 td,
 th {
     border-color: #999;
+}
+
+hr {
+    border-color: rgba(0, 0, 0, 0.219);
+    background-color: rgba(0, 0, 0, 0.219);
 }
 
 

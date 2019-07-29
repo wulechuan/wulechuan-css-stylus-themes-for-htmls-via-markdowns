@@ -1,11 +1,7 @@
 /* 以下 CSS 定义字体家族，以及文字水平放置之方式。 */
 
 html {
-    font-family: 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
-}
-
-body {
-    line-height: 1.8;
+    font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
 }
 
 /* body,
@@ -14,16 +10,7 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote,
 ul, ol, dl,
 table {
-    font-family: 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
-}
-
-body,
-article,
-h1, h2, h3, h4, h5, h6,
-p, blockquote,
-ul, ol, dl,
-table {
-    line-height: 1.8;
+    font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
 } */
 
 kbd, pre, code {
@@ -35,15 +22,18 @@ pre {
 }
 
 h1 {
+    font-weight: 300;
     text-align: center;
 }
 
 h2 {
+    font-weight: 400;
     text-align: center;
 }
 
-/* h3 {
-} */
+h3 {
+    font-weight: 500;
+}
 
 h4 {
     font-weight: bold;

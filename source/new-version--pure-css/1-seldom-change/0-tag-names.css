@@ -11,6 +11,19 @@ body {
     margin: 0 auto;
 }
 
+body {
+    line-height: 1.5;
+}
+
+/* body,
+article,
+h1, h2, h3, h4, h5, h6,
+p, blockquote,
+ul, ol, dl,
+table {
+    line-height: 1.5;
+} */
+
 h1, h2, h3, h4, h5, h6, dt {
     margin-left: -0.5rem;
     margin-right: -0.5rem;
@@ -75,6 +88,15 @@ img {
     text-align: center;
 }
 
+hr {
+    margin: 1rem 0;
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+}
+
 li {
     margin: 1em 0;
 }
@@ -98,6 +120,7 @@ blockquote {
 kbd, code {
   display: inline-block;
   vertical-align: baseline;
+  line-height: 1;
   min-height: 1em;
   min-width: 0.5em;
   font-weight: normal;
@@ -125,6 +148,7 @@ pre > code * {
 }
 
 pre > code {
+    line-height: 1.33;
     border: none;
     margin: 0;
     padding: 0;

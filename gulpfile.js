@@ -16,11 +16,9 @@ const del = require('del')
 const gulpIf = require('gulp-if');
 const rename = require('gulp-rename')
 const concatInto = require('gulp-concat')
-const minifyCSS = require('gulp-cssmin')
+const postCSS = require('gulp-postcss')
+const cssNano = require('cssnano')
 
-const cssminOptions = {
-	advanced: false
-}
 
 
 
@@ -56,6 +54,7 @@ const allCSSTaskTemplates = [
 		outputFolderPath: outputRootFolderPath,
 		outputFileBaseName: `wulechuan-styles-for-html-via-markdwon.${themeFileSuffixPlaceholderInTemplate}`,
 		sourceGlobsCommonSubPath: subPathOfSourceCSS,
+		shouldDiscardMostCommentsEvenIfNotCompressCSS: false,
 		sourceRelativeGlobs: [
 			'0-never-change/1-base-and-common.css',
 			'0-never-change/2-customized-selectors.css',
@@ -72,6 +71,7 @@ const allCSSTaskTemplates = [
 		outputFileBaseName: `wulechuan-styles-for-html-via-markdwon--firefox-addon.${themeFileSuffixPlaceholderInTemplate}`,
 		shouldOutputCompressedVersion: false,
 		sourceGlobsCommonSubPath: subPathOfSourceCSS,
+		shouldDiscardMostCommentsEvenIfNotCompressCSS: true,
 		sourceRelativeGlobs: [
 			'0-never-change/0-title-for-firefox-addon.css',
 			'0-never-change/1-base-and-common.css',
@@ -142,9 +142,12 @@ allCSSTaskTemplates.forEach(template => {
 	})
 })
 
+
+
 function createCSSTaskSettingsForOneTheme(cssTaskSettingsTemplate, outputFileNameSuffix, baseThemeName, hjThemeName) {
 	const {
 		outputFolderPath,
+		shouldDiscardMostCommentsEvenIfNotCompressCSS,
 		description,
 		outputFileBaseName,
 		sourceRelativeGlobs,
@@ -152,6 +155,7 @@ function createCSSTaskSettingsForOneTheme(cssTaskSettingsTemplate, outputFileNam
 
 	const cssTaskSettings = {
 		outputFolderPath,
+		shouldDiscardMostCommentsEvenIfNotCompressCSS,
 	}
 
 	if ('shouldNotOutputUncompressedVersion' in cssTaskSettingsTemplate) {
@@ -185,7 +189,7 @@ function createCSSTaskSettingsForOneTheme(cssTaskSettingsTemplate, outputFileNam
 
 
 
-function createGulpTaskBodiesViaSettings(taskSettings) {
+function createGulpTaskBodiesForConcatenationViaSettings(taskSettings) {
 	const {
 		sourceGlobsCommonSubPath,
 		sourceRelativeGlobs,
@@ -195,7 +199,8 @@ function createGulpTaskBodiesViaSettings(taskSettings) {
 		shouldNotOutputUncompressedVersion,
 		shouldOutputCompressedVersion,
 		compressor,
-		compressorOptions,
+		compressorOptions1, // Even if we don't compress files, we might still want to operate the output file somehow.
+		compressorOptions2,
 	} = taskSettings
 
 	if (!outputFolderPath) {
@@ -278,14 +283,18 @@ function createGulpTaskBodiesViaSettings(taskSettings) {
 
 
 			.pipe(gulpIf(
+				!shouldNotOutputUncompressedVersion && typeof compressor === 'function',
+				compressor(compressorOptions1)
+			))
+			.pipe(gulpIf(
 				!shouldNotOutputUncompressedVersion,
 				gulpWrite(outputFolderPath)
 			))
 
 
 			.pipe(gulpIf(
-				shouldOutputCompressedVersion,
-				compressor(compressorOptions)
+				shouldOutputCompressedVersion && typeof compressor === 'function',
+				compressor(compressorOptions2)
 			))
 			.pipe(gulpIf(
 				shouldOutputCompressedVersion,
@@ -302,6 +311,64 @@ function createGulpTaskBodiesViaSettings(taskSettings) {
 }
 
 
+function getPluginsForOnePostCSSInstance(shouldCompressCSS, shouldDiscardMostCommentsEvenIfNotCompressCSS) {
+	const pluginsForPostCSS = [
+		// autoprefixer({browsers: ['last 1 version']}),
+	]
+
+
+	const cssNanoOptions = {}
+	let shouldUseCSSNano = false
+	if (shouldCompressCSS) {
+
+		shouldUseCSSNano = true
+		cssNanoOptions.preset = 'default'
+
+	} else if (shouldDiscardMostCommentsEvenIfNotCompressCSS) {
+
+		shouldUseCSSNano = true
+		const customizedOptions = {
+			rawCache: false,
+			calc: false,
+			colormin: false,
+			convertValues: false,
+			// discardComments: true,
+			discardDuplicates: false,
+			discardEmpty: false,
+			discardOverridden: false,
+			mergeLonghand: false,
+			mergeRules: false,
+			minifyFontValues: false,
+			minifyGradients: false,
+			minifyParams: false,
+			minifySelectors: false,
+			normalizeCharset: false,
+			normalizeDisplayValues: false,
+			normalizePositions: false,
+			normalizeRepeatStyle: false,
+			normalizeString: false,
+			normalizeTimingFunctions: false,
+			normalizeUnicode: false,
+			normalizeUrl: false,
+			normalizeWhitespace: false,
+			orderedValues: false,
+			reduceInitial: false,
+			reduceTransforms: false,
+			svgo: false,
+			uniqueSelectors: false,
+		}
+
+		cssNanoOptions.preset = [ 'default', customizedOptions ]
+
+	}
+
+	if (shouldUseCSSNano) {
+		pluginsForPostCSS.push(cssNano(cssNanoOptions))
+	}
+
+	return pluginsForPostCSS
+}
+
 function createGulpTaskBodiesForBuildingCSS(taskSettings) {
 	taskSettings.outputFileExt = 'css'
 
@@ -313,10 +380,11 @@ function createGulpTaskBodiesForBuildingCSS(taskSettings) {
 		taskSettings.shouldOutputCompressedVersion = true
 	}
 
-	taskSettings.compressor = minifyCSS
-	taskSettings.compressorOptions = cssminOptions
+	taskSettings.compressor = postCSS
+	taskSettings.compressorOptions1 = getPluginsForOnePostCSSInstance(false, taskSettings.shouldDiscardMostCommentsEvenIfNotCompressCSS)
+	taskSettings.compressorOptions2 = getPluginsForOnePostCSSInstance(true,  taskSettings.shouldDiscardMostCommentsEvenIfNotCompressCSS)
 
-	createGulpTaskBodiesViaSettings(taskSettings)
+	createGulpTaskBodiesForConcatenationViaSettings(taskSettings)
 }
 
 
