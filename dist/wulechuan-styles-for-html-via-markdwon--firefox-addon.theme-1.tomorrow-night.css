@@ -500,8 +500,8 @@ pre, .hljs{
 #__markdown-viewer__tools{
     font-family:'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
     box-sizing:border-box;
-    max-width:40%;
-    min-width:480px;
+    max-width:none;
+    max-height:90%;
     display:flex;
     flex-direction:column-reverse;
     box-shadow:0 0 0.5rem 0 rgba(0, 0, 0, 0.319);
@@ -547,7 +547,7 @@ input#__markdown-viewer__show-tools:not(:checked) ~ label{
     margin:0 auto 0 auto;
     padding:0.5rem;
     box-sizing:border-box;
-    width:100%;
+    width:0;
     overflow:hidden !important;
     position:relative;
     text-align:left;
@@ -555,6 +555,10 @@ input#__markdown-viewer__show-tools:not(:checked) ~ label{
 }
 #__markdown-viewer__tools #__markdown-viewer__toc + .toggleable{
     display:none !important;
+}
+input#__markdown-viewer__show-tools:checked ~ .toggleable{
+    max-height:none;
+    width:100% !important;
 }
 #__markdown-viewer__tools .toggleable::after{
     content:'';
@@ -575,11 +579,6 @@ input#__markdown-viewer__show-tools:not(:checked) ~ label{
     text-align:center;
 }
 
-input#__markdown-viewer__show-tools:checked ~ .toggleable{
-    max-width:100%;
-    max-height:none;
-    width:100% !important;
-}
 
 #__markdown-viewer__tools .toggleable select{
     display:block;
@@ -681,13 +680,7 @@ a#__markdown-viewer__download:hover{
 }
 
 
-
 @media (max-width: 600px){
-    #__markdown-viewer__tools{
-        max-width:none;
-        min-width:90%;
-    }
-
     #__markdown-viewer__tools.fixed{
         top:0.2rem;
         right:0.2rem;
