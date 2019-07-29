@@ -141,6 +141,7 @@ pre {
 }
 
 table {
+    border-collapse: collapse;
     margin: 1rem auto;
     max-width: 90%;
 }

@@ -85,6 +85,11 @@ th {
     border-color: #999;
 }
 
+thead {
+    color: #eee;
+    background-color: #333;
+}
+
 hr {
     border-color: rgba(0, 0, 0, 0.219);
     background-color: rgba(0, 0, 0, 0.219);

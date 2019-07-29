@@ -145,6 +145,7 @@ pre{
 }
 
 table{
+    border-collapse:collapse;
     margin:1rem auto;
     max-width:90%;
 }
@@ -374,6 +375,11 @@ th{
     border-color:#999;
 }
 
+thead{
+    color:#eee;
+    background-color:#333;
+}
+
 hr{
     border-color:rgba(0, 0, 0, 0.219);
     background-color:rgba(0, 0, 0, 0.219);
@@ -516,6 +522,25 @@ pre, .hljs{
     }
 }
 
+input#__markdown-viewer__show-tools:not(:checked)~.toggleable{
+    max-height:0;
+    max-width:0;
+    padding:0;
+    margin:0;
+}
+
+#__markdown-viewer__tools select,
+#__markdown-viewer__toc *{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+#__markdown-viewer__tools>p{
+    text-align:center;
+    padding:0 .5em;
+}
+
 #__markdown-viewer__tools{
     font-family:'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
     box-sizing:border-box;
@@ -524,15 +549,29 @@ pre, .hljs{
     display:flex;
     flex-direction:column-reverse;
     box-shadow:0 0 0.5rem 0 rgba(0, 0, 0, 0.319);
+    z-index:100;
+    background-color:#555;
+    color:#eee;
+    border-radius:0.3rem;
+}
+
+#__markdown-viewer__tools.hidden{
+    display:none;
 }
 #__markdown-viewer__tools.fixed{
+    position:fixed;
     top:2rem;
     right:2rem;
 }
+
+input#__markdown-viewer__show-tools{
+    display:none;
+}
+
 #__markdown-viewer__tools, #__markdown-viewer__tools *{
     font-size:0.7rem;
 }
-#__markdown-viewer__tools > label[for]{
+#__markdown-viewer__tools > label[for="__markdown-viewer__show-tools"]{
     float:none;
     display:flex;
     align-items:center;
@@ -549,18 +588,34 @@ pre, .hljs{
     right:0.5rem;
     border-radius:50%;
     z-index:20;
+    background-color:#333;
+    cursor:pointer;
     box-shadow:0 0 0.2rem 0 rgba(255, 255, 255, 0.51);
 }
-#__markdown-viewer__tools > label[for],
+#__markdown-viewer__tools > label[for="__markdown-viewer__show-tools"],
 input#__markdown-viewer__show-tools:not(:checked) ~ label{
     margin:0;
 }
-#__markdown-viewer__tools > label[for]::after{
+#__markdown-viewer__tools > label[for="__markdown-viewer__show-tools"]::after{
+    content:"";
     float:none;
     right:auto;
     margin:0 auto;
     font-size:inherit;
+    width:0;
+    height:0;
+    border-style:solid;
+    border-color:white transparent;
+    border-width:4px 4px 0 4px;
+    transition:border-bottom .1s, border-top .1s .1s;
 }
+input#__markdown-viewer__show-tools:checked~label:after{
+    border-top-width:0;
+    border-bottom-width:4px;
+    transition:border-top .1s, border-bottom .1s .1s;
+}
+
+
 #__markdown-viewer__tools .toggleable{
     display:block;
     margin:0 auto 0 auto;
@@ -615,7 +670,10 @@ select#__markdown-viewer__hlselect{
 }
 
 a#__markdown-viewer__download{
+    -moz-appearance:button !important;
     display:inline-block;
+    text-align:center;
+    text-decoration:none;
     width:8rem;
     margin:0.25rem auto;
     padding:0.2em 1em;
@@ -630,6 +688,9 @@ a#__markdown-viewer__download:hover{
 }
 
 #__markdown-viewer__toc{
+    display:block;
+    padding:.5em;
+    border:0;
     box-sizing:border-box;
     margin:0.25rem 0.5rem 0.5rem 0.5rem;
     overflow:visible;
@@ -637,13 +698,24 @@ a#__markdown-viewer__download:hover{
     max-height:none;
 }
 #__markdown-viewer__toc::before{
+    content:"Table of Contents";
+    text-align:center;
+    display:block;
+    font-weight:bold;
+    
     margin:0 auto 0.5rem auto;
     text-decoration:none;
     font-weight:normal;
     opacity:0.5;
 }
+[lang*="zh"] #__markdown-viewer__toc::before{
+    content:"目录";
+}
+
 #__markdown-viewer__toc ul{
     list-style-type:none;
+    padding:0;
+    margin:0;
 }
 #__markdown-viewer__toc > ul ul{
     padding-left:2em;
@@ -663,6 +735,8 @@ a#__markdown-viewer__download:hover{
     margin-right:0.2em;
 }
 #__markdown-viewer__toc a[href^="#"]{
+    color:white;
+    text-decoration:none;
     display:block;
     margin:0;
     padding:0.25em 1em;

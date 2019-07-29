@@ -165,6 +165,7 @@ pre {
 }
 
 table {
+    border-collapse: collapse;
     margin: 1rem auto;
     max-width: 90%;
 }
@@ -429,6 +430,11 @@ table,
 td,
 th {
     border-color: #999;
+}
+
+thead {
+    color: #eee;
+    background-color: #333;
 }
 
 hr {
