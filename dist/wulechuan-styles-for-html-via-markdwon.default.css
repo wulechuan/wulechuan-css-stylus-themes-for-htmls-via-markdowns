@@ -136,9 +136,9 @@ ul, ol {
 blockquote {
     display: inline-block;
     vertical-align: top;
-    margin-left: 1rem;
-    margin-right: 0.8rem;
+    margin: 0.5rem 0.8rem 1rem 1rem;
     padding: 0.2em 1em;
+    border-style: solid;
 }
 
 ul blockquote,
