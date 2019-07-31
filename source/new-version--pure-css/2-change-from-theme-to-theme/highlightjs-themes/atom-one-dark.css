@@ -5,7 +5,29 @@
     中的【Atom One Dark】主题。
 */
 
-.CodeMirror-scroll, /* for CodeMirror(e.g. Typora) */
+
+/* for CodeMirror(e.g. Typora) begin */
+.CodeMirror-selected {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.CodeMirror-selectedtext {
+    color: black !important;
+    background-color: rgba(255, 255, 255, 0.319) !important;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left-color: rgb(255, 238, 88);
+}
+/* for CodeMirror(e.g. Typora) begin */
+
+
+
+
+/* for CodeMirror(e.g. Typora) begin */
+.CodeMirror-scroll,
+/* for CodeMirror(e.g. Typora) begin */
+/* for CodeMirror(e.g. Typora) end */
 pre,
 .hljs {
     color: #abb2bf;
@@ -14,6 +36,7 @@ pre,
 
 
 /* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-comment,
 .cm-comment,
 /* for CodeMirror(e.g. Typora) end */
 .hljs-comment,
@@ -23,6 +46,11 @@ pre,
     font-style: italic
 }
 
+
+/* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-keyword,
+.cm-keyword,
+/* for CodeMirror(e.g. Typora) end */
 .hljs-doctag,
 .hljs-keyword,
 .hljs-formula {
@@ -33,7 +61,11 @@ pre,
 
 /* for CodeMirror(e.g. Typora) begin */
 .cm-s-inner .cm-tag.cm-bracket,
-.cm-atom
+.cm-s-inner .cm-atom,
+.cm-s-inner .cm-operator,
+.cm-tag.cm-bracket,
+.cm-atom,
+.cm-operator
 /* for CodeMirror(e.g. Typora) end */ {
     color: inherit;
 }
@@ -41,6 +73,7 @@ pre,
 
 /* for CodeMirror(e.g. Typora) begin */
 .cm-s-inner .cm-tag,
+.cm-tag,
 /* for CodeMirror(e.g. Typora) end */
 .hljs-section,
 .hljs-name,
@@ -56,7 +89,10 @@ pre,
 
 
 /* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-property,
+.cm-s-inner .cm-string,
 .cm-property,
+.cm-string,
 /* for CodeMirror(e.g. Typora) end */
 .hljs-string,
 .hljs-regexp,
@@ -66,6 +102,13 @@ pre,
     color: #98c379
 }
 
+
+/* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-variable-2,
+.cm-variable-2,
+.cm-variable,
+/* for CodeMirror(e.g. Typora) end */
 .hljs-built_in,
 .hljs-class .hljs-title {
     color: #e6c07b
@@ -73,7 +116,12 @@ pre,
 
 
 /* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-number,
+.cm-s-inner .cm-attribute,
+.cm-s-inner .cm-qualifier,
 .cm-number,
+.cm-attribute,
+.cm-qualifier,
 /* for CodeMirror(e.g. Typora) end */
 .hljs-attr,
 .hljs-variable,
@@ -86,6 +134,12 @@ pre,
     color: #d19a66
 }
 
+/* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-builtin,
+.cm-def,
+.cm-builtin,
+/* for CodeMirror(e.g. Typora) end */
 .hljs-symbol,
 .hljs-bullet,
 .hljs-link,

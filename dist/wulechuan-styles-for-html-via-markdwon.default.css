@@ -182,7 +182,7 @@ kbd, code {
 pre {
     line-height: 1.33;
     display: block;
-    overflow-x: auto !important;
+    overflow-x: auto;
     padding: 0;
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
@@ -266,6 +266,18 @@ pre > code {
         margin-left: 0.7rem;
         margin-right: 0.5rem;
     }
+}
+
+
+
+
+
+/* for Typora */
+
+.md-fences .code-tooltip {
+    top: -2em;
+    bottom: auto;
+    border-radius: 0.2rem;
 }
 
 
@@ -464,6 +476,12 @@ hr {
 }
 
 
+/* for Typora */
+.code-tooltip {
+    color: #f96;
+    background-color: #222;
+}
+
 
 
 
@@ -486,7 +504,29 @@ hr {
     中的【Atom One Dark】主题。
 */
 
-.CodeMirror-scroll, /* for CodeMirror(e.g. Typora) */
+
+/* for CodeMirror(e.g. Typora) begin */
+.CodeMirror-selected {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.CodeMirror-selectedtext {
+    color: black !important;
+    background-color: rgba(255, 255, 255, 0.319) !important;
+}
+
+.CodeMirror div.CodeMirror-cursor {
+    border-left-color: rgb(255, 238, 88);
+}
+/* for CodeMirror(e.g. Typora) begin */
+
+
+
+
+/* for CodeMirror(e.g. Typora) begin */
+.CodeMirror-scroll,
+/* for CodeMirror(e.g. Typora) begin */
+/* for CodeMirror(e.g. Typora) end */
 pre,
 .hljs {
     color: #abb2bf;
@@ -495,6 +535,7 @@ pre,
 
 
 /* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-comment,
 .cm-comment,
 /* for CodeMirror(e.g. Typora) end */
 .hljs-comment,
@@ -504,6 +545,11 @@ pre,
     font-style: italic
 }
 
+
+/* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-keyword,
+.cm-keyword,
+/* for CodeMirror(e.g. Typora) end */
 .hljs-doctag,
 .hljs-keyword,
 .hljs-formula {
@@ -514,7 +560,11 @@ pre,
 
 /* for CodeMirror(e.g. Typora) begin */
 .cm-s-inner .cm-tag.cm-bracket,
-.cm-atom
+.cm-s-inner .cm-atom,
+.cm-s-inner .cm-operator,
+.cm-tag.cm-bracket,
+.cm-atom,
+.cm-operator
 /* for CodeMirror(e.g. Typora) end */ {
     color: inherit;
 }
@@ -522,6 +572,7 @@ pre,
 
 /* for CodeMirror(e.g. Typora) begin */
 .cm-s-inner .cm-tag,
+.cm-tag,
 /* for CodeMirror(e.g. Typora) end */
 .hljs-section,
 .hljs-name,
@@ -537,7 +588,10 @@ pre,
 
 
 /* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-property,
+.cm-s-inner .cm-string,
 .cm-property,
+.cm-string,
 /* for CodeMirror(e.g. Typora) end */
 .hljs-string,
 .hljs-regexp,
@@ -547,6 +601,13 @@ pre,
     color: #98c379
 }
 
+
+/* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-variable-2,
+.cm-variable-2,
+.cm-variable,
+/* for CodeMirror(e.g. Typora) end */
 .hljs-built_in,
 .hljs-class .hljs-title {
     color: #e6c07b
@@ -554,7 +615,12 @@ pre,
 
 
 /* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-number,
+.cm-s-inner .cm-attribute,
+.cm-s-inner .cm-qualifier,
 .cm-number,
+.cm-attribute,
+.cm-qualifier,
 /* for CodeMirror(e.g. Typora) end */
 .hljs-attr,
 .hljs-variable,
@@ -567,6 +633,12 @@ pre,
     color: #d19a66
 }
 
+/* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-builtin,
+.cm-def,
+.cm-builtin,
+/* for CodeMirror(e.g. Typora) end */
 .hljs-symbol,
 .hljs-bullet,
 .hljs-link,
@@ -647,6 +719,7 @@ pre,
 
 pre {
     border-radius: 0;
+    overflow: visible;
 }
 
 .CodeMirror-scroll {
@@ -655,9 +728,16 @@ pre {
     line-height: 1.33;
 }
 
-.CodeMirror-code pre.CodeMirror-line {
+
+/*
+    The rule below is not applied due to the
+    size of fake "selected text backplate" requires
+    the build-in 4px padding-left and padding-right
+    of the pre.CodeMirror-line.
+*/
+/* .CodeMirror-code pre.CodeMirror-line {
     padding: 0;
-}
+} */
 
 .typora-node content {
     padding: 3rem 1rem 4rem 1rem;

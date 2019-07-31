@@ -1,5 +1,6 @@
 pre {
     border-radius: 0;
+    overflow: visible;
 }
 
 .CodeMirror-scroll {
@@ -8,9 +9,16 @@ pre {
     line-height: 1.33;
 }
 
-.CodeMirror-code pre.CodeMirror-line {
+
+/*
+    The rule below is not applied due to the
+    size of fake "selected text backplate" requires
+    the build-in 4px padding-left and padding-right
+    of the pre.CodeMirror-line.
+*/
+/* .CodeMirror-code pre.CodeMirror-line {
     padding: 0;
-}
+} */
 
 .typora-node content {
     padding: 3rem 1rem 4rem 1rem;

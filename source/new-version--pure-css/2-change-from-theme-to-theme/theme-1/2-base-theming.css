@@ -97,5 +97,11 @@ hr {
 }
 
 
+/* for Typora */
+.code-tooltip {
+    color: #f96;
+    background-color: #222;
+}
+
 
 

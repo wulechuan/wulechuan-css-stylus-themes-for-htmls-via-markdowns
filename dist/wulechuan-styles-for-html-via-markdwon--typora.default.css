@@ -156,7 +156,7 @@ kbd, code{
 pre{
     line-height:1.33;
     display:block;
-    overflow-x:auto !important;
+    overflow-x:auto;
     padding:0;
     margin-top:0.5rem;
     margin-bottom:1.5rem;
@@ -234,6 +234,12 @@ pre > code{
         margin-left:0.7rem;
         margin-right:0.5rem;
     }
+}
+
+.md-fences .code-tooltip{
+    top:-2em;
+    bottom:auto;
+    border-radius:0.2rem;
 }
 
 html{
@@ -399,57 +405,65 @@ hr{
     border-color:rgba(0, 0, 0, 0.219);
     background-color:rgba(0, 0, 0, 0.219);
 }
+.code-tooltip{
+    color:#f96;
+    background-color:#222;
+}
 
 @media (max-width: 600px){
     h1{
         font-weight:400;
     }
 }
+.CodeMirror-selected{
+    background-color:rgba(255, 255, 255, 0.15) !important;
+}
 
-.CodeMirror-scroll,  pre, .hljs{
+.CodeMirror-selectedtext{
+    color:black !important;
+    background-color:rgba(255, 255, 255, 0.319) !important;
+}
+
+.CodeMirror div.CodeMirror-cursor{
+    border-left-color:rgb(255, 238, 88);
+}
+.CodeMirror-scroll,   pre, .hljs{
     color:#abb2bf;
     background-color:#282c34;
 }
-.cm-comment,  .hljs-comment, .hljs-quote{
+.cm-s-inner .cm-comment, .cm-comment,  .hljs-comment, .hljs-quote{
     color:#000;
     background-color:#23ff7e;
     font-style:italic
 }
-
-.hljs-doctag,
-.hljs-keyword,
-.hljs-formula{
+.cm-s-inner .cm-keyword, .cm-keyword,  .hljs-doctag, .hljs-keyword, .hljs-formula{
     color:#c678dd
 }
 .cm-s-inner .cm-tag.cm-bracket,
-.cm-atom{
+.cm-s-inner .cm-atom,
+.cm-s-inner .cm-operator,
+.cm-tag.cm-bracket,
+.cm-atom,
+.cm-operator{
     color:inherit;
 }
-.cm-s-inner .cm-tag,  .hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst{
+.cm-s-inner .cm-tag, .cm-tag,  .hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst{
     color:#e06c75
 }
 
 .hljs-literal{
     color:#56b6c2
 }
-.cm-property,  .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string{
+.cm-s-inner .cm-property, .cm-s-inner .cm-string, .cm-property, .cm-string,  .hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta-string{
     color:#98c379
 }
-
-.hljs-built_in,
-.hljs-class .hljs-title{
+.cm-s-inner .cm-variable, .cm-s-inner .cm-variable-2, .cm-variable-2, .cm-variable,  .hljs-built_in, .hljs-class .hljs-title{
     color:#e6c07b
 }
-.cm-number,  .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number{
+.cm-s-inner .cm-number, .cm-s-inner .cm-attribute, .cm-s-inner .cm-qualifier, .cm-number, .cm-attribute, .cm-qualifier,  .hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number{
     color:#d19a66
 }
-
-.hljs-symbol,
-.hljs-bullet,
-.hljs-link,
-.hljs-meta,
-.hljs-selector-id,
-.hljs-title{
+.cm-s-inner .cm-def, .cm-s-inner .cm-builtin, .cm-def, .cm-builtin,  .hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title{
     color:#61aeee
 }
 
@@ -514,16 +528,13 @@ hr{
 
 pre{
     border-radius:0;
+    overflow:visible;
 }
 
 .CodeMirror-scroll{
     padding:0.5em 1em;
     border-radius:0.3rem;
     line-height:1.33;
-}
-
-.CodeMirror-code pre.CodeMirror-line{
-    padding:0;
 }
 
 .typora-node content{
