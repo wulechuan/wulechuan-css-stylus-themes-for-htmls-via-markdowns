@@ -35,10 +35,10 @@ a[href]:hover{
 }
 
 h1, h2, h3, h4, h5, h6, dt, p{
-    margin-left:auto;
-    margin-right:auto;
-    padding-left:0.5rem;
-    padding-right:0.5rem;
+    margin-left:-0.5em;
+    margin-right:-0.5em;
+    padding-left:0.5em;
+    padding-right:0.5em;
 }
 
 pre{
@@ -121,19 +121,36 @@ li{
     margin:0.5em 0;
 }
 
-li::marker{
-    margin-right:1em;
-}
 
 ul, ol{
-    padding-left:3em;
+    padding-left:1.5em;
+}
+
+@supports selector(::marker){
+    ul, ol{
+        padding-left:3em;
+    }
+
+    li::marker{
+        margin-right:1em;
+    }
+}
+
+@-moz-document url-prefix(){
+    ul, ol{
+        padding-left:3em;
+    }
+
+    li::marker{
+        margin-right:1em;
+    }
 }
 
 blockquote{
     display:inline-block;
     vertical-align:top;
-    margin:0.5rem 0.8rem 1rem 1rem;
-    padding:0.2em 1em;
+    margin:0.5rem 0.8rem 1rem 1.2rem;
+    padding:0.2em 2em 0.2em 1em;
     border-style:solid;
 }
 
@@ -525,6 +542,18 @@ hr{
 
 
 
+
+h1, h2, h3, h4, h5, h6, dt, p{
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:0.5rem;
+    padding-right:0.5rem;
+}
+
+ul blockquote,
+ol blockquote{
+    margin-left:0.5rem;
+}
 
 pre{
     border-radius:0;

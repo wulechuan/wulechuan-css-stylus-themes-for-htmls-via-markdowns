@@ -1,3 +1,15 @@
+h1, h2, h3, h4, h5, h6, dt, p {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+ul blockquote,
+ol blockquote {
+    margin-left: 0.5rem;
+}
+
 pre {
     border-radius: 0;
     overflow: visible;
