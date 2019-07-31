@@ -1,9 +1,14 @@
-.CodeMirror-code {
+pre {
+    border-radius: 0;
+}
+
+.CodeMirror-scroll {
     padding: 0.5em 1em;
+    border-radius: 0.3rem;
+    line-height: 1.33;
 }
 
 .CodeMirror-code pre.CodeMirror-line {
-    line-height: 1.33;
     padding: 0;
 }
 

@@ -5,7 +5,7 @@
     中的【Atom One Dark】主题。
 */
 
-.CodeMirror-code, /* for CodeMirror(e.g. Typora) */
+.CodeMirror-scroll, /* for CodeMirror(e.g. Typora) */
 pre,
 .hljs {
     color: #abb2bf;

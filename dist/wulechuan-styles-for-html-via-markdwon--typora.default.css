@@ -22,11 +22,28 @@ body{
     margin:0 auto;
 }
 
+a{
+    text-decoration:none;
+}
+
+a:not([href]){
+    font-style:italic;
+}
+
+a[href]:hover{
+    text-decoration:underline;
+}
+
 h1, h2, h3, h4, h5, h6, dt, p{
     margin-left:auto;
     margin-right:auto;
     padding-left:0.5rem;
     padding-right:0.5rem;
+}
+
+pre{
+    margin-left:1rem;
+    margin-right:1rem;
 }
 
 h1, h2, h3, h4, h5, h6, dt{
@@ -141,7 +158,8 @@ pre{
     display:block;
     overflow-x:auto !important;
     padding:0;
-    margin:0.5rem auto 1.5rem auto;
+    margin-top:0.5rem;
+    margin-bottom:1.5rem;
 }
 
 table{
@@ -388,7 +406,7 @@ hr{
     }
 }
 
-.CodeMirror-code,  pre, .hljs{
+.CodeMirror-scroll,  pre, .hljs{
     color:#abb2bf;
     background-color:#282c34;
 }
@@ -494,12 +512,17 @@ hr{
 
 
 
-.CodeMirror-code{
+pre{
+    border-radius:0;
+}
+
+.CodeMirror-scroll{
     padding:0.5em 1em;
+    border-radius:0.3rem;
+    line-height:1.33;
 }
 
 .CodeMirror-code pre.CodeMirror-line{
-    line-height:1.33;
     padding:0;
 }
 

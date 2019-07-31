@@ -87,7 +87,7 @@ const allCSSTaskTemplates = [
 		],
 	},
 	{
-		shouldSkipThisTemplate: true,
+		shouldSkipThisTemplate: false,
 		description: `Building CSS\n    senario: specifically for typora,\n    theme:   ${themeFileSuffixPlaceholderInTemplate}`,
 		outputFolderPath: outputRootFolderPath,
 		outputFileBaseName: `${outputFileNamePrefix}--typora.${themeFileSuffixPlaceholderInTemplate}`,
