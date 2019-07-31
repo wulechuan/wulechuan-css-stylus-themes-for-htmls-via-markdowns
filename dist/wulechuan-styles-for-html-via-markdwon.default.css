@@ -163,6 +163,7 @@ kbd, code {
 }
 
 pre {
+    line-height: 1.33;
     display: block;
     overflow-x: auto !important;
     padding: 0;
@@ -189,7 +190,7 @@ pre > code * {
 }
 
 pre > code {
-    line-height: 1.33;
+    line-height: inherit;
     padding: 0.5em 1em;
     border: none !important;
     margin: 0 !important;
@@ -270,10 +271,6 @@ table {
 
 kbd, pre, code {
     font-family: 'PT Mono', 'consolas', 'Courier New', Courier, monospace, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
-}
-
-pre {
-    line-height: 2;
 }
 
 h1 {
@@ -471,12 +468,17 @@ hr {
     中的【Atom One Dark】主题。
 */
 
+.CodeMirror-code, /* for CodeMirror(e.g. Typora) */
 pre,
 .hljs {
     color: #abb2bf;
     background-color: #282c34;
 }
 
+
+/* for CodeMirror(e.g. Typora) begin */
+.cm-comment,
+/* for CodeMirror(e.g. Typora) end */
 .hljs-comment,
 .hljs-quote {
     color: #000;
@@ -490,6 +492,19 @@ pre,
     color: #c678dd
 }
 
+
+
+/* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-tag.cm-bracket,
+.cm-atom
+/* for CodeMirror(e.g. Typora) end */ {
+    color: inherit;
+}
+
+
+/* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-tag,
+/* for CodeMirror(e.g. Typora) end */
 .hljs-section,
 .hljs-name,
 .hljs-selector-tag,
@@ -502,6 +517,10 @@ pre,
     color: #56b6c2
 }
 
+
+/* for CodeMirror(e.g. Typora) begin */
+.cm-property,
+/* for CodeMirror(e.g. Typora) end */
 .hljs-string,
 .hljs-regexp,
 .hljs-addition,
@@ -515,6 +534,10 @@ pre,
     color: #e6c07b
 }
 
+
+/* for CodeMirror(e.g. Typora) begin */
+.cm-number,
+/* for CodeMirror(e.g. Typora) end */
 .hljs-attr,
 .hljs-variable,
 .hljs-template-variable,
@@ -604,6 +627,15 @@ pre,
 
 
 
+.CodeMirror-code {
+    padding: 0.5em 1em;
+}
+
+.CodeMirror-code pre.CodeMirror-line {
+    line-height: 1.33;
+    padding: 0;
+}
+
 .typora-node content {
     padding: 3rem 1rem 4rem 1rem;
     background-color: #ddd;
@@ -617,3 +649,7 @@ pre,
     background-color: #fff;
     box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1);
 }
+
+
+
+

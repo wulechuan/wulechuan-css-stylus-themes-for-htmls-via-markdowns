@@ -1,3 +1,12 @@
+.CodeMirror-code {
+    padding: 0.5em 1em;
+}
+
+.CodeMirror-code pre.CodeMirror-line {
+    line-height: 1.33;
+    padding: 0;
+}
+
 .typora-node content {
     padding: 3rem 1rem 4rem 1rem;
     background-color: #ddd;
@@ -11,3 +20,7 @@
     background-color: #fff;
     box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1);
 }
+
+
+
+

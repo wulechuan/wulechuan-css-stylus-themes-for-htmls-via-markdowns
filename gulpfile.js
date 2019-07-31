@@ -39,8 +39,8 @@ const baseThemeCandidates = [
 ]
 const highlightjsThemeCandidates = [
 	'atom-one-dark',
-	'agate',
-	'tomorrow-night',
+	// 'agate',
+	// 'tomorrow-night',
 ]
 
 
@@ -91,8 +91,9 @@ const allCSSTaskTemplates = [
 		description: `Building CSS\n    senario: specifically for typora,\n    theme:   ${themeFileSuffixPlaceholderInTemplate}`,
 		outputFolderPath: outputRootFolderPath,
 		outputFileBaseName: `${outputFileNamePrefix}--typora.${themeFileSuffixPlaceholderInTemplate}`,
+		shouldOutputCompressedVersion: false,
 		sourceGlobsCommonSubPath: subPathOfSourceCSS,
-		shouldDiscardMostCommentsEvenIfNotCompressCSS: false,
+		shouldDiscardMostCommentsEvenIfNotCompressCSS: true,
 		sourceRelativeGlobs: [
 			'0-never-change/**/*.css',
 			'1-seldom-change/**/*.css',

@@ -17,10 +17,6 @@ kbd, pre, code {
     font-family: 'PT Mono', 'consolas', 'Courier New', Courier, monospace, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
 }
 
-pre {
-    line-height: 2;
-}
-
 h1 {
     font-weight: 300;
     text-align: center;

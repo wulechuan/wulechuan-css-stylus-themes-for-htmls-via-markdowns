@@ -139,6 +139,7 @@ kbd, code {
 }
 
 pre {
+    line-height: 1.33;
     display: block;
     overflow-x: auto !important;
     padding: 0;
@@ -165,7 +166,7 @@ pre > code * {
 }
 
 pre > code {
-    line-height: 1.33;
+    line-height: inherit;
     padding: 0.5em 1em;
     border: none !important;
     margin: 0 !important;

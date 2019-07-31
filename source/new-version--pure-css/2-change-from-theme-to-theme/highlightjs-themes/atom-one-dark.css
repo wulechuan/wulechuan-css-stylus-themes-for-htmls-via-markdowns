@@ -5,12 +5,17 @@
     中的【Atom One Dark】主题。
 */
 
+.CodeMirror-code, /* for CodeMirror(e.g. Typora) */
 pre,
 .hljs {
     color: #abb2bf;
     background-color: #282c34;
 }
 
+
+/* for CodeMirror(e.g. Typora) begin */
+.cm-comment,
+/* for CodeMirror(e.g. Typora) end */
 .hljs-comment,
 .hljs-quote {
     color: #000;
@@ -24,6 +29,19 @@ pre,
     color: #c678dd
 }
 
+
+
+/* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-tag.cm-bracket,
+.cm-atom
+/* for CodeMirror(e.g. Typora) end */ {
+    color: inherit;
+}
+
+
+/* for CodeMirror(e.g. Typora) begin */
+.cm-s-inner .cm-tag,
+/* for CodeMirror(e.g. Typora) end */
 .hljs-section,
 .hljs-name,
 .hljs-selector-tag,
@@ -36,6 +54,10 @@ pre,
     color: #56b6c2
 }
 
+
+/* for CodeMirror(e.g. Typora) begin */
+.cm-property,
+/* for CodeMirror(e.g. Typora) end */
 .hljs-string,
 .hljs-regexp,
 .hljs-addition,
@@ -49,6 +71,10 @@ pre,
     color: #e6c07b
 }
 
+
+/* for CodeMirror(e.g. Typora) begin */
+.cm-number,
+/* for CodeMirror(e.g. Typora) end */
 .hljs-attr,
 .hljs-variable,
 .hljs-template-variable,
