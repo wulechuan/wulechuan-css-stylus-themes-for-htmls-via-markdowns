@@ -22,19 +22,22 @@ html{
 
 body{
     font-size:0.9rem;
+    line-height:1.5;
     padding:5rem 4rem 6rem 4rem;
     max-width:50rem;
     margin:0 auto;
 }
 
-body{
-    line-height:1.5;
+h1, h2, h3, h4, h5, h6, dt, p{
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:0.5rem;
+    padding-right:0.5rem;
 }
 
 h1, h2, h3, h4, h5, h6, dt{
-    margin-left:-0.5rem;
-    margin-right:-0.5rem;
-    padding:0.5em 0.5rem;
+    padding-top:0.5em;
+    padding-bottom:0.5em;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -74,13 +77,15 @@ h5{
 }
 
 ul, ol, dd{
-    margin-left:0.5rem;
-    margin-right:0.5rem;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 p{
-    margin:0.5em -0.5em;
-    padding:0.25em 0.5em;
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+    padding-top:0.25em;
+    padding-bottom:0.25em;
 }
 
 img{
@@ -93,7 +98,7 @@ img{
 }
 
 hr{
-    margin:1rem 0;
+    margin:1rem 0.5rem 2rem;
     padding:0;
     height:0;
     overflow:hidden;
@@ -102,7 +107,7 @@ hr{
 }
 
 li{
-    margin:1em 0;
+    margin:0.5em 0;
 }
 
 li::marker{
@@ -294,6 +299,7 @@ img{
 html{
     background-color:#ddd;
 }
+
 body{
     color:#383838;
     background-color:#fff;
@@ -391,7 +397,8 @@ hr{
     }
 }
 
-pre, .hljs{
+pre,
+.hljs{
     color:#abb2bf;
     background-color:#282c34;
 }

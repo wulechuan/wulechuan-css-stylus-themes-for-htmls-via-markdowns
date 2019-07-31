@@ -1,0 +1,13 @@
+.typora-node content {
+    padding: 3rem 1rem 4rem 1rem;
+    background-color: #ddd;
+}
+
+#write {
+    padding: 5rem 4rem 6rem 4rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    color: #383838;
+    background-color: #fff;
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1);
+}

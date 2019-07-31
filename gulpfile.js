@@ -13,6 +13,7 @@ const {
 
 const del = require('del')
 
+const gulpArrayPipe = require('gulp-pipe')
 const gulpIf = require('gulp-if');
 const rename = require('gulp-rename')
 const concatInto = require('gulp-concat')
@@ -30,6 +31,8 @@ const outputRootFolderPath = 'dist'
 
 const subPathOfSourceCSS = 'new-version--pure-css'
 
+
+const outputFileNamePrefix = 'wulechuan-styles-for-html-via-markdwon'
 
 const baseThemeCandidates = [
 	'theme-1',
@@ -50,9 +53,10 @@ const highlightjsThemeNamePlaceholderInTemplate = '<highlightjs-theme-name>'
 
 const allCSSTaskTemplates = [
 	{
-		description: `Building CSS: the generic version, theme "${themeFileSuffixPlaceholderInTemplate}"`,
+		shouldSkipThisTemplate: false,
+		description: `Building CSS\n    senario: the generic version,\n    theme:   ${themeFileSuffixPlaceholderInTemplate}`,
 		outputFolderPath: outputRootFolderPath,
-		outputFileBaseName: `wulechuan-styles-for-html-via-markdwon.${themeFileSuffixPlaceholderInTemplate}`,
+		outputFileBaseName: `${outputFileNamePrefix}.${themeFileSuffixPlaceholderInTemplate}`,
 		sourceGlobsCommonSubPath: subPathOfSourceCSS,
 		shouldDiscardMostCommentsEvenIfNotCompressCSS: false,
 		sourceRelativeGlobs: [
@@ -61,12 +65,14 @@ const allCSSTaskTemplates = [
 			`2-change-from-theme-to-theme/${baseThemeNamePlaceholderInTemplate}/**/*.css`,
 			`2-change-from-theme-to-theme/highlightjs-themes/${highlightjsThemeNamePlaceholderInTemplate}.css`,
 			'3-media-of-printing.css',
+			'4-typora/**/*.css',
 		],
 	},
 	{
-		description: `Building CSS: specifically for firefox addon "Markdown Viewer Webext", theme "${themeFileSuffixPlaceholderInTemplate}"`,
+		shouldSkipThisTemplate: false,
+		description: `Building CSS\n    senario: specifically for firefox addon "Markdown Viewer Webext",\n    theme:   ${themeFileSuffixPlaceholderInTemplate}`,
 		outputFolderPath: outputRootFolderPath,
-		outputFileBaseName: `wulechuan-styles-for-html-via-markdwon--firefox-addon.${themeFileSuffixPlaceholderInTemplate}`,
+		outputFileBaseName: `${outputFileNamePrefix}--firefox-addon.${themeFileSuffixPlaceholderInTemplate}`,
 		shouldOutputCompressedVersion: false,
 		sourceGlobsCommonSubPath: subPathOfSourceCSS,
 		shouldDiscardMostCommentsEvenIfNotCompressCSS: true,
@@ -80,6 +86,22 @@ const allCSSTaskTemplates = [
 			'4-firefox-addon-specific.css',
 		],
 	},
+	{
+		shouldSkipThisTemplate: true,
+		description: `Building CSS\n    senario: specifically for typora,\n    theme:   ${themeFileSuffixPlaceholderInTemplate}`,
+		outputFolderPath: outputRootFolderPath,
+		outputFileBaseName: `${outputFileNamePrefix}--typora.${themeFileSuffixPlaceholderInTemplate}`,
+		sourceGlobsCommonSubPath: subPathOfSourceCSS,
+		shouldDiscardMostCommentsEvenIfNotCompressCSS: false,
+		sourceRelativeGlobs: [
+			'0-never-change/**/*.css',
+			'1-seldom-change/**/*.css',
+			`2-change-from-theme-to-theme/${baseThemeNamePlaceholderInTemplate}/**/*.css`,
+			`2-change-from-theme-to-theme/highlightjs-themes/${highlightjsThemeNamePlaceholderInTemplate}.css`,
+			'3-media-of-printing.css',
+			'4-typora/**/*.css',
+		],
+	},
 ]
 
 
@@ -89,6 +111,10 @@ const allCSSTaskTemplates = [
 
 const allCSSTasks = []
 allCSSTaskTemplates.forEach(template => {
+	if (template.shouldSkipThisTemplate) {
+		return
+	}
+
 	const _baseThemeCandidates = [
 		'default',
 		...baseThemeCandidates,
@@ -194,10 +220,15 @@ function createGulpTaskBodiesForConcatenationViaSettings(taskSettings) {
 		outputFileExt,
 		shouldNotOutputUncompressedVersion,
 		shouldOutputCompressedVersion,
-		compressor,
+		compressor1, // Even if we don't compress files, we might still want to operate the output file somehow.
+		compressor2,
 		compressorOptions1, // Even if we don't compress files, we might still want to operate the output file somehow.
 		compressorOptions2,
 	} = taskSettings
+	
+	const compressor1IsProvided = typeof compressor1 === 'function'
+	const compressor2IsProvided = typeof compressor2 === 'function'
+
 
 	if (!outputFolderPath) {
 		throw TypeError('"outputFolderPath" is required for a task settings object.')
@@ -265,44 +296,42 @@ function createGulpTaskBodiesForConcatenationViaSettings(taskSettings) {
 			outputFileName2,
 		].map(baseName => path.join(outputFolderPath, baseName))
 
-		console.log('[Task] Deleting these files if exist:')
-		possibleOutputFilePaths.forEach(filePath => console.log('\t', filePath))
+		console.log('\nDeleting these files if exist:')
+		possibleOutputFilePaths.forEach(filePath => console.log('    ', filePath))
 
 		return del(possibleOutputFilePaths)
 	}
 
 	function taskMainPart() {
-		console.log(`[Task] "${taskDescription}"`)
+		console.log(`\n${taskDescription}`)
 
-		return gulpRead(cssSourceGlobs)
-			.pipe(concatInto(outputFileName1))
+		const pipe = [
+			gulpRead(cssSourceGlobs),
+			concatInto(outputFileName1),
+		]
 
+		if (!shouldNotOutputUncompressedVersion) {
+			if (compressor1IsProvided) {
+				pipe.push(compressor1(compressorOptions1))
+			}
 
-			.pipe(gulpIf(
-				!shouldNotOutputUncompressedVersion && typeof compressor === 'function',
-				compressor(compressorOptions1)
-			))
-			.pipe(gulpIf(
-				!shouldNotOutputUncompressedVersion,
-				gulpWrite(outputFolderPath)
-			))
+			pipe.push(gulpWrite(outputFolderPath))
+		}
 
+		if (shouldOutputCompressedVersion) {
+			if (compressor2IsProvided) {
+				pipe.push(compressor2(compressorOptions2))
+			}
 
-			.pipe(gulpIf(
-				shouldOutputCompressedVersion && typeof compressor === 'function',
-				compressor(compressorOptions2)
-			))
-			.pipe(gulpIf(
-				shouldOutputCompressedVersion,
-				rename((fullPathName) => {
-					fullPathName.basename += '.min'
-					return fullPathName
-				})
-			))
-			.pipe(gulpIf(
-				shouldOutputCompressedVersion,
-				gulpWrite(outputFolderPath)
-			))
+			pipe.push(rename(fullPathName => {
+				fullPathName.basename += '.min'
+				return fullPathName
+			}))
+
+			pipe.push(gulpWrite(outputFolderPath))
+		}
+
+		return gulpArrayPipe(pipe)
 	}
 }
 
@@ -362,6 +391,10 @@ function getPluginsForOnePostCSSInstance(shouldCompressCSS, shouldDiscardMostCom
 		pluginsForPostCSS.push(cssNano(cssNanoOptions))
 	}
 
+	if (pluginsForPostCSS.length < 1) {
+		return null
+	}
+
 	return pluginsForPostCSS
 }
 
@@ -376,9 +409,13 @@ function createGulpTaskBodiesForBuildingCSS(taskSettings) {
 		taskSettings.shouldOutputCompressedVersion = true
 	}
 
-	taskSettings.compressor = postCSS
-	taskSettings.compressorOptions1 = getPluginsForOnePostCSSInstance(false, taskSettings.shouldDiscardMostCommentsEvenIfNotCompressCSS)
-	taskSettings.compressorOptions2 = getPluginsForOnePostCSSInstance(true,  taskSettings.shouldDiscardMostCommentsEvenIfNotCompressCSS)
+	const compressorOptions1 = getPluginsForOnePostCSSInstance(false, taskSettings.shouldDiscardMostCommentsEvenIfNotCompressCSS)
+	const compressorOptions2 = getPluginsForOnePostCSSInstance(true,  taskSettings.shouldDiscardMostCommentsEvenIfNotCompressCSS)
+
+	taskSettings.compressor1 = compressorOptions1 ? postCSS : null
+	taskSettings.compressor2 = compressorOptions2 ? postCSS : null
+	taskSettings.compressorOptions1 = compressorOptions1
+	taskSettings.compressorOptions2 = compressorOptions2
 
 	createGulpTaskBodiesForConcatenationViaSettings(taskSettings)
 }

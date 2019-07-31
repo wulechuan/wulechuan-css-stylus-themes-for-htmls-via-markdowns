@@ -5,7 +5,8 @@
     中的【Atom One Dark】主题。
 */
 
-pre, .hljs {
+pre,
+.hljs {
     color: #abb2bf;
     background-color: #282c34;
 }
