@@ -235,7 +235,7 @@ a#__markdown-viewer__download:hover {
 @supports (backdrop-filter: blur(15px)) or (-webkit-backdrop-filter: blur(15px)) {
     #__markdown-viewer__tools {
         color: black;
-        background-color: rgba(64, 128, 96, 0.128);
+        background-color: rgba(187, 219, 202, 0.6);
         /* box-shadow: none; */
     }
 
