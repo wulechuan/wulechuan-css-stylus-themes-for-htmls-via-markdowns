@@ -89,6 +89,14 @@ h5 {
 /* h6 {
 } */
 
+input[type="checkbox"] {
+    width: 1.4em;
+    height: 1.4em;
+    display: inline-block;
+    vertical-align: middle;
+    margin: -0.2em 0.6em 0 0;
+}
+
 ul, ol, dd {
     margin-left: auto;
     margin-right: auto;
@@ -105,18 +113,14 @@ img {
     border-style: solid;
     display: block;
     margin: 0.5rem auto 1rem auto;
-    max-width: 50%;
+    max-width: 75%;
     font-size: 80%;
     text-align: center;
 }
 
 hr {
     margin: 1rem 0.5rem 2rem;
-    padding: 0;
-    height: 0;
-    overflow: hidden;
     border-width: 1px 0 0 0;
-    border-style: solid;
 }
 
 li {

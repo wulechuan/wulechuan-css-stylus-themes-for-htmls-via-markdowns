@@ -4,6 +4,15 @@ html {
     font-size: 20px;
 }
 
+label[for] {
+    cursor: pointer;
+}
 
+hr {
+    padding: 0;
+    height: 0;
+    overflow: hidden;
+    border-style: solid;
+}
 
 

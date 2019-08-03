@@ -8,6 +8,17 @@ html{
     font-size:20px;
 }
 
+label[for]{
+    cursor:pointer;
+}
+
+hr{
+    padding:0;
+    height:0;
+    overflow:hidden;
+    border-style:solid;
+}
+
 .document-author{
     text-align:center;
 }
@@ -93,6 +104,14 @@ h5{
     margin-bottom:0.5em;
 }
 
+input[type="checkbox"]{
+    width:1.4em;
+    height:1.4em;
+    display:inline-block;
+    vertical-align:middle;
+    margin:-0.2em 0.6em 0 0;
+}
+
 ul, ol, dd{
     margin-left:auto;
     margin-right:auto;
@@ -109,18 +128,14 @@ img{
     border-style:solid;
     display:block;
     margin:0.5rem auto 1rem auto;
-    max-width:50%;
+    max-width:75%;
     font-size:80%;
     text-align:center;
 }
 
 hr{
     margin:1rem 0.5rem 2rem;
-    padding:0;
-    height:0;
-    overflow:hidden;
     border-width:1px 0 0 0;
-    border-style:solid;
 }
 
 li{
@@ -411,6 +426,16 @@ kbd{
     border-color:#fff;
     background-color:#789abc;
     box-shadow:1px 1px 1px 0 rgba(0, 0, 0, 0.219);
+}
+
+input[type="checkbox"] + label{
+    color:black;
+    text-shadow:1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+input[type="checkbox"]:checked + label{
+    color:#696;
+    text-shadow:-1px -1px 0 rgba(0, 128, 0, 0.1);
 }
 
 table,
