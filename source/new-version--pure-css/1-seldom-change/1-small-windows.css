@@ -48,6 +48,10 @@
         margin-left: 0.7rem;
         margin-right: 0.5rem;
     }
+
+    hr {
+        margin: 1.5rem auto 2rem 0;
+    }
 }
 
 
