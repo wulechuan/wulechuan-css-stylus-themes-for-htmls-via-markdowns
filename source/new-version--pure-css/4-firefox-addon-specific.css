@@ -1,9 +1,5 @@
 /* 以下 CSS 节选自 FireFox 插件【Markdown Viewer Webext】的原始 CSS。 */
 
-/* #__markdown-viewer__tools a[href]:after {
-    content: "";
-} */
-
 input#__markdown-viewer__show-tools:not(:checked)~.toggleable {
     max-height: 0;
     max-width: 0;
@@ -224,6 +220,7 @@ a#__markdown-viewer__download:hover {
 #__markdown-viewer__toc a[href^="#"] {
     color: white;
     text-decoration: none;
+    border: none;
     display: block;
     margin: 0;
     padding: 0.25em 1em;

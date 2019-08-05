@@ -38,7 +38,7 @@ html {
 }
 
 body {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     line-height: 1.5;
     padding: 5rem 4rem 6rem 4rem;
     max-width: 50rem;
@@ -56,6 +56,9 @@ table {
 
 a {
     text-decoration: none;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
 }
 
 a:not([href]) {
@@ -63,7 +66,8 @@ a:not([href]) {
 }
 
 a[href]:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    border-bottom-color: currentColor;
 }
 
 h1, h2, h3, h4, h5, h6, dt, p {
@@ -143,12 +147,40 @@ p {
 }
 
 img {
-    border-style: solid;
     display: block;
-    margin: 0.5rem auto 1rem auto;
+    box-sizing: content-box;
+    padding: 0.5rem;
     max-width: 75%;
-    font-size: 80%;
+    border-style: none;
+    margin: 0.5rem auto 1rem auto;
+
+    /*
+        Rules below are for images failed to load,
+        a.k.a. for the alt texts of those images
+    */
     text-align: center;
+    font-size: 100%;
+    white-space: pre;
+    font-style: italic;
+    font-weight: normal;
+}
+
+img::before {
+    content: '图片加载失败。图片内容未知。';
+}
+
+img[alt]::before {
+    content: '图片加载失败。图片内容的大致描述为：\A“';
+}
+img[alt]::after {
+    content: '”';
+}
+@-moz-document url-prefix() {
+    /* firefox utilize the ::before psuedo element of an image to print the "alt" attribute. */
+    img::after,
+    img[alt]::after{
+        content:'（图片加载失败）';
+    }
 }
 
 hr {
@@ -252,14 +284,17 @@ pre > code {
 /* 以下 CSS 定义自适应排版规则。主要面向小尺寸屏幕或窗口。 */
 
 @media (max-width: 1000px) {
-    html {
+    html, body {
         font-size: 16px;
     }
 }
 
 @media (max-width: 600px) {
-    html {
+    html, body {
         font-size: 15px;
+    }
+    
+    html {
         padding: 0;
     }
 
@@ -396,13 +431,6 @@ pre {
     border-radius: 0.3rem;
 }
 
-img {
-    font-style: italic;
-    font-weight: normal;
-    text-decoration: line-through;
-    border-width: 0.5rem;
-}
-
 
 
 
@@ -421,30 +449,29 @@ body {
 
 a,
 a:visited {
-    color: #088aee;
+    color: #0f0fed;
 }
 
-a:hover,
+/* a:hover,
 a:focus,
 a:active {
-    color: #1997f7;
-}
+    color: #0f0fed;
+} */
 
 a[href^="#"],
 a[href^="#"]:visited {
-    color: #5187b3;
+    color: #0f0dad;
 }
 
-a[href^="#"]:hover,
+/* a[href^="#"]:hover,
 a[href^="#"]:focus,
 a[href^="#"]:active {
-    color: #6293bb;
-}
+    color: #0f0dad;
+} */
 
 img {
-    color: #ccc;
-    background-color: #888;
-    border-color: rgba(128, 128, 128, 0.5);
+    color: #555;
+    background-color: rgba(128, 128, 128, 0.5);
 }
 
 h1, h2, h3, h4, h5, h6,

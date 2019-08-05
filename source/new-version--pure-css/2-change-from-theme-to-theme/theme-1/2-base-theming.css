@@ -12,30 +12,29 @@ body {
 
 a,
 a:visited {
-    color: #088aee;
+    color: #0f0fed;
 }
 
-a:hover,
+/* a:hover,
 a:focus,
 a:active {
-    color: #1997f7;
-}
+    color: #0f0fed;
+} */
 
 a[href^="#"],
 a[href^="#"]:visited {
-    color: #5187b3;
+    color: #0f0dad;
 }
 
-a[href^="#"]:hover,
+/* a[href^="#"]:hover,
 a[href^="#"]:focus,
 a[href^="#"]:active {
-    color: #6293bb;
-}
+    color: #0f0dad;
+} */
 
 img {
-    color: #ccc;
-    background-color: #888;
-    border-color: rgba(128, 128, 128, 0.5);
+    color: #555;
+    background-color: rgba(128, 128, 128, 0.5);
 }
 
 h1, h2, h3, h4, h5, h6,
