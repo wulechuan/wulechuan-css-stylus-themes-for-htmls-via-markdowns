@@ -8,6 +8,10 @@ label[for] {
     cursor: pointer;
 }
 
+summary {
+    cursor: pointer;
+}
+
 
 
 

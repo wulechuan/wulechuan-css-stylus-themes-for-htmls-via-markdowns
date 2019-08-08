@@ -12,6 +12,10 @@ label[for]{
     cursor:pointer;
 }
 
+summary{
+    cursor:pointer;
+}
+
 .document-author{
     text-align:center;
 }
