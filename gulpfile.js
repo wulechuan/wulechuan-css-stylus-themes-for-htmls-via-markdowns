@@ -11,6 +11,7 @@ const {
 
 
 const del = require('del')
+const chalk = require('chalk')
 
 const gulpArrayPipe = require('gulp-pipe')
 const gulpIf = require('gulp-if');
@@ -53,7 +54,11 @@ const highlightjsThemeNamePlaceholderInTemplate = '<highlightjs-theme-name>'
 const allCSSTaskTemplates = [
 	{
 		shouldSkipThisTemplate: false,
-		description: `Building CSS\n    senario: the generic version,\n    theme:   ${themeFileSuffixPlaceholderInTemplate}`,
+		description: `Building CSS\n    senario: ${
+			chalk.black.bgGreen('the generic version')
+		},\n      theme: ${
+			chalk.black.bgMagenta(themeFileSuffixPlaceholderInTemplate)
+		}`,
 		outputFolderPath: outputRootFolderPath,
 		outputFileBaseName: `${outputFileNamePrefix}.${themeFileSuffixPlaceholderInTemplate}`,
 		sourceGlobsCommonSubPath: subPathOfSourceCSS,
@@ -69,7 +74,11 @@ const allCSSTaskTemplates = [
 	},
 	{
 		shouldSkipThisTemplate: false,
-		description: `Building CSS\n    senario: specifically for firefox addon "Markdown Viewer Webext",\n    theme:   ${themeFileSuffixPlaceholderInTemplate}`,
+		description: `Building CSS\n    senario: ${
+			chalk.black.bgGreen('specifically for firefox addon "Markdown Viewer Webext"')
+		},\n      theme: ${
+			chalk.black.bgMagenta(themeFileSuffixPlaceholderInTemplate)
+		}`,
 		outputFolderPath: outputRootFolderPath,
 		outputFileBaseName: `${outputFileNamePrefix}--firefox-addon.${themeFileSuffixPlaceholderInTemplate}`,
 		shouldOutputCompressedVersion: false,
@@ -87,7 +96,11 @@ const allCSSTaskTemplates = [
 	},
 	{
 		shouldSkipThisTemplate: false,
-		description: `Building CSS\n    senario: specifically for typora,\n    theme:   ${themeFileSuffixPlaceholderInTemplate}`,
+		description: `Building CSS\n    senario: ${
+			chalk.black.bgGreen('specifically for typora')
+		},\n      theme: ${
+			chalk.black.bgMagenta(themeFileSuffixPlaceholderInTemplate)
+		}`,
 		outputFolderPath: outputRootFolderPath,
 		outputFileBaseName: `${outputFileNamePrefix}--typora.${themeFileSuffixPlaceholderInTemplate}`,
 		shouldOutputCompressedVersion: false,
@@ -225,7 +238,7 @@ function createGulpTaskBodiesForConcatenationViaSettings(taskSettings) {
 		compressorOptions1, // Even if we don't compress files, we might still want to operate the output file somehow.
 		compressorOptions2,
 	} = taskSettings
-	
+
 	const compressor1IsProvided = typeof compressor1 === 'function'
 	const compressor2IsProvided = typeof compressor2 === 'function'
 
@@ -296,8 +309,8 @@ function createGulpTaskBodiesForConcatenationViaSettings(taskSettings) {
 			outputFileName2,
 		].map(baseName => path.join(outputFolderPath, baseName))
 
-		console.log('\nDeleting these files if exist:')
-		possibleOutputFilePaths.forEach(filePath => console.log('    ', filePath))
+		console.log(`\n${chalk.red('Deleting these files if exist')}:`)
+		possibleOutputFilePaths.forEach(filePath => console.log('    ', chalk.yellow(filePath)))
 
 		return del(possibleOutputFilePaths)
 	}
@@ -429,15 +442,25 @@ allCSSTasks.forEach(createGulpTaskBodiesForBuildingCSS)
 
 // Public tasks
 exports.clean = function () {
-	console.log(`Deleting all built files in "${outputRootFolderPath}"...`)
+	console.log(`\n${chalk.red(`Deleting all built files in "${outputRootFolderPath}"`)}...\n`)
+
 	return del(path.join(outputRootFolderPath, '**/*'))
 }
 
-exports.buildOnce = gulpBuildParallelTasks(
-	...allCSSTasks.map(taskSettings => taskSettings.taskBodies.buildOnce)
+exports.buildOnce = gulpBuildTaskSeries(
+	function printingInfo(cb) {
+		console.log(`\n${chalk.green('Building once')}...\n`)
+		cb()
+	},
+
+	gulpBuildParallelTasks(
+		...allCSSTasks.map(taskSettings => taskSettings.taskBodies.buildOnce)
+	)
 )
 
 exports.buildAndWatch = function (cb) {
+	console.log(`\n${chalk.black.bgGreen('Watching source codes and building continually')}...\n`)
+
 	allCSSTasks.forEach(taskSettings => {
 		watch(
 			taskSettings.sourceGlobsToWatch,
@@ -445,6 +468,7 @@ exports.buildAndWatch = function (cb) {
 			taskSettings.taskBodies.buildOnce
 		)
 	})
+
 	cb()
 }
 

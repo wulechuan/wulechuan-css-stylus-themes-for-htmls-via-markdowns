@@ -1,5 +1,9 @@
 /* 以下 CSS 定义可能须变得的页面内容排版样式细节，例如边框粗细、矩形的圆角半径等。 */
 
+img {
+    border-radius: 0.5rem;
+}
+
 blockquote {
     border-width: 0 0 0 0.3rem;
     border-radius: 0.3rem;

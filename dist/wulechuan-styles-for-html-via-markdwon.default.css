@@ -436,6 +436,10 @@ kbd {
 
 /* 以下 CSS 定义可能须变得的页面内容排版样式细节，例如边框粗细、矩形的圆角半径等。 */
 
+img {
+    border-radius: 0.5rem;
+}
+
 blockquote {
     border-width: 0 0 0 0.3rem;
     border-radius: 0.3rem;
@@ -502,7 +506,8 @@ a[href^="#"]:active {
 
 img {
     color: #555;
-    background-color: rgba(128, 128, 128, 0.5);
+    background-color: rgba(128, 128, 128, 0.1);
+    box-shadow: inset 0 0 0.4rem rgba(0, 0, 0, 0.29);
 }
 
 h1, h2, h3, h4, h5, h6,
