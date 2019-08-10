@@ -46,15 +46,14 @@ dt {
 strong,
 b,
 em {
-    /* color: rgb(234, 79, 19); */
     color: black;
 }
 
 blockquote {
-    color: rgb(51, 45, 219);
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-    background-color: rgba(136, 136, 136, 0.1);
-    border-color: #088aee;
+    color: #000;
+    border-color: #f80;
+    background-color: rgba(136, 136, 136, 0.15);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
 code,

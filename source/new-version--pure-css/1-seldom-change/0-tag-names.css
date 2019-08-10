@@ -224,6 +224,12 @@ blockquote {
     border-style: solid;
 }
 
+blockquote strong,
+blockquote b,
+blockquote em {
+    color: inherit;
+}
+
 ul blockquote,
 ol blockquote {
     margin-left: 0;
