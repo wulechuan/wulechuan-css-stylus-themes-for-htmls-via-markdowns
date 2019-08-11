@@ -483,13 +483,13 @@ pre {
 /* 以下 CSS 为除代码块之外的页面整体着色方案。*/
 
 html {
-    background-color: #ddd;
+    background-color: #bbb;
 }
 
 body {
     color: #383838;
-    background-color: #fff;
-    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1);
+    background-color: #f7f7f9;
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
 }
 
 a,
@@ -534,7 +534,7 @@ em {
 blockquote {
     color: #000;
     border-color: #f80;
-    background-color: rgba(136, 136, 136, 0.15);
+    background-color: rgba(136, 136, 136, 0.2);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
 }
 
@@ -546,7 +546,7 @@ kbd {
 code {
     color: #a34587;
     border-color: rgba(0, 0, 0, 0.219);
-    background-color: rgba(255, 255, 255, 0.319);
+    background-color: white;
 }
 
 pre code {
