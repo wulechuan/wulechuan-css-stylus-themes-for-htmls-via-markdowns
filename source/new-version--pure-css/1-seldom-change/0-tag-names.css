@@ -265,6 +265,10 @@ table pre:last-child {
     margin-bottom: 0;
 }
 
+code {
+    word-break: break-word;
+}
+
 pre,
 pre > code,
 pre > code * {
