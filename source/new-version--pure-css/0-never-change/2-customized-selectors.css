@@ -1,4 +1,4 @@
-/* 以下 CSS 针对自定义类。出发 Markdown 文件中手工注入这些 CSS 类名，否则它们并不通用。 */
+/* 以下 CSS 针对自定义类。除非 Markdown 文件中手工注入这些 CSS 类名，否则它们并不通用。 */
 
 .document-author {
     text-align: center;
