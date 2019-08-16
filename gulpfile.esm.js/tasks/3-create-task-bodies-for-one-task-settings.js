@@ -94,12 +94,13 @@ export default function createGulpTaskBodiesForTaskSettingsOfOneTheme(taskSettin
 		taskBodies,
 	} = taskSettings
 
-	taskBodies.buildOnce = gulpBuildTaskSeries(taskPreparations, taskMainPart)
+	taskBodies.cleanOldOutput = toCleanOldMergedCSSFile
+	taskBodies.buildNewOutput = gulpBuildTaskSeries(toCleanOldMergedCSSFile, toBuildNewCSSFileByMergingSnippets)
 
 
 
 
-	function taskPreparations() {
+	function toCleanOldMergedCSSFile() {
 		const possibleOutputFilePaths = [
 			outputFileName1,
 			outputFileName2,
@@ -111,7 +112,7 @@ export default function createGulpTaskBodiesForTaskSettingsOfOneTheme(taskSettin
 		return del(possibleOutputFilePaths)
 	}
 
-	function taskMainPart() {
+	function toBuildNewCSSFileByMergingSnippets() {
 		console.log(`\n${taskDescription}`)
 
 		const pipe = [

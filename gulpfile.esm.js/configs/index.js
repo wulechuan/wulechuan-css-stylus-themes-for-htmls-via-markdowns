@@ -53,7 +53,7 @@ export const defaultHighlightjsThemeName = highlightjsThemeCandidates[0]
 
 
 
-export const allCSSTaskTemplates = [
+export const allCSSTaskSettingsTemplates = [
 	{
 		outputFolderPath: outputRootFolderPath,
 		outputFileBaseName: `${outputFileNamePrefix}${cssTaskTemplateGeneric.outputFileBaseNameSuffix}`,
