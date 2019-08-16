@@ -26,126 +26,27 @@ import {
 	sourceRootFolderPath,
 	outputRootFolderPath,
 
-	baseThemeCandidates,
-	highlightjsThemeCandidates,
-
-	defaultBaseThemeName,
-	defaultHighlightjsThemeName,
-
 	allCSSTaskTemplates,
 } from './configs'
 
 
-import {
-	themeFileSuffixPlaceholderInTemplate,
-	baseThemeNamePlaceholderInTemplate,
-	highlightjsThemeNamePlaceholderInTemplate,
-} from './configs/css-building-templates/__strings-common-placeholders'
+
+import
+	createOneGroupOfTaskSettingsViaOneTaskTemplate
+from './tasks/1-create-one-group-of-task-settings-via-one-task-template'
 
 
 
 
-
-
-const allCSSTasks = []
-allCSSTaskTemplates.forEach(template => {
-	if (template.shouldSkipThisTemplate) {
-		return
-	}
-
-	const _baseThemeCandidates = [
-		'default',
-		...baseThemeCandidates,
-	]
-	const _highlightjsThemeCandidates = [
-		'default',
-		...highlightjsThemeCandidates,
+const allTaskSettingsArray = allCSSTaskTemplates.reduce((taskSettingsArray, taskSettingsTemplate) => {
+	taskSettingsArray = [
+		...taskSettingsArray,
+		...createOneGroupOfTaskSettingsViaOneTaskTemplate(taskSettingsTemplate),
 	]
 
-	_baseThemeCandidates.forEach(baseThemeName => {
-		_highlightjsThemeCandidates.forEach(hjThemeName => {
-			if (baseThemeName === 'default' && hjThemeName !== 'default') {
-				return
-			}
+	return taskSettingsArray
+}, [])
 
-			if (baseThemeName !== 'default' && hjThemeName === 'default') {
-				return
-			}
-
-			if (baseThemeName === defaultBaseThemeName && hjThemeName === defaultHighlightjsThemeName) {
-				return
-			}
-
-			let _baseThemeName
-			let _hjThemeName
-			let _outputFileNameSuffix
-
-			if (baseThemeName === 'default' && hjThemeName === 'default') {
-				_baseThemeName = defaultBaseThemeName
-				_hjThemeName = defaultHighlightjsThemeName
-				_outputFileNameSuffix = 'default'
-			} else {
-				_baseThemeName = baseThemeName
-				_hjThemeName = hjThemeName
-				_outputFileNameSuffix = `${_baseThemeName}.${_hjThemeName}`
-			}
-
-			const themeSettings = createCSSTaskSettingsForOneTheme(
-				template,
-				_outputFileNameSuffix,
-				_baseThemeName,
-				_hjThemeName
-			)
-
-			allCSSTasks.push(themeSettings)
-		})
-	})
-})
-
-
-
-function createCSSTaskSettingsForOneTheme(cssTaskSettingsTemplate, outputFileNameSuffix, baseThemeName, hjThemeName) {
-	const {
-		outputFolderPath,
-		shouldDiscardMostCommentsEvenIfNotCompressCSS,
-		description,
-		outputFileBaseName,
-		sourceRelativeGlobs,
-	} = cssTaskSettingsTemplate
-
-	const cssTaskSettings = {
-		outputFolderPath,
-		shouldDiscardMostCommentsEvenIfNotCompressCSS,
-	}
-
-	if ('shouldNotOutputUncompressedVersion' in cssTaskSettingsTemplate) {
-		cssTaskSettings.shouldNotOutputUncompressedVersion = cssTaskSettingsTemplate.shouldNotOutputUncompressedVersion
-	}
-
-	if ('shouldOutputCompressedVersion' in cssTaskSettingsTemplate) {
-		cssTaskSettings.shouldOutputCompressedVersion = cssTaskSettingsTemplate.shouldOutputCompressedVersion
-	}
-
-	if ('sourceGlobsCommonSubPath' in cssTaskSettingsTemplate) {
-		cssTaskSettings.sourceGlobsCommonSubPath = cssTaskSettingsTemplate.sourceGlobsCommonSubPath
-	}
-
-	if (description) {
-		cssTaskSettings.description = description.replace(themeFileSuffixPlaceholderInTemplate, outputFileNameSuffix)
-	}
-
-	if (outputFileBaseName) {
-		cssTaskSettings.outputFileBaseName = outputFileBaseName.replace(themeFileSuffixPlaceholderInTemplate, outputFileNameSuffix)
-	}
-
-	cssTaskSettings.sourceRelativeGlobs = sourceRelativeGlobs.map(glob => {
-		return glob
-			.replace(baseThemeNamePlaceholderInTemplate, baseThemeName)
-			.replace(highlightjsThemeNamePlaceholderInTemplate, hjThemeName)
-	})
-
-	return cssTaskSettings
-}
 
 
 
@@ -360,7 +261,7 @@ function createGulpTaskBodiesForBuildingCSS(taskSettings) {
 
 
 
-allCSSTasks.forEach(createGulpTaskBodiesForBuildingCSS)
+allTaskSettingsArray.forEach(createGulpTaskBodiesForBuildingCSS)
 
 
 
@@ -379,14 +280,14 @@ export const buildOnce = gulpBuildTaskSeries(
 	},
 
 	gulpBuildParallelTasks(
-		...allCSSTasks.map(taskSettings => taskSettings.taskBodies.buildOnce)
+		...allTaskSettingsArray.map(taskSettings => taskSettings.taskBodies.buildOnce)
 	)
 )
 
 export const buildAndWatch = function (cb) {
 	console.log(`\n${chalk.black.bgGreen('Watching source codes and building continually')}...\n`)
 
-	allCSSTasks.forEach(taskSettings => {
+	allTaskSettingsArray.forEach(taskSettings => {
 		watch(
 			taskSettings.sourceGlobsToWatch,
 			{ ignoreInitial: false },
