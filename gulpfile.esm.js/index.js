@@ -22,98 +22,25 @@ import cssNano from 'cssnano'
 
 
 
-// Globs and task settings
+import {
+	sourceRootFolderPath,
+	outputRootFolderPath,
 
-const sourceRootFolderPath = 'source'
-const outputRootFolderPath = 'dist'
+	baseThemeCandidates,
+	highlightjsThemeCandidates,
 
-const subPathOfSourceCSS = 'new-version--pure-css'
+	defaultBaseThemeName,
+	defaultHighlightjsThemeName,
 
-
-const outputFileNamePrefix = 'wulechuan-styles-for-html-via-markdwon'
-
-const baseThemeCandidates = [
-	'theme-1',
-]
-const highlightjsThemeCandidates = [
-	'atom-one-dark',
-	// 'agate',
-	// 'tomorrow-night',
-]
+	allCSSTaskTemplates,
+} from './configs'
 
 
-const defaultBaseThemeName = baseThemeCandidates[0]
-const defaultHighlightjsThemeName = highlightjsThemeCandidates[0]
-
-const themeFileSuffixPlaceholderInTemplate = '<output-theme-file-name-suffix>'
-const baseThemeNamePlaceholderInTemplate = '<base-theme-name>'
-const highlightjsThemeNamePlaceholderInTemplate = '<highlightjs-theme-name>'
-
-const allCSSTaskTemplates = [
-	{
-		shouldSkipThisTemplate: false,
-		description: `Building CSS\n    senario: ${
-			chalk.black.bgGreen('the generic version')
-		},\n      theme: ${
-			chalk.black.bgMagenta(themeFileSuffixPlaceholderInTemplate)
-		}`,
-		outputFolderPath: outputRootFolderPath,
-		outputFileBaseName: `${outputFileNamePrefix}.${themeFileSuffixPlaceholderInTemplate}`,
-		sourceGlobsCommonSubPath: subPathOfSourceCSS,
-		shouldDiscardMostCommentsEvenIfNotCompressCSS: false,
-		sourceRelativeGlobs: [
-			'0-never-change/**/*.css',
-			'1-seldom-change/**/*.css',
-			`2-change-from-theme-to-theme/${baseThemeNamePlaceholderInTemplate}/**/*.css`,
-			`2-change-from-theme-to-theme/highlightjs-themes/${highlightjsThemeNamePlaceholderInTemplate}.css`,
-			'3-media-of-printing.css',
-			'4-typora/**/*.css',
-		],
-	},
-	{
-		shouldSkipThisTemplate: false,
-		description: `Building CSS\n    senario: ${
-			chalk.black.bgGreen('specifically for firefox addon "Markdown Viewer Webext"')
-		},\n      theme: ${
-			chalk.black.bgMagenta(themeFileSuffixPlaceholderInTemplate)
-		}`,
-		outputFolderPath: outputRootFolderPath,
-		outputFileBaseName: `${outputFileNamePrefix}--firefox-addon.${themeFileSuffixPlaceholderInTemplate}`,
-		shouldOutputCompressedVersion: false,
-		sourceGlobsCommonSubPath: subPathOfSourceCSS,
-		shouldDiscardMostCommentsEvenIfNotCompressCSS: true,
-		sourceRelativeGlobs: [
-			'0-title-for-firefox-addon.css',
-			'0-never-change/**/*.css',
-			'1-seldom-change/**/*.css',
-			`2-change-from-theme-to-theme/${baseThemeNamePlaceholderInTemplate}/**/*.css`,
-			`2-change-from-theme-to-theme/highlightjs-themes/${highlightjsThemeNamePlaceholderInTemplate}.css`,
-			'3-media-of-printing.css',
-			'4-firefox-addon-specific.css',
-		],
-	},
-	{
-		shouldSkipThisTemplate: false,
-		description: `Building CSS\n    senario: ${
-			chalk.black.bgGreen('specifically for typora')
-		},\n      theme: ${
-			chalk.black.bgMagenta(themeFileSuffixPlaceholderInTemplate)
-		}`,
-		outputFolderPath: outputRootFolderPath,
-		outputFileBaseName: `${outputFileNamePrefix}--typora.${themeFileSuffixPlaceholderInTemplate}`,
-		shouldOutputCompressedVersion: false,
-		sourceGlobsCommonSubPath: subPathOfSourceCSS,
-		shouldDiscardMostCommentsEvenIfNotCompressCSS: true,
-		sourceRelativeGlobs: [
-			'0-never-change/**/*.css',
-			'1-seldom-change/**/*.css',
-			`2-change-from-theme-to-theme/${baseThemeNamePlaceholderInTemplate}/**/*.css`,
-			`2-change-from-theme-to-theme/highlightjs-themes/${highlightjsThemeNamePlaceholderInTemplate}.css`,
-			'3-media-of-printing.css',
-			'4-typora/**/*.css',
-		],
-	},
-]
+import {
+	themeFileSuffixPlaceholderInTemplate,
+	baseThemeNamePlaceholderInTemplate,
+	highlightjsThemeNamePlaceholderInTemplate,
+} from './configs/css-building-templates/__strings-common-placeholders'
 
 
 
