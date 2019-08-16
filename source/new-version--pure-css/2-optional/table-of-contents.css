@@ -21,18 +21,14 @@ nav.table-of-contents {
 
     overflow: auto;
     scroll-behavior: smooth;
-    color: #ccc;
-    background-color: #222;
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
 }
 
 .toc-is-visible nav.table-of-contents > ul,
 .toc-is-visible nav.table-of-contents > ol {
     display: inline-block;
     box-sizing: border-box;
-    padding: 2rem 3rem 3rem 2rem;
+    padding: 2rem 1.5rem 6rem 2rem;
 
-    /* position: relative; */
     margin: 0;
 
     white-space: nowrap;

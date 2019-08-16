@@ -8,6 +8,10 @@ html{
     font-size:20px;
 }
 
+html, body{
+    scroll-behavior:smooth;
+}
+
 label[for]{
     cursor:pointer;
 }
@@ -347,12 +351,6 @@ pre > code{
     }
 }
 
-.md-fences .code-tooltip{
-    top:-2em;
-    bottom:auto;
-    border-radius:0.2rem;
-}
-
 html{
     font-family:'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
 }
@@ -439,6 +437,15 @@ a[href^="#"]:visited{
     color:#0f0dad;
 }
 
+
+a.header-anchor[href^="#"],  a.header-anchor[href^="#"]:visited,  h6 > a[href^="#"], h6 > a[href^="#"]:visited, h5 > a[href^="#"], h5 > a[href^="#"]:visited, h4 > a[href^="#"], h4 > a[href^="#"]:visited, h3 > a[href^="#"], h3 > a[href^="#"]:visited, h2 > a[href^="#"], h2 > a[href^="#"]:visited, h1 > a[href^="#"], h1 > a[href^="#"]:visited{
+    color:#ccc;
+}
+
+a.header-anchor[href^="#"]:hover,  h6 > a[href^="#"]:hover, h5 > a[href^="#"]:hover, h4 > a[href^="#"]:hover, h3 > a[href^="#"]:hover, h2 > a[href^="#"]:hover, h1 > a[href^="#"]:hover{
+    color:inherit;
+}
+
 img{
     color:#555;
     background-color:rgba(128, 128, 128, 0.1);
@@ -518,6 +525,15 @@ hr::before{
 .code-tooltip{
     color:#f96;
     background-color:#222;
+}
+
+
+
+
+.toc-is-visible nav.table-of-contents{
+    color:#ccc;
+    background-color:#222;
+    box-shadow:0 0 0.5rem rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 600px){

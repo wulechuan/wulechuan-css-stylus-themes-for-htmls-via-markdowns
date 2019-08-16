@@ -3,6 +3,10 @@ import
 from './css-building-templates/_generic'
 
 import
+	cssTaskTemplateGenericWithTOC
+from './css-building-templates/_generic-with-toc'
+
+import
 	cssTaskTemplateForFirefoxAddon
 from './css-building-templates/for-firefox-addon-markdown-viewer'
 
@@ -44,6 +48,13 @@ export const allCSSTaskSettingsTemplates = [
 		sourceGlobsCommonSubPath: subPathOfSourceCSS,
 
 		...cssTaskTemplateGeneric,
+	},
+	{
+		outputFolderPath: outputRootFolderPath,
+		outputFileBaseName: `${outputFileNamePrefix}${cssTaskTemplateGenericWithTOC.outputFileBaseNameSuffix}`,
+		sourceGlobsCommonSubPath: subPathOfSourceCSS,
+
+		...cssTaskTemplateGenericWithTOC,
 	},
 	{
 		outputFolderPath: outputRootFolderPath,

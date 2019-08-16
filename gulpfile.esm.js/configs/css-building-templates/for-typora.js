@@ -21,8 +21,8 @@ export default {
     sourceRelativeGlobs: [
         '0-never-change/**/*.css',
         '1-seldom-change/**/*.css',
-        `2-change-from-theme-to-theme/${baseThemeNamePlaceholderInTemplate}/**/*.css`,
-        `2-change-from-theme-to-theme/highlightjs-themes/${highlightjsThemeNamePlaceholderInTemplate}.css`,
+        `3-change-from-theme-to-theme/${baseThemeNamePlaceholderInTemplate}/**/*.css`,
+        `3-change-from-theme-to-theme/highlightjs-themes/${highlightjsThemeNamePlaceholderInTemplate}.css`,
         '3-media-of-printing.css',
         '4-typora/**/*.css',
     ],
