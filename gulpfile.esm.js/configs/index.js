@@ -11,23 +11,7 @@ import
 from './css-building-templates/for-typora'
 
 
-import path from 'path'
-import { readFileSync } from 'fs'
 
-import getFilesUnderAFolder from '../lib/get-file-names-under-a-folder'
-
-
-// const joinPathPOSIX = path.posix.join
-
-// const taskTemplateJavascriptFileNames = getFilesUnderAFolder('./css-building-templates')
-// 	.filter(fileName => !fileName.match(/^__strings-common/))
-
-// const taskTemplateObjects = taskTemplateJavascriptFileNames.map(fileName => {
-// 	const filePath = joinPathPOSIX('./css-building-templates', fileName)
-// 	const fileContentString = readFileSync(filePath).toString()
-// 	const taskTemplate = eval(fileContentString)
-// 	console.log('taskTemplate', taskTemplate)
-// })
 
 
 export const sourceRootFolderPath = 'source'
