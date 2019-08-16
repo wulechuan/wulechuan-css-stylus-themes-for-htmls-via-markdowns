@@ -1,24 +1,22 @@
-const path = require('path')
+import path from 'path'
 
-const gulp = require('gulp')
-const {
-	src: gulpRead,
-	dest: gulpWrite,
-	series: gulpBuildTaskSeries,
-	parallel: gulpBuildParallelTasks,
+import {
+	src as gulpRead,
+	dest as gulpWrite,
+	series as gulpBuildTaskSeries,
+	parallel as gulpBuildParallelTasks,
 	watch
-} = gulp
+} from 'gulp'
 
 
-const del = require('del')
-const chalk = require('chalk')
+import del from 'del'
+import chalk from 'chalk'
 
-const gulpArrayPipe = require('gulp-pipe')
-const gulpIf = require('gulp-if');
-const rename = require('gulp-rename')
-const concatInto = require('gulp-concat')
-const postCSS = require('gulp-postcss')
-const cssNano = require('cssnano')
+import gulpArrayPipe from 'gulp-pipe'
+import rename from 'gulp-rename'
+import concatInto from 'gulp-concat'
+import postCSS from 'gulp-postcss'
+import cssNano from 'cssnano'
 
 
 
@@ -441,13 +439,13 @@ allCSSTasks.forEach(createGulpTaskBodiesForBuildingCSS)
 
 
 // Public tasks
-exports.clean = function () {
+export const clean = function() {
 	console.log(`\n${chalk.red(`Deleting all built files in "${outputRootFolderPath}"`)}...\n`)
 
 	return del(path.join(outputRootFolderPath, '**/*'))
 }
 
-exports.buildOnce = gulpBuildTaskSeries(
+export const buildOnce = gulpBuildTaskSeries(
 	function printingInfo(cb) {
 		console.log(`\n${chalk.green('Building once')}...\n`)
 		cb()
@@ -458,7 +456,7 @@ exports.buildOnce = gulpBuildTaskSeries(
 	)
 )
 
-exports.buildAndWatch = function (cb) {
+export const buildAndWatch = function (cb) {
 	console.log(`\n${chalk.black.bgGreen('Watching source codes and building continually')}...\n`)
 
 	allCSSTasks.forEach(taskSettings => {
@@ -476,4 +474,4 @@ exports.buildAndWatch = function (cb) {
 
 
 // The default task
-exports.default = exports.buildAndWatch
+export default buildAndWatch
