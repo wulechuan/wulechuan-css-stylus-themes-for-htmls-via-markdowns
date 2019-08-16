@@ -24,6 +24,5 @@ export default {
         `2-change-from-theme-to-theme/${baseThemeNamePlaceholderInTemplate}/**/*.css`,
         `2-change-from-theme-to-theme/highlightjs-themes/${highlightjsThemeNamePlaceholderInTemplate}.css`,
         '3-media-of-printing.css',
-        '4-typora/**/*.css',
     ],
 }
