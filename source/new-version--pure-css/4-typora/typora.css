@@ -37,9 +37,10 @@ pre {
     background-color: #ddd;
 }
 
-#write {
+.typora-node #write {
     padding: 5rem 4rem 6rem 4rem;
     max-width: 50rem;
+    min-height: 60rem;
     margin: 0 auto;
     color: #383838;
     background-color: #fff;

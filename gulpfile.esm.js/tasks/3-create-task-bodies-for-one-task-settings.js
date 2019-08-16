@@ -76,7 +76,7 @@ export default function createGulpTaskBodiesForTaskSettingsOfOneTheme(taskSettin
 		outputFileNames.push(outputFileName2)
 	}
 
-	taskSettings.sourceGlobsToWatch = cssSourceGlobs
+	taskSettings.sourceGlobs     = cssSourceGlobs
 	taskSettings.outputFileNames = outputFileNames
 
 	if (!taskSettings.description) {

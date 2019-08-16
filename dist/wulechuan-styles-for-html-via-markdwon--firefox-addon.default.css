@@ -33,6 +33,7 @@ body{
     line-height:1.5;
     padding:5rem 4rem 6rem 4rem;
     max-width:50rem;
+    min-height:60rem;
     margin:0 auto;
 }
 
