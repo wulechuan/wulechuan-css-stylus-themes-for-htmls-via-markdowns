@@ -515,24 +515,24 @@ a[href^="#"]:active {
 } */
 
 
-a.header-anchor[href^="#"], /* markdown-it-anchor:permanent links */
-a.header-anchor[href^="#"]:visited, /* markdown-it-anchor:permanent links */
-h6 > a[href^="#"],
+a.header-anchor[href^="#"]:visited, /* markdown-it-anchor: permanent links */
+a.header-anchor[href^="#"],         /* markdown-it-anchor: permanent links */
 h6 > a[href^="#"]:visited,
-h5 > a[href^="#"],
+h6 > a[href^="#"],
 h5 > a[href^="#"]:visited,
-h4 > a[href^="#"],
+h5 > a[href^="#"],
 h4 > a[href^="#"]:visited,
-h3 > a[href^="#"],
+h4 > a[href^="#"],
 h3 > a[href^="#"]:visited,
-h2 > a[href^="#"],
+h3 > a[href^="#"],
 h2 > a[href^="#"]:visited,
-h1 > a[href^="#"],
-h1 > a[href^="#"]:visited {
+h2 > a[href^="#"],
+h1 > a[href^="#"]:visited,
+h1 > a[href^="#"] {
     color: #ccc;
 }
 
-a.header-anchor[href^="#"]:hover, /* markdown-it-anchor:permanent links */
+a.header-anchor[href^="#"]:hover, /* markdown-it-anchor: permanent links */
 h6 > a[href^="#"]:hover,
 h5 > a[href^="#"]:hover,
 h4 > a[href^="#"]:hover,
@@ -540,6 +540,13 @@ h3 > a[href^="#"]:hover,
 h2 > a[href^="#"]:hover,
 h1 > a[href^="#"]:hover {
     color: inherit;
+}
+
+:target > a.header-anchor[href^="#"]:hover, /* markdown-it-anchor: permanent links */
+:target > a.header-anchor[href^="#"],       /* markdown-it-anchor: permanent links */
+:target > a[href^="#"]:hover,
+:target > a[href^="#"] {
+    color: rgb(21, 211, 14);
 }
 
 img {

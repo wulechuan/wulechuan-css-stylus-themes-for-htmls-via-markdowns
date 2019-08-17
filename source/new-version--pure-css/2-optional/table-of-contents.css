@@ -86,8 +86,8 @@ nav.table-of-contents > ul ul ul {
     left: 1rem;
     transform: translateX(0);
     color: white;
-    background-color: #222;
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+    background-color: #111;
+    box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.7);
 }
 
 .markdown-article-toc-toggling-button.toc-is-visible {
@@ -95,7 +95,7 @@ nav.table-of-contents > ul ul ul {
     transform: translateX(-50%);
     color: black;
     background-color: #eee;
-    box-shadow: 0 0 0.2rem rgba(255, 255, 255, 0.6);
+    /* box-shadow: 0 0 0.3rem rgba(255, 255, 255, 0.7); */
 }
 
 .markdown-article-toc-toggling-button.toc-is-visible:focus,
