@@ -2,11 +2,27 @@ body.has-toc.toc-is-visible {
     margin-left: 20rem;
 }
 
-nav.table-of-contents {
+
+
+
+
+.toc-is-visible .table-of-contents-panel {
+    position: fixed;
+    z-index: 30;
+}
+.markdown-article-toc-toggling-button {
+    position: fixed;
+    z-index: 60;
+}
+
+
+
+
+.table-of-contents-panel {
     display: none;
 }
 
-.toc-is-visible nav.table-of-contents {
+.toc-is-visible .table-of-contents-panel {
     font-size: 0.8rem;
 
     display: block;
@@ -14,20 +30,26 @@ nav.table-of-contents {
     width: 20rem;
     height: 100%;
 
-    position: fixed;
     left: 0;
     top: 0;
     margin: 0;
-
-    overflow: auto;
-    scroll-behavior: smooth;
+    padding: 3rem 0.5rem 1rem 0.5rem;
 }
 
-.toc-is-visible nav.table-of-contents > ul,
-.toc-is-visible nav.table-of-contents > ol {
+nav.table-of-contents {
+    scroll-behavior: smooth;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    position: relative;
+}
+
+nav.table-of-contents > ul,
+nav.table-of-contents > ol {
     display: inline-block;
     box-sizing: border-box;
-    padding: 2rem 1.5rem 6rem 2rem;
+    padding: 0 1.5rem 6rem 2rem;
 
     margin: 0;
 
@@ -44,3 +66,54 @@ nav.table-of-contents > ol ol ol,
 nav.table-of-contents > ul ul ul {
     display: none;
 }
+
+
+
+.markdown-article-toc-toggling-button {
+    font-size: 0.7rem;
+
+    display: block;
+    border: 1px solid transparent;
+    line-height: 1;
+    padding: 0.5em 1.2em;
+    border-radius: 2rem;
+    top: 0.8rem;
+
+    cursor: pointer;
+
+    transition: all 0.3s;
+    
+    left: 1rem;
+    transform: translateX(0);
+    color: white;
+    background-color: #222;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.markdown-article-toc-toggling-button.toc-is-visible {
+    left: 10rem;
+    transform: translateX(-50%);
+    color: black;
+    background-color: #eee;
+    box-shadow: 0 0 0.2rem rgba(255, 255, 255, 0.6);
+}
+
+.markdown-article-toc-toggling-button.toc-is-visible:focus,
+.markdown-article-toc-toggling-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgb(18, 202, 18);
+}
+
+
+
+.markdown-article-toc-toggling-button::before {
+    content: 'TOC';
+    font-family: sans-serif;
+}
+
+html[lang*="hans" i] .markdown-article-toc-toggling-button::before,
+html[lang*="CN"   i] .markdown-article-toc-toggling-button::before,
+html[lang*="zh"]     .markdown-article-toc-toggling-button::before {
+    content: '目录';
+}
+
