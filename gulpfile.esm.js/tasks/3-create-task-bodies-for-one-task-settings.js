@@ -16,7 +16,7 @@ import del from 'del'
 
 
 import {
-    sourceRootFolderPath,
+    cssSourceRootFolderPath,
 } from '../configs'
 
 
@@ -60,7 +60,7 @@ export default function createGulpTaskBodiesForTaskSettingsOfOneTheme(taskSettin
 
 
 	const cssSourceGlobs = sourceRelativeGlobs.map(relativeGlob => {
-		return path.join(sourceRootFolderPath, sourceGlobsCommonSubPath, relativeGlob).replace(/\\/g, '/')
+		return path.join(cssSourceRootFolderPath, sourceGlobsCommonSubPath, relativeGlob).replace(/\\/g, '/')
 	})
 
 	const outputFileName1 = `${outputFileBaseName}.${outputFileExt}`

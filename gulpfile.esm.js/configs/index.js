@@ -18,8 +18,8 @@ from './css-building-templates/for-typora'
 
 
 
-export const sourceRootFolderPath = 'source'
-export const outputRootFolderPath = 'dist'
+export const cssSourceRootFolderPath = 'source/css'
+export const cssOutputRootFolderPath = 'dist/css'
 
 export const subPathOfSourceCSS = 'new-version--pure-css'
 
@@ -43,28 +43,28 @@ export const defaultHighlightjsThemeName = highlightjsThemeCandidates[0]
 
 export const allCSSTaskSettingsTemplates = [
 	{
-		outputFolderPath: outputRootFolderPath,
+		outputFolderPath: cssOutputRootFolderPath,
 		outputFileBaseName: `${outputFileNamePrefix}${cssTaskTemplateGeneric.outputFileBaseNameSuffix}`,
 		sourceGlobsCommonSubPath: subPathOfSourceCSS,
 
 		...cssTaskTemplateGeneric,
 	},
 	{
-		outputFolderPath: outputRootFolderPath,
+		outputFolderPath: cssOutputRootFolderPath,
 		outputFileBaseName: `${outputFileNamePrefix}${cssTaskTemplateGenericWithTOC.outputFileBaseNameSuffix}`,
 		sourceGlobsCommonSubPath: subPathOfSourceCSS,
 
 		...cssTaskTemplateGenericWithTOC,
 	},
 	{
-		outputFolderPath: outputRootFolderPath,
+		outputFolderPath: cssOutputRootFolderPath,
 		outputFileBaseName: `${outputFileNamePrefix}${cssTaskTemplateForFirefoxAddon.outputFileBaseNameSuffix}`,
 		sourceGlobsCommonSubPath: subPathOfSourceCSS,
 
 		...cssTaskTemplateForFirefoxAddon,
 	},
 	{
-		outputFolderPath: outputRootFolderPath,
+		outputFolderPath: cssOutputRootFolderPath,
 		outputFileBaseName: `${outputFileNamePrefix}${cssTaskTemplateForTypora.outputFileBaseNameSuffix}`,
 		sourceGlobsCommonSubPath: subPathOfSourceCSS,
 

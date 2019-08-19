@@ -3,9 +3,17 @@
     body.has-toc.toc-is-visible {
         margin-left: 0;
     }
+
+    .table-of-contents-panel {
+        width: 30rem;
+    }
+
+    .markdown-article-toc-toggling-button.toc-is-visible {
+        left: 15rem;
+    }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .table-of-contents-panel {
         width: 100%;
     }

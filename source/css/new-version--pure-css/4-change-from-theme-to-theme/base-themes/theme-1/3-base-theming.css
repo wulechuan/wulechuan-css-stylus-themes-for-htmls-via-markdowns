@@ -128,15 +128,29 @@ input[type="checkbox"]:checked + label {
     text-shadow: -1px -1px 0 rgba(0, 128, 0, 0.1);
 }
 
-table,
-td,
+table {
+    border-color: #111;
+}
+
 th {
-    border-color: #999;
+    border-color: #222;
+}
+
+td {
+    border-color: #bbb;
 }
 
 thead {
-    color: #eee;
-    background-color: #333;
+    color: #ddd;
+    background-color: #444;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: transparent;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 hr {

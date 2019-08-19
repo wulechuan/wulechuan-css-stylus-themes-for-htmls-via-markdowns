@@ -44,6 +44,7 @@ pre {
     margin-right: 1rem;
 }
 
+td > pre,
 li > pre {
     margin-left: 0;
     margin-right: 0;
@@ -255,14 +256,23 @@ pre {
     margin-bottom: 1.5rem;
 }
 
+table, td, th {
+    border-style: solid;
+}
+
+td, th {
+    padding: 0.25em 0.75em;
+}
+
 table {
     border-collapse: collapse;
     margin: 1rem auto;
-    max-width: 90%;
+    max-width: 96%;
+    min-width: 60%;
 }
 
 table pre:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0.5rem;
 }
 
 code {

@@ -30,6 +30,13 @@ pre {
     border-radius: 0.3rem;
 }
 
+table {
+    border-width: 6px;
+}
+
+th, td {
+    border-width: 1px;
+}
 
 
 

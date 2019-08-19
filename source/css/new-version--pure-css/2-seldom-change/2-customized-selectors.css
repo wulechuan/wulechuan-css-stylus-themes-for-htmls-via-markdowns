@@ -1,24 +1,22 @@
-/* 以下 CSS 针对自定义类。除非 Markdown 文件中手工注入这些 CSS 类名，否则它们并不通用。 */
-
-.document-author {
-    text-align: center;
-}
-
-.centered {
-    text-align: center;
-}
+/* Nothing yet */
 
 .markdown-article {
     font-size: 0.9rem;
     line-height: 1.5;
-    padding: 5rem 4rem 6rem 4rem;
+    padding: 6rem 4rem 14rem 4rem;
     max-width: 50rem;
     min-height: 60rem;
     margin: 0 auto;
 }
 
+.markdown-article > h1:first-child {
+    margin-top: 1em;
+}
+
 .header-anchor { /* markdown-it plugin: markdown-it-anchor */
     margin-left: -0.75em; /* mark sure the content of the h1, h2 is centerized. */
 }
+
+
 
 
