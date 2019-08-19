@@ -43,7 +43,7 @@ Simply take any css file under the `dist/css` folder.
 
 ### Generated HTML File
 
-- [HTML](./docs/examples/rendered/html/en-cn.html)
+- [HTML](./docs/examples/rendered/html/en-us.html)
 
 ### Rendered HTML Snapshots(Pictures)
 
