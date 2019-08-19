@@ -26,9 +26,6 @@ can be applied to shade any `Markdown` generated `HTML` contents.
 
 
 
-
-
-
 ## Usage
 
 Simply take any css file under the `dist/css` folder.
