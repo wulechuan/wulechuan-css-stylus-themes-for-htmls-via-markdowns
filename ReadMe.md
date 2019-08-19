@@ -47,7 +47,7 @@ Simply take any css file under the `dist/css` folder.
 
 ### Rendered HTML Snapshots(Pictures)
 
-- [Snapshot in a wide window]()
+- [Snapshot in a wide window](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window.png)
 
-- [Snapshot in a narrow window]()
+- [Snapshot in a narrow window](./docs/examples/rendered/snapshots/en-US-example-in-a-narrow-window.png)
 
