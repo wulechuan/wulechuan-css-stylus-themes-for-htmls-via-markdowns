@@ -1,6 +1,6 @@
 import highOrderTasks from './tasks/4-create-high-order-task-bodies-for-all-themes'
 
-console.log('highOrderTasks', highOrderTasks)
+// console.log('highOrderTasks', highOrderTasks)
 
 
 export const clean         = highOrderTasks.cleanAllOldOuput

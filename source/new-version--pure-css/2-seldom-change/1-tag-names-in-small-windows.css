@@ -1,23 +1,23 @@
 /* 以下 CSS 定义自适应排版规则。主要面向小尺寸屏幕或窗口。 */
 
 @media (max-width: 1000px) {
-    html, body {
+    html {
         font-size: 16px;
+    }
+
+    body {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 600px) {
-    html, body {
-        font-size: 15px;
-    }
-    
     html {
+        font-size: 15px;
         padding: 0;
     }
 
-    body {
-        padding: 2rem 1rem 6rem 1rem;
-        box-shadow: none;
+    .markdown-article {
+        padding: 3rem 2rem 6rem 2rem;
     }
 
     h1 {
@@ -43,7 +43,7 @@
     ul, ol {
         padding-left: 1.5em;
     }
-    
+
     blockquote {
         margin-left: 0.7rem;
         margin-right: 0.5rem;

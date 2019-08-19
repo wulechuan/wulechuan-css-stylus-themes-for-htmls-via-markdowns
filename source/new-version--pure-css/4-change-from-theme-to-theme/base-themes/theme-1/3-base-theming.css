@@ -5,7 +5,11 @@ html {
 }
 
 body {
-    color: #383838;
+    background-color: transparent;
+}
+
+.markdown-article {
+    color: #333;
     background-color: #f7f7f9;
     box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
 }

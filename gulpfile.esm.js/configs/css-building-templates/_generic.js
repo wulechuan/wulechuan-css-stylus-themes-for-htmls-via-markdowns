@@ -19,10 +19,11 @@ export default {
     shouldDiscardMostCommentsEvenIfNotCompressCSS: false,
     // sourceGlobsCommonSubPath: '',
     sourceRelativeGlobs: [
-        '0-never-change/**/*.css',
-        '1-seldom-change/**/*.css',
-        `3-change-from-theme-to-theme/${baseThemeNamePlaceholderInTemplate}/**/*.css`,
-        `3-change-from-theme-to-theme/highlightjs-themes/${highlightjsThemeNamePlaceholderInTemplate}.css`,
-        '3-media-of-printing.css',
+        '0-titles-for-output-css/_default-title.css',
+        '1-never-change/**/*.css',
+        '2-seldom-change/**/*.css',
+        `4-change-from-theme-to-theme/base-themes/${baseThemeNamePlaceholderInTemplate}/**/*.css`,
+        `4-change-from-theme-to-theme/highlightjs-themes/${highlightjsThemeNamePlaceholderInTemplate}.css`,
+        '9-media-of-printing.css',
     ],
 }

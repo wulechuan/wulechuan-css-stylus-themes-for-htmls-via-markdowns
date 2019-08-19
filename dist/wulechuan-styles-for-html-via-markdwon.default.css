@@ -1,7 +1,24 @@
+/*!
+    This is a wulechuan's theming css for
+    an HTML file generated via a MarkDown file.
+
+    wulechuan@live.com
+
+    repos:
+    - https://github.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns
+    - https://code.aliyun.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns
+*/
+
+
+
+
 /* 以下为基本的通用定义。*/
 
 html {
     font-size: 20px;
+    word-break: break-word;
+    /* word-wrap: break-word; */
+    /* line-break: strict; */
 }
 
 html, body {
@@ -30,7 +47,18 @@ summary {
     text-align: center;
 }
 
+.markdown-article {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 5rem 4rem 6rem 4rem;
+    max-width: 50rem;
+    min-height: 60rem;
+    margin: 0 auto;
+}
 
+.header-anchor { /* markdown-it plugin: markdown-it-anchor */
+    margin-left: -0.75em; /* mark sure the content of the h1, h2 is centerized. */
+}
 
 
 
@@ -41,22 +69,16 @@ html {
 }
 
 body {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    padding: 5rem 4rem 6rem 4rem;
-    max-width: 50rem;
-    min-height: 60rem;
-    margin: 0 auto;
+    margin: 0;
 }
 
-/* body,
+body,
 article,
-h1, h2, h3, h4, h5, h6,
 p, blockquote,
 ul, ol, dl,
 table {
     line-height: 1.5;
-} */
+}
 
 a {
     text-decoration: none;
@@ -86,13 +108,18 @@ pre {
     margin-right: 1rem;
 }
 
+li > pre {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 h1, h2, h3, h4, h5, h6, dt {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    line-height: 1.25;
+    line-height: 1.5;
 }
 
 h1 {
@@ -257,7 +284,7 @@ blockquote {
     display: inline-block;
     vertical-align: top;
     margin: 0.5rem 0.8rem 1rem 1.2rem;
-    padding: 0.2em 2em 0.2em 1em;
+    padding: 0.2em 1em 0.2em 1em;
     border-style: solid;
 }
 
@@ -284,7 +311,7 @@ kbd, code {
 }
 
 pre {
-    line-height: 1.33;
+    line-height: 1.4;
     display: block;
     overflow-x: auto;
     padding: 0;
@@ -330,23 +357,23 @@ pre > code {
 /* 以下 CSS 定义自适应排版规则。主要面向小尺寸屏幕或窗口。 */
 
 @media (max-width: 1000px) {
-    html, body {
+    html {
         font-size: 16px;
+    }
+
+    body {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 600px) {
-    html, body {
-        font-size: 15px;
-    }
-    
     html {
+        font-size: 15px;
         padding: 0;
     }
 
-    body {
-        padding: 2rem 1rem 6rem 1rem;
-        box-shadow: none;
+    .markdown-article {
+        padding: 3rem 2rem 6rem 2rem;
     }
 
     h1 {
@@ -372,7 +399,7 @@ pre > code {
     ul, ol {
         padding-left: 1.5em;
     }
-    
+
     blockquote {
         margin-left: 0.7rem;
         margin-right: 0.5rem;
@@ -388,6 +415,33 @@ pre > code {
 
 
 /* Nothing yet */
+
+
+
+
+
+/* Nothing yet */
+
+
+
+
+
+/* .typora-node > content {
+    background-color: #bbb;
+} */
+
+.typora-node #write {
+    color: #333;
+    background-color: #f7f7f9;
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+.code-tooltip {
+    color: #f96;
+    background-color: #222;
+}
+
+
 
 
 /* 以下 CSS 定义字体家族，以及文字水平放置之方式。 */
@@ -468,12 +522,24 @@ kbd {
 
 code {
     border-radius: 0.2rem;
-    margin: -3px 0.1em;
-    padding: 2px 0.2em;
+    margin: 0.1em;
+    padding: 0.1em 0.2em;
 }
 
 pre {
     border-radius: 0.3rem;
+}
+
+
+
+
+
+/* 以下 CSS 定义自适应排版规则。主要面向小尺寸屏幕或窗口。 */
+
+@media (max-width: 600px) {
+    h1 {
+        font-weight: 400;
+    }
 }
 
 
@@ -487,7 +553,11 @@ html {
 }
 
 body {
-    color: #383838;
+    background-color: transparent;
+}
+
+.markdown-article {
+    color: #333;
     background-color: #f7f7f9;
     box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
 }
@@ -641,18 +711,6 @@ hr::before {
     background-color: #222;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
 }
-
-/* 以下 CSS 定义自适应排版规则。主要面向小尺寸屏幕或窗口。 */
-
-@media (max-width: 600px) {
-    h1 {
-        font-weight: 400;
-    }
-}
-
-
-
-
 
 /*
     以下 CSS 为针对由 highlight.js 所构造的代码块的视觉样式之方案。

@@ -5,22 +5,16 @@ html {
 }
 
 body {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    padding: 5rem 4rem 6rem 4rem;
-    max-width: 50rem;
-    min-height: 60rem;
-    margin: 0 auto;
+    margin: 0;
 }
 
-/* body,
+body,
 article,
-h1, h2, h3, h4, h5, h6,
 p, blockquote,
 ul, ol, dl,
 table {
     line-height: 1.5;
-} */
+}
 
 a {
     text-decoration: none;
@@ -50,13 +44,18 @@ pre {
     margin-right: 1rem;
 }
 
+li > pre {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 h1, h2, h3, h4, h5, h6, dt {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    line-height: 1.25;
+    line-height: 1.5;
 }
 
 h1 {
@@ -221,7 +220,7 @@ blockquote {
     display: inline-block;
     vertical-align: top;
     margin: 0.5rem 0.8rem 1rem 1.2rem;
-    padding: 0.2em 2em 0.2em 1em;
+    padding: 0.2em 1em 0.2em 1em;
     border-style: solid;
 }
 
@@ -248,7 +247,7 @@ kbd, code {
 }
 
 pre {
-    line-height: 1.33;
+    line-height: 1.4;
     display: block;
     overflow-x: auto;
     padding: 0;

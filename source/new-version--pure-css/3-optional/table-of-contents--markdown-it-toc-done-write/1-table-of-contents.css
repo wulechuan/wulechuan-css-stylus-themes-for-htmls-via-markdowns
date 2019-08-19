@@ -20,14 +20,11 @@ body.has-toc.toc-is-visible {
 
 .table-of-contents-panel {
     display: none;
-}
-
-.toc-is-visible .table-of-contents-panel {
     font-size: 0.8rem;
 
-    display: block;
     box-sizing: border-box;
     width: 20rem;
+    max-width: 100%;
     height: 100%;
 
     left: 0;
@@ -35,6 +32,19 @@ body.has-toc.toc-is-visible {
     margin: 0;
     padding: 3rem 0.5rem 1rem 0.5rem;
 }
+
+.toc-is-visible .table-of-contents-panel {
+    display: block;
+}
+
+
+
+ /* 无效用。因为我故意设计了 .toc-is-visible 类名。 */
+/* .toc-is-visible .table-of-contents-panel:focus-within {
+    display: none;
+} */
+
+
 
 nav.table-of-contents {
     scroll-behavior: smooth;

@@ -7,7 +7,7 @@
   "directories": {
     "doc": "docs"
   },
-  "main": "dist/wulechuan-styles-for-html-via-markdwon.default.min.css",
+  "main": "dist/wulechuan-styles-for-html-via-markdwon.default--with-toc.min.css",
   "keywords": [
     "markdown",
     "html",
