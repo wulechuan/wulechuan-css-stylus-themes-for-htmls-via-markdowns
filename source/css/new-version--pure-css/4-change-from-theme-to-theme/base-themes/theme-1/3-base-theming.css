@@ -130,6 +130,7 @@ input[type="checkbox"]:checked + label {
 
 table {
     border-color: #111;
+    background-color: white;
 }
 
 th {

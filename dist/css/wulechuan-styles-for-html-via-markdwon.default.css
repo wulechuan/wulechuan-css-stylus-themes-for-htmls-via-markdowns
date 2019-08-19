@@ -270,7 +270,7 @@ blockquote {
     display: inline-block;
     vertical-align: top;
     margin: 0.5rem 0.8rem 1rem 1.2rem;
-    padding: 0.2em 1em 0.2em 1em;
+    padding: 0.2em 1.2em 0.2em 1.2em;
     border-style: solid;
 }
 
@@ -305,25 +305,6 @@ pre {
     margin-bottom: 1.5rem;
 }
 
-table, td, th {
-    border-style: solid;
-}
-
-td, th {
-    padding: 0.25em 0.75em;
-}
-
-table {
-    border-collapse: collapse;
-    margin: 1rem auto;
-    max-width: 96%;
-    min-width: 60%;
-}
-
-table pre:last-child {
-    margin-bottom: 0.5rem;
-}
-
 code {
     word-break: break-word;
 }
@@ -343,6 +324,41 @@ pre > code {
     border: none !important;
     margin: 0 !important;
     border-radius: 0;
+}
+
+table, td, th {
+    border-style: solid;
+}
+
+td, th {
+    padding: 0.25em 0.75em;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 1rem auto;
+    max-width: 96%;
+    min-width: 60%;
+}
+
+td > h6:first-child,
+td > h5:first-child,
+td > h4:first-child,
+td > h3:first-child,
+td > h2:first-child,
+td > h1:first-child,
+blockquote > h6:first-child,
+blockquote > h5:first-child,
+blockquote > h4:first-child,
+blockquote > h3:first-child,
+blockquote > h2:first-child,
+blockquote > h1:first-child {
+    margin-top: 0.5em;
+}
+
+blockquote pre:last-child,
+table      pre:last-child {
+    margin-bottom: 0.5rem;
 }
 
 
@@ -398,6 +414,19 @@ pre > code {
 
     hr {
         margin: 1.5rem auto 2rem 0;
+    }
+
+    table {
+        max-width: none;
+        width: 100%;
+    }
+
+    td {
+        max-width: 400px;
+    }
+
+    table pre > code {
+        white-space: normal !important;
     }
 }
 
@@ -703,6 +732,7 @@ input[type="checkbox"]:checked + label {
 
 table {
     border-color: #111;
+    background-color: white;
 }
 
 th {

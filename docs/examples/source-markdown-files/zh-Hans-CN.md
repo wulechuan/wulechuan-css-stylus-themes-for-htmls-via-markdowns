@@ -52,20 +52,25 @@
 
 计算机键盘快捷键，其视觉样式如是：<kbd>Ctrl</kbd>+<kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</kbd>；又例：<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>s</kbd>组合键广泛用于各自现代计算机软件，代表（将工作内容或文件）`另存为`之功能。
 
-我们还可以引用一小段文字，比如一则笑话：
+我们还可以引用一小段文字。例如，子曰：
 
-> 一日，一姑娘在家陪妈妈看电视剧。居中女主角爱上了外国男子。
-> 女方家庭大力反对。最终，女主角与该外国男子分手。
-> 观剧至此，姑娘问其母亲：
->
-> “如果我想跟老外结婚，你会怎么样？”
->
-> 母亲不加思索地答道：
->
-> “你要是能嫁出去，别说外国人，就是外星人我都愿意！”
+> 学而时习之 不亦说乎 有朋自远方来 不亦乐乎 人不知而不愠 不亦君子乎
 
 
 
+## 插图
+
+### 正常的插图
+
+![端儿美丽](./illustrates/duan-er-pretty.jpg "端儿美丽")
+
+
+### 加载失败的插图
+
+![大美女](./images/beauty.jpg)
+
+
+---
 
 ## 程序代码片段示例集
 
@@ -81,7 +86,7 @@ module.exports = function isAPromiseObject(input) {
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

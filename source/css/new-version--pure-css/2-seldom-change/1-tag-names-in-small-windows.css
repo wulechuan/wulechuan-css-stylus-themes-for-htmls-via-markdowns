@@ -48,6 +48,19 @@
     hr {
         margin: 1.5rem auto 2rem 0;
     }
+
+    table {
+        max-width: none;
+        width: 100%;
+    }
+
+    td {
+        max-width: 400px;
+    }
+
+    table pre > code {
+        white-space: normal !important;
+    }
 }
 
 
