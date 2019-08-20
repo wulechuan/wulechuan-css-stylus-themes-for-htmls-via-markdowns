@@ -36,7 +36,7 @@ Simply take any css file under the `dist/css` folder.
 
 ### Raw MarkDown
 
-[en-US.md](./docs/examples/source-markdown-files/en-US.md)
+- [en-US.md](./docs/examples/source-markdown-files/en-US.md)
 
 ### Generated HTML File
 
