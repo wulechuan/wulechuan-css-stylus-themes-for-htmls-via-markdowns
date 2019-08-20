@@ -1,14 +1,12 @@
 /* 以下 CSS 定义针对可信赖的、无需多做变更的内容。主要涉及网页内容的排版尺寸。 */
 
-html {
-    padding: 3rem 1rem 4rem 1rem;
+if !_shouldWrapBaseLayoutRulesWith_markdownArticleRootSelector {
+    body {
+        line-height: 1.5;
+    }
 }
 
-body {
-    margin: 0;
-}
-
-body,
+&,
 article,
 p, blockquote,
 ul, ol, dl,
@@ -122,10 +120,8 @@ img {
     border-style: none;
     margin: 0.5rem auto 1rem auto;
 
-    /*
-        Rules below are for images failed to load,
-        a.k.a. for the alt texts of those images
-    */
+    // Rules below are for images failed to load,
+    // a.k.a. for the alt texts of those images.
     text-align: center;
     font-size: 100%;
     white-space: pre;
@@ -143,13 +139,16 @@ img[alt]::before {
 img[alt]::after {
     content: '”';
 }
-@-moz-document url-prefix() {
-    /* firefox utilize the ::before psuedo element of an image to print the "alt" attribute. */
+@css {@-moz-document url-prefix() {
+    /*
+        firefox utilizes the ::before psuedo element of an image
+        to print the "alt" attribute.
+    */
     img::after,
     img[alt]::after{
         content:'（图片加载失败）';
     }
-}
+}}
 
 hr {
     display: block;
@@ -197,7 +196,7 @@ ul, ol {
     padding-left: 1.5em;
 }
 
-@supports selector(::marker) {
+@css {@supports selector(::marker) {
     ul, ol {
         padding-left: 3em;
     }
@@ -205,9 +204,9 @@ ul, ol {
     li::marker {
         margin-right: 1em;
     }
-}
+}}
 
-@-moz-document url-prefix() {
+@css{@-moz-document url-prefix() {
     ul, ol {
         padding-left: 3em;
     }
@@ -215,7 +214,7 @@ ul, ol {
     li::marker {
         margin-right: 1em;
     }
-}
+}}
 
 blockquote {
     display: inline-block;
@@ -223,17 +222,19 @@ blockquote {
     margin: 0.5rem 0.8rem 1rem 1.2rem;
     padding: 0.2em 1.6em 0.2em 1.8em;
     border-style: solid;
+
+    strong,
+    b,
+    em {
+        color: inherit;
+    }
 }
 
-blockquote strong,
-blockquote b,
-blockquote em {
-    color: inherit;
-}
+ul, ol {
 
-ul blockquote,
-ol blockquote {
-    margin-left: 0;
+    blockquote {
+        margin-left: 0;
+    }
 }
 
 kbd, code {
@@ -292,44 +293,29 @@ table {
     min-width: 60%;
 }
 
-td > h6,
-td > h5,
-td > h4,
-td > h3,
-td > h2,
-td > h1,
-blockquote > h6,
-blockquote > h5,
-blockquote > h4,
-blockquote > h3,
-blockquote > h2,
-blockquote > h1 {
-    margin-top: 0.75em;
-    margin-bottom: 0.25em;
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
+td, blockquote {
+
+    > h6,
+    > h5,
+    > h4,
+    > h3,
+    > h2,
+    > h1 {
+        margin-top: 0.75em;
+        margin-bottom: 0.25em;
+        padding-top: 0.25em;
+        padding-bottom: 0.25em;
+
+        &:first-child {
+            margin-top: 0.25em;
+        }
+    }
 }
 
-td > h6:first-child,
-td > h5:first-child,
-td > h4:first-child,
-td > h3:first-child,
-td > h2:first-child,
-td > h1:first-child,
-blockquote > h6:first-child,
-blockquote > h5:first-child,
-blockquote > h4:first-child,
-blockquote > h3:first-child,
-blockquote > h2:first-child,
-blockquote > h1:first-child {
-    margin-top: 0.25em;
+blockquote,
+table {
+
+    pre:last-child {
+        margin-bottom: 0.5rem;
+    }
 }
-
-blockquote pre:last-child,
-table      pre:last-child {
-    margin-bottom: 0.5rem;
-}
-
-
-
-

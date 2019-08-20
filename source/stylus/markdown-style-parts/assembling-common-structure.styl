@@ -14,22 +14,7 @@ checkRequiredVariable(
 // Try setting optional variables to their default values
 
 @import '../utils/apply-default-value-to-variable-if-needed'
-
-applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_shouldNotOutputTitleBlock',
-    defaultValue: false
-)
-
-applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_shouldWrapCodeBlockThemingRulesWithMarkdownArticleRootSelector',
-    defaultValue: false
-)
-
-if !lookup('_markdownArticleRootSelector') {
-    _markdownArticleRootSelector = ' '
-    _shouldWrapCodeBlockThemingRulesWithMarkdownArticleRootSelector = false
-}
-
+    
 applyDefaultValueToAGlobalVariableIfNeeded(
     variableName: '_fontFamily_baseFontFamilyCarrierSelectors',
     defaultValue: 'html'
@@ -38,6 +23,21 @@ applyDefaultValueToAGlobalVariableIfNeeded(
 applyDefaultValueToAGlobalVariableIfNeeded(
     variableName: '_fontFamily_monospaceFontFamilyCarrierSelectors',
     defaultValue: 'kbd, pre, code'
+)
+
+if !lookup('_markdownArticleRootSelector') {
+    _markdownArticleRootSelector = ''
+    _shouldWrapCodeBlockThemingRulesWith_markdownArticleRootSelector = false
+}
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_markdownArticleParentSelector',
+    defaultValue: 'body'
+)
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_markdownArticleParentParentSelector',
+    defaultValue: 'html'
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
@@ -53,6 +53,31 @@ applyDefaultValueToAGlobalVariableIfNeeded(
 applyDefaultValueToAGlobalVariableIfNeeded(
     variableName: '_codeBlocksTypeName',
     defaultValue: 'highlightjs'
+)
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_shouldNotOutputTitleBlock',
+    defaultValue: false
+)
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_shouldEnableTableOfContents',
+    defaultValue: false
+)
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_shouldWrapBaseLayoutRulesWith_markdownArticleRootSelector',
+    defaultValue: false
+)
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_shouldWrapBaseThemingRulesWith_markdownArticleRootSelector',
+    defaultValue: false
+)
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_shouldWrapCodeBlockThemingRulesWith_markdownArticleRootSelector',
+    defaultValue: false
 )
 
 

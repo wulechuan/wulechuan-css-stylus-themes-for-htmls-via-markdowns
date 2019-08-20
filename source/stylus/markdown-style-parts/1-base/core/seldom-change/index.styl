@@ -1,18 +1,12 @@
-@import './font-families'
-
 @import './markdown-article-parents'
 
 $ {
     _wrappingSelector = ''
-    if (_shouldWrapBaseThemingRulesWith_markdownArticleRootSelector) {
+    if (_shouldWrapBaseLayoutRulesWith_markdownArticleRootSelector) {
         _wrappingSelector = _markdownArticleRootSelector
     }
 
     {_wrappingSelector} {
         @import './markdown-article/*'
     }
-}
-
-if (_shouldEnableTableOfContents) {
-    @import './markdown-article-toc'
 }

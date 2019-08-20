@@ -1,18 +1,4 @@
 /*
-    Set values for all variable.
-
-    Note:
-        Any variable starts with underscore('_') is an optional variable.
-        Others, required!
-*/
-/*
-    Now all variables are set.
-    Let's import all parts.
-    Those parts will utilize
-    those variables and produce
-    customized css accordingly.
-*/
-/*
     This is a wulechuan's theming css for
     an HTML file generated via a MarkDown file.
 
@@ -22,6 +8,88 @@
     - https://github.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns
     - https://code.aliyun.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns
 */
+html,
+body {
+  scroll-behavior: smooth;
+}
+html {
+  font-size: 20px;
+}
+body {
+  margin: 0;
+}
+label[for] {
+  cursor: pointer;
+}
+summary {
+  cursor: pointer;
+}
+/*
+    以下 CSS 针对自定义类。
+    除非在 Markdown 文件中手工注入这些 CSS 类名，
+    否则它们并不通用。
+*/
+.centered {
+  text-align: center;
+}
+html {
+  padding: 3rem 1rem 4rem 1rem;
+}
+body {
+  margin: 0;
+}
+@media (max-width: 900px) {
+  html {
+    font-size: 16px;
+  }
+  body {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 15px;
+  }
+  html {
+    padding: 0;
+  }
+}
+@-moz-document url-prefix() {
+  /*
+      firefox utilizes the ::before psuedo element of an image
+      to print the "alt" attribute.
+  */
+  img::after,img[alt]::after{
+      content:'（图片加载失败）';
+  }
+}
+@supports selector(::marker) {
+  ul, ol {
+      padding-left: 3em;
+  }
+
+  li::marker {
+      margin-right: 1em;
+  }
+}
+@-moz-document url-prefix() {
+  ul, ol {
+      padding-left: 3em;
+  }
+
+  li::marker {
+      margin-right: 1em;
+  }
+}
+@media (max-width: 600px) {
+}
+/*
+    以下 CSS 针对自定义类。
+    除非在 Markdown 文件中手工注入这些 CSS 类名，
+    否则它们并不通用。
+*/
+@media (max-width: 600px) {
+}
 html {
   font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
 }
@@ -36,191 +104,7 @@ html {
 body {
   background-color: transparent;
 }
-.markdown-article h1 {
-  font-weight: 300;
-  text-align: center;
-}
-.markdown-article h2 {
-  font-weight: 400;
-  text-align: center;
-}
-.markdown-article h3 {
-  font-weight: 500;
-}
-.markdown-article h4 {
-  font-weight: bold;
-}
-.markdown-article h5 {
-  font-weight: bolder;
-}
-.markdown-article a,
-.markdown-article code,
-.markdown-article kbd {
-  font-size: inherit;
-}
-.markdown-article img {
-  border-radius: 0.5rem;
-}
-.markdown-article blockquote {
-  border-width: 0 0 0 0.3rem;
-  border-radius: 0.3rem;
-  font-size: 0.8rem;
-}
-.markdown-article kbd,
-.markdown-article code {
-  border-width: 1px;
-}
-.markdown-article kbd {
-  border-radius: 0.2rem;
-  margin: -3px 0.1em;
-  padding: 2px 0.3em;
-}
-.markdown-article code {
-  border-radius: 0.2rem;
-  margin: 0.1em;
-  padding: 0.1em 0.2em;
-}
-.markdown-article pre {
-  border-radius: 0.3rem;
-}
-.markdown-article table {
-  border-width: 6px;
-}
-.markdown-article th,
-.markdown-article td {
-  border-width: 1px;
-}
 @media (max-width: 600px) {
-  .markdown-article h1 {
-    font-weight: 400;
-  }
-}
-.markdown-article {
-  color: #333;
-  background-color: #f7f7f9;
-  box-shadow: 0 0 0.4rem rgba(0,0,0,0.2);
-}
-.markdown-article a,
-.markdown-article a:visited {
-  color: #0f0fed;
-}
-.markdown-article a[href^="#"],
-.markdown-article a[href^="#"]:visited {
-  color: #0f0dad;
-}
-.markdown-article a.header-anchor[href^="#"]:visited,
-.markdown-article a.header-anchor[href^="#"],
-.markdown-article h6 > a[href^="#"]:visited,
-.markdown-article h6 > a[href^="#"],
-.markdown-article h5 > a[href^="#"]:visited,
-.markdown-article h5 > a[href^="#"],
-.markdown-article h4 > a[href^="#"]:visited,
-.markdown-article h4 > a[href^="#"],
-.markdown-article h3 > a[href^="#"]:visited,
-.markdown-article h3 > a[href^="#"],
-.markdown-article h2 > a[href^="#"]:visited,
-.markdown-article h2 > a[href^="#"],
-.markdown-article h1 > a[href^="#"]:visited,
-.markdown-article h1 > a[href^="#"] {
-  color: #ccc;
-}
-.markdown-article a.header-anchor[href^="#"]:hover,
-.markdown-article h6 > a[href^="#"]:hover,
-.markdown-article h5 > a[href^="#"]:hover,
-.markdown-article h4 > a[href^="#"]:hover,
-.markdown-article h3 > a[href^="#"]:hover,
-.markdown-article h2 > a[href^="#"]:hover,
-.markdown-article h1 > a[href^="#"]:hover {
-  color: inherit;
-}
-.markdown-article :target > a.header-anchor[href^="#"]:hover,
-.markdown-article :target > a.header-anchor[href^="#"],
-.markdown-article :target > a[href^="#"]:hover,
-.markdown-article :target > a[href^="#"] {
-  color: #15d30e;
-}
-.markdown-article img {
-  color: #555;
-  background-color: rgba(128,128,128,0.1);
-  box-shadow: inset 0 0 0.4rem rgba(0,0,0,0.29);
-}
-.markdown-article h1,
-.markdown-article h2,
-.markdown-article h3,
-.markdown-article h4,
-.markdown-article h5,
-.markdown-article h6,
-.markdown-article dt {
-  color: #000;
-}
-.markdown-article strong,
-.markdown-article b,
-.markdown-article em {
-  color: #000;
-}
-.markdown-article blockquote {
-  color: #000;
-  border-color: #f80;
-  background-color: rgba(136,136,136,0.2);
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
-}
-.markdown-article code,
-.markdown-article kbd {
-  text-shadow: none !important;
-}
-.markdown-article code {
-  color: #a34587;
-  border-color: rgba(0,0,0,0.219);
-  background-color: #fff;
-}
-.markdown-article pre code {
-  color: inherit !important;
-  background-color: transparent !important;
-}
-.markdown-article kbd {
-  color: #fff;
-  border-color: #fff;
-  background-color: #789abc;
-  box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.219);
-}
-.markdown-article input[type="checkbox"] + label {
-  color: #000;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-.markdown-article input[type="checkbox"]:checked + label {
-  color: #696;
-  text-shadow: -1px -1px 0 rgba(0,128,0,0.1);
-}
-.markdown-article table {
-  border-color: #111;
-  background-color: #fff;
-}
-.markdown-article th {
-  border-color: #222;
-}
-.markdown-article td {
-  border-color: #bbb;
-}
-.markdown-article thead {
-  color: #ddd;
-  background-color: #444;
-}
-.markdown-article tbody tr:nth-child(odd) {
-  background-color: transparent;
-}
-.markdown-article tbody tr:nth-child(even) {
-  background-color: rgba(0,0,0,0.1);
-}
-.markdown-article hr {
-  color: rgba(128,128,128,0.45);
-  background-image: linear-gradient(to right, transparent, currentColor 150%);
-}
-.markdown-article hr::before {
-  box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.51);
-}
-.markdown-article .code-tooltip {
-  color: #f96;
-  background-color: #222;
 }
 .CodeMirror-selected {
   background-color: rgba(255,255,255,0.15) !important;
