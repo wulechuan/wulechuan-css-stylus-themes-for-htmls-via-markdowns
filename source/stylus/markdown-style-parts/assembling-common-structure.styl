@@ -105,10 +105,20 @@ if !_shouldNotOutputTitleBlock {
 
 // ----------- base definitions -----------------------------------------------
 
-@import './1-base/core'
+@import './1-base/*'
+
+
+
+
+
+
+
+// ----------- layout definitions ---------------------------------------------
+
+@import './2-layout/core'
 
 if lookup('optionalPartName') {
-    @import './1-base/optional-extra/' + optionalPartName + '/*'
+    @import './2-layout/optional-extra/' + optionalPartName + '/*'
 }
 
 
@@ -118,10 +128,10 @@ if lookup('optionalPartName') {
 
 // ----------- theming 1: base theming ----------------------------------------
 
-@import './2-theming/base-themes/' + _baseThemeName + '/core'
+@import './3-theming/base-themes/' + _baseThemeName + '/core'
 
 if lookup('optionalPartName') {
-    @import './2-theming/base-themes/' + _baseThemeName + '/optional-extra/' + optionalPartName + '/*'
+    @import './3-theming/base-themes/' + _baseThemeName + '/optional-extra/' + optionalPartName + '/*'
 }
 
 
@@ -131,7 +141,7 @@ if lookup('optionalPartName') {
 
 // ----------- theming 2: theming for code blocks -----------------------------
 
-@import './2-theming/code-blocks-themes'
+@import './3-theming/code-blocks-themes'
 
 
 
@@ -140,4 +150,4 @@ if lookup('optionalPartName') {
 
 // ----------- extra: e.g. printing media -------------------------------------
 
-@import './3-extra/*'
+@import './4-extra/*'
