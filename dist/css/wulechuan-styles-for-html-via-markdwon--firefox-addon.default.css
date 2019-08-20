@@ -469,6 +469,30 @@ input#__markdown-viewer__show-tools:not(:checked)~.toggleable{
     padding:0 .5em;
 }
 
+.markdownRoot{
+    font-size:0.9rem;
+    line-height:1.5;
+    padding:6rem 4rem 14rem 4rem;
+    max-width:50rem;
+    min-height:60rem;
+    margin:0 auto;
+}
+
+.markdownRoot > h1:first-child{
+    margin-top:1em;
+}
+
+.markdownRoot{
+    color:#333;
+    background-color:#f7f7f9;
+    box-shadow:0 0 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
 #__markdown-viewer__tools{
     font-family:'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
     box-sizing:border-box;
@@ -703,6 +727,10 @@ a#__markdown-viewer__download:hover{
 
 
 @media (max-width: 600px){
+    .markdownRoot{
+        padding:3rem 2rem 7rem 2rem;
+    }
+
     #__markdown-viewer__tools.fixed{
         top:0.2rem;
         right:0.2rem;
