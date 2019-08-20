@@ -8,7 +8,7 @@
         width: 30rem;
     }
 
-    .markdown-article-toc-toggling-button.toc-is-visible {
+    .toc-is-visible .markdown-article-toc-toggling-button {
         left: 15rem;
     }
 }
@@ -19,7 +19,7 @@
     }
     
     .markdown-article-toc-toggling-button,
-    .markdown-article-toc-toggling-button.toc-is-visible {
+    .toc-is-visible .markdown-article-toc-toggling-button {
         left: 50%;
         transform: translateX(-50%);
     }

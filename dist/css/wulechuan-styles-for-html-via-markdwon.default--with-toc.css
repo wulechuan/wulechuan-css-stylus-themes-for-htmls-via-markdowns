@@ -532,7 +532,11 @@ body.has-toc.toc-is-visible {
 
 
 
- /* 无效用。因为我故意设计了 .toc-is-visible 类名。 */
+/*
+    以下规则无效用。
+    因为我故意设计了 .toc-is-visible 类名。
+    该类名显然会覆盖 :focus-within 的作用。
+*/
 /* .toc-is-visible .table-of-contents-panel:focus-within {
     display: none;
 } */
@@ -593,7 +597,7 @@ nav.table-of-contents > ul ul ul {
     box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.7);
 }
 
-.markdown-article-toc-toggling-button.toc-is-visible {
+.toc-is-visible .markdown-article-toc-toggling-button {
     left: 10rem;
     transform: translateX(-50%);
     color: black;
@@ -601,7 +605,7 @@ nav.table-of-contents > ul ul ul {
     /* box-shadow: 0 0 0.3rem rgba(255, 255, 255, 0.7); */
 }
 
-.markdown-article-toc-toggling-button.toc-is-visible:focus,
+.toc-is-visible .markdown-article-toc-toggling-button:focus,
 .markdown-article-toc-toggling-button:focus {
     outline: none;
     box-shadow: 0 0 0 4px rgb(18, 202, 18);
@@ -631,7 +635,7 @@ html[lang*="zh"]     .markdown-article-toc-toggling-button::before {
         width: 30rem;
     }
 
-    .markdown-article-toc-toggling-button.toc-is-visible {
+    .toc-is-visible .markdown-article-toc-toggling-button {
         left: 15rem;
     }
 }
@@ -642,7 +646,7 @@ html[lang*="zh"]     .markdown-article-toc-toggling-button::before {
     }
     
     .markdown-article-toc-toggling-button,
-    .markdown-article-toc-toggling-button.toc-is-visible {
+    .toc-is-visible .markdown-article-toc-toggling-button {
         left: 50%;
         transform: translateX(-50%);
     }

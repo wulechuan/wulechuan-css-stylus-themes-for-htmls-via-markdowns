@@ -1,100 +1,110 @@
-const tocRoot = document.querySelector('nav.table-of-contents')
-const cssClassNameTOCExists = 'has-toc'
-const cssClassNameTOCIsVisible = 'toc-is-visible'
-const tocPanelCSSClassName = 'table-of-contents-panel'
-
-
-if (tocRoot) {
-    setupAndStartApp()
-}
-
+setupAndStartApp()
 
 function setupAndStartApp() {
-    const documentBody = document.body
-    documentBody.classList.add(cssClassNameTOCExists) // simply make sure
-    const elementsToToggleTOCCSSClassName = [ documentBody ]
+    const tocRoot = document.querySelector('nav.table-of-contents')
+
+    const cssClassNameTOCExists         = 'has-toc'
+    const cssClassNameTOCIsVisible      = 'toc-is-visible'
+    const tocPanelCSSClassName          = 'table-of-contents-panel'
+    const tocTogglingButtonCSSClassName = 'markdown-article-toc-toggling-button'
 
 
 
-    const markDownArticle = document.querySelector('article.markdown-article')
-    if (markDownArticle) {
-        elementsToToggleTOCCSSClassName.push(markDownArticle)
-        markDownArticle.classList.add(cssClassNameTOCExists) // simply make sure
+
+    if (!tocRoot) {
+        return
     }
 
 
+
+
+    const documentBody = document.body
+
+    const tocElementsCommonParentNode = documentBody
+
+    const tocStatusCSSClassNamesCarrier = documentBody
+    tocStatusCSSClassNamesCarrier.classList.add(cssClassNameTOCExists) // Simply make sure
 
     const tocTogglingButton = buildTOCPanelTogglingButton()
-    elementsToToggleTOCCSSClassName.push(tocTogglingButton)
 
+    buildTOCWrapperAKATOCPanelIfNeeded(tocTogglingButton)
 
-
-    buildTOCWrapperAKATOCPanelIfNeeded()
-
-
+    let tocIsVisible
 
     // init app
-    if (window.innerWidth < 600) {
-        hideTOCPanel()
-    } else {
-        showTOCPanel()
-    }
+    showOrHideTOCPanel(window.innerWidth > 600)
 
 
 
-    // ------------------------------------------------
+    // ----------------------------------------------------------------
 
 
 
 
     function buildTOCPanelTogglingButton() {
-        const tocTogglingButton = document.createElement('button')
-        tocTogglingButton.className = 'markdown-article-toc-toggling-button'
-        documentBody.insertBefore(tocTogglingButton, document.scripts[0])
+        /**
+         * 我倾向于用 Javascript 来临时构建该按钮。
+         * 因为如果一共苛刻的环境仅允许读文档，而不允许
+         * Javascript 程序运行，那咱们还要切换按钮干嘛？
+         * 
+         * ---------------------------------------------
+         * 
+         * I prefer to build button via Javascript,
+         * because otherwise when Javascript is not allowed,
+         * why do we need a button that cannot work?
+         */
 
-        tocTogglingButton.onclick = tocTogglingButtonOnClick
+
+         // 万一按钮确实业已存在呢？比如工具构建好了静态的按钮？或者这个函数被人吃饱了没事儿调用了多次？
+         let tocTogglingButton = document.querySelector(`.${tocTogglingButtonCSSClassName}`)
+
+        if (!tocTogglingButton) {
+            tocTogglingButton = document.createElement('button')
+            tocTogglingButton.className = tocTogglingButtonCSSClassName
+
+            if (tocElementsCommonParentNode === documentBody) {
+                tocElementsCommonParentNode.insertBefore(tocTogglingButton, document.scripts[0])
+            } else {
+                tocElementsCommonParentNode.appendChild(tocTogglingButton)
+            }
+        }
+
+        if (tocTogglingButton.onclick === null) {
+            tocTogglingButton.onclick = function() { showOrHideTOCPanel(!tocIsVisible) }
+        }
 
         return tocTogglingButton
     }
 
-    function tocTogglingButtonOnClick() {
-        const tocIsVisible = documentBody.classList.contains(cssClassNameTOCIsVisible)
-        showOrHideTOCPanel(!tocIsVisible)
-    }
-
-    function showTOCPanel() { showOrHideTOCPanel(true)  }
-    function hideTOCPanel() { showOrHideTOCPanel(false) }
-
     function showOrHideTOCPanel(isToShowIt) {
-        elementsToToggleTOCCSSClassName.forEach(
-            el => el.classList.toggle(cssClassNameTOCIsVisible, isToShowIt)
-        )
+        tocStatusCSSClassNamesCarrier.classList.toggle(cssClassNameTOCIsVisible, isToShowIt)
+        tocIsVisible = isToShowIt
     }
 
-    function buildTOCWrapperAKATOCPanelIfNeeded() {
+    function buildTOCWrapperAKATOCPanelIfNeeded(tocTogglingButton) {
         /**
          * 我将借助 gulpjs 和 markdown-it 来从 markdown 文件构建
          * 对应的 HTML 文件。
          * 毕竟，文档首先是文档。是否有交互性是其次的。我假设有些苛刻的
          * 环境根本不允许执行 Javascript 程序。
-         * 
+         *
          * 因此，在构建 HTML 的过程中，我打算将纯静态 HTML 页面尽可
          * 能构建完整无缺，而不是借助 Javascript 在运行时补充构建额外
          * 的 HTML 元素。
-         * 
+         *
          * 特别是由 markdown-it-toc-done-right 构建的【目录】结构，
          * 我故意设计了一个外层 div.table-of-contents-panel 来协助
          * 排版。因次改外层 div 是必须的。而此种苛刻环境下本 js 根本不
          * 允许执行，上述 div 也就无法由本 js 文件在运行时补建。
-         * 
+         *
          * 另，本 js 提供了 .table-of-contents-panel 的隐藏和显示
          * 功能。
-         * 
+         *
          * --------------------------------------------------
-         * 
+         *
          * With the helps of gulpjs and markdown-it, I build
          * up an HTML out of a markdown file.
-         * 
+         *
          * A document(article) is a document at first place.
          * Any extra interactive feature is not a core feature.
          * I mean, I assume that some strict environments do
@@ -103,12 +113,12 @@ function setupAndStartApp() {
          * a set of files including HTML and CSS and Javascripts.
          * Well, right, for images, I don't embed theme into
          * HTML because that's way too crasy.
-         * 
+         *
          * So I really need to build everyting in the HTML
          * in the gulp tasks stage, including inserting the CSS
          * rules, as well as adding some extra markups upon those
          * raw markups generated by markdown-it.
-         * 
+         *
          * Especially for the markups of the TOC generated by
          * "markdonw-it-toc-done-right", an extra wrapping markup
          * is required for a much better and easier layout.
@@ -127,10 +137,13 @@ function setupAndStartApp() {
         tocPanel = document.createElement('div')
         tocPanel.className = tocPanelCSSClassName
 
-        if (tocRoot.parentNode === documentBody) {
-            documentBody.insertBefore(tocPanel, tocRoot)
+        if (tocRoot.parentNode === tocElementsCommonParentNode) {
+            tocElementsCommonParentNode.insertBefore(tocPanel, tocRoot)
+        } else if (tocTogglingButton) {
+            tocElementsCommonParentNode.insertBefore(tocPanel, tocTogglingButton)
         } else {
-            documentBody.insertBefore(tocPanel, tocTogglingButton)
+            console.warn('I have no idea where to put the {div.tocPanel}! So I simply append it.')
+            tocElementsCommonParentNode.appendChild(tocPanel)
         }
 
         tocPanel.appendChild(tocRoot)
