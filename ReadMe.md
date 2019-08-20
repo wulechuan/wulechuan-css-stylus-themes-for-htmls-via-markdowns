@@ -48,3 +48,7 @@ Simply take any css file under the `dist/css` folder.
 
 - [Snapshot in a narrow window](./docs/examples/rendered/snapshots/en-US-example-in-a-narrow-window.png)
 
+
+## License
+
+WTFPL

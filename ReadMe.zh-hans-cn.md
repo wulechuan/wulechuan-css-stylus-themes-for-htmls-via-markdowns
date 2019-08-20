@@ -49,3 +49,9 @@
 - [窗口较宽时的效果](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果.png)
 
 - [窗口较窄时的效果](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较窄时的效果.png)
+
+
+## 许可证类型
+
+WTFPL
+
