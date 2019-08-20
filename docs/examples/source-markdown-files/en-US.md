@@ -7,7 +7,9 @@
 
 ### Linkages
 
-Aliquip proident [Github.com](https://github.com) nulla ex cillum magna. Anim culpa dolor ullamco nulla culpa labore. Lorem dolor proident qui aliquip nulla. Do ex [nulla](#fake-id-1) anim tempor do veniam duis nulla ut culpa tempor dolore. Labore dolore ex anim [adipisicing esse do](#fake-id-2) id. Anim et ex ex labore cupidatat anim proident laboris amet fugiat aute ad. Reprehenderit dolore cupidatat sit elit esse anim est aute [consequat et nisi est](#fake-id-3).
+Aliquip proident nulla ex cillum magna. Anim culpa dolor ullamco nulla culpa labore. Lorem dolor proident qui aliquip nulla. Do ex [fake link 1 (do not follow)](#fake-id-1) anim tempor do veniam duis nulla ut culpa tempor dolore. Labore dolore ex anim [fake link 2 (do not follow)](#fake-id-2) id. Anim et ex ex labore cupidatat anim proident laboris amet fugiat aute ad. Reprehenderit dolore cupidatat sit elit esse anim est aute [fake link 3 (do not follow)](#fake-id-3) lorem ipsum.
+
+A link to a section of the page itselfs should look a bit different to a link to another page. A so-called page local link looks like: [A Normal Image](#a-normal-image).
 
 ### Inline Codes in Multiple Lines
 
@@ -16,18 +18,20 @@ Occaecat ea Lorem ut `officia` ea ad `nostrud`. Ut deserunt irure in dolore `vol
 
 ## Quoted Block
 
-Lorem Lorem sint labore id deserunt voluptate adipisicing consectetur non. Amet proident consequat dolor aliqua ut fugiat aute consequat qui laborum veniam sunt sunt anim.
+Lorem sint labore id deserunt voluptate adipisicing consectetur non. Amet proident consequat dolor aliqua ut fugiat aute consequat qui laborum veniam sunt sunt anim.
 
-> ### Note
+
+
+### What is GitHub?
+
+According to [KORBIN BROWN](https://www.howtogeek.com/180167/htg-explains-what-is-github-and-what-do-geeks-use-it-for/):
+
+> ### GitHub
 >
-> [Mollit pariatur](https://github.com/) minim consequat consectetur ea.
-> aliquip do incididunt culpa Lorem `commodo` cillum mollit officia.
->
-> Lorem aute labore quis [proident qui](#fake-id) minim elit exercitation.
-> Voluptate incididunt ullamco velit veniam consectetur nostrud pariatur.
+> [Github](https://github.com/ "https://github.com") is a website and service that we hear geeks rave about all the time, yet a lot of people don’t really understand what it does. Want to know what all the GitHub hubbub is about? Read on to find out.
 
 
-Lorem sint labore id deserunt voluptate adipisicin.
+See, it's a website for anyone, but mostly engineers.
 
 
 
@@ -145,7 +149,7 @@ const aSnippetInsideATable = 'hello';
     regular text
 </td>
 <td>
-    <h4>This is a sub title</h4>
+    <h4>This is a sub title inside a table cell</h4>
     <p>Irure aute aute aute ullamco deserunt deserunt cupidatat amet tempor eiusmod do ut quis qui. Nostrud esse irure pariatur ad aute ullamco sit reprehenderit magna. In aute enim qui veniam pariatur consectetur nulla ipsum consequat.</p>
 </td>
 </tr>

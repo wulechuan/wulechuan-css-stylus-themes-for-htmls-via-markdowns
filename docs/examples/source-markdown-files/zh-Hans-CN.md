@@ -46,11 +46,11 @@
 
 一段文字中，会有**着重的文字**，也有*斜体的文字*。
 
-这里是 GitHub，我本人有意将其译为【[吉特中心](https://github.com)】。当然，这显然并非官方译法。如果一个链接指向本文，则该链接看起来与其余链接稍有不同，如：本文《[Code Snippets](#code-snippets)》部分。
+这里是 GitHub，我本人有意将其译为【[吉特中心](https://github.com)】。当然，这显然并非官方译法。如果一个链接指向本文，则该链接看起来与其余链接稍有不同，如：本文《[程序代码片段示例集](#程序代码片段示例集)》部分。
 
 再来看看行文中的【代码词汇】或【术语】：例如`孙行者`和`计算机`。
 
-计算机键盘快捷键，其视觉样式如是：<kbd>Ctrl</kbd>+<kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</kbd>；又例：<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>s</kbd>组合键广泛用于各自现代计算机软件，代表（将工作内容或文件）`另存为`之功能。
+计算机键盘快捷键，其视觉样式如是：<kbd>Ctrl</kbd>+<kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</kbd>；又例：<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>s</kbd>组合键广泛用于各自现代计算机软件，代表（将工作内容或文件）`另存为`（一文件）之功能。
 
 我们还可以引用一小段文字。例如，子曰：
 
