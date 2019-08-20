@@ -1,0 +1,368 @@
+/*
+    Set values for all variable.
+
+    Note:
+        Any variable starts with underscore('_') is an optional variable.
+        Others, required!
+*/
+/*
+    Now all variables are set.
+    Let's import all parts.
+    Those parts will utilize
+    those variables and produce
+    customized css accordingly.
+*/
+/*
+    This is a wulechuan's theming css for
+    an HTML file generated via a MarkDown file.
+
+    wulechuan@live.com
+
+    repos:
+    - https://github.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns
+    - https://code.aliyun.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns
+*/
+html {
+  font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
+}
+kbd,
+pre,
+code {
+  font-family: 'PT Mono', 'consolas', 'Courier New', Courier, monospace, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
+}
+html {
+  background-color: #bbb;
+}
+body {
+  background-color: transparent;
+}
+.markdown-article h1 {
+  font-weight: 300;
+  text-align: center;
+}
+.markdown-article h2 {
+  font-weight: 400;
+  text-align: center;
+}
+.markdown-article h3 {
+  font-weight: 500;
+}
+.markdown-article h4 {
+  font-weight: bold;
+}
+.markdown-article h5 {
+  font-weight: bolder;
+}
+.markdown-article a,
+.markdown-article code,
+.markdown-article kbd {
+  font-size: inherit;
+}
+.markdown-article img {
+  border-radius: 0.5rem;
+}
+.markdown-article blockquote {
+  border-width: 0 0 0 0.3rem;
+  border-radius: 0.3rem;
+  font-size: 0.8rem;
+}
+.markdown-article kbd,
+.markdown-article code {
+  border-width: 1px;
+}
+.markdown-article kbd {
+  border-radius: 0.2rem;
+  margin: -3px 0.1em;
+  padding: 2px 0.3em;
+}
+.markdown-article code {
+  border-radius: 0.2rem;
+  margin: 0.1em;
+  padding: 0.1em 0.2em;
+}
+.markdown-article pre {
+  border-radius: 0.3rem;
+}
+.markdown-article table {
+  border-width: 6px;
+}
+.markdown-article th,
+.markdown-article td {
+  border-width: 1px;
+}
+@media (max-width: 600px) {
+  .markdown-article h1 {
+    font-weight: 400;
+  }
+}
+.markdown-article {
+  color: #333;
+  background-color: #f7f7f9;
+  box-shadow: 0 0 0.4rem rgba(0,0,0,0.2);
+}
+.markdown-article a,
+.markdown-article a:visited {
+  color: #0f0fed;
+}
+.markdown-article a[href^="#"],
+.markdown-article a[href^="#"]:visited {
+  color: #0f0dad;
+}
+.markdown-article a.header-anchor[href^="#"]:visited,
+.markdown-article a.header-anchor[href^="#"],
+.markdown-article h6 > a[href^="#"]:visited,
+.markdown-article h6 > a[href^="#"],
+.markdown-article h5 > a[href^="#"]:visited,
+.markdown-article h5 > a[href^="#"],
+.markdown-article h4 > a[href^="#"]:visited,
+.markdown-article h4 > a[href^="#"],
+.markdown-article h3 > a[href^="#"]:visited,
+.markdown-article h3 > a[href^="#"],
+.markdown-article h2 > a[href^="#"]:visited,
+.markdown-article h2 > a[href^="#"],
+.markdown-article h1 > a[href^="#"]:visited,
+.markdown-article h1 > a[href^="#"] {
+  color: #ccc;
+}
+.markdown-article a.header-anchor[href^="#"]:hover,
+.markdown-article h6 > a[href^="#"]:hover,
+.markdown-article h5 > a[href^="#"]:hover,
+.markdown-article h4 > a[href^="#"]:hover,
+.markdown-article h3 > a[href^="#"]:hover,
+.markdown-article h2 > a[href^="#"]:hover,
+.markdown-article h1 > a[href^="#"]:hover {
+  color: inherit;
+}
+.markdown-article :target > a.header-anchor[href^="#"]:hover,
+.markdown-article :target > a.header-anchor[href^="#"],
+.markdown-article :target > a[href^="#"]:hover,
+.markdown-article :target > a[href^="#"] {
+  color: #15d30e;
+}
+.markdown-article img {
+  color: #555;
+  background-color: rgba(128,128,128,0.1);
+  box-shadow: inset 0 0 0.4rem rgba(0,0,0,0.29);
+}
+.markdown-article h1,
+.markdown-article h2,
+.markdown-article h3,
+.markdown-article h4,
+.markdown-article h5,
+.markdown-article h6,
+.markdown-article dt {
+  color: #000;
+}
+.markdown-article strong,
+.markdown-article b,
+.markdown-article em {
+  color: #000;
+}
+.markdown-article blockquote {
+  color: #000;
+  border-color: #f80;
+  background-color: rgba(136,136,136,0.2);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
+}
+.markdown-article code,
+.markdown-article kbd {
+  text-shadow: none !important;
+}
+.markdown-article code {
+  color: #a34587;
+  border-color: rgba(0,0,0,0.219);
+  background-color: #fff;
+}
+.markdown-article pre code {
+  color: inherit !important;
+  background-color: transparent !important;
+}
+.markdown-article kbd {
+  color: #fff;
+  border-color: #fff;
+  background-color: #789abc;
+  box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.219);
+}
+.markdown-article input[type="checkbox"] + label {
+  color: #000;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.markdown-article input[type="checkbox"]:checked + label {
+  color: #696;
+  text-shadow: -1px -1px 0 rgba(0,128,0,0.1);
+}
+.markdown-article table {
+  border-color: #111;
+  background-color: #fff;
+}
+.markdown-article th {
+  border-color: #222;
+}
+.markdown-article td {
+  border-color: #bbb;
+}
+.markdown-article thead {
+  color: #ddd;
+  background-color: #444;
+}
+.markdown-article tbody tr:nth-child(odd) {
+  background-color: transparent;
+}
+.markdown-article tbody tr:nth-child(even) {
+  background-color: rgba(0,0,0,0.1);
+}
+.markdown-article hr {
+  color: rgba(128,128,128,0.45);
+  background-image: linear-gradient(to right, transparent, currentColor 150%);
+}
+.markdown-article hr::before {
+  box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.51);
+}
+.markdown-article .code-tooltip {
+  color: #f96;
+  background-color: #222;
+}
+.CodeMirror-selected {
+  background-color: rgba(255,255,255,0.15) !important;
+}
+.CodeMirror-selectedtext {
+  color: #000 !important;
+  background-color: rgba(255,255,255,0.319) !important;
+}
+.CodeMirror div.CodeMirror-cursor {
+  border-left-color: #ffee58;
+}
+.CodeMirror-scroll,
+pre,
+.hljs {
+  color: #abb2bf;
+  background-color: #282c34;
+}
+.cm-s-inner .cm-comment,
+.cm-comment,
+.hljs-comment,
+.hljs-quote {
+  color: #000;
+  background-color: #23ff7e;
+  font-style: italic;
+}
+.cm-s-inner .cm-keyword,
+.cm-keyword,
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
+  color: #c678dd;
+}
+.cm-s-inner .cm-tag.cm-bracket,
+.cm-s-inner .cm-atom,
+.cm-s-inner .cm-operator,
+.cm-tag.cm-bracket,
+.cm-atom,
+.cm-operator {
+  color: inherit;
+}
+.cm-s-inner .cm-tag,
+.cm-tag,
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
+  color: #e06c75;
+}
+.hljs-literal {
+  color: #56b6c2;
+}
+.cm-s-inner .cm-property,
+.cm-s-inner .cm-string,
+.cm-property,
+.cm-string,
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
+  color: #98c379;
+}
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-variable-2,
+.cm-variable-2,
+.cm-variable,
+.hljs-built_in,
+.hljs-class .hljs-title {
+  color: #e6c07b;
+}
+.cm-s-inner .cm-number,
+.cm-s-inner .cm-attribute,
+.cm-s-inner .cm-qualifier,
+.cm-number,
+.cm-attribute,
+.cm-qualifier,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
+  color: #d19a66;
+}
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-builtin,
+.cm-def,
+.cm-builtin,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
+  color: #61aeee;
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: bold;
+}
+.hljs-link {
+  text-decoration: underline;
+}
+@media print {
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a[href]::after {
+    content: ' (' attr(href) ')';
+  }
+  abbr[title]::after {
+    content: ' (' attr(title) ')';
+  }
+  a[href^='#']::after,
+  a[href^='javascript:']::after {
+    content: '';
+  }
+  pre,
+  blockquote {
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  h2,
+  h3,
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}

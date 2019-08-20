@@ -1,0 +1,118 @@
+// Check all required variables
+
+@import '../utils/check-required-variable'
+
+checkRequiredVariable(
+    variableName: 'codeBlocksThemeName',
+    exampleValue: 'atom-one-dark'
+)
+
+
+
+
+
+// Try setting optional variables to their default values
+
+@import '../utils/apply-default-value-to-variable-if-needed'
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_shouldNotOutputTitleBlock',
+    defaultValue: false
+)
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_shouldWrapCodeBlockThemingRulesWithMarkdownArticleRootSelector',
+    defaultValue: false
+)
+
+if !lookup('_markdownArticleRootSelector') {
+    _markdownArticleRootSelector = ' '
+    _shouldWrapCodeBlockThemingRulesWithMarkdownArticleRootSelector = false
+}
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_fontFamily_baseFontFamilyCarrierSelectors',
+    defaultValue: 'html'
+)
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_fontFamily_monospaceFontFamilyCarrierSelectors',
+    defaultValue: 'kbd, pre, code'
+)
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_markdownArticleBackplateBackgroundColorCarrierSelector',
+    defaultValue: 'html'
+)
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_baseThemeName',
+    defaultValue: 'theme-0'
+)
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_codeBlocksTypeName',
+    defaultValue: 'highlightjs'
+)
+
+
+
+
+
+
+
+
+// ----------- title block of ouptut css file ---------------------------------
+
+if !_shouldNotOutputTitleBlock {
+    @import './0-titles-for-output-css/_default-title'
+
+    if lookup('optionalPartName') {
+        @import './0-titles-for-output-css/optional-secondary-titles/' + optionalPartName + '/*'
+    }
+}
+
+
+
+
+
+
+
+// ----------- base definitions -----------------------------------------------
+
+@import './1-base/core'
+
+if lookup('optionalPartName') {
+    @import './1-base/optional-extra/' + optionalPartName + '/*'
+}
+
+
+
+
+
+
+// ----------- theming 1: base theming ----------------------------------------
+
+@import './2-theming/base-themes/' + _baseThemeName + '/core'
+
+if lookup('optionalPartName') {
+    @import './2-theming/base-themes/' + _baseThemeName + '/optional-extra/' + optionalPartName + '/*'
+}
+
+
+
+
+
+
+// ----------- theming 2: theming for code blocks -----------------------------
+
+@import './2-theming/code-blocks-themes'
+
+
+
+
+
+
+// ----------- extra: e.g. printing media -------------------------------------
+
+@import './3-extra/*'

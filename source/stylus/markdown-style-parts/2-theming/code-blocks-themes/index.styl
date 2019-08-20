@@ -1,0 +1,10 @@
+& {
+    _wrappingSelectorOfCodeBlocks = ''
+    if _shouldWrapCodeBlockThemingRulesWithMarkdownArticleRootSelector {
+        _wrappingSelectorOfCodeBlocks = _markdownArticleRootSelector
+    }
+
+    {_wrappingSelectorOfCodeBlocks} {
+        @import './' + _codeBlocksTypeName + '/' + codeBlocksThemeName
+    }
+}
