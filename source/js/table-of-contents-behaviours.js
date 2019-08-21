@@ -5,8 +5,8 @@ function setupAndStartApp() {
 
     const cssClassNameTOCExists         = 'markdown-article-toc-panel-exists'
     const cssClassNameTOCIsVisible      = 'markdown-article-toc-panel-is-visible'
-    const tocPanelCSSClassName          = 'markdown-article-toc-panel'
     const tocTogglingButtonCSSClassName = 'markdown-article-toc-toggling-button'
+    const tocPanelCSSClassName          = 'table-of-contents-panel' // The default value of markdown-it-toc-done-right
 
 
 
