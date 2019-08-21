@@ -51,6 +51,24 @@
 - [窗口较窄时的效果](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较窄时的效果.png)
 
 
+
+## 制作一套新的 CSS 主题文件
+
+### 步骤
+
+暂从略。
+
+### 可着色代码块
+
+参阅 [.../code-blocks-themes/ReadMe.md](./source/stylus/markdown-style-parts/3-theming/code-blocks-themes/ReadMe.md)。
+
+
+### 所有可配置的 Stylus 变量
+
+参阅 [.../markdown-style-senarios/ReadMe.md](./source/stylus/markdown-style-senarios/ReadMe.md)。
+
+
+
 ## 许可证类型
 
 WTFPL

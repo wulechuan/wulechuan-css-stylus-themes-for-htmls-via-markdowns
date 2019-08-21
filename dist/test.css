@@ -24,11 +24,6 @@ label[for] {
 summary {
   cursor: pointer;
 }
-/*
-    以下 CSS 针对自定义类。
-    除非在 Markdown 文件中手工注入这些 CSS 类名，
-    否则它们并不通用。
-*/
 .centered {
   text-align: center;
 }
@@ -397,11 +392,6 @@ table pre:last-child {
     white-space: normal !important;
   }
 }
-/*
-    以下 CSS 针对自定义类。
-    除非在 Markdown 文件中手工注入这些 CSS 类名，
-    否则它们并不通用。
-*/
 .markdown-article {
   font-size: 0.9rem;
   line-height: 1.5;
@@ -607,56 +597,27 @@ hr {
 hr::before {
   box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.51);
 }
-.code-tooltip {
-  color: #f96;
-  background-color: #222;
-}
 .table-of-contents-panel {
   color: #ccc;
   background-color: #222;
   box-shadow: 0 0 0.5rem rgba(0,0,0,0.4);
 }
-.CodeMirror-selected {
-  background-color: rgba(255,255,255,0.15) !important;
-}
-.CodeMirror-selectedtext {
-  color: #000 !important;
-  background-color: rgba(255,255,255,0.319) !important;
-}
-.CodeMirror div.CodeMirror-cursor {
-  border-left-color: #ffee58;
-}
-.CodeMirror-scroll,
 pre,
 .hljs {
   color: #abb2bf;
   background-color: #282c34;
 }
-.cm-s-inner .cm-comment,
-.cm-comment,
 .hljs-comment,
 .hljs-quote {
   color: #000;
   background-color: #23ff7e;
   font-style: italic;
 }
-.cm-s-inner .cm-keyword,
-.cm-keyword,
 .hljs-doctag,
 .hljs-keyword,
 .hljs-formula {
   color: #c678dd;
 }
-.cm-s-inner .cm-tag.cm-bracket,
-.cm-s-inner .cm-atom,
-.cm-s-inner .cm-operator,
-.cm-tag.cm-bracket,
-.cm-atom,
-.cm-operator {
-  color: inherit;
-}
-.cm-s-inner .cm-tag,
-.cm-tag,
 .hljs-section,
 .hljs-name,
 .hljs-selector-tag,
@@ -667,10 +628,6 @@ pre,
 .hljs-literal {
   color: #56b6c2;
 }
-.cm-s-inner .cm-property,
-.cm-s-inner .cm-string,
-.cm-property,
-.cm-string,
 .hljs-string,
 .hljs-regexp,
 .hljs-addition,
@@ -678,20 +635,10 @@ pre,
 .hljs-meta-string {
   color: #98c379;
 }
-.cm-s-inner .cm-variable,
-.cm-s-inner .cm-variable-2,
-.cm-variable-2,
-.cm-variable,
 .hljs-built_in,
 .hljs-class .hljs-title {
   color: #e6c07b;
 }
-.cm-s-inner .cm-number,
-.cm-s-inner .cm-attribute,
-.cm-s-inner .cm-qualifier,
-.cm-number,
-.cm-attribute,
-.cm-qualifier,
 .hljs-attr,
 .hljs-variable,
 .hljs-template-variable,
@@ -702,10 +649,6 @@ pre,
 .hljs-number {
   color: #d19a66;
 }
-.cm-s-inner .cm-def,
-.cm-s-inner .cm-builtin,
-.cm-def,
-.cm-builtin,
 .hljs-symbol,
 .hljs-bullet,
 .hljs-link,

@@ -14,7 +14,7 @@ if !_shouldNotOutputTitleBlock {
 
 // ----------- base definitions ----------------------------------------------
 
-@import '../1-base/*'
+@import '../1-base'
 
 
 
@@ -36,7 +36,7 @@ if lookup('optionalPartName') {
 @import '../3-theming/base-themes/' + _baseThemeName + '/core'
 
 if lookup('optionalPartName') {
-    @import '../3-theming/base-themes/' + _baseThemeName + '/optional-extra/' + optionalPartName + '/*'
+    @import '../3-theming/base-themes/' + _baseThemeName + '/optional-extra/' + optionalPartName
 }
 
 
@@ -51,4 +51,4 @@ if lookup('optionalPartName') {
 
 // ----------- extra: e.g. printing media -------------------------------------
 
-@import '../4-extra/*'
+@import '../4-extra'

@@ -49,6 +49,26 @@ Simply take any css file under the `dist/css` folder.
 - [Snapshot in a narrow window](./docs/examples/rendered/snapshots/en-US-example-in-a-narrow-window.png)
 
 
+
+
+## Design CSS for a New Theme
+
+### Steps
+
+Nothing yet.
+
+
+### Code Blocks that are able to Colorize
+
+See [.../code-blocks-themes/ReadMe.md](./source/stylus/markdown-style-parts/3-theming/code-blocks-themes/ReadMe.md).
+
+
+### All Stylus Variables
+
+See [.../markdown-style-senarios/ReadMe.md](./source/stylus/markdown-style-senarios/ReadMe.md).
+
+
+
 ## License
 
 WTFPL
