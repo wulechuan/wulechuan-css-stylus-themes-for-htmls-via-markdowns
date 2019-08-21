@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="./dist/css/wulechuan-styles-for-html-via-markdown--vscode.css">
+
 # Wulechuan's Markdown Themes
 
 [简体中文版文档](./ReadMe.zh-hans-cn.md)
