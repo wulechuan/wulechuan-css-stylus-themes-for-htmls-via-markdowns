@@ -1,4 +1,4 @@
-/*!
+/*
     This is a wulechuan's theming css for
     an HTML file generated via a MarkDown file.
 
@@ -8,106 +8,109 @@
     - https://github.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns
     - https://code.aliyun.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns
 */
-
-
-
-
-/* 以下为基本的通用定义。*/
-
-html {
-    font-size: 20px;
-    word-break: break-word;
-    /* word-wrap: break-word; */
-    /* line-break: strict; */
-}
-
-html, body {
+html,
+body {
     scroll-behavior: smooth;
 }
-
-label[for] {
-    cursor: pointer;
-}
-
-summary {
-    cursor: pointer;
-}
-
-
-
-
-
-/* 以下 CSS 针对自定义类。除非 Markdown 文件中手工注入这些 CSS 类名，否则它们并不通用。 */
-
-.document-author {
-    text-align: center;
-}
-
-.centered {
-    text-align: center;
-}
-
-/* 以下 CSS 定义针对可信赖的、无需多做变更的内容。主要涉及网页内容的排版尺寸。 */
-
 html {
-    padding: 3rem 1rem 4rem 1rem;
+    font-size: 20px;
 }
-
 body {
     margin: 0;
 }
-
-body,
+label[for] {
+    cursor: pointer;
+}
+summary {
+    cursor: pointer;
+}
+.centered {
+    text-align: center;
+}
+html {
+    padding: 3rem 1rem 4rem 1rem;
+}
+@media (max-width: 900px) {
+    html {
+        font-size: 16px;
+    }
+    body {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+    html {
+        padding: 0;
+    }
+}
+.markdown-article {
+    line-height: 1.5;
+}
 article,
-p, blockquote,
-ul, ol, dl,
+p,
+blockquote,
+ul,
+ol,
+dl,
 table {
     line-height: 1.5;
 }
-
 a {
     text-decoration: none;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: transparent;
 }
-
 a:not([href]) {
     font-style: italic;
 }
-
 a[href]:hover {
     text-decoration: none;
     border-bottom-color: currentColor;
 }
-
-h1, h2, h3, h4, h5, h6, dt, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dt,
+p {
     margin-left: -0.5em;
     margin-right: -0.5em;
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
-
 pre {
     margin-left: 1rem;
     margin-right: 1rem;
 }
-
 td > pre,
 li > pre {
     margin-left: 0;
     margin-right: 0;
 }
-
-h1, h2, h3, h4, h5, h6, dt {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dt {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
 }
-
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     line-height: 1.5;
 }
-
 h1 {
     font-size: 3rem;
     margin-top: 2em;
@@ -115,34 +118,26 @@ h1 {
     padding-top: 0.25em;
     padding-bottom: 0.25em;
 }
-
 h2 {
     font-size: 1.8rem;
     margin-top: 3em;
     margin-bottom: 0.5em;
 }
-
 h3 {
     font-size: 1.35rem;
     margin-top: 2em;
     margin-bottom: 0.5em;
 }
-
 h4 {
     font-size: 1.2rem;
     margin-top: 2em;
     margin-bottom: 0.5em;
 }
-
 h5 {
     font-size: 1rem;
     margin-top: 2em;
     margin-bottom: 0.5em;
 }
-
-/* h6 {
-} */
-
 input[type="checkbox"] {
     width: 1.4em;
     height: 1.4em;
@@ -150,19 +145,18 @@ input[type="checkbox"] {
     vertical-align: middle;
     margin: -0.2em 0.6em 0 0;
 }
-
-ul, ol, dd {
+ul,
+ol,
+dd {
     margin-left: auto;
     margin-right: auto;
 }
-
 p {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
 }
-
 img {
     display: block;
     box-sizing: content-box;
@@ -170,22 +164,15 @@ img {
     max-width: 75%;
     border-style: none;
     margin: 0.5rem auto 1rem auto;
-
-    /*
-        Rules below are for images failed to load,
-        a.k.a. for the alt texts of those images
-    */
     text-align: center;
     font-size: 100%;
     white-space: pre;
     font-style: italic;
     font-weight: normal;
 }
-
 img::before {
     content: '图片加载失败。图片内容未知。';
 }
-
 img[alt]::before {
     content: '图片加载失败。图片内容的大致描述为：\A“';
 }
@@ -193,13 +180,11 @@ img[alt]::after {
     content: '”';
 }
 @-moz-document url-prefix() {
-    /* firefox utilize the ::before psuedo element of an image to print the "alt" attribute. */
     img::after,
-    img[alt]::after{
-        content:'（图片加载失败）';
+    img[alt]::after {
+        content: '（图片加载失败）';
     }
 }
-
 hr {
     display: block;
     position: relative;
@@ -210,7 +195,6 @@ hr {
     overflow: visible !important;
     background-color: transparent;
 }
-
 hr::before {
     content: '';
     display: block;
@@ -223,7 +207,6 @@ hr::before {
     border-radius: 50%;
     background-color: currentColor;
 }
-
 hr::after {
     content: '';
     display: block;
@@ -236,17 +219,15 @@ hr::after {
     background-image: inherit !important;
     transform: scaleX(-1);
 }
-
 li {
     margin: 0.5em 0;
 }
-
-
-ul, ol {
+ul,
+ol {
     padding-left: 1.5em;
 }
-
 @supports selector(::marker) {
+
     ul, ol {
         padding-left: 3em;
     }
@@ -255,17 +236,15 @@ ul, ol {
         margin-right: 1em;
     }
 }
-
 @-moz-document url-prefix() {
-    ul, ol {
+    ul,
+    ol {
         padding-left: 3em;
     }
-
     li::marker {
         margin-right: 1em;
     }
 }
-
 blockquote {
     display: inline-block;
     vertical-align: top;
@@ -273,19 +252,17 @@ blockquote {
     padding: 0.2em 1.6em 0.2em 1.8em;
     border-style: solid;
 }
-
 blockquote strong,
 blockquote b,
 blockquote em {
     color: inherit;
 }
-
 ul blockquote,
 ol blockquote {
     margin-left: 0;
 }
-
-kbd, code {
+kbd,
+code {
   display: inline-block;
   vertical-align: baseline;
   line-height: 1;
@@ -295,7 +272,6 @@ kbd, code {
   font-style: normal;
   border-style: solid;
 }
-
 pre {
     line-height: 1.4;
     display: block;
@@ -304,11 +280,9 @@ pre {
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
 }
-
 code {
     word-break: break-word;
 }
-
 pre,
 pre > code,
 pre > code * {
@@ -317,7 +291,6 @@ pre > code * {
   word-break: keep-all !important;
   text-align: left !important;
 }
-
 pre > code {
     line-height: inherit;
     padding: 0.5em 1em;
@@ -325,135 +298,94 @@ pre > code {
     margin: 0 !important;
     border-radius: 0;
 }
-
-table, td, th {
+table,
+td,
+th {
     border-style: solid;
 }
-
-td, th {
+td,
+th {
     padding: 0.25em 0.75em;
 }
-
 table {
     border-collapse: collapse;
     margin: 1rem auto;
     max-width: 96%;
     min-width: 60%;
 }
-
 td > h6,
-td > h5,
-td > h4,
-td > h3,
-td > h2,
-td > h1,
 blockquote > h6,
+td > h5,
 blockquote > h5,
+td > h4,
 blockquote > h4,
+td > h3,
 blockquote > h3,
+td > h2,
 blockquote > h2,
+td > h1,
 blockquote > h1 {
     margin-top: 0.75em;
     margin-bottom: 0.25em;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
 }
-
 td > h6:first-child,
-td > h5:first-child,
-td > h4:first-child,
-td > h3:first-child,
-td > h2:first-child,
-td > h1:first-child,
 blockquote > h6:first-child,
+td > h5:first-child,
 blockquote > h5:first-child,
+td > h4:first-child,
 blockquote > h4:first-child,
+td > h3:first-child,
 blockquote > h3:first-child,
+td > h2:first-child,
 blockquote > h2:first-child,
+td > h1:first-child,
 blockquote > h1:first-child {
     margin-top: 0.25em;
 }
-
 blockquote pre:last-child,
-table      pre:last-child {
+table pre:last-child {
     margin-bottom: 0.5rem;
 }
-
-
-
-
-
-/* 以下 CSS 定义自适应排版规则。主要面向小尺寸屏幕或窗口。 */
-
-@media (max-width: 1000px) {
-    html {
-        font-size: 16px;
-    }
-
-    body {
-        font-size: 1rem;
-    }
-}
-
 @media (max-width: 600px) {
-    html {
-        font-size: 15px;
-        padding: 0;
-    }
-
     h1 {
         font-size: 1.8rem;
     }
-
     h2 {
         font-size: 1.35rem;
     }
-
     h3 {
         font-size: 1.2rem;
     }
-
     h4 {
         font-size: 1rem;
     }
-
     h5 {
         font-size: 0.9rem;
     }
-
-    ul, ol {
+    ul,
+    ol {
         padding-left: 1.5em;
     }
-
     blockquote {
         margin-left: 0.7rem;
         margin-right: 0.5rem;
     }
-
     hr {
         margin: 1.5rem auto 2rem 0;
     }
-
     table {
         max-width: none;
         width: 100%;
     }
-
     td {
         max-width: 400px;
     }
-
     table pre > code {
         white-space: normal !important;
     }
 }
-
-
-
-
-
-/* Nothing yet */
-
 .markdown-article {
     font-size: 0.9rem;
     line-height: 1.5;
@@ -461,45 +393,26 @@ table      pre:last-child {
     max-width: 50rem;
     min-height: 60rem;
     margin: 0 auto;
+    word-break: break-word;
 }
-
 .markdown-article > h1:first-child {
     margin-top: 1em;
 }
-
-.header-anchor { /* markdown-it plugin: markdown-it-anchor */
-    margin-left: -0.75em; /* mark sure the content of the h1, h2 is centerized. */
+.document-author {
+    text-align: center;
 }
-
-
-
-
-
-/* Nothing yet */
-
+.header-anchor {
+    margin-left: -0.75em;
+}
 @media (max-width: 600px) {
     .markdown-article {
         padding: 3rem 2rem 7rem 2rem;
     }
 }
-
-
-
-
-
-
-
-
-
 body.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
     margin-left: 20rem;
 }
-
-
-
-
-
-.markdown-article-toc-panel-is-visible .markdown-article-toc-panel {
+.markdown-article-toc-panel {
     position: fixed;
     z-index: 30;
 }
@@ -507,42 +420,21 @@ body.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
     position: fixed;
     z-index: 60;
 }
-
-
-
-
 .markdown-article-toc-panel {
     display: none;
     font-size: 0.8rem;
-
     box-sizing: border-box;
     width: 20rem;
     max-width: 100%;
     height: 100%;
-
     left: 0;
     top: 0;
     margin: 0;
     padding: 3rem 0.5rem 1rem 0.5rem;
 }
-
 .markdown-article-toc-panel-is-visible .markdown-article-toc-panel {
     display: block;
 }
-
-
-
-/*
-    以下规则无效用。
-    因为我故意设计了 .markdown-article-toc-panel-is-visible 类名。
-    该类名显然会覆盖 :focus-within 的作用。
-*/
-/* .markdown-article-toc-panel-is-visible .markdown-article-toc-panel:focus-within {
-    display: none;
-} */
-
-
-
 nav.table-of-contents {
     scroll-behavior: smooth;
     display: inline-block;
@@ -551,544 +443,314 @@ nav.table-of-contents {
     overflow: auto;
     position: relative;
 }
-
 nav.table-of-contents > ul,
 nav.table-of-contents > ol {
     display: inline-block;
     box-sizing: border-box;
     padding: 0 1.5rem 6rem 2rem;
-
     margin: 0;
-
     white-space: nowrap;
 }
-
+nav.table-of-contents > ul ol ol,
+nav.table-of-contents > ol ol ol,
+nav.table-of-contents > ul ul ol,
+nav.table-of-contents > ol ul ol,
+nav.table-of-contents > ul ol ul,
+nav.table-of-contents > ol ol ul,
+nav.table-of-contents > ul ul ul,
+nav.table-of-contents > ol ul ul {
+    display: none;
+}
 nav.table-of-contents a[href^="#"]:visited,
 nav.table-of-contents a[href^="#"] {
     color: inherit;
     text-decoration: none;
 }
-
-nav.table-of-contents > ol ol ol,
-nav.table-of-contents > ul ul ul {
-    display: none;
-}
-
-
-
 .markdown-article-toc-toggling-button {
     font-size: 0.7rem;
-
     display: block;
     border: 1px solid transparent;
     line-height: 1;
     padding: 0.5em 1.2em;
     border-radius: 2rem;
     top: 0.8rem;
-
     cursor: pointer;
-
     transition: all 0.3s;
-    
     left: 1rem;
     transform: translateX(0);
-    color: white;
-    background-color: #111;
-    box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.7);
 }
-
 .markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
     left: 10rem;
     transform: translateX(-50%);
-    color: black;
-    background-color: #eee;
-    /* box-shadow: 0 0 0.3rem rgba(255, 255, 255, 0.7); */
 }
-
-.markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button:focus,
-.markdown-article-toc-toggling-button:focus {
-    outline: none;
-    box-shadow: 0 0 0 4px rgb(18, 202, 18);
-}
-
-
-
 .markdown-article-toc-toggling-button::before {
     content: 'TOC';
     font-family: sans-serif;
 }
-
-html[lang*="hans" i] .markdown-article-toc-toggling-button::before,
-html[lang*="CN"   i] .markdown-article-toc-toggling-button::before,
-html[lang*="zh"]     .markdown-article-toc-toggling-button::before {
+[lang*="hans"i] .markdown-article-toc-toggling-button::before,
+[lang*="CN"i] .markdown-article-toc-toggling-button::before,
+[lang*="zh"i] .markdown-article-toc-toggling-button::before {
     content: '目录';
 }
-
-
-
 @media (max-width: 800px) {
     body.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
         margin-left: 0;
     }
-
     .markdown-article-toc-panel {
         width: 30rem;
     }
-
     .markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
         left: 15rem;
     }
 }
-
 @media (max-width: 600px) {
     .markdown-article-toc-panel {
         width: 100%;
     }
-    
     .markdown-article-toc-toggling-button,
     .markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
         left: 50%;
         transform: translateX(-50%);
     }
 }
-
-
-
-
-
-/* .typora-node > content {
-    background-color: #bbb;
-} */
-
-.typora-node #write {
-    color: #333;
-    background-color: #f7f7f9;
-    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
-}
-
-.code-tooltip {
-    color: #f96;
-    background-color: #222;
-}
-
-
-
-
-/* 以下 CSS 定义字体家族，以及文字水平放置之方式。 */
-
 html {
     font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
 }
-
-/* body,
-article,
-h1, h2, h3, h4, h5, h6,
-p, blockquote,
-ul, ol, dl,
-table {
-    font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
-} */
-
-kbd, pre, code {
+kbd,
+pre,
+code {
     font-family: 'PT Mono', 'consolas', 'Courier New', Courier, monospace, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
 }
-
+html {
+    background-color: #bbb;
+}
+body {
+    background-color: transparent;
+}
 h1 {
     font-weight: 300;
     text-align: center;
 }
-
 h2 {
     font-weight: 400;
     text-align: center;
 }
-
 h3 {
     font-weight: 500;
 }
-
 h4 {
     font-weight: bold;
 }
-
 h5 {
     font-weight: bolder;
 }
-
-/* h6 {
-} */
-
+h6 {
+    font-weight: bolder;
+}
 a,
 code,
 kbd {
     font-size: inherit;
 }
-
-
-
-
-
-/* 以下 CSS 定义可能须变得的页面内容排版样式细节，例如边框粗细、矩形的圆角半径等。 */
-
 img {
     border-radius: 0.5rem;
 }
-
 blockquote {
     border-width: 0 0 0 0.3rem;
     border-radius: 0.3rem;
     font-size: 0.8rem;
 }
-
-kbd, code {
+kbd,
+code {
     border-width: 1px;
 }
-
 kbd {
     border-radius: 0.2rem;
     margin: -3px 0.1em;
     padding: 2px 0.3em;
 }
-
 code {
     border-radius: 0.2rem;
     margin: 0.1em;
     padding: 0.1em 0.2em;
 }
-
 pre {
     border-radius: 0.3rem;
 }
-
 table {
     border-width: 6px;
 }
-
-th, td {
+th,
+td {
     border-width: 1px;
 }
-
-
-
-
-/* 以下 CSS 定义自适应排版规则。主要面向小尺寸屏幕或窗口。 */
-
 @media (max-width: 600px) {
     h1 {
         font-weight: 400;
     }
 }
-
-
-
-
-
-/* 以下 CSS 为除代码块之外的页面整体着色方案。*/
-
-html {
-    background-color: #bbb;
-}
-
-body {
-    background-color: transparent;
-}
-
 .markdown-article {
     color: #333;
     background-color: #f7f7f9;
-    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0.4rem rgba(0,0,0,0.2);
 }
-
-a,
-a:visited {
+a:visited,
+a {
     color: #0f0fed;
 }
-
-/* a:hover,
-a:focus,
-a:active {
-    color: #0f0fed;
-} */
-
-a[href^="#"],
-a[href^="#"]:visited {
+a[href^="#"]:visited,
+a[href^="#"] {
     color: #0f0dad;
 }
-
-/* a[href^="#"]:hover,
-a[href^="#"]:focus,
-a[href^="#"]:active {
-    color: #0f0dad;
-} */
-
-
-a.header-anchor[href^="#"]:visited, /* markdown-it-anchor: permanent links */
-a.header-anchor[href^="#"],         /* markdown-it-anchor: permanent links */
-h6 > a[href^="#"]:visited,
-h6 > a[href^="#"],
-h5 > a[href^="#"]:visited,
-h5 > a[href^="#"],
-h4 > a[href^="#"]:visited,
-h4 > a[href^="#"],
-h3 > a[href^="#"]:visited,
-h3 > a[href^="#"],
-h2 > a[href^="#"]:visited,
-h2 > a[href^="#"],
-h1 > a[href^="#"]:visited,
-h1 > a[href^="#"] {
+a.header-anchor[href^="#"]:visited,
+a.header-anchor[href^="#"] {
     color: #ccc;
 }
-
-a.header-anchor[href^="#"]:hover, /* markdown-it-anchor: permanent links */
-h6 > a[href^="#"]:hover,
-h5 > a[href^="#"]:hover,
-h4 > a[href^="#"]:hover,
-h3 > a[href^="#"]:hover,
-h2 > a[href^="#"]:hover,
-h1 > a[href^="#"]:hover {
-    color: inherit;
+a.header-anchor[href^="#"]:hover,
+a.header-anchor[href^="#"]:focus,
+a.header-anchor[href^="#"]:active {
+    color: #000;
 }
-
-:target > a.header-anchor[href^="#"]:hover, /* markdown-it-anchor: permanent links */
-:target > a.header-anchor[href^="#"],       /* markdown-it-anchor: permanent links */
-:target > a[href^="#"]:hover,
-:target > a[href^="#"] {
-    color: rgb(21, 211, 14);
+:target > a.header-anchor[href^="#"]:hover,
+:target > a.header-anchor[href^="#"] {
+    color: #15d30e;
 }
-
 img {
     color: #555;
-    background-color: rgba(128, 128, 128, 0.1);
-    box-shadow: inset 0 0 0.4rem rgba(0, 0, 0, 0.29);
+    background-color: rgba(128,128,128,0.1);
+    box-shadow: inset 0 0 0.4rem rgba(0,0,0,0.29);
 }
-
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 dt {
     color: #000;
 }
-
 strong,
 b,
 em {
-    color: black;
+    color: #000;
 }
-
 blockquote {
     color: #000;
     border-color: #f80;
-    background-color: rgba(136, 136, 136, 0.2);
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    background-color: rgba(136,136,136,0.2);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
 }
-
 code,
 kbd {
     text-shadow: none !important;
 }
-
 code {
     color: #a34587;
-    border-color: rgba(0, 0, 0, 0.219);
-    background-color: white;
+    border-color: rgba(0,0,0,0.219);
+    background-color: #fff;
 }
-
 pre code {
     color: inherit !important;
     background-color: transparent !important;
 }
-
 kbd {
     color: #fff;
     border-color: #fff;
     background-color: #789abc;
-    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.219);
+    box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.219);
 }
-
 input[type="checkbox"] + label {
-    color: black;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: #000;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
-
 input[type="checkbox"]:checked + label {
     color: #696;
-    text-shadow: -1px -1px 0 rgba(0, 128, 0, 0.1);
+    text-shadow: -1px -1px 0 rgba(0,128,0,0.1);
 }
-
 table {
     border-color: #111;
-    background-color: white;
+    background-color: #fff;
 }
-
 th {
     border-color: #222;
 }
-
 td {
     border-color: #bbb;
 }
-
 thead {
     color: #ddd;
     background-color: #444;
 }
-
 tbody tr:nth-child(odd) {
     background-color: transparent;
 }
-
 tbody tr:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0,0,0,0.1);
 }
-
 hr {
-    color: rgba(128, 128, 128, 0.45);
+    color: rgba(128,128,128,0.45);
     background-image: linear-gradient(to right, transparent, currentColor 150%);
 }
-
 hr::before {
-    box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.51);
+    box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.51);
 }
-
-
-/* for Typora */
-.code-tooltip {
-    color: #f96;
-    background-color: #222;
-}
-
-
-
-
 .markdown-article-toc-panel {
     color: #ccc;
     background-color: #222;
-    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 0.5rem rgba(0,0,0,0.4);
 }
-
-/*
-    以下 CSS 为针对由 highlight.js 所构造的代码块的视觉样式之方案。
-    其内容之主体，来源于
-        https://highlightjs.org/static/demo/
-    中的【Atom One Dark】主题。
-*/
-
-
-/* for CodeMirror(e.g. Typora) begin */
-.CodeMirror-selected {
-    background-color: rgba(255, 255, 255, 0.15) !important;
+.markdown-article-toc-toggling-button {
+    color: #fff;
+    background-color: #111;
+    box-shadow: 0 0 0.3rem rgba(0,0,0,0.7);
 }
-
-.CodeMirror-selectedtext {
-    color: black !important;
-    background-color: rgba(255, 255, 255, 0.319) !important;
+.markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
+    color: #000;
+    background-color: #eee;
+    /* box-shadow: 0 0 0.3rem rgba(255, 255, 255, 0.7); */
 }
-
-.CodeMirror div.CodeMirror-cursor {
-    border-left-color: rgb(255, 238, 88);
+.markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button:focus,
+.markdown-article-toc-toggling-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px #12ca12;
 }
-/* for CodeMirror(e.g. Typora) begin */
-
-
-
-
-/* for CodeMirror(e.g. Typora) begin */
-.CodeMirror-scroll,
-/* for CodeMirror(e.g. Typora) begin */
-/* for CodeMirror(e.g. Typora) end */
 pre,
 .hljs {
     color: #abb2bf;
     background-color: #282c34;
 }
-
-
-/* for CodeMirror(e.g. Typora) begin */
-.cm-s-inner .cm-comment,
-.cm-comment,
-/* for CodeMirror(e.g. Typora) end */
 .hljs-comment,
 .hljs-quote {
     color: #000;
     background-color: #23ff7e;
-    font-style: italic
+    font-style: italic;
 }
-
-
-/* for CodeMirror(e.g. Typora) begin */
-.cm-s-inner .cm-keyword,
-.cm-keyword,
-/* for CodeMirror(e.g. Typora) end */
 .hljs-doctag,
 .hljs-keyword,
 .hljs-formula {
-    color: #c678dd
+    color: #c678dd;
 }
-
-
-
-/* for CodeMirror(e.g. Typora) begin */
-.cm-s-inner .cm-tag.cm-bracket,
-.cm-s-inner .cm-atom,
-.cm-s-inner .cm-operator,
-.cm-tag.cm-bracket,
-.cm-atom,
-.cm-operator
-/* for CodeMirror(e.g. Typora) end */ {
-    color: inherit;
-}
-
-
-/* for CodeMirror(e.g. Typora) begin */
-.cm-s-inner .cm-tag,
-.cm-tag,
-/* for CodeMirror(e.g. Typora) end */
 .hljs-section,
 .hljs-name,
 .hljs-selector-tag,
 .hljs-deletion,
 .hljs-subst {
-    color: #e06c75
+    color: #e06c75;
 }
-
 .hljs-literal {
-    color: #56b6c2
+    color: #56b6c2;
 }
-
-
-/* for CodeMirror(e.g. Typora) begin */
-.cm-s-inner .cm-property,
-.cm-s-inner .cm-string,
-.cm-property,
-.cm-string,
-/* for CodeMirror(e.g. Typora) end */
 .hljs-string,
 .hljs-regexp,
 .hljs-addition,
 .hljs-attribute,
 .hljs-meta-string {
-    color: #98c379
+    color: #98c379;
 }
-
-
-/* for CodeMirror(e.g. Typora) begin */
-.cm-s-inner .cm-variable,
-.cm-s-inner .cm-variable-2,
-.cm-variable-2,
-.cm-variable,
-/* for CodeMirror(e.g. Typora) end */
 .hljs-built_in,
 .hljs-class .hljs-title {
-    color: #e6c07b
+    color: #e6c07b;
 }
-
-
-/* for CodeMirror(e.g. Typora) begin */
-.cm-s-inner .cm-number,
-.cm-s-inner .cm-attribute,
-.cm-s-inner .cm-qualifier,
-.cm-number,
-.cm-attribute,
-.cm-qualifier,
-/* for CodeMirror(e.g. Typora) end */
 .hljs-attr,
 .hljs-variable,
 .hljs-template-variable,
@@ -1097,100 +759,59 @@ pre,
 .hljs-selector-attr,
 .hljs-selector-pseudo,
 .hljs-number {
-    color: #d19a66
+    color: #d19a66;
 }
-
-/* for CodeMirror(e.g. Typora) begin */
-.cm-s-inner .cm-def,
-.cm-s-inner .cm-builtin,
-.cm-def,
-.cm-builtin,
-/* for CodeMirror(e.g. Typora) end */
 .hljs-symbol,
 .hljs-bullet,
 .hljs-link,
 .hljs-meta,
 .hljs-selector-id,
 .hljs-title {
-    color: #61aeee
+    color: #61aeee;
 }
-
 .hljs-emphasis {
-    font-style: italic
+    font-style: italic;
 }
-
 .hljs-strong {
-    font-weight: bold
+    font-weight: bold;
 }
-
 .hljs-link {
-    text-decoration: underline
+    text-decoration: underline;
 }
-
-
-
-
-
-/* 以下 CSS 是针对打印机等媒体的样式。 */
-
 @media print {
-    /*
-    *,
-	*::before,
-	*::after {
-		background: transparent !important;
-		color: #000 !important;
-		box-shadow: none !important;
-		text-shadow: none !important;
-    }
-    */
-
-    a,
-    a:visited {
+    a:visited,
+    a {
         text-decoration: underline;
     }
-
     a[href]::after {
         content: ' (' attr(href) ')';
     }
-
     abbr[title]::after {
         content: ' (' attr(title) ')';
     }
-
     a[href^='#']::after,
     a[href^='javascript:']::after {
         content: '';
     }
-
     pre,
     blockquote {
         page-break-inside: avoid;
     }
-
     thead {
         display: table-header-group;
     }
-
     tr,
     img {
         page-break-inside: avoid;
     }
-
-    /* img {
-        max-width: 100% !important;
-    } */
-
-    h2, h3, p {
+    h2,
+    h3,
+    p {
         orphans: 3;
         widows: 3;
     }
-
-    h2, h3 {
+    h2,
+    h3 {
         page-break-after: avoid;
     }
 }
-
-
-
-

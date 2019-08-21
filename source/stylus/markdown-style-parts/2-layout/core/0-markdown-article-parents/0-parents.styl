@@ -2,8 +2,10 @@
     padding: 3rem 1rem 4rem 1rem;
 }
 
-{_markdownArticleParentSelector} {
-    margin: 0;
+if (_markdownArticleParentSelector != 'body') {
+    {_markdownArticleParentSelector} {
+        margin: 0;
+    }
 }
 
 // if (!_shouldWrapLayoutRulesWith_markdownArticleRootSelector) {
