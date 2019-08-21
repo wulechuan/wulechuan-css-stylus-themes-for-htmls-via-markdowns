@@ -55,7 +55,38 @@ Simply take any css file under the `dist/css` folder.
 
 ### Steps
 
-Nothing yet.
+1. Create a `.styl` file under `./source/stylus/markdown-style-senarios/` folder, or a sub-folder if prefer.
+
+2. In the newly created `.styl` file, write something like this:
+
+    ```js
+    //-------------------------------------------------
+    // Set values for all variable.
+    // Note:
+    //     Any variable starts with underscore('_') is an optional variable.
+    //     Others, required!
+    //-------------------------------------------------
+
+    codeBlocksThemeName = 'atom-one-dark'
+
+
+
+
+
+
+
+    //-------------------------------------------------
+    // Now all variables are set.
+    // Let's import all parts.
+    // Those parts will utilize
+    // those variables and produce
+    // customized css accordingly.
+    //-------------------------------------------------
+
+    @import '../to-assemble-all-parts'
+    ```
+
+3. To be detailed. Sorry!
 
 
 ### Code Blocks that are able to Colorize

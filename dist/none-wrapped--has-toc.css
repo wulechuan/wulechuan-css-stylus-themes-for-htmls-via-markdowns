@@ -183,15 +183,11 @@ img[alt]::after {
   content: '”';
 }
 @-moz-document url-prefix() {
-      /* firefox utilizes the ::before psuedo element
-      of an <img> to print the "alt" attribute of
-      the said <img>. So we can only use the ::after
-      psuedo element. */
-
-      img::after,img[alt]::after{
-          content:'（图片加载失败）';
-      }
+  img::after,
+  img[alt]::after {
+    content: '（图片加载失败）';
   }
+}
 hr {
   display: block;
   position: relative;
@@ -234,6 +230,7 @@ ol {
   padding-left: 1.5em;
 }
 @supports selector(::marker) {
+
       ul, ol {
           padding-left: 3em;
       }
@@ -243,14 +240,14 @@ ol {
       }
   }
 @-moz-document url-prefix() {
-      ul, ol {
-          padding-left: 3em;
-      }
-
-      li::marker {
-          margin-right: 1em;
-      }
+  ul,
+  ol {
+    padding-left: 3em;
   }
+  li::marker {
+    margin-right: 1em;
+  }
+}
 blockquote {
   display: inline-block;
   vertical-align: top;

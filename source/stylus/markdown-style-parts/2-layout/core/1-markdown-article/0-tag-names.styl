@@ -140,7 +140,7 @@
         content: '”';
     }
 
-    @css {@-moz-document url-prefix() {
+    @-moz-document url-prefix() {
         /* firefox utilizes the ::before psuedo element
         of an <img> to print the "alt" attribute of
         the said <img>. So we can only use the ::after
@@ -150,7 +150,7 @@
         img[alt]::after{
             content:'（图片加载失败）';
         }
-    }}
+    }
 
     hr {
         display: block;
@@ -198,7 +198,10 @@
         padding-left: 1.5em;
     }
 
+
+    warn('parts/layout/core/markdown-article/tag-names.styl\n         Selectors in literal CSS code blocks will NOT be wrapped correctly.')
     @css {@supports selector(::marker) {
+
         ul, ol {
             padding-left: 3em;
         }
@@ -208,7 +211,7 @@
         }
     }}
 
-    @css{@-moz-document url-prefix() {
+    @-moz-document url-prefix() {
         ul, ol {
             padding-left: 3em;
         }
@@ -216,7 +219,7 @@
         li::marker {
             margin-right: 1em;
         }
-    }}
+    }
 
     blockquote {
         display: inline-block;
