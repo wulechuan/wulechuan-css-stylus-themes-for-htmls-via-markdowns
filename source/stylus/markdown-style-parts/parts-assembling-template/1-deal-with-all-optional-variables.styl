@@ -11,7 +11,8 @@ applyDefaultValueToAGlobalVariableIfNeeded(
 )
 
 if !lookup('_markdownArticleRootSelector') {
-    _markdownArticleRootSelector = ''
+    // _markdownArticleRootSelector = ''
+    warn('Variable "_markdownArticleRootSelector" is set to empty.')
     _shouldWrapCodeBlockThemingRulesWith_markdownArticleRootSelector = false
 }
 
