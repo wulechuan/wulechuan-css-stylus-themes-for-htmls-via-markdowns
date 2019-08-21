@@ -101,6 +101,16 @@ See [code-blocks-theming.md](./docs/refs/code-blocks-theming.md).
 See [stylus-variable-default-values.md](./docs/refs/stylus-variable-default-values.md).
 
 
+## TODOS
+
+- Consider introducing more stylus variables for theming.
+- Docs (customization steps).
+- Gulp task for processing javascript files which will used in HTML files via Markdowns.
+- Fix known issues of incorrect highlighjs background color in vscode preview pages.
+- More themes? More combinations?
+- Typora TOC styling?
+
+
 
 ## License
 
