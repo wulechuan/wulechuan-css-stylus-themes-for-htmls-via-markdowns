@@ -22,6 +22,7 @@ const outputFileExtWithoutDot = 'css'
 
 const allSpecificOptions = [
     {
+        shouldSkipThisTask: false,
         entryStylusFileSubPath: '_default/all-wrapped--has-toc',
         outputCSSFileBaseName: '.default--wrapped--with-toc',
         shouldNotOutputUncompressedVersion: false,
@@ -29,26 +30,32 @@ const allSpecificOptions = [
         // shouldDiscardMostCommentsEvenIfNotCompressCSS: false,
     },
     {
+        shouldSkipThisTask: false,
         entryStylusFileSubPath: '_default/all-wrapped--no-toc',
         outputCSSFileBaseName: '.default--wrapped--no-toc',
     },
     {
+        shouldSkipThisTask: false,
         entryStylusFileSubPath: '_default/none-wrapped--has-toc',
         outputCSSFileBaseName: '.default--with-toc',
     },
     {
+        shouldSkipThisTask: false,
         entryStylusFileSubPath: '_default/none-wrapped--no-toc',
         outputCSSFileBaseName: '.default--no-toc',
     },
     {
+        shouldSkipThisTask: false,
         entryStylusFileSubPath: 'firefox-addon/firefox-addon-_default',
         outputCSSFileBaseName: '--firefox-addon.default',
     },
     {
+        shouldSkipThisTask: false,
         entryStylusFileSubPath: 'typora/typora-_default',
         outputCSSFileBaseName: '--typora.default',
     },
     {
+        shouldSkipThisTask: false,
         entryStylusFileSubPath: 'vscode/vscode-_default',
         outputCSSFileBaseName: '--vscode.default',
     },
@@ -56,43 +63,45 @@ const allSpecificOptions = [
 
 
 
-const allStylusTaskSettingsBuildingOptions = allSpecificOptions.map(options => {
-    const {
-        entryStylusFileSubPath,
-        outputCSSFileBaseName,
-        shouldNotOutputUncompressedVersion,
-        shouldNotOutputCompressedVersion,
-        shouldDiscardMostCommentsEvenIfNotCompressCSS,
-    } = options
+const allStylusTaskSettingsBuildingOptions = allSpecificOptions
+    .filter(options => !options.shouldSkipThisTask)
+    .map(options => {
+        const {
+            entryStylusFileSubPath,
+            outputCSSFileBaseName,
+            shouldNotOutputUncompressedVersion,
+            shouldNotOutputCompressedVersion,
+            shouldDiscardMostCommentsEvenIfNotCompressCSS,
+        } = options
 
-    const entryStylusFileSubPath2 = `${entryStylusFileSubPath}.styl`
+        const entryStylusFileSubPath2 = `${entryStylusFileSubPath}.styl`
+        const outputFileBaseName = `${outputFileBaseNameCommonPrefix}${outputCSSFileBaseName}`
 
-    const taskSetDescription = `from ${
-        chalk.black.bgMagenta(entryStylusFileSubPath2)
-    }\n  to ${
-        chalk.green(`...${outputCSSFileBaseName}.${outputFileExtWithoutDot}`)
-    }`
+        const taskSetDescription = `from ${
+            chalk.black.bgMagenta(entryStylusFileSubPath2)
+        }\n  to ${
+            chalk.black.bgGreen(`${outputFileBaseName}.${outputFileExtWithoutDot}`)
+        }\n`
 
-    const specificSourceRelativeGlobs = [
-        joinPathPOSIX(specificSourceGlobsCommonSubPath, entryStylusFileSubPath2)
-    ]
+        const specificSourceRelativeGlobs = [
+            joinPathPOSIX(specificSourceGlobsCommonSubPath, entryStylusFileSubPath2)
+        ]
 
-    const outputFileBaseName = `${outputFileBaseNameCommonPrefix}${outputCSSFileBaseName}`
 
-    return {
-        taskSetDescription,
-        sourceGlobsRootFolderPath,
-        sharedSourceRelativeGlobs,
-        specificSourceRelativeGlobs,
-        extraSourceGlobsToWatch,
-        outputFolderPath,
-        outputFileBaseName,
-        outputFileExtWithoutDot,
-        shouldNotOutputUncompressedVersion,
-        shouldNotOutputCompressedVersion,
-        shouldDiscardMostCommentsEvenIfNotCompressCSS,
-    }
-})
+        return {
+            taskSetDescription,
+            sourceGlobsRootFolderPath,
+            sharedSourceRelativeGlobs,
+            specificSourceRelativeGlobs,
+            extraSourceGlobsToWatch,
+            outputFolderPath,
+            outputFileBaseName,
+            outputFileExtWithoutDot,
+            shouldNotOutputUncompressedVersion,
+            shouldNotOutputCompressedVersion,
+            shouldDiscardMostCommentsEvenIfNotCompressCSS,
+        }
+    })
 
 
 export default allStylusTaskSettingsBuildingOptions

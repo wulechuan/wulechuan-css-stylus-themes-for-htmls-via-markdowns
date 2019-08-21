@@ -271,6 +271,11 @@ blockquote {
 table {
   border-style: solid;
 }
+tr,
+td,
+th {
+  border-style: solid;
+}
 td,
 th {
   padding: 0.25em 0.75em;

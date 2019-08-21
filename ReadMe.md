@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./dist/css/wulechuan-styles-for-html-via-markdown--vscode.css">
+<link rel="stylesheet" href="./dist/css/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
 
 # Wulechuan's Markdown Themes
 

@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="../../dist/css/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
+
 # Stylus Variable Default Values
 
 ```js

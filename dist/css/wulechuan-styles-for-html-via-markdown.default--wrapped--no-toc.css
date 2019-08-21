@@ -268,6 +268,11 @@ body {
 .markdown-article table {
   border-style: solid;
 }
+.markdown-article tr,
+.markdown-article td,
+.markdown-article th {
+  border-style: solid;
+}
 .markdown-article td,
 .markdown-article th {
   padding: 0.25em 0.75em;

@@ -2,7 +2,7 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "wulechuan <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "2.0.8",
+  "version": "3.0.0",
   "description": "A collection of CSS themes for Markdown generated HTML contents.",
   "directories": {
     "doc": "docs"
@@ -32,9 +32,9 @@
     "url": "https://github.com/wulechuan/css-stylus-wulechuan-markdown-themes/issues"
   },
   "scripts": {
-    "start": "gulp buildAndWatch",
-    "build": "gulp buildOnce",
-    "clean": "gulp clean"
+    "start": "gulp --silent buildAndWatch",
+    "build": "gulp --silent buildOnce",
+    "clean": "gulp --silent clean"
   },
   "devDependencies": {
     "chalk": "^2.4.2",
