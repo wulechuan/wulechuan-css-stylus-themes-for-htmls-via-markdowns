@@ -1,0 +1,16 @@
+.markup-content {
+    // bitbucket
+}
+
+.markdown-body {
+    // github
+}
+
+.markdown {
+    // npmjs
+}
+
+body {
+    // vscode
+    // really body ???
+}

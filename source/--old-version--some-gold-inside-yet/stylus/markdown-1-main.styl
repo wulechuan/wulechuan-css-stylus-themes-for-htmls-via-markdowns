@@ -1,19 +1,3 @@
-// ----- Fonts -----
-
-& {
-	font-family: 'Microsoft Yahei UI', '微软雅黑';
-
-
-    kbd,
-    pre,
-    code {
-        font-family: 'PT Mono', 'consolas', 'Courier New', monospace, 'Microsoft Yahei UI', '微软雅黑';
-    }
-}
-
-
-
-
 
 // ----- Measurements -----
 
@@ -83,18 +67,6 @@ minxin-responsive-measurements(fontSizeAsRem) {
     hr + h5 {
         margin-top:    0.5 * fontSizeAsRem !important;
     }
-
-    kbd {
-        border-radius: 0.3 * fontSizeAsRem !important;
-    }
-
-    code {
-        border-radius: 0.2 * fontSizeAsRem !important;
-    }
-
-    pre {
-        border-radius: 0.2 * fontSizeAsRem !important;
-    }
 }
 
 defaultFontSizeAsRem = 24px;
@@ -125,30 +97,30 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
         font-size: .707em;
     }
 
-    h1 {
-        font-size:   300%;
-        font-weight: 300;
-    }
+    // h1 {
+    //     font-size:   300%;
+    //     font-weight: 300;
+    // }
 
-    h2 {
-        font-size:   170%;
-        font-weight: 300;
-    }
+    // h2 {
+    //     font-size:   170%;
+    //     font-weight: 300;
+    // }
 
-    h3 {
-        font-size:   125%;
-        font-weight: 400;
-    }
+    // h3 {
+    //     font-size:   125%;
+    //     font-weight: 400;
+    // }
 
-    h4 {
-        font-size:   110%;
-        font-weight: 500;
-    }
+    // h4 {
+    //     font-size:   110%;
+    //     font-weight: 500;
+    // }
 
-    h5 {
-        // font-size:   100%;
-        font-weight: 700;
-    }
+    // h5 {
+    //     font-size:   100%;
+    //     font-weight: 700;
+    // }
 
     // pre {
     //     font-size: 100%;
@@ -157,37 +129,9 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
 
 
 
-    // Horizontal Alignments
-    h1, h2, h3, h4, h5, h6, dt {
-        margin-left:  -0.5rem;
-        margin-right: -0.5rem;
-        padding:       0.5rem;
-    }
-
-    // h1, h2, h3, h4, h5, h6 {
-    //     text-align: center;
-    // }
-
-    ul,
-    ol,
-    p,
-    dd {
-        margin-left:  0.5rem;
-        margin-right: 0.5rem;
-    }
-
-    pre {
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-
-    table pre:last-child {
-        margin-bottom: 0;
-    }
-
     blockquote {
-        margin-left: 2.5rem;
-        margin-right: 1.5rem;
+        // margin-left: 2.5rem;
+        // margin-right: 1.5rem;
 
         ul,
         ol,
@@ -196,38 +140,18 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
             margin-left: 0;
             margin-right: 0;
         }
-
-        pre {
-            margin-left: 0.5rem;
-            margin-right: 0.5rem;
-        }
     }
 
 
 
 
-    // So-called "local" Measurements
-    hr {
-        margin: 1rem 0;
-        padding: 0;
-        height 0;
-        overflow hidden;
-        border-width: 1px 0 0;
-        border-style: solid;
-    }
+    // a, code, kbd {
+    //     font-size: inherit !important;
+    // }
 
-    img {
-        border-style: solid;
-        border-width: 8px;
-    }
-
-    a, code, kbd {
-        font-size: inherit !important;
-    }
-
-    h1, h2, h3, h4, h5, h6, dt {
-        border-width: 0;
-    }
+    // h1, h2, h3, h4, h5, h6, dt {
+    //     border-width: 0;
+    // }
 
     ul,
     ol,
@@ -238,36 +162,6 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
         margin-bottom: 1.5em;
     }
 
-    p {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-        padding: 0.25em 0.5em;
-    }
-
-    li {
-        margin: 1em 0;
-    }
-
-    ul,
-    ol {
-        padding-left: 2em;
-    }
-
-    blockquote,
-    table {
-        padding: 0.5em 1em;
-        border-left-width: 0.3rem;
-
-        ul,
-        ol,
-        dl,
-        li,
-        p {
-            &:last-child {
-                margin-bottom: 0 !important;
-            }
-        }
-    }
 
     code,
     kbd {
@@ -319,12 +213,5 @@ articleBlockMaxWidth = defaultFontSizeAsRem * articleBlockMaxWidthMeasuredInChar
             border-width: 0    !important;
             line-height:  1.33 !important;
         }
-    }
-
-
-
-    // Usually is an <H1>
-    :first-child {
-        margin-top: 0 !important;
     }
 }
