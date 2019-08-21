@@ -27,11 +27,8 @@ summary {
 .centered {
   text-align: center;
 }
-html {
+body {
   padding: 3rem 1rem 4rem 1rem;
-}
-html {
-  margin: 0;
 }
 @media (max-width: 900px) {
   html {
@@ -45,149 +42,149 @@ html {
   html {
     font-size: 15px;
   }
-  html {
+  body {
     padding: 0;
   }
 }
-html body {
+.markdown-article {
   line-height: 1.5;
 }
-html body article,
-html body p,
-html body blockquote,
-html body ul,
-html body ol,
-html body dl,
-html body table {
+.markdown-article article,
+.markdown-article p,
+.markdown-article blockquote,
+.markdown-article ul,
+.markdown-article ol,
+.markdown-article dl,
+.markdown-article table {
   line-height: 1.5;
 }
-html body h1,
-html body h2,
-html body h3,
-html body h4,
-html body h5,
-html body h6,
-html body dt,
-html body p {
+.markdown-article h1,
+.markdown-article h2,
+.markdown-article h3,
+.markdown-article h4,
+.markdown-article h5,
+.markdown-article h6,
+.markdown-article dt,
+.markdown-article p {
   margin-left: -0.5em;
   margin-right: -0.5em;
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
-html body pre {
+.markdown-article pre {
   margin-left: 1rem;
   margin-right: 1rem;
 }
-html body td > pre,
-html body li > pre {
+.markdown-article td > pre,
+.markdown-article li > pre {
   margin-left: 0;
   margin-right: 0;
 }
-html body a,
-html body code,
-html body kbd {
+.markdown-article a,
+.markdown-article code,
+.markdown-article kbd {
   font-size: inherit;
 }
-html body a {
+.markdown-article a {
   text-decoration: none;
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: transparent;
 }
-html body a:not([href]) {
+.markdown-article a:not([href]) {
   font-style: italic;
 }
-html body a[href]:hover {
+.markdown-article a[href]:hover {
   text-decoration: none;
   border-bottom-color: currentColor;
 }
-html body h1,
-html body h2,
-html body h3,
-html body h4,
-html body h5,
-html body h6,
-html body dt {
+.markdown-article h1,
+.markdown-article h2,
+.markdown-article h3,
+.markdown-article h4,
+.markdown-article h5,
+.markdown-article h6,
+.markdown-article dt {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   border-width: 0;
   line-height: 1.5;
 }
-html body h1 {
+.markdown-article h1 {
   font-size: 3rem;
   margin-top: 2em;
   margin-bottom: 0.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
-html body h2 {
+.markdown-article h2 {
   font-size: 1.8rem;
   margin-top: 3em;
   margin-bottom: 0.5em;
 }
-html body h1 + h2 {
+.markdown-article h1 + h2 {
   margin-top: 1em;
 }
-html body h3 {
+.markdown-article h3 {
   font-size: 1.3rem;
   margin-top: 2em;
   margin-bottom: 0.3em;
 }
-html body h2 + h3 {
+.markdown-article h2 + h3 {
   margin-top: 1em;
 }
-html body h4 {
+.markdown-article h4 {
   font-size: 1.1rem;
   margin-top: 2em;
   margin-bottom: 0.5em;
 }
-html body h5 {
+.markdown-article h5 {
   font-size: 1rem;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
-html body td > h6,
-html body blockquote > h6,
-html body td > h5,
-html body blockquote > h5,
-html body td > h4,
-html body blockquote > h4,
-html body td > h3,
-html body blockquote > h3,
-html body td > h2,
-html body blockquote > h2,
-html body td > h1,
-html body blockquote > h1 {
+.markdown-article td > h6,
+.markdown-article blockquote > h6,
+.markdown-article td > h5,
+.markdown-article blockquote > h5,
+.markdown-article td > h4,
+.markdown-article blockquote > h4,
+.markdown-article td > h3,
+.markdown-article blockquote > h3,
+.markdown-article td > h2,
+.markdown-article blockquote > h2,
+.markdown-article td > h1,
+.markdown-article blockquote > h1 {
   margin-top: 0.75em;
   margin-bottom: 0.25em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
-html body td > h6:first-child,
-html body blockquote > h6:first-child,
-html body td > h5:first-child,
-html body blockquote > h5:first-child,
-html body td > h4:first-child,
-html body blockquote > h4:first-child,
-html body td > h3:first-child,
-html body blockquote > h3:first-child,
-html body td > h2:first-child,
-html body blockquote > h2:first-child,
-html body td > h1:first-child,
-html body blockquote > h1:first-child {
+.markdown-article td > h6:first-child,
+.markdown-article blockquote > h6:first-child,
+.markdown-article td > h5:first-child,
+.markdown-article blockquote > h5:first-child,
+.markdown-article td > h4:first-child,
+.markdown-article blockquote > h4:first-child,
+.markdown-article td > h3:first-child,
+.markdown-article blockquote > h3:first-child,
+.markdown-article td > h2:first-child,
+.markdown-article blockquote > h2:first-child,
+.markdown-article td > h1:first-child,
+.markdown-article blockquote > h1:first-child {
   margin-top: 0.25em;
 }
-html body p {
+.markdown-article p {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
-html body blockquote p {
+.markdown-article blockquote p {
   margin-left: 0;
   margin-right: 0;
 }
-html body img {
+.markdown-article img {
   display: block;
   box-sizing: content-box;
   padding: 0.5rem;
@@ -200,89 +197,89 @@ html body img {
   font-style: italic;
   font-weight: normal;
 }
-html body img::before {
+.markdown-article img::before {
   content: '图片加载失败。图片内容未知。';
 }
-html body img[alt]::before {
+.markdown-article img[alt]::before {
   content: '图片加载失败。图片内容的大致描述为：\A“';
 }
-html body img[alt]::after {
+.markdown-article img[alt]::after {
   content: '”';
 }
 @-moz-document url-prefix() {
-  html body img::after,
-  html body img[alt]::after {
+  .markdown-article img::after,
+  .markdown-article img[alt]::after {
     content: '（图片加载失败）';
   }
 }
-html body input[type="checkbox"] {
+.markdown-article input[type="checkbox"] {
   width: 1.4em;
   height: 1.4em;
   display: inline-block;
   vertical-align: middle;
   margin: -0.2em 0.6em 0 0;
 }
-html body small,
-html body sup,
-html body sub {
+.markdown-article small,
+.markdown-article sup,
+.markdown-article sub {
   font-size: 70%;
 }
-html body blockquote strong,
-html body blockquote b,
-html body blockquote em {
+.markdown-article blockquote strong,
+.markdown-article blockquote b,
+.markdown-article blockquote em {
   color: inherit;
 }
-html body li {
+.markdown-article li {
   margin: 0.5em 0;
 }
-html body dt {
+.markdown-article dt {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   border-width: 0;
 }
-html body ul,
-html body ol,
-html body dl {
+.markdown-article ul,
+.markdown-article ol,
+.markdown-article dl {
   margin-left: auto;
   margin-right: auto;
   margin-top: 0.5em;
   margin-bottom: 1.5em;
 }
-html body ul,
-html body ol {
+.markdown-article ul,
+.markdown-article ol {
   padding-left: 1.5em;
 }
 @-moz-document url-prefix() {
-  html body ul,
-  html body ol {
+  .markdown-article ul,
+  .markdown-article ol {
     padding-left: 2.5em;
   }
-  html body li::marker {
+  .markdown-article li::marker {
     margin-right: 0.7em;
   }
 }
-html body blockquote {
+.markdown-article blockquote {
   display: inline-block;
   vertical-align: top;
   padding: 0.2em 1.6em 0.2em 1.8em;
   margin: 0.5em 1rem 1.5em 1rem;
   border-style: solid;
 }
-html body table {
+.markdown-article table {
   border-style: solid;
 }
-html body td,
-html body th {
+.markdown-article td,
+.markdown-article th {
   padding: 0.25em 0.75em;
 }
-html body table {
+.markdown-article table {
   border-collapse: collapse;
   margin: 1rem auto;
   max-width: 96%;
   min-width: 60%;
 }
-html body kbd,
-html body code {
+.markdown-article kbd,
+.markdown-article code {
   display: inline-block;
   vertical-align: baseline;
   line-height: 1;
@@ -292,7 +289,7 @@ html body code {
   font-style: normal;
   border-style: solid;
 }
-html body pre {
+.markdown-article pre {
   line-height: 1.4;
   display: block;
   overflow-x: auto;
@@ -300,29 +297,29 @@ html body pre {
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
 }
-html body code {
+.markdown-article code {
   word-break: break-word;
 }
-html body pre,
-html body pre > code,
-html body pre > code * {
+.markdown-article pre,
+.markdown-article pre > code,
+.markdown-article pre > code * {
   white-space: pre !important;
   word-wrap: none !important;
   word-break: keep-all !important;
   text-align: left !important;
 }
-html body pre > code {
+.markdown-article pre > code {
   line-height: inherit;
   padding: 0.5em 1em;
   border: none !important;
   margin: 0 !important;
   border-radius: 0;
 }
-html body blockquote pre:last-child,
-html body table pre:last-child {
+.markdown-article blockquote pre:last-child,
+.markdown-article table pre:last-child {
   margin-bottom: 0.5rem;
 }
-html body hr {
+.markdown-article hr {
   display: block;
   position: relative;
   margin: 3rem auto 4rem 0;
@@ -332,13 +329,13 @@ html body hr {
   overflow: visible !important;
   background-color: transparent;
 }
-html body hr::after,
-html body hr::before {
+.markdown-article hr::after,
+.markdown-article hr::before {
   content: '';
   display: block;
   position: absolute;
 }
-html body hr::before {
+.markdown-article hr::before {
   left: calc(100% + 0.6rem);
   top: 50%;
   width: 0.4rem;
@@ -347,7 +344,7 @@ html body hr::before {
   border-radius: 50%;
   background-color: currentColor;
 }
-html body hr::after {
+.markdown-article hr::after {
   left: 100%;
   width: 100%;
   height: 100%;
@@ -357,44 +354,44 @@ html body hr::after {
   transform: scaleX(-1);
 }
 @media (max-width: 600px) {
-  html body h1 {
+  .markdown-article h1 {
     font-size: 1.8rem;
   }
-  html body h2 {
+  .markdown-article h2 {
     font-size: 1.35rem;
   }
-  html body h3 {
+  .markdown-article h3 {
     font-size: 1.2rem;
   }
-  html body h4 {
+  .markdown-article h4 {
     font-size: 1rem;
   }
-  html body h5 {
+  .markdown-article h5 {
     font-size: 0.9rem;
   }
-  html body ul,
-  html body ol {
+  .markdown-article ul,
+  .markdown-article ol {
     padding-left: 1.5em;
   }
-  html body blockquote {
+  .markdown-article blockquote {
     margin-left: 0.7rem;
     margin-right: 0.5rem;
   }
-  html body table {
+  .markdown-article table {
     max-width: none;
     width: 100%;
   }
-  html body td {
+  .markdown-article td {
     max-width: 400px;
   }
-  html body table pre > code {
+  .markdown-article table pre > code {
     white-space: normal !important;
   }
-  html body hr {
+  .markdown-article hr {
     margin: 1.5rem auto 2rem 0;
   }
 }
-html body {
+.markdown-article {
   font-size: 0.9rem;
   line-height: 1.5;
   padding: 6rem 4rem 14rem 4rem;
@@ -403,17 +400,17 @@ html body {
   margin: 0 auto;
   word-break: break-word;
 }
-html body > h1:first-child {
+.markdown-article > h1:first-child {
   margin-top: 1em;
 }
-html body .document-author {
+.markdown-article .document-author {
   text-align: center;
 }
-html body .header-anchor {
+.markdown-article .header-anchor {
   margin-left: -0.75em;
 }
 @media (max-width: 600px) {
-  html body {
+  .markdown-article {
     padding: 3rem 2rem 7rem 2rem;
   }
 }
@@ -431,230 +428,230 @@ html {
 body {
   background-color: transparent;
 }
-html body h1 {
+.markdown-article h1 {
   font-weight: 300;
   text-align: center;
 }
-html body h2 {
+.markdown-article h2 {
   font-weight: 400;
   text-align: center;
 }
-html body h3 {
+.markdown-article h3 {
   font-weight: 500;
 }
-html body h4 {
+.markdown-article h4 {
   font-weight: bold;
 }
-html body h5 {
+.markdown-article h5 {
   font-weight: bolder;
 }
-html body h6 {
+.markdown-article h6 {
   font-weight: bolder;
 }
-html body img {
+.markdown-article img {
   border-radius: 0.5rem;
 }
-html body blockquote {
+.markdown-article blockquote {
   border-width: 0 0 0 0.3rem;
   border-radius: 0.3rem;
   font-size: 0.8rem;
 }
-html body table {
+.markdown-article table {
   border-width: 6px;
 }
-html body th,
-html body td {
+.markdown-article th,
+.markdown-article td {
   border-width: 1px;
 }
-html body kbd,
-html body code {
+.markdown-article kbd,
+.markdown-article code {
   border-width: 1px;
 }
-html body kbd {
+.markdown-article kbd {
   border-radius: 0.2rem;
   margin: 0.1em 0.2em;
   padding: 0.1em 0.3em;
 }
-html body code {
+.markdown-article code {
   border-radius: 0.2rem;
   margin: 0.1em;
   padding: 0.1em 0.2em;
 }
-html body pre {
+.markdown-article pre {
   border-radius: 0.3rem;
 }
 @media (max-width: 600px) {
-  html body h1 {
+  .markdown-article h1 {
     font-weight: 400;
   }
 }
-html body {
+.markdown-article {
   color: #333;
   background-color: #f7f7f9;
   box-shadow: 0 0 0.4rem rgba(0,0,0,0.2);
 }
-html body a:visited,
-html body a {
+.markdown-article a:visited,
+.markdown-article a {
   color: #0f0fed;
 }
-html body a[href^="#"]:visited,
-html body a[href^="#"] {
+.markdown-article a[href^="#"]:visited,
+.markdown-article a[href^="#"] {
   color: #0f0dad;
 }
-html body a.header-anchor[href^="#"]:visited,
-html body a.header-anchor[href^="#"] {
+.markdown-article a.header-anchor[href^="#"]:visited,
+.markdown-article a.header-anchor[href^="#"] {
   color: #ccc;
 }
-html body a.header-anchor[href^="#"]:hover,
-html body a.header-anchor[href^="#"]:focus,
-html body a.header-anchor[href^="#"]:active {
+.markdown-article a.header-anchor[href^="#"]:hover,
+.markdown-article a.header-anchor[href^="#"]:focus,
+.markdown-article a.header-anchor[href^="#"]:active {
   color: #000;
 }
-html body :target > a.header-anchor[href^="#"]:hover,
-html body :target > a.header-anchor[href^="#"] {
+.markdown-article :target > a.header-anchor[href^="#"]:hover,
+.markdown-article :target > a.header-anchor[href^="#"] {
   color: #15d30e;
 }
-html body h1,
-html body h2,
-html body h3,
-html body h4,
-html body h5,
-html body h6,
-html body dt {
+.markdown-article h1,
+.markdown-article h2,
+.markdown-article h3,
+.markdown-article h4,
+.markdown-article h5,
+.markdown-article h6,
+.markdown-article dt {
   color: #000;
 }
-html body img {
+.markdown-article img {
   color: #555;
   background-color: rgba(128,128,128,0.1);
   box-shadow: inset 0 0 0.4rem rgba(0,0,0,0.29);
 }
-html body input[type="checkbox"] + label {
+.markdown-article input[type="checkbox"] + label {
   color: #000;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
-html body input[type="checkbox"]:checked + label {
+.markdown-article input[type="checkbox"]:checked + label {
   color: #696;
   text-shadow: -1px -1px 0 rgba(0,128,0,0.1);
 }
-html body strong,
-html body b,
-html body em {
+.markdown-article strong,
+.markdown-article b,
+.markdown-article em {
   color: #000;
 }
-html body blockquote {
+.markdown-article blockquote {
   color: #000;
   border-color: #f80;
   background-color: rgba(136,136,136,0.2);
   text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
 }
-html body table {
+.markdown-article table {
   border-color: #111;
   background-color: #fff;
 }
-html body th {
+.markdown-article th {
   border-color: #222;
 }
-html body td {
+.markdown-article td {
   border-color: #bbb;
 }
-html body thead {
+.markdown-article thead {
   color: #ddd;
   background-color: #444;
 }
-html body tbody tr:nth-child(odd) {
+.markdown-article tbody tr:nth-child(odd) {
   background-color: transparent;
 }
-html body tbody tr:nth-child(even) {
+.markdown-article tbody tr:nth-child(even) {
   background-color: rgba(0,0,0,0.1);
 }
-html body code,
-html body kbd {
+.markdown-article code,
+.markdown-article kbd {
   text-shadow: none !important;
 }
-html body code {
+.markdown-article code {
   color: #a34587;
   border-color: rgba(0,0,0,0.219);
   background-color: #fff;
 }
-html body pre code {
+.markdown-article pre code {
   color: inherit !important;
   background-color: transparent !important;
 }
-html body kbd {
+.markdown-article kbd {
   color: #fff;
   border-color: #fff;
   background-color: #789abc;
   box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.219);
 }
-html body hr {
+.markdown-article hr {
   color: rgba(128,128,128,0.45);
   background-image: linear-gradient(to right, transparent, currentColor 150%);
 }
-html body hr::before {
+.markdown-article hr::before {
   box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.51);
 }
-html body pre,
-html body .hljs {
+pre,
+.hljs {
   color: #abb2bf;
   background-color: #282c34;
 }
-html body .hljs-comment,
-html body .hljs-quote {
+.hljs-comment,
+.hljs-quote {
   color: #000;
   background-color: #23ff7e;
   font-style: italic;
 }
-html body .hljs-doctag,
-html body .hljs-keyword,
-html body .hljs-formula {
+.hljs-doctag,
+.hljs-keyword,
+.hljs-formula {
   color: #c678dd;
 }
-html body .hljs-section,
-html body .hljs-name,
-html body .hljs-selector-tag,
-html body .hljs-deletion,
-html body .hljs-subst {
+.hljs-section,
+.hljs-name,
+.hljs-selector-tag,
+.hljs-deletion,
+.hljs-subst {
   color: #e06c75;
 }
-html body .hljs-literal {
+.hljs-literal {
   color: #56b6c2;
 }
-html body .hljs-string,
-html body .hljs-regexp,
-html body .hljs-addition,
-html body .hljs-attribute,
-html body .hljs-meta-string {
+.hljs-string,
+.hljs-regexp,
+.hljs-addition,
+.hljs-attribute,
+.hljs-meta-string {
   color: #98c379;
 }
-html body .hljs-built_in,
-html body .hljs-class .hljs-title {
+.hljs-built_in,
+.hljs-class .hljs-title {
   color: #e6c07b;
 }
-html body .hljs-attr,
-html body .hljs-variable,
-html body .hljs-template-variable,
-html body .hljs-type,
-html body .hljs-selector-class,
-html body .hljs-selector-attr,
-html body .hljs-selector-pseudo,
-html body .hljs-number {
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-type,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-number {
   color: #d19a66;
 }
-html body .hljs-symbol,
-html body .hljs-bullet,
-html body .hljs-link,
-html body .hljs-meta,
-html body .hljs-selector-id,
-html body .hljs-title {
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link,
+.hljs-meta,
+.hljs-selector-id,
+.hljs-title {
   color: #61aeee;
 }
-html body .hljs-emphasis {
+.hljs-emphasis {
   font-style: italic;
 }
-html body .hljs-strong {
+.hljs-strong {
   font-weight: bold;
 }
-html body .hljs-link {
+.hljs-link {
   text-decoration: underline;
 }
 @media print {

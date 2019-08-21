@@ -46,6 +46,7 @@
     "gulp-if": "^3.0.0",
     "gulp-pipe": "^1.0.4",
     "gulp-postcss": "^8.0.0",
-    "gulp-rename": "^1.4.0"
+    "gulp-rename": "^1.4.0",
+    "gulp-stylus": "^2.7.0"
   }
 }
