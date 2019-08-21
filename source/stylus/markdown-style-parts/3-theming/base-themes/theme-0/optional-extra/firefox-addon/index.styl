@@ -1,0 +1,91 @@
+// .markdownRoot {
+//     color: #333;
+//     background-color: #f7f7f9;
+//     box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+// }
+
+#__markdown-viewer__tools {
+
+    & {
+        font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
+        box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.319);
+        background-color: #555;
+        color: #eee;
+    }
+
+    > label[for="__markdown-viewer__show-tools"] {
+        background-color: #333;
+        box-shadow: 0 0 0.2rem 0 rgba(255, 255, 255, 0.51);
+
+        &::after {
+            border-color: white transparent;
+            border-width: 4px 4px 0 4px;
+        }
+    }
+
+    .toggleable::after {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+
+a#__markdown-viewer__download {
+
+    & {
+        color: white;
+        border: 1px solid rgb(36, 241, 36);
+        background-color: rgb(28, 182, 28);
+    }
+
+    &:hover {
+        border-color: rgb(49, 247, 49);
+        background-color: rgb(80, 206, 80);
+    }
+}
+
+
+#__markdown-viewer__toc {
+
+    > ul {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+
+    a[href^="#"] {
+        color: white;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+
+
+@supports (backdrop-filter: blur(15px)) or (-webkit-backdrop-filter: blur(15px)) {
+    #__markdown-viewer__tools {
+        color: black;
+        background-color: rgba(187, 219, 202, 0.6);
+        /* box-shadow: none; */
+    }
+
+    #__markdown-viewer__toc a[href^="#"] {
+        color: black;
+    }
+
+    #__markdown-viewer__tools .toggleable::after {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+}
+
+@supports (backdrop-filter: blur(15px)) {
+    #__markdown-viewer__tools {
+        backdrop-filter: blur(15px)
+    }
+}
+
+@supports (-webkit-backdrop-filter: blur(15px)) {
+    #__markdown-viewer__tools {
+        -webkit-backdrop-filter: blur(15px)
+    }
+}
