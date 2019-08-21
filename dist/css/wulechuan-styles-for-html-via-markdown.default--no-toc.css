@@ -265,12 +265,11 @@ blockquote {
   margin: 0.5em 1rem 1.5em 1rem;
   border-style: solid;
 }
-table {
-  border-style: solid;
-}
+table,
 tr,
 td,
 th {
+  border-width: 0;
   border-style: solid;
 }
 td,
@@ -463,6 +462,12 @@ blockquote {
 }
 table {
   border-width: 6px;
+}
+tr {
+  border-width: 0;
+}
+thead tr:last-of-type {
+  border-bottom-width: 3px;
 }
 th,
 td {

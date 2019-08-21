@@ -268,12 +268,11 @@ body blockquote {
   margin: 0.5em 1rem 1.5em 1rem;
   border-style: solid;
 }
-body table {
-  border-style: solid;
-}
+body table,
 body tr,
 body td,
 body th {
+  border-width: 0;
   border-style: solid;
 }
 body td,
@@ -463,6 +462,12 @@ body blockquote {
 }
 body table {
   border-width: 6px;
+}
+body tr {
+  border-width: 0;
+}
+body thead tr:last-of-type {
+  border-bottom-width: 3px;
 }
 body th,
 body td {

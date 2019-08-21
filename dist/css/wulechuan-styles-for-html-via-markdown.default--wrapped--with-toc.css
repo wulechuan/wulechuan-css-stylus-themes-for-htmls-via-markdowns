@@ -265,12 +265,11 @@ body {
   margin: 0.5em 1rem 1.5em 1rem;
   border-style: solid;
 }
-.markdown-article table {
-  border-style: solid;
-}
+.markdown-article table,
 .markdown-article tr,
 .markdown-article td,
 .markdown-article th {
+  border-width: 0;
   border-style: solid;
 }
 .markdown-article td,
@@ -567,6 +566,12 @@ body {
 }
 .markdown-article table {
   border-width: 6px;
+}
+.markdown-article tr {
+  border-width: 0;
+}
+.markdown-article thead tr:last-of-type {
+  border-bottom-width: 3px;
 }
 .markdown-article th,
 .markdown-article td {
