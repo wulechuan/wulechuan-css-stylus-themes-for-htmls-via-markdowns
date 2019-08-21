@@ -48,16 +48,19 @@ const allSpecificOptions = [
         shouldSkipThisTask: false,
         entryStylusFileSubPath: 'firefox-addon/firefox-addon-_default',
         outputCSSFileBaseName: '--firefox-addon.default',
+        shouldNotOutputCompressedVersion: true,
     },
     {
         shouldSkipThisTask: false,
         entryStylusFileSubPath: 'typora/typora-_default',
         outputCSSFileBaseName: '--typora.default',
+        shouldNotOutputCompressedVersion: true,
     },
     {
         shouldSkipThisTask: false,
         entryStylusFileSubPath: 'vscode/vscode-_default',
         outputCSSFileBaseName: '--vscode.default',
+        shouldNotOutputUncompressedVersion: true,
     },
 ]
 
@@ -73,6 +76,10 @@ const allStylusTaskSettingsBuildingOptions = allSpecificOptions
             shouldNotOutputCompressedVersion,
             shouldDiscardMostCommentsEvenIfNotCompressCSS,
         } = options
+
+        if (shouldNotOutputUncompressedVersion && shouldNotOutputCompressedVersion) {
+            throw new RangeError(`Why don\'t we output anything for "${entryStylusFileSubPath}"?`)
+        }
 
         const entryStylusFileSubPath2 = `${entryStylusFileSubPath}.styl`
         const outputFileBaseName = `${outputFileBaseNameCommonPrefix}${outputCSSFileBaseName}`
