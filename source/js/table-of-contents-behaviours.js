@@ -1,16 +1,15 @@
 setupAndStartApp()
 
 function setupAndStartApp() {
-    const tocRoot = document.querySelector('nav.table-of-contents')
-
     const cssClassNameTOCExists         = 'markdown-article-toc-panel-exists'
     const cssClassNameTOCIsVisible      = 'markdown-article-toc-panel-is-visible'
+    const tocPanelCSSClassName          = 'markdown-article-toc-panel'
     const tocTogglingButtonCSSClassName = 'markdown-article-toc-toggling-button'
-    const tocPanelCSSClassName          = 'table-of-contents-panel' // The default value of markdown-it-toc-done-right
 
 
 
 
+    const tocRoot = document.querySelector('nav.table-of-contents')
     if (!tocRoot) {
         return
     }
@@ -46,9 +45,9 @@ function setupAndStartApp() {
          * 我倾向于用 Javascript 来临时构建该按钮。
          * 因为如果一共苛刻的环境仅允许读文档，而不允许
          * Javascript 程序运行，那咱们还要切换按钮干嘛？
-         * 
+         *
          * ---------------------------------------------
-         * 
+         *
          * I prefer to build button via Javascript,
          * because otherwise when Javascript is not allowed,
          * why do we need a button that cannot work?

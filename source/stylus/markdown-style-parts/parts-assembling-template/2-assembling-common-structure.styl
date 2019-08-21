@@ -3,8 +3,8 @@
 if !_shouldNotOutputTitleBlock {
     @import '../0-titles-for-output-css/_default-title'
 
-    if lookup('optionalPartName') {
-        @import '../0-titles-for-output-css/optional-secondary-titles/' + optionalPartName + '/*'
+    if lookup('_optionalSecondaryTitleBlockSourceFileName') {
+        @import '../0-titles-for-output-css/optional-secondary-titles/' + _optionalSecondaryTitleBlockSourceFileName
     }
 }
 
@@ -24,8 +24,8 @@ if !_shouldNotOutputTitleBlock {
 
 @import '../2-layout/core'
 
-if lookup('optionalPartName') {
-    @import '../2-layout/optional-extra/' + optionalPartName + '/*'
+if lookup('_optionalPartName') {
+    @import '../2-layout/optional-extra/' + _optionalPartName
 }
 
 
@@ -35,8 +35,8 @@ if lookup('optionalPartName') {
 
 @import '../3-theming/base-themes/' + _baseThemeName + '/core'
 
-if lookup('optionalPartName') {
-    @import '../3-theming/base-themes/' + _baseThemeName + '/optional-extra/' + optionalPartName
+if lookup('_optionalPartName') {
+    @import '../3-theming/base-themes/' + _baseThemeName + '/optional-extra/' + _optionalPartName
 }
 
 
