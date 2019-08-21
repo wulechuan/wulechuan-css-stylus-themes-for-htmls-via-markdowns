@@ -3,9 +3,9 @@ setupAndStartApp()
 function setupAndStartApp() {
     const tocRoot = document.querySelector('nav.table-of-contents')
 
-    const cssClassNameTOCExists         = 'has-toc'
-    const cssClassNameTOCIsVisible      = 'toc-is-visible'
-    const tocPanelCSSClassName          = 'table-of-contents-panel'
+    const cssClassNameTOCExists         = 'markdown-article-toc-panel-exists'
+    const cssClassNameTOCIsVisible      = 'markdown-article-toc-panel-is-visible'
+    const tocPanelCSSClassName          = 'markdown-article-toc-panel'
     const tocTogglingButtonCSSClassName = 'markdown-article-toc-toggling-button'
 
 
@@ -93,11 +93,11 @@ function setupAndStartApp() {
          * 的 HTML 元素。
          *
          * 特别是由 markdown-it-toc-done-right 构建的【目录】结构，
-         * 我故意设计了一个外层 div.table-of-contents-panel 来协助
+         * 我故意设计了一个外层 div.markdown-article-toc-panel 来协助
          * 排版。因次改外层 div 是必须的。而此种苛刻环境下本 js 根本不
          * 允许执行，上述 div 也就无法由本 js 文件在运行时补建。
          *
-         * 另，本 js 提供了 .table-of-contents-panel 的隐藏和显示
+         * 另，本 js 提供了 .markdown-article-toc-panel 的隐藏和显示
          * 功能。
          *
          * --------------------------------------------------

@@ -1,0 +1,45 @@
+{_markdownArticleParentSelector}.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
+    margin-left: 20rem;
+}
+
+
+
+.markdown-article-toc-panel {
+    position: fixed;
+    z-index: 30;
+}
+.markdown-article-toc-toggling-button {
+    position: fixed;
+    z-index: 60;
+}
+
+
+
+
+.markdown-article-toc-panel {
+    display: none;
+    font-size: 0.8rem;
+
+    box-sizing: border-box;
+    width: 20rem;
+    max-width: 100%;
+    height: 100%;
+
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 3rem 0.5rem 1rem 0.5rem;
+}
+
+.markdown-article-toc-panel-is-visible .markdown-article-toc-panel {
+    display: block;
+}
+
+
+
+// 以下规则无效用。
+// 因为我故意设计了 .markdown-article-toc-panel-is-visible 类名。
+// 该类名显然会覆盖 :focus-within 的作用。
+// .markdown-article-toc-panel-is-visible .markdown-article-toc-panel:focus-within {
+//     display: none;
+// }

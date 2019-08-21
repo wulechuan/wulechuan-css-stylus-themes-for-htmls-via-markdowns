@@ -5,7 +5,7 @@ _fontFamily_baseFontFamilyCarrierSelectors      = 'html'
 _fontFamily_monospaceFontFamilyCarrierSelectors = 'kbd, pre, code'
 
 _markdownArticleRootSelector = ''
-_markdownArticleParentSelector = 'body'
+_markdownArticleParentSelector = 'body' // This is also the parent of the toc-panel, if the panel exists.
 _markdownArticleParentParentSelector = 'html'
 _markdownArticleBackplateBackgroundColorCarrierSelector = 'html'
 

@@ -491,7 +491,7 @@ table      pre:last-child {
 
 
 
-body.has-toc.toc-is-visible {
+body.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
     margin-left: 20rem;
 }
 
@@ -499,7 +499,7 @@ body.has-toc.toc-is-visible {
 
 
 
-.toc-is-visible .table-of-contents-panel {
+.markdown-article-toc-panel-is-visible .markdown-article-toc-panel {
     position: fixed;
     z-index: 30;
 }
@@ -511,7 +511,7 @@ body.has-toc.toc-is-visible {
 
 
 
-.table-of-contents-panel {
+.markdown-article-toc-panel {
     display: none;
     font-size: 0.8rem;
 
@@ -526,7 +526,7 @@ body.has-toc.toc-is-visible {
     padding: 3rem 0.5rem 1rem 0.5rem;
 }
 
-.toc-is-visible .table-of-contents-panel {
+.markdown-article-toc-panel-is-visible .markdown-article-toc-panel {
     display: block;
 }
 
@@ -534,10 +534,10 @@ body.has-toc.toc-is-visible {
 
 /*
     以下规则无效用。
-    因为我故意设计了 .toc-is-visible 类名。
+    因为我故意设计了 .markdown-article-toc-panel-is-visible 类名。
     该类名显然会覆盖 :focus-within 的作用。
 */
-/* .toc-is-visible .table-of-contents-panel:focus-within {
+/* .markdown-article-toc-panel-is-visible .markdown-article-toc-panel:focus-within {
     display: none;
 } */
 
@@ -597,7 +597,7 @@ nav.table-of-contents > ul ul ul {
     box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.7);
 }
 
-.toc-is-visible .markdown-article-toc-toggling-button {
+.markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
     left: 10rem;
     transform: translateX(-50%);
     color: black;
@@ -605,7 +605,7 @@ nav.table-of-contents > ul ul ul {
     /* box-shadow: 0 0 0.3rem rgba(255, 255, 255, 0.7); */
 }
 
-.toc-is-visible .markdown-article-toc-toggling-button:focus,
+.markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button:focus,
 .markdown-article-toc-toggling-button:focus {
     outline: none;
     box-shadow: 0 0 0 4px rgb(18, 202, 18);
@@ -627,26 +627,26 @@ html[lang*="zh"]     .markdown-article-toc-toggling-button::before {
 
 
 @media (max-width: 800px) {
-    body.has-toc.toc-is-visible {
+    body.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
         margin-left: 0;
     }
 
-    .table-of-contents-panel {
+    .markdown-article-toc-panel {
         width: 30rem;
     }
 
-    .toc-is-visible .markdown-article-toc-toggling-button {
+    .markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
         left: 15rem;
     }
 }
 
 @media (max-width: 600px) {
-    .table-of-contents-panel {
+    .markdown-article-toc-panel {
         width: 100%;
     }
     
     .markdown-article-toc-toggling-button,
-    .toc-is-visible .markdown-article-toc-toggling-button {
+    .markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
         left: 50%;
         transform: translateX(-50%);
     }
@@ -958,7 +958,7 @@ hr::before {
 
 
 
-.table-of-contents-panel {
+.markdown-article-toc-panel {
     color: #ccc;
     background-color: #222;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);

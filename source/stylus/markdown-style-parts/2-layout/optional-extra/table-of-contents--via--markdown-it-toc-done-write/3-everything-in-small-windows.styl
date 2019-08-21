@@ -1,0 +1,25 @@
+@media (max-width: 800px) {
+    {_markdownArticleParentSelector}.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
+        margin-left: 0;
+    }
+
+    .markdown-article-toc-panel {
+        width: 30rem;
+    }
+
+    .markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
+        left: 15rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .markdown-article-toc-panel {
+        width: 100%;
+    }
+    
+    .markdown-article-toc-toggling-button,
+    .markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
