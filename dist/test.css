@@ -38,6 +38,9 @@ html {
 body {
   margin: 0;
 }
+body {
+  line-height: 1.5;
+}
 @media (max-width: 900px) {
   html {
     font-size: 16px;
@@ -105,6 +108,11 @@ body {
   background-color: transparent;
 }
 @media (max-width: 600px) {
+}
+.table-of-contents-panel {
+  color: #ccc;
+  background-color: #222;
+  box-shadow: 0 0 0.5rem rgba(0,0,0,0.4);
 }
 .CodeMirror-selected {
   background-color: rgba(255,255,255,0.15) !important;
