@@ -8,7 +8,7 @@ _fontFamily_monospaceFontFamilyCarrierSelectors = 'kbd, pre, code'
 
 _markdownArticleRootSelector = '' // Empty means no selector at all
 _markdownArticleParentSelector = 'body' // This is also the parent of the div.markdown-article-toc-panel, if the div exists.
-_markdownArticleParentParentSelector = 'html'
+
 _markdownArticleBackplateBackgroundColorCarrierSelector = 'html'
 
 _baseThemeName = 'theme-0'
