@@ -758,6 +758,7 @@ table {
   border-color: #111;
   background-color: #fff;
 }
+thead tr,
 th {
   border-color: #222;
 }

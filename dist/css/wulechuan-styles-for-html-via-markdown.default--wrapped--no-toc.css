@@ -558,6 +558,7 @@ body {
   border-color: #111;
   background-color: #fff;
 }
+.markdown-article thead tr,
 .markdown-article th {
   border-color: #222;
 }

@@ -558,6 +558,7 @@ body table {
   border-color: #111;
   background-color: #fff;
 }
+body thead tr,
 body th {
   border-color: #222;
 }

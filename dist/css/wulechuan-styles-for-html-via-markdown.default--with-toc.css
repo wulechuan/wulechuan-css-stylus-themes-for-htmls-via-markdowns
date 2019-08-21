@@ -498,7 +498,10 @@ nav.table-of-contents a[href^="#"] {
 }
 [lang*="hans"i] .markdown-article-toc-toggling-button::before,
 [lang*="CN"i] .markdown-article-toc-toggling-button::before,
-[lang*="zh"i] .markdown-article-toc-toggling-button::before {
+[lang*="zh"i] .markdown-article-toc-toggling-button::before,
+[lang*="hans"] .markdown-article-toc-toggling-button::before,
+[lang*="CN"] .markdown-article-toc-toggling-button::before,
+[lang*="zh"] .markdown-article-toc-toggling-button::before {
   content: '目录';
 }
 @media (max-width: 800px) {
@@ -662,6 +665,7 @@ table {
   border-color: #111;
   background-color: #fff;
 }
+thead tr,
 th {
   border-color: #222;
 }
