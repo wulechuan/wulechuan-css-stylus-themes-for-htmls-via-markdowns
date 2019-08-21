@@ -1,10 +1,8 @@
-& {
-    _wrappingSelectorOfCodeBlocks = ''
-    if _shouldWrapCodeBlockThemingRulesWith_markdownArticleRootSelector {
-        _wrappingSelectorOfCodeBlocks = _markdownArticleRootSelector
-    }
+__wrappingSelectorOf_markdownArticleCodeBlockThemingRules = ''
+if _shouldWrapCodeBlockThemingRulesWith_markdownArticleRootSelector {
+    __wrappingSelectorOf_markdownArticleCodeBlockThemingRules = _markdownArticleRootSelector
+}
 
-    {_wrappingSelectorOfCodeBlocks} {
-        @import './' + _codeBlocksTypeName + '/' + codeBlocksThemeName
-    }
+{__wrappingSelectorOf_markdownArticleCodeBlockThemingRules} {
+    @import './' + _codeBlocksTypeName + '/' + codeBlocksThemeName
 }

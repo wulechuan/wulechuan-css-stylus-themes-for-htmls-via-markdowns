@@ -1,12 +1,2 @@
-@import './markdown-article-parents'
-
-$ {
-    _wrappingSelector = ''
-    if (_shouldWrapBaseLayoutRulesWith_markdownArticleRootSelector) {
-        _wrappingSelector = _markdownArticleRootSelector
-    }
-
-    {_wrappingSelector} {
-        @import './markdown-article/*'
-    }
-}
+@import './0-markdown-article-parents'
+@import './1-markdown-article'

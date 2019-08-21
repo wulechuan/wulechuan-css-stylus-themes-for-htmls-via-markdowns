@@ -14,7 +14,7 @@ _codeBlocksTypeName = 'highlightjs'
 
 _shouldNotOutputTitleBlock = false
 _shouldEnableTableOfContents = false
-_shouldWrapBaseLayoutRulesWith_markdownArticleRootSelector = false
+_shouldWrapLayoutRulesWith_markdownArticleRootSelector = false
 _shouldWrapBaseThemingRulesWith_markdownArticleRootSelector = false
 _shouldWrapCodeBlockThemingRulesWith_markdownArticleRootSelector = false
 ```
