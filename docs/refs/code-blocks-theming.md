@@ -2,6 +2,13 @@
 
 # Code Blocks Theming
 
+To make code blocks colorful, here inside the scope of this repository, we have 2 options:
+
+1. HighlighJS
+
+2. Code Mirror
+
+
 ## HighlighJS
 
 ### Introduction
