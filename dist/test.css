@@ -27,7 +27,7 @@ summary {
 .centered {
   text-align: center;
 }
-html {
+body {
   padding: 3rem 1rem 4rem 1rem;
 }
 @media (max-width: 900px) {
@@ -42,7 +42,7 @@ html {
   html {
     font-size: 15px;
   }
-  html {
+  body {
     padding: 0;
   }
 }
@@ -84,6 +84,11 @@ p {
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
+small,
+sup,
+sub {
+  font-size: 70%;
+}
 pre {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -102,6 +107,7 @@ h6,
 dt {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  border-width: 0;
 }
 h1,
 h2,
@@ -123,19 +129,25 @@ h2 {
   margin-top: 3em;
   margin-bottom: 0.5em;
 }
+h1 + h2 {
+  margin-top: 1em;
+}
 h3 {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   margin-top: 2em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.3em;
+}
+h2 + h3 {
+  margin-top: 1em;
 }
 h4 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-top: 2em;
   margin-bottom: 0.5em;
 }
 h5 {
   font-size: 1rem;
-  margin-top: 2em;
+  margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
 input[type="checkbox"] {
@@ -219,6 +231,13 @@ hr::after {
   background-image: inherit !important;
   transform: scaleX(-1);
 }
+ul,
+ol,
+dl,
+blockquote {
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+}
 li {
   margin: 0.5em 0;
 }
@@ -248,7 +267,7 @@ ol {
 blockquote {
   display: inline-block;
   vertical-align: top;
-  margin: 0.5rem 0.8rem 1rem 1.2rem;
+  margin: 0.5rem 1rem 1rem 1rem;
   padding: 0.2em 1.6em 0.2em 1.8em;
   border-style: solid;
 }
@@ -257,9 +276,12 @@ blockquote b,
 blockquote em {
   color: inherit;
 }
-ul blockquote,
-ol blockquote {
+blockquote ul,
+blockquote ol,
+blockquote p,
+blockquote dd {
   margin-left: 0;
+  margin-right: 0;
 }
 kbd,
 code {
@@ -566,8 +588,8 @@ code {
 }
 kbd {
   border-radius: 0.2rem;
-  margin: -3px 0.1em;
-  padding: 2px 0.3em;
+  margin: 0.1em 0.2em;
+  padding: 0.1em 0.3em;
 }
 code {
   border-radius: 0.2rem;

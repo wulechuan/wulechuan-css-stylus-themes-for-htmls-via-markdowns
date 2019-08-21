@@ -84,6 +84,11 @@ p {
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
+small,
+sup,
+sub {
+    font-size: 70%;
+}
 pre {
     margin-left: 1rem;
     margin-right: 1rem;
@@ -102,6 +107,7 @@ h6,
 dt {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
+    border-width: 0;
 }
 h1,
 h2,
