@@ -1,0 +1,40 @@
+{__wrappingSelectorOf_markdownArticleLayoutRules} {
+    
+    hr {
+        display: block;
+        position: relative;
+        margin: 3rem auto 4rem 0;
+        border-width: 0;
+        height: 1px;
+        width: calc(50% - 0.6rem);
+        overflow: visible !important;
+        background-color: transparent;
+
+        &::after,
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+        }
+
+        &::before {
+            left: calc(100% + 0.6rem);
+            top: 50%;
+            width: 0.4rem;
+            height: 0.4rem;
+            margin: -0.2rem 0 0 -0.2rem;
+            border-radius: 50%;
+            background-color: currentColor;
+        }
+
+        &::after {
+            left: 100%;
+            width: 100%;
+            height: 100%;
+            margin-left: 1.2rem;
+            background-color: inherit;
+            background-image: inherit !important;
+            transform: scaleX(-1);
+        }
+    }
+}

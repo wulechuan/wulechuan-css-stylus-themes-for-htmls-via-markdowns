@@ -1,0 +1,47 @@
+{__wrappingSelectorOf_markdownArticleLayoutRules} {
+
+    img {
+        display: block;
+        box-sizing: content-box;
+        padding: 0.5rem;
+        max-width: 75%;
+        border-style: none;
+        margin: 0.5rem auto 1rem auto;
+
+        // Rules below are for images failed to load,
+        // a.k.a. for the alt texts of those images.
+        text-align: center;
+        font-size: 100%;
+        white-space: pre;
+        font-style: italic;
+        font-weight: normal;
+
+
+        &::before {
+            content: '图片加载失败。图片内容未知。';
+        }
+
+
+
+        &[alt]::before {
+            content: '图片加载失败。图片内容的大致描述为：\A“';
+        }
+
+        &[alt]::after {
+            content: '”';
+        }
+
+
+        @-moz-document url-prefix() {
+            /* firefox utilizes the ::before psuedo element
+            of an <img> to print the "alt" attribute of
+            the said <img>. So we can only use the ::after
+            psuedo element. */
+
+            &::after,
+            &[alt]::after {
+                content:'（图片加载失败）';
+            }
+        }
+    }
+}

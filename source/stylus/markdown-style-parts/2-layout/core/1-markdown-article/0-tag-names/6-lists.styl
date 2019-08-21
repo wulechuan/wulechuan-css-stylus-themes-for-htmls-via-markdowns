@@ -1,0 +1,62 @@
+{__wrappingSelectorOf_markdownArticleLayoutRules} {
+
+    li {
+        margin: 0.5em 0;
+    }
+
+    dt {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        border-width: 0;
+    }
+
+
+    ul,
+    ol,
+    dl {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0.5em;
+        margin-bottom: 1.5em;
+    }
+
+    // blockquote {
+
+    //     ul,
+    //     ol,
+    //     dd {
+    //         margin-left: 0;
+    //         margin-right: 0;
+    //     }
+    // }
+
+    ul, ol {
+        padding-left: 1.5em;
+    }
+
+
+
+    // warn('parts/layout/core/markdown-article/tag-names.styl\n         Selectors in literal CSS code blocks will NOT be wrapped correctly.')
+    // @css {@supports selector(::marker) {
+
+    //     ul, ol {
+    //         padding-left: 2.5em;
+    //     }
+
+    //     li::marker {
+    //         margin-right: 0.7em;
+    //     }
+    // }}
+
+    @-moz-document url-prefix() {
+        // At present (2019-08), only firefox supports ::marker psuedo element.
+
+        ul, ol {
+            padding-left: 2.5em;
+        }
+
+        li::marker {
+            margin-right: 0.7em;
+        }
+    }
+}

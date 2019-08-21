@@ -1,0 +1,56 @@
+{__wrappingSelectorOf_markdownArticleLayoutRules} {
+
+    kbd, code {
+        display: inline-block;
+        vertical-align: baseline;
+        line-height: 1;
+        min-height: 1em;
+        min-width: 0.5em;
+        font-weight: normal;
+        font-style: normal;
+        border-style: solid;
+    }
+
+    pre {
+        line-height: 1.4;
+        display: block;
+        overflow-x: auto;
+        padding: 0;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    code {
+        word-break: break-word;
+    }
+
+    pre {
+
+        &,
+        > code,
+        > code * {
+            white-space: pre !important;
+            word-wrap: none !important;
+            word-break: keep-all !important;
+            text-align: left !important;
+        }
+
+        > code {
+            line-height: inherit;
+            padding: 0.5em 1em;
+            border: none !important;
+            margin: 0 !important;
+            border-radius: 0;
+        }
+    }
+
+
+
+    blockquote,
+    table {
+
+        pre:last-child {
+            margin-bottom: 0.5rem;
+        }
+    }
+}

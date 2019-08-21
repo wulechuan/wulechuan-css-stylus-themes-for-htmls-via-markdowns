@@ -27,7 +27,7 @@ summary {
 .centered {
     text-align: center;
 }
-html {
+body {
     padding: 3rem 1rem 4rem 1rem;
 }
 @media (max-width: 900px) {
@@ -42,7 +42,7 @@ html {
     html {
         font-size: 15px;
     }
-    html {
+    body {
         padding: 0;
     }
 }
@@ -57,6 +57,33 @@ ol,
 dl,
 table {
     line-height: 1.5;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dt,
+p {
+    margin-left: -0.5em;
+    margin-right: -0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+pre {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+td > pre,
+li > pre {
+    margin-left: 0;
+    margin-right: 0;
+}
+a,
+code,
+kbd {
+    font-size: inherit;
 }
 a {
     text-decoration: none;
@@ -77,44 +104,10 @@ h3,
 h4,
 h5,
 h6,
-dt,
-p {
-    margin-left: -0.5em;
-    margin-right: -0.5em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-}
-small,
-sup,
-sub {
-    font-size: 70%;
-}
-pre {
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-td > pre,
-li > pre {
-    margin-left: 0;
-    margin-right: 0;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 dt {
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     border-width: 0;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
     line-height: 1.5;
 }
 h1 {
@@ -129,39 +122,67 @@ h2 {
     margin-top: 3em;
     margin-bottom: 0.5em;
 }
+h1 + h2 {
+    margin-top: 1em;
+  }
 h3 {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
     margin-top: 2em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.3em;
+}
+h2 + h3 {
+    margin-top: 1em;
 }
 h4 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-top: 2em;
     margin-bottom: 0.5em;
 }
 h5 {
     font-size: 1rem;
-    margin-top: 2em;
+    margin-top: 1.5em;
     margin-bottom: 0.5em;
 }
-input[type="checkbox"] {
-    width: 1.4em;
-    height: 1.4em;
-    display: inline-block;
-    vertical-align: middle;
-    margin: -0.2em 0.6em 0 0;
+td > h6,
+blockquote > h6,
+td > h5,
+blockquote > h5,
+td > h4,
+blockquote > h4,
+td > h3,
+blockquote > h3,
+td > h2,
+blockquote > h2,
+td > h1,
+blockquote > h1 {
+    margin-top: 0.75em;
+    margin-bottom: 0.25em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
 }
-ul,
-ol,
-dd {
-    margin-left: auto;
-    margin-right: auto;
+td > h6:first-child,
+blockquote > h6:first-child,
+td > h5:first-child,
+blockquote > h5:first-child,
+td > h4:first-child,
+blockquote > h4:first-child,
+td > h3:first-child,
+blockquote > h3:first-child,
+td > h2:first-child,
+blockquote > h2:first-child,
+td > h1:first-child,
+blockquote > h1:first-child {
+    margin-top: 0.25em;
 }
 p {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
     padding-top: 0.25em;
     padding-bottom: 0.25em;
+}
+blockquote p {
+    margin-left: 0;
+    margin-right: 0;
 }
 img {
     display: block;
@@ -191,81 +212,69 @@ img[alt]::after {
         content: '（图片加载失败）';
     }
 }
-hr {
-    display: block;
-    position: relative;
-    margin: 3rem auto 4rem 0;
-    border-width: 0;
-    height: 1px;
-    width: calc(50% - 0.6rem);
-    overflow: visible !important;
-    background-color: transparent;
-}
-hr::before {
-    content: '';
-    display: block;
-    position: absolute;
-    left: calc(100% + 0.6rem);
-    top: 50%;
-    width: 0.4rem;
-    height: 0.4rem;
-    margin: -0.2rem 0 0 -0.2rem;
-    border-radius: 50%;
-    background-color: currentColor;
-}
-hr::after {
-    content: '';
-    display: block;
-    position: absolute;
-    left: 100%;
-    width: 100%;
-    height: 100%;
-    margin-left: 1.2rem;
-    background-color: inherit;
-    background-image: inherit !important;
-    transform: scaleX(-1);
-}
-li {
-    margin: 0.5em 0;
-}
-ul,
-ol {
-    padding-left: 1.5em;
-}
-@supports selector(::marker) {
-
-    ul, ol {
-        padding-left: 3em;
-    }
-
-    li::marker {
-        margin-right: 1em;
-    }
-}
-@-moz-document url-prefix() {
-    ul,
-    ol {
-        padding-left: 3em;
-    }
-    li::marker {
-        margin-right: 1em;
-    }
-}
-blockquote {
+input[type="checkbox"] {
+    width: 1.4em;
+    height: 1.4em;
     display: inline-block;
-    vertical-align: top;
-    margin: 0.5rem 0.8rem 1rem 1.2rem;
-    padding: 0.2em 1.6em 0.2em 1.8em;
-    border-style: solid;
+    vertical-align: middle;
+    margin: -0.2em 0.6em 0 0;
+}
+small,
+sup,
+sub {
+    font-size: 70%;
 }
 blockquote strong,
 blockquote b,
 blockquote em {
     color: inherit;
 }
-ul blockquote,
-ol blockquote {
-    margin-left: 0;
+li {
+    margin: 0.5em 0;
+}
+dt {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    border-width: 0;
+}
+ul,
+ol,
+dl {
+    margin-left: auto;
+    margin-right: auto;
+}
+ul,
+ol {
+    padding-left: 1.5em;
+}
+@-moz-document url-prefix() {
+    ul,
+    ol {
+        padding-left: 2.5em;
+    }
+    li::marker {
+        margin-right: 0.7em;
+    }
+}
+blockquote {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.2em 1.6em 0.2em 1.8em;
+    margin: 0.5em 1rem 1.5em 1rem;
+    border-style: solid;
+}
+table {
+    border-style: solid;
+}
+td,
+th {
+    padding: 0.25em 0.75em;
+}
+table {
+    border-collapse: collapse;
+    margin: 1rem auto;
+    max-width: 96%;
+    min-width: 60%;
 }
 kbd,
 code {
@@ -304,55 +313,43 @@ pre > code {
     margin: 0 !important;
     border-radius: 0;
 }
-table,
-td,
-th {
-    border-style: solid;
-}
-td,
-th {
-    padding: 0.25em 0.75em;
-}
-table {
-    border-collapse: collapse;
-    margin: 1rem auto;
-    max-width: 96%;
-    min-width: 60%;
-}
-td > h6,
-blockquote > h6,
-td > h5,
-blockquote > h5,
-td > h4,
-blockquote > h4,
-td > h3,
-blockquote > h3,
-td > h2,
-blockquote > h2,
-td > h1,
-blockquote > h1 {
-    margin-top: 0.75em;
-    margin-bottom: 0.25em;
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
-}
-td > h6:first-child,
-blockquote > h6:first-child,
-td > h5:first-child,
-blockquote > h5:first-child,
-td > h4:first-child,
-blockquote > h4:first-child,
-td > h3:first-child,
-blockquote > h3:first-child,
-td > h2:first-child,
-blockquote > h2:first-child,
-td > h1:first-child,
-blockquote > h1:first-child {
-    margin-top: 0.25em;
-}
 blockquote pre:last-child,
 table pre:last-child {
     margin-bottom: 0.5rem;
+}
+hr {
+    display: block;
+    position: relative;
+    margin: 3rem auto 4rem 0;
+    border-width: 0;
+    height: 1px;
+    width: calc(50% - 0.6rem);
+    overflow: visible !important;
+    background-color: transparent;
+}
+hr::after,
+hr::before {
+    content: '';
+    display: block;
+    position: absolute;
+}
+hr::before {
+    left: calc(100% + 0.6rem);
+    top: 50%;
+    width: 0.4rem;
+    height: 0.4rem;
+    margin: -0.2rem 0 0 -0.2rem;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+hr::after {
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    margin-left: 1.2rem;
+    background-color: inherit;
+    background-image: inherit !important;
+    transform: scaleX(-1);
 }
 @media (max-width: 600px) {
     h1 {
@@ -378,9 +375,6 @@ table pre:last-child {
         margin-left: 0.7rem;
         margin-right: 0.5rem;
     }
-    hr {
-        margin: 1.5rem auto 2rem 0;
-    }
     table {
         max-width: none;
         width: 100%;
@@ -390,6 +384,9 @@ table pre:last-child {
     }
     table pre > code {
         white-space: normal !important;
+    }
+    hr {
+        margin: 1.5rem auto 2rem 0;
     }
 }
 .markdown-article {
@@ -553,11 +550,6 @@ h5 {
 h6 {
     font-weight: bolder;
 }
-a,
-code,
-kbd {
-    font-size: inherit;
-}
 img {
     border-radius: 0.5rem;
 }
@@ -565,6 +557,13 @@ blockquote {
     border-width: 0 0 0 0.3rem;
     border-radius: 0.3rem;
     font-size: 0.8rem;
+}
+table {
+    border-width: 6px;
+}
+th,
+td {
+    border-width: 1px;
 }
 kbd,
 code {
@@ -582,13 +581,6 @@ code {
 }
 pre {
     border-radius: 0.3rem;
-}
-table {
-    border-width: 6px;
-}
-th,
-td {
-    border-width: 1px;
 }
 @media (max-width: 600px) {
     h1 {
@@ -621,11 +613,6 @@ a.header-anchor[href^="#"]:active {
 :target > a.header-anchor[href^="#"] {
     color: #15d30e;
 }
-img {
-    color: #555;
-    background-color: rgba(128,128,128,0.1);
-    box-shadow: inset 0 0 0.4rem rgba(0,0,0,0.29);
-}
 h1,
 h2,
 h3,
@@ -634,6 +621,19 @@ h5,
 h6,
 dt {
     color: #000;
+}
+img {
+    color: #555;
+    background-color: rgba(128,128,128,0.1);
+    box-shadow: inset 0 0 0.4rem rgba(0,0,0,0.29);
+}
+input[type="checkbox"] + label {
+    color: #000;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+input[type="checkbox"]:checked + label {
+    color: #696;
+    text-shadow: -1px -1px 0 rgba(0,128,0,0.1);
 }
 strong,
 b,
@@ -645,33 +645,6 @@ blockquote {
     border-color: #f80;
     background-color: rgba(136,136,136,0.2);
     text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
-}
-code,
-kbd {
-    text-shadow: none !important;
-}
-code {
-    color: #a34587;
-    border-color: rgba(0,0,0,0.219);
-    background-color: #fff;
-}
-pre code {
-    color: inherit !important;
-    background-color: transparent !important;
-}
-kbd {
-    color: #fff;
-    border-color: #fff;
-    background-color: #789abc;
-    box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.219);
-}
-input[type="checkbox"] + label {
-    color: #000;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-input[type="checkbox"]:checked + label {
-    color: #696;
-    text-shadow: -1px -1px 0 rgba(0,128,0,0.1);
 }
 table {
     border-color: #111;
@@ -692,6 +665,25 @@ tbody tr:nth-child(odd) {
 }
 tbody tr:nth-child(even) {
     background-color: rgba(0,0,0,0.1);
+}
+code,
+kbd {
+    text-shadow: none !important;
+}
+code {
+    color: #a34587;
+    border-color: rgba(0,0,0,0.219);
+    background-color: #fff;
+}
+pre code {
+    color: inherit !important;
+    background-color: transparent !important;
+}
+kbd {
+    color: #fff;
+    border-color: #fff;
+    background-color: #789abc;
+    box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.219);
 }
 hr {
     color: rgba(128,128,128,0.45);

@@ -1,0 +1,43 @@
+{_markdownArticleRootSelector} {
+    line-height: 1.5;
+}
+
+
+
+
+
+{__wrappingSelectorOf_markdownArticleLayoutRules} {
+
+    article,
+    p,
+    blockquote,
+    ul, ol, dl,
+    table {
+        line-height: 1.5;
+    }
+
+
+    h1, h2, h3, h4, h5, h6, dt, p {
+        margin-left: -0.5em;
+        margin-right: -0.5em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    pre {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    td > pre,
+    li > pre {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    a,
+    code,
+    kbd {
+        font-size: inherit;
+    }
+}
