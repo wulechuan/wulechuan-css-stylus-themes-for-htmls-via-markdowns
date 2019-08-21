@@ -8,7 +8,8 @@
 {__wrappingSelectorOf_markdownArticleLayoutRules} {
 
     article,
-    p, blockquote,
+    p,
+    blockquote,
     ul, ol, dl,
     table {
         line-height: 1.5;
@@ -37,6 +38,10 @@
         padding-right: 0.5em;
     }
 
+    small, sup, sub {
+        font-size: 70%;
+    }
+
     pre {
         margin-left: 1rem;
         margin-right: 1rem;
@@ -51,6 +56,7 @@
     h1, h2, h3, h4, h5, h6, dt {
         padding-top: 0.5em;
         padding-bottom: 0.5em;
+        border-width: 0;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -65,29 +71,57 @@
         padding-bottom: 0.25em;
     }
 
+    // hr + h1 {
+    //     margin-top: 1em;
+    // }
+
     h2 {
         font-size: 1.8rem;
         margin-top: 3em;
         margin-bottom: 0.5em;
     }
 
+    h1 + h2 {
+        margin-top: 1em;
+    }
+
+    // hr + h2 {
+    //     margin-top: 1em;
+    // }
+
     h3 {
-        font-size: 1.35rem;
+        font-size: 1.3rem;
+        margin-top: 2em;
+        margin-bottom: 0.3em;
+    }
+
+    h2 + h3 {
+        margin-top: 1em;
+    }
+
+    // hr + h3 {
+    //     margin-top: 1em;
+    // }
+
+    h4 {
+        font-size: 1.1rem;
         margin-top: 2em;
         margin-bottom: 0.5em;
     }
 
-    h4 {
-        font-size: 1.2rem;
-        margin-top: 2em;
-        margin-bottom: 0.5em;
-    }
+    // hr + h4 {
+    //     margin-top: 1em;
+    // }
 
     h5 {
         font-size: 1rem;
-        margin-top: 2em;
+        margin-top: 1.5em;
         margin-bottom: 0.5em;
     }
+
+    // hr + h5 {
+    //     margin-top: 1em;
+    // }
 
     /* h6 {
     } */
@@ -189,6 +223,15 @@
         transform: scaleX(-1);
     }
 
+    
+    ul,
+    ol,
+    dl,
+    blockquote {
+        margin-top: 0.5em;
+        margin-bottom: 1.5em;
+    }
+
     li {
         margin: 0.5em 0;
     }
@@ -196,6 +239,10 @@
 
     ul, ol {
         padding-left: 1.5em;
+
+        // blockquote {
+        //     margin-left: 0;
+        // }
     }
 
 
@@ -222,9 +269,9 @@
     }
 
     blockquote {
-        display: inline-block;
+        display: inline-block; // so that it has an auto width
         vertical-align: top;
-        margin: 0.5rem 0.8rem 1rem 1.2rem;
+        margin: 0.5rem 1rem 1rem 1rem;
         padding: 0.2em 1.6em 0.2em 1.8em;
         border-style: solid;
 
@@ -233,12 +280,13 @@
         em {
             color: inherit;
         }
-    }
-
-    ul, ol {
-
-        blockquote {
+        
+        ul,
+        ol,
+        p,
+        dd {
             margin-left: 0;
+            margin-right: 0;
         }
     }
 
@@ -266,21 +314,24 @@
         word-break: break-word;
     }
 
-    pre,
-    pre > code,
-    pre > code * {
-        white-space: pre !important;
-        word-wrap: none !important;
-        word-break: keep-all !important;
-        text-align: left !important;
-    }
+    pre {
 
-    pre > code {
-        line-height: inherit;
-        padding: 0.5em 1em;
-        border: none !important;
-        margin: 0 !important;
-        border-radius: 0;
+        &,
+        > code,
+        > code * {
+            white-space: pre !important;
+            word-wrap: none !important;
+            word-break: keep-all !important;
+            text-align: left !important;
+        }
+
+        > code {
+            line-height: inherit;
+            padding: 0.5em 1em;
+            border: none !important;
+            margin: 0 !important;
+            border-radius: 0;
+        }
     }
 
     table, td, th {
