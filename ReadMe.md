@@ -86,17 +86,17 @@ Simply take any css file under the `dist/css` folder.
     @import '../to-assemble-all-parts'
     ```
 
-3. To be detailed. Sorry!
+3. How to config Gulpjs tasks accordingly. To be detailed. Sorry!
 
 
 ### Code Blocks that are able to Colorize
 
-See [.../code-blocks-themes/ReadMe.md](./source/stylus/markdown-style-parts/3-theming/code-blocks-themes/ReadMe.md).
+See [code-blocks-theming.md](./docs/refs/code-blocks-theming.md).
 
 
 ### All Stylus Variables
 
-See [.../markdown-style-senarios/ReadMe.md](./source/stylus/markdown-style-senarios/ReadMe.md).
+See [stylus-variable-default-values.md](./docs/refs/stylus-variable-default-values.md).
 
 
 

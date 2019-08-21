@@ -56,16 +56,49 @@
 
 ### 步骤
 
-暂从略。
+
+1. 在 `./source/stylus/markdown-style-senarios/` 文件或其子文件夹内创建一个新的 `.styl` 文件。
+
+2. 在新创建的 `.styl` 文件中，撰写类似以下内容的代码：
+
+    ```js
+    //-------------------------------------------------
+    // 设置控制主题构建的各个变量
+    // 提示：
+    //     凡名称以下划线（'_'）开头的变量，都是可省略的变量。
+    //     其余变量必须配置。否则 Stylus 编译时将报错，并中止。
+    //-------------------------------------------------
+
+    codeBlocksThemeName = 'atom-one-dark'
+
+
+
+
+
+
+
+    //-------------------------------------------------
+    // 至此，所有变量已经配置完成，仅需导入装配模板文件即可。
+    // 该装配模板会自动根据上方定义的变量来构建 css 文件。
+    //-------------------------------------------------
+
+    @import '../to-assemble-all-parts'
+    ```
+
+
+3. 如何配置 Gulpjs 的任务。暂从略。抱歉！
+
+
+
 
 ### 可着色代码块
 
-参阅 [.../code-blocks-themes/ReadMe.md](./source/stylus/markdown-style-parts/3-theming/code-blocks-themes/ReadMe.md)。
+参阅 [code-blocks-theming.md](./docs/refs/code-blocks-theming.md)。
 
 
 ### 所有可配置的 Stylus 变量
 
-参阅 [.../markdown-style-senarios/ReadMe.md](./source/stylus/markdown-style-senarios/ReadMe.md)。
+参阅 [stylus-variable-default-values.md](./docs/refs/stylus-variable-default-values.md)。
 
 
 
