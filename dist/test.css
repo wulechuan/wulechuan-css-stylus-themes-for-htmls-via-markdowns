@@ -27,10 +27,10 @@ summary {
 .centered {
   text-align: center;
 }
-.typora-node #write {
+.typora-node > content {
   padding: 3rem 1rem 4rem 1rem;
 }
-.typora-node #write {
+.typora-node > content {
   margin: 0;
 }
 @media (max-width: 900px) {
@@ -45,11 +45,11 @@ summary {
   html {
     font-size: 15px;
   }
-  .typora-node #write {
+  .typora-node > content {
     padding: 0;
   }
 }
-.typora-node > content {
+.typora-node   #write {
   line-height: 1.5;
 }
 article,
@@ -248,6 +248,10 @@ ul,
 ol {
   padding-left: 1.5em;
 }
+ul blockquote,
+ol blockquote {
+  margin-left: 0.5rem;
+}
 @supports selector(::marker) {
 
       ul, ol {
@@ -411,7 +415,7 @@ table pre:last-child {
     white-space: normal !important;
   }
 }
-.typora-node > content {
+.typora-node   #write {
   font-size: 0.9rem;
   line-height: 1.5;
   padding: 6rem 4rem 14rem 4rem;
@@ -420,7 +424,7 @@ table pre:last-child {
   margin: 0 auto;
   word-break: break-word;
 }
-.typora-node > content > h1:first-child {
+.typora-node   #write > h1:first-child {
   margin-top: 1em;
 }
 .document-author {
@@ -430,7 +434,7 @@ table pre:last-child {
   margin-left: -0.75em;
 }
 @media (max-width: 600px) {
-  .typora-node > content {
+  .typora-node   #write {
     padding: 3rem 2rem 7rem 2rem;
   }
 }
@@ -446,10 +450,6 @@ p {
   margin-right: auto;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
-ul blockquote,
-ol blockquote {
-  margin-left: 0.5rem;
 }
 pre {
   border-radius: 0;
@@ -541,7 +541,7 @@ td {
     font-weight: 400;
   }
 }
-.typora-node > content {
+.typora-node   #write {
   color: #333;
   background-color: #f7f7f9;
   box-shadow: 0 0 0.4rem rgba(0,0,0,0.2);
