@@ -42,7 +42,7 @@ Well, we developers and engineers work with markdown files all the time. And man
 
 ### Well CSS Files. But Why Multiple?
 
-Then why do we need so many css files? 
+Then why do we need so many css files?
 
 First, we might need different themes for different ambient lighting conditions. Or even different feelings.
 
@@ -68,7 +68,7 @@ In short, each `.styl` file is a configuration, targeting one senario, and produ
 
 For examples:
 
-- there is a `typora/typora-_default.styl`. And a css file named `wulechuan-styles-for-html-via-markdown--typora.default.css` is produced accordingly. 
+- there is a `typora/typora-_default.styl`. And a css file named `wulechuan-styles-for-html-via-markdown--typora.default.css` is produced accordingly.
 
 - there is a `firefox-addon/firefox-addon-_default.styl`. A css file named `wulechuan-styles-for-html-via-markdown--firefox-addon.default.css` is produced as well.
 
@@ -111,7 +111,7 @@ pre   { /* rules */ }
 
 ### Default Senario (For Standalone HTML Files)
 
-Conceptly, it should be a standalone css file. **BUT** it has 4 variantions. So in face there are 4 files in total.
+Conceptly, it would be a standalone css file. **BUT** it has 4 variantions.
 
 Why are there so many variantions?
 
@@ -138,29 +138,55 @@ The markup structure of the said TOC parts are based on the output of [markdown-
 
 The said 4 variantions are:
 
-1. **Selectors non-wrapped, no TOC**
+1. **Selectors wrapped, no TOC**
+
+    - css selectors are wrapped under the `.markdown-article` class name
+    - css rules for table of contents parts are **excluded**
+
+    Files:
+
+    - `./dist/css/wulechuan-styles-for-html-via-markdown.default--wrapped--no-toc.css`
+    - `./dist/css/wulechuan-styles-for-html-via-markdown.default--wrapped--no-toc.min.css`
+
+
+
+2. **Selectors wrapped, with TOC**
+
+    - css selectors are wrapped under the `.markdown-article` class name
+    - css rules for table of contents parts are **included**,
+
+    Files:
+
+    - `./dist/css/wulechuan-styles-for-html-via-markdown.default--wrapped--with-toc.css`
+    - `./dist/css/wulechuan-styles-for-html-via-markdown.default--wrapped--with-toc.min.css`
+
+    > Don't forget to use the `table-of-contents-behaviours.js` together with either of these css files.
+
+
+
+3. **Selectors non-wrapped, no TOC**
 
     - css selectors are **NOT** wrapped under any class name
     - css rules for table of contents parts are **excluded**
 
-2. **Selectors non-wrapped, with TOC**
+    Files:
+
+    - `./dist/css/wulechuan-styles-for-html-via-markdown.default--no-toc.css`
+    - `./dist/css/wulechuan-styles-for-html-via-markdown.default--no-toc.min.css`
+
+
+4. **Selectors non-wrapped, with TOC**
 
     - css selectors are **NOT** wrapped under any class name
     - css rules for table of contents parts are **included**
+
+    Files:
     
-    > Don't forget to use the `table-of-contents-behaviours.js` together with this css file.
+    - `./dist/css/wulechuan-styles-for-html-via-markdown.default--with-toc.css`
+    - `./dist/css/wulechuan-styles-for-html-via-markdown.default--with-toc.min.css`
 
-3. **Selectors wrapped, no TOC**
 
-    - css selectors are wrapped under the `.markdown-article` class name
-    - css rules for table of contents parts are **excluded**
-    
-4. **Selectors wrapped, with TOC**
-
-    - css selectors are wrapped under the `.markdown-article` class name
-    - css rules for table of contents parts are **included**, 
-
-    > Don't forget to use the `table-of-contents-behaviours.js` together with this css file.
+    > Don't forget to use the `table-of-contents-behaviours.js` together with either of these css files.
 
 
 ---
@@ -168,22 +194,30 @@ The said 4 variantions are:
 
 ### Microsoft Visual Studio Code Markdown preview Page
 
+File:
+
+- `./dist/css/wulechuan-styles-for-html-via-markdown--vscode.default.min.css`
+
 This one is specifically for the preview page generated inside Microsoft [Visual Studio Code](https://code.visualstudio.com).
 
 > Usage:
 >
 > Add a raw HTML line (see below) into your markdown file, and then preview the markdown file in your VS Code as normal.
-
-The HTML line to embed into your markdown file looks like this:
-
-```html
-<link rel="stylesheet" href="{YOUR_REAL_FILE_PATH_HERE}/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
-```
+>
+> The HTML line to embed into your markdown file looks like this:
+>
+> ```html
+> <link rel="stylesheet" href="{YOUR_REAL_FILE_PATH_HERE}/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
+> ```
 
 ---
 
 
 ### The Firefox addon "Markdown Viewer Webext"
+
+File:
+
+- `./dist/css/wulechuan-styles-for-html-via-markdown--firefox-addon.default.css`
 
 This one is specifically for the nice markdown processing addon of Firefox browser. The addon is named "[Markdown Viewer Webext](https://addons.mozilla.org/zh-CN/firefox/addon/markdown-viewer-webext/)".
 
@@ -194,7 +228,7 @@ This one is specifically for the nice markdown processing addon of Firefox brows
 > 3. Find the addon named "**Markdown Viewer Webext**" and click it. Then you are led to the info page of the addon.
 > 4. Click the "**Options**" tab. Then you see the panel of options of the addon.
 > 5. Scroll down a bit the panel and find the section of title "**Custom CSS**". Below the title you see a multi-lined text input box.
-> 6. Copy-paste the entire content of the css generated by my tools, into the input box.
+> 6. Copy the entire content of the `...--firefox-addon.default.css` file, and paste into the input box, replacing the existing content of the input box.
 > 7. Click anywhere outside the input box. This simple action will make the new content take effects. And you see a green text saying "**SAVED**" for approval.
 > 8. Open any markdown file with your Firefox browser and see the result.
 
@@ -202,7 +236,13 @@ This one is specifically for the nice markdown processing addon of Firefox brows
 
 ---
 
+
+
 ### As a Custom Theme of Typora
+
+File:
+
+- `./dist/css/wulechuan-styles-for-html-via-markdown--typora.default.css`
 
 [Typora](https://typora.io/) is a really great tool for both reading and writing markdown files. And the app allows us users to customize the look and feel of the markdown inside Typora.
 
@@ -265,7 +305,10 @@ See the official doc on the subject: [Install Theme](http://theme.typora.io/doc/
 
 3. Add a gulpjs task, so that the gulp tools will load the `.styl` you just created and edited, and produce css file(s) accordingly. To do so, open the `./gulpfile.esm.js/configs/stylus-tasks.js`, inside the Javascript file, you add an entry to the `Array` named `allSpecificOptions`. Save the Javascript file, of course.
 
-4. Open a command line tool, like **bash**, **Git Bash**, **PowerShell**, **WSL**, or **Windows comannd**, `cd` to the folder of this repository, and then type `npm run build` and press <kbd>enter</kbd> key. Wait for the program to end.
+4. Open a command line tool, like **bash**, **Git Bash**, **PowerShell**, **WSL**, or **Windows comannd**, then:
+    - `cd` to the folder of this repository
+    - type `npm run build` and press <kbd>enter</kbd> key
+    - Wait for the program to end.
 
 5. Checkout the `./dist/css` folder for your own css file.
 

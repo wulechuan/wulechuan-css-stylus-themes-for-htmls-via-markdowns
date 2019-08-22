@@ -268,6 +268,7 @@ body {
 }
 .markdown-article blockquote {
   display: inline-block;
+  max-width: 100%;
   vertical-align: top;
   padding: 0.5em 1.2em 0.6em 1em;
   margin: 0.5em 1rem 1.5em 1rem;
@@ -315,9 +316,9 @@ body {
 .markdown-article pre,
 .markdown-article pre > code,
 .markdown-article pre > code * {
-  white-space: pre !important;
-  word-wrap: none !important;
-  word-break: keep-all !important;
+  white-space: pre;
+  word-wrap: none;
+  word-break: keep-all;
   text-align: left !important;
 }
 .markdown-article pre > code {
@@ -395,9 +396,6 @@ body {
   }
   .markdown-article td {
     max-width: 400px;
-  }
-  .markdown-article table pre > code {
-    white-space: normal !important;
   }
   .markdown-article hr {
     margin: 1.5rem auto 2rem 0;
