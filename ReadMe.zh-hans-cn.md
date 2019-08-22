@@ -104,6 +104,30 @@ pre   { /* rules */ }
 
 
 
+
+## 效果示例
+
+### 原始 MarkDown 文件
+
+- [zh-Hans-CN.md](./docs/examples/source-markdown-files/zh-Hans-CN.md)
+
+### 生成的 HTML 文件
+
+- [HTML](./docs/examples/rendered/html/zh-hans-cn.html)
+
+
+### 渲染的 HTML 的截图
+
+- [窗口较宽时的效果（纲要列表已收叠）](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.png)
+
+- [窗口较宽时的效果（纲要列表已展开）](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已展开）.png)
+
+- [窗口较窄时的效果（纲要列表已收叠）](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较窄时的效果（纲要列表已收叠）.png)
+
+
+
+
+
 ## 业已支持的场景
 
 ### 默认场景（用在独立存在的 HTML 中）
@@ -220,24 +244,6 @@ pre   { /* rules */ }
 
 ---
 
-
-
-## 效果示例（仅默认场景）
-
-### 原始 MarkDown 文件
-
-- [zh-Hans-CN.md](./docs/examples/source-markdown-files/zh-Hans-CN.md)
-
-### 生成的 HTML 文件
-
-- [HTML](./docs/examples/rendered/html/zh-hans-cn.html)
-
-
-### 渲染的 HTML 的截图
-
-- [窗口较宽时的效果](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果.png)
-
-- [窗口较窄时的效果](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较窄时的效果.png)
 
 
 

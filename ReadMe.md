@@ -107,6 +107,28 @@ pre   { /* rules */ }
 
 
 
+## Examples
+
+### Raw MarkDown
+
+- [en-US.md](./docs/examples/source-markdown-files/en-US.md)
+
+### Generated HTML File
+
+- [HTML](./docs/examples/rendered/html/en-us.html)
+
+### Rendered HTML Snapshots(Pictures)
+
+- [Snapshot in a wide window (TOC collapsed)](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-collapsed.png)
+
+- [Snapshot in a wide window (TOC expanded)](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-expanded.png)
+
+- [Snapshot in a narrow window](./docs/examples/rendered/snapshots/en-US-example-in-a-narrow-window-toc-collapsed.png)
+
+
+
+
+
 ## Supported Senarios So Far
 
 ### Default Senario (For Standalone HTML Files)
@@ -249,24 +271,6 @@ File:
 See the official doc on the subject: [Install Theme](http://theme.typora.io/doc/Install-Theme/)
 
 ---
-
-
-
-## Examples (Standalone Version Only)
-
-### Raw MarkDown
-
-- [en-US.md](./docs/examples/source-markdown-files/en-US.md)
-
-### Generated HTML File
-
-- [HTML](./docs/examples/rendered/html/en-us.html)
-
-### Rendered HTML Snapshots(Pictures)
-
-- [Snapshot in a wide window](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window.png)
-
-- [Snapshot in a narrow window](./docs/examples/rendered/snapshots/en-US-example-in-a-narrow-window.png)
 
 
 
