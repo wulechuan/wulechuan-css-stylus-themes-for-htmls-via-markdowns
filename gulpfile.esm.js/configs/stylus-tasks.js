@@ -5,7 +5,7 @@ const joinPathPOSIX = path.posix.join
 
 const sourceGlobsRootFolderPath        = './source/stylus'
 const outputFolderPath                 = './dist/css'
-const specificSourceGlobsCommonSubPath = 'markdown-style-senarios'
+const specificSourceGlobsCommonSubPath = 'markdown-style-scenarios'
 const outputFileBaseNameCommonPrefix   = 'wulechuan-styles-for-html-via-markdown'
 
 const sharedSourceRelativeGlobs = []

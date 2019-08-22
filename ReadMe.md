@@ -56,15 +56,15 @@ Different tools produce **different** HTML contents out of the **same** source m
 
 So, in short, different lighting conditions, different tools or software environments need different css file.
 
-> By the way, I also call these tools and environemts "senarios" in general.
+> By the way, I also call these tools and environemts "scenarios" in general.
 
 
 
 ### How does this Work?
 
-I designed a flex framework. Upon that there are several provided [stylus](http://stylus-lang.com/) files (`.styl`) as configurations. So that multiple versions of CSS can be produced in one go, each targeting different environment/senario. For each senario, we get 1 or 2 `.css` files. If 2 are produced, that's because one of them is a minified css. If only 1 css file is produced, then depending on the configuration, it can be either an uncompress one or a compress one.
+I designed a flex framework. Upon that there are several provided [stylus](http://stylus-lang.com/) files (`.styl`) as configurations. So that multiple versions of CSS can be produced in one go, each targeting different environment/scenario. For each scenario, we get 1 or 2 `.css` files. If 2 are produced, that's because one of them is a minified css. If only 1 css file is produced, then depending on the configuration, it can be either an uncompress one or a compress one.
 
-In short, each `.styl` file is a configuration, targeting one senario, and produces css file(s).
+In short, each `.styl` file is a configuration, targeting one scenario, and produces css file(s).
 
 For examples:
 
@@ -83,7 +83,7 @@ Well, for the generated css files, there are two set of them. One is wrapped ver
 
 For wrapped, I mean css selectors like `a`, `ul`, `table`, `pre`, etc. are wrapped under a class name. By default the class name is `.markdown-article`.
 
-> You can customize the class name differently for each and every senario easily, in the source `.styl` file.
+> You can customize the class name differently for each and every scenario easily, in the source `.styl` file.
 
 So for example, in the generated css file, you get:
 
@@ -129,9 +129,9 @@ pre   { /* rules */ }
 
 
 
-## Supported Senarios So Far
+## Supported scenarios So Far
 
-### Default Senario (For Standalone HTML Files)
+### Default scenario (For Standalone HTML Files)
 
 Conceptly, it would be a standalone css file. **BUT** it has 4 variantions.
 
@@ -279,7 +279,7 @@ See the official doc on the subject: [Install Theme](http://theme.typora.io/doc/
 
 ### Steps
 
-1. Create a `.styl` file under `./source/stylus/markdown-style-senarios/` folder, or a sub-folder if prefer.
+1. Create a `.styl` file under `./source/stylus/markdown-style-scenarios/` folder, or a sub-folder if prefer.
 
 2. In the newly created `.styl` file, write something like this:
 

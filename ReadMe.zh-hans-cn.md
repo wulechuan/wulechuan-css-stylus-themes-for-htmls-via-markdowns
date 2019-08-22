@@ -55,7 +55,7 @@
 
 因此，不同的光照环境、软件环境或工具，都需要不同的 CSS 文件。
 
-> 我们不妨将上述不同情形统一称呼为【场景（senarios）】。
+> 我们不妨将上述不同情形统一称呼为【场景（scenarios）】。
 
 
 ### 本工具如何创建 CSS？
@@ -252,7 +252,7 @@ pre   { /* rules */ }
 ### 步骤
 
 
-1. 在 `./source/stylus/markdown-style-senarios/` 文件或其子文件夹内创建一个新的 `.styl` 文件。
+1. 在 `./source/stylus/markdown-style-scenarios/` 文件或其子文件夹内创建一个新的 `.styl` 文件。
 
 2. 在新创建的 `.styl` 文件中，撰写类似以下内容的代码：
 
