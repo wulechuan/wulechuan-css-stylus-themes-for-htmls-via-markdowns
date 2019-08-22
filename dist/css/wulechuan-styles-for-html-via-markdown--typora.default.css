@@ -209,17 +209,57 @@ img {
   font-weight: normal;
 }
 img::before {
-  content: '图片加载失败。图片内容未知。';
+  content: 'Image failed to load. No description of the image.';
 }
 img[alt]::before {
-  content: '图片加载失败。图片内容的大致描述为：\A“';
+  content: 'Image failed to load. Image descriptioin: \A"';
 }
 img[alt]::after {
-  content: '”';
+  content: '"';
 }
 @-moz-document url-prefix() {
   img::after,
   img[alt]::after {
+    content: ' (Image failed to load)';
+  }
+}
+[lang*="zh-" i] img::before,
+[lang*="-hans" i] img::before,
+[lang*="-CN" i] img::before,
+[lang*="zh-"] img::before,
+[lang*="-hans"] img::before,
+[lang*="-CN"] img::before {
+  content: '图片加载失败。图片内容未知。';
+}
+[lang*="zh-" i] img[alt]::before,
+[lang*="-hans" i] img[alt]::before,
+[lang*="-CN" i] img[alt]::before,
+[lang*="zh-"] img[alt]::before,
+[lang*="-hans"] img[alt]::before,
+[lang*="-CN"] img[alt]::before {
+  content: '图片加载失败。图片内容的大致描述为：\A“';
+}
+[lang*="zh-" i] img[alt]::after,
+[lang*="-hans" i] img[alt]::after,
+[lang*="-CN" i] img[alt]::after,
+[lang*="zh-"] img[alt]::after,
+[lang*="-hans"] img[alt]::after,
+[lang*="-CN"] img[alt]::after {
+  content: '”';
+}
+@-moz-document url-prefix() {
+  [lang*="zh-" i] img::after,
+  [lang*="-hans" i] img::after,
+  [lang*="-CN" i] img::after,
+  [lang*="zh-"] img::after,
+  [lang*="-hans"] img::after,
+  [lang*="-CN"] img::after,
+  [lang*="zh-" i] img[alt]::after,
+  [lang*="-hans" i] img[alt]::after,
+  [lang*="-CN" i] img[alt]::after,
+  [lang*="zh-"] img[alt]::after,
+  [lang*="-hans"] img[alt]::after,
+  [lang*="-CN"] img[alt]::after {
     content: '（图片加载失败）';
   }
 }

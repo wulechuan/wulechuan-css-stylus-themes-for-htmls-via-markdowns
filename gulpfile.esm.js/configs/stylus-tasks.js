@@ -65,9 +65,33 @@ const allSpecificOptions = [
 ]
 
 
+const divLineForPrinting = '-'.repeat(75)
+
+console.log('')
+console.log(divLineForPrinting)
+
+const theOnlyStylToBuildArgument = process.env.theOnlyStylToBuild
+let theOnlyStylToBuild = null
+if (theOnlyStylToBuildArgument) {
+    if (theOnlyStylToBuildArgument === 'true ' ||
+        theOnlyStylToBuildArgument === 'true'  ||
+        theOnlyStylToBuildArgument === true
+    ) {
+        theOnlyStylToBuild = allSpecificOptions[0].entryStylusFileSubPath
+    } else {
+        theOnlyStylToBuild = theOnlyStylToBuildArgument
+    }
+
+    console.log(`theOnlyStylToBuildArgument = "${theOnlyStylToBuildArgument}"`)
+    console.log(`        theOnlyStylToBuild = "${theOnlyStylToBuild}"`)
+}
+
+
 
 const allStylusTaskSettingsBuildingOptions = allSpecificOptions
-    .filter(options => !options.shouldSkipThisTask)
+    .filter(options => !options.shouldSkipThisTask && (
+        !theOnlyStylToBuild || theOnlyStylToBuild === options.entryStylusFileSubPath
+    ))
     .map(options => {
         const {
             entryStylusFileSubPath,
@@ -110,5 +134,11 @@ const allStylusTaskSettingsBuildingOptions = allSpecificOptions
         }
     })
 
+
+console.log('')
+console.log('Source `.styl` file(s) count:', allStylusTaskSettingsBuildingOptions.length)
+
+console.log(divLineForPrinting)
+console.log('')
 
 export default allStylusTaskSettingsBuildingOptions

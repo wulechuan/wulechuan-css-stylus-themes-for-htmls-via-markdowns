@@ -34,7 +34,8 @@
   "scripts": {
     "start": "gulp --silent buildAndWatch",
     "build": "gulp --silent buildOnce",
-    "clean": "gulp --silent clean"
+    "clean": "gulp --silent clean",
+    "try-1": "set theOnlyStylToBuild=true && gulp buildOnce"
   },
   "devDependencies": {
     "chalk": "^2.4.2",

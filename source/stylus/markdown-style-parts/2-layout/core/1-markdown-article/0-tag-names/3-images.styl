@@ -15,20 +15,22 @@
         white-space: pre;
         font-style: italic;
         font-weight: normal;
+    }
 
+
+    img { // default language (lang omitted). Contents below are in en-US.
 
         &::before {
-            content: '图片加载失败。图片内容未知。';
+            content: 'Image failed to load. No description of the image.';
         }
-
 
 
         &[alt]::before {
-            content: '图片加载失败。图片内容的大致描述为：\A“';
+            content: 'Image failed to load. Image descriptioin: \A"';
         }
 
         &[alt]::after {
-            content: '”';
+            content: '"';
         }
 
 
@@ -40,7 +42,41 @@
 
             &::after,
             &[alt]::after {
-                content:'（图片加载失败）';
+                content:' (Image failed to load)';
+            }
+        }
+    }
+
+
+    {languageSelector('zh', 'hans', 'CN')} { // zh-Hans-CN
+
+        img {
+
+            &::before {
+                content: '图片加载失败。图片内容未知。';
+            }
+
+
+
+            &[alt]::before {
+                content: '图片加载失败。图片内容的大致描述为：\A“';
+            }
+
+            &[alt]::after {
+                content: '”';
+            }
+
+
+            @-moz-document url-prefix() {
+                /* firefox utilizes the ::before psuedo element
+                of an <img> to print the "alt" attribute of
+                the said <img>. So we can only use the ::after
+                psuedo element. */
+
+                &::after,
+                &[alt]::after {
+                    content:'（图片加载失败）';
+                }
             }
         }
     }

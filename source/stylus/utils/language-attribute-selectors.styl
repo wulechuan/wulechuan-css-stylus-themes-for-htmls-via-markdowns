@@ -1,0 +1,31 @@
+languageSelector(seg1 = null, seg2 = null, seg3 = null) {
+    // [ i] 修饰器，忽略大小写。
+    selectorI = ''
+    // selector2i = ''
+    // selector3i = ''
+
+    // 以防万一旧版浏览器不支持 [ i] 修饰器。
+    selectorC  = ''
+    // selector2  = ''
+    // selector3  = ''
+
+    if (seg1) {
+        selectorPrefix = '[lang*="' + seg1 + '-"'
+        selectorI += selectorPrefix + ' i]'
+        selectorC += selectorPrefix +   ']'
+    }
+
+    if (seg2) {
+        selectorPrefix = '[lang*="-' + seg2 + '"'
+        selectorI += ', ' + selectorPrefix + ' i]'
+        selectorC += ', ' + selectorPrefix +   ']'
+    }
+
+    if (seg3) {
+        selectorPrefix = '[lang*="-' + seg3 + '"'
+        selectorI += ', ' + selectorPrefix + ' i]'
+        selectorC += ', ' + selectorPrefix +   ']'
+    }
+
+    return unquote(selectorI + ', ' + selectorC)
+}

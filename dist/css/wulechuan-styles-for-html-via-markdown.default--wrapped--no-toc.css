@@ -206,17 +206,57 @@ body {
   font-weight: normal;
 }
 .markdown-article img::before {
-  content: '图片加载失败。图片内容未知。';
+  content: 'Image failed to load. No description of the image.';
 }
 .markdown-article img[alt]::before {
-  content: '图片加载失败。图片内容的大致描述为：\A“';
+  content: 'Image failed to load. Image descriptioin: \A"';
 }
 .markdown-article img[alt]::after {
-  content: '”';
+  content: '"';
 }
 @-moz-document url-prefix() {
   .markdown-article img::after,
   .markdown-article img[alt]::after {
+    content: ' (Image failed to load)';
+  }
+}
+.markdown-article [lang*="zh-" i] img::before,
+.markdown-article [lang*="-hans" i] img::before,
+.markdown-article [lang*="-CN" i] img::before,
+.markdown-article [lang*="zh-"] img::before,
+.markdown-article [lang*="-hans"] img::before,
+.markdown-article [lang*="-CN"] img::before {
+  content: '图片加载失败。图片内容未知。';
+}
+.markdown-article [lang*="zh-" i] img[alt]::before,
+.markdown-article [lang*="-hans" i] img[alt]::before,
+.markdown-article [lang*="-CN" i] img[alt]::before,
+.markdown-article [lang*="zh-"] img[alt]::before,
+.markdown-article [lang*="-hans"] img[alt]::before,
+.markdown-article [lang*="-CN"] img[alt]::before {
+  content: '图片加载失败。图片内容的大致描述为：\A“';
+}
+.markdown-article [lang*="zh-" i] img[alt]::after,
+.markdown-article [lang*="-hans" i] img[alt]::after,
+.markdown-article [lang*="-CN" i] img[alt]::after,
+.markdown-article [lang*="zh-"] img[alt]::after,
+.markdown-article [lang*="-hans"] img[alt]::after,
+.markdown-article [lang*="-CN"] img[alt]::after {
+  content: '”';
+}
+@-moz-document url-prefix() {
+  .markdown-article [lang*="zh-" i] img::after,
+  .markdown-article [lang*="-hans" i] img::after,
+  .markdown-article [lang*="-CN" i] img::after,
+  .markdown-article [lang*="zh-"] img::after,
+  .markdown-article [lang*="-hans"] img::after,
+  .markdown-article [lang*="-CN"] img::after,
+  .markdown-article [lang*="zh-" i] img[alt]::after,
+  .markdown-article [lang*="-hans" i] img[alt]::after,
+  .markdown-article [lang*="-CN" i] img[alt]::after,
+  .markdown-article [lang*="zh-"] img[alt]::after,
+  .markdown-article [lang*="-hans"] img[alt]::after,
+  .markdown-article [lang*="-CN"] img[alt]::after {
     content: '（图片加载失败）';
   }
 }
