@@ -490,7 +490,11 @@ body {
     padding: 3rem 2rem 7rem 2rem;
   }
 }
-html {
+html,
+button,
+input,
+textarea,
+select {
   font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
 }
 kbd,

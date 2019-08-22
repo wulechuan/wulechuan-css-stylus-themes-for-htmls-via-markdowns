@@ -260,8 +260,11 @@ a#__markdown-viewer__download {
     content: 'Table of Contents';
 }
 
-[lang*="zh"] #__markdown-viewer__toc::before {
-    content: '目录';
+{languageSelectors('zh', 'hans', 'CN')} {
+
+    #__markdown-viewer__toc::before {
+        content: '目录';
+    }
 }
 
 

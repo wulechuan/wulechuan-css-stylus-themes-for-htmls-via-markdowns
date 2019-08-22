@@ -567,13 +567,14 @@ nav.table-of-contents a[href^="#"] {
   content: 'TOC';
   font-family: sans-serif;
 }
-[lang*="hans"i] .markdown-article-toc-toggling-button::before,
-[lang*="CN"i] .markdown-article-toc-toggling-button::before,
-[lang*="zh"i] .markdown-article-toc-toggling-button::before,
-[lang*="hans"] .markdown-article-toc-toggling-button::before,
-[lang*="CN"] .markdown-article-toc-toggling-button::before,
-[lang*="zh"] .markdown-article-toc-toggling-button::before {
+[lang*="zh-" i] .markdown-article-toc-toggling-button::before,
+[lang*="-hans" i] .markdown-article-toc-toggling-button::before,
+[lang*="-CN" i] .markdown-article-toc-toggling-button::before,
+[lang*="zh-"] .markdown-article-toc-toggling-button::before,
+[lang*="-hans"] .markdown-article-toc-toggling-button::before,
+[lang*="-CN"] .markdown-article-toc-toggling-button::before {
   content: '目录';
+  font-family: inherit;
 }
 @media (max-width: 800px) {
   body.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
@@ -596,7 +597,11 @@ nav.table-of-contents a[href^="#"] {
     transform: translateX(-50%);
   }
 }
-html {
+html,
+button,
+input,
+textarea,
+select {
   font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
 }
 kbd,

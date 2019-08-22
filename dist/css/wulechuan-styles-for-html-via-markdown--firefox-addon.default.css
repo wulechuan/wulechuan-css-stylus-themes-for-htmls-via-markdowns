@@ -676,7 +676,12 @@ a#__markdown-viewer__download {
 #_markdown-viewer__toc::before {
   content: 'Table of Contents';
 }
-[lang*="zh"] #__markdown-viewer__toc::before {
+[lang*="zh-" i] #__markdown-viewer__toc::before,
+[lang*="-hans" i] #__markdown-viewer__toc::before,
+[lang*="-CN" i] #__markdown-viewer__toc::before,
+[lang*="zh-"] #__markdown-viewer__toc::before,
+[lang*="-hans"] #__markdown-viewer__toc::before,
+[lang*="-CN"] #__markdown-viewer__toc::before {
   content: '目录';
 }
 @media (max-width: 600px) {
@@ -690,7 +695,11 @@ a#__markdown-viewer__download {
     display: none !important;
   }
 }
-html {
+html,
+button,
+input,
+textarea,
+select {
   font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
 }
 kbd,
