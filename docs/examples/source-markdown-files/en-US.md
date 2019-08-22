@@ -41,7 +41,7 @@ See, it's a website for anyone, but mostly engineers.
 
 ![Duan er is a pretty boy](./illustrates/duan-er-pretty.jpg "Duan er is a pretty boy")
 
-### An Image that is failed to load
+### An Image that Fails to Load
 
 ![A Beauty](./images/beauty.jpg)
 
