@@ -79,13 +79,13 @@ For examples:
 
 ### Are CSS Selectors Wrapped Safely?
 
-Well, for the generated css files, there are two set of them. One is wrapped version, the other is non-wrapped version.
+Well, for the generated css files, there are two sets of them. One is wrapped version, the other is non-wrapped version.
 
 For wrapped, I mean css selectors like `a`, `ul`, `table`, `pre`, etc. are wrapped under a class name. By default the class name is `.markdown-article`.
 
-> You can customize the class name differently for each and every scenario easily, in the source `.styl` file.
+> You can customize the class name differently for each and every scenario easily, in the corresponding `.styl` file.
 
-So for example, in the generated css file, you get css rules like these:
+So in the generated css file, you get css rules like these:
 
 ```css
 .markdwon-article a     { /* declarations */ }
