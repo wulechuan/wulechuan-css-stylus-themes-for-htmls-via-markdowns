@@ -22,42 +22,42 @@ const outputFileExtWithoutDot = 'css'
 
 const allSpecificOptions = [
     {
-        shouldSkipThisTask: false,
-        entryStylusFileSubPath: '_default/all-wrapped--has-toc',
-        outputCSSFileBaseName: '.default--wrapped--with-toc',
+        // shouldSkipThisTask: true,
+        entryStylusFileSubPath: '_default/non-wrapped--has-toc',
+        outputCSSFileBaseName: '.default--with-toc',
         shouldNotOutputUncompressedVersion: false,
         shouldNotOutputCompressedVersion: false,
         // shouldDiscardMostCommentsEvenIfNotCompressCSS: false,
     },
     {
-        shouldSkipThisTask: false,
+        // shouldSkipThisTask: true,
+        entryStylusFileSubPath: '_default/non-wrapped--no-toc',
+        outputCSSFileBaseName: '.default--no-toc',
+    },
+    {
+        // shouldSkipThisTask: true,
+        entryStylusFileSubPath: '_default/all-wrapped--has-toc',
+        outputCSSFileBaseName: '.default--wrapped--with-toc',
+    },
+    {
+        // shouldSkipThisTask: true,
         entryStylusFileSubPath: '_default/all-wrapped--no-toc',
         outputCSSFileBaseName: '.default--wrapped--no-toc',
     },
     {
-        shouldSkipThisTask: false,
-        entryStylusFileSubPath: '_default/none-wrapped--has-toc',
-        outputCSSFileBaseName: '.default--with-toc',
-    },
-    {
-        shouldSkipThisTask: false,
-        entryStylusFileSubPath: '_default/none-wrapped--no-toc',
-        outputCSSFileBaseName: '.default--no-toc',
-    },
-    {
-        shouldSkipThisTask: false,
+        // shouldSkipThisTask: true,
         entryStylusFileSubPath: 'firefox-addon/firefox-addon-_default',
         outputCSSFileBaseName: '--firefox-addon.default',
         shouldNotOutputCompressedVersion: true,
     },
     {
-        shouldSkipThisTask: false,
+        // shouldSkipThisTask: true,
         entryStylusFileSubPath: 'typora/typora-_default',
         outputCSSFileBaseName: '--typora.default',
         shouldNotOutputCompressedVersion: true,
     },
     {
-        shouldSkipThisTask: false,
+        // shouldSkipThisTask: true,
         entryStylusFileSubPath: 'vscode/vscode-_default',
         outputCSSFileBaseName: '--vscode.default',
         shouldNotOutputUncompressedVersion: true,

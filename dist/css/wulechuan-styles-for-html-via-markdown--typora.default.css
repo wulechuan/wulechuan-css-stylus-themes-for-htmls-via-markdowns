@@ -270,8 +270,10 @@ ol {
   }
 }
 blockquote {
-  display: inline-block;
+  box-sizing: border-box;
   max-width: 100%;
+  max-width: calc(100% - 2rem);
+  display: inline-block;
   vertical-align: top;
   padding: 0.5em 1.2em 0.6em 1em;
   margin: 0.5em 1rem 1.5em 1rem;
@@ -399,6 +401,10 @@ hr::after {
   }
   td {
     max-width: 400px;
+  }
+  table pre > code {
+    white-space: normal !important;
+    word-break: break-all;
   }
   hr {
     margin: 1.5rem auto 2rem 0;
