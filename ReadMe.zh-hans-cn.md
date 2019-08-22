@@ -87,19 +87,19 @@
 在输出文件中，你将看到类似如下之内容：
 
 ```css
-.markdwon-article a     { /* rules */ }
-.markdwon-article ul    { /* rules */ }
-.markdwon-article table { /* rules */ }
-.markdwon-article pre   { /* rules */ }
+.markdwon-article a     { /* declarations */ }
+.markdwon-article ul    { /* declarations */ }
+.markdwon-article table { /* declarations */ }
+.markdwon-article pre   { /* declarations */ }
 ```
 
 所谓“未被包裹”，是指诸如 `a`、`ul`、`table` 和 `pre` 等在内的 CSS 选择器的外层没有冠以额外的自定义 CSS 类名。故而，在输出的 CSS 文件中，会有类似如下之内容：
 
 ```css
-a     { /* rules */ }
-ul    { /* rules */ }
-table { /* rules */ }
-pre   { /* rules */ }
+a     { /* declarations */ }
+ul    { /* declarations */ }
+table { /* declarations */ }
+pre   { /* declarations */ }
 ```
 
 

@@ -85,22 +85,22 @@ For wrapped, I mean css selectors like `a`, `ul`, `table`, `pre`, etc. are wrapp
 
 > You can customize the class name differently for each and every scenario easily, in the source `.styl` file.
 
-So for example, in the generated css file, you get:
+So for example, in the generated css file, you get css rules like these:
 
 ```css
-.markdwon-article a     { /* rules */ }
-.markdwon-article ul    { /* rules */ }
-.markdwon-article table { /* rules */ }
-.markdwon-article pre   { /* rules */ }
+.markdwon-article a     { /* declarations */ }
+.markdwon-article ul    { /* declarations */ }
+.markdwon-article table { /* declarations */ }
+.markdwon-article pre   { /* declarations */ }
 ```
 
-For non-wrapped, I mean css selectors like `a`, `ul`, `table`, `pre`, etc. are **NOT** wrapped. So in the generated css file, you always get:
+For non-wrapped, I mean css selectors like `a`, `ul`, `table`, `pre`, etc. are **NOT** wrapped. So in the generated css file, you always get rules like these:
 
 ```css
-a     { /* rules */ }
-ul    { /* rules */ }
-table { /* rules */ }
-pre   { /* rules */ }
+a     { /* declarations */ }
+ul    { /* declarations */ }
+table { /* declarations */ }
+pre   { /* declarations */ }
 ```
 
 
