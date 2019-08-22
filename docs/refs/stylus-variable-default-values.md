@@ -2,7 +2,7 @@
 
 # Stylus Variable Default Values
 
-```js
+```stylus
 _optionalSecondaryTitleBlockSourceFileName = '' // Empty means no secondary title at all. Example: _optionalSecondaryTitleBlockSourceFileName = 'firefox-addon'
 
 _fontFamily_baseFontFamilyCarrierSelectors      = 'html'
@@ -16,6 +16,8 @@ _markdownArticleBackplateBackgroundColorCarrierSelector = 'html'
 _baseThemeName = 'theme-0'
 _codeBlocksTypeName = 'highlightjs' // either of [ 'highlightjs', 'code-mirror' ]
 
+_fontFamily_shouldMarkAsImportantRule = false
+_markdownArticleShouldNotScrollSmoothly = false
 _shouldNotOutputTitleBlock = false
 _shouldWrapLayoutRulesWith_markdownArticleRootSelector = false
 _shouldWrapBaseThemingRulesWith_markdownArticleRootSelector = false

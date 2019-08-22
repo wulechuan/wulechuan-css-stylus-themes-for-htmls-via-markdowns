@@ -3,51 +3,50 @@
     // are for Microsoft Visual Studio Code Previews Environment.
     regularTextColor = #333;
 
-    chiefColor1 = #088aee;
-    chiefColor1Active = (chiefColor1 + 10%);
+    themingChiefColor1 = #088aee;
+    themingChiefColor1Active = (themingChiefColor1 + 10%);
 
-    linkColor = chiefColor1;
-    linkColorActive = chiefColor1Active;
+    externalLinkTextColor = themingChiefColor1;
+    externalActiveLinkTextColor = themingChiefColor1Active;
 
-    inSiteLinkColor = #5187b3;
-    inSitelinkColorActive = (inSiteLinkColor + 10%);
+    selfPageLinkTextColor = #5187b3;
+    selfPageActiveLinkTextColor = (selfPageLinkTextColor + 10%);
 
-    inlineCodeColor = #a34587;
+    inlineCodeTextColor = #a34587;
     snippetBlockCodeDefaultColor = #aaa;
     defaultDividingLineColor = rgba(black, 0.219);
 
 
-    color: regularTextColor;
-    background-color: #f4f4f4;
+
+    & {
+        color: regularTextColor;
+        background-color: #f4f4f4;
+    }
 
     a {
         &,
         &:visited {
-            color: linkColor;
+            color: externalLinkTextColor;
         }
 
         &:hover,
         &:focus,
         &:active {
-            color: linkColorActive;
+            color: externalActiveLinkTextColor;
         }
 
         &[href^="#"] {
             &,
             &:visited {
-                color: inSiteLinkColor;
+                color: selfPageLinkTextColor;
             }
 
             &:hover,
             &:focus,
             &:active {
-                color: inSitelinkColorActive;
+                color: selfPageActiveLinkTextColor;
             }
         }
-    }
-
-    img {
-        border-color: rgba(#888, 0.5);
     }
 
     strong, b, em,
@@ -57,10 +56,6 @@
 
     blockquote {
         color black;
-    }
-
-    em, b, strong {
-        color: black;
     }
 
     p, ol, ul, dl,
@@ -74,7 +69,7 @@
     blockquote,
     table {
         code {
-            color:            inlineCodeColor !important;
+            color:            inlineCodeTextColor;
             border-color:     defaultDividingLineColor;
             background-color: rgba(white, 0.319);
         }
@@ -92,25 +87,16 @@
         background-color: defaultDividingLineColor;
     }
 
-    table, td, th {
-        border-color: #999 !important;
-    }
-
     pre {
         background-color: #131313 !important;
 
         code {
             color: snippetBlockCodeDefaultColor !important;
-            background-color: transparent !important;
-
-            > * {
-                background-color: transparent !important;
-            }
         }
     }
 
     blockquote {
-        background-color: rgba(#888, 0.1) !important;
-        border-color: chiefColor1;
+        // background-color: rgba(#888, 0.1) !important;
+        border-color: themingChiefColor1;
     }
 }

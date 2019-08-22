@@ -1,6 +1,9 @@
 nav.table-of-contents {
     & {
-        scroll-behavior: smooth;
+        if (_markdownArticleShouldNotScrollSmoothly) {
+            scroll-behavior: smooth;
+        }
+
         display: inline-block;
         width: 100%;
         height: 100%;

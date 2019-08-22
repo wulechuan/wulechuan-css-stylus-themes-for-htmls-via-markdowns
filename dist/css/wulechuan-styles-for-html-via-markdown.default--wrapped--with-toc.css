@@ -8,10 +8,6 @@
     - https://github.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns
     - https://code.aliyun.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns
 */
-html,
-body {
-  scroll-behavior: smooth;
-}
 html {
   font-size: 20px;
 }
@@ -143,35 +139,47 @@ body {
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
-.markdown-article td > h6,
 .markdown-article blockquote > h6,
-.markdown-article td > h5,
+.markdown-article th > h6,
+.markdown-article td > h6,
 .markdown-article blockquote > h5,
-.markdown-article td > h4,
+.markdown-article th > h5,
+.markdown-article td > h5,
 .markdown-article blockquote > h4,
-.markdown-article td > h3,
+.markdown-article th > h4,
+.markdown-article td > h4,
 .markdown-article blockquote > h3,
-.markdown-article td > h2,
+.markdown-article th > h3,
+.markdown-article td > h3,
 .markdown-article blockquote > h2,
-.markdown-article td > h1,
-.markdown-article blockquote > h1 {
+.markdown-article th > h2,
+.markdown-article td > h2,
+.markdown-article blockquote > h1,
+.markdown-article th > h1,
+.markdown-article td > h1 {
   margin-top: 0.75em;
   margin-bottom: 0.25em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
-.markdown-article td > h6:first-child,
 .markdown-article blockquote > h6:first-child,
-.markdown-article td > h5:first-child,
+.markdown-article th > h6:first-child,
+.markdown-article td > h6:first-child,
 .markdown-article blockquote > h5:first-child,
-.markdown-article td > h4:first-child,
+.markdown-article th > h5:first-child,
+.markdown-article td > h5:first-child,
 .markdown-article blockquote > h4:first-child,
-.markdown-article td > h3:first-child,
+.markdown-article th > h4:first-child,
+.markdown-article td > h4:first-child,
 .markdown-article blockquote > h3:first-child,
-.markdown-article td > h2:first-child,
+.markdown-article th > h3:first-child,
+.markdown-article td > h3:first-child,
 .markdown-article blockquote > h2:first-child,
-.markdown-article td > h1:first-child,
-.markdown-article blockquote > h1:first-child {
+.markdown-article th > h2:first-child,
+.markdown-article td > h2:first-child,
+.markdown-article blockquote > h1:first-child,
+.markdown-article th > h1:first-child,
+.markdown-article td > h1:first-child {
   margin-top: 0.25em;
 }
 .markdown-article p {
@@ -261,7 +269,7 @@ body {
 .markdown-article blockquote {
   display: inline-block;
   vertical-align: top;
-  padding: 0.2em 1.6em 0.2em 1.8em;
+  padding: 0.5em 1.2em 0.6em 1em;
   margin: 0.5em 1rem 1.5em 1rem;
   border-style: solid;
 }
@@ -302,7 +310,7 @@ body {
   margin-bottom: 1.5rem;
 }
 .markdown-article code {
-  word-break: break-word;
+  word-break: break-all;
 }
 .markdown-article pre,
 .markdown-article pre > code,
@@ -413,13 +421,33 @@ body {
 .markdown-article .header-anchor {
   margin-left: -0.75em;
 }
+.markdown-article blockquote > h6 .header-anchor,
+.markdown-article th > h6 .header-anchor,
+.markdown-article td > h6 .header-anchor,
+.markdown-article blockquote > h5 .header-anchor,
+.markdown-article th > h5 .header-anchor,
+.markdown-article td > h5 .header-anchor,
+.markdown-article blockquote > h4 .header-anchor,
+.markdown-article th > h4 .header-anchor,
+.markdown-article td > h4 .header-anchor,
+.markdown-article blockquote > h3 .header-anchor,
+.markdown-article th > h3 .header-anchor,
+.markdown-article td > h3 .header-anchor,
+.markdown-article blockquote > h2 .header-anchor,
+.markdown-article th > h2 .header-anchor,
+.markdown-article td > h2 .header-anchor,
+.markdown-article blockquote > h1 .header-anchor,
+.markdown-article th > h1 .header-anchor,
+.markdown-article td > h1 .header-anchor {
+  display: none;
+}
 @media (max-width: 600px) {
   .markdown-article {
     padding: 3rem 2rem 7rem 2rem;
   }
 }
 body.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
-  margin-left: 20rem;
+  margin-left: 24rem;
 }
 .markdown-article-toc-panel {
   position: fixed;
@@ -433,7 +461,7 @@ body.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
   display: none;
   font-size: 0.8rem;
   box-sizing: border-box;
-  width: 20rem;
+  width: 24rem;
   max-width: 100%;
   height: 100%;
   left: 0;
@@ -445,7 +473,6 @@ body.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
   display: block;
 }
 nav.table-of-contents {
-  scroll-behavior: smooth;
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -489,7 +516,7 @@ nav.table-of-contents a[href^="#"] {
   transform: translateX(0);
 }
 .markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
-  left: 10rem;
+  left: 12rem;
   transform: translateX(-50%);
 }
 .markdown-article-toc-toggling-button::before {
@@ -509,10 +536,10 @@ nav.table-of-contents a[href^="#"] {
     margin-left: 0;
   }
   .markdown-article-toc-panel {
-    width: 30rem;
+    width: 32rem;
   }
   .markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
-    left: 15rem;
+    left: 16rem;
   }
 }
 @media (max-width: 600px) {

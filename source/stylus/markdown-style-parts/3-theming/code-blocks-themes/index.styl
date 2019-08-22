@@ -5,4 +5,8 @@ if _shouldWrapCodeBlockThemingRulesWith_markdownArticleRootSelector {
 
 {__wrappingSelectorOf_markdownArticleCodeBlockThemingRules} {
     @import './' + _codeBlocksTypeName + '/' + codeBlocksThemeName
+
+    if lookup('_optionalCodeBlockThemingPartName') {
+        @import './optional-extra/' + _optionalCodeBlockThemingPartName
+    }
 }

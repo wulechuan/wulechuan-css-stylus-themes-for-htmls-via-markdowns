@@ -4,22 +4,22 @@
     }
 
     .markdown-article-toc-panel {
-        width: 30rem;
+        width: tocPanel_widthWhenWindowWidthNoMoreThan800;
     }
 
     .markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
-        left: 15rem;
+        left: (tocPanel_widthWhenWindowWidthNoMoreThan800 / 2);
     }
 }
 
 @media (max-width: 600px) {
     .markdown-article-toc-panel {
-        width: 100%;
+        width: tocPanel_widthWhenWindowWidthNoMoreThan600;
     }
     
     .markdown-article-toc-toggling-button,
     .markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
-        left: 50%;
+        left: (tocPanel_widthWhenWindowWidthNoMoreThan600 / 2);
         transform: translateX(-50%);
     }
 }

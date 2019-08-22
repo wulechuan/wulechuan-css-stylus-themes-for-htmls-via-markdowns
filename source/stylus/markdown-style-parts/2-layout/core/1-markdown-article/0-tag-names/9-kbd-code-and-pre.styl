@@ -20,14 +20,14 @@
         margin-bottom: 1.5rem;
     }
 
-    code {
-        word-break: break-word;
+    code { // inline code phrases
+        word-break: break-all;
     }
 
     pre {
 
         &,
-        > code,
+        > code, // source code blocks
         > code * {
             white-space: pre !important;
             word-wrap: none !important;
@@ -35,7 +35,7 @@
             text-align: left !important;
         }
 
-        > code {
+        > code { // source code blocks
             line-height: inherit;
             padding: 0.5em 1em;
             border: none !important;

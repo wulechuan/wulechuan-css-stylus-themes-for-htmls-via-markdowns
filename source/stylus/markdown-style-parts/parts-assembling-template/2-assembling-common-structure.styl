@@ -24,8 +24,8 @@ if !_shouldNotOutputTitleBlock {
 
 @import '../2-layout/core'
 
-if lookup('_optionalPartName') {
-    @import '../2-layout/optional-extra/' + _optionalPartName
+if lookup('_optionalLayoutPartName') {
+    @import '../2-layout/optional-extra/' + _optionalLayoutPartName
 }
 
 
@@ -35,8 +35,8 @@ if lookup('_optionalPartName') {
 
 @import '../3-theming/base-themes/' + _baseThemeName + '/core'
 
-if lookup('_optionalPartName') {
-    @import '../3-theming/base-themes/' + _baseThemeName + '/optional-extra/' + _optionalPartName
+if lookup('_optionalBaseThemingPartName') {
+    @import '../3-theming/base-themes/' + _baseThemeName + '/optional-extra/' + _optionalBaseThemingPartName
 }
 
 

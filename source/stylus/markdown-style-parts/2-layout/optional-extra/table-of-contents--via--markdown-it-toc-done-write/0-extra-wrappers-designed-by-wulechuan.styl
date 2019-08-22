@@ -1,16 +1,16 @@
 {_markdownArticleParentSelector}.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
-    margin-left: 20rem;
+    margin-left: tocPanel_defaultWidth;
 }
 
 
 
 .markdown-article-toc-panel {
     position: fixed;
-    z-index: 30;
+    z-index: zIndex_tocPanel;
 }
 .markdown-article-toc-toggling-button {
     position: fixed;
-    z-index: 60;
+    z-index: zIndex_tocTogglingButton;
 }
 
 
@@ -21,7 +21,7 @@
     font-size: 0.8rem;
 
     box-sizing: border-box;
-    width: 20rem;
+    width: tocPanel_defaultWidth;
     max-width: 100%;
     height: 100%;
 

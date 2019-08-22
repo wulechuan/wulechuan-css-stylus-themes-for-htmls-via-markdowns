@@ -36,4 +36,19 @@
     .header-anchor {
         margin-left: -0.75em; // mark sure texts of the h1, h2 are centered.
     }
+
+    blockquote, th, td {
+
+        > h6,
+        > h5,
+        > h4,
+        > h3,
+        > h2,
+        > h1 {
+
+            .header-anchor {
+                display: none;
+            }
+        }
+    }
 }

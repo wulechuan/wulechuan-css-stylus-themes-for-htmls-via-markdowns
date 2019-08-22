@@ -8,10 +8,6 @@
     - https://github.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns
     - https://code.aliyun.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns
 */
-html,
-body {
-  scroll-behavior: smooth;
-}
 html {
   font-size: 20px;
 }
@@ -146,35 +142,47 @@ h5 {
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
-td > h6,
 blockquote > h6,
-td > h5,
+th > h6,
+td > h6,
 blockquote > h5,
-td > h4,
+th > h5,
+td > h5,
 blockquote > h4,
-td > h3,
+th > h4,
+td > h4,
 blockquote > h3,
-td > h2,
+th > h3,
+td > h3,
 blockquote > h2,
-td > h1,
-blockquote > h1 {
+th > h2,
+td > h2,
+blockquote > h1,
+th > h1,
+td > h1 {
   margin-top: 0.75em;
   margin-bottom: 0.25em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
-td > h6:first-child,
 blockquote > h6:first-child,
-td > h5:first-child,
+th > h6:first-child,
+td > h6:first-child,
 blockquote > h5:first-child,
-td > h4:first-child,
+th > h5:first-child,
+td > h5:first-child,
 blockquote > h4:first-child,
-td > h3:first-child,
+th > h4:first-child,
+td > h4:first-child,
 blockquote > h3:first-child,
-td > h2:first-child,
+th > h3:first-child,
+td > h3:first-child,
 blockquote > h2:first-child,
-td > h1:first-child,
-blockquote > h1:first-child {
+th > h2:first-child,
+td > h2:first-child,
+blockquote > h1:first-child,
+th > h1:first-child,
+td > h1:first-child {
   margin-top: 0.25em;
 }
 p {
@@ -264,7 +272,7 @@ ol {
 blockquote {
   display: inline-block;
   vertical-align: top;
-  padding: 0.2em 1.6em 0.2em 1.8em;
+  padding: 0.5em 1.2em 0.6em 1em;
   margin: 0.5em 1rem 1.5em 1rem;
   border-style: solid;
 }
@@ -305,7 +313,7 @@ pre {
   margin-bottom: 1.5rem;
 }
 code {
-  word-break: break-word;
+  word-break: break-all;
 }
 pre,
 pre > code,
@@ -415,6 +423,26 @@ hr::after {
 }
 .header-anchor {
   margin-left: -0.75em;
+}
+blockquote > h6 .header-anchor,
+th > h6 .header-anchor,
+td > h6 .header-anchor,
+blockquote > h5 .header-anchor,
+th > h5 .header-anchor,
+td > h5 .header-anchor,
+blockquote > h4 .header-anchor,
+th > h4 .header-anchor,
+td > h4 .header-anchor,
+blockquote > h3 .header-anchor,
+th > h3 .header-anchor,
+td > h3 .header-anchor,
+blockquote > h2 .header-anchor,
+th > h2 .header-anchor,
+td > h2 .header-anchor,
+blockquote > h1 .header-anchor,
+th > h1 .header-anchor,
+td > h1 .header-anchor {
+  display: none;
 }
 @media (max-width: 600px) {
   .typora-node   #write {

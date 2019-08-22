@@ -8,10 +8,6 @@
     - https://github.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns
     - https://code.aliyun.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns
 */
-html,
-body {
-  scroll-behavior: smooth;
-}
 html {
   font-size: 20px;
 }
@@ -143,35 +139,47 @@ h5 {
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
-td > h6,
 blockquote > h6,
-td > h5,
+th > h6,
+td > h6,
 blockquote > h5,
-td > h4,
+th > h5,
+td > h5,
 blockquote > h4,
-td > h3,
+th > h4,
+td > h4,
 blockquote > h3,
-td > h2,
+th > h3,
+td > h3,
 blockquote > h2,
-td > h1,
-blockquote > h1 {
+th > h2,
+td > h2,
+blockquote > h1,
+th > h1,
+td > h1 {
   margin-top: 0.75em;
   margin-bottom: 0.25em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
-td > h6:first-child,
 blockquote > h6:first-child,
-td > h5:first-child,
+th > h6:first-child,
+td > h6:first-child,
 blockquote > h5:first-child,
-td > h4:first-child,
+th > h5:first-child,
+td > h5:first-child,
 blockquote > h4:first-child,
-td > h3:first-child,
+th > h4:first-child,
+td > h4:first-child,
 blockquote > h3:first-child,
-td > h2:first-child,
+th > h3:first-child,
+td > h3:first-child,
 blockquote > h2:first-child,
-td > h1:first-child,
-blockquote > h1:first-child {
+th > h2:first-child,
+td > h2:first-child,
+blockquote > h1:first-child,
+th > h1:first-child,
+td > h1:first-child {
   margin-top: 0.25em;
 }
 p {
@@ -261,7 +269,7 @@ ol {
 blockquote {
   display: inline-block;
   vertical-align: top;
-  padding: 0.2em 1.6em 0.2em 1.8em;
+  padding: 0.5em 1.2em 0.6em 1em;
   margin: 0.5em 1rem 1.5em 1rem;
   border-style: solid;
 }
@@ -302,7 +310,7 @@ pre {
   margin-bottom: 1.5rem;
 }
 code {
-  word-break: break-word;
+  word-break: break-all;
 }
 pre,
 pre > code,
@@ -413,13 +421,33 @@ hr::after {
 .header-anchor {
   margin-left: -0.75em;
 }
+blockquote > h6 .header-anchor,
+th > h6 .header-anchor,
+td > h6 .header-anchor,
+blockquote > h5 .header-anchor,
+th > h5 .header-anchor,
+td > h5 .header-anchor,
+blockquote > h4 .header-anchor,
+th > h4 .header-anchor,
+td > h4 .header-anchor,
+blockquote > h3 .header-anchor,
+th > h3 .header-anchor,
+td > h3 .header-anchor,
+blockquote > h2 .header-anchor,
+th > h2 .header-anchor,
+td > h2 .header-anchor,
+blockquote > h1 .header-anchor,
+th > h1 .header-anchor,
+td > h1 .header-anchor {
+  display: none;
+}
 @media (max-width: 600px) {
   .markdown-article {
     padding: 3rem 2rem 7rem 2rem;
   }
 }
 body.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
-  margin-left: 20rem;
+  margin-left: 24rem;
 }
 .markdown-article-toc-panel {
   position: fixed;
@@ -433,7 +461,7 @@ body.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
   display: none;
   font-size: 0.8rem;
   box-sizing: border-box;
-  width: 20rem;
+  width: 24rem;
   max-width: 100%;
   height: 100%;
   left: 0;
@@ -445,7 +473,6 @@ body.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
   display: block;
 }
 nav.table-of-contents {
-  scroll-behavior: smooth;
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -489,7 +516,7 @@ nav.table-of-contents a[href^="#"] {
   transform: translateX(0);
 }
 .markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
-  left: 10rem;
+  left: 12rem;
   transform: translateX(-50%);
 }
 .markdown-article-toc-toggling-button::before {
@@ -509,10 +536,10 @@ nav.table-of-contents a[href^="#"] {
     margin-left: 0;
   }
   .markdown-article-toc-panel {
-    width: 30rem;
+    width: 32rem;
   }
   .markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
-    left: 15rem;
+    left: 16rem;
   }
 }
 @media (max-width: 600px) {
@@ -707,26 +734,6 @@ hr {
 }
 hr::before {
   box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.51);
-}
-.markdown-article-toc-panel {
-  color: #ccc;
-  background-color: #222;
-  box-shadow: 0 0 0.5rem rgba(0,0,0,0.4);
-}
-.markdown-article-toc-toggling-button {
-  color: #fff;
-  background-color: #111;
-  box-shadow: 0 0 0.3rem rgba(0,0,0,0.7);
-}
-.markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
-  color: #000;
-  background-color: #eee;
-/* box-shadow: 0 0 0.3rem rgba(255, 255, 255, 0.7); */
-}
-.markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button:focus,
-.markdown-article-toc-toggling-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px #12ca12;
 }
 pre,
 .hljs {

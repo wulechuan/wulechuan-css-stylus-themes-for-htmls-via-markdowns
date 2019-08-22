@@ -1,7 +1,13 @@
+__fontFamily_importantMark = ''
+
+if (_fontFamily_shouldMarkAsImportantRule) {
+    __fontFamily_importantMark = '!important'
+}
+
 {_fontFamily_baseFontFamilyCarrierSelectors} {
-    font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
+    font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif unquote(__fontFamily_importantMark);
 }
 
 {_fontFamily_monospaceFontFamilyCarrierSelectors} {
-    font-family: 'PT Mono', 'consolas', 'Courier New', Courier, monospace, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
+    font-family: 'PT Mono', 'consolas', 'Courier New', Courier, monospace, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑' unquote(__fontFamily_importantMark);
 }
