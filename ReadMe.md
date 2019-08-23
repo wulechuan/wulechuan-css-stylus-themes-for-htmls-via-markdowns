@@ -44,9 +44,9 @@ Well, we developers and engineers work with markdown files all the time. And man
 
 Then why do we need so many css files?
 
-First, we might need different themes for different ambient lighting conditions. Or even different feelings.
+First, we might need different themes for different ambient lighting conditions, or even for different feelings.
 
-Second, well, we should know that a thing sounds easily to deal with, like reading a markdown file, is not simply in fact. We have different tools and environments.
+Second, well, we should know that a thing sounds easily to deal with, like reading a markdown file, is not that simple in fact. We have different tools and environments.
 
 - Some people prefer tools like [Typora](https://typora.io/).
 - Others are used to use code editors like [Visual Studio Code](https://code.visualstudio.com).
