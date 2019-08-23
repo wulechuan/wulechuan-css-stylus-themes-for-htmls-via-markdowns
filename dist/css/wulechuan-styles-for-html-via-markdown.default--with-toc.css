@@ -345,7 +345,7 @@ code {
   border-style: solid;
 }
 pre {
-  line-height: 1.4;
+  line-height: 1.5;
   display: block;
   overflow-x: auto;
   padding: 0;
@@ -369,6 +369,9 @@ pre > code {
   border: none !important;
   margin: 0 !important;
   border-radius: 0;
+}
+pre > code * {
+  padding: 0.2em 0;
 }
 blockquote pre:last-child,
 table pre:last-child {
@@ -689,7 +692,7 @@ a {
 }
 a[href^="#"]:visited,
 a[href^="#"] {
-  color: #0f0dad;
+  color: #15d30e;
 }
 a.header-anchor[href^="#"]:visited,
 a.header-anchor[href^="#"] {
@@ -811,9 +814,8 @@ pre,
 }
 .hljs-comment,
 .hljs-quote {
-  color: #000;
-  background-color: #23ff7e;
-  font-style: italic;
+  color: #23ff7e;
+  background-color: rgba(0,0,0,0.2);
 }
 .hljs-doctag,
 .hljs-keyword,

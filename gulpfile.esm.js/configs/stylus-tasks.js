@@ -84,9 +84,11 @@ if (theOnlyStylToBuildArgument) {
 
     console.log(`theOnlyStylToBuildArgument = "${theOnlyStylToBuildArgument}"`)
     console.log(`        theOnlyStylToBuild = "${theOnlyStylToBuild}"`)
+    console.log('')
 }
 
 
+let outputCSSFilesCount = 0
 
 const allStylusTaskSettingsBuildingOptions = allSpecificOptions
     .filter(options => !options.shouldSkipThisTask && (
@@ -105,13 +107,30 @@ const allStylusTaskSettingsBuildingOptions = allSpecificOptions
             throw new RangeError(`Why don\'t we output anything for "${entryStylusFileSubPath}"?`)
         }
 
+        if (!shouldNotOutputUncompressedVersion) {
+            outputCSSFilesCount++
+        }
+
+        if (!shouldNotOutputCompressedVersion) {
+            outputCSSFilesCount++
+        }
+
+        const willOutput2CSSFiles = !shouldNotOutputUncompressedVersion && !shouldNotOutputCompressedVersion
+        const willOutputMinCSSFileOnly = shouldNotOutputUncompressedVersion && !shouldNotOutputCompressedVersion
+
         const entryStylusFileSubPath2 = `${entryStylusFileSubPath}.styl`
         const outputFileBaseName = `${outputFileBaseNameCommonPrefix}${outputCSSFileBaseName}`
 
         const taskSetDescription = `from ${
             chalk.black.bgMagenta(entryStylusFileSubPath2)
         }\n  to ${
-            chalk.black.bgGreen(`${outputFileBaseName}.${outputFileExtWithoutDot}`)
+            chalk.black.bgGreen(
+                `${outputFileBaseName}${
+                    chalk.black.bgRed(willOutputMinCSSFileOnly ? '.min' : '')
+                }.${outputFileExtWithoutDot}`
+            )
+        }${
+            willOutput2CSSFiles ? ' (+ .min)' : ''
         }\n`
 
         const specificSourceRelativeGlobs = [
@@ -135,8 +154,8 @@ const allStylusTaskSettingsBuildingOptions = allSpecificOptions
     })
 
 
-console.log('')
-console.log('Source `.styl` file(s) count:', allStylusTaskSettingsBuildingOptions.length)
+console.log('Source `.styl` file(s) count:      ', chalk.magenta(allStylusTaskSettingsBuildingOptions.length))
+console.log('Should output `.css` file(s) count:', chalk.green(outputCSSFilesCount))
 
 console.log(divLineForPrinting)
 console.log('')

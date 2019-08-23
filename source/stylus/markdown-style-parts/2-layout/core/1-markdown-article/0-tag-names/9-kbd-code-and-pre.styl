@@ -12,7 +12,7 @@
     }
 
     pre {
-        line-height: 1.4;
+        line-height: 1.5;
         display: block;
         overflow-x: auto;
         padding: 0;
@@ -36,11 +36,17 @@
         }
 
         > code { // source code blocks
-            line-height: inherit;
+            line-height: inherit; // 1.5
             padding: 0.5em 1em;
             border: none !important;
             margin: 0 !important;
             border-radius: 0;
+        }
+
+        > code * {
+            // Don't know why. Why it is 0.2em, instead of 0.25em.
+            // But these paddingTop & paddingBottom below do work.
+            padding: 0.2em 0;
         }
     }
 

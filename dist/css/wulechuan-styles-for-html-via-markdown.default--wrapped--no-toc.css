@@ -345,7 +345,7 @@ body {
   border-style: solid;
 }
 .markdown-article pre {
-  line-height: 1.4;
+  line-height: 1.5;
   display: block;
   overflow-x: auto;
   padding: 0;
@@ -369,6 +369,9 @@ body {
   border: none !important;
   margin: 0 !important;
   border-radius: 0;
+}
+.markdown-article pre > code * {
+  padding: 0.2em 0;
 }
 .markdown-article blockquote pre:last-child,
 .markdown-article table pre:last-child {
@@ -582,7 +585,7 @@ body {
 }
 .markdown-article a[href^="#"]:visited,
 .markdown-article a[href^="#"] {
-  color: #0f0dad;
+  color: #15d30e;
 }
 .markdown-article a.header-anchor[href^="#"]:visited,
 .markdown-article a.header-anchor[href^="#"] {
@@ -684,9 +687,8 @@ pre,
 }
 .hljs-comment,
 .hljs-quote {
-  color: #000;
-  background-color: #23ff7e;
-  font-style: italic;
+  color: #23ff7e;
+  background-color: rgba(0,0,0,0.2);
 }
 .hljs-doctag,
 .hljs-keyword,
