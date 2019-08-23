@@ -57,7 +57,20 @@
 <pre><code class="hljs language-javascript"><span class="hljs-comment">// 这是一行行尾注释。好吧，我承认它恰好在一行的开头。</span>
 <span class="hljs-keyword">import</span> something <span class="hljs-keyword">from</span> <span class="hljs-string">'somethingjs'</span>
 
-<span class="hljs-keyword">const</span> name = <span class="hljs-string">'wuelchuan'</span>
+<span class="hljs-keyword">const</span> author = {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'吴乐川'</span>,
+    <span class="hljs-attr">age</span>: <span class="hljs-number">40</span>,
+}
+
+<span class="hljs-keyword">var</span> news = [
+    <span class="hljs-string">'孔夫子热评西方美食'</span>,
+    <span class="hljs-string">'周瑜正式出任新航母舰长'</span>,
+    <span class="hljs-string">'李白担任北京大学名誉副校长'</span>,
+    <span class="hljs-string">'岳鹏举在南方各地视察防御工事'</span>,
+    <span class="hljs-string">'祖冲之发表全新论文，受到中科院表彰'</span>,
+    <span class="hljs-string">'武松打虎一案受到自然保护主义者质疑，有关部门已正式展开调查'</span>,
+    <span class="hljs-string">'李广在 2019 亚洲射箭锦标赛再次夺魁'</span>,
+]
 
 <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isAPromiseObject</span>(<span class="hljs-params">input</span>) </span>{
     <span class="hljs-comment">/*
@@ -66,8 +79,8 @@
         多行注释
         的效果。瞅瞅吧。
     */</span>
-    <span class="hljs-keyword">return</span> !!input &amp;&amp; <span class="hljs-keyword">typeof</span> input.then === <span class="hljs-string">'function'</span> &amp;&amp; <span class="hljs-keyword">typeof</span> input.done === <span class="hljs-string">'function'</span>;
-};
+    <span class="hljs-keyword">return</span> !!input &amp;&amp; <span class="hljs-keyword">typeof</span> input.then === <span class="hljs-string">'function'</span> &amp;&amp; <span class="hljs-keyword">typeof</span> input.done === <span class="hljs-string">'function'</span>
+}
 </code></pre>
 <h3 id="html-%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5"><a class="header-anchor" href="#html-%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5" aria-hidden="true">§</a> HTML 代码片段</h3>
 <pre><code class="hljs language-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>

@@ -82,7 +82,20 @@
 // 这是一行行尾注释。好吧，我承认它恰好在一行的开头。
 import something from 'somethingjs'
 
-const name = 'wuelchuan'
+const author = {
+    name: '吴乐川',
+    age: 40,
+}
+
+var news = [
+    '孔夫子热评西方美食',
+    '周瑜正式出任新航母舰长',
+    '李白担任北京大学名誉副校长',
+    '岳鹏举在南方各地视察防御工事',
+    '祖冲之发表全新论文，受到中科院表彰',
+    '武松打虎一案受到自然保护主义者质疑，有关部门已正式展开调查',
+    '李广在 2019 亚洲射箭锦标赛再次夺魁',
+]
 
 export default function isAPromiseObject(input) {
     /*
@@ -91,8 +104,8 @@ export default function isAPromiseObject(input) {
         多行注释
         的效果。瞅瞅吧。
     */
-    return !!input && typeof input.then === 'function' && typeof input.done === 'function';
-};
+    return !!input && typeof input.then === 'function' && typeof input.done === 'function'
+}
 ```
 
 ### HTML 代码片段

@@ -54,7 +54,10 @@ See, it's a website for anyone, but mostly engineers.
 // This is a comment.
 import something from 'somethingjs'
 
-const name = 'wuelchuan'
+const author = {
+    name: 'wulechuan',
+    age: 40,
+}
 
 export default function isAPromiseObject(input) {
     /*
@@ -62,8 +65,8 @@ export default function isAPromiseObject(input) {
         comment
         with indentations.
     */
-    return !!input && typeof input.then === 'function' && typeof input.done === 'function';
-};
+    return !!input && typeof input.then === 'function' && typeof input.done === 'function'
+}
 ```
 
 ### An HTML Snippet
