@@ -7,7 +7,7 @@
 
 ### Linkages
 
-Aliquip proident nulla ex cillum magna. Anim culpa dolor ullamco nulla culpa labore. Lorem dolor proident qui aliquip nulla. Do ex [fake link 1 (do not follow)](#fake-id-1) anim tempor do veniam duis nulla ut culpa tempor dolore. Labore dolore ex anim [fake link 2 (do not follow)](#fake-id-2) id. Anim et ex ex labore cupidatat anim proident laboris amet fugiat aute ad. Reprehenderit dolore cupidatat sit elit esse anim est aute [fake link 3 (do not follow)](#fake-id-3) lorem ipsum.
+Aliquip proident nulla ex cillum magna. Anim culpa dolor ullamco nulla culpa labore. Lorem dolor proident qui aliquip nulla. Do ex [external link 1 (www.bing.com)](https://www.bing.com/) anim tempor do veniam duis nulla ut culpa tempor dolore. Labore dolore ex anim [fake self-page link 2 (do not follow)](#fake-id-2) id. Anim et ex ex labore cupidatat anim proident laboris amet fugiat aute ad. Reprehenderit dolore cupidatat sit elit esse anim est aute [external link 2 (www.google.com)](https://www.google.com/) lorem ipsum.
 
 A link to a section of the page itselfs should look a bit different to a link to another page. A so-called page local link looks like: [A Normal Image](#a-normal-image).
 
@@ -51,7 +51,17 @@ See, it's a website for anyone, but mostly engineers.
 ### A JavaScript Snippet
 
 ```javascript
-module.exports = function isAPromiseObject(input) {
+// This is a comment.
+import something from 'somethingjs'
+
+const name = 'wuelchuan'
+
+export default function isAPromiseObject(input) {
+    /*
+        This is a multi-lined
+        comment
+        with indentations.
+    */
     return !!input && typeof input.then === 'function' && typeof input.done === 'function';
 };
 ```
@@ -66,17 +76,43 @@ module.exports = function isAPromiseObject(input) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wulechuan's Page</title>
+    <!-- A single line comment. -->
 </head>
 <body>
     <article>Hi! This is wulechuan.</article>
+    <!--
+        A multi-lined comment
+        looks like
+        this.
+    -->
 </body>
 </html>
 ```
 
 
-### A Stylus(CSS) Snippet
+### A CSS Snippet
 
 ```css
+body {
+    padding: 3rem 1rem 4rem 1rem;
+}
+
+@media (max-width: 900px) {
+
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        font-size: 1rem;
+    }
+}
+```
+
+
+### A Stylus(CSS) Snippet
+
+```stylus
 & {
     box-sizing: content-box !important;
     max-width: articleBlockMaxWidth;
@@ -84,13 +120,19 @@ module.exports = function isAPromiseObject(input) {
     line-height: 1.5;
 
     small {
-        font-size: .707em;
+        font-size: .707em; // Comment
     }
 
+    /*
+        A multi-lined comment,
+        looks
+        like this.
+    */
+
     h1, h2, h3, h4, h5, h6, dt {
-        margin-left:  -0.5rem;
-        margin-right: -0.5rem;
         padding:       0.5rem;
+        margin-left:  -0.5rem; // Compensation to the padding-left
+        margin-right: -0.5rem; // Compensation to the padding-right
     }
 }
 ```

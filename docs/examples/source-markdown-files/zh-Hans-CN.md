@@ -79,7 +79,18 @@
 ### Javascript 代码片段
 
 ```javascript
-module.exports = function isAPromiseObject(input) {
+// 这是一行行尾注释。好吧，我承认它恰好在一行的开头。
+import something from 'somethingjs'
+
+const name = 'wuelchuan'
+
+export default function isAPromiseObject(input) {
+    /*
+        这就是
+        罗里吧嗦的
+        多行注释
+        的效果。瞅瞅吧。
+    */
     return !!input && typeof input.then === 'function' && typeof input.done === 'function';
 };
 ```
@@ -88,22 +99,49 @@ module.exports = function isAPromiseObject(input) {
 
 ```html
 <!DOCTYPE html>
-<html lang="zh-Hans-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wulechuan's Page</title>
+    <!-- 这是简短的单行注释。 -->
 </head>
 <body>
     <article>Hi! This is wulechuan.</article>
+    <!--
+        这是罗里吧嗦的
+        多行注释
+        大致的面貌。
+    -->
 </body>
 </html>
 ```
 
-### Stylus(CSS) 代码片段
+
+### CSS 代码片段
 
 ```css
+body {
+    padding: 3rem 1rem 4rem 1rem;
+}
+
+@media (max-width: 900px) {
+
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        font-size: 1rem;
+    }
+}
+```
+
+
+### Stylus(CSS) 代码片段
+
+```stylus
 & {
     box-sizing: content-box !important;
     max-width: articleBlockMaxWidth;
@@ -111,13 +149,19 @@ module.exports = function isAPromiseObject(input) {
     line-height: 1.5;
 
     small {
-        font-size: .707em;
+        font-size: .707em; // 注释一下。其实没啥好写的。
     }
 
+    /*
+        A multi-lined comment,
+        looks
+        like this.
+    */
+
     h1, h2, h3, h4, h5, h6, dt {
-        margin-left:  -0.5rem;
-        margin-right: -0.5rem;
         padding:       0.5rem;
+        margin-left:  -0.5rem; // 补偿 padding-left
+        margin-right: -0.5rem; // 补偿 padding-right
     }
 }
 ```
