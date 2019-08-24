@@ -123,7 +123,7 @@
 
 ### HTML 范文的截图
 
-- [窗口较宽时的效果（纲要列表已收叠）](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.png)
+- [窗口较宽时的效果（纲要列表已收叠）](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.jpg)
 
 - [窗口较宽时的效果（纲要列表已展开）](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已展开）.png)
 
@@ -383,7 +383,7 @@ npm run try-1
 > 该脚本可以配置为编译特定名称的场景。但遗憾的是，该脚本的配置细则并不在命令行中，因此如需变更，须手工修订 `package.json` 文件。
 >
 > 具体而言，
-> - `set theOnlyStylToBuild=true` 意味着编译第一个场景。
+> - `set theOnlyStylToBuild=true` 意味着仅编译第一个场景。
 > - `set theOnlyStylToBuild=vscode/vscode-_default` 意味着仅编译 `vscode/vscode-_default` 这一场景。
 
 

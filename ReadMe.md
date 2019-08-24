@@ -60,7 +60,7 @@ So, in short, different lighting conditions, different tools or software environ
 
 
 
-### How does this Work?
+### How does this Tool Work?
 
 I designed a flex framework. Upon that there are several provided [stylus](http://stylus-lang.com/) files (`.styl`) as configurations. So that multiple versions of CSS can be produced in one go, each targeting different environment/scenario. For each scenario, we get 1 or 2 `.css` files. If 2 are produced, that's because one of them is a minified CSS. If only 1 CSS file is produced, then depending on the configuration, it can be either an uncompress one or a compress one.
 
@@ -396,8 +396,8 @@ To compile all scenarios again and again is really time consuming. Sometimes we 
 
 > In fact, which scenario to compile is also configurable. But not via command line argument. You have to manually modify the `package.json` file.
 >
-> - `set theOnlyStylToBuild=true` means to compile the first scenario;
-> - `set theOnlyStylToBuild=vscode/vscode-_default` menas to compile the scenario named `vscode/vscode-_default`.
+> - `set theOnlyStylToBuild=true` means to compile only the first scenario;
+> - `set theOnlyStylToBuild=vscode/vscode-_default` menas to compile only the scenario named `vscode/vscode-_default`.
 
 
 

@@ -200,7 +200,8 @@ img {
   margin: 0.5rem auto 1rem auto;
   text-align: center;
   font-size: 100%;
-  white-space: pre;
+  white-space: normal;
+  word-break: break-word;
   font-style: italic;
   font-weight: normal;
 }
