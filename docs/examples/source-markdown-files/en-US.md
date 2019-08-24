@@ -3,7 +3,7 @@
 # Wulechuan's MarkDown CSS Styles Examples
 
 
-## Basics
+## Articles
 
 ### Linkages
 
@@ -16,20 +16,15 @@ A link to a section of the page itselfs should look a bit different to a link to
 Occaecat ea Lorem ut `officia` ea ad `nostrud`. Ut deserunt irure in dolore `voluptate` ad `reprehenderit` et sit. Cupidatat `nostrud` tempor `aliqua` ad id ex `labore` in. Ut deserunt irure pariatur `tempor` ex. Ex `irure` sit proident `consectetur` ipsum `pariatur`.
 
 
-## Quoted Block
+### Quoted Block
 
-Lorem sint labore id deserunt voluptate adipisicing consectetur non. Amet proident consequat dolor aliqua ut fugiat aute consequat qui laborum veniam sunt sunt anim.
-
-
-
-### What is GitHub?
+#### What is GitHub?
 
 According to [KORBIN BROWN](https://www.howtogeek.com/180167/htg-explains-what-is-github-and-what-do-geeks-use-it-for/):
 
 > ### GitHub
 >
 > [Github](https://github.com/ "https://github.com") is a website and service that we hear geeks rave about all the time, yet a lot of people don’t really understand what it does. Want to know what all the GitHub hubbub is about? Read on to find out.
-
 
 See, it's a website for anyone, but mostly engineers.
 

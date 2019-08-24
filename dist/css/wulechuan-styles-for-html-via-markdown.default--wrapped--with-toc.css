@@ -188,10 +188,6 @@ body {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
-.markdown-article blockquote p {
-  margin-left: 0;
-  margin-right: 0;
-}
 .markdown-article img {
   display: block;
   box-sizing: content-box;

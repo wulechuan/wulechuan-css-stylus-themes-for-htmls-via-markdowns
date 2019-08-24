@@ -10,14 +10,14 @@
 
 ### 《千字文》[节选]
 
-天地玄黄，宇宙洪荒。
-日月盈昃，辰宿列张。
-寒来暑往，秋收冬藏。
-闰余成岁，律吕调阳。
-云腾致雨，露结为霜。
-金生丽水，玉出昆冈。
-剑号巨阙，珠称夜光。
-果珍李柰，菜重芥姜。
+天地玄黄 宇宙洪荒\
+日月盈昃 辰宿列张\
+寒来暑往 秋收冬藏\
+闰余成岁 律吕调阳\
+云腾致雨 露结为霜\
+金生丽水 玉出昆冈\
+剑号巨阙 珠称夜光\
+果珍李柰 菜重芥姜
 
 
 
@@ -38,25 +38,90 @@
 
 <em>【唐】 李贺</em>
 
-大漠沙如雪，\
-燕山月似钩。\
-何当金络脑，\
-快走踏清秋。
+大漠沙如雪\
+燕山月似钩\
+何当金络脑\
+快走踏清秋
 </center>
 
 ### 杂乱内容，仅用于视觉样式之呈示
 
-一段文字中，会有**着重的文字**，也有*斜体的文字*。
+一段文字中，有时会有**着重的文字**，也有时会有*斜体的文字*。
 
-这里是 GitHub，我本人有意将其译为【[吉特中心](https://github.com)】。当然，这显然并非官方译法。如果一个链接指向本文，则该链接看起来与其余链接稍有不同，如：本文《[程序代码片段示例集](#程序代码片段示例集)》部分。
+这里是 GitHub，我本人有意将其译为【[吉特中心](https://github.com)】。当然，这并非官方译法，乃鄙人之拙见。
 
-再来看看行文中的【代码词汇】或【术语】：例如`孙行者`和`计算机`。
+如果一个链接指向**本文**，不妨称其为**文内链接**，而不应生硬的由英语直译为所谓“本地链接”。另，文内链接看起来与应与指向其它文章或网址的链接稍有不同，以为明示。暗示不堪用，明示才好。小例一则：跳转至本文《[程序代码片段示例集](#程序代码片段示例集)》。
 
-计算机键盘快捷键，其视觉样式如是：<kbd>Ctrl</kbd>+<kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</kbd>；又例：<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>s</kbd>组合键广泛用于各自现代计算机软件，代表（将工作内容或文件）`另存为`（一文件）之功能。
+再来看看行文中的【代码词汇】或【术语】：例如`孙行者`和`计算机`，又如 `querySelector` 和 `querySelectorAll` 早已取代了老式的 `getElementsById` 和 `getElementsByTagName` 等。
+
+计算机键盘快捷键，其视觉样式如是：<kbd>Ctrl</kbd>+<kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</kbd>；又例：如今，<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>s</kbd> 这一组合键早已广泛用于各种现代计算机软件中，代表（将工作内容或文件）`另存为`（一文件）之功能。
+
+### 引用的文字
 
 我们还可以引用一小段文字。例如，子曰：
 
 > 学而时习之 不亦说乎 有朋自远方来 不亦乐乎 人不知而不愠 不亦君子乎
+
+引用的文字中有时也会有较复杂的版式，见下例。
+
+> #### SOFTIMAGE|XSI
+>
+> 坐落于加拿大蒙特利尔的 SOFTIMAGE Co. 公司曾是计算机画面制作工具行业的顶尖力量。多年来，该公司几经易主，母公司先后有微软（Microsoft）公司、Avid 公司，以及最终的欧特克（Autodesk）公司。
+>
+> 早年，SOFTIMAGE 公司旗下三维动画制作软件 SOFTIMAGE|3D 曾经好莱坞业界最顶尖的三维动画工具。1993 年公映的著名电影《侏罗纪公园》，其中的恐龙形象全部由该工具制作完成。
+>
+> 2000 年，SOFTIMAGE 公司推出划时代的全新三维动画工具，名为 SOFTIMAGE|XSI。其中字母“X”来源于微软公司的“.x”技术。实际上，其强有力的竞争对手，时为 sgi 公司子公司的 Alias 公司，已于 1998 年先行推出同样划时代的系列三维动画工具 Maya。外界认为，SOFTIMAGE|XSI 的推出是匆忙的。其 1.0 版本功能非常有限。值得褒赞的是，SOFTIMAGE|XSI 的人机交互设计、三维多边形建模功能、场景数据管理功能、曲线动画设计功能和三维渲染能力都非常出众。脚本环境基于微软公司的 JScript 标准，异常友好。参见下例：
+>
+> ```js
+> /*
+>     This is a file of the standard of JScript from Microsoft.
+>     It runs in SOFTIMAGE|XSI scripting environment.
+>     The functionality of this file's is to print some details
+>     of a 3D object selected by the user.
+> */
+> 
+> SelectObj('_cam_particles_painting.focus_plane_indicator', null, null);
+> 
+> // User currently selected Object
+> var o3DObj = Selection(0);
+> 
+> var oParam = o3DObj.Parameters;
+> var oPrimitive = o3DObj.ActivePrimitive;
+> 
+> // object: ICE Attribute Collection
+> var oIAC = oPrimitive.ICEAttributes;
+> 
+> for (var i = 0; i < oIAC.Count; i++) {
+>     LogMessage('[' + i + '] ' + oIAC(i).Name);
+> }
+> 
+> 
+> // A specific attribute
+> var oIA = oIAC.Item('nb_CameraUtil_FocusDistance');
+> 
+> LogMessage('\n\t\t Name: \t\t'   + oIA);
+> LogMessage('\t IsDefined: \t'    + oIA.IsDefined);
+> LogMessage('\t DataType: \t'     + oIA.DataType);
+> LogMessage('\t IsConstant: \t'   + oIA.IsConstant);
+> LogMessage('\t IsReadOnly: \t'   + oIA.IsReadOnly);
+> LogMessage('\t ElementCount: \t' + oIA.ElementCount);
+> 
+> var dataArray = oIA.DataArray;
+> LogMessage(oIA.DataArray.Element);
+> 
+> for (var j = 0; j < dataArray.length; j++) {
+> 	LogMessage('[' + j + '] ' + dataArray[j]);
+> }
+> ```
+>
+> 后期于 4.0、5.1、7.0 分别发力，提供了令业界赞叹的特性集。其中，自 2008 年春发布的 7.0 始，其提供的“交互式创作环境（ICE）”借助可视化节点图可轻松操控庞大的数据流，构建逻辑规则，控制粒子系统，产生变幻无穷的效果。见图（来源于[维基百科](https://en.wikipedia.org/wiki/Autodesk_Softimage#ICE_Interactive_Creative_Environment)）：
+> ![This simple ICE graph deforms an input object (in the example a sphere was used) based on its vertex indices](./illustrates/softimage_xsi_2011_ice_graph.jpg)
+>
+> 同年（2008 年）11 月 18 日，欧特克公司宣布全资收购 SOFTIMAGE 公司，并将其所有产品更名为小写形式，如 “Softimage|xsi”。
+>
+> 2014 年 3 月，欧特克公司发布 SOFTIMAGE 全线产品的停产声明。Softimage|xsi 2015 将成为该软件最后的发行版本。其中诸多优秀功能（特别是 ICE）将被逐一移植到 Maya 中。自此，争斗多年的 Maya 和 SOFTIMAGE|XSI，以前者“吞噬”后者而告终。
+>
+> >（注：Alias 公司早于 SOFTIMAGE 公司被欧特克收购。因此 Maya 早于 SOFTIMAGE|XSI 归为欧特克旗下的产品）。
 
 
 

@@ -188,10 +188,6 @@ p {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
-blockquote p {
-  margin-left: 0;
-  margin-right: 0;
-}
 img {
   display: block;
   box-sizing: content-box;
