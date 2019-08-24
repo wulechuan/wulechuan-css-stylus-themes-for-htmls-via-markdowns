@@ -9,7 +9,7 @@
 
 Aliquip proident nulla ex cillum magna. Anim culpa dolor ullamco nulla culpa labore. Lorem dolor proident qui aliquip nulla. Do ex [external link 1 (www.bing.com)](https://www.bing.com/) anim tempor do veniam duis nulla ut culpa tempor dolore. Labore dolore ex anim [fake self-page link 2 (do not follow)](#fake-id-2) id. Anim et ex ex labore cupidatat anim proident laboris amet fugiat aute ad. Reprehenderit dolore cupidatat sit elit esse anim est aute [external link 2 (www.google.com)](https://www.google.com/) lorem ipsum.
 
-A link to a section of the page itselfs should look a bit different to a link to another page. A so-called page local link looks like: [A Normal Image](#a-normal-image).
+A link to a section of the page itselfs should look a bit different from a link to another page. A so-called page local link looks like: [A Normal Image](#a-normal-image).
 
 ### Inline Codes in Multiple Lines
 
