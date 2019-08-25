@@ -1,3 +1,17 @@
+{_markdownArticleParentSelector}.markdown-article-toc-exists.markdown-article-toc-is-visible {
+    margin-left: tocPanel_defaultWidth;
+}
+
+nav.table-of-contents {
+    display: none;
+}
+
+.markdown-article-toc-is-visible nav.table-of-contents {
+    display: block;
+}
+
+
+
 .markdown-article-toc-toggling-button {
     font-size: 0.7rem;
 
@@ -6,6 +20,8 @@
     line-height: 1;
     padding: 0.5em 1.2em;
     border-radius: 2rem;
+
+    position: fixed;
     top: 0.8rem;
 
     cursor: pointer;
@@ -16,7 +32,7 @@
     transform: translateX(0);
 }
 
-.markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
+.markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
     left: (tocPanel_defaultWidth / 2);
     transform: translateX(-50%);
 }

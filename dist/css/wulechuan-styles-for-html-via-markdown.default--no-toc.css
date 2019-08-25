@@ -45,15 +45,6 @@ body {
 .markdown-article {
   line-height: 1.5;
 }
-article,
-p,
-blockquote,
-ul,
-ol,
-dl,
-table {
-  line-height: 1.5;
-}
 h1,
 h2,
 h3,
@@ -446,6 +437,9 @@ hr::after {
   hr {
     margin: 1.5rem auto 2rem 0;
   }
+}
+.markdown-article {
+  scroll-behavior: smooth;
 }
 .markdown-article {
   font-size: 0.9rem;

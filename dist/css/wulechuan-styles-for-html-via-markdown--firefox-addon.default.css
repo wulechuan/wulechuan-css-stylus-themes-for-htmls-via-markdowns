@@ -50,15 +50,6 @@ body {
 .markdownRoot {
   line-height: 1.5;
 }
-article,
-p,
-blockquote,
-ul,
-ol,
-dl,
-table {
-  line-height: 1.5;
-}
 h1,
 h2,
 h3,
@@ -451,6 +442,9 @@ hr::after {
   hr {
     margin: 1.5rem auto 2rem 0;
   }
+}
+.markdownRoot {
+  scroll-behavior: smooth;
 }
 .markdownRoot {
   font-size: 0.9rem;

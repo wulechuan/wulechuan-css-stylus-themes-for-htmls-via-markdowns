@@ -1,0 +1,36 @@
+@media screen and (min-width: 801px) {
+
+    nav.table-of-contents li.is-collapsed {
+
+        > li,
+        > ol {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    {_markdownArticleParentSelector}.markdown-article-toc-exists.markdown-article-toc-is-visible {
+        margin-left: 0;
+    }
+
+    nav.table-of-contents {
+        width: tocPanel_widthWhenWindowWidthNoMoreThan800;
+    }
+
+    .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
+        left: (tocPanel_widthWhenWindowWidthNoMoreThan800 / 2);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav.table-of-contents {
+        width: tocPanel_widthWhenWindowWidthNoMoreThan600;
+    }
+
+    .markdown-article-toc-toggling-button,
+    .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
+        left: (tocPanel_widthWhenWindowWidthNoMoreThan600 / 2);
+        transform: translateX(-50%);
+    }
+}

@@ -1,7 +1,19 @@
-.markdown-article-toc-panel {
-    color: #ccc;
+nav.table-of-contents {
     background-color: #222;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+
+    &,
+    li > a[href^="#"] {
+        color: #aaa;
+    }
+
+    li.has-nested-toc-list > a[href^="#"] {
+        color: white;
+    }
+
+    li > a[href^="#"]:hover {
+        background-color: rgba(white, 0.15);
+    }
 }
 
 .markdown-article-toc-toggling-button {
@@ -10,13 +22,13 @@
     box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.7);
 }
 
-.markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
+.markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
     color: black;
     background-color: #eee;
     /* box-shadow: 0 0 0.3rem rgba(255, 255, 255, 0.7); */
 }
 
-.markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button,
+.markdown-article-toc-is-visible .markdown-article-toc-toggling-button,
 .markdown-article-toc-toggling-button {
 
     &:focus {

@@ -48,15 +48,6 @@ summary {
 .typora-node   #write {
   line-height: 1.5;
 }
-article,
-p,
-blockquote,
-ul,
-ol,
-dl,
-table {
-  line-height: 1.5;
-}
 h1,
 h2,
 h3,
@@ -449,6 +440,9 @@ hr::after {
   hr {
     margin: 1.5rem auto 2rem 0;
   }
+}
+.typora-node   #write {
+  scroll-behavior: smooth;
 }
 .typora-node   #write {
   font-size: 0.9rem;

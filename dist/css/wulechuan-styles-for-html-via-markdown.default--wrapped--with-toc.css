@@ -45,15 +45,6 @@ body {
 .markdown-article {
   line-height: 1.5;
 }
-.markdown-article article,
-.markdown-article p,
-.markdown-article blockquote,
-.markdown-article ul,
-.markdown-article ol,
-.markdown-article dl,
-.markdown-article table {
-  line-height: 1.5;
-}
 .markdown-article h1,
 .markdown-article h2,
 .markdown-article h3,
@@ -448,6 +439,9 @@ body {
   }
 }
 .markdown-article {
+  scroll-behavior: smooth;
+}
+.markdown-article {
   font-size: 0.9rem;
   line-height: 1.5;
   padding: 6rem 4rem 14rem 4rem;
@@ -490,44 +484,41 @@ body {
     padding: 3rem 2rem 7rem 2rem;
   }
 }
-body.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
-  margin-left: 24rem;
-}
-.markdown-article-toc-panel {
-  position: fixed;
+nav.table-of-contents {
   z-index: 30;
 }
 .markdown-article-toc-toggling-button {
-  position: fixed;
   z-index: 60;
 }
-.markdown-article-toc-panel {
-  display: none;
+nav.table-of-contents {
   font-size: 0.8rem;
   box-sizing: border-box;
   width: 24rem;
   max-width: 100%;
   height: 100%;
+  padding: 3rem 0.5rem 1rem 0.5rem;
+  overflow: auto;
+  position: fixed;
   left: 0;
   top: 0;
   margin: 0;
-  padding: 3rem 0.5rem 1rem 0.5rem;
 }
-.markdown-article-toc-panel-is-visible .markdown-article-toc-panel {
+nav.table-of-contents a[href^="#"] {
   display: block;
+  padding: 0.25em 0.5em;
+  border: none;
+  text-decoration: none;
 }
-nav.table-of-contents {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  position: relative;
+nav.table-of-contents li {
+  cursor: pointer;
+  margin: 0;
 }
 nav.table-of-contents > ul,
 nav.table-of-contents > ol {
-  display: inline-block;
   box-sizing: border-box;
-  padding: 0 1.5rem 6rem 2rem;
+  height: 100%;
+  overflow: auto;
+  padding: 0.5rem 1.5rem 4.5rem 2rem;
   margin: 0;
   white-space: nowrap;
 }
@@ -541,10 +532,14 @@ nav.table-of-contents > ul ul ul,
 nav.table-of-contents > ol ul ul {
   display: none;
 }
-nav.table-of-contents a[href^="#"]:visited,
-nav.table-of-contents a[href^="#"] {
-  color: inherit;
-  text-decoration: none;
+body.markdown-article-toc-exists.markdown-article-toc-is-visible {
+  margin-left: 24rem;
+}
+nav.table-of-contents {
+  display: none;
+}
+.markdown-article-toc-is-visible nav.table-of-contents {
+  display: block;
 }
 .markdown-article-toc-toggling-button {
   font-size: 0.7rem;
@@ -553,13 +548,14 @@ nav.table-of-contents a[href^="#"] {
   line-height: 1;
   padding: 0.5em 1.2em;
   border-radius: 2rem;
+  position: fixed;
   top: 0.8rem;
   cursor: pointer;
   transition: all 0.3s;
   left: 1rem;
   transform: translateX(0);
 }
-.markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
+.markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
   left: 12rem;
   transform: translateX(-50%);
 }
@@ -576,23 +572,29 @@ nav.table-of-contents a[href^="#"] {
   content: '目录';
   font-family: inherit;
 }
-@media (max-width: 800px) {
-  body.markdown-article-toc-panel-exists.markdown-article-toc-panel-is-visible {
+@media screen and (min-width: 801px) {
+  nav.table-of-contents li.is-collapsed > li,
+  nav.table-of-contents li.is-collapsed > ol {
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  body.markdown-article-toc-exists.markdown-article-toc-is-visible {
     margin-left: 0;
   }
-  .markdown-article-toc-panel {
+  nav.table-of-contents {
     width: 32rem;
   }
-  .markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
+  .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
     left: 16rem;
   }
 }
-@media (max-width: 600px) {
-  .markdown-article-toc-panel {
+@media screen and (max-width: 600px) {
+  nav.table-of-contents {
     width: 100%;
   }
   .markdown-article-toc-toggling-button,
-  .markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
+  .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
     left: 50%;
     transform: translateX(-50%);
   }
@@ -784,22 +786,31 @@ body {
 .markdown-article hr::before {
   box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.51);
 }
-.markdown-article-toc-panel {
-  color: #ccc;
+nav.table-of-contents {
   background-color: #222;
   box-shadow: 0 0 0.5rem rgba(0,0,0,0.4);
+}
+nav.table-of-contents,
+nav.table-of-contents li > a[href^="#"] {
+  color: #aaa;
+}
+nav.table-of-contents li.has-nested-toc-list > a[href^="#"] {
+  color: #fff;
+}
+nav.table-of-contents li > a[href^="#"]:hover {
+  background-color: rgba(255,255,255,0.15);
 }
 .markdown-article-toc-toggling-button {
   color: #fff;
   background-color: #111;
   box-shadow: 0 0 0.3rem rgba(0,0,0,0.7);
 }
-.markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button {
+.markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
   color: #000;
   background-color: #eee;
 /* box-shadow: 0 0 0.3rem rgba(255, 255, 255, 0.7); */
 }
-.markdown-article-toc-panel-is-visible .markdown-article-toc-toggling-button:focus,
+.markdown-article-toc-is-visible .markdown-article-toc-toggling-button:focus,
 .markdown-article-toc-toggling-button:focus {
   outline: none;
   box-shadow: 0 0 0 4px #12ca12;
