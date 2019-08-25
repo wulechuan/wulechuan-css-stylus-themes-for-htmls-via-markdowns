@@ -1,4 +1,4 @@
-nav.table-of-contents {
+{_selectorOf_tocByMarkdownItTOCDoneRight} {
 
     & {
         font-size: 0.8rem;
@@ -40,10 +40,16 @@ nav.table-of-contents {
             white-space: nowrap;
         }
 
-        ol, ul {
+
+        if (!_shouldNotOnlyShow2LevelsOfTOCItems) {
+            // Let's show only 2 levels of TOC items,
+            // so all levels from the 3rd should hide, if any.
 
             ol, ul {
-                display: none;
+
+                ol, ul {
+                    display: none;
+                }
             }
         }
     }

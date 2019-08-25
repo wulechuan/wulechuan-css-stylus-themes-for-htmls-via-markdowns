@@ -13,12 +13,15 @@ _markdownArticleParentSelector = 'body' // This is also the parent of the div.ma
 
 _markdownArticleBackplateBackgroundColorCarrierSelector = 'html'
 
+_selectorOf_tocByMarkdownItTOCDoneRight = 'nav.markdown-article-toc'
+
 _baseThemeName = 'theme-0'
 _codeBlocksTypeName = 'highlightjs' // either of [ 'highlightjs', 'code-mirror' ]
 
 _fontFamily_shouldMarkAsImportantRule = false
 _markdownArticleShouldNotScrollSmoothly = false
 _shouldNotOutputTitleBlock = false
+_shouldNotOnlyShow2LevelsOfTOCItems = false
 _shouldWrapLayoutRulesWith_markdownArticleRootSelector = false
 _shouldWrapBaseThemingRulesWith_markdownArticleRootSelector = false
 _shouldWrapCodeBlockThemingRulesWith_markdownArticleRootSelector = false

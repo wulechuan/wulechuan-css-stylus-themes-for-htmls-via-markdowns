@@ -6,11 +6,12 @@ function setupAndStartApp() {
     const cssClassNameTOCItemHasNestedList = 'has-nested-toc-list'
     const cssClassNameTOCItemIsCollapsed   = 'is-collapsed'
     const cssClassNameTOCTogglingButton    = 'markdown-article-toc-toggling-button'
+    const selectorOfTOCRoot                = 'nav.markdown-article-toc'
 
 
 
 
-    const tocRoot = document.querySelector('nav.table-of-contents')
+    const tocRoot = document.querySelector(selectorOfTOCRoot)
     if (!tocRoot) {
         return
     }

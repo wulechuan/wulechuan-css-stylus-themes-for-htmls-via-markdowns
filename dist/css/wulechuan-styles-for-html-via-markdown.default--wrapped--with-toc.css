@@ -484,13 +484,13 @@ body {
     padding: 3rem 2rem 7rem 2rem;
   }
 }
-nav.table-of-contents {
+nav.markdown-article-toc {
   z-index: 30;
 }
 .markdown-article-toc-toggling-button {
   z-index: 60;
 }
-nav.table-of-contents {
+nav.markdown-article-toc {
   font-size: 0.8rem;
   box-sizing: border-box;
   width: 24rem;
@@ -503,18 +503,18 @@ nav.table-of-contents {
   top: 0;
   margin: 0;
 }
-nav.table-of-contents a[href^="#"] {
+nav.markdown-article-toc a[href^="#"] {
   display: block;
   padding: 0.25em 0.5em;
   border: none;
   text-decoration: none;
 }
-nav.table-of-contents li {
+nav.markdown-article-toc li {
   cursor: pointer;
   margin: 0;
 }
-nav.table-of-contents > ul,
-nav.table-of-contents > ol {
+nav.markdown-article-toc > ul,
+nav.markdown-article-toc > ol {
   box-sizing: border-box;
   height: 100%;
   overflow: auto;
@@ -522,23 +522,23 @@ nav.table-of-contents > ol {
   margin: 0;
   white-space: nowrap;
 }
-nav.table-of-contents > ul ol ol,
-nav.table-of-contents > ol ol ol,
-nav.table-of-contents > ul ul ol,
-nav.table-of-contents > ol ul ol,
-nav.table-of-contents > ul ol ul,
-nav.table-of-contents > ol ol ul,
-nav.table-of-contents > ul ul ul,
-nav.table-of-contents > ol ul ul {
+nav.markdown-article-toc > ul ol ol,
+nav.markdown-article-toc > ol ol ol,
+nav.markdown-article-toc > ul ul ol,
+nav.markdown-article-toc > ol ul ol,
+nav.markdown-article-toc > ul ol ul,
+nav.markdown-article-toc > ol ol ul,
+nav.markdown-article-toc > ul ul ul,
+nav.markdown-article-toc > ol ul ul {
   display: none;
 }
 body.markdown-article-toc-exists.markdown-article-toc-is-visible {
   margin-left: 24rem;
 }
-nav.table-of-contents {
+nav.markdown-article-toc {
   display: none;
 }
-.markdown-article-toc-is-visible nav.table-of-contents {
+.markdown-article-toc-is-visible nav.markdown-article-toc {
   display: block;
 }
 .markdown-article-toc-toggling-button {
@@ -573,8 +573,8 @@ nav.table-of-contents {
   font-family: inherit;
 }
 @media screen and (min-width: 801px) {
-  nav.table-of-contents li.is-collapsed > li,
-  nav.table-of-contents li.is-collapsed > ol {
+  nav.markdown-article-toc li.is-collapsed > li,
+  nav.markdown-article-toc li.is-collapsed > ol {
     display: none;
   }
 }
@@ -582,7 +582,7 @@ nav.table-of-contents {
   body.markdown-article-toc-exists.markdown-article-toc-is-visible {
     margin-left: 0;
   }
-  nav.table-of-contents {
+  nav.markdown-article-toc {
     width: 32rem;
   }
   .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
@@ -590,7 +590,7 @@ nav.table-of-contents {
   }
 }
 @media screen and (max-width: 600px) {
-  nav.table-of-contents {
+  nav.markdown-article-toc {
     width: 100%;
   }
   .markdown-article-toc-toggling-button,
@@ -786,18 +786,19 @@ body {
 .markdown-article hr::before {
   box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.51);
 }
-nav.table-of-contents {
+nav.markdown-article-toc {
   background-color: #222;
   box-shadow: 0 0 0.5rem rgba(0,0,0,0.4);
 }
-nav.table-of-contents,
-nav.table-of-contents li > a[href^="#"] {
+nav.markdown-article-toc,
+nav.markdown-article-toc li > a[href^="#"] {
   color: #aaa;
 }
-nav.table-of-contents li.has-nested-toc-list > a[href^="#"] {
+nav.markdown-article-toc > ol li.has-nested-toc-list > a[href^="#"],
+nav.markdown-article-toc > ul li.has-nested-toc-list > a[href^="#"] {
   color: #fff;
 }
-nav.table-of-contents li > a[href^="#"]:hover {
+nav.markdown-article-toc li > a[href^="#"]:hover {
   background-color: rgba(255,255,255,0.15);
 }
 .markdown-article-toc-toggling-button {

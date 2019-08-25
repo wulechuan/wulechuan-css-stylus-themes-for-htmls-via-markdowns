@@ -1,4 +1,4 @@
-nav.table-of-contents {
+{_selectorOf_tocByMarkdownItTOCDoneRight} {
     background-color: #222;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
 
@@ -7,8 +7,17 @@ nav.table-of-contents {
         color: #aaa;
     }
 
-    li.has-nested-toc-list > a[href^="#"] {
-        color: white;
+    if (_shouldNotOnlyShow2LevelsOfTOCItems) {
+        li.has-nested-toc-list > a[href^="#"] {
+            color: white;
+        }
+    } else {
+        > ol,
+        > ul {
+            li.has-nested-toc-list > a[href^="#"] {
+                color: white;
+            }
+        }
     }
 
     li > a[href^="#"]:hover {
