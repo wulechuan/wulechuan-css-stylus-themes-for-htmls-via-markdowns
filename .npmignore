@@ -3,5 +3,6 @@ docs
 gulpfile.esm.js
 gulpfile.js
 Gulpfile.js
+source
 .eslintrc.js
-source/css/old*
+ReadMe.zh-hans-cn.md
