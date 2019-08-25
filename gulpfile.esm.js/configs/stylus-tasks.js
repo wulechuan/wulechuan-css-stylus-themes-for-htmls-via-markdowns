@@ -70,12 +70,15 @@ const divLineForPrinting = '-'.repeat(75)
 console.log('')
 console.log(divLineForPrinting)
 
-const theOnlyStylToBuildArgument = process.env.theOnlyStylToBuild
+let theOnlyStylToBuildArgument = process.env.theOnlyStylToBuild
+if (typeof theOnlyStylToBuildArgument === 'string') {
+    theOnlyStylToBuildArgument = theOnlyStylToBuildArgument.trim()
+}
+
 let theOnlyStylToBuild = null
 if (theOnlyStylToBuildArgument) {
-    if (theOnlyStylToBuildArgument === 'true ' ||
-        theOnlyStylToBuildArgument === 'true'  ||
-        theOnlyStylToBuildArgument === true
+    if (theOnlyStylToBuildArgument === 'true' ||
+        theOnlyStylToBuildArgument ===  true
     ) {
         theOnlyStylToBuild = allSpecificOptions[0].entryStylusFileSubPath
     } else {
