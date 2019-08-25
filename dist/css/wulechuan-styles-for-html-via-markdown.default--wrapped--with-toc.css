@@ -794,8 +794,8 @@ nav.markdown-article-toc,
 nav.markdown-article-toc li > a[href^="#"] {
   color: #aaa;
 }
-nav.markdown-article-toc > ol li.has-nested-toc-list > a[href^="#"],
-nav.markdown-article-toc > ul li.has-nested-toc-list > a[href^="#"] {
+nav.markdown-article-toc > ol > li.has-nested-toc-list > a[href^="#"],
+nav.markdown-article-toc > ul > li.has-nested-toc-list > a[href^="#"] {
   color: #fff;
 }
 nav.markdown-article-toc li > a[href^="#"]:hover {

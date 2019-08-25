@@ -7,18 +7,27 @@
         color: #aaa;
     }
 
+
+
     if (_shouldNotOnlyShow2LevelsOfTOCItems) {
+
         li.has-nested-toc-list > a[href^="#"] {
             color: white;
         }
+
     } else {
+
         > ol,
         > ul {
-            li.has-nested-toc-list > a[href^="#"] {
+
+            > li.has-nested-toc-list > a[href^="#"] {
                 color: white;
             }
         }
+
     }
+
+
 
     li > a[href^="#"]:hover {
         background-color: rgba(white, 0.15);
