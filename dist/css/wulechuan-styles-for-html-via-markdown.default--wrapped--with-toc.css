@@ -546,8 +546,9 @@ nav.markdown-article-toc {
 }
 .markdown-article-toc-toggling-button {
   font-size: 0.8rem;
+  box-sizing: content-box;
   display: block;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   line-height: 1;
   padding: 0.5em 1.2em;
   border-radius: 2rem;
@@ -840,10 +841,10 @@ nav.markdown-article-toc li > a[href^="#"]:hover {
 }
 .markdown-article-toc-toggling-button {
   color: #000;
-  border-color: #e149bb;
+  border-color: #dd5075;
   background-color: #dd56c6;
-  background-image: linear-gradient(45deg, #dd56c6 20%, #dee884 80%);
-  box-shadow: 0 0 0.3rem rgba(150,0,79,0.51);
+  background-image: linear-gradient(45deg, #ff0dd6 20%, #faff27 80%);
+  box-shadow: 0 0 0.3rem rgba(226,22,130,0.97);
 }
 .markdown-article-back-to-top[href^="#"],
 .markdown-article-back-to-top[href^="#"]:visited {
