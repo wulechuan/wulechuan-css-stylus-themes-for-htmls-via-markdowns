@@ -33,7 +33,7 @@ function setupAndStartApp() {
 
 
     let tocIsVisible
-    showOrHideTOCPanel(window.innerWidth > 600)
+    showOrHideTOCPanel(false)
 
 
 
