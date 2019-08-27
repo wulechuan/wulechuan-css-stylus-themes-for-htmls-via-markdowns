@@ -81,7 +81,7 @@ For examples:
 
 Well, for the generated CSS files, there are two sets of them. One is wrapped, the other is non-wrapped.
 
-- For wrapped, I mean CSS selectors like `a`, `ul`, `table`, `pre`, etc. are wrapped under a class name.
+- By wrapped, I mean CSS selectors like `a`, `ul`, `table`, `pre`, etc. are wrapped under a class name.
 
     > By default the class name is `.markdown-article`.
     >
@@ -96,7 +96,7 @@ Well, for the generated CSS files, there are two sets of them. One is wrapped, t
     .markdwon-article pre   { /* declarations */ }
     ```
 
-- For non-wrapped, I mean CSS selectors like `a`, `ul`, `table`, `pre`, etc. are **NOT** wrapped. So in the generated CSS file, you always get rules like these:
+- By non-wrapped, I mean CSS selectors like `a`, `ul`, `table`, `pre`, etc. are **NOT** wrapped. So in the generated CSS file, you always get rules like these:
 
     ```css
     a     { /* declarations */ }
