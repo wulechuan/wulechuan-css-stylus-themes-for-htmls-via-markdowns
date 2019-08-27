@@ -13,10 +13,10 @@
 
 
 .markdown-article-toc-toggling-button {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 
     display: block;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     line-height: 1;
     padding: 0.5em 1.2em;
     border-radius: 2rem;
@@ -30,6 +30,11 @@
     
     left: 1rem;
     transform: translateX(0);
+
+    &:active,
+    &:focus {
+        outline: none;
+    }
 }
 
 .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {

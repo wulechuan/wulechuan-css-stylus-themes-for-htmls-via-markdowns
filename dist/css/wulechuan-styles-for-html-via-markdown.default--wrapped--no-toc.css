@@ -484,6 +484,25 @@ body {
     padding: 3rem 2rem 7rem 2rem;
   }
 }
+.markdown-article-back-to-top {
+  z-index: 79;
+  font-size: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2em;
+  height: 2em;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 0.5rem;
+  cursor: pointer;
+  outline: none;
+}
 .markdown-article-back-to-top::before {
   content: '';
   display: inline-block;
@@ -491,7 +510,8 @@ body {
   width: 0;
   height: 0;
   overflow: hidden;
-  border-width: 0.32em solid transparent;
+  border: 0.32em solid transparent;
+  border-bottom-color: initial;
   margin: 0 0 0.32em 1px;
 }
 html,
@@ -681,8 +701,12 @@ body {
 .markdown-article hr::before {
   box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.51);
 }
-.markdown-article-back-to-top::before {
-  border-bottom-color: #000;
+.markdown-article-back-to-top[href^="#"],
+.markdown-article-back-to-top[href^="#"]:visited {
+  color: #000;
+  background-color: #0f0;
+  background-image: linear-gradient(-45deg, #0ff 10%, #0f0 90%);
+  box-shadow: 1px 1px 0.3em rgba(0,192,0,0.6);
 }
 pre,
 .hljs {

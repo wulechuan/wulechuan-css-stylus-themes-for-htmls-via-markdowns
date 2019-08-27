@@ -545,9 +545,9 @@ nav.markdown-article-toc {
   display: block;
 }
 .markdown-article-toc-toggling-button {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   display: block;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   line-height: 1;
   padding: 0.5em 1.2em;
   border-radius: 2rem;
@@ -557,6 +557,10 @@ nav.markdown-article-toc {
   transition: all 0.3s;
   left: 1rem;
   transform: translateX(0);
+}
+.markdown-article-toc-toggling-button:active,
+.markdown-article-toc-toggling-button:focus {
+  outline: none;
 }
 .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
   left: 12rem;
@@ -602,6 +606,25 @@ nav.markdown-article-toc {
     transform: translateX(-50%);
   }
 }
+.markdown-article-back-to-top {
+  z-index: 79;
+  font-size: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2em;
+  height: 2em;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 0.5rem;
+  cursor: pointer;
+  outline: none;
+}
 .markdown-article-back-to-top::before {
   content: '';
   display: inline-block;
@@ -609,7 +632,8 @@ nav.markdown-article-toc {
   width: 0;
   height: 0;
   overflow: hidden;
-  border-width: 0.32em solid transparent;
+  border: 0.32em solid transparent;
+  border-bottom-color: initial;
   margin: 0 0 0.32em 1px;
 }
 html,
@@ -815,22 +839,18 @@ nav.markdown-article-toc li > a[href^="#"]:hover {
   background-color: rgba(255,255,255,0.15);
 }
 .markdown-article-toc-toggling-button {
-  color: #fff;
-  background-color: #111;
-  box-shadow: 0 0 0.3rem rgba(0,0,0,0.7);
-}
-.markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
   color: #000;
-  background-color: #eee;
-/* box-shadow: 0 0 0.3rem rgba(255, 255, 255, 0.7); */
+  border-color: #e149bb;
+  background-color: #dd56c6;
+  background-image: linear-gradient(45deg, #dd56c6 20%, #dee884 80%);
+  box-shadow: 0 0 0.3rem rgba(150,0,79,0.51);
 }
-.markdown-article-toc-is-visible .markdown-article-toc-toggling-button:focus,
-.markdown-article-toc-toggling-button:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px #12ca12;
-}
-.markdown-article-back-to-top::before {
-  border-bottom-color: #000;
+.markdown-article-back-to-top[href^="#"],
+.markdown-article-back-to-top[href^="#"]:visited {
+  color: #000;
+  background-color: #0f0;
+  background-image: linear-gradient(-45deg, #0ff 10%, #0f0 90%);
+  box-shadow: 1px 1px 0.3em rgba(0,192,0,0.6);
 }
 pre,
 .hljs {
