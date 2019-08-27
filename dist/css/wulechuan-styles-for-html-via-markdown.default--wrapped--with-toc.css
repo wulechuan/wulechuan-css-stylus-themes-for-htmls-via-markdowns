@@ -508,6 +508,9 @@ nav.markdown-article-toc a[href^="#"] {
   padding: 0.25em 0.5em;
   border: none;
   text-decoration: none;
+  transition-property: color, background-color, border-color;
+  transition-duration: 0.36s;
+  transition-timing-function: ease-out;
 }
 nav.markdown-article-toc li {
   cursor: pointer;
@@ -598,6 +601,16 @@ nav.markdown-article-toc {
     left: 50%;
     transform: translateX(-50%);
   }
+}
+.markdown-article-back-to-top::before {
+  content: '';
+  display: inline-block;
+  box-sizing: content-box;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-width: 0.32em solid transparent;
+  margin: 0 0 0.32em 1px;
 }
 html,
 button,
@@ -815,6 +828,9 @@ nav.markdown-article-toc li > a[href^="#"]:hover {
 .markdown-article-toc-toggling-button:focus {
   outline: none;
   box-shadow: 0 0 0 4px #12ca12;
+}
+.markdown-article-back-to-top::before {
+  border-bottom-color: #000;
 }
 pre,
 .hljs {

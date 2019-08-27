@@ -28,17 +28,24 @@ if lookup('_optionalLayoutPartName') {
     @import '../2-layout/optional-extra/' + _optionalLayoutPartName
 }
 
+if _shouldIncludeBackToTopLink {
+    @import '../2-layout/optional-extra/back-to-top-link'
+}
+
 
 
 
 // ----------- theming 1: base theming ---------------------------------------
 
-@import '../3-theming/base-themes/' + _baseThemeName + '/core'
+@import '../3-theming/base-themes/' + _folderNameOf_baseTheme + '/core'
 
 if lookup('_optionalBaseThemingPartName') {
-    @import '../3-theming/base-themes/' + _baseThemeName + '/optional-extra/' + _optionalBaseThemingPartName
+    @import '../3-theming/base-themes/' + _folderNameOf_baseTheme + '/optional-extra/' + _optionalBaseThemingPartName
 }
 
+if _shouldIncludeBackToTopLink {
+    @import '../3-theming/base-themes/' + _folderNameOf_baseTheme + '/optional-extra/back-to-top-link'
+}
 
 
 

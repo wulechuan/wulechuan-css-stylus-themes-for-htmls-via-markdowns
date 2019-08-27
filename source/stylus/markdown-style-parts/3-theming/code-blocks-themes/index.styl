@@ -1,10 +1,10 @@
 __wrappingSelectorOf_markdownArticleCodeBlockThemingRules = ''
-if _shouldWrapCodeBlockThemingRulesWith_markdownArticleRootSelector {
-    __wrappingSelectorOf_markdownArticleCodeBlockThemingRules = _markdownArticleRootSelector
+if _shouldWrapCodeBlockThemingRulesWith_selectorOf_markdownArticleRoot {
+    __wrappingSelectorOf_markdownArticleCodeBlockThemingRules = _selectorOf_markdownArticleRoot
 }
 
 {__wrappingSelectorOf_markdownArticleCodeBlockThemingRules} {
-    @import './' + _codeBlocksTypeName + '/' + codeBlocksThemeName
+    @import './' + _folderNameOf_codeBlocksType + '/' + codeBlocksThemeName
 
     if lookup('_optionalCodeBlockThemingPartName') {
         @import './optional-extra/' + _optionalCodeBlockThemingPartName

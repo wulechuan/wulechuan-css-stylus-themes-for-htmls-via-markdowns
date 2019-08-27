@@ -484,6 +484,16 @@ body {
     padding: 3rem 2rem 7rem 2rem;
   }
 }
+.markdown-article-back-to-top::before {
+  content: '';
+  display: inline-block;
+  box-sizing: content-box;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-width: 0.32em solid transparent;
+  margin: 0 0 0.32em 1px;
+}
 html,
 button,
 input,
@@ -670,6 +680,9 @@ body {
 }
 .markdown-article hr::before {
   box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.51);
+}
+.markdown-article-back-to-top::before {
+  border-bottom-color: #000;
 }
 pre,
 .hljs {

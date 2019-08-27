@@ -302,12 +302,12 @@ See the official doc on the subject: [Install Theme](http://theme.typora.io/doc/
 
     codeBlocksThemeName = 'atom-one-dark'
 
-    _markdownArticleParentSelector = 'body > #app'
-    _markdownArticleRootSelector   = '.my-markdown-article'
+    _selectorOf_markdownArticleParent = 'body > #app'
+    _selectorOf_markdownArticleRoot   = '.my-markdown-article'
 
-    _markdownArticleBackplateBackgroundColorCarrierSelector = 'body'
+    _selectorOf_markdownArticleBackplateBackgroundColorCarrier = 'body'
 
-    _fontFamily_baseFontFamilyCarrierSelectors = 'html, article, .my-markdown-article'
+    _selectorsOf_fontFamily_baseFontFamilyCarriers = 'html, article, .my-markdown-article'
 
 
 

@@ -1,28 +1,28 @@
 @import '../utils/apply-default-value-to-variable-if-needed'
     
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_fontFamily_baseFontFamilyCarrierSelectors',
+    variableName: '_selectorsOf_fontFamily_baseFontFamilyCarriers',
     defaultValue: 'html'
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_fontFamily_monospaceFontFamilyCarrierSelectors',
+    variableName: '_selectorsOf_fontFamily_monospaceFontFamilyCarriers',
     defaultValue: 'kbd, pre, code'
 )
 
-if !lookup('_markdownArticleRootSelector') {
-    // _markdownArticleRootSelector = ''
-    warn('Variable "_markdownArticleRootSelector" is set to empty.')
-    _shouldWrapCodeBlockThemingRulesWith_markdownArticleRootSelector = false
+if !lookup('_selectorOf_markdownArticleRoot') {
+    // _selectorOf_markdownArticleRoot = ''
+    warn('Variable "_selectorOf_markdownArticleRoot" is set to empty.')
+    _shouldWrapCodeBlockThemingRulesWith_selectorOf_markdownArticleRoot = false
 }
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_markdownArticleParentSelector',
+    variableName: '_selectorOf_markdownArticleParent',
     defaultValue: 'body'
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_markdownArticleBackplateBackgroundColorCarrierSelector',
+    variableName: '_selectorOf_markdownArticleBackplateBackgroundColorCarrier',
     defaultValue: 'html'
 )
 
@@ -32,12 +32,17 @@ applyDefaultValueToAGlobalVariableIfNeeded(
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_baseThemeName',
+    variableName: '_selectorOf_backToTopLink',
+    defaultValue: '.markdown-article-back-to-top'
+)
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_folderNameOf_baseTheme',
     defaultValue: 'theme-0'
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_codeBlocksTypeName',
+    variableName: '_folderNameOf_codeBlocksType',
     defaultValue: 'highlightjs'
 )
 
@@ -52,6 +57,11 @@ applyDefaultValueToAGlobalVariableIfNeeded(
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_shouldIncludeBackToTopLink',
+    defaultValue: false
+)
+
+applyDefaultValueToAGlobalVariableIfNeeded(
     variableName: '_markdownArticleShouldNotScrollSmoothly',
     defaultValue: false
 )
@@ -62,17 +72,17 @@ applyDefaultValueToAGlobalVariableIfNeeded(
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_shouldWrapLayoutRulesWith_markdownArticleRootSelector',
+    variableName: '_shouldWrapLayoutRulesWith_selectorOf_markdownArticleRoot',
     defaultValue: false
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_shouldWrapBaseThemingRulesWith_markdownArticleRootSelector',
+    variableName: '_shouldWrapBaseThemingRulesWith_selectorOf_markdownArticleRoot',
     defaultValue: false
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_shouldWrapCodeBlockThemingRulesWith_markdownArticleRootSelector',
+    variableName: '_shouldWrapCodeBlockThemingRulesWith_selectorOf_markdownArticleRoot',
     defaultValue: false
 )
 
