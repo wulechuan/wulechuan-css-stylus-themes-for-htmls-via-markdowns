@@ -19,7 +19,9 @@ function nothingToDo(cb) {
 export default function buildHighOrderTasksForABatchOfTaskSettings({
     taskSettingsArray,
     beforeCleaningEveryThing,
+    afterCleaningEveryThing,
     beforeBuildingEveryThingOnce,
+    afterBuildingEveryThingOnce,
     beforeWatchingEveryThing,
 }) {
     if (!Array.isArray(taskSettingsArray) || taskSettingsArray.length === 0) {
@@ -31,7 +33,7 @@ export default function buildHighOrderTasksForABatchOfTaskSettings({
     }
 
     const cleanAllOldOuput = gulpBuildTaskSeries(
-        function printAbstractAndStartAllCleaningTasks(cb) {
+        function _beforeCleaningEveryThing(cb) {
             if (typeof beforeCleaningEveryThing === 'function') {
                 beforeCleaningEveryThing();
             }
@@ -40,11 +42,18 @@ export default function buildHighOrderTasksForABatchOfTaskSettings({
 
         gulpBuildParallelTasks(
             ...taskSettingsArray.map(taskSettings => taskSettings.taskBodies.cleanOldOutput)
-        )
+        ),
+
+        function _afterCleaningEveryThing(cb) {
+            if (typeof afterCleaningEveryThing === 'function') {
+                afterCleaningEveryThing();
+            }
+            cb()
+        }
     )
 
     const buildEverythingOnce = gulpBuildTaskSeries(
-        function printAbstractAndStartAllBuildingTasks(cb) {
+        function _beforeBuildingEveryThingOnce(cb) {
             if (typeof beforeBuildingEveryThingOnce === 'function') {
                 beforeBuildingEveryThingOnce();
             }
@@ -53,7 +62,14 @@ export default function buildHighOrderTasksForABatchOfTaskSettings({
 
         gulpBuildParallelTasks(
             ...taskSettingsArray.map(taskSettings => taskSettings.taskBodies.buildNewOutput)
-        )
+        ),
+
+        function _afterBuildingEveryThingOnce(cb) {
+            if (typeof afterBuildingEveryThingOnce === 'function') {
+                afterBuildingEveryThingOnce();
+            }
+            cb()
+        }
     )
 
     const watchEverything = gulpBuildTaskSeries(
@@ -64,7 +80,7 @@ export default function buildHighOrderTasksForABatchOfTaskSettings({
 
             taskSettingsArray.forEach(taskSettings => {
                 gulpWatch(
-                    taskSettings.sourceGlobs,
+                    taskSettings.sourceGlobsToWatch,
                     { ignoreInitial: false },
                     taskSettings.taskBodies.buildNewOutput
                 )

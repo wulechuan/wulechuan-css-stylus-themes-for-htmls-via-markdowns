@@ -11,8 +11,13 @@ const outputFileBaseNameCommonPrefix   = 'wulechuan-styles-for-html-via-markdown
 const sharedSourceRelativeGlobs = []
 
 const extraSourceGlobsToWatch = [
-    'markdown-style-parts',
-    'utils',
+    /*
+        All these are imported by stylus compiler, 
+        no need to watch them at all.
+    */
+
+    // 'markdown-style-parts',
+    // 'utils',
 ]
 
 
