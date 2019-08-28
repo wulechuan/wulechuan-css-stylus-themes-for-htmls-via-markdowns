@@ -32,6 +32,25 @@
     li > a[href^="#"]:hover {
         background-color: rgba(white, 0.15);
     }
+
+
+    
+    @media screen and (max-width: 800px) {
+
+        background-color: rgba(0, 0, 0, 0.91);
+
+        @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
+            background-color: rgba(0, 0, 0, 0.79);
+        }
+
+        @supports (backdrop-filter: blur(20px)) {
+            backdrop-filter: blur(20px)
+        }
+
+        @supports (-webkit-backdrop-filter: blur(20px)) {
+            -webkit-backdrop-filter: blur(20px)
+        }
+    }
 }
 
 .markdown-article-toc-toggling-button {
@@ -52,3 +71,4 @@
 //         box-shadow: 0 0 0 4px rgb(18, 202, 18);
 //     }
 // }
+
