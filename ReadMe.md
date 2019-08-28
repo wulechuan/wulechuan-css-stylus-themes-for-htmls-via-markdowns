@@ -28,6 +28,8 @@
 This is a collection of themes that each
 can be applied to shade any `Markdown` generated `HTML` contents.
 
+A picture paints a thousand words. If you know what this tool provides, and are eager to see some visual examples, check [Examples](#examples) below.
+
 
 ### Why does this Tool Exist?
 
@@ -125,13 +127,19 @@ I've purposely prepared an example markdown article. I generate an HTML file out
 
 ### HTML Snapshots(Pictures)
 
-- [Snapshot in a wide window (TOC collapsed)](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-collapsed.png)
+- Snapshot in a wide window (TOC collapsed)
 
-- [Snapshot in a wide window (TOC expanded)](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-expanded.png)
+    [![](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-collapsed.png)](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-collapsed.png)
 
-- [Snapshot in a narrow window](./docs/examples/rendered/snapshots/en-US-example-in-a-narrow-window-toc-collapsed.png)
+- Snapshot in a wide window (TOC expanded)
 
+    [![](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-expanded.png)](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-expanded.png)
 
+- Snapshot in a narrow window
+
+    [![](./docs/examples/rendered/snapshots/en-US-example-in-a-narrow-window-toc-collapsed.png)](./docs/examples/rendered/snapshots/en-US-example-in-a-narrow-window-toc-collapsed.png)
+
+---
 
 
 

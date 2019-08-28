@@ -29,6 +29,8 @@
 
 这是一套用于装饰从 MarkDown 文件生成的 HTML 内容的 CSS 样式集。以期改善文章之观感。
 
+一图胜千言。如果你很清楚本工具之用途，并且急于查阅其应用示例，请阅读本文的《[效果示例](#效果示例)》章节。
+
 
 ### 本工具存在的意义
 
@@ -123,11 +125,17 @@
 
 ### HTML 范文的截图
 
-- [窗口较宽时的效果（纲要列表已收叠）](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.jpg)
+- 窗口较宽时的效果（纲要列表已收叠）
 
-- [窗口较宽时的效果（纲要列表已展开）](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已展开）.png)
+    [![](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.jpg)](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.jpg)
 
-- [窗口较窄时的效果（纲要列表已收叠）](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较窄时的效果（纲要列表已收叠）.png)
+- 窗口较宽时的效果（纲要列表已展开）
+
+    [![](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已展开）.png)](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已展开）.png)
+
+- 窗口较窄时的效果（纲要列表已收叠）
+
+    [![](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较窄时的效果（纲要列表已收叠）.png)](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较窄时的效果（纲要列表已收叠）.png)
 
 
 
