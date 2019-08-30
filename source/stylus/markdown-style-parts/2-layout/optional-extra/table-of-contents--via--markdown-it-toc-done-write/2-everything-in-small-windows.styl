@@ -1,4 +1,4 @@
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 1001px) {
 
     {_selectorOf_tocByMarkdownItTOCDoneRight} li.is-collapsed {
 
@@ -9,18 +9,26 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
 
     {_selectorOf_markdownArticleParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
         margin-left: 0;
     }
 
     {_selectorOf_tocByMarkdownItTOCDoneRight} {
-        width: tocPanel_widthWhenWindowWidthNoMoreThan800;
+        width: tocPanel_widthWhenWindowWidthNoMoreThan1000;
+    }
+
+    .markdown-article-toc-toggling-button {
+        left: -0.5rem;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
 
     .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
-        left: (tocPanel_widthWhenWindowWidthNoMoreThan800 / 2);
+        left: (tocPanel_widthWhenWindowWidthNoMoreThan1000 / 2);
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
     }
 }
 

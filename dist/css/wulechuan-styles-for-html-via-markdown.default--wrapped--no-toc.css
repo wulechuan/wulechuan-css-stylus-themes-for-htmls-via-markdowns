@@ -67,6 +67,10 @@ body {
   margin-left: 0;
   margin-right: 0;
 }
+.markdown-article td > pre:first-child,
+.markdown-article li > pre:first-child {
+  margin-top: 0;
+}
 .markdown-article a,
 .markdown-article code,
 .markdown-article kbd {
@@ -281,6 +285,11 @@ body {
   margin-top: 0.5em;
   margin-bottom: 1.5em;
 }
+.markdown-article blockquote ul:last-child,
+.markdown-article blockquote ol:last-child,
+.markdown-article blockquote dd:last-child {
+  margin-bottom: 0.5em;
+}
 .markdown-article ul,
 .markdown-article ol {
   padding-left: 1.5em;
@@ -332,22 +341,24 @@ body {
   font-style: normal;
   border-style: solid;
 }
+.markdown-article code {
+  word-break: break-all;
+}
 .markdown-article pre {
   line-height: 1.5;
-  display: block;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
   overflow-x: auto;
   padding: 0;
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
 }
-.markdown-article code {
-  word-break: break-all;
-}
 .markdown-article pre,
 .markdown-article pre > code,
 .markdown-article pre > code * {
   white-space: pre;
-  word-wrap: none;
+  word-wrap: normal;
   word-break: keep-all;
   text-align: left !important;
 }

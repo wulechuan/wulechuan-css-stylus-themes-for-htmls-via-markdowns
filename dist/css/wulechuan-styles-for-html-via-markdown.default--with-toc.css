@@ -67,6 +67,10 @@ li > pre {
   margin-left: 0;
   margin-right: 0;
 }
+td > pre:first-child,
+li > pre:first-child {
+  margin-top: 0;
+}
 a,
 code,
 kbd {
@@ -281,6 +285,11 @@ dl {
   margin-top: 0.5em;
   margin-bottom: 1.5em;
 }
+blockquote ul:last-child,
+blockquote ol:last-child,
+blockquote dd:last-child {
+  margin-bottom: 0.5em;
+}
 ul,
 ol {
   padding-left: 1.5em;
@@ -332,22 +341,24 @@ code {
   font-style: normal;
   border-style: solid;
 }
+code {
+  word-break: break-all;
+}
 pre {
   line-height: 1.5;
-  display: block;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
   overflow-x: auto;
   padding: 0;
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
 }
-code {
-  word-break: break-all;
-}
 pre,
 pre > code,
 pre > code * {
   white-space: pre;
-  word-wrap: none;
+  word-wrap: normal;
   word-break: keep-all;
   text-align: left !important;
 }
@@ -580,21 +591,28 @@ nav.markdown-article-toc {
   content: '目录';
   font-family: inherit;
 }
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 1001px) {
   nav.markdown-article-toc li.is-collapsed > li,
   nav.markdown-article-toc li.is-collapsed > ol {
     display: none;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   body.markdown-article-toc-exists.markdown-article-toc-is-visible {
     margin-left: 0;
   }
   nav.markdown-article-toc {
     width: 24rem;
   }
+  .markdown-article-toc-toggling-button {
+    left: -0.5rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
   .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
     left: 12rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
   }
 }
 @media screen and (max-width: 600px) {

@@ -70,6 +70,10 @@ li > pre {
   margin-left: 0;
   margin-right: 0;
 }
+td > pre:first-child,
+li > pre:first-child {
+  margin-top: 0;
+}
 a,
 code,
 kbd {
@@ -284,6 +288,11 @@ dl {
   margin-top: 0.5em;
   margin-bottom: 1.5em;
 }
+blockquote ul:last-child,
+blockquote ol:last-child,
+blockquote dd:last-child {
+  margin-bottom: 0.5em;
+}
 ul,
 ol {
   padding-left: 1.5em;
@@ -335,22 +344,24 @@ code {
   font-style: normal;
   border-style: solid;
 }
+code {
+  word-break: break-all;
+}
 pre {
   line-height: 1.5;
-  display: block;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
   overflow-x: auto;
   padding: 0;
   margin-top: 0.5rem;
   margin-bottom: 1.5rem;
 }
-code {
-  word-break: break-all;
-}
 pre,
 pre > code,
 pre > code * {
   white-space: pre;
-  word-wrap: none;
+  word-wrap: normal;
   word-break: keep-all;
   text-align: left !important;
 }
@@ -486,6 +497,9 @@ td > h1 .header-anchor {
   .typora-node   #write {
     padding: 3rem 2rem 7rem 2rem;
   }
+}
+pre.CodeMirror-line {
+  display: block;
 }
 h1,
 h2,

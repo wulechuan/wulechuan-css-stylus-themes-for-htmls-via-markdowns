@@ -125,7 +125,7 @@
 
 ### 由 MarkDown 范文生成的 HTML 版本的范文
 
-- [HTML](./docs/examples/rendered/html/zh-hans-cn.html)
+- [HTML](./docs/examples/rendered/html/default-theming-example-zh-hans-cn.html)
 
 
 ### HTML 范文的截图

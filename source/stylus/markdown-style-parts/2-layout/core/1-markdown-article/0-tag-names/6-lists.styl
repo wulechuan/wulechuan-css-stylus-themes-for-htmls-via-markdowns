@@ -20,15 +20,19 @@
         margin-bottom: 1.5em;
     }
 
-    // blockquote {
+    blockquote {
 
-    //     ul,
-    //     ol,
-    //     dd {
-    //         margin-left: 0;
-    //         margin-right: 0;
-    //     }
-    // }
+        ul,
+        ol,
+        dd {
+            // margin-left: 0;
+            // margin-right: 0;
+
+            &:last-child {
+                margin-bottom: 0.5em;
+            }
+        }
+    }
 
     ul, ol {
         padding-left: 1.5em;
@@ -38,6 +42,7 @@
 
     // warn('parts/layout/core/markdown-article/tag-names.styl\n         Selectors in literal CSS code blocks will NOT be wrapped correctly.')
     // @css {@supports selector(::marker) {
+    // The ::marker selector causes stylus compiler throw an error.
 
     //     ul, ol {
     //         padding-left: 2.5em;

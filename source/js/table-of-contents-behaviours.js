@@ -6,17 +6,24 @@ function setupAndStartApp() {
     const cssClassNameTOCItemHasNestedList = 'has-nested-toc-list'
     const cssClassNameTOCItemIsCollapsed   = 'is-collapsed'
     const cssClassNameTOCTogglingButton    = 'markdown-article-toc-toggling-button'
+    const selectorOfArticleRoot            = '.markdown-article'
     const selectorOfTOCRoot                = 'nav.markdown-article-toc'
 
+    const maxWindowWidthToEnableArticleClickingToHideTOC = 1000 // pixel
 
 
+
+    const articleRoot = document.querySelector(selectorOfArticleRoot)
+    if (!articleRoot) {
+        return
+    }
 
     const tocRoot = document.querySelector(selectorOfTOCRoot)
     if (!tocRoot) {
         return
     }
 
-
+    articleRoot.onclick = onArticleClick
 
 
     const documentBody = document.body
@@ -56,9 +63,9 @@ function setupAndStartApp() {
          */
 
 
-         // 万一按钮确实业已存在呢？比如工具构建好了静态的按钮？或者这个函数被人吃饱了没事儿调用了多次？
-         let tocTogglingButton = document.querySelector(`.${cssClassNameTOCTogglingButton}`)
-
+        let tocTogglingButton = document.querySelector(`.${cssClassNameTOCTogglingButton}`)
+        
+        // 万一按钮确实业已存在呢？比如工具构建好了静态的按钮？
         if (!tocTogglingButton) {
             tocTogglingButton = document.createElement('button')
             tocTogglingButton.className = cssClassNameTOCTogglingButton
@@ -71,10 +78,22 @@ function setupAndStartApp() {
         }
 
         if (tocTogglingButton.onclick === null) {
-            tocTogglingButton.onclick = function() { showOrHideTOCPanel(!tocIsVisible) }
+            tocTogglingButton.onclick = onTOCTogglingButtonClick
         }
 
         return tocTogglingButton
+    }
+
+    function onTOCTogglingButtonClick() {
+        showOrHideTOCPanel(!tocIsVisible)
+    }
+
+    function onArticleClick() {
+        if (window.innerWidth > maxWindowWidthToEnableArticleClickingToHideTOC) {
+            return
+        }
+
+        showOrHideTOCPanel(false)
     }
 
     function showOrHideTOCPanel(isToShowIt) {

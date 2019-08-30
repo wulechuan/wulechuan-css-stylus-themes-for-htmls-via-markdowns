@@ -123,7 +123,7 @@ I've purposely prepared an example markdown article. I generate an HTML file out
 
 ### Generated HTML File
 
-- [HTML](./docs/examples/rendered/html/en-us.html)
+- [HTML](./docs/examples/rendered/html/default-theming-example-en-us.html)
 
 ### HTML Snapshots(Pictures)
 
