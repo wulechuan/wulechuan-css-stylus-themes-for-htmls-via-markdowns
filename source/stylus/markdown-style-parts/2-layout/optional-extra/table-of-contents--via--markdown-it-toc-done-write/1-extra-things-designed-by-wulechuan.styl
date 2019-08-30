@@ -20,7 +20,7 @@
     border: 1px solid transparent;
     line-height: 1;
     padding: 0.5em 1.2em;
-    border-radius: 2rem;
+    border-radius: 0 2rem 2rem 0;
 
     position: fixed;
     top: 0.8rem;
@@ -29,7 +29,7 @@
 
     transition: all 0.3s;
     
-    left: 1rem;
+    left: -0.5rem;
     transform: translateX(0);
 
     &:active,
@@ -41,6 +41,8 @@
 .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
     left: (tocPanel_defaultWidth / 2);
     transform: translateX(-50%);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
 }
 
 .markdown-article-toc-toggling-button::before {

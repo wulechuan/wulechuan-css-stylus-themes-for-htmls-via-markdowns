@@ -562,12 +562,12 @@ nav.markdown-article-toc {
   border: 1px solid transparent;
   line-height: 1;
   padding: 0.5em 1.2em;
-  border-radius: 2rem;
+  border-radius: 0 2rem 2rem 0;
   position: fixed;
   top: 0.8rem;
   cursor: pointer;
   transition: all 0.3s;
-  left: 1rem;
+  left: -0.5rem;
   transform: translateX(0);
 }
 .markdown-article-toc-toggling-button:active,
@@ -577,6 +577,8 @@ nav.markdown-article-toc {
 .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
   left: 12rem;
   transform: translateX(-50%);
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
 }
 .markdown-article-toc-toggling-button::before {
   content: 'TOC';
@@ -597,6 +599,17 @@ nav.markdown-article-toc {
     display: none;
   }
 }
+@media screen and (max-width: 1400px) and (min-width: 1001px) {
+  body.markdown-article-toc-exists.markdown-article-toc-is-visible {
+    margin-left: 18rem;
+  }
+  nav.markdown-article-toc {
+    width: 18rem;
+  }
+  .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
+    left: 9rem;
+  }
+}
 @media screen and (max-width: 1000px) {
   body.markdown-article-toc-exists.markdown-article-toc-is-visible {
     margin-left: 0;
@@ -604,18 +617,14 @@ nav.markdown-article-toc {
   nav.markdown-article-toc {
     width: 24rem;
   }
-  .markdown-article-toc-toggling-button {
-    left: -0.5rem;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
   .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
     left: 12rem;
-    border-top-left-radius: 2rem;
-    border-bottom-left-radius: 2rem;
   }
 }
 @media screen and (max-width: 600px) {
+  body.markdown-article-toc-exists.markdown-article-toc-is-visible {
+    margin-left: 0;
+  }
   nav.markdown-article-toc {
     width: 100%;
   }
@@ -623,6 +632,7 @@ nav.markdown-article-toc {
   .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
     left: 50%;
     transform: translateX(-50%);
+    border-radius: 2rem;
   }
 }
 .markdown-article-back-to-top {
