@@ -9,7 +9,8 @@ function setupAndStartApp() {
     const selectorOfArticleRoot            = '.markdown-article'
     const selectorOfTOCRoot                = 'nav.markdown-article-toc'
 
-    const maxWindowWidthToEnableArticleClickingToHideTOC = 1000 // pixel
+    const maxWindowWidthWhenTOCPanelCoversEntirePage     = 600  // pixels
+    const maxWindowWidthToEnableArticleClickingToHideTOC = 1000 // pixels
 
 
 
@@ -25,7 +26,6 @@ function setupAndStartApp() {
 
     articleRoot.onclick = onArticleClick
 
-
     const documentBody = document.body
 
     const tocElementsCommonParentNode = documentBody
@@ -34,7 +34,6 @@ function setupAndStartApp() {
     tocStatusCSSClassNamesCarrier.classList.add(cssClassNameTOCExists) // Simply make sure
 
     makeTOCItemsEachCollapsible()
-
 
     buildTOCPanelTogglingButton()
 
@@ -64,8 +63,11 @@ function setupAndStartApp() {
 
 
         let tocTogglingButton = document.querySelector(`.${cssClassNameTOCTogglingButton}`)
-        
-        // 万一按钮确实业已存在呢？比如工具构建好了静态的按钮？
+
+        /**
+         * 万一按钮确实业已存在呢？比如工具构建好了静态的按钮？那就不必再创建一个新的了。
+         * What if the button already exists? Then we simply don't create one more.
+         */
         if (!tocTogglingButton) {
             tocTogglingButton = document.createElement('button')
             tocTogglingButton.className = cssClassNameTOCTogglingButton
@@ -88,17 +90,25 @@ function setupAndStartApp() {
         showOrHideTOCPanel(!tocIsVisible)
     }
 
+    function showOrHideTOCPanel(isToShowIt) {
+        tocStatusCSSClassNamesCarrier.classList.toggle(cssClassNameTOCIsVisible, isToShowIt)
+        tocIsVisible = isToShowIt
+    }
+
+    function isTOCPanelFloatingOverArticle() {
+        return window.innerWidth <= maxWindowWidthToEnableArticleClickingToHideTOC
+    }
+
+    function isTOCPanelCoveringEntirePage() {
+        return window.innerWidth <= maxWindowWidthWhenTOCPanelCoversEntirePage
+    }
+
     function onArticleClick() {
-        if (window.innerWidth > maxWindowWidthToEnableArticleClickingToHideTOC) {
+        if (!isTOCPanelFloatingOverArticle()) {
             return
         }
 
         showOrHideTOCPanel(false)
-    }
-
-    function showOrHideTOCPanel(isToShowIt) {
-        tocStatusCSSClassNamesCarrier.classList.toggle(cssClassNameTOCIsVisible, isToShowIt)
-        tocIsVisible = isToShowIt
     }
 
     function makeTOCItemsEachCollapsible() {
@@ -106,18 +116,23 @@ function setupAndStartApp() {
         lis.forEach(li => {
             if (li.querySelectorAll('li').length > 0) {
                 li.classList.add(cssClassNameTOCItemHasNestedList)
+                li.hasNestedList = true
                 li.selfAnchor = li.querySelector('a')
-                li.onclick = tocItemOnClick
+                li.onclick = tocItemAnchorClickHandler
             }
         })
 
         const lisLevel1 = Array.prototype.slice.apply(tocRoot.querySelector('ol, ul').children)
         lisLevel1.forEach(li => {
+            if (li.hasNestedList) {
+                li.isCollapsible = true
+            }
+
             li.classList.add(cssClassNameTOCItemIsCollapsed)
         })
     }
 
-    function tocItemOnClick(e) {
+    function tocItemAnchorClickHandler(e) {
         e.stopPropagation()
 
         const { srcElement } = e
@@ -126,10 +141,25 @@ function setupAndStartApp() {
             return undefined
         }
 
-        if (this.classList.contains(cssClassNameTOCItemIsCollapsed)) {
-            this.classList.remove(cssClassNameTOCItemIsCollapsed)
+        let TOCItemIsAllowedToCollapse = this.isCollapsible
+        let shouldNotFollowLinkOfThisTOCItem = false
+
+        if (isTOCPanelCoveringEntirePage()) {
+            TOCItemIsAllowedToCollapse = false
+        }
+
+        if (TOCItemIsAllowedToCollapse) {
+            if (this.classList.contains(cssClassNameTOCItemIsCollapsed)) {
+                this.classList.remove(cssClassNameTOCItemIsCollapsed)
+            } else {
+                this.classList.add(cssClassNameTOCItemIsCollapsed)
+                shouldNotFollowLinkOfThisTOCItem = true
+            }
         } else {
-            this.classList.add(cssClassNameTOCItemIsCollapsed)
+            this.classList.remove(cssClassNameTOCItemIsCollapsed)
+        }
+
+        if (shouldNotFollowLinkOfThisTOCItem) {
             return false
         }
     }

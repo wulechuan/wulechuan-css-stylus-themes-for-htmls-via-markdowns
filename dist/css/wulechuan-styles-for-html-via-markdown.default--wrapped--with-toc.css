@@ -67,7 +67,6 @@ body {
   margin-left: 0;
   margin-right: 0;
 }
-.markdown-article td > pre:first-child,
 .markdown-article li > pre:first-child {
   margin-top: 0;
 }

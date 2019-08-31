@@ -67,7 +67,6 @@ li > pre {
   margin-left: 0;
   margin-right: 0;
 }
-td > pre:first-child,
 li > pre:first-child {
   margin-top: 0;
 }
