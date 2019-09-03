@@ -31,8 +31,8 @@ const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneThemeE
 )
 
 console.log(defaultCSSContentString)
-console.log(alsoTheDefaultCSSContentString)
-console.log(typoraCSSContentString)
-console.log(the7thThemeContentString)
-console.log(theOnlyJavascriptContentString)
-console.log(alsoTheOnlyJavascriptContentString)
+// console.log(alsoTheDefaultCSSContentString)
+// console.log(typoraCSSContentString)
+// console.log(the7thThemeContentString)
+// console.log(theOnlyJavascriptContentString)
+// console.log(alsoTheOnlyJavascriptContentStringButMinified)
