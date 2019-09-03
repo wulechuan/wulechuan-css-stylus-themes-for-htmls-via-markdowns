@@ -291,6 +291,55 @@ See the official doc on the subject: [Install Theme](http://theme.typora.io/doc/
 
 
 
+## Usage
+
+### Manually get CSS Files
+
+Simply use any CSS file located under `./dist/css` folder.
+
+
+### Manually get Javascript Files
+
+Simply use any Javascript file located under `./dist/js` folder.
+
+
+
+### Use as an Nodejs Package
+
+```js
+const { // All 5 interfaces are here.
+    defaultCSSContentString,
+    cssFileEntries,
+    jsFileEntries,
+    lookupDictionaryByFileNames,
+    syncReadContentOfOneThemeEntry,
+} = require('@wulechuan/css-stylus-markdown-themes') // require this module
+
+console.log('-'.repeat(60))
+console.log('All available files in @wulechuan/css-stylus-markdown-themes:', Object.keys(lookupDictionaryByFileNames))
+console.log('-'.repeat(60))
+
+const alsoTheDefaultCSSContentString = syncReadContentOfOneThemeEntry(
+    'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
+)
+
+const typoraCSSContentString = syncReadContentOfOneThemeEntry(
+    'wulechuan-styles-for-html-via-markdown--typora.default.css'
+)
+
+const the7thThemeContentString = syncReadContentOfOneThemeEntry(
+    cssFileEntries[6]
+)
+
+const theOnlyJavascriptContentString = syncReadContentOfOneThemeEntry(
+    jsFileEntries[0]
+)
+
+const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneThemeEntry(
+    'table-of-contents-behaviours.min.js'
+)
+```
+
 
 ## Design CSS for a New Theme
 

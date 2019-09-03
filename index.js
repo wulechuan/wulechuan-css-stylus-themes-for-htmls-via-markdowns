@@ -2,16 +2,14 @@ const globby = require('globby')
 const path = require('path')
 const fs = require('fs');
 
-const distFolderPath = './dist'
+const distFolderSubPath = './dist'
 const cssDistFolderName = 'css'
 const jsDistFolderName  = 'js'
 
-const processPWD = process.env.PWD
+const thisModuleRootFolderPath = path.dirname(require.resolve('./package.json'))
 
 const getBaseNameOf = path.basename
-// const getFileExtOf  = path.extname
 const joinPathPOSIX = path.posix.join
-const resolvePathPOSIX   = path.resolve
 
 const { sync: syncGetFiles } = globby
 
@@ -19,60 +17,74 @@ const readFileSync = fs.readFileSync
 
 
 
+const cssFileGlobs = joinPathPOSIX(thisModuleRootFolderPath, distFolderSubPath, cssDistFolderName, '**/*.css').replace(/\\/g, '/')
+const  jsFileGlobs = joinPathPOSIX(thisModuleRootFolderPath, distFolderSubPath,  jsDistFolderName, '**/*.js' ).replace(/\\/g, '/')
 
-
-const cssFilePaths = syncGetFiles(joinPathPOSIX(distFolderPath, cssDistFolderName))
-const jsFilePaths  = syncGetFiles(joinPathPOSIX(distFolderPath, jsDistFolderName))
+const cssFilePaths = syncGetFiles(cssFileGlobs)
+const  jsFilePaths = syncGetFiles( jsFileGlobs)
 
 const cssFileEntries = cssFilePaths.map(processOneDistFile)
-const jsFileEntries  = jsFilePaths.map(processOneDistFile)
+const  jsFileEntries =  jsFilePaths.map(processOneDistFile)
 
-const fileLookupDictionary = cssFileEntries.concat(jsFileEntries).reduce((dict, entry) => {
-    dict[entry.fileRelativePath] = entry
+const lookupDictionaryByFileNames = cssFileEntries.concat(jsFileEntries).reduce((dict, entry) => {
+    dict[entry.fileName] = entry
     return dict
 }, {})
 
+const defaultCSSContentString = syncReadContentOfOneThemeEntry(
+    'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
+)
+
+
+// console.log('--------------')
+// console.log(thisModuleRootFolderPath)
+// console.log(cssFilePaths)
+// console.log( jsFilePaths)
+// console.log('--------------')
 
 
 module.exports = {
-    cssFiles:  cssFileEntries,
-    jsFiles:   jsFileEntries,
-    fileLookup: fileLookupDictionary,
-    syncReadContentOfOneEntry,
+    defaultCSSContentString,
+    cssFileEntries,
+    jsFileEntries,
+    lookupDictionaryByFileNames,
+    syncReadContentOfOneThemeEntry,
 }
 
 
 
 
-function processOneDistFile(fileRelativePath) {
+function processOneDistFile(fileAbsolutePath) {
     return {
-        fileName: getBaseNameOf(fileRelativePath),
-        fileRelativePath,
-        fileAbsolutePath: resolvePathPOSIX(processPWD, fileRelativePath).replace(/\\/g, '/'),
+        fileName: getBaseNameOf(fileAbsolutePath),
+        fileRelativePath: path.relative(thisModuleRootFolderPath, fileAbsolutePath),
+        fileAbsolutePath,
         fileContent: '',
     }
 }
 
-function syncReadContentOfOneEntry(input) {
+function syncReadContentOfOneThemeEntry(input) {
     let entry
-    let fileRelativePath
+    let fileName
 
     if (input) {
         if (typeof input === 'object') {
             entry = input
-            fileRelativePath = entry.fileRelativePath
+            fileName = entry.fileName
         } else if (typeof input === 'string') {
-            fileRelativePath = input
-            entry = fileLookupDictionary[fileRelativePath]
+            fileName = input
+            entry = lookupDictionaryByFileNames[fileName]
         }
     }
 
-    if (!entry || !fileRelativePath) {
-        throw new TypeError('@wulechuan/css-stylus-markdown-themes:\n    Invalid file entry or path to reading distribution file content from.\n    fileRelativePath = "'+fileRelativePath+'"')
+
+
+    if (!entry || !fileName) {
+        throw new TypeError('@wulechuan/css-stylus-markdown-themes:\n    Invalid file entry or path to reading distribution file content from.\n    fileName = "'+fileName+'"')
     }
 
     if (!entry.fileContent) {
-        entry.fileContent = syncReadFileAsString(fileRelativePath)
+        entry.fileContent = syncReadFileAsString(entry.fileAbsolutePath)
     }
 
     return entry.fileContent

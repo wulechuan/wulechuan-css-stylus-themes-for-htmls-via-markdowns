@@ -275,7 +275,61 @@
 ---
 
 
+## 使用说明
 
+
+
+### 手工取用 CSS 文件
+
+请在 `./dist/css` 文件夹下自行获取所需文件。
+
+
+### 手工取用 Javascript 文件
+
+请在 `./dist/js` 文件夹下自行获取所需文件。
+
+
+### 将本项目主文件作为 Nodejs 模块调用
+
+```js
+const { // 全部接口如下，共 5 个。
+    defaultCSSContentString,
+    cssFileEntries,
+    jsFileEntries,
+    lookupDictionaryByFileNames,
+    syncReadContentOfOneThemeEntry,
+} = require('@wulechuan/css-stylus-markdown-themes') // require 本模块
+
+console.log('-'.repeat(60))
+console.log('@wulechuan/css-stylus-markdown-themes 提供的所有主题之名称如下：', Object.keys(lookupDictionaryByFileNames))
+console.log('-'.repeat(60))
+
+const alsoTheDefaultCSSContentString = syncReadContentOfOneThemeEntry(
+    'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
+)
+
+const typoraCSSContentString = syncReadContentOfOneThemeEntry(
+    'wulechuan-styles-for-html-via-markdown--typora.default.css'
+)
+
+const the7thThemeContentString = syncReadContentOfOneThemeEntry(
+    cssFileEntries[6]
+)
+
+const theOnlyJavascriptContentString = syncReadContentOfOneThemeEntry(
+    jsFileEntries[0]
+)
+
+const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneThemeEntry(
+    'table-of-contents-behaviours.min.js'
+)
+```
+
+
+
+
+
+---
 
 ## 制作一套新的 CSS 主题
 
