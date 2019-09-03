@@ -35,7 +35,8 @@
     "start": "gulp --silent buildAndWatch",
     "build": "gulp --silent buildOnce",
     "clean": "gulp --silent clean",
-    "try-1": "set theOnlyStylToBuild=vscode/vscode-_default && gulp buildOnce"
+    "try-1": "set theOnlyStylToBuild=vscode/vscode-_default && gulp buildOnce",
+    "index": "node ./index.js"
   },
   "devDependencies": {
     "chalk": "^2.4.2",
@@ -49,5 +50,8 @@
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-stylus": "^2.7.0"
+  },
+  "dependencies": {
+    "globby": "^10.0.1"
   }
 }

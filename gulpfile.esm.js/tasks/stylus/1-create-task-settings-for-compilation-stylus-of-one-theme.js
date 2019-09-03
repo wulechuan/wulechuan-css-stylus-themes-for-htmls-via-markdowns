@@ -3,7 +3,7 @@ import postCSS from 'gulp-postcss'
 
 import
     getPluginsForOnePostCSSInstance
-from '../lib/get-plugins-for-one-postcss-instance'
+from '../../lib/get-plugins-for-one-postcss-instance'
 
 import
 	createGulpTaskBodiesForTaskSettingsOfOneTheme

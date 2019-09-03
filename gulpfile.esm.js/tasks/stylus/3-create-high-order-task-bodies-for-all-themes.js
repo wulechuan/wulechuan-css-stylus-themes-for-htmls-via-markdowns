@@ -3,7 +3,7 @@ import chalk from 'chalk'
 
 import
 	allStylusTaskSettingsBuildingOptions
-from '../configs/stylus-tasks'
+from '../../configs/stylus-tasks'
 
 
 import
@@ -12,7 +12,7 @@ from './1-create-task-settings-for-compilation-stylus-of-one-theme'
 
 import
     buildHighOrderTasksForABatchOfTaskSettings
-from '../lib/tasks-build-3-types-of-high-order-tasks'
+from '../../lib/tasks-build-3-types-of-high-order-tasks'
 
 
 

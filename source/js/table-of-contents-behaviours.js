@@ -6,7 +6,9 @@ function setupAndStartApp() {
     const cssClassNameTOCItemHasNestedList = 'has-nested-toc-list'
     const cssClassNameTOCItemIsCollapsed   = 'is-collapsed'
     const cssClassNameTOCTogglingButton    = 'markdown-article-toc-toggling-button'
+
     const selectorOfArticleRoot            = '.markdown-article'
+    const selectorOfBackToTopLink          = '.markdown-article-back-to-top'
     const selectorOfTOCRoot                = 'nav.markdown-article-toc'
 
     const maxWindowWidthWhenTOCPanelCoversEntirePage     = 600  // pixels
@@ -22,6 +24,11 @@ function setupAndStartApp() {
     const tocRoot = document.querySelector(selectorOfTOCRoot)
     if (!tocRoot) {
         return
+    }
+
+    const backToTopLink = document.querySelector(selectorOfBackToTopLink);
+    if (backToTopLink) {
+        backToTopLink.onclick = onBackToTopLinkClick;
     }
 
     articleRoot.onclick = onArticleClick
@@ -105,6 +112,14 @@ function setupAndStartApp() {
 
     function onArticleClick() {
         if (!isTOCPanelFloatingOverArticle()) {
+            return
+        }
+
+        showOrHideTOCPanel(false)
+    }
+
+    function onBackToTopLinkClick() {
+        if (!isTOCPanelCoveringEntirePage()) {
             return
         }
 
