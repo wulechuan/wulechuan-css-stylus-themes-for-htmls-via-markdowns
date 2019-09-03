@@ -2,12 +2,20 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "wulechuan <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "3.5.5",
+  "version": "4.0.0-beta",
   "description": "A collection of CSS themes for Markdown generated HTML contents.",
   "directories": {
     "doc": "docs"
   },
-  "main": "dist/css/wulechuan-styles-for-html-via-markdown.default--with-toc.min.css",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp buildAndWatch",
+    "build": "gulp buildOnce",
+    "clean": "gulp clean",
+    "dev-1": "set theOnlyStylToBuild=vscode/vscode-_default && gulp buildOnce",
+    "index": "node ./index.js",
+    "try-result": "node ./test/try-result.js"
+  },
   "keywords": [
     "markdown",
     "html",
@@ -31,12 +39,8 @@
   "bugs": {
     "url": "https://github.com/wulechuan/css-stylus-wulechuan-markdown-themes/issues"
   },
-  "scripts": {
-    "start": "gulp --silent buildAndWatch",
-    "build": "gulp --silent buildOnce",
-    "clean": "gulp --silent clean",
-    "try-1": "set theOnlyStylToBuild=vscode/vscode-_default && gulp buildOnce",
-    "index": "node ./index.js"
+  "dependencies": {
+    "globby": "^10.0.1"
   },
   "devDependencies": {
     "chalk": "^2.4.2",
@@ -49,9 +53,7 @@
     "gulp-pipe": "^1.0.4",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
-    "gulp-stylus": "^2.7.0"
-  },
-  "dependencies": {
-    "globby": "^10.0.1"
+    "gulp-stylus": "^2.7.0",
+    "gulp-terser": "^1.2.0"
   }
 }
