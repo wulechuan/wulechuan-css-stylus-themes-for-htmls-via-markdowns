@@ -7,7 +7,7 @@
 
 ## Multilingual Editions of this Article
 
-- [本文之档简体中文版](../zh-CN/design-css-for-a-new-theme.md)
+- [本文之简体中文版](../zh-hans-CN/develope-css-for-a-new-theme.md)
 
 
 
@@ -87,7 +87,7 @@ See [stylus-variable-default-values.md](./stylus-variable-default-values.md).
 Starts a batch of file watchers to watch all source `.styl` files. As long as a change occurs, the CSS files of the involved scenario will be re-compiled.
 
 
-##### Usage
+##### Usage in CLI
 
 To make gulp running in `--silent` mode, do either
 
@@ -116,7 +116,7 @@ npm run start2
 
 Compile all CSS files of all scenarios once.
 
-##### Usage
+##### Usage in CLI
 
 To make gulp running in `--silent` mode, do
 
@@ -143,7 +143,7 @@ Delete all generated CSS files of all scenarios. They exist in the `./dist/css/`
 > Note that if a scenario configuration changes its output CSS file basename, then the exiting CSS file(s) with old basename will **NOT** be erased by this script. You have to manually delete these old files.
 
 
-##### Usage
+##### Usage in CLI
 
 To make gulp running in `--silent` mode, do
 
@@ -173,9 +173,9 @@ To compile all scenarios again and again is really time consuming. Sometimes we 
 > - `set theOnlyStylToBuild=true` means to compile only the first scenario;
 > - `set theOnlyStylToBuild=vscode/vscode-_default` menas to compile only the scenario named `vscode/vscode-_default`.
 
-##### Usage
+##### Usage in CLI
 
-Gulp always runs in standard mode.
+Gulp runs in standard mode.
 
 ```bash
 npm run dev-1
@@ -189,14 +189,16 @@ npm run dev-1
 
 To lint all discovered Javascript files according to these globs:
 
-- ./.eslintrc.js
-- ./gulpfile.esm.js/**/*.js
-- ./test/*.js
-- ./source/js/**/*.js
-- ./index.js
+- `./.eslintrc.js`
+- `./gulpfile.esm.js/**/*.js`
+- `./test/*.js`
+- `./source/js/**/*.js`
+- `./index.js`
+
+The famous [eslint](https://eslint.org) empowers this feature.
 
 
-##### Usage
+##### Usage in CLI
 
 ```bash
 npm run eslint
@@ -211,7 +213,7 @@ npm run eslint
 
 To run the test Javasctip file: `./test/index.js`.
 
-##### Usage
+##### Usage in CLI
 
 ```bash
 npm test

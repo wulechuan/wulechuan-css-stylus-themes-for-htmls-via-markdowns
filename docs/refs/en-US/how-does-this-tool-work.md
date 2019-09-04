@@ -7,7 +7,7 @@
 
 ## Multilingual Editions of this Article
 
-- [本文之档简体中文版](../zh-CN/how-does-this-tool-work.md)
+- [本文之简体中文版](../zh-hans-CN/how-does-this-tool-work.md)
 
 
 ## How does this Tool Work
@@ -16,9 +16,10 @@
 
 I designed a flex framework. Upon that there are several provided [Stylus](http://stylus-lang.com/) files (`.styl`) as configurations. So that multiple versions of CSS can be produced in one go, each targeting different environment/scenario. For each scenario, we get 1 or 2 `.css` files. If 2 are produced, that's because one of them is a minified CSS. If only 1 CSS file is produced, then depending on the configuration, it can be either an uncompress one or a compress one.
 
-In short, each `.styl` file is a configuration, targeting one scenario, and produces CSS file(s).
+**In short, each `.styl` file is a configuration, targeting one scenario, and produces CSS file(s).**
 
 > What is a so-called scenario? See [Introduction](./introduction.md).
+
 
 For examples:
 
@@ -31,7 +32,7 @@ For examples:
 > The said javascript file is named `table-of-contents-behaviours.js`. And it's obviously for setting up the TOC.
 
 
-#### Are CSS Selectors Wrapped Safely?
+### Are CSS Selectors Wrapped Safely?
 
 Well, for the generated CSS files, there are two sets of them. One is wrapped, the other is non-wrapped.
 

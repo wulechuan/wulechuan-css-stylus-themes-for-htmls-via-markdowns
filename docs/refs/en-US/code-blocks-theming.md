@@ -7,15 +7,15 @@
 
 ## Multilingual Editions of this Article
 
-- Nothing yet.
+- [本文之简体中文版](../zh-hans-CN/code-blocks-theming.md)
 
 
 ## Code Blocks Theming
 
-To make code blocks colorful, here inside the scope of this repository, we have 2 options:
+To make code blocks colorful, there are several solutions. The HTML
+ codes produced by two of those solutions are supported by this tool. The said 2 solutions are:
 
 1. HighlighJS
-
 2. Code Mirror
 
 
@@ -48,3 +48,5 @@ See [https://codemirror.net/](https://codemirror.net/).
 ##### Typora
 
 [Typora](https://typora.io/) uses CodeMirror for generating code blocks that are able to colorize via CSS.
+
+

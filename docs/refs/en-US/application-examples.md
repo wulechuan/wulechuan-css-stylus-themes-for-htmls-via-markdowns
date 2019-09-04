@@ -7,7 +7,7 @@
 
 ## Multilingual Editions of this Article
 
-- [本文之档简体中文版](../zh-CN/application-examples.md)
+- [本文之简体中文版](../zh-hans-CN/application-examples.md)
 
 
 ## Application Examples

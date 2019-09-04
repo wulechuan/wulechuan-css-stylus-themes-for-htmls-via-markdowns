@@ -7,7 +7,7 @@
 
 ## Multilingual Editions of this Article
 
-- [本文之档简体中文版](../zh-CN/introduction.md)
+- [本文之简体中文版](../zh-hans-CN/introduction.md)
 
 
 ## Introduction
@@ -43,7 +43,7 @@ Second, well, we should know that a thing sounds easily to deal with, like readi
 
 Different tools produce **different** HTML contents out of the **same** source markdown file.
 
-So, in short, different lighting conditions, different tools or software environments need different CSS file.
+**In short, different lighting conditions, different tools or software environments need different CSS file.**
 
 
 ### Scenarios
@@ -52,7 +52,5 @@ A combination of one theming and some optional features is called a **scenario**
 
 For example, the default scenraio is a combination of a light-colored theme and a table of contents(TOC) component. So, the output file set of the said scenario includes a CSS file, containing both **the theming CSS rules** and some **extra CSS rules** specifically for the TOC component, and **a Javascript file**, which is also for the TOC.
 
-**In words, different scenario needs different CSS file.**
-
-> Note that some scenarios also need some Javascript file(s).
+**In words, different scenario needs different CSS file.** And some scenarios (e.g. the default one) also need some Javascript file(s).
 

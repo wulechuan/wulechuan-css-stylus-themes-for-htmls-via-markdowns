@@ -7,7 +7,7 @@
 
 ## Multilingual Editions of this Article
 
-- [本文之档简体中文版](../zh-CN/supported-scenarios.md)
+- [本文之简体中文版](../zh-hans-CN/supported-scenarios.md)
 
 
 ## Supported scenarios So Far
@@ -16,9 +16,9 @@ What are so-called scenarios? See [Introduction](./introduction.md).
 
 There're 4 scenarios supported so far.
 
-1. A scenario for [Standalone HTML Files](#standalone_html_files)  (The Default)
-2. A scenario for [Microsoft Visual Studio Code Markdown preview Page](#microsoft_visual_studio_code_markdown_preview_page)
-3. A scenario for [The Firefox addon "Markdown Viewer Webext"](#the_firefox_addon__markdown_viewer_webext_)
+1. A scenario for [Standalone HTML Files](#standalone-html-files)  (The Default)
+2. A scenario for [Microsoft Visual Studio Code Markdown preview Page](#microsoft-visual-studio-code-markdown-preview-page)
+3. A scenario for [The Firefox addon "Markdown Viewer Webext"](#the-firefox-addon-"markdown-viewer-webext")
 4. A scenario for [Typora](#typora)
 
 
@@ -86,6 +86,9 @@ Combining the factors mentioned above, there exist 4 variants of the "default" C
 
     > Don't forget to use the `table-of-contents-behaviours.js` together with either of these CSS files.
 
+
+
+#### The HTML of the TOC
 
 The markup structure of the said TOC parts are based on the output of [markdown-it-toc-done-right](https://www.npmjs.com/package/markdown-it-toc-done-right). For your references, the TOC markup structure is here:
 
