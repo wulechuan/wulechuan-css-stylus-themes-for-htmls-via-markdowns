@@ -68,7 +68,7 @@
 
 ### 本工具如何构建出 CSS 文件？
 
-我设计了一个稍带灵活性的框架。在此框架之上，我给出了一组 [stylus](http://stylus-lang.com/) （`.styl`）文件，作为【配置】文件。本工具中配带的基于 Gulpjs 生态的 Javascript 程序会读取这些配置，并根据每个配置文件逐一产出对应的 CSS 文件，1 到 2 个。如果产出 2 个 CSS 是因为其中一个是压缩过的版本。如果仅产出 1 个，则依据具体配置，它既可能是未压缩的版本，也可能是压缩过的版本。
+我设计了一个稍带灵活性的框架。在此框架之上，我给出了一组 [Stylus](http://stylus-lang.com/) （`.styl`）文件，作为【配置】文件。本工具中配带的基于 Gulpjs 生态的 Javascript 程序会读取这些配置，并根据每个配置文件逐一产出对应的 CSS 文件，1 到 2 个。如果产出 2 个 CSS 是因为其中一个是压缩过的版本。如果仅产出 1 个，则依据具体配置，它既可能是未压缩的版本，也可能是压缩过的版本。
 
 **简而言之，一个 `.styl` 文件配置一个【场景】，并产出 CSS 文件。**
 
@@ -333,6 +333,8 @@ const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneThemeE
 
 ## 制作一套新的 CSS 主题
 
+本工具采用 [Stylus](http://stylus-lang.com/) 语言来快速构建 CSS 文件。并且，诸多代码都工整分散在一个个 Stylus 模块中。
+
 ### 步骤
 
 
@@ -391,12 +393,12 @@ const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneThemeE
 
 ### 可着色代码块
 
-参阅 [code-blocks-theming.md](./docs/refs/code-blocks-theming.md)。
+参阅 [code-blocks-theming.md](./docs/refs/en-US/code-blocks-theming.md)。
 
 
 ### 所有可配置的 Stylus 变量
 
-参阅 [stylus-variable-default-values.md](./docs/refs/stylus-variable-default-values.md)。
+参阅 [stylus-variable-default-values.md](./docs/refs/en-US/stylus-variable-default-values.md)。
 
 
 

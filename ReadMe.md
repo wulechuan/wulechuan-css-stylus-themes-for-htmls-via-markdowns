@@ -64,7 +64,7 @@ So, in short, different lighting conditions, different tools or software environ
 
 ### How does this Tool Work?
 
-I designed a flex framework. Upon that there are several provided [stylus](http://stylus-lang.com/) files (`.styl`) as configurations. So that multiple versions of CSS can be produced in one go, each targeting different environment/scenario. For each scenario, we get 1 or 2 `.css` files. If 2 are produced, that's because one of them is a minified CSS. If only 1 CSS file is produced, then depending on the configuration, it can be either an uncompress one or a compress one.
+I designed a flex framework. Upon that there are several provided [Stylus](http://stylus-lang.com/) files (`.styl`) as configurations. So that multiple versions of CSS can be produced in one go, each targeting different environment/scenario. For each scenario, we get 1 or 2 `.css` files. If 2 are produced, that's because one of them is a minified CSS. If only 1 CSS file is produced, then depending on the configuration, it can be either an uncompress one or a compress one.
 
 In short, each `.styl` file is a configuration, targeting one scenario, and produces CSS file(s).
 
@@ -343,6 +343,8 @@ const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneThemeE
 
 ## Design CSS for a New Theme
 
+This project utitlizes [Stylus](http://stylus-lang.com/) language to generate CSS files easily, and are organaized into Stylus components.
+
 ### Steps
 
 1. Create a `.styl` file under `./source/stylus/markdown-style-scenarios/` folder, or a sub-folder if prefer.
@@ -395,12 +397,12 @@ const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneThemeE
 
 ### Code Blocks that are able to Colorize
 
-See [code-blocks-theming.md](./docs/refs/code-blocks-theming.md).
+See [code-blocks-theming.md](./docs/refs/en-US/code-blocks-theming.md).
 
 
 ### All Stylus Variables
 
-See [stylus-variable-default-values.md](./docs/refs/stylus-variable-default-values.md).
+See [stylus-variable-default-values.md](./docs/refs/en-US/stylus-variable-default-values.md).
 
 
 ## NPM Scripts
