@@ -2,18 +2,20 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "wulechuan <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "A collection of CSS themes for Markdown generated HTML contents.",
   "directories": {
     "doc": "docs"
   },
   "main": "index.js",
   "scripts": {
-    "start": "gulp buildAndWatch",
-    "build": "gulp buildOnce",
-    "clean": "gulp clean",
+    "start": "gulp --silent buildAndWatch",
+    "build": "gulp --silent buildOnce",
+    "clean": "gulp --silent clean",
+    "start2": "gulp buildAndWatch",
+    "build2": "gulp buildOnce",
+    "clean2": "gulp clean",
     "dev-1": "set theOnlyStylToBuild=vscode/vscode-_default && gulp buildOnce",
-    "index": "node ./index.js",
     "test": "node ./test/try-results.js"
   },
   "keywords": [
@@ -49,7 +51,6 @@
     "esm": "^3.2.25",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
-    "gulp-if": "^3.0.0",
     "gulp-pipe": "^1.0.4",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",

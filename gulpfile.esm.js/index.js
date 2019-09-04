@@ -1,16 +1,16 @@
 import chalk from 'chalk'
 
-import
-    buildHighOrderTasksForABatchOfTaskSettings
-from './lib/tasks-build-3-types-of-high-order-tasks'
+import buildHighOrderTasksForABatchOfTaskSettings
+    from './lib/tasks-build-3-types-of-high-order-tasks'
 
-import
-    allStylusTasksSettingsForAllThemes
-from './tasks/stylus/2-create-all-task-settings-for-all-themes'
+import allStylusTasksSettingsForAllThemes
+    from './tasks/stylus/2-create-all-task-settings-for-all-themes'
 
-import
-    allJsTasksSettings
-from './tasks/js/create-all-js-task-settings'
+import allJsTasksSettings
+    from './tasks/js/create-all-js-task-settings'
+
+import distESLintTaskSettings
+    from './tasks/js/create-dist-eslint-task-settings'
 
 
 
@@ -19,6 +19,7 @@ from './tasks/js/create-all-js-task-settings'
 const allTasksSettings = [
     ...allStylusTasksSettingsForAllThemes,
     ...allJsTasksSettings,
+    distESLintTaskSettings,
 ]
 
 const highOrderTasks = buildHighOrderTasksForABatchOfTaskSettings({

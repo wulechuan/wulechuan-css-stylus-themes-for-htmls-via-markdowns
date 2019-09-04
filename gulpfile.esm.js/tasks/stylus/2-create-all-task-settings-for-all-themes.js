@@ -11,9 +11,8 @@ import {
     allSpecificOptions,
 } from '../../configs/stylus-tasks'
 
-import
-	createTaskSettingsForOneTheme
-from './1-create-task-settings-for-compilation-stylus-of-one-theme'
+import createTaskSettingsForOneTheme
+    from './1-create-task-settings-for-compilation-stylus-of-one-theme'
 
 
 const joinPathPOSIX = path.posix.join
@@ -74,7 +73,7 @@ const allStylusTaskSettingsBuildingOptions = allSpecificOptions
         const outputFileBaseName = `${outputFileBaseNameCommonPrefix}${outputCSSFileBaseName}`
 
         const specificSourceRelativeGlobs = [
-            joinPathPOSIX(specificSourceGlobsCommonSubPath, entryStylusFileSubPath2)
+            joinPathPOSIX(specificSourceGlobsCommonSubPath, entryStylusFileSubPath2),
         ]
 
 

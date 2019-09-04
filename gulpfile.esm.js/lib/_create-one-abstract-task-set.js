@@ -2,9 +2,9 @@ import path from 'path'
 import chalk from 'chalk'
 
 import {
-	src    as gulpRead,
-	dest   as gulpWrite,
-	series as gulpBuildTaskSeries,
+    src    as gulpRead,
+    dest   as gulpWrite,
+    series as gulpBuildTaskSeries,
 } from 'gulp'
 
 import gulpArrayPipe from 'gulp-pipe'
@@ -82,39 +82,39 @@ export default function createOneSetOfTasksForCopyingFiles(options) {
                 buildNewOutput, // [optional] Should be a function if provided.
             },
         */
-	} = options
+    } = options
 
 
 
 
 
     const outputFileName1 = `${outputFileBaseName}.${    outputFileExtWithoutDot}`
-	const outputFileName2 = `${outputFileBaseName}.min.${outputFileExtWithoutDot}`
+    const outputFileName2 = `${outputFileBaseName}.min.${outputFileExtWithoutDot}`
 
-	const outputFilePath1 = joinPathPOSIX(outputFolderPath, outputFileName1)
+    const outputFilePath1 = joinPathPOSIX(outputFolderPath, outputFileName1)
     const outputFilePath2 = joinPathPOSIX(outputFolderPath, outputFileName2)
-    
+
     const allPossibleOutputFilePaths = [
         outputFilePath1,
         outputFilePath2,
     ]
 
     const _relativeGlobsSharedWithOtherTaskSets    = !Array.isArray(relativeGlobsSharedWithOtherTaskSets)    ? [] : relativeGlobsSharedWithOtherTaskSets
-	const _relativeGlobsSpecificallyForThisTaskSet = !Array.isArray(relativeGlobsSpecificallyForThisTaskSet) ? [] : relativeGlobsSpecificallyForThisTaskSet
-	const _extraSourceGlobsToWatch                 = !Array.isArray(extraSourceGlobsToWatch)                 ? [] : extraSourceGlobsToWatch
+    const _relativeGlobsSpecificallyForThisTaskSet = !Array.isArray(relativeGlobsSpecificallyForThisTaskSet) ? [] : relativeGlobsSpecificallyForThisTaskSet
+    const _extraSourceGlobsToWatch                 = !Array.isArray(extraSourceGlobsToWatch)                 ? [] : extraSourceGlobsToWatch
 
-	const allSourceRelativeGlobs = [
-		..._relativeGlobsSharedWithOtherTaskSets,
-		..._relativeGlobsSpecificallyForThisTaskSet,
-	]
+    const allSourceRelativeGlobs = [
+        ..._relativeGlobsSharedWithOtherTaskSets,
+        ..._relativeGlobsSpecificallyForThisTaskSet,
+    ]
 
-	const sourceGlobs = allSourceRelativeGlobs.map(
-		glob => joinPathPOSIX(sourceGlobsRootFolderPath, glob)
-	)
+    const sourceGlobs = allSourceRelativeGlobs.map(
+        glob => joinPathPOSIX(sourceGlobsRootFolderPath, glob)
+    )
 
-	const sourceGlobsToWatch = [
-		...sourceGlobs,
-		..._extraSourceGlobsToWatch,
+    const sourceGlobsToWatch = [
+        ...sourceGlobs,
+        ..._extraSourceGlobsToWatch,
     ]
 
 
@@ -122,33 +122,33 @@ export default function createOneSetOfTasksForCopyingFiles(options) {
 
 
 
-	if (compressions === false) {
-		compressions = {
-			shouldNotOutputUncompressedVersion: false,
+    if (compressions === false) {
+        compressions = {
+            shouldNotOutputUncompressedVersion: false,
             shouldNotOutputCompressedVersion: true,
-		}
-	} else if (compressions === true || !compressions) {
-		compressions = {
-			shouldNotOutputUncompressedVersion: false,
+        }
+    } else if (compressions === true || !compressions) {
+        compressions = {
+            shouldNotOutputUncompressedVersion: false,
             shouldNotOutputCompressedVersion: false,
-		}
-	} else if (typeof compressions !== 'object' || Array.isArray(compressions)) {
-		// What the fuck!
+        }
+    } else if (typeof compressions !== 'object' || Array.isArray(compressions)) {
+        // What the fuck!
     }
 
 
 
 
 
-	const {
+    const {
         compressor1IsEnabled = false,
         compressor1 = null,
         compressorOptions1 = null,
 
         compressor2IsDisabled = false,
         compressor2 = null,
-		compressorOptions2 = null,
-	} = compressions
+        compressorOptions2 = null,
+    } = compressions
 
     let {
         shouldNotOutputUncompressedVersion,
@@ -157,7 +157,7 @@ export default function createOneSetOfTasksForCopyingFiles(options) {
 
 
     const compressor1IsProvidedAndAllowed =   compressor1IsEnabled && typeof compressor1 === 'function'
-	const compressor2IsProvidedAndAllowed = !compressor2IsDisabled && typeof compressor2 === 'function'
+    const compressor2IsProvidedAndAllowed = !compressor2IsDisabled && typeof compressor2 === 'function'
 
     shouldNotOutputUncompressedVersion = !!shouldNotOutputUncompressedVersion
     shouldNotOutputCompressedVersion   = !!shouldNotOutputCompressedVersion
@@ -190,7 +190,7 @@ export default function createOneSetOfTasksForCopyingFiles(options) {
             }${
                 willOutputTwoFiles ? ' (+ .min)' : ''
             }`,
-            ''
+            '',
         ].join('\n')
     }
 
@@ -220,28 +220,28 @@ export default function createOneSetOfTasksForCopyingFiles(options) {
         taskSetDescription,
         taskSetSourceDescription, // Simply a backup, not likely to use.
 
-		outputFolderPath,
-		outputFileBaseName,
-		outputFileName1,
-		outputFileName2,
-		outputFilePath1,
-		outputFilePath2,
-		allPossibleOutputFilePaths,
+        outputFolderPath,
+        outputFileBaseName,
+        outputFileName1,
+        outputFileName2,
+        outputFilePath1,
+        outputFilePath2,
+        allPossibleOutputFilePaths,
 
-		sourceGlobsRootFolderPath, // Simply a backup, not likely to use.
-		sourceGlobs,
+        sourceGlobsRootFolderPath, // Simply a backup, not likely to use.
+        sourceGlobs,
         sourceGlobsToWatch,
 
-		shouldNotOutputUncompressedVersion,
-		shouldNotOutputCompressedVersion,
+        shouldNotOutputUncompressedVersion,
+        shouldNotOutputCompressedVersion,
 
         compressor1IsEnabled,
-		compressor1,
-		compressorOptions1,
+        compressor1,
+        compressorOptions1,
 
         compressor2IsDisabled,
-		compressor2,
-		compressorOptions2,
+        compressor2,
+        compressorOptions2,
 
         taskBodies,
     }
@@ -253,38 +253,38 @@ export default function createOneSetOfTasksForCopyingFiles(options) {
 
 
     function toCleanOldOutputFilesTheDefaultWay() {
-		console.log(`\n${chalk.red('Deleting these files if exist')}:`)
-		allPossibleOutputFilePaths.forEach(filePath => console.log('    ', chalk.yellow(filePath)))
-		return del(allPossibleOutputFilePaths)
+        console.log(`\n${chalk.red('Deleting these files if exist')}:`)
+        allPossibleOutputFilePaths.forEach(filePath => console.log('    ', chalk.yellow(filePath)))
+        return del(allPossibleOutputFilePaths)
     }
 
     function toBuildSourceFilesTheDefaultWay() {
-		console.log(`\n${taskSetDescription}`)
+        console.log(`\n${taskSetDescription}`)
 
-		const pipe = [ gulpRead(sourceGlobs) ]
+        const pipe = [ gulpRead(sourceGlobs) ]
 
         if (typeof sourceContentFirstProcessor === 'function') {
             pipe.push(sourceContentFirstProcessor())
         }
 
-		if (!shouldNotOutputUncompressedVersion) {
-			if (compressor1IsProvidedAndAllowed) {
-				pipe.push(compressor1(compressorOptions1))
-			}
+        if (!shouldNotOutputUncompressedVersion) {
+            if (compressor1IsProvidedAndAllowed) {
+                pipe.push(compressor1(compressorOptions1))
+            }
 
-			pipe.push(rename(outputFileName1))
-			pipe.push(gulpWrite(outputFolderPath))
-		}
-
-		if (!shouldNotOutputCompressedVersion) {
-			if (compressor2IsProvidedAndAllowed) {
-				pipe.push(compressor2(compressorOptions2))
-			}
-
-			pipe.push(rename(outputFileName2))
-			pipe.push(gulpWrite(outputFolderPath))
+            pipe.push(rename(outputFileName1))
+            pipe.push(gulpWrite(outputFolderPath))
         }
-        
-		return gulpArrayPipe(pipe)
-	}
+
+        if (!shouldNotOutputCompressedVersion) {
+            if (compressor2IsProvidedAndAllowed) {
+                pipe.push(compressor2(compressorOptions2))
+            }
+
+            pipe.push(rename(outputFileName2))
+            pipe.push(gulpWrite(outputFolderPath))
+        }
+
+        return gulpArrayPipe(pipe)
+    }
 }

@@ -1,3 +1,5 @@
+/* eslint no-unused-vars: [ 2, { varsIgnorePattern: '.*ContentString$' } ] */
+
 const { // All 5 interfaces are here.
     defaultCSSContentString,
     cssFileEntries,

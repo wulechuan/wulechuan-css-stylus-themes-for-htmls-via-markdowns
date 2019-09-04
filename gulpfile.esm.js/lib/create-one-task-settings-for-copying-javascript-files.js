@@ -7,12 +7,12 @@ export default function createOneSetOfTasksForCopyingJavascriptFiles(options) {
     const {
         taskSetDescription,
         taskSetSourceDescription,
-		sourceGlobs,
-		outputFiles,
-		compressions, // is a required property here, for simplicity
+        sourceGlobs,
+        outputFiles,
+        compressions, // is a required property here, for simplicity
     } = options
 
-	return createOneAbstractTaskSet({
+    return createOneAbstractTaskSet({
         taskSetDescription,
         taskSetSourceDescription,
 
@@ -22,10 +22,10 @@ export default function createOneSetOfTasksForCopyingJavascriptFiles(options) {
         compressions: {
             ...compressions,
 
-			compressor2: gulpTerser,
+            compressor2: gulpTerser,
             compressorOptions2: {
                 // nothing yet
             },
         },
-	})
+    })
 }

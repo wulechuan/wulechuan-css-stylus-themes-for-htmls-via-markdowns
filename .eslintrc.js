@@ -1,28 +1,19 @@
 module.exports = {
     env: {
-        browser: true,
         es6: true,
         node: true,
     },
     extends: 'eslint:recommended',
     parserOptions: {
-        ecmaVersion: 6,
+        ecmaVersion: 2018,
         ecmaFeatures: {
             experimentalObjectRestSpread: true,
             jsx: true,
         },
         sourceType: 'module',
     },
-    plugins: [
-        // 'react',
-    ],
-    globals: {
-        // React: true,
-        // ReactDOM: true,
-        // mountNode: true,
-    },
     rules: {
-        indent: [ 'error', 'tab', {
+        indent: [ 'error', 4, {
             SwitchCase: 1,
             MemberExpression: 1,
         }],
@@ -33,15 +24,14 @@ module.exports = {
         'linebreak-style':[ 0, 'unix' ],
         'no-param-reassign': 0,
         quotes: [ 'error', 'single' ],
-        semi: [ 'error', 'always' ],
-        'max-statements': [ 'warn', 32 ],
+        semi: [ 'error', 'never' ],
+        'max-statements': [ 0, 32 ],
         'multiline-ternary': [ 'error', 'always-multiline' ],
         'no-console': [ 0 ],
         'new-parens': [ 0 ],
         'yoda': [ 'error', 'never' ],
         'comma-dangle': [ 'error', 'always-multiline' ],
         'func-names': [ 0, 'as-needed'],
-        'no-plusplus': 0,
         'no-unused-vars': 'error',
         'no-return-assign': 'error',
         'no-new-func': 'error',
@@ -67,4 +57,4 @@ module.exports = {
         'import/no-unresolved': 0,
         'import/no-extraneous-dependencies': 0,
     },
-};
+}

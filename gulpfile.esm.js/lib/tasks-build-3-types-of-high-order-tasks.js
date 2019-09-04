@@ -1,9 +1,9 @@
 import chalk from 'chalk'
 
 import {
-	series as gulpBuildTaskSeries,
-	parallel as gulpBuildParallelTasks,
-	watch as gulpWatch
+    series   as gulpBuildTaskSeries,
+    parallel as gulpBuildParallelTasks,
+    watch    as gulpWatch,
 } from 'gulp'
 
 
@@ -35,7 +35,7 @@ export default function buildHighOrderTasksForABatchOfTaskSettings({
     const cleanAllOldOuput = gulpBuildTaskSeries(
         function _beforeCleaningEveryThing(cb) {
             if (typeof beforeCleaningEveryThing === 'function') {
-                beforeCleaningEveryThing();
+                beforeCleaningEveryThing()
             }
             cb()
         },
@@ -46,7 +46,7 @@ export default function buildHighOrderTasksForABatchOfTaskSettings({
 
         function _afterCleaningEveryThing(cb) {
             if (typeof afterCleaningEveryThing === 'function') {
-                afterCleaningEveryThing();
+                afterCleaningEveryThing()
             }
             cb()
         }
@@ -55,7 +55,7 @@ export default function buildHighOrderTasksForABatchOfTaskSettings({
     const buildEverythingOnce = gulpBuildTaskSeries(
         function _beforeBuildingEveryThingOnce(cb) {
             if (typeof beforeBuildingEveryThingOnce === 'function') {
-                beforeBuildingEveryThingOnce();
+                beforeBuildingEveryThingOnce()
             }
             cb()
         },
@@ -66,7 +66,7 @@ export default function buildHighOrderTasksForABatchOfTaskSettings({
 
         function _afterBuildingEveryThingOnce(cb) {
             if (typeof afterBuildingEveryThingOnce === 'function') {
-                afterBuildingEveryThingOnce();
+                afterBuildingEveryThingOnce()
             }
             cb()
         }
@@ -75,7 +75,7 @@ export default function buildHighOrderTasksForABatchOfTaskSettings({
     const watchEverything = gulpBuildTaskSeries(
         function startAllWatchers(cb) {
             if (typeof beforeWatchingEveryThing === 'function') {
-                beforeWatchingEveryThing();
+                beforeWatchingEveryThing()
             }
 
             taskSettingsArray.forEach(taskSettings => {

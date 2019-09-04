@@ -26,9 +26,9 @@ function setupAndStartApp() {
         return
     }
 
-    const backToTopLink = document.querySelector(selectorOfBackToTopLink);
+    const backToTopLink = document.querySelector(selectorOfBackToTopLink)
     if (backToTopLink) {
-        backToTopLink.onclick = onBackToTopLinkClick;
+        backToTopLink.onclick = onBackToTopLinkClick
     }
 
     articleRoot.onclick = onArticleClick
