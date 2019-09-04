@@ -13,9 +13,9 @@ export default createOneTaskSettingsForCopyingJavascriptFiles({
     },
 
     outputFiles: {
-        outputFolderPath: './dist/js',
-        outputFileBaseName: '.eslintrc',
-        outputFileExtWithoutDot: 'js',
+        folderPath: './dist/js',
+        fileBaseName: '.eslintrc',
+        fileExtWithoutDot: 'js',
     },
 
     compressions: {

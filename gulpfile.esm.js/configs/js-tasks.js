@@ -13,9 +13,9 @@ export default [
         },
 
         outputFiles: {
-            outputFolderPath: './dist/js',
-            outputFileBaseName: 'table-of-contents-behaviours',
-            outputFileExtWithoutDot: 'js',
+            folderPath: './dist/js',
+            fileBaseName: 'table-of-contents-behaviours',
+            fileExtWithoutDot: 'js',
         },
 
         compressions: {

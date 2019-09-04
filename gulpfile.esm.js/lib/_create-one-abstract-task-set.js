@@ -25,9 +25,9 @@ export default function createOneSetOfTasksForCopyingFiles(options) {
         },
 
         outputFiles: { // [required].
-            outputFolderPath,        // [required] A path string relative to `process.env.PWD`.
-            outputFileBaseName,      // [required] A string.
-            outputFileExtWithoutDot, // [required] A string.
+            folderPath:        outputFolderPath,        // [required] A path string relative to `process.env.PWD`.
+            fileBaseName:      outputFileBaseName,      // [required] A string.
+            fileExtWithoutDot: outputFileExtWithoutDot, // [required] A string.
         },
 
         sourceContentFirstProcessor, // [optional] A function, e.g. stylus, less, sass, etc.

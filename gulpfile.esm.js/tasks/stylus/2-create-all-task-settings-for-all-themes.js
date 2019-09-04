@@ -91,9 +91,9 @@ const allStylusTaskSettingsBuildingOptions = allSpecificOptions
             },
 
             outputFiles: {
-                outputFolderPath,
-                outputFileBaseName,
-                outputFileExtWithoutDot: 'css',
+                folderPath: outputFolderPath,
+                fileBaseName: outputFileBaseName,
+                fileExtWithoutDot: 'css',
             },
 
             compressions: {

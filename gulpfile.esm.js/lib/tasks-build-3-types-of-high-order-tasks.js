@@ -26,13 +26,13 @@ export default function buildHighOrderTasksForABatchOfTaskSettings({
 }) {
     if (!Array.isArray(taskSettingsArray) || taskSettingsArray.length === 0) {
         return {
-            cleanAllOldOuput:    nothingToDo,
+            cleanAllOldOuputs:    nothingToDo,
             buildEverythingOnce: nothingToDo,
             watchEverything:     nothingToDo,
         }
     }
 
-    const cleanAllOldOuput = gulpBuildTaskSeries(
+    const cleanAllOldOuputs = gulpBuildTaskSeries(
         function _beforeCleaningEveryThing(cb) {
             if (typeof beforeCleaningEveryThing === 'function') {
                 beforeCleaningEveryThing()
@@ -92,7 +92,7 @@ export default function buildHighOrderTasksForABatchOfTaskSettings({
 
 
     return {
-        cleanAllOldOuput,
+        cleanAllOldOuputs,
         buildEverythingOnce,
         watchEverything,
     }

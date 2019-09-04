@@ -39,7 +39,7 @@ const highOrderTasks = buildHighOrderTasksForABatchOfTaskSettings({
 
 
 
-export const clean         = highOrderTasks.cleanAllOldOuput
+export const clean         = highOrderTasks.cleanAllOldOuputs
 export const buildOnce     = highOrderTasks.buildEverythingOnce
 export const buildAndWatch = highOrderTasks.watchEverything
 
