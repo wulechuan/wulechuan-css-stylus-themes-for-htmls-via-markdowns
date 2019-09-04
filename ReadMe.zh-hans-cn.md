@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="./dist/css/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
 
-# 吴乐川的 MarkDown 文件样式集
+# 吴乐川的 HTML 文章之样式集
 
 
 [English version of this ReadMe](./ReadMe.md)
