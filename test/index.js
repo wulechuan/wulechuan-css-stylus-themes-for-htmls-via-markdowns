@@ -1,16 +1,22 @@
 /* eslint no-unused-vars: [ 2, { varsIgnorePattern: '.*ContentString(ButMinified)?$' } ] */
 
 const { // All 5 interfaces are here.
-    defaultCSSContentString,
     cssFileEntries,
     jsFileEntries,
     lookupDictionaryByFileNames,
+
+    syncGetDefaultCSSContentString,
     syncReadContentOfOneThemeEntry,
 } = require('..') // require this module
 
 console.log('-'.repeat(60))
-console.log('All available files in @wulechuan/css-stylus-markdown-themes:', Object.keys(lookupDictionaryByFileNames))
+console.log(
+    'All available files in @wulechuan/css-stylus-markdown-themes:',
+    Object.keys(lookupDictionaryByFileNames)
+)
 console.log('-'.repeat(60))
+
+const theDefaultCSSContentString = syncGetDefaultCSSContentString()
 
 const alsoTheDefaultCSSContentString = syncReadContentOfOneThemeEntry(
     'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
@@ -32,7 +38,7 @@ const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneThemeE
     'table-of-contents-behaviours.min.js'
 )
 
-console.log(defaultCSSContentString)
+console.log(theDefaultCSSContentString)
 // console.log(alsoTheDefaultCSSContentString)
 // console.log(typoraCSSContentString)
 // console.log(the7thThemeContentString)

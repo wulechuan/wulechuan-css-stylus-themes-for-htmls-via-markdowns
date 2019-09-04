@@ -31,9 +31,11 @@ const lookupDictionaryByFileNames = cssFileEntries.concat(jsFileEntries).reduce(
     return dict
 }, {})
 
-const defaultCSSContentString = syncReadContentOfOneThemeEntry(
-    'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
-)
+function syncGetDefaultCSSContentString() {
+    return syncReadContentOfOneThemeEntry(
+        'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
+    )
+}
 
 
 // console.log('--------------')
@@ -42,13 +44,13 @@ const defaultCSSContentString = syncReadContentOfOneThemeEntry(
 // console.log( jsFilePaths)
 // console.log('--------------')
 
-
 module.exports = {
-    defaultCSSContentString,
-    cssFileEntries,
-    jsFileEntries,
-    lookupDictionaryByFileNames,
-    syncReadContentOfOneThemeEntry,
+    cssFileEntries,                 // An array of object(s).
+    jsFileEntries,                  // An array of object(s).
+    lookupDictionaryByFileNames,    // An object acts as a dictionary.
+
+    syncGetDefaultCSSContentString, // A method that returns a string.
+    syncReadContentOfOneThemeEntry, // A method that returns a string.
 }
 
 

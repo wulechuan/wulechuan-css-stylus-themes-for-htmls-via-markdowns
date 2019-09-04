@@ -308,16 +308,22 @@ Simply use any Javascript file located under `./dist/js` folder.
 
 ```js
 const { // All 5 interfaces are here.
-    defaultCSSContentString,
-    cssFileEntries,
-    jsFileEntries,
-    lookupDictionaryByFileNames,
-    syncReadContentOfOneThemeEntry,
+    cssFileEntries,                 // An array of object(s).
+    jsFileEntries,                  // An array of object(s).
+    lookupDictionaryByFileNames,    // An object as a dictionary.
+
+    syncGetDefaultCSSContentString, // A method that returns a string.
+    syncReadContentOfOneThemeEntry, // A method that returns a string.
 } = require('@wulechuan/css-stylus-markdown-themes') // require this module
 
 console.log('-'.repeat(60))
-console.log('All available files in @wulechuan/css-stylus-markdown-themes:', Object.keys(lookupDictionaryByFileNames))
+console.log(
+    'All available files in @wulechuan/css-stylus-markdown-themes:',
+    Object.keys(lookupDictionaryByFileNames)
+)
 console.log('-'.repeat(60))
+
+const theDefaultCSSContentString = syncGetDefaultCSSContentString()
 
 const alsoTheDefaultCSSContentString = syncReadContentOfOneThemeEntry(
     'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'

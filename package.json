@@ -2,7 +2,7 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "wulechuan <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "4.0.2",
+  "version": "5.0.0",
   "description": "A collection of CSS themes for Markdown generated HTML contents.",
   "directories": {
     "doc": "docs"
@@ -17,7 +17,7 @@
     "build2": "gulp buildOnce",
     "clean2": "gulp clean",
     "dev-1": "set theOnlyStylToBuild=vscode/vscode-_default && gulp buildOnce",
-    "test": "node ./test/try-results.js"
+    "test": "npm run eslint && node ./test/index.js"
   },
   "keywords": [
     "markdown",

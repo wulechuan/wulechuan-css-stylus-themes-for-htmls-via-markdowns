@@ -293,16 +293,22 @@
 
 ```js
 const { // 全部接口如下，共 5 个。
-    defaultCSSContentString,
-    cssFileEntries,
-    jsFileEntries,
-    lookupDictionaryByFileNames,
-    syncReadContentOfOneThemeEntry,
+    cssFileEntries,                 // 这是一个数组，其成员均为简易文件描述对象。
+    jsFileEntries,                  // 这是一个数组，其成员均为简易文件描述对象。
+    lookupDictionaryByFileNames,    // 这是一个对象，用于依据【文件名】检索简易文件描述对象。
+
+    syncGetDefaultCSSContentString, // 这是一个方法函数，返回一个字符串。
+    syncReadContentOfOneThemeEntry, // 这是一个方法函数，返回一个字符串。
 } = require('@wulechuan/css-stylus-markdown-themes') // require 本模块
 
 console.log('-'.repeat(60))
-console.log('@wulechuan/css-stylus-markdown-themes 提供的所有主题之名称如下：', Object.keys(lookupDictionaryByFileNames))
+console.log(
+    'All available files in @wulechuan/css-stylus-markdown-themes:',
+    Object.keys(lookupDictionaryByFileNames)
+)
 console.log('-'.repeat(60))
+
+const theDefaultCSSContentString = syncGetDefaultCSSContentString()
 
 const alsoTheDefaultCSSContentString = syncReadContentOfOneThemeEntry(
     'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
