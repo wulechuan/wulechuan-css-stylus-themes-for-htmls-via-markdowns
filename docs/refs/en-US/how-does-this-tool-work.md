@@ -18,7 +18,7 @@ I designed a flex framework. Upon that there are several provided [Stylus](http:
 
 **In short, each `.styl` file is a configuration, targeting one scenario, and produces CSS file(s).**
 
-> What is a so-called scenario? See [Introduction](./introduction.md).
+> What is a so-called scenario? See [Introduction](./introduction.md#scenarios).
 
 
 For examples:

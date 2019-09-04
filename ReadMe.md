@@ -37,12 +37,13 @@
 
 ## Usage
 
-### Manually get CSS Files
+### Manually get Files
+
+#### CSS Files
 
 Simply use any CSS file located under `./dist/css` folder.
 
-
-### Manually get Javascript Files
+### Javascript File(s)
 
 Simply use any Javascript file located under `./dist/js` folder.
 

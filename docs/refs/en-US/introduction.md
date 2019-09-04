@@ -15,7 +15,7 @@
 This is a collection of themes that each
 can be applied to shade any `Markdown` generated `HTML` contents.
 
-A picture paints a thousand words. If you know what this tool provides, and are eager to see some visual examples, check [Application Examples](./application-examples).
+A picture paints a thousand words. If you know what this tool provides, and are eager to see some visual examples, check [Application Examples](./application-examples.md).
 
 
 ### Why does this Tool Exist

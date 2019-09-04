@@ -12,7 +12,7 @@
 
 ## Supported scenarios So Far
 
-What are so-called scenarios? See [Introduction](./introduction.md).
+What are so-called scenarios? See [Introduction](./introduction.md#scenarios).
 
 There're 4 scenarios supported so far.
 
