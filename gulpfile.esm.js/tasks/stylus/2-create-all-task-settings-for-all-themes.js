@@ -58,7 +58,7 @@ const allStylusTaskSettingsBuildingOptions = allSpecificOptions
         } = options
 
         if (shouldNotOutputUncompressedVersion && shouldNotOutputCompressedVersion) {
-            throw new RangeError(`Why don\'t we output anything for "${entryStylusFileSubPath}"?`)
+            throw new RangeError(`Why don't we output anything for "${entryStylusFileSubPath}"?`)
         }
 
         if (!shouldNotOutputUncompressedVersion) {

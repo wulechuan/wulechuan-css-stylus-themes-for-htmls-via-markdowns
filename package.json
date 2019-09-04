@@ -9,6 +9,7 @@
   },
   "main": "index.js",
   "scripts": {
+    "eslint": "eslint    ./gulpfile.esm.js/**/*.js    ./test/*.js    ./source/js/**/*.js    ./index.js",
     "start": "gulp --silent buildAndWatch",
     "build": "gulp --silent buildOnce",
     "clean": "gulp --silent clean",

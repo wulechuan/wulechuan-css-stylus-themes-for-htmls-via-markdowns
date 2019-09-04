@@ -1,6 +1,6 @@
 const globby = require('globby')
 const path = require('path')
-const fs = require('fs');
+const fs = require('fs')
 
 const distFolderSubPath = './dist'
 const cssDistFolderName = 'css'
@@ -13,7 +13,7 @@ const joinPathPOSIX = path.posix.join
 
 const { sync: syncGetFiles } = globby
 
-const readFileSync = fs.readFileSync
+const { readFileSync } = fs
 
 
 
