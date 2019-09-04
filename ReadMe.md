@@ -43,7 +43,7 @@
 
 Simply use any CSS file located under `./dist/css` folder.
 
-### Javascript File(s)
+#### Javascript File(s)
 
 Simply use any Javascript file located under `./dist/js` folder.
 
