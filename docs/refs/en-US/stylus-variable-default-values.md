@@ -10,7 +10,9 @@
 - Nothing yet.
 
 
-## Stylus Variable Default Values
+## Stylus Variables
+
+### Default Values
 
 ```stylus
 // Empty means no secondary title at all.

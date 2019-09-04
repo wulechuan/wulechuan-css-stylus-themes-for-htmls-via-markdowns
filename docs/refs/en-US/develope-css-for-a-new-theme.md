@@ -69,12 +69,12 @@ This project utitlizes [Stylus](http://stylus-lang.com/) language to generate CS
 
 ### Code Blocks that are able to Colorize
 
-See [code-blocks-theming.md](./docs/refs/en-US/code-blocks-theming.md).
+See [code-blocks-theming.md](./code-blocks-theming.md).
 
 
 ### All Stylus Variables
 
-See [stylus-variable-default-values.md](./docs/refs/en-US/stylus-variable-default-values.md).
+See [stylus-variable-default-values.md](./stylus-variable-default-values.md).
 
 
 

@@ -31,6 +31,7 @@
 - [How does this Tool Work](./docs/refs/en-US/how-does-this-tool-work.md)
 - [Application Examples](./docs/refs/en-US/application-examples.md)
 - [Supported Scenarios so far](./docs/refs/en-US/supported-scenarios.md)
+- [Develope CSS for a New Theme](./docs/refs/en-US/develope-css-for-a-new-theme.md)
 
 
 
