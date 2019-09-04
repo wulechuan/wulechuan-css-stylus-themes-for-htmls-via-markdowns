@@ -59,7 +59,7 @@ const { // 全部接口如下，共 5 个。
     lookupDictionaryByFileNames,    // 这是一个对象，用于依据【文件名】检索简易文件描述对象。
 
     syncGetDefaultCSSContentString, // 这是一个方法函数，返回一个字符串。
-    syncReadContentOfOneThemeEntry, // 这是一个方法函数，返回一个字符串。
+    syncReadContentOfOneFileEntry,  // 这是一个方法函数，返回一个字符串。
 } = require('@wulechuan/css-stylus-markdown-themes') // require 本模块
 
 console.log('-'.repeat(60))
@@ -71,23 +71,23 @@ console.log('-'.repeat(60))
 
 const theDefaultCSSContentString = syncGetDefaultCSSContentString()
 
-const alsoTheDefaultCSSContentString = syncReadContentOfOneThemeEntry(
+const alsoTheDefaultCSSContentString = syncReadContentOfOneFileEntry(
     'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
 )
 
-const typoraCSSContentString = syncReadContentOfOneThemeEntry(
+const typoraCSSContentString = syncReadContentOfOneFileEntry(
     'wulechuan-styles-for-html-via-markdown--typora.default.css'
 )
 
-const the7thThemeContentString = syncReadContentOfOneThemeEntry(
+const the7thThemeContentString = syncReadContentOfOneFileEntry(
     cssFileEntries[6]
 )
 
-const theOnlyJavascriptContentString = syncReadContentOfOneThemeEntry(
+const theOnlyJavascriptContentString = syncReadContentOfOneFileEntry(
     jsFileEntries[0]
 )
 
-const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneThemeEntry(
+const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneFileEntry(
     'table-of-contents-behaviours.min.js'
 )
 ```

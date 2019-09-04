@@ -32,7 +32,7 @@ const lookupDictionaryByFileNames = cssFileEntries.concat(jsFileEntries).reduce(
 }, {})
 
 function syncGetDefaultCSSContentString() {
-    return syncReadContentOfOneThemeEntry(
+    return syncReadContentOfOneFileEntry(
         'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
     )
 }
@@ -50,7 +50,7 @@ module.exports = {
     lookupDictionaryByFileNames,    // An object acts as a dictionary.
 
     syncGetDefaultCSSContentString, // A method that returns a string.
-    syncReadContentOfOneThemeEntry, // A method that returns a string.
+    syncReadContentOfOneFileEntry,  // A method that returns a string.
 }
 
 
@@ -65,7 +65,7 @@ function processOneDistFile(fileAbsolutePath) {
     }
 }
 
-function syncReadContentOfOneThemeEntry(input) {
+function syncReadContentOfOneFileEntry(input) {
     let entry
     let fileName
 

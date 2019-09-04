@@ -6,7 +6,7 @@ const { // All 5 interfaces are here.
     lookupDictionaryByFileNames,
 
     syncGetDefaultCSSContentString,
-    syncReadContentOfOneThemeEntry,
+    syncReadContentOfOneFileEntry,
 } = require('..') // require this module
 
 console.log('-'.repeat(60))
@@ -18,23 +18,23 @@ console.log('-'.repeat(60))
 
 const theDefaultCSSContentString = syncGetDefaultCSSContentString()
 
-const alsoTheDefaultCSSContentString = syncReadContentOfOneThemeEntry(
+const alsoTheDefaultCSSContentString = syncReadContentOfOneFileEntry(
     'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
 )
 
-const typoraCSSContentString = syncReadContentOfOneThemeEntry(
+const typoraCSSContentString = syncReadContentOfOneFileEntry(
     'wulechuan-styles-for-html-via-markdown--typora.default.css'
 )
 
-const the7thThemeContentString = syncReadContentOfOneThemeEntry(
+const the7thThemeContentString = syncReadContentOfOneFileEntry(
     cssFileEntries[6]
 )
 
-const theOnlyJavascriptContentString = syncReadContentOfOneThemeEntry(
+const theOnlyJavascriptContentString = syncReadContentOfOneFileEntry(
     jsFileEntries[0]
 )
 
-const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneThemeEntry(
+const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneFileEntry(
     'table-of-contents-behaviours.min.js'
 )
 
