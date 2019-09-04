@@ -5,5 +5,6 @@ gulpfile.js
 Gulpfile.js
 source
 test
+.eslintignore
 .eslintrc.js
 ReadMe.zh-hans-cn.md
