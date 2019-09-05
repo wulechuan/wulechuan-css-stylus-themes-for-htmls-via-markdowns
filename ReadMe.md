@@ -106,11 +106,11 @@ The picture below showcases how does an article look and feel as the default css
 
 For more pictures, see [Application Examples](./docs/refs/en-US/application-examples.md).
 
-- Snapshot in a wide window (TOC collapsed)
-
-    [![](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-collapsed.png)](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-collapsed.png)
 
 
+[![](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-collapsed.png)](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-collapsed.png)
+
+<center>Snapshot in a wide window (TOC collapsed)</center>
 
 
 ---

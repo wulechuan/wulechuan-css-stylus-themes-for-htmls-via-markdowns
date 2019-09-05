@@ -1,5 +1,9 @@
+import {
+    cssDistFolderRelativePath,
+} from '../../global-config'
+
 export const sourceGlobsRootFolderPath        = './source/themes/stylus'
-export const outputFolderPath                 = './dist/css'
+export const outputFolderPath                 = cssDistFolderRelativePath
 export const specificSourceGlobsCommonSubPath = 'markdown-style-scenarios'
 export const outputFileBaseNameCommonPrefix   = 'wulechuan-styles-for-html-via-markdown'
 

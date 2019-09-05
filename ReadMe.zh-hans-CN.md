@@ -103,11 +103,10 @@ const stillTheOnlyTOCJavascriptContentStringButNotMinified = syncGetContentStrin
 
 一图胜千言。下图展示了一篇应用了本工具之默认 CSS 样式的文章之样貌。更多例图，见《[应用效果示例](./docs/refs/zh-hans-CN/application-examples.md)》。
 
-- 窗口较宽时的效果（纲要列表已收叠）
 
-    [![](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.png)](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.png)
+[![](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.png)](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.png)
 
-
+<center>窗口较宽时的效果（纲要列表已收叠）</center>
 
 
 

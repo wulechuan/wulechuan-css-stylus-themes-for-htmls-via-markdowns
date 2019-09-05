@@ -18,11 +18,11 @@ I've purposely prepared an example markdown article. I generate an HTML file out
 
 ### Raw MarkDown
 
-- [en-US.md](../../examples/source-markdown-files/en-US.md)
+- [default-theming-example.en-US.md](../../examples/source-markdown-files/default-theming-example.en-US.md)
 
 ### Generated HTML File
 
-- [HTML](../../examples/rendered/html/default-theming-example-en-us.html)
+- [default-theming-example.en-us.html](../../examples/rendered/html/default-theming-example.en-us.html)
 
 ### HTML Snapshots(Pictures)
 

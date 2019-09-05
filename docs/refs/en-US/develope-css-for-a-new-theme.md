@@ -192,7 +192,9 @@ To lint all discovered Javascript files according to these globs:
 - `./.eslintrc.js`
 - `./gulpfile.esm.js/**/*.js`
 - `./test/*.js`
-- `./source/js/**/*.js`
+- `./source/module/**/*.js`
+- `./source/themes/js/**/*.js`
+- `./global-config.js`
 - `./index.js`
 
 The famous [eslint](https://eslint.org) empowers this feature.

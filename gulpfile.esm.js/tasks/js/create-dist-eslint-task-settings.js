@@ -1,3 +1,7 @@
+import {
+    jsDistFolderRelativePath,
+} from '../../../global-config'
+
 import createOneTaskSettingsForCopyingJavascriptFiles
     from '../../lib/create-one-task-settings-for-copying-javascript-files'
 
@@ -13,7 +17,7 @@ export default createOneTaskSettingsForCopyingJavascriptFiles({
     },
 
     outputFiles: {
-        folderPath: './dist/js',
+        folderPath: jsDistFolderRelativePath,
         fileBaseName: '.eslintrc',
         fileExtWithoutDot: 'js',
     },

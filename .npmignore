@@ -3,7 +3,8 @@ docs
 gulpfile.esm.js
 gulpfile.js
 Gulpfile.js
-source
+source/module/.eslintrc.js
+source/themes
 test
 .eslintignore
 .eslintrc.js

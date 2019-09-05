@@ -1,7 +1,7 @@
-export default [
+module.exports = [
     {
         anyOfTheseDistCSS: [
-            /.*--with-toc(.min)?.css$/,
+            /.*--with-toc(\.min)?\.css$/,
         ],
 
         shouldPairAllTheseDistJavascripts: [

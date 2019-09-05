@@ -18,11 +18,11 @@
 
 ### 原始 MarkDown 范文
 
-- [zh-Hans-CN.md](../../examples/source-markdown-files/zh-Hans-CN.md)
+- [default-theming-example.zh-hans-CN.md](../../examples/source-markdown-files/default-theming-example.zh-hans-CN.md)
 
 ### 由 MarkDown 范文生成的 HTML 版本的范文
 
-- [HTML](../../examples/rendered/html/default-theming-example-zh-hans-cn.html)
+- [default-theming-example.zh-hans-cn.html](../../examples/rendered/html/default-theming-example.zh-hans-cn.html)
 
 
 ### HTML 范文的截图

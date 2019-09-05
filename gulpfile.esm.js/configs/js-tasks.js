@@ -1,3 +1,7 @@
+import {
+    jsDistFolderRelativePath,
+} from '../../global-config'
+
 export default [
     {
         taskSetSourceDescription: 'source/themes/js/table-of-contents-behaviours.js',
@@ -13,7 +17,7 @@ export default [
         },
 
         outputFiles: {
-            folderPath: './dist/js',
+            folderPath: jsDistFolderRelativePath,
             fileBaseName: 'table-of-contents-behaviours',
             fileExtWithoutDot: 'js',
         },

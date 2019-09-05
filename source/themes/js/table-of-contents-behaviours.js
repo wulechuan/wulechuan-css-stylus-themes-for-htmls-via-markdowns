@@ -1,6 +1,4 @@
-setupAndStartApp()
-
-function setupAndStartApp() {
+(function setupAndStartApp() {
     const cssClassNameTOCExists            = 'markdown-article-toc-exists'
     const cssClassNameTOCIsVisible         = 'markdown-article-toc-is-visible'
     const cssClassNameTOCItemHasNestedList = 'has-nested-toc-list'
@@ -178,4 +176,4 @@ function setupAndStartApp() {
             return false
         }
     }
-}
+})()

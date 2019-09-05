@@ -204,7 +204,9 @@ npm run dev-1
 - `./.eslintrc.js`
 - `./gulpfile.esm.js/**/*.js`
 - `./test/*.js`
-- `./source/js/**/*.js`
+- `./source/module/**/*.js`
+- `./source/themes/js/**/*.js`
+- `./global-config.js`
 - `./index.js`
 
 

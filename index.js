@@ -2,29 +2,35 @@ const globby = require('globby')
 const path = require('path')
 const fs = require('fs')
 
-const distFolderSubPath = './dist'
-const cssDistFolderName = 'css'
-const jsDistFolderName  = 'js'
-
-const thisModuleRootFolderPath = path.dirname(require.resolve('./package.json'))
+const {
+    cssDistFolderRelativePath,
+    jsDistFolderRelativePath,
+} = require('./global-config')
 
 const getBaseNameOf = path.basename
-const joinPathPOSIX = path.posix.join
-
+const { join: joinPathPOSIX} = path.posix
 const { sync: syncGetFiles } = globby
-
 const { readFileSync } = fs
 
 
 
-const cssFileGlobs = joinPathPOSIX(thisModuleRootFolderPath, distFolderSubPath, cssDistFolderName, '**/*.css').replace(/\\/g, '/')
-const  jsFileGlobs = joinPathPOSIX(thisModuleRootFolderPath, distFolderSubPath,  jsDistFolderName, '**/*.js' ).replace(/\\/g, '/')
+
+
+const thisModuleRootFolderPath = path.dirname(require.resolve('./package.json'))
+
+const distCSSToJavascriptPairing = require('./source/module/dist-css-to-js-pairing')
+
+
+const cssFileGlobs = joinPathPOSIX(thisModuleRootFolderPath, cssDistFolderRelativePath, '**/*.css').replace(/\\/g, '/')
+const  jsFileGlobs = joinPathPOSIX(thisModuleRootFolderPath,  jsDistFolderRelativePath, '**/*.js' ).replace(/\\/g, '/')
 
 const cssFilePaths = syncGetFiles(cssFileGlobs)
 const  jsFilePaths = syncGetFiles( jsFileGlobs)
 
 const cssFileEntries = cssFilePaths.map(processOneDistFile)
 const  jsFileEntries =  jsFilePaths.map(processOneDistFile)
+
+cssFileEntries.forEach(pairingJavascriptFilesToOneCSSFile)
 
 const lookupDictionaryByFileNames = cssFileEntries.concat(jsFileEntries).reduce((dict, entry) => {
     dict[entry.fileName] = entry
@@ -34,8 +40,8 @@ const lookupDictionaryByFileNames = cssFileEntries.concat(jsFileEntries).reduce(
 
 // console.log('--------------')
 // console.log(thisModuleRootFolderPath)
-// console.log(cssFilePaths)
-// console.log( jsFilePaths)
+// console.log(cssFileEntries)
+// console.log( jsFileEntries)
 // console.log('--------------')
 
 
@@ -90,6 +96,38 @@ function processOneDistFile(fileAbsolutePath) {
     }
 }
 
+
+
+/**
+ * Adding @property {string[]} pairingJavascriptFiles to input entry object.
+ * @param {Entry} cssFileEntry - The file entry to process
+ */
+function pairingJavascriptFilesToOneCSSFile(cssFileEntry) {
+    const { fileName } = cssFileEntry
+
+    if (!fileName.match(/\.css$/) || cssFileEntry.pairingJavascriptFiles) {
+        return
+    }
+
+    const pairingJavascriptFiles = distCSSToJavascriptPairing.reduce((jsFiles, pair) => {
+        if (pair.anyOfTheseDistCSS.some(cssFileNameRegExp => {
+            return cssFileNameRegExp.test(fileName)
+        })) {
+            jsFiles = [
+                ...jsFiles,
+                ...pair.shouldPairAllTheseDistJavascripts,
+            ]
+        }
+
+        return jsFiles
+    }, [])
+
+    if (pairingJavascriptFiles.length < 1) {
+        return
+    }
+
+    cssFileEntry.pairingJavascriptFiles = pairingJavascriptFiles
+}
 
 
 /**
