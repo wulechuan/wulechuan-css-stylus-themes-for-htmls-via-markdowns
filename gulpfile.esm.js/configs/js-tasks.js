@@ -1,9 +1,9 @@
 export default [
     {
-        taskSetSourceDescription: 'source/js/table-of-contents-behaviours.js',
+        taskSetSourceDescription: 'source/themes/js/table-of-contents-behaviours.js',
 
         sourceGlobs: {
-            rootFolderPath: './source/js',
+            rootFolderPath: './source/themes/js',
 
             // relativeGlobsSharedWithOtherTaskSets: [],
             relativeGlobsSpecificallyForThisTaskSet: [

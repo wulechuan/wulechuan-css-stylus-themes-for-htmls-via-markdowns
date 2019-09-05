@@ -2,10 +2,10 @@ import createOneTaskSettingsForCopyingJavascriptFiles
     from '../../lib/create-one-task-settings-for-copying-javascript-files'
 
 export default createOneTaskSettingsForCopyingJavascriptFiles({
-    taskSetSourceDescription: 'source/js/.eslint.js',
+    taskSetSourceDescription: 'source/themes/js/.eslint.js',
 
     sourceGlobs: {
-        rootFolderPath: './source/js',
+        rootFolderPath: './source/themes/js',
 
         relativeGlobsSpecificallyForThisTaskSet: [
             '.eslintrc.js',
