@@ -31,12 +31,6 @@ const lookupDictionaryByFileNames = cssFileEntries.concat(jsFileEntries).reduce(
     return dict
 }, {})
 
-function syncGetDefaultCSSContentString() {
-    return syncReadContentOfOneFileEntry(
-        'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
-    )
-}
-
 
 // console.log('--------------')
 // console.log(thisModuleRootFolderPath)
@@ -44,18 +38,48 @@ function syncGetDefaultCSSContentString() {
 // console.log( jsFilePaths)
 // console.log('--------------')
 
-module.exports = {
-    cssFileEntries,                 // An array of object(s).
-    jsFileEntries,                  // An array of object(s).
-    lookupDictionaryByFileNames,    // An object acts as a dictionary.
 
-    syncGetDefaultCSSContentString, // A method that returns a string.
-    syncReadContentOfOneFileEntry,  // A method that returns a string.
+
+/**
+ * @typedef {Object} Entry
+ * @property {string} fileName
+ * @property {string} fileRelativePath - Useless at present.
+ * @property {string} fileAbsolutePath
+ * @property {string} fileContent - File content will be cached here.
+ */
+
+
+/**
+ * @namespace defaultExports
+ * @property {Entry[]} cssFileEntries
+ * @property {Entry[]} jsFileEntries
+ * @property {object} lookupDictionaryByFileNames
+ */
+module.exports = {
+    cssFileEntries,
+    jsFileEntries,
+
+    /**
+     * @enum {Entry}
+     */
+    lookupDictionaryByFileNames,
+
+    syncGetContentStringOfOneFileEntry,
+    syncGetContentStringOfDefaultCSS,
+    syncGetContentStringOfDefaultTOCJavascript,
 }
 
 
 
-
+/**
+ * To prepare an entry object for a file,
+ * so that, the content of the said file
+ * can be easily fetched via this entry object.
+ * Note that this object also caches the
+ * content of the file once read.
+ * @param {string} fileAbsolutePath - The absolute path of a file to process.
+ * @returns {Entry}
+ */
 function processOneDistFile(fileAbsolutePath) {
     return {
         fileName: getBaseNameOf(fileAbsolutePath),
@@ -65,7 +89,24 @@ function processOneDistFile(fileAbsolutePath) {
     }
 }
 
-function syncReadContentOfOneFileEntry(input) {
+
+/**
+ * To read a file.
+ * @param {string} fileAbsolutePath - The absolute path of a file.
+ * @returns {string}
+ */
+function syncReadFileAsString(fileAbsolutePath) {
+    return readFileSync(fileAbsolutePath).toString()
+}
+
+
+/**
+ * Get content string via a file path or an entry object.
+ * @memberOf defaultExports
+ * @param {Entry|string} input - The input identity of file to get content from.
+ * @returns {string}
+ */
+function syncGetContentStringOfOneFileEntry(input) {
     let entry
     let fileName
 
@@ -92,6 +133,26 @@ function syncReadContentOfOneFileEntry(input) {
     return entry.fileContent
 }
 
-function syncReadFileAsString(filePath) {
-    return readFileSync(filePath).toString()
+
+/**
+ * Get content string of the default css file (minified version).
+ * @memberOf defaultExports
+ * @returns {string}
+ */
+function syncGetContentStringOfDefaultCSS() {
+    return syncGetContentStringOfOneFileEntry(
+        'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
+    )
+}
+
+
+/**
+ * Get content string of the default TOC javascript file (minified version).
+ * @memberOf defaultExports
+ * @returns {string}
+ */
+function syncGetContentStringOfDefaultTOCJavascript() {
+    return syncGetContentStringOfOneFileEntry(
+        'table-of-contents-behaviours.min.js'
+    )
 }

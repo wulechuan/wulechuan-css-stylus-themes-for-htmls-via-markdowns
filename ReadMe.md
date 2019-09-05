@@ -52,13 +52,14 @@ Simply use any Javascript file located under `./dist/js` folder.
 ### Use as a Nodejs Package
 
 ```js
-const { // All 5 interfaces are here.
-    cssFileEntries,                 // An array of object(s).
-    jsFileEntries,                  // An array of object(s).
-    lookupDictionaryByFileNames,    // An object as a dictionary.
+const { // All 6 interfaces are here.
+    cssFileEntries,              // An array of object(s).
+    jsFileEntries,               // An array of object(s).
+    lookupDictionaryByFileNames, // An object as a dictionary.
 
-    syncGetDefaultCSSContentString, // A method that returns a string.
-    syncReadContentOfOneFileEntry,  // A method that returns a string.
+    syncGetContentStringOfOneFileEntry,         // A method that returns a string.
+    syncGetContentStringOfDefaultCSS,           // A method that returns a string.
+    syncGetContentStringOfDefaultTOCJavascript, // A method that returns a string.
 } = require('@wulechuan/css-stylus-markdown-themes') // require this module
 
 console.log('-'.repeat(60))
@@ -68,26 +69,28 @@ console.log(
 )
 console.log('-'.repeat(60))
 
-const theDefaultCSSContentString = syncGetDefaultCSSContentString()
+const theDefaultCSSContentString = syncGetContentStringOfDefaultCSS()
 
-const alsoTheDefaultCSSContentString = syncReadContentOfOneFileEntry(
+const alsoTheDefaultCSSContentString = syncGetContentStringOfOneFileEntry(
     'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
 )
 
-const typoraCSSContentString = syncReadContentOfOneFileEntry(
+const typoraCSSContentString = syncGetContentStringOfOneFileEntry(
     'wulechuan-styles-for-html-via-markdown--typora.default.css'
 )
 
-const the7thThemeContentString = syncReadContentOfOneFileEntry(
+const the7thThemeContentString = syncGetContentStringOfOneFileEntry(
     cssFileEntries[6]
 )
 
-const theOnlyJavascriptContentString = syncReadContentOfOneFileEntry(
-    jsFileEntries[0]
+const theDefaultAndOnlyTOCJavascriptContentString = syncGetContentStringOfDefaultTOCJavascript()
+
+const alsoTheOnlyTOCJavascriptContentString = syncGetContentStringOfOneFileEntry(
+    'table-of-contents-behaviours.min.js'
 )
 
-const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneFileEntry(
-    'table-of-contents-behaviours.min.js'
+const stillTheOnlyTOCJavascriptContentStringButNotMinified = syncGetContentStringOfOneFileEntry(
+    jsFileEntries[0]
 )
 ```
 
@@ -95,7 +98,7 @@ const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneFileEn
 
 
 
-## Examples
+## An Visual Example
 
 A picture paints a thousand words.
 

@@ -53,14 +53,16 @@
 ### 将本项目主文件作为 Nodejs 模块调用
 
 ```js
-const { // 全部接口如下，共 5 个。
-    cssFileEntries,                 // 这是一个数组，其成员均为简易文件描述对象。
-    jsFileEntries,                  // 这是一个数组，其成员均为简易文件描述对象。
-    lookupDictionaryByFileNames,    // 这是一个对象，用于依据【文件名】检索简易文件描述对象。
+const { // 全部接口如下，共 6 个。
+    cssFileEntries,              // 这是一个数组，其成员均为简易文件描述对象。
+    jsFileEntries,               // 这是一个数组，其成员均为简易文件描述对象。
+    lookupDictionaryByFileNames, // 这是一个对象，用于依据【文件名】检索简易文件描述对象。
 
-    syncGetDefaultCSSContentString, // 这是一个方法函数，返回一个字符串。
-    syncReadContentOfOneFileEntry,  // 这是一个方法函数，返回一个字符串。
+    syncGetContentStringOfOneFileEntry,         // 这是一个方法函数，返回一个字符串。
+    syncGetContentStringOfDefaultCSS,           // 这是一个方法函数，返回一个字符串。
+    syncGetContentStringOfDefaultTOCJavascript, // 这是一个方法函数，返回一个字符串。
 } = require('@wulechuan/css-stylus-markdown-themes') // require 本模块
+
 
 console.log('-'.repeat(60))
 console.log(
@@ -69,26 +71,28 @@ console.log(
 )
 console.log('-'.repeat(60))
 
-const theDefaultCSSContentString = syncGetDefaultCSSContentString()
+const theDefaultCSSContentString = syncGetContentStringOfDefaultCSS()
 
-const alsoTheDefaultCSSContentString = syncReadContentOfOneFileEntry(
+const alsoTheDefaultCSSContentString = syncGetContentStringOfOneFileEntry(
     'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
 )
 
-const typoraCSSContentString = syncReadContentOfOneFileEntry(
+const typoraCSSContentString = syncGetContentStringOfOneFileEntry(
     'wulechuan-styles-for-html-via-markdown--typora.default.css'
 )
 
-const the7thThemeContentString = syncReadContentOfOneFileEntry(
+const the7thThemeContentString = syncGetContentStringOfOneFileEntry(
     cssFileEntries[6]
 )
 
-const theOnlyJavascriptContentString = syncReadContentOfOneFileEntry(
-    jsFileEntries[0]
+const theDefaultAndOnlyTOCJavascriptContentString = syncGetContentStringOfDefaultTOCJavascript()
+
+const alsoTheOnlyTOCJavascriptContentString = syncGetContentStringOfOneFileEntry(
+    'table-of-contents-behaviours.min.js'
 )
 
-const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneFileEntry(
-    'table-of-contents-behaviours.min.js'
+const stillTheOnlyTOCJavascriptContentStringButNotMinified = syncGetContentStringOfOneFileEntry(
+    jsFileEntries[0]
 )
 ```
 
@@ -97,11 +101,7 @@ const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneFileEn
 
 ## 应用效果示例
 
-一图胜千言。
-
-下图展示了一篇应用了本工具之默认 CSS 样式的文章之仰慕。
-
-更多例图，见《[应用效果示例](./docs/refs/zh-hans-CN/application-examples.md)》。
+一图胜千言。下图展示了一篇应用了本工具之默认 CSS 样式的文章之样貌。更多例图，见《[应用效果示例](./docs/refs/zh-hans-CN/application-examples.md)》。
 
 - 窗口较宽时的效果（纲要列表已收叠）
 

@@ -1,46 +1,64 @@
-/* eslint no-unused-vars: [ 2, { varsIgnorePattern: '.*ContentString(ButMinified)?$' } ] */
+/* eslint no-unused-vars: [ 2, { varsIgnorePattern: '.*ContentString(ButNotMinified)?$' } ] */
 
-const { // All 5 interfaces are here.
+const { // All 6 interfaces are here.
     cssFileEntries,
     jsFileEntries,
     lookupDictionaryByFileNames,
 
-    syncGetDefaultCSSContentString,
-    syncReadContentOfOneFileEntry,
+    syncGetContentStringOfOneFileEntry,
+    syncGetContentStringOfDefaultCSS,
+    syncGetContentStringOfDefaultTOCJavascript,
 } = require('..') // require this module
 
-console.log('-'.repeat(60))
+const separationLine = '-'.repeat(79)
+const separationLine2 = `\n${separationLine}\n`
+
+
+
+
+console.log(separationLine)
 console.log(
     'All available files in @wulechuan/css-stylus-markdown-themes:',
     Object.keys(lookupDictionaryByFileNames)
 )
-console.log('-'.repeat(60))
+console.log(separationLine)
 
-const theDefaultCSSContentString = syncGetDefaultCSSContentString()
 
-const alsoTheDefaultCSSContentString = syncReadContentOfOneFileEntry(
+
+
+const theDefaultCSSContentString = syncGetContentStringOfDefaultCSS()
+
+const alsoTheDefaultCSSContentString = syncGetContentStringOfOneFileEntry(
     'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
 )
 
-const typoraCSSContentString = syncReadContentOfOneFileEntry(
+const typoraCSSContentString = syncGetContentStringOfOneFileEntry(
     'wulechuan-styles-for-html-via-markdown--typora.default.css'
 )
 
-const the7thThemeContentString = syncReadContentOfOneFileEntry(
+const the7thThemeContentString = syncGetContentStringOfOneFileEntry(
     cssFileEntries[6]
 )
 
-const theOnlyJavascriptContentString = syncReadContentOfOneFileEntry(
+const theDefaultAndOnlyTOCJavascriptContentString = syncGetContentStringOfDefaultTOCJavascript()
+
+const alsoTheOnlyTOCJavascriptContentString = syncGetContentStringOfOneFileEntry(
+    'table-of-contents-behaviours.min.js'
+)
+
+const stillTheOnlyTOCJavascriptContentStringButNotMinified = syncGetContentStringOfOneFileEntry(
     jsFileEntries[0]
 )
 
-const alsoTheOnlyJavascriptContentStringButMinified = syncReadContentOfOneFileEntry(
-    'table-of-contents-behaviours.min.js'
-)
+
 
 console.log(theDefaultCSSContentString)
 // console.log(alsoTheDefaultCSSContentString)
 // console.log(typoraCSSContentString)
 // console.log(the7thThemeContentString)
-// console.log(theOnlyJavascriptContentString)
-// console.log(alsoTheOnlyJavascriptContentStringButMinified)
+
+console.log(separationLine2)
+
+console.log(theDefaultAndOnlyTOCJavascriptContentString)
+// console.log(alsoTheOnlyTOCJavascriptContentString)
+// console.log(stillTheOnlyTOCJavascriptContentStringButNonMinified)
