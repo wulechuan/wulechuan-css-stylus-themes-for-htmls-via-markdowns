@@ -105,7 +105,7 @@ const stillTheOnlyTOCJavascriptContentStringButNotMinified = syncGetContentStrin
 
 - 窗口较宽时的效果（纲要列表已收叠）
 
-    [![](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.jpg)](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.jpg)
+    [![](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.png)](./docs/examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.png)
 
 
 

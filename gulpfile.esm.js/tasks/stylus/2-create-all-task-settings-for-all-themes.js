@@ -108,8 +108,8 @@ const allStylusTaskSettingsBuildingOptions = allSpecificOptions
     })
 
 
-console.log('Source `.styl` file(s) count:      ', chalk.magenta(allStylusTaskSettingsBuildingOptions.length))
-console.log('Should output `.css` file(s) count:', chalk.green(outputCSSFilesCount))
+console.log('Source scenario `.styl` file(s) count:', chalk.magenta(allStylusTaskSettingsBuildingOptions.length))
+console.log('Should output    `.css` file(s) count:', chalk.green(outputCSSFilesCount))
 
 const allStylusTasksSettingsForAllThemes = allStylusTaskSettingsBuildingOptions.map(createTaskSettingsForOneTheme)
 

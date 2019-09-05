@@ -15,25 +15,9 @@
         word-break: break-all;
     }
 
+
     pre {
-
-        & {
-            line-height: 1.5;
-            
-            // for better alignments of list-style dots,
-            // when a <pre> is a child of a <li>.
-            display: inline-block;
-            width: 100%;
-            vertical-align: top;
-            
-            overflow-x: auto;
-            padding: 0;
-            margin-top: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-
-
+        
         &,
         > code, // source code blocks
         > code * {
@@ -43,8 +27,9 @@
             text-align: left !important;
         }
 
+
         > code { // source code blocks
-            line-height: inherit; // 1.5
+            line-height: inherit;
             padding: 0.5em 1em;
             border: none !important;
             margin: 0 !important;
@@ -52,7 +37,7 @@
         }
 
         > code * {
-            // Don't know why. Why it is 0.2em, instead of 0.25em.
+            // Don't know why it is 0.2em, instead of 0.25em.
             // But these paddingTop & paddingBottom below do work.
             padding: 0.2em 0;
         }
@@ -60,10 +45,49 @@
 
 
 
-    blockquote,
-    table {
+    pre {
 
-        pre:last-child {
+        line-height: 1.5;
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        // The 2 lines below are for better alignments
+        // of list-style dots, when a <pre> is a child of a <li>.
+        display: inline-block;
+        vertical-align: top;
+
+
+        width: calc(100% - 2rem);
+        
+        overflow-x: auto;
+        padding: 0;
+        margin-top: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+
+    td,
+    li {
+
+        > pre {
+            margin-left: 0;
+            margin-right: 0;
+            width: 100%;
+        }
+    }
+
+    li {
+
+        > pre:first-child {
+            margin-top: 0; // maybe 0.25em is better?
+        }
+    }
+
+    blockquote,
+    li,
+    td {
+
+        > pre:last-child {
             margin-bottom: 0.5rem;
         }
     }

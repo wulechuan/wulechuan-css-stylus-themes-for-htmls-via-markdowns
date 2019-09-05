@@ -29,7 +29,7 @@
 
 - 窗口较宽时的效果（纲要列表已收叠）
 
-    [![](../../examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.jpg)](../../examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.jpg)
+    [![](../../examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.png)](../../examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.png)
 
 - 窗口较宽时的效果（纲要列表已展开）
 

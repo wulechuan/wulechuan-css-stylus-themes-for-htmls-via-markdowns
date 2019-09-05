@@ -58,18 +58,6 @@ body {
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
-.markdown-article pre {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-.markdown-article td > pre,
-.markdown-article li > pre {
-  margin-left: 0;
-  margin-right: 0;
-}
-.markdown-article li > pre:first-child {
-  margin-top: 0;
-}
 .markdown-article a,
 .markdown-article code,
 .markdown-article kbd {
@@ -101,30 +89,24 @@ body {
   line-height: 1.5;
 }
 .markdown-article h1 {
-  font-size: 3rem;
+  font-size: 3.2rem;
   margin-top: 2em;
   margin-bottom: 0.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
 .markdown-article h2 {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   margin-top: 3em;
   margin-bottom: 0.5em;
 }
-.markdown-article h1 + h2 {
-  margin-top: 1em;
-}
 .markdown-article h3 {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   margin-top: 2em;
   margin-bottom: 0.3em;
 }
-.markdown-article h2 + h3 {
-  margin-top: 1em;
-}
 .markdown-article h4 {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-top: 2em;
   margin-bottom: 0.5em;
 }
@@ -132,6 +114,18 @@ body {
   font-size: 1rem;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
+}
+.markdown-article h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+.markdown-article h5 + h6 {
+  margin-top: 0;
+}
+.markdown-article h4 + h5,
+.markdown-article h3 + h4,
+.markdown-article h2 + h3 {
+  margin-top: -0.5em;
 }
 .markdown-article blockquote > h6,
 .markdown-article th > h6,
@@ -291,7 +285,7 @@ body {
 }
 .markdown-article ul,
 .markdown-article ol {
-  padding-left: 1.5em;
+  padding-left: 2em;
 }
 @-moz-document url-prefix() {
   .markdown-article ul,
@@ -343,16 +337,6 @@ body {
 .markdown-article code {
   word-break: break-all;
 }
-.markdown-article pre {
-  line-height: 1.5;
-  display: inline-block;
-  width: 100%;
-  vertical-align: top;
-  overflow-x: auto;
-  padding: 0;
-  margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
-}
 .markdown-article pre,
 .markdown-article pre > code,
 .markdown-article pre > code * {
@@ -371,8 +355,30 @@ body {
 .markdown-article pre > code * {
   padding: 0.2em 0;
 }
-.markdown-article blockquote pre:last-child,
-.markdown-article table pre:last-child {
+.markdown-article pre {
+  line-height: 1.5;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - 2rem);
+  overflow-x: auto;
+  padding: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.markdown-article td > pre,
+.markdown-article li > pre {
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+}
+.markdown-article li > pre:first-child {
+  margin-top: 0;
+}
+.markdown-article blockquote > pre:last-child,
+.markdown-article li > pre:last-child,
+.markdown-article td > pre:last-child {
   margin-bottom: 0.5rem;
 }
 .markdown-article hr {
@@ -393,7 +399,7 @@ body {
 }
 .markdown-article hr::before {
   left: calc(100% + 0.6rem);
-  top: 50%;
+  top: 49%;
   width: 0.4rem;
   height: 0.4rem;
   margin: -0.2rem 0 0 -0.2rem;
@@ -687,17 +693,17 @@ body {
   text-align: center;
 }
 .markdown-article h2 {
-  font-weight: 400;
+  font-weight: 300;
   text-align: center;
 }
 .markdown-article h3 {
-  font-weight: 500;
+  font-weight: 400;
 }
 .markdown-article h4 {
-  font-weight: bold;
+  font-weight: 400;
 }
 .markdown-article h5 {
-  font-weight: bolder;
+  font-weight: bold;
 }
 .markdown-article h6 {
   font-weight: bolder;
