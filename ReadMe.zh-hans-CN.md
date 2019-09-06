@@ -108,9 +108,16 @@ const stillTheOnlyTOCJavascriptContentStringButNotMinified = syncGetContentStrin
 
 <center>窗口较宽时的效果（纲要列表已收叠）</center>
 
-
-
 ---
+
+
+## 相关推广
+
+鄙人另有一款 NPM 包，名为“[@wulechuan/generate-html-via-markdown](https://www.npmjs.com/package/@wulechuan/generate-html-via-markdown)”。为便于指称，暂将其叫做“甲”。甲可将提供的 MarkDown 字符串转换成 HTML 字符串。此时，甲会采用本工具所预先生成的 CSS 文件来装饰甲自身产生的 HTML 内容。
+
+鄙人还有一款 NPM 包，名为“[@wulechuan/gulp-markdown-to-html](https://www.npmjs.com/package/@wulechuan/gulp-markdown-to-html)”，且作“乙”。乙恰如甲的一个包覆层，使得乙中之功能特性可以适配 [Gulpjs](https://gulpjs.com) 任务流水线。 
+
+
 
 
 

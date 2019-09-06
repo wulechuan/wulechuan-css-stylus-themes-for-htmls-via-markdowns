@@ -116,6 +116,12 @@ For more pictures, see [Application Examples](./docs/refs/en-US/application-exam
 ---
 
 
+## Promotions
+
+There's another npm package of mine, named "[@wulechuan/generate-html-via-markdown](https://www.npmjs.com/package/@wulechuan/generate-html-via-markdown)". For conveniences, let's call it package A. Package A converts a provided MarkDown string into an HTML string, and utilizes the CSS themes provided here to decorate the generated HTML contents.
+
+Yet there is a third npm package of mine, name "[@wulechuan/gulp-markdown-to-html](https://www.npmjs.com/package/@wulechuan/gulp-markdown-to-html)". Let's call it package B. Package B works like a wrapper of the package A, make functionalities of A work just fine in [Gulpjs](https://gulpjs.com) pipelines. 
+
 
 ## TODOS
 
