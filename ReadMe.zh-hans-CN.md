@@ -9,10 +9,10 @@
 
 
 
-## npm 页
+## NPM 页
 
 <dl>
-<dt>npm 包名</dt>
+<dt>NPM 包名</dt>
 <dd>
 
 [@wulechuan/css-stylus-markdown-themes](https://www.npmjs.com/package/@wulechuan/css-stylus-markdown-themes)
