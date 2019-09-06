@@ -40,3 +40,9 @@ I've purposely prepared an example markdown article. I generate an HTML file out
 
 
 ---
+
+
+### Mutlilingual
+
+- [简体中文（ zh-hans-CN ）](../zh-hans-CN/application-examples.md)
+

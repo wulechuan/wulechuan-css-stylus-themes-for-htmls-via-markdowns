@@ -30,19 +30,21 @@ const  jsFilePaths = syncGetFiles( jsFileGlobs)
 const cssFileEntries = cssFilePaths.map(processOneDistFile)
 const  jsFileEntries =  jsFilePaths.map(processOneDistFile)
 
-cssFileEntries.forEach(pairingJavascriptFilesToOneCSSFile)
+cssFileEntries.forEach(pairingJavascriptFileNamesToOneCSSFile)
 
-const lookupDictionaryByFileNames = cssFileEntries.concat(jsFileEntries).reduce((dict, entry) => {
+const allFileEntriesKeyingByFileNames = cssFileEntries.concat(jsFileEntries).reduce((dict, entry) => {
     dict[entry.fileName] = entry
     return dict
 }, {})
 
 
-// console.log('--------------')
-// console.log(thisModuleRootFolderPath)
-// console.log(cssFileEntries)
-// console.log( jsFileEntries)
-// console.log('--------------')
+if (false) { // eslint-disable-line no-constant-condition
+    console.log('-'.repeat(60))
+    // console.log(thisModuleRootFolderPath)
+    console.log(cssFileEntries)
+    // console.log( jsFileEntries)
+    console.log('-'.repeat(60))
+}
 
 
 
@@ -52,6 +54,7 @@ const lookupDictionaryByFileNames = cssFileEntries.concat(jsFileEntries).reduce(
  * @property {string} fileRelativePath - Useless at present.
  * @property {string} fileAbsolutePath
  * @property {string} fileContent - File content will be cached here.
+ * @property {string[]?} pairingJavascriptFileNames - File content will be cached here.
  */
 
 
@@ -60,7 +63,7 @@ const lookupDictionaryByFileNames = cssFileEntries.concat(jsFileEntries).reduce(
  * @namespace defaultExports
  * @property {Entry[]} cssFileEntries
  * @property {Entry[]} jsFileEntries
- * @property {object} lookupDictionaryByFileNames
+ * @property {object} allFileEntriesKeyingByFileNames
  */
 module.exports = {
     cssFileEntries,
@@ -69,7 +72,7 @@ module.exports = {
     /**
      * @enum {Entry}
      */
-    lookupDictionaryByFileNames,
+    allFileEntriesKeyingByFileNames,
 
     syncGetContentStringOfOneFileEntry,
     syncGetContentStringOfDefaultCSS,
@@ -99,17 +102,17 @@ function processOneDistFile(fileAbsolutePath) {
 
 
 /**
- * Adding @property {string[]} pairingJavascriptFiles to input entry object.
- * @param {Entry} cssFileEntry - The file entry to process
+ * Adding @property {string[]} pairingJavascriptFileNames to input entry object.
+ * @param {Entry} cssFileEntry - The file entry to process.
  */
-function pairingJavascriptFilesToOneCSSFile(cssFileEntry) {
+function pairingJavascriptFileNamesToOneCSSFile(cssFileEntry) {
     const { fileName } = cssFileEntry
 
-    if (!fileName.match(/\.css$/) || cssFileEntry.pairingJavascriptFiles) {
+    if (!fileName.match(/\.css$/) || cssFileEntry.pairingJavascriptFileNames) {
         return
     }
 
-    const pairingJavascriptFiles = distCSSToJavascriptPairing.reduce((jsFiles, pair) => {
+    const pairingJavascriptFileNames = distCSSToJavascriptPairing.reduce((jsFiles, pair) => {
         if (pair.anyOfTheseDistCSS.some(cssFileNameRegExp => {
             return cssFileNameRegExp.test(fileName)
         })) {
@@ -122,11 +125,11 @@ function pairingJavascriptFilesToOneCSSFile(cssFileEntry) {
         return jsFiles
     }, [])
 
-    if (pairingJavascriptFiles.length < 1) {
+    if (pairingJavascriptFileNames.length < 1) {
         return
     }
 
-    cssFileEntry.pairingJavascriptFiles = pairingJavascriptFiles
+    cssFileEntry.pairingJavascriptFileNames = pairingJavascriptFileNames
 }
 
 
@@ -157,7 +160,7 @@ function syncGetContentStringOfOneFileEntry(input) {
             fileName = entry.fileName
         } else if (typeof input === 'string') {
             fileName = input
-            entry = lookupDictionaryByFileNames[fileName]
+            entry = allFileEntriesKeyingByFileNames[fileName]
         }
     }
 

@@ -3,7 +3,7 @@
 const { // All 6 interfaces are here.
     cssFileEntries,
     jsFileEntries,
-    lookupDictionaryByFileNames,
+    allFileEntriesKeyingByFileNames,
 
     syncGetContentStringOfOneFileEntry,
     syncGetContentStringOfDefaultCSS,
@@ -19,7 +19,7 @@ const separationLine2 = `\n${separationLine}\n`
 console.log(separationLine)
 console.log(
     'All available files in @wulechuan/css-stylus-markdown-themes:',
-    Object.keys(lookupDictionaryByFileNames)
+    Object.keys(allFileEntriesKeyingByFileNames)
 )
 console.log(separationLine)
 

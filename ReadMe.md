@@ -53,9 +53,9 @@ Simply use any Javascript file located under `./dist/js` folder.
 
 ```js
 const { // All 6 interfaces are here.
-    cssFileEntries,              // An array of object(s).
-    jsFileEntries,               // An array of object(s).
-    lookupDictionaryByFileNames, // An object as a dictionary.
+    cssFileEntries,                  // An array of object(s).
+    jsFileEntries,                   // An array of object(s).
+    allFileEntriesKeyingByFileNames, // An object as a dictionary.
 
     syncGetContentStringOfOneFileEntry,         // A method that returns a string.
     syncGetContentStringOfDefaultCSS,           // A method that returns a string.
@@ -65,7 +65,7 @@ const { // All 6 interfaces are here.
 console.log('-'.repeat(60))
 console.log(
     'All available files in @wulechuan/css-stylus-markdown-themes:',
-    Object.keys(lookupDictionaryByFileNames)
+    Object.keys(allFileEntriesKeyingByFileNames)
 )
 console.log('-'.repeat(60))
 

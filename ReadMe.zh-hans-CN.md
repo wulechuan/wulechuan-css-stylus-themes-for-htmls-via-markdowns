@@ -54,9 +54,9 @@
 
 ```js
 const { // 全部接口如下，共 6 个。
-    cssFileEntries,              // 这是一个数组，其成员均为简易文件描述对象。
-    jsFileEntries,               // 这是一个数组，其成员均为简易文件描述对象。
-    lookupDictionaryByFileNames, // 这是一个对象，用于依据【文件名】检索简易文件描述对象。
+    cssFileEntries,                  // 这是一个数组，其成员均为简易文件描述对象。
+    jsFileEntries,                   // 这是一个数组，其成员均为简易文件描述对象。
+    allFileEntriesKeyingByFileNames, // 这是一个对象，用于依据【文件名】检索简易文件描述对象。
 
     syncGetContentStringOfOneFileEntry,         // 这是一个方法函数，返回一个字符串。
     syncGetContentStringOfDefaultCSS,           // 这是一个方法函数，返回一个字符串。
@@ -67,7 +67,7 @@ const { // 全部接口如下，共 6 个。
 console.log('-'.repeat(60))
 console.log(
     'All available files in @wulechuan/css-stylus-markdown-themes:',
-    Object.keys(lookupDictionaryByFileNames)
+    Object.keys(allFileEntriesKeyingByFileNames)
 )
 console.log('-'.repeat(60))
 

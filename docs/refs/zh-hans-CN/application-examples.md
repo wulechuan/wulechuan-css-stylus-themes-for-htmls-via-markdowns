@@ -39,4 +39,9 @@
 
     [![](../../examples/rendered/snapshots/zh-Hans-CN-窗口较窄时的效果（纲要列表已收叠）.png)](../../examples/rendered/snapshots/zh-Hans-CN-窗口较窄时的效果（纲要列表已收叠）.png)
 
+---
+
+### Mutlilingual
+
+- [English (US)](../en-US/application-examples.md)
 
