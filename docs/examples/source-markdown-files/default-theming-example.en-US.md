@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="../../../dist/css/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
-
 # Wulechuan's MarkDown CSS Styles Examples
 
 

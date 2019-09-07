@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="../../../dist/css/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
-
 # 吴乐川的文章默认样式的示例
 
 <p class="document-author">作者：吴乐川</p>
