@@ -2,7 +2,7 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "wulechuan <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "5.4.0",
+  "version": "5.4.1-prepared",
   "description": "A collection of CSS themes for Markdown generated HTML contents.",
   "directories": {
     "doc": "docs"
@@ -11,12 +11,12 @@
   "scripts": {
     "eslint": "eslint    ./.eslintrc.js    ./gulpfile.esm.js/**/*.js    ./test/*.js    ./source/module/*.js    ./source/themes/js/**/*.js    ./global-config.js    ./index.js",
     "start": "gulp --silent buildAndWatch",
+    "start2": "gulp         buildAndWatch",
     "_build": "gulp --silent buildOnce",
     "build": "npm run _build    &&    set updateExampleDocs=true    &&    node  ./test/try-theme-lookings.js",
+    "build2": "gulp          buildOnce",
     "clean": "gulp --silent clean",
-    "start2": "gulp buildAndWatch",
-    "build2": "gulp buildOnce",
-    "clean2": "gulp clean",
+    "clean2": "gulp         clean",
     "dev-1": "set theOnlyStylToBuild=vscode/vscode-_default && gulp buildOnce",
     "test": "npm  run  eslint    &&    node  ./test/test-index-interfaces.js    &&    node  ./test/try-theme-lookings.js",
     "test1": "set testSingle=true && node  ./test/try-theme-lookings.js"
@@ -48,7 +48,7 @@
     "globby": "^10.0.1"
   },
   "devDependencies": {
-    "@wulechuan/generate-html-via-markdown": "^1.0.1",
+    "@wulechuan/generate-html-via-markdown": "^1.0.3",
     "chalk": "^2.4.2",
     "cssnano": "^4.1.10",
     "del": "^3.0.0",

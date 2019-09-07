@@ -126,12 +126,16 @@ npm run build
 
 > This results in a cleaner console but is difficult to debug gulp scripts.
 
+> `npm run build` will automatically update the example HTML files, as long as the build itself is successful. While `build2` will **NOT** update example HTML files.
+
 
 To run gulp in standard mode, do this:
 
 ```bash
 npm run build2
 ```
+
+> `npm run build2` will **NOT** update example HTML files.
 
 
 

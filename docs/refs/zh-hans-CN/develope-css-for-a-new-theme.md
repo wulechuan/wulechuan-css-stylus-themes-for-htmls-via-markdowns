@@ -133,6 +133,8 @@ npm run build
 
 > 这将令控制台输出更干净简洁，但也带来难以调试 Gulp 脚本的问题。
 
+> `npm run build` 如果执行成功，还会自动更新示例文档的 HTML 版本。但 `build2` 不会更新示例 HTML。
+
 
 要令 Gulp 运行在标准模式，则执行：
 
@@ -141,6 +143,7 @@ npm run build
 npm run build2
 ```
 
+> `npm run build2` 不会更新示例 HTML。
 
 
 #### `clean` 与 `clean2`
