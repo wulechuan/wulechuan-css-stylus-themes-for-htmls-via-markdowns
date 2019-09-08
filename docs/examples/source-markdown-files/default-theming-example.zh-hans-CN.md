@@ -54,6 +54,8 @@
 
 计算机键盘快捷键，其视觉样式如是：<kbd>Ctrl</kbd>+<kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</kbd>；又例：如今，<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>s</kbd> 这一组合键早已广泛用于各种现代计算机软件中，代表（将工作内容或文件）`另存为`（一文件）之功能。
 
+还有时候，有些内容会故意被“杠掉”，即被中划线划去，表示此内容不正确，不应采纳，应作废。例如：~~地球是平的~~。
+
 
 #### 多级列表
 

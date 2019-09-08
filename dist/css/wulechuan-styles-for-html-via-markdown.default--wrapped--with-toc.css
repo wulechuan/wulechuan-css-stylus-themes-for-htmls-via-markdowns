@@ -28,7 +28,7 @@ body {
 }
 @media (max-width: 900px) {
   html {
-    font-size: 16px;
+    font-size: 18px;
   }
   body {
     font-size: 1rem;
@@ -36,14 +36,11 @@ body {
 }
 @media (max-width: 600px) {
   html {
-    font-size: 15px;
+    font-size: 16px;
   }
   body {
     padding: 0;
   }
-}
-.markdown-article {
-  line-height: 1.5;
 }
 .markdown-article h1,
 .markdown-article h2,
@@ -59,9 +56,11 @@ body {
   padding-right: 0.5em;
 }
 .markdown-article a,
-.markdown-article code,
-.markdown-article kbd {
+.markdown-article code {
   font-size: inherit;
+}
+.markdown-article kbd {
+  font-size: 90%;
 }
 .markdown-article a {
   text-decoration: none;
@@ -420,20 +419,20 @@ body {
     font-size: 1.8rem;
   }
   .markdown-article h2 {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
   }
   .markdown-article h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   .markdown-article h4 {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
   .markdown-article h5 {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   .markdown-article ul,
   .markdown-article ol {
-    padding-left: 1.5em;
+    padding-left: 1.8em;
   }
   .markdown-article blockquote {
     margin-left: 0.7rem;
@@ -459,7 +458,7 @@ body {
 }
 .markdown-article {
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.6;
   padding: 6rem 4rem 14rem 4rem;
   max-width: 50rem;
   min-height: 60rem;
@@ -495,8 +494,10 @@ body {
 .markdown-article td > h1 .header-anchor {
   display: none;
 }
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .markdown-article {
+    font-size: 1rem;
+    line-height: 1.8;
     padding: 3rem 2rem 7rem 2rem;
   }
 }
@@ -734,9 +735,11 @@ body {
   border-width: 1px;
 }
 .markdown-article kbd {
-  border-radius: 0.2rem;
-  margin: 0.1em 0.2em;
-  padding: 0.1em 0.3em;
+  border-radius: 0.25rem;
+  margin: -0.15em 0.2em;
+  padding: 0.15em 0.3em;
+  position: relative;
+  top: -0.15em;
 }
 .markdown-article code {
   border-radius: 0.2rem;
@@ -749,6 +752,9 @@ body {
 @media (max-width: 600px) {
   .markdown-article h1 {
     font-weight: 400;
+  }
+  .markdown-article blockquote {
+    font-size: inherit;
   }
 }
 .markdown-article {
@@ -845,10 +851,11 @@ body {
   background-color: transparent !important;
 }
 .markdown-article kbd {
-  color: #fff;
-  border-color: #fff;
-  background-color: #789abc;
-  box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.219);
+  color: #000;
+  background-color: #fff;
+  background-image: linear-gradient(45deg, #fff, #eee);
+  border-color: #bbb #ddd #ddd #bbb;
+  box-shadow: 0rem 0.15rem 0 0.05rem #bbb;
 }
 .markdown-article hr {
   color: rgba(128,128,128,0.45);

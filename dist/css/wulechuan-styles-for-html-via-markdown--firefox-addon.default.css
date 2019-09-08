@@ -33,7 +33,7 @@ body {
 }
 @media (max-width: 900px) {
   html {
-    font-size: 16px;
+    font-size: 18px;
   }
   body {
     font-size: 1rem;
@@ -41,14 +41,11 @@ body {
 }
 @media (max-width: 600px) {
   html {
-    font-size: 15px;
+    font-size: 16px;
   }
   body {
     padding: 0;
   }
-}
-.markdownRoot {
-  line-height: 1.5;
 }
 h1,
 h2,
@@ -64,9 +61,11 @@ p {
   padding-right: 0.5em;
 }
 a,
-code,
-kbd {
+code {
   font-size: inherit;
+}
+kbd {
+  font-size: 90%;
 }
 a {
   text-decoration: none;
@@ -425,20 +424,20 @@ hr::after {
     font-size: 1.8rem;
   }
   h2 {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
   }
   h3 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
   h4 {
-    font-size: 1rem;
+    font-size: 1.15rem;
   }
   h5 {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   ul,
   ol {
-    padding-left: 1.5em;
+    padding-left: 1.8em;
   }
   blockquote {
     margin-left: 0.7rem;
@@ -464,7 +463,7 @@ hr::after {
 }
 .markdownRoot {
   font-size: 0.9rem;
-  line-height: 1.5;
+  line-height: 1.6;
   padding: 6rem 4rem 14rem 4rem;
   max-width: 50rem;
   min-height: 60rem;
@@ -500,8 +499,10 @@ th > h1 .header-anchor,
 td > h1 .header-anchor {
   display: none;
 }
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .markdownRoot {
+    font-size: 1rem;
+    line-height: 1.8;
     padding: 3rem 2rem 7rem 2rem;
   }
 }
@@ -774,9 +775,11 @@ code {
   border-width: 1px;
 }
 kbd {
-  border-radius: 0.2rem;
-  margin: 0.1em 0.2em;
-  padding: 0.1em 0.3em;
+  border-radius: 0.25rem;
+  margin: -0.15em 0.2em;
+  padding: 0.15em 0.3em;
+  position: relative;
+  top: -0.15em;
 }
 code {
   border-radius: 0.2rem;
@@ -789,6 +792,9 @@ pre {
 @media (max-width: 600px) {
   h1 {
     font-weight: 400;
+  }
+  blockquote {
+    font-size: inherit;
   }
 }
 .markdownRoot {
@@ -885,10 +891,11 @@ pre code {
   background-color: transparent !important;
 }
 kbd {
-  color: #fff;
-  border-color: #fff;
-  background-color: #789abc;
-  box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.219);
+  color: #000;
+  background-color: #fff;
+  background-image: linear-gradient(45deg, #fff, #eee);
+  border-color: #bbb #ddd #ddd #bbb;
+  box-shadow: 0rem 0.15rem 0 0.05rem #bbb;
 }
 hr {
   color: rgba(128,128,128,0.45);
