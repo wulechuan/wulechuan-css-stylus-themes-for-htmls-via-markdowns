@@ -98,7 +98,7 @@ const stillTheOnlyTOCJavascriptContentStringButNotMinified = syncGetContentStrin
 
 
 
-## An Visual Example
+## A Visual Example
 
 A picture paints a thousand words.
 
