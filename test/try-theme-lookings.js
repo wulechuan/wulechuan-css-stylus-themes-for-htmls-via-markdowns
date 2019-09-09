@@ -1,59 +1,39 @@
 const path = require('path')
+const { readFileSync, writeFileSync } = require('fs')
 
 const {
-    readFileSync,
-    writeFileSync,
-    existsSync,
-    mkdirSync,
-} = require('fs')
+    allFileEntriesKeyingByFileNames,
+    syncGetContentStringOfOneFileEntry,
+} = require('..')
+
+const markdownToHTMLConverter = require('@wulechuan/generate-html-via-markdown/core')({
+    themesPeerModuleAllFileEntriesKeyingByFileNames: allFileEntriesKeyingByFileNames,
+    syncGetContentStringOfOneFileOfThePeerModuleOfThemes: syncGetContentStringOfOneFileEntry,
+})
+
+
+
+
+const exampleSourceMarkdonwFilesFolderPath = './docs/examples/source-markdown-files'
+const exampleSourceMarkdownFileNameEnUS = 'default-theming-example.en-US.md'
+const exampleSourceMarkdownFileNameZhHansCN = 'default-theming-example.zh-hans-CN.md'
+
+const exampleOutputHTMLFilesFolderPath = './test/output'
+const exampleOutputHTMLFileNameEnUS = 'default-theming-example.en-us.html'
+const exampleOutputHTMLFileNameZhHansCN = 'default-theming-example.zh-hans-cn.html'
+
+
+
 
 const joinPathPOSIX = path.posix.join
 
+
+
+
 const shouldTestSingle = !!process.env.testSingle && !!process.env.testSingle.match(/^true\s*$/)
-const shouldOutputDefaultThemingExampleToDocsFolder = !shouldTestSingle &&
-    !!process.env.updateExampleDocs &&
-    !!process.env.updateExampleDocs.match(/^true\s*$/)
 
-let outputFilePathEnUS
-let outputFilePathZhHansCN
-
-if (shouldOutputDefaultThemingExampleToDocsFolder) {
-    const realExamplesOutputFolderPath = './docs/examples/rendered/html'
-
-    outputFilePathEnUS =     joinPathPOSIX(
-        realExamplesOutputFolderPath,
-        'default-theming-example.en-us.html'
-    )
-
-    outputFilePathZhHansCN = joinPathPOSIX(
-        realExamplesOutputFolderPath,
-        'default-theming-example.zh-hans-cn.html'
-    )
-} else {
-    const testOutputFolderPath = './test/output'
-
-    if (!existsSync(testOutputFolderPath)) {
-        mkdirSync(testOutputFolderPath)
-    }
-
-    outputFilePathEnUS =     joinPathPOSIX(
-        testOutputFolderPath,
-        'theming-example.en-us.html'
-    )
-
-    outputFilePathZhHansCN = joinPathPOSIX(
-        testOutputFolderPath,
-        'theming-example.zh-hans-cn.html'
-    )
-}
-
-const markdownToHTMLConverter = require('@wulechuan/generate-html-via-markdown')
-
-
-const manipulationsOverHTML =  {
+const manipulationsOverHTML = {
     shouldNotUseInternalCSSThemingFiles: true,
-    // moduleCSSFileNameOfDefaultTheme: 'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css',
-    // moduleCSSFileNameOfDefaultThemeWithTOC: 'wulechuan-styles-for-html-via-markdown.default--with-toc.min.css',
     absolutePathsOfExtraFilesToEmbedIntoHTML: [
         joinPathPOSIX(process.env.PWD, './dist/css/wulechuan-styles-for-html-via-markdown.default--with-toc.min.css'),
         joinPathPOSIX(process.env.PWD, './dist/js/table-of-contents-behaviours.min.js'),
@@ -63,42 +43,56 @@ const manipulationsOverHTML =  {
 
 
 
-if (!shouldTestSingle) { // eslint-disable-line no-constant-condition
-    const contentOfExampleMarkdownDocEnUS = readFileSync(joinPathPOSIX(
-        './docs/examples/source-markdown-files',
-        'default-theming-example.en-US.md'
-    )).toString()
 
+if (!shouldTestSingle) {
     writeFileSync(
-        outputFilePathEnUS,
-        markdownToHTMLConverter(contentOfExampleMarkdownDocEnUS, {
-            shouldLogVerbosely: true,
+        joinPathPOSIX(
+            exampleOutputHTMLFilesFolderPath,
+            exampleOutputHTMLFileNameEnUS
+        ),
 
-            manipulationsOverHTML: {
-                ...manipulationsOverHTML,
+        markdownToHTMLConverter(
+            readFileSync(joinPathPOSIX(
+                exampleSourceMarkdonwFilesFolderPath,
+                exampleSourceMarkdownFileNameEnUS
+            )).toString(),
 
-                htmlTagLanguage: 'en-US',
-            },
-        })
+            {
+                shouldLogVerbosely: shouldTestSingle,
+
+                manipulationsOverHTML: {
+                    ...manipulationsOverHTML,
+
+                    htmlTagLanguage: 'en-US',
+                },
+            }
+        )
     )
 }
 
+
 if (true) { // eslint-disable-line no-constant-condition
-    const contentOfExampleMarkdownDocZhHansCN = readFileSync(joinPathPOSIX(
-        './docs/examples/source-markdown-files',
-        'default-theming-example.zh-hans-CN.md'
-    )).toString()
-
     writeFileSync(
-        outputFilePathZhHansCN,
-        markdownToHTMLConverter(contentOfExampleMarkdownDocZhHansCN, {
-            // shouldLogVerbosely: true,
+        joinPathPOSIX(
+            exampleOutputHTMLFilesFolderPath,
+            exampleOutputHTMLFileNameZhHansCN
+        ),
 
-            sundries: {
-                shouldConsoleLogsInChinese: true,
-            },
+        markdownToHTMLConverter(
+            readFileSync(joinPathPOSIX(
+                exampleSourceMarkdonwFilesFolderPath,
+                exampleSourceMarkdownFileNameZhHansCN
+            )).toString(),
 
-            manipulationsOverHTML,
-        })
+            {
+                shouldLogVerbosely: shouldTestSingle,
+
+                sundries: {
+                    shouldConsoleLogsInChinese: true,
+                },
+
+                manipulationsOverHTML,
+            }
+        )
     )
 }
