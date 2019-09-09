@@ -359,7 +359,7 @@ body {
   padding: 0.2em 0;
 }
 .markdown-article pre {
-  line-height: 1.5;
+  line-height: 1.6;
   margin-left: 1rem;
   margin-right: 1rem;
   display: inline-block;
@@ -460,6 +460,9 @@ body {
   }
   .markdown-article hr {
     margin: 1.5rem auto 2rem 0;
+  }
+  .markdown-article pre {
+    line-height: 1.5;
   }
 }
 .markdown-article {
