@@ -300,6 +300,7 @@ ol {
   }
 }
 blockquote {
+  font-size: 0.8rem;
   box-sizing: border-box;
   max-width: 100%;
   max-width: calc(100% - 2rem);
@@ -423,6 +424,14 @@ hr::after {
   background-image: inherit !important;
   transform: scaleX(-1);
 }
+@media (max-width: 900px) {
+  blockquote {
+    font-size: 0.9rem;
+  }
+  pre {
+    line-height: 1.5;
+  }
+}
 @media (max-width: 600px) {
   h1 {
     font-size: 1.8rem;
@@ -444,6 +453,7 @@ hr::after {
     padding-left: 1.8em;
   }
   blockquote {
+    font-size: 100%;
     margin-left: 0.7rem;
     margin-right: 0.5rem;
   }
@@ -460,9 +470,6 @@ hr::after {
   }
   hr {
     margin: 1.5rem auto 2rem 0;
-  }
-  pre {
-    line-height: 1.5;
   }
 }
 .markdown-article {
@@ -587,7 +594,6 @@ img {
 blockquote {
   border-width: 0 0 0 0.3rem;
   border-radius: 0.3rem;
-  font-size: 0.8rem;
 }
 table {
   border-width: 6px;
@@ -624,9 +630,6 @@ pre {
 @media (max-width: 600px) {
   h1 {
     font-weight: 400;
-  }
-  blockquote {
-    font-size: inherit;
   }
 }
 .markdown-article {

@@ -1,4 +1,15 @@
 {__wrappingSelectorOf_markdownArticleLayoutRules} {
+    
+    @media (max-width: 900px) {
+
+        blockquote {
+            font-size: 0.9rem;
+        }
+
+        pre {
+            line-height: 1.5;
+        }
+    }
 
     @media (max-width: 600px) {
         h1 {
@@ -26,6 +37,7 @@
         }
 
         blockquote {
+            font-size: 100%;
             margin-left: 0.7rem;
             margin-right: 0.5rem;
         }
@@ -49,10 +61,6 @@
 
         hr {
             margin: 1.5rem auto 2rem 0;
-        }
-
-        pre {
-            line-height: 1.5; // This is a MAGIC NUMBER. I don't known why it works.
         }
     }
 }
