@@ -178,6 +178,10 @@ p {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
+sub,
+sup {
+  margin-right: 0.5em;
+}
 img {
   display: block;
   box-sizing: content-box;
@@ -367,7 +371,7 @@ pre {
   overflow-x: auto;
   padding: 0;
   margin-top: 0.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 td > pre,
 li > pre {
@@ -378,10 +382,15 @@ li > pre {
 li > pre:first-child {
   margin-top: 0;
 }
+li > pre:last-child {
+  margin-bottom: 1rem;
+}
 blockquote > pre:last-child,
-li > pre:last-child,
 td > pre:last-child {
   margin-bottom: 0.5rem;
+}
+p + pre {
+  margin-top: 0;
 }
 hr {
   display: block;
