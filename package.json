@@ -10,7 +10,7 @@
   "main": "index.js",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "eslint": "eslint    ./.eslintrc.js    ./gulpfile.esm.js/**/*.js    ./test/*.js    ./source/module/*.js    ./source/themes/js/**/*.js    ./global-config.js    ./index.js",
+    "eslint": "eslint    ./.eslintrc.js    ./gulpfile.esm.js/**/*.js    ./test/*.js    ./docs/examples/*.js    ./source/module/*.js    ./source/themes/js/**/*.js    ./global-config.js    ./index.js",
     "start": "gulp  --silent buildAndWatch",
     "start2": "gulp          buildAndWatch",
     "_build": "gulp --silent buildOnce",
