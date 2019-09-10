@@ -10,14 +10,14 @@
   "main": "index.js",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "eslint": "eslint    ./.eslintrc.js    ./gulpfile.esm.js/**/*.js    ./test/*.js    ./docs/examples/*.js    ./source/module/*.js    ./source/themes/js/**/*.js    ./global-config.js    ./index.js",
+    "eslint": "eslint    ./.eslintrc.js    ./gulpfile.esm.js/**/*.js    ./test/*.js    ./source/module/*.js    ./source/themes/js/**/*.js    ./global-config.js    ./index.js",
     "start": "gulp  --silent devSingleTheme",
     "start2": "gulp          devSingleTheme",
     "_build": "gulp --silent buildAllThemesOnce",
     "_build2": "gulp         buildAllThemesOnce",
     "clean": "gulp  --silent cleanAll",
     "clean2": "gulp          cleanAll",
-    "updateExampleHTMLs": "node    ./docs/examples/generate-html-files.js",
+    "updateExampleHTMLs": "gulp --silent updateExampleHTMLs",
     "build": "eslint    ./source/themes/js/**/*.js    &&    npm run _build    &&    npm run updateExampleHTMLs",
     "build2": "eslint   ./source/themes/js/**/*.js    &&    npm run _build2",
     "test": "npm run eslint    &&    node  ./test/test-index-interfaces.js"

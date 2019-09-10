@@ -18,7 +18,7 @@ import createTaskSettingsForTheOnlyThemeToDevelop
     from '../dev-single-theme/2-create-task-settings-for-the-only-theme-to-develop'
 
 import createTaskSettingsForGeneratingHTMLsForExampleMarkdowns
-    from '../dev-single-theme/3-create-task-settings-for-generating-example-htmls'
+    from '../update-example-htmls/create-task-settings-for-generating-example-htmls'
 
 
 
