@@ -150,7 +150,7 @@ function syncReadFileAsString(fileAbsolutePath) {
  * @param {Entry|string} input - The input identity of file to get content from.
  * @returns {string}
  */
-function syncGetContentStringOfOneFileEntry(input) {
+function syncGetContentStringOfOneFileEntry(input, shouldIgnoreCachedContent) {
     let entry
     let fileName
 
@@ -170,7 +170,7 @@ function syncGetContentStringOfOneFileEntry(input) {
         throw new TypeError('@wulechuan/css-stylus-markdown-themes:\n    Invalid file entry or path to reading distribution file content from.\n    fileName = "'+fileName+'"')
     }
 
-    if (!entry.fileContent) {
+    if (!entry.fileContent || shouldIgnoreCachedContent) {
         entry.fileContent = syncReadFileAsString(entry.fileAbsolutePath)
     }
 
@@ -184,9 +184,10 @@ function syncGetContentStringOfOneFileEntry(input) {
  * @memberOf defaultExports
  * @returns {string}
  */
-function syncGetContentStringOfDefaultCSS() {
+function syncGetContentStringOfDefaultCSS(shouldIgnoreCachedContent) {
     return syncGetContentStringOfOneFileEntry(
-        'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
+        'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css',
+        shouldIgnoreCachedContent
     )
 }
 
@@ -197,8 +198,9 @@ function syncGetContentStringOfDefaultCSS() {
  * @memberOf defaultExports
  * @returns {string}
  */
-function syncGetContentStringOfDefaultTOCJavascript() {
+function syncGetContentStringOfDefaultTOCJavascript(shouldIgnoreCachedContent) {
     return syncGetContentStringOfOneFileEntry(
-        'table-of-contents-behaviours.min.js'
+        'table-of-contents-behaviours.min.js',
+        shouldIgnoreCachedContent
     )
 }

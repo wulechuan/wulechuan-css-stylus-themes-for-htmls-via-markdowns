@@ -31,13 +31,13 @@
 
         &:visited,
         & {
-            color: #11bb22;
+            color: #1b2;
         }
 
         // &:hover,
         // &:focus,
         // &:active {
-        //     color: #11bb22;
+        //     color: #1b2;
         // }
     }
 
@@ -68,10 +68,14 @@
                 color: #1d0;
             }
         }
-    }
 
-    :target > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
-        color: #1d0;
+        &:target:hover,
+        &:target {
+
+            > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+                color: #1d0;
+            }
+        }
     }
 
 

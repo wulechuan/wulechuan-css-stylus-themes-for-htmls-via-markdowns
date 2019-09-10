@@ -104,6 +104,7 @@ export default function createTaskSettingsForGeneratingHTMLsForExampleMarkdowns(
         sourceGlobsToWatch: [
             sourceMarkdownFileEnUS,
             sourceMarkdownFileZhHansCN,
+            './source/themes/**/*',
         ],
         taskBodies: {
             cleanOldOutput: cleanBothOldHTMLFiles,
@@ -122,6 +123,7 @@ export default function createTaskSettingsForGeneratingHTMLsForExampleMarkdowns(
 
 
     function generateHTMLOfEnUS(cb) {
+        // console.log('reading', sourceMarkdownFileEnUS)
         writeFileSync(
             outputFilePathEnUS,
 
@@ -136,6 +138,11 @@ export default function createTaskSettingsForGeneratingHTMLsForExampleMarkdowns(
 
                         htmlTagLanguage: 'en-US',
                     },
+
+                    sundries: {
+                        // shouldDisableCachingForInternalThemeFiles: true,
+                        shouldDisableCachingForExternalFiles: true,
+                    },
                 }
             )
         )
@@ -145,6 +152,7 @@ export default function createTaskSettingsForGeneratingHTMLsForExampleMarkdowns(
 
 
     function generateHTMLOfZhHansCN(cb) {
+        // console.log('reading', sourceMarkdownFileZhHansCN)
         writeFileSync(
             outputFilePathZhHansCN,
 
@@ -156,6 +164,8 @@ export default function createTaskSettingsForGeneratingHTMLsForExampleMarkdowns(
 
                     sundries: {
                         shouldConsoleLogsInChinese: true,
+                        // shouldDisableCachingForInternalThemeFiles: true,
+                        shouldDisableCachingForExternalFiles: true,
                     },
 
                     manipulationsOverHTML,

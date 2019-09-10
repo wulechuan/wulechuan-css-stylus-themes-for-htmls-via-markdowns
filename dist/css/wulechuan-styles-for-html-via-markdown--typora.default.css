@@ -677,7 +677,18 @@ h5 > a.header-anchor[href^="#"]:active,
 h6 > a.header-anchor[href^="#"]:active {
   color: #1d0;
 }
-:target > a.header-anchor[href^="#"] {
+h1:target:hover > a.header-anchor[href^="#"],
+h2:target:hover > a.header-anchor[href^="#"],
+h3:target:hover > a.header-anchor[href^="#"],
+h4:target:hover > a.header-anchor[href^="#"],
+h5:target:hover > a.header-anchor[href^="#"],
+h6:target:hover > a.header-anchor[href^="#"],
+h1:target > a.header-anchor[href^="#"],
+h2:target > a.header-anchor[href^="#"],
+h3:target > a.header-anchor[href^="#"],
+h4:target > a.header-anchor[href^="#"],
+h5:target > a.header-anchor[href^="#"],
+h6:target > a.header-anchor[href^="#"] {
   color: #1d0;
 }
 h1,

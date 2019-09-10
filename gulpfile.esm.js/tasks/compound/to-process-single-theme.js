@@ -1,4 +1,8 @@
 import chalk from 'chalk'
+import {
+    existsSync,
+    mkdirSync,
+} from 'fs'
 
 import {
     series   as gulpBuildTaskSeries,
@@ -20,6 +24,8 @@ import createTaskSettingsForTheOnlyThemeToDevelop
 import createTaskSettingsForGeneratingHTMLsForExampleMarkdowns
     from '../update-example-htmls/create-task-settings-for-generating-example-htmls'
 
+import copyExampleAssetsToTestOutputFolder
+    from '../dev-single-theme/3-copy-example-assets-to-test-folder'
 
 
 
@@ -31,7 +37,9 @@ import {
 
 
 const exampleOutputHTMLFilesFolderPath = './test/output'
-
+if (!existsSync(exampleOutputHTMLFilesFolderPath)) {
+    mkdirSync(exampleOutputHTMLFilesFolderPath)
+}
 
 
 
@@ -43,6 +51,8 @@ const taskSettingsOfBuildingCSSForTheOnlyTheme = createTaskSettingsForTheOnlyThe
 const distCSSFilePathToUse = taskSettingsOfBuildingCSSForTheOnlyTheme.shouldNotOutputCompressedVersion ?
     taskSettingsOfBuildingCSSForTheOnlyTheme.outputFilePath1 : // uncompressed version
     taskSettingsOfBuildingCSSForTheOnlyTheme.outputFilePath2   // compressed/minified version
+
+console.log('distCSSFilePathToUse', distCSSFilePathToUse)
 
 const taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns = createTaskSettingsForGeneratingHTMLsForExampleMarkdowns({
     distCSSFilePathToUse,
@@ -64,7 +74,10 @@ const buildCSSAndCopyJS = gulpBuildParallelTasks(
 )
 
 const cleanHTMLs = taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns.taskBodies.cleanOldOutput
-const buildHTMLs = taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns.taskBodies.buildNewOutput
+const buildHTMLs = gulpBuildParallelTasks(
+    taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns.taskBodies.buildNewOutput,
+    copyExampleAssetsToTestOutputFolder
+)
 
 const buildAllNewOutputs = gulpBuildTaskSeries(
     buildCSSAndCopyJS,
@@ -78,23 +91,22 @@ const cleanAllOldOutputs = gulpBuildParallelTasks(
 
 
 
+const sourceGlobsToWatch = [
+    ...allTasksSettingsForBuildingSingleTheme.reduce((allGlobs, taskSettings) => {
+        allGlobs = [
+            ...allGlobs,
+            ...taskSettings.sourceGlobsToWatch,
+        ]
 
-/**
-    {
-        sourceGlobsToWatch: [],
-        taskBodies: {
-            cleanOldOutput: function,
-            buildNewOutput: function,
-        },
-    }
- */
+        return allGlobs
+    }, []),
+    ...taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns.sourceGlobsToWatch,
+]
+
+console.log('sourceGlobsToWatch', sourceGlobsToWatch)
 
 const compoundTaskSettingsForSingleTheme = {
-    sourceGlobsToWatch: [
-        ...allTasksSettingsForBuildingSingleTheme.map(taskSettings => taskSettings.sourceGlobsToWatch),
-        ...taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns.sourceGlobsToWatch,
-    ],
-
+    sourceGlobsToWatch,
     taskBodies: {
         cleanOldOutput: cleanAllOldOutputs,
         buildNewOutput: buildAllNewOutputs,

@@ -674,7 +674,18 @@ body {
 .markdown-article h6 > a.header-anchor[href^="#"]:active {
   color: #1d0;
 }
-.markdown-article :target > a.header-anchor[href^="#"] {
+.markdown-article h1:target:hover > a.header-anchor[href^="#"],
+.markdown-article h2:target:hover > a.header-anchor[href^="#"],
+.markdown-article h3:target:hover > a.header-anchor[href^="#"],
+.markdown-article h4:target:hover > a.header-anchor[href^="#"],
+.markdown-article h5:target:hover > a.header-anchor[href^="#"],
+.markdown-article h6:target:hover > a.header-anchor[href^="#"],
+.markdown-article h1:target > a.header-anchor[href^="#"],
+.markdown-article h2:target > a.header-anchor[href^="#"],
+.markdown-article h3:target > a.header-anchor[href^="#"],
+.markdown-article h4:target > a.header-anchor[href^="#"],
+.markdown-article h5:target > a.header-anchor[href^="#"],
+.markdown-article h6:target > a.header-anchor[href^="#"] {
   color: #1d0;
 }
 .markdown-article h1,
@@ -781,7 +792,7 @@ pre,
 }
 .hljs-comment,
 .hljs-quote {
-  color: #23ff7e;
+  color: #2e7;
   background-color: #151619;
 }
 .hljs-tag {
