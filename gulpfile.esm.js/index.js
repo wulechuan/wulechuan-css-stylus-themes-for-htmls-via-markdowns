@@ -3,27 +3,29 @@ import chalk from 'chalk'
 import buildHighOrderTasksForABatchOfTaskSettings
     from './lib/tasks-build-3-types-of-high-order-tasks'
 
-import allStylusTasksSettingsForAllThemes
-    from './tasks/stylus/2-create-all-task-settings-for-all-themes'
+import mergeSpecificTaskConfigsWithSharedConfigsAndCreateTaskSettings
+    from './tasks/themes/stylus/2-create-all-task-settings-for-all-themes'
 
-import allJsTasksSettings
-    from './tasks/js/create-all-js-task-settings'
+import allThemeJavascriptTasksSettings
+    from './tasks/themes/js/create-all-theme-js-task-settings'
 
-import distESLintTaskSettings
-    from './tasks/js/create-dist-eslint-task-settings'
+import TaskSettingsOfCopyingESLintrcToDist
+    from './tasks/themes/js/create-task-settings-for-copying-dist-eslintrc'
+
+import {
+    specificTaskConfigsOfAllThemes,
+} from './configs/theme-stylus-tasks'
 
 
 
-
-
-const allTasksSettings = [
-    ...allStylusTasksSettingsForAllThemes,
-    ...allJsTasksSettings,
-    distESLintTaskSettings,
+const allTasksSettingsForAllThemes = [
+    ...mergeSpecificTaskConfigsWithSharedConfigsAndCreateTaskSettings(specificTaskConfigsOfAllThemes),
+    ...allThemeJavascriptTasksSettings,
+    TaskSettingsOfCopyingESLintrcToDist,
 ]
 
-const highOrderTasks = buildHighOrderTasksForABatchOfTaskSettings({
-    taskSettingsArray: allTasksSettings,
+const highOrderTasksForAllThemes = buildHighOrderTasksForABatchOfTaskSettings({
+    taskSettingsArray: allTasksSettingsForAllThemes,
 
     beforeCleaningEveryThing: function() {
         console.log(`\n正在${chalk.red('删除')}所有已存在 JS 文件和所有${chalk.red('编译得到的')} CSS 文件`)
@@ -37,10 +39,32 @@ const highOrderTasks = buildHighOrderTasksForABatchOfTaskSettings({
 })
 
 
+const taskSettingsArrayForDevelopementOfOneTheme = [
+    ...allThemeJavascriptTasksSettings,
+    // TaskSettingsOfCopyingESLintrcToDist,
+]
+
+const highOrderTasksForDevelopementOfOneTheme = buildHighOrderTasksForABatchOfTaskSettings({
+    taskSettingsArray: taskSettingsArrayForDevelopementOfOneTheme,
+
+    beforeCleaningEveryThing: function() {
+        console.log(`\n正在${chalk.red('删除')}所有已存在 JS 文件和所有${chalk.red('编译得到的')} CSS 文件`)
+    },
+    beforeBuildingEveryThingOnce: function() {
+        console.log(`\n正在依照主题配置${chalk.black.bgBlue('编译')} Stylus，并${chalk.black.bgBlue('复制')} JS`)
+    },
+    beforeWatchingEveryThing: function() {
+        console.log(`\n正在依照主题配置${chalk.black.bgBlue('监视')} Stylus 和 JS 文件的变动或诞生`)
+    },
+})
 
 
-export const clean         = highOrderTasks.cleanAllOldOuputs
-export const buildOnce     = highOrderTasks.buildEverythingOnce
-export const buildAndWatch = highOrderTasks.watchEverything
 
-export default buildAndWatch
+
+export const cleanAll           = highOrderTasksForAllThemes.cleanAllOldOuputs
+export const buildAllThemesOnce = highOrderTasksForAllThemes.buildEverythingOnce
+// export const buildAndWatch = highOrderTasksForAllThemes.watchEverything
+
+export const devSingleTheme = highOrderTasksForDevelopementOfOneTheme.watchEverything
+
+export default devSingleTheme

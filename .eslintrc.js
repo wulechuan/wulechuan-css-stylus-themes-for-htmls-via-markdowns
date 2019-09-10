@@ -45,7 +45,7 @@ module.exports = {
                     'object': true,
                 },
                 AssignmentExpression: {
-                    array: true,
+                    array: false,
                     object: false,
                 },
             },

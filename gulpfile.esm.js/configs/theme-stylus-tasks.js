@@ -8,19 +8,9 @@ export const specificSourceGlobsCommonSubPath = 'markdown-style-scenarios'
 export const outputFileBaseNameCommonPrefix   = 'wulechuan-styles-for-html-via-markdown'
 
 export const sharedSourceRelativeGlobs = []
+export const extraSourceGlobsToWatch = []
 
-export const extraSourceGlobsToWatch = [
-    /*
-        All these are watched and imported by Stylus compiler,
-        We don't need to watch these files at all.
-    */
-
-    // 'markdown-style-parts',
-    // 'utils',
-]
-
-
-export const allSpecificOptions = [
+export const specificTaskConfigsOfAllThemes = [
     {
         // shouldSkipThisTask: true,
         entryStylusFileSubPath: '_default/non-wrapped--has-toc',

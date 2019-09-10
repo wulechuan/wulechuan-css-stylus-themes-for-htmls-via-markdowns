@@ -2,14 +2,14 @@ import postCSS from 'gulp-postcss'
 import gulpStylus from 'gulp-stylus'
 
 import createOneAbstractTaskSet
-    from '../../lib/_create-one-abstract-task-set'
+    from '../../../lib/_create-one-abstract-task-set'
 
 import getPluginsForOnePostCSSInstance
-    from '../../lib/get-plugins-for-one-postcss-instance'
+    from '../../../lib/get-plugins-for-one-postcss-instance'
 
 
 
-export default function createTaskSettingsForOneTheme(taskSettingsOptions) {
+export default function createTaskSettingsForOneTheme(taskConfig) {
     const {
         taskSetDescription,
         taskSetSourceDescription,
@@ -20,7 +20,7 @@ export default function createTaskSettingsForOneTheme(taskSettingsOptions) {
         extraOptions: {
             shouldDiscardMostCommentsEvenIfNotCompressCSS,
         },
-    } = taskSettingsOptions
+    } = taskConfig
 
     const _shouldDiscardComments = !!shouldDiscardMostCommentsEvenIfNotCompressCSS
 
