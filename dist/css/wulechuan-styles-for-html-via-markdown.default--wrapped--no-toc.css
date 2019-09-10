@@ -360,7 +360,7 @@ body {
   padding: 0.2em 0;
 }
 .markdown-article pre {
-  line-height: 1.5;
+  line-height: 1.65;
   margin-left: 1rem;
   margin-right: 1rem;
   display: inline-block;
@@ -557,7 +557,7 @@ select {
 kbd,
 pre,
 code {
-  font-family: 'PT Mono', 'consolas', 'Courier New', Courier, monospace, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
+  font-family: 'consolas', 'Courier New', Courier, 'PT Mono', monospace, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
 }
 html {
   background-color: #bbb;
