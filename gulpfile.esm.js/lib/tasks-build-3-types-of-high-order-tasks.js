@@ -26,7 +26,7 @@ export default function buildHighOrderTasksForABatchOfTaskSettings({
 }) {
     if (!Array.isArray(taskSettingsArray) || taskSettingsArray.length === 0) {
         return {
-            cleanAllOldOuputs:    nothingToDo,
+            cleanAllOldOuputs:   nothingToDo,
             buildEverythingOnce: nothingToDo,
             watchEverything:     nothingToDo,
         }
