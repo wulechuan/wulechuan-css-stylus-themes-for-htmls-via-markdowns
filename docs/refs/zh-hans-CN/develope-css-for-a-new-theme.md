@@ -88,8 +88,9 @@
 
 #### `start` 与 `start2`
 
+用于专注开发单一主体的情形。如果不知名，则所针对的主题（场景）为**未包裹类名** 、且包含 TOC 的 _default 场景。
 
-启动一组文件监视器（Watchers）来持续监视所有 `.styl` 源文件。一旦任何源文件有变更，或监视文件夹中有新的 `.styl` 文件诞生或移入，则自动重新编译出所涉【场景】对应的 CSS 文件。
+该脚本会启动一组文件监视器（Watchers）来持续监视所有 `.styl` 源文件。一旦任何源文件有变更，或监视文件夹中有新的 `.styl` 文件诞生或移入，则自动重新编译出所涉【场景】对应的 CSS 文件。
 
 
 ##### 命令行用法
@@ -175,25 +176,17 @@ npm run clean2
 
 
 
-#### `dev-1`
+#### `updateExampleHTMLs`
 
-
-为所有【场景】编译输出 CSS 文件耗时往往较长。有时候为了快速进行试验，希望仅编译一个场景。此时即可采用此脚本。如不在 `package.json` 文件中做特别的改动，本脚本将仅编译在 `stylus-tasks.js` 的任务列表中提及的第一个场景。
-
-> 该脚本可以配置为编译特定名称的场景。但遗憾的是，该脚本的配置细则并不在命令行中，因此如需变更，须手工修订 `package.json` 文件。
->
-> 具体而言，
-> - `set theOnlyStylToBuild=true` 意味着仅编译第一个场景。
-> - `set theOnlyStylToBuild=vscode/vscode-_default` 意味着仅编译 `vscode/vscode-_default` 这一场景。
-
+用于更新范例 Markdown 文件所对应的 HTML 文件。其中，仅默认主题会被嵌入所生成的 HTML 文件中。
 
 ##### 命令行用法
 
-Gulp 会运行在标准模式。
+Gulp 会运行在静默模式下，即启用 `--silent` 的模式。
 
 
 ```bash
-npm run dev-1
+npm run updateExampleHTMLs
 ```
 
 
@@ -226,7 +219,7 @@ npm run eslint
 
 #### `test`
 
-先自动运行 `eslint` 脚本（见上文），然后运行 `./test/index.js` 这一文件。
+先自动运行 `eslint` 脚本（见上文），然后运行 `./test/test-index-interfaces.js` 这一文件。
 
 ##### 命令行用法
 

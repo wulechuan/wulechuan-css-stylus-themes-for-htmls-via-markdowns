@@ -84,7 +84,9 @@ See [stylus-variable-default-values.md](./stylus-variable-default-values.md).
 
 #### `start` and `start2`
 
-Starts a batch of file watchers to watch all source `.styl` files. As long as a change occurs, the CSS files of the involved scenario will be re-compiled.
+Used for development of a single theme.
+
+Starts a batch of file watchers to watch all source `.styl` files. As long as a change occurs, the CSS files of the involved theme will be re-compiled.
 
 
 ##### Usage in CLI
@@ -167,22 +169,16 @@ npm run clean2
 
 
 
-#### `dev-1`
+#### `updateExampleHTMLs`
 
-
-To compile all scenarios again and again is really time consuming. Sometimes we need to run some quick experiments. Then you run this script, instead of `npm run build`. This script is configured to compile the first sceneario in the `stylus-tasks.js` file.
-
-> In fact, which scenario to compile is also configurable. But not via command line argument. You have to manually modify the `package.json` file.
->
-> - `set theOnlyStylToBuild=true` means to compile only the first scenario;
-> - `set theOnlyStylToBuild=vscode/vscode-_default` menas to compile only the scenario named `vscode/vscode-_default`.
+To generate or update HTML files via example markdowns. 
 
 ##### Usage in CLI
 
-Gulp runs in standard mode.
+Gulp runs in `--silent` mode.
 
 ```bash
-npm run dev-1
+npm run updateExampleHTMLs
 ```
 
 
@@ -217,7 +213,7 @@ npm run eslint
 
 #### `test`
 
-To run the test Javasctip file: `./test/index.js`.
+To run the test Javasctip file: `./test/test-index-interfaces.js`.
 
 ##### Usage in CLI
 
