@@ -30,6 +30,7 @@ _selectorOf_markdownArticleBackplateBackgroundColorCarrier = 'html'
 
 _selectorOf_tocByMarkdownItTOCDoneRight = 'nav.markdown-article-toc'
 _selectorOf_backToTopLink = '.markdown-article-back-to-top'
+_selectorOf_markdownArticleHeadingsPermantLinkAnchors = '.header-anchor'
 
 _folderNameOf_baseTheme = 'theme-0'
 _folderNameOf_codeBlocksType = 'highlightjs' // either of [ 'highlightjs', 'code-mirror' ]

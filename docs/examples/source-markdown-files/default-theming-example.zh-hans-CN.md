@@ -113,19 +113,19 @@
 
 ##### 文档对象模型
 
-文档对象模型 (DOM) 将 web 页面与到脚本或编程语言连接起来。通常是指  JavaScript，但将 HTML、SVG 或 XML 文档建模为对象并不是 JavaScript 语言的一部分。DOM模型用一个逻辑树来表示一个文档，树的每个分支的终点都是一个节点(node)，每个节点都包含着对象(objects)。DOM的方法(methods)让你可以用特定方式操作这个树，用这些方法你可以改变文档的结构、样式或者内容。节点可以关联上事件处理器，一旦某一事件被触发了，那些事件处理器就会被执行。[1]
+文档对象模型 (DOM) 将 web 页面与到脚本或编程语言连接起来。通常是指  JavaScript，但将 HTML、SVG 或 XML 文档建模为对象并不是 JavaScript 语言的一部分。DOM模型用一个逻辑树来表示一个文档，树的每个分支的终点都是一个节点(node)，每个节点都包含着对象(objects)。DOM的方法(methods)让你可以用特定方式操作这个树，用这些方法你可以改变文档的结构、样式或者内容。节点可以关联上事件处理器，一旦某一事件被触发了，那些事件处理器就会被执行。<sup>[1]</sup>
 
 
 
 ##### 层叠样式表对象模型
 
-CSS Object Model 是一组允许用JavaScript操纵CSS的API。 它是既DOM和HTML API之后，又一个操纵CSS的接口，从而能够动态地读取和修改CSS样式。[2]
+CSS Object Model 是一组允许用JavaScript操纵CSS的API。 它是既DOM和HTML API之后，又一个操纵CSS的接口，从而能够动态地读取和修改CSS样式。<sup>[2]</sup>
 
 
 
 ##### 浏览器对象模型
 
-浏览器对象模型（BOM）指的是由Web浏览器暴露的所有对象组成的表示模型。BOM 与 DOM 不同，BOM 既没有标准的实现，也没有严格的定义, 所以浏览器厂商可以自由地实现 BOM。[3]
+浏览器对象模型（BOM）指的是由Web浏览器暴露的所有对象组成的表示模型。BOM 与 DOM 不同，BOM 既没有标准的实现，也没有严格的定义, 所以浏览器厂商可以自由地实现 BOM。<sup>[3]</sup>
 
 
 ##### 引用来源
@@ -231,7 +231,7 @@ CSS Object Model 是一组允许用JavaScript操纵CSS的API。 它是既DOM和H
 ### Javascript 代码片段
 
 ```javascript
-// 这是一行行尾注释。好吧，我承认它恰好在一行的开头。
+// 这是一句行尾注释。好吧，我承认它恰好在这一行的开头。
 import something from 'somethingjs'
 
 const author = {
@@ -249,10 +249,52 @@ var news = [
     '李广在 2019 亚洲射箭锦标赛再次夺魁',
 ]
 
+
+let anUndefinedValue = undefined;
+let aNull = null;
+
+const cellPhoneNumberRegExp = /^1\d{2}([- ]?\d{4}){2}$/
+
+let cellPhoneNumber = '13345678901 '
+cellPhoneNumber = cellPhoneNumber.trim()
+
+const cellPhoneNumberIsValid = cellPhoneNumberRegExp.test(cellPhoneNumber)
+console.log('cellPhoneNumberIsValid', cellPhoneNumberIsValid) // true
+
+
+var aString = `Meaningless ${cellPhoneNumber} ` + true + ' ' + 19 + ' ' + false
+
+let isAnArray = false
+if (Array.isArray([])) {
+    isAnArray = true
+}
+
+const ul = Array.prototype.slice.apply(
+    document.querySelectorAll('ul.news-list')
+)[0]
+
+news.forEach(msg => {
+    const li = document.createElement('li')
+    li.innerText = msg
+
+    ul.appendChild(li)
+})
+
+console.log(news.length, news.join('').length)
+
+function addTwoNumbers(a, b) {
+    if (typeof a === 'number' && typeof b === 'number') {
+        return a + b
+    }
+
+    return NaN
+}
+
+
 export default function isAPromiseObject(input) {
     /*
         这就是
-        罗里吧嗦的
+        啰哩吧嗦的
         多行注释
         的效果。瞅瞅吧。
     */
@@ -264,21 +306,92 @@ export default function isAPromiseObject(input) {
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-hans-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Wulechuan's Page</title>
+    <title>乐川的示范文档</title>
     <!-- 这是简短的单行注释。 -->
+    <style>
+        div {
+            width:  100px;
+            height: 200px;
+            border: 6px solid #888;
+            border-radius: 0.5em;
+            box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+        }
+
+        #app {
+            display: flex;
+            position: relative;
+        }
+
+        .bg-view {
+            filter: blur(16px);
+            transform: scaleX(-1);
+        }
+
+        #cover {
+            backdrop-filter: blur(30px);
+        }
+
+        .box-1 { background-image: url('./images/beauties/beauty-1.jpg'); }
+        .box-2 { background-image: url('./images/beauties/beauty-2.jpg'); }
+        .box-3 { background-image: url('./images/beauties/beauty-3.jpg'); }
+        .box-4 { background-image: url('./images/beauties/beauty-4.jpg'); }
+    </style>
 </head>
 <body>
-    <article>Hi! This is wulechuan.</article>
+    <article>
+        <h1>欢迎！</h1>
+
+        <p class="greeting">大家好，我是
+            <a target="_blank" href="mailto:wulechuan@live.com">吴乐川</a>。
+        </p>
+
+        <p id="poem"><span class="content">关关雎鸠 在河之洲 窈窕淑女 君子好逑</span></p>
+
+        <ul>
+            <li><span>A<em>B</em>C</span></li>
+            <li><span>D<em>E</em>F</span></li>
+            <li><span>G<em>H</em>I</span></li>
+        </ul>
+
+        <p>天下事有难易乎？为之，则难者亦易矣；不为，则易者亦难矣。
+           人之为学有难易乎？学之，则难者亦易矣；不学，则易者亦难矣。</p>
+    </article>
+
     <!--
-        这是罗里吧嗦的
-        多行注释
-        大致的面貌。
+        这是啰哩吧嗦的多行注释，
+        写这么多行，
+        只是为了能令其
+        多占据几行。
+        你瞧，大体如此。
     -->
+
+    <div id="app">
+        <button id="one-button">我是按钮</button><br>
+        <img id="beauty" src="./images/beauties/beauty-1.jpg" alt="此处本应有美女" tilte="一位大美女">
+    </div>
+
+    <script>
+        var button = document.querySelector('#one-button');
+        var beautyImage = document.getElementById('beauty');
+
+        button.onclick = function () {
+            beautyImage.src = './images/beauties/beauty-2.jpg';
+            beautyImage.title = '另一位大美女';
+        };
+    </script>
+
+    <script>
+        const girl = document.querySelector('img')
+        girl.addEventListener('mouseover', function (event) {
+            this.src = './images/beauties/beauty-3.jpg'
+            this.title = '绝色美人'
+        })
+    </script>
 </body>
 </html>
 ```
@@ -287,8 +400,58 @@ export default function isAPromiseObject(input) {
 ### CSS 代码片段
 
 ```css
+html {
+    font-size: 20px;
+}
+
 body {
     padding: 3rem 1rem 4rem 1rem;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+#app {
+    display: flex;
+    position: relative;
+    width: 100%;
+    font-family: 'Segoe UI', '微软雅黑', serif;
+}
+
+.back-to-top {
+    position: fixed;
+    display: block;
+    background-image: url('./images/rocket.png');
+    width: 1.5rem;
+    height: 1.5rem;
+    overflow: hidden;
+}
+
+article, .article, p, .copywriting {
+    color: black;
+}
+
+a {
+    color: green;
+}
+
+.optional-line-break {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .optional-line-break {
+        display: none;
+    }
+}
+
+a:hover {
+    text-decoration: underline !important;
+}
+
+a[href^="#"] {
+    color: blue;
 }
 
 @media (max-width: 900px) {
@@ -300,6 +463,65 @@ body {
     body {
         font-size: 1rem;
     }
+}
+
+.markdown-article,
+.markdown-article-toc,
+.markdown-article-back-to-top {
+    display: block;
+}
+
+.markdown-article-back-to-top {
+    border: 1px solid #778899;
+    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fade-in {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.my-container::before {
+    content: '';
+    display: block;
+    border-color: black;
+    background-color: currentColor;
+    text-indent: -100px;
+}
+
+/* chief navigation */
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 20px 10px;
+}
+
+nav li {
+    display: block;
+    padding: 0;
+    margin: 10px 5px;
+    width: 90px;
+    transition: all 0.4s ease-out;
+}
+
+/* news list */
+
+.news-list {
+    font-size: 1.2rem;
+    list-style: none;
+}
+
+.news-list li {
+    margin: 0.15em auto;
+    padding: 0.25em 1em;
+    background-color: #eee;
+}
+
+.news-list li:nth-child(even) {
+    background-color: #d3d3d3;
 }
 ```
 
@@ -314,13 +536,15 @@ body {
     line-height: 1.5;
 
     small {
-        font-size: .707em; // 注释一下。其实没啥好写的。
+        font-size: .707em; // 注释一下。但一时间觉得没啥好写的。
     }
 
     /*
-        A multi-lined comment,
-        looks
-        like this.
+        这是啰哩吧嗦的多行注释，
+        写这么多行，
+        只是为了能令其
+        多占据几行。
+        你瞧，大体如此。
     */
 
     h1, h2, h3, h4, h5, h6, dt {

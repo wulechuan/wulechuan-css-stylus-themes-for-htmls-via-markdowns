@@ -20,7 +20,7 @@
     "updateExampleHTMLs": "node    ./docs/examples/generate-html-files.js",
     "build": "eslint    ./source/themes/js/**/*.js    &&    npm run _build    &&    npm run updateExampleHTMLs",
     "build2": "eslint   ./source/themes/js/**/*.js    &&    npm run _build2",
-    "dev-1": "set theOnlyStylToBuild=vscode/vscode-_default && gulp buildOnce",
+    "dev-1": "set theOnlyStylToBuild=true && gulp buildOnce",
     "test": "npm run eslint    &&    node  ./test/test-index-interfaces.js    &&    node  ./test/try-theme-lookings.js",
     "test1": "set testSingle=true &&                                                node  ./test/try-theme-lookings.js"
   },

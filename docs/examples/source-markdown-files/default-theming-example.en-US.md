@@ -1,4 +1,4 @@
-# Wulechuan's MarkDown CSS Styles Examples
+# Wulechuan's Article CSS Styles Examples
 
 
 ## Articles
@@ -30,13 +30,13 @@ See some lists below:
 - Mollit nisi quis laboris officia. Ut ullamco cupidatat ex mollit duis. Officia nulla esse commodo exercitation nostrud. Laboris amet sunt exercitation velit ea. Aliquip [fake self-page link 2 (do not follow)](#fake-id-2) ex ipsum nulla voluptate laboris sit cillum incididunt pariatur enim irure non. Nostrud commodo labore adipisicing ullamco occaecat fugiat enim mollit. Deserunt sunt aute in amet nostrud cupidatat amet adipisicing est consectetur aute ex irure.
 
     Velit mollit amet dolore eiusmod ad nulla. Adipisicing nostrud ut elit consectetur non sunt pariatur commodo eiusmod duis fugiat proident aute enim.
-    
+
     1. Non adipisicing tempor deserunt ullamco dolore.
     2. Voluptate minim dolore sunt dolor cupidatat nulla duis tempor pariatur velit veniam. Commodo labore id nulla cillum incididunt nostrud laboris deserunt dolor id nisi.
     3. Cillum ipsum labore in ut excepteur culpa ipsum.
     4. Nostrud quis mollit Lorem qui ullamco dolor in mollit fugiat laborum.
 
-    Et consequat eiusmod culpa eiusmod fugiat pariatur aliquip voluptate laborum. Est incididunt proident amet irure magna occaecat ad reprehenderit. Eu ullamco cupidatat qui ut ea sunt in nulla ullamco aliquip 
+    Et consequat eiusmod culpa eiusmod fugiat pariatur aliquip voluptate laborum. Est incididunt proident amet irure magna occaecat ad reprehenderit. Eu ullamco cupidatat qui ut ea sunt in nulla ullamco aliquip
 
 - est dolore ex quis.
 
@@ -103,45 +103,228 @@ const author = {
     age: 40,
 }
 
+var newsThatAreNotNewsAnyMore = [
+    'SOFTIMAGE Co. Released SOFTIMAGE|3D Extreme',
+    'Discreet Released 3D STUDIO MAX',
+    'Alias|Wavefront Released Maya|Unlimited',
+    'SOFTIMAGE Co. Released SOFTIMAGE|XSI Advanced',
+    'Cebas Released Cinema 4D',
+    'SideFX Released Houdini',
+    'Pixar Released RenderMan',
+    'MentalImages Released MentalRay',
+    'SolidAngle Released Arnold Render',
+    'NextLimit Released MaxwellRender',
+    'RandomControl Released Arion Render',
+    'OTOY Released OctaneRender',
+]
+
+
+let anUndefinedValue = undefined;
+let aNull = null;
+
+const cellPhoneNumberRegExp = /^1\d{2}([- ]?\d{4}){2}$/
+
+let cellPhoneNumber = '13345678901 '
+cellPhoneNumber = cellPhoneNumber.trim()
+
+const cellPhoneNumberIsValid = cellPhoneNumberRegExp.test(cellPhoneNumber)
+console.log('cellPhoneNumberIsValid', cellPhoneNumberIsValid) // true
+
+
+var aString = `Meaningless ${cellPhoneNumber} ` + true + ' ' + 19 + ' ' + false
+
+let isAnArray = false
+if (Array.isArray([])) {
+    isAnArray = true
+}
+
+const ul = Array.prototype.slice.apply(
+    document.querySelectorAll('ul.news-list')
+)[0]
+
+newsThatAreNotNewsAnyMore.forEach(newsMessage => {
+    const li = document.createElement('li')
+    li.innerText = newsMessage
+
+    ul.appendChild(li)
+})
+
+console.log(news.length, news.join('').length)
+
+function addTwoNumbers(a, b) {
+    if (typeof a === 'number' && typeof b === 'number') {
+        return a + b
+    }
+
+    return NaN
+}
+
+
 export default function isAPromiseObject(input) {
     /*
-        This is a multi-lined
+        A multi-lined
         comment
-        with indentations.
+        with indentations
+        looks like this.
     */
     return !!input && typeof input.then === 'function' && typeof input.done === 'function'
 }
 ```
 
+
 ### An HTML Snippet
+
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Wulechuan's Page</title>
+    <title>Wulechuan's example document</title>
     <!-- A single line comment. -->
+    <style>
+        div {
+            width:  100px;
+            height: 200px;
+            border: 6px solid #888;
+            border-radius: 0.5em;
+            box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+        }
+
+        #app {
+            display: flex;
+            position: relative;
+        }
+
+        .bg-view {
+            filter: blur(16px);
+            transform: scaleX(-1);
+        }
+
+        #cover {
+            backdrop-filter: blur(30px);
+        }
+
+        .box-1 { background-image: url('./images/beauties/beauty-1.jpg'); }
+        .box-2 { background-image: url('./images/beauties/beauty-2.jpg'); }
+        .box-3 { background-image: url('./images/beauties/beauty-3.jpg'); }
+        .box-4 { background-image: url('./images/beauties/beauty-4.jpg'); }
+    </style>
 </head>
 <body>
-    <article>Hi! This is wulechuan.</article>
+    <article>
+        <h1>Welcome</h1>
+
+        <p class="greeting">Hi everyone! This is
+            <a target="_blank" href="mailto:wulechuan@live.com">wulechuan</a>。
+        </p>
+
+        <p id="lyric"><span class="content">Twinkle, Twinkle, Little Star</span></p>
+
+        <ul>
+            <li><span>A<em>B</em>C</span></li>
+            <li><span>D<em>E</em>F</span></li>
+            <li><span>G<em>H</em>I</span></li>
+        </ul>
+
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum
+            perferendis similique minus recusandae numquam voluptates sequi soluta
+            reiciendis. Doloremque, dolorum ex! Eaque voluptatem beatae ipsam
+            eligendi ab fugiat laudantium facilis?</p>
+    </article>
+
     <!--
         A multi-lined comment
         looks like
         this.
     -->
+
+    <div id="app">
+        <button id="one-button">A Button</button><br>
+        <img id="beauty" src="./images/beauties/beauty-1.jpg" alt="A beauty were here" tilte="A gorgeous lady">
+    </div>
+
+    <script>
+        var button = document.querySelector('#one-button');
+        var beautyImage = document.getElementById('beauty');
+
+        button.onclick = function () {
+            beautyImage.src = './images/beauties/beauty-2.jpg';
+            beautyImage.title = 'Another gorgeous lady';
+        };
+    </script>
+
+    <script>
+        const girl = document.querySelector('img')
+        girl.addEventListener('mouseover', function (event) {
+            this.src = './images/beauties/beauty-3.jpg'
+            this.title = 'An amazingly beautifly girl'
+        })
+    </script>
 </body>
 </html>
 ```
 
 
+
 ### A CSS Snippet
 
+
 ```css
+html {
+    font-size: 20px;
+}
+
 body {
     padding: 3rem 1rem 4rem 1rem;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+#app {
+    display: flex;
+    position: relative;
+    width: 100%;
+    font-family: 'Segoe UI', 'Microsoft Yahei UI', serif;
+}
+
+.back-to-top {
+    position: fixed;
+    display: block;
+    background-image: url('./images/rocket.png');
+    width: 1.5rem;
+    height: 1.5rem;
+    overflow: hidden;
+}
+
+article, .article, p, .copywriting {
+    color: black;
+}
+
+a {
+    color: green;
+}
+
+.optional-line-break {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .optional-line-break {
+        display: none;
+    }
+}
+
+a:hover {
+    text-decoration: underline !important;
+}
+
+a[href^="#"] {
+    color: blue;
 }
 
 @media (max-width: 900px) {
@@ -154,7 +337,68 @@ body {
         font-size: 1rem;
     }
 }
+
+.markdown-article,
+.markdown-article-toc,
+.markdown-article-back-to-top {
+    display: block;
+}
+
+.markdown-article-back-to-top {
+    border: 1px solid #778899;
+    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fade-in {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.my-container::before {
+    content: '';
+    display: block;
+    border-color: black;
+    background-color: currentColor;
+    text-indent: -100px;
+}
+
+/* chief navigation */
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 20px 10px;
+}
+
+nav li {
+    display: block;
+    padding: 0;
+    margin: 10px 5px;
+    width: 90px;
+    transition: all 0.4s ease-out;
+}
+
+/* news list */
+
+.news-list {
+    font-size: 1.2rem;
+    list-style: none;
+}
+
+.news-list li {
+    margin: 0.15em auto;
+    padding: 0.25em 1em;
+    background-color: #eee;
+}
+
+.news-list li:nth-child(even) {
+    background-color: #d3d3d3;
+}
 ```
+
+
 
 
 ### A Stylus(CSS) Snippet
@@ -167,7 +411,7 @@ body {
     line-height: 1.5;
 
     small {
-        font-size: .707em; // Comment
+        font-size: .707em; // A comment that says nothing valuable.
     }
 
     /*

@@ -9,7 +9,7 @@ import {
     sharedSourceRelativeGlobs,
     extraSourceGlobsToWatch,
     allSpecificOptions,
-} from '../../configs/stylus-tasks'
+} from '../../configs/theme-stylus-tasks'
 
 import createTaskSettingsForOneTheme
     from './1-create-task-settings-for-compilation-stylus-of-one-theme'

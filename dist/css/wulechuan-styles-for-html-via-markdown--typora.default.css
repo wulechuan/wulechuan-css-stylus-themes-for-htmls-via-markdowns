@@ -643,20 +643,42 @@ a {
 }
 a[href^="#"]:visited,
 a[href^="#"] {
-  color: #15d30e;
+  color: #1b2;
 }
 a.header-anchor[href^="#"]:visited,
 a.header-anchor[href^="#"] {
-  color: #ccc;
+  color: #e8e8e8;
 }
-a.header-anchor[href^="#"]:hover,
-a.header-anchor[href^="#"]:focus,
-a.header-anchor[href^="#"]:active {
-  color: #000;
+h1:hover > a.header-anchor[href^="#"],
+h2:hover > a.header-anchor[href^="#"],
+h3:hover > a.header-anchor[href^="#"],
+h4:hover > a.header-anchor[href^="#"],
+h5:hover > a.header-anchor[href^="#"],
+h6:hover > a.header-anchor[href^="#"] {
+  color: #888;
 }
-:target > a.header-anchor[href^="#"]:hover,
+h1 > a.header-anchor[href^="#"]:hover,
+h2 > a.header-anchor[href^="#"]:hover,
+h3 > a.header-anchor[href^="#"]:hover,
+h4 > a.header-anchor[href^="#"]:hover,
+h5 > a.header-anchor[href^="#"]:hover,
+h6 > a.header-anchor[href^="#"]:hover,
+h1 > a.header-anchor[href^="#"]:focus,
+h2 > a.header-anchor[href^="#"]:focus,
+h3 > a.header-anchor[href^="#"]:focus,
+h4 > a.header-anchor[href^="#"]:focus,
+h5 > a.header-anchor[href^="#"]:focus,
+h6 > a.header-anchor[href^="#"]:focus,
+h1 > a.header-anchor[href^="#"]:active,
+h2 > a.header-anchor[href^="#"]:active,
+h3 > a.header-anchor[href^="#"]:active,
+h4 > a.header-anchor[href^="#"]:active,
+h5 > a.header-anchor[href^="#"]:active,
+h6 > a.header-anchor[href^="#"]:active {
+  color: #1d0;
+}
 :target > a.header-anchor[href^="#"] {
-  color: #15d30e;
+  color: #1d0;
 }
 h1,
 h2,

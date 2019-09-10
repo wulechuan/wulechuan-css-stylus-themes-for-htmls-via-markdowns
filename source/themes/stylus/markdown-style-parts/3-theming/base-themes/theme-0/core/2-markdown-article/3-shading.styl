@@ -31,64 +31,47 @@
 
         &:visited,
         & {
-            color: #15d30e;
+            color: #11bb22;
         }
 
         // &:hover,
         // &:focus,
         // &:active {
-        //     color: #15d30e;
+        //     color: #11bb22;
         // }
     }
 
-    a.header-anchor[href^="#"] {
+    a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
         // Permanent links created by
         // markdown-it plugin: markdown-it-anchor
 
         &:visited,
         & {
-            color: #ccc;
-        }
-
-        &:hover,
-        &:focus,
-        &:active {
-            color: #000;
+            color: #e8e8e8;
         }
     }
 
-    // h1, h2, h3, h4, h5, h6 {
-    //     // Permanent links created by
-    //     // markdown-it plugin: markdown-it-anchor
+    h1, h2, h3, h4, h5, h6 {
 
-    //     > a[href^="#"] {
-
-    //         &:visited,
-    //         & {
-    //             color: #ccc;
-    //         }
-
-    //         &:hover {
-    //             color: inherit;
-    //         }
-
-    //         &:focus,
-    //         &:active {
-    //             color: #000;
-    //         }
-    //     }
-    // }
-
-
-    // :target > a[href^="#"],
-    :target > a.header-anchor[href^="#"] {
-        // Permanent links created by
-        // markdown-it plugin: markdown-it-anchor
-
-        &:hover,
-        & {
-            color: #15d30e;
+        &:hover > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+            color: #888;
         }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+
+        > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+                
+            &:hover,
+            &:focus,
+            &:active {
+                color: #1d0;
+            }
+        }
+    }
+
+    :target > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+        color: #1d0;
     }
 
 
