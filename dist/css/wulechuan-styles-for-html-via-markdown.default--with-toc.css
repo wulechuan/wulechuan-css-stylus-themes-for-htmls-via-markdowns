@@ -360,7 +360,7 @@ pre > code * {
   padding: 0.2em 0;
 }
 pre {
-  line-height: 1.6;
+  line-height: 1.5;
   margin-left: 1rem;
   margin-right: 1rem;
   display: inline-block;
@@ -427,9 +427,6 @@ hr::after {
 @media (max-width: 900px) {
   blockquote {
     font-size: 0.9rem;
-  }
-  pre {
-    line-height: 1.5;
   }
 }
 @media (max-width: 600px) {

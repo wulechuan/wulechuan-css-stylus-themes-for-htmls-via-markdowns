@@ -360,7 +360,7 @@ body {
   padding: 0.2em 0;
 }
 .markdown-article pre {
-  line-height: 1.6;
+  line-height: 1.5;
   margin-left: 1rem;
   margin-right: 1rem;
   display: inline-block;
@@ -427,9 +427,6 @@ body {
 @media (max-width: 900px) {
   .markdown-article blockquote {
     font-size: 0.9rem;
-  }
-  .markdown-article pre {
-    line-height: 1.5;
   }
 }
 @media (max-width: 600px) {
