@@ -115,6 +115,7 @@ body {
   margin-bottom: 0.5em;
 }
 .markdown-article h6 {
+  font-size: 1em;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
@@ -434,15 +435,18 @@ body {
     font-size: 1.8rem;
   }
   .markdown-article h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
   .markdown-article h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
   }
   .markdown-article h4 {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
   }
   .markdown-article h5 {
+    font-size: 1.1rem;
+  }
+  .markdown-article h6 {
     font-size: 1rem;
   }
   .markdown-article ul,
