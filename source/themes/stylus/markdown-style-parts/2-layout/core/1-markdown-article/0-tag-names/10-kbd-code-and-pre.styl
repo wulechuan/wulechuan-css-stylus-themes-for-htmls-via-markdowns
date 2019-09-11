@@ -17,7 +17,7 @@
 
 
     pre {
-        
+
         &,
         > code, // source code blocks
         > code * {
@@ -46,8 +46,23 @@
 
 
     pre {
-        // line-height: 1.5;  // 1.5  works perfectly with the "PT Mono"  font face.
-        line-height: 1.65;    // 1.65 works perfectly with the "Consolas" font face.
+        // If content entities (e.g. comments), have
+        // a semi-transparent background-color,
+        // then value of 1.5 works fine with the "PT Mono" font face.
+        // **BUT** still not perfect!
+        // line-height: 1.5;
+
+        // If content entities (e.g. comments), have
+        // a semi-transparent background-color,
+        // then value of 1.65 works fine with the "Consolas" font face.
+        // **BUT** still not perfect!
+        // line-height: 1.65;
+
+        // Now I decide that nothing have a semi-transparent
+        // background-color. Thus a smaller value works perfectly.
+        line-height: 1.4;
+
+
         margin-left: 1rem;
         margin-right: 1rem;
 
@@ -58,7 +73,7 @@
 
 
         width: calc(100% - 2rem);
-        
+
         overflow-x: auto;
         padding: 0;
         margin-top: 0.5rem;

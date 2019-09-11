@@ -326,7 +326,7 @@ body {
   border-collapse: collapse;
   margin: 1rem auto;
   max-width: 96%;
-  min-width: 60%;
+  min-width: 64%;
 }
 .markdown-article kbd,
 .markdown-article code {
@@ -361,7 +361,7 @@ body {
   padding: 0.2em 0;
 }
 .markdown-article pre {
-  line-height: 1.65;
+  line-height: 1.4;
   margin-left: 1rem;
   margin-right: 1rem;
   display: inline-block;
@@ -778,6 +778,10 @@ body {
   background-color: #f7f7f9;
   box-shadow: 0 0 0.4rem rgba(0,0,0,0.2);
 }
+.markdown-article a {
+  transition-property: visibility, opacity, color, background-color, border, border-radius, transform;
+  transition-duration: 0.3s;
+}
 .markdown-article a:visited,
 .markdown-article a {
   color: #0f0fed;
@@ -896,7 +900,6 @@ body {
   background-color: #fff;
 }
 .markdown-article pre code {
-  color: inherit !important;
   background-color: transparent !important;
 }
 .markdown-article kbd {
@@ -973,8 +976,15 @@ nav.markdown-article-toc li > a[href^="#"]:hover {
 }
 pre,
 .hljs {
-  color: #d2d1d0;
   background-color: #212223;
+}
+pre,
+.hljs {
+  color: #c9c8c7;
+}
+.language-html .javascript,
+.language-html .css {
+  color: #c9c8c7;
 }
 .hljs-comment,
 .hljs-quote {
@@ -992,7 +1002,7 @@ pre,
   color: #8a2be2;
 }
 .hljs-keyword {
-  color: #a57;
+  color: #b67;
 }
 .hljs-function {
   color: #666;
@@ -1009,13 +1019,16 @@ pre,
 }
 .hljs-title,
 .hljs-function .hljs-title {
-  color: #efa;
+  color: #fc7;
 }
 .hljs-params {
   color: #a75;
 }
 .hljs-name {
   color: #f79;
+}
+.language-html {
+  color: #fff;
 }
 .language-html .hljs-name {
   color: #dd5151;
@@ -1026,28 +1039,29 @@ pre,
   color: #c66;
 }
 .hljs-literal {
-  color: #4bf;
+  color: #3bf;
 }
 .hljs-number {
   color: #af5;
+}
+.language-javascript .hljs-number,
+.javascript .hljs-number {
+  color: #f75;
 }
 .hljs-addition,
 .hljs-meta-string {
   color: #39f;
 }
 .hljs-regexp {
-  color: #f75;
+  color: #f8d;
 }
-.language-html .hljs-string {
+.hljs-string {
   color: #ff9;
 }
+.language-javascript .hljs-string,
 .javascript .hljs-string,
-.hljs-string {
-  color: #face79;
-}
-.css .hljs-string,
-.language-css .hljs-string {
-  color: #39f;
+.language-html .hljs-string {
+  color: #ff9;
 }
 .hljs-selector-tag {
   color: #dd5151;

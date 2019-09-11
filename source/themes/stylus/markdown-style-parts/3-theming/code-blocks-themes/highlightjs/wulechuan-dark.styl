@@ -13,8 +13,20 @@
 
 pre,
 .hljs {
-    color: #d2d1d0;
     background-color: #212223;
+}
+
+pre,
+.hljs {
+    color: #c9c8c7;
+}
+
+.language-html {
+
+    .javascript, // <script>
+    .css { // <style>
+        color: #c9c8c7;
+    }
 }
 
 .hljs-comment,
@@ -36,8 +48,8 @@ pre,
     color blueviolet;
 }
 
-.hljs-keyword {
-    color: #a57;
+.hljs-keyword { // var, const, let, return, import
+    color: #b67;
 }
 
 .hljs-function {
@@ -60,7 +72,7 @@ pre,
 
 .hljs-title,
 .hljs-function .hljs-title { // javascript: function "name"
-    color: #efa;
+    color: #fc7;
 }
 
 .hljs-params {
@@ -69,6 +81,10 @@ pre,
 
 .hljs-name {
     color: #f79;
+}
+
+.language-html {
+    color: white;
 }
 
 .language-html .hljs-name {
@@ -83,12 +99,20 @@ pre,
 
 
 .hljs-literal { // NaN, true, false
-    color: #4bf;
+    color: #3bf;
 }
 
 
 .hljs-number {
     color: #af5;
+}
+
+.language-javascript,
+.javascript {
+
+    .hljs-number {
+        color: #f75;
+    }
 }
 
 .hljs-addition,
@@ -97,26 +121,32 @@ pre,
 }
 
 .hljs-regexp {
-    color: #f75;
+    color: #f8d;
 }
 
-.language-html .hljs-string {
+
+
+.hljs-string {
+    // color: #face79;
     color: #ff9;
 }
 
-.javascript .hljs-string, // <script>
-.hljs-string {
-    color: #face79;
-}
-
-.css, // <style>
-.language-css {
+.language-javascript,
+.javascript, // <script>
+.language-html {
 
     .hljs-string {
-        color: #39f;
+        color: #ff9;
     }
 }
 
+// .css, // <style>
+// .language-css {
+
+//     .hljs-string {
+//         color: #39f;
+//     }
+// }
 
 
 .hljs-selector-tag {

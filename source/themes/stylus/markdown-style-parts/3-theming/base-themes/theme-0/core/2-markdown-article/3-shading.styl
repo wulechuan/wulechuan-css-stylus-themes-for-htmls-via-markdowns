@@ -13,6 +13,9 @@
 {__wrappingSelectorOf_markdownArticleBaseThemingRules} {
 
     a {
+        transition-property: visibility, opacity, color, background-color, border, border-radius, transform;
+        transition-duration: 0.3s;
+
         &:visited,
         & {
             color: #0f0fed;
@@ -170,7 +173,6 @@
     }
 
     pre code {
-        color: inherit !important;
         background-color: transparent !important;
     }
 

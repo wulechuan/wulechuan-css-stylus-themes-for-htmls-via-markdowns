@@ -250,8 +250,10 @@ var news = [
 ]
 
 
-let anUndefinedValue = undefined;
+let anUndefinedValue = undefined; // 看看语句结尾分号的效果
 let aNull = null;
+
+var anInteger = (19 + 3 * (79 - 51) + 2013) % 2
 
 const cellPhoneNumberRegExp = /^1\d{2}([- ]?\d{4}){2}$/
 
@@ -261,13 +263,14 @@ cellPhoneNumber = cellPhoneNumber.trim()
 const cellPhoneNumberIsValid = cellPhoneNumberRegExp.test(cellPhoneNumber)
 console.log('cellPhoneNumberIsValid', cellPhoneNumberIsValid) // true
 
-
-var aString = `Meaningless ${cellPhoneNumber} ` + true + ' ' + 19 + ' ' + false
+var aString = `Meaningless ${cellPhoneNumber} ` + true + ' ' + 15 + ' ' + false
 
 let isAnArray = false
 if (Array.isArray([])) {
     isAnArray = true
 }
+
+var now = new Date()
 
 const ul = Array.prototype.slice.apply(
     document.querySelectorAll('ul.news-list')

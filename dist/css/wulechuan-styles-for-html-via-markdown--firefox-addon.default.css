@@ -331,7 +331,7 @@ table {
   border-collapse: collapse;
   margin: 1rem auto;
   max-width: 96%;
-  min-width: 60%;
+  min-width: 64%;
 }
 kbd,
 code {
@@ -366,7 +366,7 @@ pre > code * {
   padding: 0.2em 0;
 }
 pre {
-  line-height: 1.65;
+  line-height: 1.4;
   margin-left: 1rem;
   margin-right: 1rem;
   display: inline-block;
@@ -818,6 +818,10 @@ pre {
   background-color: #f7f7f9;
   box-shadow: 0 0 0.4rem rgba(0,0,0,0.2);
 }
+a {
+  transition-property: visibility, opacity, color, background-color, border, border-radius, transform;
+  transition-duration: 0.3s;
+}
 a:visited,
 a {
   color: #0f0fed;
@@ -936,7 +940,6 @@ code {
   background-color: #fff;
 }
 pre code {
-  color: inherit !important;
   background-color: transparent !important;
 }
 kbd {
