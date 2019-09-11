@@ -39,7 +39,7 @@
 
 - If your purpose is to build some HTMLs out of some Markdown documents, and you'd like to utilize my themes(thanks), then please consider this advise:
 
-    > Although you can use this package directly, as you following the guidelines below, I highly recommand you to checkout other two packages of mine, which are both promoted right inside this article, [here](#Promotions). With the helps of either of the promoted packages, you can convert your Markdown files with just tiny little efforts.
+    > Although you can use this package directly, as you following the guidelines below, I highly recommand you to checkout other two packages of mine, which are both promoted right inside this article, [here](#promotions). With the helps of either of the promoted packages, you can convert your Markdown files with just tiny little efforts.
 
 - Well, if you really need to take my theme CSS in some other way, then please read on.
 
