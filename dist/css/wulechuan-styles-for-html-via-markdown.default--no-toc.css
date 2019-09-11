@@ -561,7 +561,7 @@ select {
 kbd,
 pre,
 code {
-  font-family: 'consolas', 'Courier New', Courier, 'PT Mono', monospace, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
+  font-family: 'consolas', 'Courier New', Courier, 'PT Mono', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', monospace;
 }
 html {
   background-color: #bbb;
@@ -862,9 +862,19 @@ pre,
 .hljs-number {
   color: #af5;
 }
+.language-typescript .hljs-number,
+.language-ts .hljs-number,
 .language-javascript .hljs-number,
+.language-js .hljs-number,
 .javascript .hljs-number {
   color: #f75;
+}
+.language-typescript .hljs-attr,
+.language-ts .hljs-attr,
+.language-javascript .hljs-attr,
+.language-js .hljs-attr,
+.javascript .hljs-attr {
+  color: #fff;
 }
 .hljs-addition,
 .hljs-meta-string {
@@ -876,7 +886,10 @@ pre,
 .hljs-string {
   color: #ff9;
 }
+.language-typescript .hljs-string,
+.language-ts .hljs-string,
 .language-javascript .hljs-string,
+.language-js .hljs-string,
 .javascript .hljs-string,
 .language-html .hljs-string {
   color: #ff9;
@@ -913,13 +926,6 @@ pre,
 .hljs-bullet,
 .hljs-link {
   color: #3af;
-}
-.javascript .hljs-attr,
-.language-ts .hljs-attr,
-.language-typescript .hljs-attr,
-.language-js .hljs-attr,
-.language-javascript .hljs-attr {
-  color: #fff;
 }
 @media print {
   a:visited,

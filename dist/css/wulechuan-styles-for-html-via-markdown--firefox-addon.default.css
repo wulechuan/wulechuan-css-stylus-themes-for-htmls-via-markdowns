@@ -741,7 +741,7 @@ select {
 kbd,
 pre,
 code {
-  font-family: 'consolas', 'Courier New', Courier, 'PT Mono', monospace, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑';
+  font-family: 'consolas', 'Courier New', Courier, 'PT Mono', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', monospace;
 }
 html {
   background-color: #bbb;
