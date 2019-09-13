@@ -67,7 +67,7 @@ Occaecat ea Lorem ut `officia` ea ad `nostrud`. Ut deserunt irure in dolore `vol
 
 ### Quoted Block
 
-#### What is GitHub?
+#### What is GitHub
 
 According to [KORBIN BROWN](https://www.howtogeek.com/180167/htg-explains-what-is-github-and-what-do-geeks-use-it-for/):
 
@@ -138,6 +138,19 @@ let isAnArray = false
 if (Array.isArray([])) {
     isAnArray = true
 }
+
+const regExp = new RegExp('\\w+', 'gi')
+
+console.log(window.innerHeight, window.self, global)
+
+const windowMethods = Object.keys(window).map(k => window[k]).filter(p => typeof p === 'function')
+console.log(windowMethods)
+
+if (false) {
+    throw TypeError('Should not throw here!')
+}
+
+
 
 var now = new Date()
 

@@ -119,7 +119,7 @@ For more pictures, see [Application Examples](./docs/refs/en-US/application-exam
 <center>Snapshot in a wide window (TOC collapsed)</center>
 
 
----
+-----
 
 
 ## Promotions

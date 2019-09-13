@@ -51,7 +51,7 @@
     "globby": "^10.0.1"
   },
   "devDependencies": {
-    "@wulechuan/generate-html-via-markdown": "^1.4.1",
+    "@wulechuan/generate-html-via-markdown": "^1.5.0-beta1",
     "chalk": "^2.4.2",
     "cssnano": "^4.1.10",
     "del": "^3.0.0",

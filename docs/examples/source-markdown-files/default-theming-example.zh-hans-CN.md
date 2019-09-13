@@ -2,7 +2,7 @@
 
 <p class="document-author">作者：吴乐川</p>
 
-----
+------
 
 ## 自然语言范文
 
@@ -139,7 +139,7 @@ CSS Object Model 是一组允许用JavaScript操纵CSS的API。 它是既DOM和H
 > 上文[3]来自 [维基百科](https://zh.wikipedia.org/wiki/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B)，但故意没有作为引用段落，以便呈现正常段落文字的样貌。
 
 
----
+------
 
 
 
@@ -166,38 +166,38 @@ CSS Object Model 是一组允许用JavaScript操纵CSS的API。 它是既DOM和H
 >     The functionality of this file's is to print some details
 >     of a 3D object selected by the user.
 > */
-> 
+>
 > SelectObj('_cam_particles_painting.focus_plane_indicator', null, null);
-> 
+>
 > // User currently selected Object
 > var o3DObj = Selection(0);
-> 
+>
 > var oParam = o3DObj.Parameters;
 > var oPrimitive = o3DObj.ActivePrimitive;
-> 
+>
 > // object: ICE Attribute Collection
 > var oIAC = oPrimitive.ICEAttributes;
-> 
+>
 > for (var i = 0; i < oIAC.Count; i++) {
 >     LogMessage('[' + i + '] ' + oIAC(i).Name);
 > }
-> 
-> 
+>
+>
 > // A specific attribute
 > var oIA = oIAC.Item('nb_CameraUtil_FocusDistance');
-> 
+>
 > LogMessage('\n\t\t Name: \t\t'   + oIA);
 > LogMessage('\t IsDefined: \t'    + oIA.IsDefined);
 > LogMessage('\t DataType: \t'     + oIA.DataType);
 > LogMessage('\t IsConstant: \t'   + oIA.IsConstant);
 > LogMessage('\t IsReadOnly: \t'   + oIA.IsReadOnly);
 > LogMessage('\t ElementCount: \t' + oIA.ElementCount);
-> 
+>
 > var dataArray = oIA.DataArray;
 > LogMessage(oIA.DataArray.Element);
-> 
+>
 > for (var j = 0; j < dataArray.length; j++) {
-> 	LogMessage('[' + j + '] ' + dataArray[j]);
+>     LogMessage('[' + j + '] ' + dataArray[j]);
 > }
 > ```
 >
@@ -224,7 +224,7 @@ CSS Object Model 是一组允许用JavaScript操纵CSS的API。 它是既DOM和H
 ![大美女](./images/beauty.jpg)
 
 
----
+------
 
 ## 程序代码片段示例集
 
@@ -263,12 +263,24 @@ cellPhoneNumber = cellPhoneNumber.trim()
 const cellPhoneNumberIsValid = cellPhoneNumberRegExp.test(cellPhoneNumber)
 console.log('cellPhoneNumberIsValid', cellPhoneNumberIsValid) // true
 
-var aString = `Meaningless ${cellPhoneNumber} ` + true + ' ' + 15 + ' ' + false
+var aString = `Meaningless ${cellPhoneNumber} ` + true + ' ' + 15 + ' ' + false + Math.random().toFixed(4)
 
 let isAnArray = false
 if (Array.isArray([])) {
     isAnArray = true
 }
+
+const regExp = new RegExp('\\w+', 'gi')
+
+console.log(window.innerHeight, window.self, global)
+
+const windowMethods = Object.keys(window).map(k => window[k]).filter(p => typeof p === 'function')
+console.log(windowMethods)
+
+if (false) {
+    throw TypeError('Should not throw here!')
+}
+
 
 var now = new Date()
 

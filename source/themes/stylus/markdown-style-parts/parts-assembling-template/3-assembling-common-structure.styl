@@ -1,4 +1,4 @@
-// ----------- title block of ouptut css file --------------------------------
+// ----------------- title block of ouptut css file ----------------------------------------------------
 
 if !_shouldNotOutputTitleBlock {
     @import '../0-titles-for-output-css/_default-title'
@@ -12,7 +12,7 @@ if !_shouldNotOutputTitleBlock {
 
 
 
-// ----------- base definitions ----------------------------------------------
+// ----------------- base definitions ----------------------------------------------------------------------------
 
 @import '../1-base'
 
@@ -20,7 +20,7 @@ if !_shouldNotOutputTitleBlock {
 
 
 
-// ----------- layout definitions --------------------------------------------
+// ----------------- layout definitions ------------------------------------------------------------------------
 
 @import '../2-layout/core'
 
@@ -35,7 +35,7 @@ if _shouldIncludeBackToTopLink {
 
 
 
-// ----------- theming 1: base theming ---------------------------------------
+// ----------------- theming 1: base theming -----------------------------------------------------------------
 
 @import '../3-theming/base-themes/' + _folderNameOf_baseTheme + '/core'
 
@@ -49,13 +49,13 @@ if _shouldIncludeBackToTopLink {
 
 
 
-// ----------- theming 2: theming for code blocks -----------------------------
+// ----------------- theming 2: theming for code blocks -----------------------------------------------
 
 @import '../3-theming/code-blocks-themes'
 
 
 
 
-// ----------- extra: e.g. printing media -------------------------------------
+// ----------------- extra: e.g. printing media -------------------------------------------------------------
 
 @import '../4-extra'

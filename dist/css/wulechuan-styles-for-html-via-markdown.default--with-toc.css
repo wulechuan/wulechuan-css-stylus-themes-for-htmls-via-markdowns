@@ -1109,6 +1109,131 @@ pre,
 .hljs-link {
   color: #3af;
 }
+.hljs-keyword.var,
+.hljs-keyword.const,
+.hljs-keyword.let {
+  color: #f66;
+}
+.hljs-keyword.new {
+  color: #f99;
+}
+.hljs-keyword.in,
+.hljs-keyword.of,
+.hljs-keyword.typeof,
+.hljs-keyword.instanceof {
+  color: #f99;
+}
+.hljs-keyword.this {
+  color: #f99;
+}
+.hljs-keyword.delete {
+  color: #f37;
+}
+.hljs-keyword.return,
+.hljs-keyword.yield {
+  color: #f67;
+}
+.hljs-keyword.thow {
+  color: #f57;
+}
+.hljs-keyword.switch,
+.hljs-keyword.case {
+  color: #f68;
+}
+.hljs-keyword.for,
+.hljs-keyword.do,
+.hljs-keyword.while {
+  color: #f69;
+}
+.hljs-keyword.if,
+.hljs-keyword.then,
+.hljs-keyword.else,
+.hljs-keyword.elif {
+  color: #f76;
+}
+.hljs-keyword.break,
+.hljs-keyword.continue {
+  color: #f77;
+}
+.hljs-keyword.try,
+.hljs-keyword.catch,
+.hljs-keyword.finally {
+  color: #7f7;
+}
+.hljs-keyword.default {
+  color: #f78;
+}
+.hljs-keyword.import,
+.hljs-keyword.export {
+  color: #f79;
+}
+.hljs-keyword.await,
+.hljs-keyword.async {
+  color: #f80;
+}
+.hljs-keyword.class,
+.hljs-keyword.extends,
+.hljs-keyword.super {
+  color: #f99;
+}
+.hljs-keyword.interface,
+.hljs-keyword.implements {
+  color: #f99;
+}
+.hljs-keyword.public,
+.hljs-keyword.protected,
+.hljs-keyword.private,
+.hljs-keyword.static {
+  color: #f99;
+}
+.hljs-keyword.debugger {
+  color: #f79;
+}
+.hljs-built_in.window,
+.hljs-built_in.global {
+  color: #66c;
+}
+.hljs-built_in.Object {
+  color: #77c;
+}
+.hljs-built_in.Error,
+.hljs-built_in.SyntaxError,
+.hljs-built_in.EvalError,
+.hljs-built_inInternalError,
+.hljs-built_in.TypeError,
+.hljs-built_in.ReferenceError,
+.hljs-built_in.RangeError,
+.hljs-built_in.URIError {
+  color: #55c;
+}
+.hljs-built_in.document {
+  color: #65c;
+}
+.hljs-built_in.Math,
+.hljs-built_in.Date {
+  color: #68c;
+}
+.hljs-built_in.RegExp {
+  color: #69c;
+}
+.hljs-built_in.Array,
+.hljs-built_in.Set {
+  color: #70c;
+}
+.hljs-built_in.Number,
+.hljs-built_in.Boolean,
+.hljs-built_in.String {
+  color: #80c;
+}
+.hljs-built_in.Storage {
+  color: #90c;
+}
+.hljs-built_in.jQuery {
+  color: #a1c;
+}
+.hljs-built_in._ {
+  color: #a0c;
+}
 @media print {
   a:visited,
   a {
