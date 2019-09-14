@@ -76,7 +76,8 @@ pre,
 }
 
 .hljs-function .hljs-keyword { // javascript: "function"
-    color: #d74fff;
+    // color: #d74fff;
+    color: #7ae;
 }
 
 .hljs-title {
@@ -132,7 +133,7 @@ pre,
 }
 
 .hljs-regexp {
-    color: #f8d;
+    // Defined in a standalone styl file.
 }
 
 
@@ -154,13 +155,18 @@ pre,
     }
 }
 
-// .css, // <style>
-// .language-css {
+.language-typescript,
+.language-ts,
+.language-javascript,
+.language-js,
+.javascript, // <script>
+.css, // <style>
+.language-css {
 
-//     .hljs-string {
-//         color: #39f;
-//     }
-// }
+    .hljs-string {
+        background-color: #ffff9919;
+    }
+}
 
 
 .hljs-selector-tag {

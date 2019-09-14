@@ -6,7 +6,7 @@
 
 .wlc-function-name,
 .hljs-function .hljs-title { // javascript: function "name"
-    color: #fb5;
+    color: #f9f;
 }
 
 .wlc-escape-char,
@@ -14,17 +14,39 @@
     color: #c75;
 }
 
-.hljs-regexp .wlc-escape-char {
-    color: #4af;
-}
+.hljs-regexp {
+    color: #f6e;
 
-.hljs-regexp .wlc-digit-pair-between-curly-braces {
-
-    .digit {
-        color: #f63;
+    .regexp-body {
+        background-color: rgba(#f6e, 0.08);
+        // background-color: rgba(#fff, 0.06);
     }
 
-    .comma {
-        color: #666;
+    .regexp-options {
+        color: #3e1;
+    }
+
+    .regexp-selector-input-begin,
+    .regexp-selector-input-end {
+        color: #48f;
+    }
+
+    .wlc-escape-char {
+        color: rgba(#f75, 0.3);
+
+        .escaped-char {
+            color: #f75;
+        }
+    }
+
+    .wlc-digit-pair-between-curly-braces {
+
+        .digit {
+            color: #f63;
+        }
+
+        .comma {
+            color: #666;
+        }
     }
 }

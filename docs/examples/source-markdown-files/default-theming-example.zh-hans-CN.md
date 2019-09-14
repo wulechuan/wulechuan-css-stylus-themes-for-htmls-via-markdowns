@@ -272,7 +272,7 @@ if (Array.isArray([])) {
 
 const regExp = new RegExp('\\w+', 'gi')
 
-const complexRegExp = /^\[[^\<](\(|\))\{[a-z\d_-]+[\w\.]{16,}\]/
+const complexRegExp = /^\[[^\<](\(|\))\$\{[a-z\d_-]+[\w\.]{16,}\]$/gi
 
 console.log(window.innerHeight, window.self, global)
 
@@ -282,6 +282,10 @@ console.log(windowMethods)
 if (false) {
     throw TypeError('Should not throw here!')
 }
+
+$(function (e) {
+    alert('DOMs are ready')
+})
 
 const anArrowFunction = (count) => {
     for (var i = 0; i<count; i++) {
@@ -307,6 +311,17 @@ const anArrowFunction = (count) => {
     }
 }
 
+window.tempString = '\nhello\n'
+delete window.tempString
+
+
+window['temp-string-2'] = `
+    multiple
+    lines
+    are
+    occupied.
+`
+
 
 var now = new Date()
 
@@ -331,6 +346,10 @@ function addTwoNumbers(a, b) {
     return NaN
 }
 
+async function anAsyncFunction(something, ...anything) {
+    await new Promise(resolve => setTimeout(() => resolve(), 123))
+    return +prompt('now please input a number:')
+}
 
 export default function isAPromiseObject(input) {
     /*

@@ -1,47 +1,83 @@
 .hljs-built_in {
     color: unset;
 
-    &.window, &.global {
-        // color: #66c;
+    // --------- global classes and functions -----------
+
+    &.Error, &.SyntaxError, &.EvalError, &InternalError, &.TypeError, &.ReferenceError, &.RangeError, &.URIError {
+        color: #f88;
+    }
+
+    &.RegExp {
+        color: #f6e;
     }
 
     &.Object {
-        // color: #77c;
+        color: #f6a;
     }
 
-    &.Error, &.SyntaxError, &.EvalError, &InternalError, &.TypeError, &.ReferenceError, &.RangeError, &.URIError {
-        // color: #55c;
-    }
-
-    &.document {
-        // color: #65c;
-    }
-    
     &.Math, &.Date {
-        // color: #68c;
-    }
-    
-    &.RegExp {
-        color: #f8d;
+        color: #f6a;
     }
 
     &.Array, &.Set {
-        // color: #70c;
+        color: #f6a;
     }
 
     &.Number, &.Boolean, &.String {
-        // color: #80c;
+        color: #f6a;
     }
 
+    &.Promise {
+        color: #f6a;
+    }
+
+    &.Worker {
+        color: #f6a;
+    }
+
+    &.LocalStorage,
     &.Storage {
-        // color: #90c;
+        color: #f6a;
     }
 
-    &.jQuery {
-        // color: #a1c;
+
+
+
+    // --------- global objects -----------
+
+    &.window, &.global {
+        // color: #a6f;
+        color: #fc6;
     }
 
-    &._ {
-        // color: #a0c;
+    &.document {
+        color: #face79;
+    }
+
+    &.open,
+    &.stop {
+        // color: red;
+    }
+
+    &.setInterval,
+    &.clearInterval,
+    &.setTimeout,
+    &.clearTimeout {
+        color: #b4f;
+    }
+
+    &.prompt,
+    &.confirm,
+    &.alert,
+    &.console {
+        color: #b4f;
+    }
+
+    &.jQuery, &.jquery {
+        color: #63f;
+    }
+
+    &.lodash, &.underscorejs {
+        color: #ff6;
     }
 }

@@ -358,7 +358,7 @@ pre > code {
   border-radius: 0;
 }
 pre {
-  line-height: 1.4;
+  line-height: 1.6;
   margin-left: 1rem;
   margin-right: 1rem;
   display: inline-block;
@@ -1016,7 +1016,7 @@ pre,
   color: #d74fff;
 }
 .hljs-function .hljs-keyword {
-  color: #d74fff;
+  color: #7ae;
 }
 .hljs-title {
   color: #fb5;
@@ -1052,9 +1052,6 @@ pre,
 .hljs-meta-string {
   color: #39f;
 }
-.hljs-regexp {
-  color: #f8d;
-}
 .hljs-string {
   color: #ff9;
 }
@@ -1065,6 +1062,15 @@ pre,
 .javascript .hljs-string,
 .language-html .hljs-string {
   color: #ff9;
+}
+.language-typescript .hljs-string,
+.language-ts .hljs-string,
+.language-javascript .hljs-string,
+.language-js .hljs-string,
+.javascript .hljs-string,
+.css .hljs-string,
+.language-css .hljs-string {
+  background-color: rgba(255,255,153,0.098);
 }
 .hljs-selector-tag {
   color: #dd5151;
@@ -1105,7 +1111,7 @@ pre,
   color: #a67;
 }
 .hljs-keyword.new {
-  color: #f36;
+  color: #face87;
 }
 .hljs-keyword.in,
 .hljs-keyword.of,
@@ -1113,10 +1119,13 @@ pre,
   color: #96a;
 }
 .hljs-keyword.typeof {
-  color: #a97;
+  color: #ee9;
 }
 .hljs-keyword.this {
   color: #f9a;
+}
+.hljs-keyword.delete {
+  color: #f36;
 }
 .hljs-keyword.switch,
 .hljs-keyword.case {
@@ -1199,8 +1208,71 @@ pre,
 .hljs-built_in {
   color: unset;
 }
+.hljs-built_in.Error,
+.hljs-built_in.SyntaxError,
+.hljs-built_in.EvalError,
+.hljs-built_inInternalError,
+.hljs-built_in.TypeError,
+.hljs-built_in.ReferenceError,
+.hljs-built_in.RangeError,
+.hljs-built_in.URIError {
+  color: #f88;
+}
 .hljs-built_in.RegExp {
-  color: #f8d;
+  color: #f6e;
+}
+.hljs-built_in.Object {
+  color: #f6a;
+}
+.hljs-built_in.Math,
+.hljs-built_in.Date {
+  color: #f6a;
+}
+.hljs-built_in.Array,
+.hljs-built_in.Set {
+  color: #f6a;
+}
+.hljs-built_in.Number,
+.hljs-built_in.Boolean,
+.hljs-built_in.String {
+  color: #f6a;
+}
+.hljs-built_in.Promise {
+  color: #f6a;
+}
+.hljs-built_in.Worker {
+  color: #f6a;
+}
+.hljs-built_in.LocalStorage,
+.hljs-built_in.Storage {
+  color: #f6a;
+}
+.hljs-built_in.window,
+.hljs-built_in.global {
+  color: #fc6;
+}
+.hljs-built_in.document {
+  color: #face79;
+}
+.hljs-built_in.setInterval,
+.hljs-built_in.clearInterval,
+.hljs-built_in.setTimeout,
+.hljs-built_in.clearTimeout {
+  color: #b4f;
+}
+.hljs-built_in.prompt,
+.hljs-built_in.confirm,
+.hljs-built_in.alert,
+.hljs-built_in.console {
+  color: #b4f;
+}
+.hljs-built_in.jQuery,
+.hljs-built_in.jquery {
+  color: #63f;
+}
+.hljs-built_in.lodash,
+.hljs-built_in.underscorejs {
+  color: #ff6;
 }
 .wlc-parenthesis,
 .wlc-square-bracket,
@@ -1209,14 +1281,30 @@ pre,
 }
 .wlc-function-name,
 .hljs-function .hljs-title {
-  color: #fb5;
+  color: #f9f;
 }
 .wlc-escape-char,
 .hljs-string .wlc-escape-char {
   color: #c75;
 }
+.hljs-regexp {
+  color: #f6e;
+}
+.hljs-regexp .regexp-body {
+  background-color: rgba(255,102,238,0.08);
+}
+.hljs-regexp .regexp-options {
+  color: #3e1;
+}
+.hljs-regexp .regexp-selector-input-begin,
+.hljs-regexp .regexp-selector-input-end {
+  color: #48f;
+}
 .hljs-regexp .wlc-escape-char {
-  color: #4af;
+  color: rgba(255,119,85,0.3);
+}
+.hljs-regexp .wlc-escape-char .escaped-char {
+  color: #f75;
 }
 .hljs-regexp .wlc-digit-pair-between-curly-braces .digit {
   color: #f63;
