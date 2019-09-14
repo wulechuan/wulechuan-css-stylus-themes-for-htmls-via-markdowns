@@ -150,6 +150,27 @@ if (false) {
     throw TypeError('Should not throw here!')
 }
 
+const anArrowFunction = (count) => {
+    for (var i = 0; i<count; i++) {
+        if (i === 3) {
+            continue
+        }
+
+        switch (i % 2) {
+            case 0:
+            default:
+                console.log(i, 'is an even number.')
+                break
+            case 1:
+                console.log(i, 'is an odd number.')
+                break
+        }
+
+        if (i >= 10000) {
+            break
+        }
+    }
+}
 
 
 var now = new Date()

@@ -10,10 +10,18 @@
     text-decoration: underline;
 }
 
+pre > code {
+
+    .hljs-comment {
+        padding-top: 0.2em;
+        padding-bottom: 0.2em;
+    }
+}
+
 
 pre,
 .hljs {
-    background-color: #212223;
+    background-color: #1a1b1c;
 }
 
 pre,
@@ -31,8 +39,8 @@ pre,
 
 .hljs-comment,
 .hljs-quote {
-    color: #2e7;
-    background-color: #151619;
+    color: #4c5;
+    // background-color: #102315;
 }
 
 .hljs-tag {
@@ -49,7 +57,7 @@ pre,
 }
 
 .hljs-keyword { // var, const, let, return, import
-    color: #b67;
+    color: #a68;
 }
 
 .hljs-function {
@@ -72,7 +80,7 @@ pre,
 
 .hljs-title,
 .hljs-function .hljs-title { // javascript: function "name"
-    color: #fc7;
+    color: #af4;
 }
 
 .hljs-params {
@@ -99,7 +107,7 @@ pre,
 
 
 .hljs-literal { // NaN, true, false
-    color: #3bf;
+    // in a standalone styl file
 }
 
 
@@ -113,10 +121,6 @@ pre,
 .language-js,
 .javascript { // <script>
 
-    .hljs-number {
-        color: #f75;
-    }
-    
     .hljs-attr {
         color: white;
     }
@@ -185,7 +189,10 @@ pre,
 
 
 
-.hljs-built_in, // document, console, Array, Math
+.hljs-built_in { // document, console, Array, Math
+    color: #4f8;
+}
+
 .hljs-class .hljs-title {
     color: #6fa;
 }
