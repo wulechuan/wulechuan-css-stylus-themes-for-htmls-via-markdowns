@@ -360,11 +360,8 @@ pre > code {
   margin: 0 !important;
   border-radius: 0;
 }
-pre > code * {
-  padding: 0.2em 0;
-}
 pre {
-  line-height: 1.4;
+  line-height: 1.6;
   margin-left: 1rem;
   margin-right: 1rem;
   display: inline-block;
