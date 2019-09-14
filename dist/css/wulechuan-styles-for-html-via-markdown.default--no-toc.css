@@ -1084,6 +1084,11 @@ pre,
 .hljs-built_in.console {
   color: #b4f;
 }
+.hljs-built_in.exports,
+.hljs-built_in.module,
+.hljs-built_in.require {
+  color: #b57;
+}
 .hljs-built_in.jQuery,
 .hljs-built_in.jquery {
   color: #63f;

@@ -98,6 +98,8 @@ See, it's a website for anyone, but mostly engineers.
 // This is a comment.
 import something from 'somethingjs'
 
+var myModule = require('my-module');
+
 const author = {
     name: 'wulechuan',
     age: 40,
@@ -229,6 +231,10 @@ export default function isAPromiseObject(input) {
     */
     return !!input && typeof input.then === 'function' && typeof input.done === 'function'
 }
+
+module.exports = { content: 'nothing' };
+
+exports.author = 'wulechun@live.com';
 ```
 
 

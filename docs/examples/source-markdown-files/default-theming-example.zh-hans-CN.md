@@ -234,6 +234,8 @@ CSS Object Model 是一组允许用JavaScript操纵CSS的API。 它是既DOM和H
 // 这是一句行尾注释。好吧，我承认它恰好在这一行的开头。
 import something from 'somethingjs'
 
+var myModule = require('my-module');
+
 const author = {
     name: '吴乐川',
     age: 40,
@@ -360,6 +362,10 @@ export default function isAPromiseObject(input) {
     */
     return !!input && typeof input.then === 'function' && typeof input.done === 'function'
 }
+
+module.exports = { content: 'nothing' };
+
+exports.author = 'wulechun@live.com';
 ```
 
 ### HTML 代码片段
