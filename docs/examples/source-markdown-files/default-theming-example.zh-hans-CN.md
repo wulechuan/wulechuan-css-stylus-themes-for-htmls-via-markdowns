@@ -272,6 +272,8 @@ if (Array.isArray([])) {
 
 const regExp = new RegExp('\\w+', 'gi')
 
+const complexRegExp = /^\[[^\<](\(|\))\{[a-z\d_-]+[\w\.]{16,}\]/
+
 console.log(window.innerHeight, window.self, global)
 
 const windowMethods = Object.keys(window).map(k => window[k]).filter(p => typeof p === 'function')
@@ -287,13 +289,15 @@ const anArrowFunction = (count) => {
             continue
         }
 
+        debugger
+
         switch (i % 2) {
             case 0:
             default:
-                console.log(i, 'is an even number.')
+                console.log(i, 'It\'s an even number.')
                 break
             case 1:
-                console.log(i, 'is an odd number.')
+                console.log(i, 'It\'s an odd number.')
                 break
         }
 

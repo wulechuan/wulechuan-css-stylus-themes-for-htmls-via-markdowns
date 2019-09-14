@@ -981,7 +981,7 @@ pre,
 }
 pre,
 .hljs {
-  color: #c9c8c7;
+  color: #aaa;
 }
 .language-html .javascript,
 .language-html .css {
@@ -990,6 +990,7 @@ pre,
 .hljs-comment,
 .hljs-quote {
   color: #4c5;
+  background-color: #000;
 }
 .hljs-tag {
   color: #555;
@@ -1017,12 +1018,11 @@ pre,
 .hljs-function .hljs-keyword {
   color: #d74fff;
 }
-.hljs-title,
-.hljs-function .hljs-title {
-  color: #af4;
+.hljs-title {
+  color: #fb5;
 }
 .hljs-params {
-  color: #a75;
+  color: #6fb;
 }
 .hljs-name {
   color: #f79;
@@ -1116,7 +1116,7 @@ pre,
   color: #a97;
 }
 .hljs-keyword.this {
-  color: #6fa;
+  color: #f9a;
 }
 .hljs-keyword.switch,
 .hljs-keyword.case {
@@ -1167,6 +1167,10 @@ pre,
 .hljs-keyword.async {
   color: #dd5175;
 }
+.hljs-keyword.debugger {
+  color: #fff;
+  background-color: #f00;
+}
 .hljs-literal {
   color: #2ef;
 }
@@ -1177,7 +1181,7 @@ pre,
   color: #7ab;
 }
 .hljs-literal.true {
-  color: #97f;
+  color: #98f;
 }
 .hljs-literal.false {
   color: #86d;
@@ -1197,6 +1201,28 @@ pre,
 }
 .hljs-built_in.RegExp {
   color: #f8d;
+}
+.wlc-parenthesis,
+.wlc-square-bracket,
+.wlc-curly-brace {
+  color: #666;
+}
+.wlc-function-name,
+.hljs-function .hljs-title {
+  color: #fb5;
+}
+.wlc-escape-char,
+.hljs-string .wlc-escape-char {
+  color: #c75;
+}
+.hljs-regexp .wlc-escape-char {
+  color: #4af;
+}
+.hljs-regexp .wlc-digit-pair-between-curly-braces .digit {
+  color: #f63;
+}
+.hljs-regexp .wlc-digit-pair-between-curly-braces .comma {
+  color: #666;
 }
 @media print {
   a:visited,
