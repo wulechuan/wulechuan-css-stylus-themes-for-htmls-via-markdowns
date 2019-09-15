@@ -10,7 +10,7 @@ import {
 } from 'gulp'
 
 import buildHighOrderTasksForABatchOfTaskSettings
-    from '../../lib/tasks-build-3-types-of-high-order-tasks'
+    from '../../utils/tasks-build-3-types-of-high-order-tasks'
 
 import allThemeJavascriptTasksSettings
     from '../../tasks/themes/js/create-all-theme-js-task-settings'

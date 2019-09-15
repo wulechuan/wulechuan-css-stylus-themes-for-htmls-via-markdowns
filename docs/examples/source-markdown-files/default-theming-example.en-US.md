@@ -1,5 +1,8 @@
 # Wulechuan's Article CSS Styles Examples
 
+<p class="document-author">wulechuan@live.com</p>
+
+------
 
 ## Articles
 

@@ -26,14 +26,6 @@ summary {
 body {
   padding: 3rem 1rem 4rem 1rem;
 }
-@media (max-width: 900px) {
-  html {
-    font-size: 18px;
-  }
-  body {
-    font-size: 1rem;
-  }
-}
 @media (max-width: 600px) {
   html {
     font-size: 16px;
@@ -423,8 +415,14 @@ body {
   transform: scaleX(-1);
 }
 @media (max-width: 900px) {
+  .markdown-article h1 {
+    font-size: 2.7rem;
+  }
+  .markdown-article h2 {
+    font-size: 2.2rem;
+  }
   .markdown-article blockquote {
-    font-size: 0.9rem;
+    font-size: 100%;
   }
 }
 @media (max-width: 600px) {
@@ -451,7 +449,6 @@ body {
     padding-left: 1.8em;
   }
   .markdown-article blockquote {
-    font-size: 100%;
     margin-left: 0.7rem;
     margin-right: 0.5rem;
   }
@@ -474,7 +471,7 @@ body {
   scroll-behavior: smooth;
 }
 .markdown-article {
-  font-size: 0.9rem;
+  font-size: 18px;
   line-height: 1.6;
   padding: 6rem 4rem 14rem 4rem;
   max-width: 50rem;
@@ -513,7 +510,6 @@ body {
 }
 @media (max-width: 900px) {
   .markdown-article {
-    font-size: 1rem;
     line-height: 1.8;
     padding: 3rem 2rem 7rem 2rem;
   }
@@ -725,6 +721,10 @@ body {
 }
 .markdown-article h6 {
   font-weight: bolder;
+}
+.markdown-article h1 {
+  padding-left: 1em;
+  padding-right: 1em;
 }
 .markdown-article img {
   border-radius: 0.5rem;

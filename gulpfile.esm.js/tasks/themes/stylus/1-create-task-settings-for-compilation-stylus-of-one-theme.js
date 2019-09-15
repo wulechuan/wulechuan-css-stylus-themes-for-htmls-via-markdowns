@@ -2,10 +2,10 @@ import postCSS from 'gulp-postcss'
 import gulpStylus from 'gulp-stylus'
 
 import createOneAbstractTaskSet
-    from '../../../lib/_create-one-abstract-task-set'
+    from '../../../utils/_create-one-abstract-task-set'
 
 import getPluginsForOnePostCSSInstance
-    from '../../../lib/get-plugins-for-one-postcss-instance'
+    from '../../../utils/get-plugins-for-one-postcss-instance'
 
 
 

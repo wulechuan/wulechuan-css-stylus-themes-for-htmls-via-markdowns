@@ -10,6 +10,7 @@
 - [本文之简体中文版](../zh-hans-CN/application-examples.md)
 
 
+
 ## Application Examples
 
 A picture paints a thousand words.
@@ -26,23 +27,19 @@ I've purposely prepared an example markdown article. I generate an HTML file out
 
 ### HTML Snapshots(Pictures)
 
-- Snapshot in a wide window (TOC collapsed)
 
-    [![](../../examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-collapsed.png)](../../examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-collapsed.png)
+- [In a wide window toc collapsed](../../examples/rendered/snapshots/en-US-example-1-in-a-wide-window-toc-collapsed.png)
 
-- Snapshot in a wide window (TOC expanded)
+- [In a wide window toc expanded](../../examples/rendered/snapshots/en-US-example-1-in-a-wide-window-toc-expanded.png)
 
-    [![](../../examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-expanded.png)](../../examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-expanded.png)
+- [In a window of medium width toc collapsed](../../examples/rendered/snapshots/en-US-example-2-in-a-window-of-medium-width-toc-collapsed.png)
 
-- Snapshot in a narrow window
+- [In a window of medium width toc expanded](../../examples/rendered/snapshots/en-US-example-2-in-a-window-of-medium-width-toc-expanded.png)
 
-    [![](../../examples/rendered/snapshots/en-US-example-in-a-narrow-window-toc-collapsed.png)](../../examples/rendered/snapshots/en-US-example-in-a-narrow-window-toc-collapsed.png)
+- [In a narrow window toc collapsed](../../examples/rendered/snapshots/en-US-example-3-in-a-narrow-window-toc-collapsed.png)
+
+- [In a narrow window toc expanded](../../examples/rendered/snapshots/en-US-example-3-in-a-narrow-window-toc-expanded.png)
 
 
 ---
-
-
-### Mutlilingual
-
-- [简体中文（ zh-hans-CN ）](../zh-hans-CN/application-examples.md)
 

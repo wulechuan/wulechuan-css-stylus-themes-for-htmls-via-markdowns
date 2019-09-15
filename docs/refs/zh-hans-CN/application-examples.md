@@ -27,21 +27,19 @@
 
 ### HTML 范文的截图
 
-- 窗口较宽时的效果（纲要列表已收叠）
+- [大尺寸浏览器中的效果，文章纲要列表已收叠](../../examples/rendered/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png)
 
-    [![](../../examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.png)](../../examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已收叠）.png)
+- [大尺寸浏览器中的效果，文章纲要列表已展开](../../examples/rendered/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已展开.png)
 
-- 窗口较宽时的效果（纲要列表已展开）
+- [中等尺寸浏览器中的效果，文章纲要列表已收叠](../../examples/rendered/snapshots/zh-Hans-CN-2-中等尺寸浏览器中的效果-文章纲要列表已收叠.png)
 
-    [![](../../examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已展开）.png)](../../examples/rendered/snapshots/zh-Hans-CN-窗口较宽时的效果（纲要列表已展开）.png)
+- [中等尺寸浏览器中的效果，文章纲要列表已展开](../../examples/rendered/snapshots/zh-Hans-CN-2-中等尺寸浏览器中的效果-文章纲要列表已展开.png)
 
-- 窗口较窄时的效果（纲要列表已收叠）
+- [窄小尺寸浏览器中的效果，文章纲要列表已收叠](../../examples/rendered/snapshots/zh-Hans-CN-3-窄小尺寸浏览器中的效果-文章纲要列表已收叠.png)
 
-    [![](../../examples/rendered/snapshots/zh-Hans-CN-窗口较窄时的效果（纲要列表已收叠）.png)](../../examples/rendered/snapshots/zh-Hans-CN-窗口较窄时的效果（纲要列表已收叠）.png)
+- [窄小尺寸浏览器中的效果，文章纲要列表已展开](../../examples/rendered/snapshots/zh-Hans-CN-3-窄小尺寸浏览器中的效果-文章纲要列表已展开.png)
+
 
 ---
 
-### Mutlilingual
-
-- [English (US)](../en-US/application-examples.md)
 

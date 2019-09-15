@@ -1,7 +1,7 @@
 import chalk from 'chalk'
 
 import buildHighOrderTasksForABatchOfTaskSettings
-    from '../../lib/tasks-build-3-types-of-high-order-tasks'
+    from '../../utils/tasks-build-3-types-of-high-order-tasks'
 
 import mergeSpecificTaskConfigsWithSharedConfigsAndCreateTaskSettings
     from '../../tasks/themes/stylus/2-create-all-task-settings-for-all-themes'

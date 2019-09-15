@@ -33,6 +33,11 @@ const exampleOutputHTMLFileNameEnUS = 'default-theming-example.en-us.html'
 const exampleOutputHTMLFileNameZhHansCN = 'default-theming-example.zh-hans-cn.html'
 
 
+// const thisModuleRootFolderPath = path.resolve(process.env.PWD, '../../../..').replace(/\\/g, '/')
+const thisModuleRootFolderPath = path.dirname(
+    require.resolve('@wulechuan/css-stylus-markdown-themes/package.json')
+).replace(/\\/g, '/')
+
 
 
 
@@ -56,27 +61,42 @@ const markdownToHTMLConverter = createAnMarkDownToHTMLConverter({
 
 
 export default function createTaskSettingsForGeneratingHTMLsForExampleMarkdowns({
-    distCSSFilePathToUse,
+    distCSSFileNameToUse,
     exampleOutputHTMLFilesFolderPath,
 }) {
-    const absolutePathsOfExtraFilesToEmbedIntoHTML = [
-        joinPathPOSIX(process.env.PWD, distCSSFilePathToUse),
-    ]
+    const absolutePathOfJavascriptForUpdatingHTMLTitle = joinPathPOSIX(
+        thisModuleRootFolderPath,
+        'docs/examples/',
+        'auto-update-html-document-title.js'
+    )
 
-    if (distCSSFilePathToUse.match(/--with-toc\.(min\.)?css$/)) {
+    const absolutePathsOfExtraFilesToEmbedIntoHTML = []
+
+    if (distCSSFileNameToUse) {
         absolutePathsOfExtraFilesToEmbedIntoHTML.push(
-            joinPathPOSIX(process.env.PWD, './dist/js/table-of-contents-behaviours.min.js')
+            joinPathPOSIX(thisModuleRootFolderPath, 'dist/css', distCSSFileNameToUse)
         )
+
+        if (distCSSFileNameToUse.match(/--with-toc\.(min\.)?css$/)) {
+            absolutePathsOfExtraFilesToEmbedIntoHTML.push(
+                joinPathPOSIX(thisModuleRootFolderPath, 'dist/js', 'table-of-contents-behaviours.min.js')
+            )
+        }
     }
+
+
+    absolutePathsOfExtraFilesToEmbedIntoHTML.push(absolutePathOfJavascriptForUpdatingHTMLTitle)
 
 
 
     const outputFilePathEnUS = joinPathPOSIX(
+        thisModuleRootFolderPath,
         exampleOutputHTMLFilesFolderPath,
         exampleOutputHTMLFileNameEnUS
     )
 
     const outputFilePathZhHansCN = joinPathPOSIX(
+        thisModuleRootFolderPath,
         exampleOutputHTMLFilesFolderPath,
         exampleOutputHTMLFileNameZhHansCN
     )
@@ -91,7 +111,7 @@ export default function createTaskSettingsForGeneratingHTMLsForExampleMarkdowns(
 
 
     const manipulationsOverHTML = {
-        shouldNotUseInternalCSSThemingFiles: true,
+        shouldNotUseInternalCSSThemingFiles: !!distCSSFileNameToUse,
         absolutePathsOfExtraFilesToEmbedIntoHTML,
     }
 
@@ -105,6 +125,7 @@ export default function createTaskSettingsForGeneratingHTMLsForExampleMarkdowns(
             sourceMarkdownFileEnUS,
             sourceMarkdownFileZhHansCN,
             './source/themes/**/*',
+            absolutePathOfJavascriptForUpdatingHTMLTitle,
         ],
         taskBodies: {
             cleanOldOutput: cleanBothOldHTMLFiles,

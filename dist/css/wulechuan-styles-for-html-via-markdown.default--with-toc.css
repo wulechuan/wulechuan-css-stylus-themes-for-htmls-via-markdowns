@@ -26,14 +26,6 @@ summary {
 body {
   padding: 3rem 1rem 4rem 1rem;
 }
-@media (max-width: 900px) {
-  html {
-    font-size: 18px;
-  }
-  body {
-    font-size: 1rem;
-  }
-}
 @media (max-width: 600px) {
   html {
     font-size: 16px;
@@ -423,8 +415,14 @@ hr::after {
   transform: scaleX(-1);
 }
 @media (max-width: 900px) {
+  h1 {
+    font-size: 2.7rem;
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
   blockquote {
-    font-size: 0.9rem;
+    font-size: 100%;
   }
 }
 @media (max-width: 600px) {
@@ -451,7 +449,6 @@ hr::after {
     padding-left: 1.8em;
   }
   blockquote {
-    font-size: 100%;
     margin-left: 0.7rem;
     margin-right: 0.5rem;
   }
@@ -474,7 +471,7 @@ hr::after {
   scroll-behavior: smooth;
 }
 .markdown-article {
-  font-size: 0.9rem;
+  font-size: 18px;
   line-height: 1.6;
   padding: 6rem 4rem 14rem 4rem;
   max-width: 50rem;
@@ -513,7 +510,6 @@ td > h1 .header-anchor {
 }
 @media (max-width: 900px) {
   .markdown-article {
-    font-size: 1rem;
     line-height: 1.8;
     padding: 3rem 2rem 7rem 2rem;
   }
@@ -725,6 +721,10 @@ h5 {
 }
 h6 {
   font-weight: bolder;
+}
+h1 {
+  padding-left: 1em;
+  padding-right: 1em;
 }
 img {
   border-radius: 0.5rem;

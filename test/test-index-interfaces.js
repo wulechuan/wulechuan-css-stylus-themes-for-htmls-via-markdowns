@@ -8,7 +8,7 @@ const { // All 6 interfaces are here.
     syncGetContentStringOfOneFileEntry,
     syncGetContentStringOfDefaultCSS,
     syncGetContentStringOfDefaultTOCJavascript,
-} = require('..') // require this module
+} = require('@wulechuan/css-stylus-markdown-themes') // require this module
 
 const separationLine = '-'.repeat(79)
 const separationLine2 = `\n${separationLine}\n`
@@ -16,13 +16,7 @@ const separationLine2 = `\n${separationLine}\n`
 
 
 
-console.log(separationLine)
-console.log(
-    'All available files in @wulechuan/css-stylus-markdown-themes:',
-    Object.keys(allFileEntriesKeyingByFileNames)
-)
-console.log(separationLine)
-
+console.log(separationLine2)
 
 
 
@@ -62,3 +56,14 @@ console.log(separationLine2)
 console.log(theDefaultAndOnlyTOCJavascriptContentString)
 // console.log(alsoTheOnlyTOCJavascriptContentString)
 // console.log(stillTheOnlyTOCJavascriptContentStringButNonMinified)
+
+
+
+
+console.log(separationLine2)
+console.log(
+    'All available files in @wulechuan/css-stylus-markdown-themes:',
+    Object.keys(allFileEntriesKeyingByFileNames)
+)
+console.log(separationLine2)
+
