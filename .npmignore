@@ -1,5 +1,7 @@
 .vscode
-docs
+docs/refs
+docs/examples/rendered
+docs/*.js
 gulpfile.esm.js
 gulpfile.js
 Gulpfile.js
