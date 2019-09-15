@@ -74,12 +74,12 @@ const allTasksSettingsForBuildingSingleTheme = [
 
 
 const buildCSSAndCopyJS = gulpBuildParallelTasks(
-    ...allTasksSettingsForBuildingSingleTheme.map(taskSettings => taskSettings.taskBodies.buildNewOutput)
+    ...allTasksSettingsForBuildingSingleTheme.map(taskSettings => taskSettings.taskBodies.buildNewOutputs)
 )
 
-const cleanHTMLs = taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns.taskBodies.cleanOldOutput
+const cleanHTMLs = taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns.taskBodies.cleanOldOutputs
 const buildHTMLs = gulpBuildParallelTasks(
-    taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns.taskBodies.buildNewOutput,
+    taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns.taskBodies.buildNewOutputs,
     copyExampleAssetsToTestOutputFolder
 )
 
@@ -89,7 +89,7 @@ const buildAllNewOutputs = gulpBuildTaskSeries(
 )
 
 const cleanAllOldOutputs = gulpBuildParallelTasks(
-    ...allTasksSettingsForBuildingSingleTheme.map(taskSettings => taskSettings.taskBodies.cleanOldOutput),
+    ...allTasksSettingsForBuildingSingleTheme.map(taskSettings => taskSettings.taskBodies.cleanOldOutputs),
     cleanHTMLs
 )
 
@@ -112,8 +112,8 @@ console.log('sourceGlobsToWatch', sourceGlobsToWatch)
 const compoundTaskSettingsForSingleTheme = {
     sourceGlobsToWatch,
     taskBodies: {
-        cleanOldOutput: cleanAllOldOutputs,
-        buildNewOutput: buildAllNewOutputs,
+        cleanOldOutputs: cleanAllOldOutputs,
+        buildNewOutputs: buildAllNewOutputs,
     },
 }
 

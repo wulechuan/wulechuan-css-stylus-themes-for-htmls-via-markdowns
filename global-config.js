@@ -11,9 +11,10 @@ const cssDistFolderRelativePath = joinPathPOSIX(distFolderRelativePath, cssDistF
 const  jsDistFolderRelativePath = joinPathPOSIX(distFolderRelativePath,  jsDistFolderName)
 
 module.exports = {
-    distFolderRelativePath,
     cssDistFolderName,
     jsDistFolderName,
+
+    distFolderRelativePath,
     cssDistFolderRelativePath,
     jsDistFolderRelativePath,
 }

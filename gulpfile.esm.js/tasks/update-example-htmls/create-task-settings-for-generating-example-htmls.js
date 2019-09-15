@@ -128,8 +128,8 @@ export default function createTaskSettingsForGeneratingHTMLsForExampleMarkdowns(
             absolutePathOfJavascriptForUpdatingHTMLTitle,
         ],
         taskBodies: {
-            cleanOldOutput: cleanBothOldHTMLFiles,
-            buildNewOutput: buildBothNewHTMLFiles,
+            cleanOldOutputs: cleanBothOldHTMLFiles,
+            buildNewOutputs: buildBothNewHTMLFiles,
         },
     }
 

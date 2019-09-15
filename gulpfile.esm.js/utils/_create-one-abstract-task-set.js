@@ -13,7 +13,7 @@ import del from 'del'
 
 const joinPathPOSIX = path.posix.join
 
-export default function createOneSetOfTasksForCopyingFiles(options) {
+export default function createOneAbstractTaskSet(options) {
     const {
         sourceGlobs: { // [required].
             rootFolderPath: sourceGlobsRootFolderPath, // [required] A path string relative to `process.env.PWD`.
@@ -78,8 +78,8 @@ export default function createOneSetOfTasksForCopyingFiles(options) {
             Full example:
             ---------------------------------------------
             taskBodies: {
-                cleanOldOutput, // [optional] Should be a function if provided.
-                buildNewOutput, // [optional] Should be a function if provided.
+                cleanOldOutputs, // [optional] Should be a function if provided.
+                buildNewOutputs, // [optional] Should be a function if provided.
             },
         */
     } = options
@@ -203,13 +203,13 @@ export default function createOneSetOfTasksForCopyingFiles(options) {
         taskBodies = {}
     }
 
-    if (typeof taskBodies.cleanOldOutput !== 'function') {
-        taskBodies.cleanOldOutput = toCleanOldOutputFilesTheDefaultWay
+    if (typeof taskBodies.cleanOldOutputs !== 'function') {
+        taskBodies.cleanOldOutputs = toCleanOldOutputFilesTheDefaultWay
     }
 
 
-    if (typeof taskBodies.buildNewOutput !== 'function') {
-        taskBodies.buildNewOutput = gulpBuildTaskSeries(
+    if (typeof taskBodies.buildNewOutputs !== 'function') {
+        taskBodies.buildNewOutputs = gulpBuildTaskSeries(
             toCleanOldOutputFilesTheDefaultWay,
             toBuildSourceFilesTheDefaultWay
         )

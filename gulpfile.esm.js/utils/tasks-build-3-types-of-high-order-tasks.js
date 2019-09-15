@@ -41,7 +41,7 @@ export default function buildHighOrderTasksForABatchOfTaskSettings({
         },
 
         gulpBuildParallelTasks(
-            ...taskSettingsArray.map(taskSettings => taskSettings.taskBodies.cleanOldOutput)
+            ...taskSettingsArray.map(taskSettings => taskSettings.taskBodies.cleanOldOutputs)
         ),
 
         function _afterCleaningEveryThing(cb) {
@@ -61,7 +61,7 @@ export default function buildHighOrderTasksForABatchOfTaskSettings({
         },
 
         gulpBuildParallelTasks(
-            ...taskSettingsArray.map(taskSettings => taskSettings.taskBodies.buildNewOutput)
+            ...taskSettingsArray.map(taskSettings => taskSettings.taskBodies.buildNewOutputs)
         ),
 
         function _afterBuildingEveryThingOnce(cb) {
@@ -82,7 +82,7 @@ export default function buildHighOrderTasksForABatchOfTaskSettings({
                 gulpWatch(
                     taskSettings.sourceGlobsToWatch,
                     { ignoreInitial: false },
-                    taskSettings.taskBodies.buildNewOutput
+                    taskSettings.taskBodies.buildNewOutputs
                 )
             })
 
