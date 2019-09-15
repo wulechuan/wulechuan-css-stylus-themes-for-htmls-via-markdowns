@@ -124,7 +124,7 @@ export default function createTaskSettingsForGeneratingHTMLsForExampleMarkdowns(
         sourceGlobsToWatch: [
             sourceMarkdownFileEnUS,
             sourceMarkdownFileZhHansCN,
-            './source/themes/**/*',
+            'source/themes/stylus/markdown-style-parts/**/*.styl',
             absolutePathOfJavascriptForUpdatingHTMLTitle,
         ],
         taskBodies: {

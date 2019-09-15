@@ -47,9 +47,9 @@ The pictures below showcase how does an article look and feel as the default css
 > These 2 pictures are huge (file sizes in mega bytes).
 
 
-- [en-US-example-in-a-wide-window-toc-collapsed.png](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-collapsed.png)
+- [en-US Example: in a wide window, with TOC collapsed](./docs/examples/rendered/snapshots/en-US-example-1-in-a-wide-window-with-toc-collapsed.png)
 
-- [zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png](./docs/examples/rendered/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png)
+- [zh-Hans-CN: 大尺寸浏览器中的效果，文章纲要列表已收叠](./docs/examples/rendered/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png)
 
 
 For more pictures, see [Application Examples](./docs/refs/en-US/application-examples.md).
@@ -124,14 +124,14 @@ const stillTheOnlyTOCJavascriptContentStringButNotMinified = syncGetContentStrin
 ```
 
 
-
+-----
 
 
 ## Promotions
 
 There's another npm package of mine, named "[@wulechuan/generate-html-via-markdown](https://www.npmjs.com/package/@wulechuan/generate-html-via-markdown)". For conveniences, let's call it package A. Package A converts a provided MarkDown string into an HTML string, and utilizes the CSS themes provided here to decorate the generated HTML contents.
 
-Yet there is a third npm package of mine, name "[@wulechuan/gulp-markdown-to-html](https://www.npmjs.com/package/@wulechuan/gulp-markdown-to-html)". Let's call it package B. Package B works like a wrapper of the package A, make functionalities of A work just fine in [Gulpjs](https://gulpjs.com) pipelines. 
+Yet there is a third npm package of mine, name "[@wulechuan/gulp-markdown-to-html](https://www.npmjs.com/package/@wulechuan/gulp-markdown-to-html)". Let's call it package B. Package B works like a wrapper of the package A, make functionalities of A work just fine in [Gulpjs](https://gulpjs.com) pipelines.
 
 
 ## TODOS

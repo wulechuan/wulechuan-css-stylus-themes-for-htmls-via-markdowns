@@ -8,7 +8,7 @@ import createTaskSettingsForGeneratingHTMLsForExampleMarkdowns
 
 
 const taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns = createTaskSettingsForGeneratingHTMLsForExampleMarkdowns({
-    distCSSFilePathToUse: './dist/css/wulechuan-styles-for-html-via-markdown.default--with-toc.min.css',
+    // distCSSFileNameToUse: 'wulechuan-styles-for-html-via-markdown.default--with-toc.min.css',
     exampleOutputHTMLFilesFolderPath: './docs/examples/rendered/html',
 })
 

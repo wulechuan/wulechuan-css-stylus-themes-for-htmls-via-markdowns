@@ -26,11 +26,31 @@
 
 ## 文档章节
 
+> 以下章节均存在于单独的文件中，并非本文章之部分。
+
 - 《[简介](./docs/refs/zh-hans-CN/introduction.md)》
 - 《[应用效果示例（含最终视觉效果）](./docs/refs/zh-hans-CN/application-examples.md)》
 - 《[本工具如何构建出 CSS 文件](./docs/refs/zh-hans-CN/how-does-this-tool-work.md)》
 - 《[业已支持的应用场景](./docs/refs/zh-hans-CN/supported-scenarios.md)》
 - 《[制作一套新的 CSS 主题](./docs/refs/zh-hans-CN/develope-css-for-a-new-theme.md)》
+
+
+
+
+## 应用效果示例
+
+一图胜千言。以下二图展示了一篇应用了本工具之默认 CSS 样式的文章之样貌。
+
+
+> 以下二图文件较大，文件大小在百万字节级别。
+
+
+- [en-US Example: in a wide window, with TOC collapsed](./docs/examples/rendered/snapshots/en-US-example-1-in-a-wide-window-with-toc-collapsed.png)
+
+- [zh-Hans-CN: 大尺寸浏览器中的效果，文章纲要列表已收叠](./docs/examples/rendered/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png)
+
+
+更多例图，见《[应用效果示例](./docs/refs/zh-hans-CN/application-examples.md)》一文。
 
 
 
@@ -103,24 +123,6 @@ const stillTheOnlyTOCJavascriptContentStringButNotMinified = syncGetContentStrin
 
 
 
-
-## 应用效果示例
-
-一图胜千言。以下二图展示了一篇应用了本工具之默认 CSS 样式的文章之样貌。
-
-
-> 以下二图文件较大，文件大小在百万字节级别。
-
-
-- [en-US-example-in-a-wide-window-toc-collapsed.png](./docs/examples/rendered/snapshots/en-US-example-in-a-wide-window-toc-collapsed.png)
-
-- [zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png](./docs/examples/rendered/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png)
-
-
-更多例图，见《[应用效果示例](./docs/refs/zh-hans-CN/application-examples.md)》一文。
-
-
-
 -----
 
 
@@ -128,7 +130,7 @@ const stillTheOnlyTOCJavascriptContentStringButNotMinified = syncGetContentStrin
 
 鄙人另有一款 NPM 包，名为“[@wulechuan/generate-html-via-markdown](https://www.npmjs.com/package/@wulechuan/generate-html-via-markdown)”。为便于指称，暂将其叫做“甲”。甲可将提供的 MarkDown 字符串转换成 HTML 字符串。此时，甲会采用本工具所预先生成的 CSS 文件来装饰甲自身产生的 HTML 内容。
 
-鄙人还有一款 NPM 包，名为“[@wulechuan/gulp-markdown-to-html](https://www.npmjs.com/package/@wulechuan/gulp-markdown-to-html)”，且作“乙”。乙恰如甲的一个包覆层，使得乙中之功能特性可以适配 [Gulpjs](https://gulpjs.com) 任务流水线。 
+鄙人还有一款 NPM 包，名为“[@wulechuan/gulp-markdown-to-html](https://www.npmjs.com/package/@wulechuan/gulp-markdown-to-html)”，且作“乙”。乙恰如甲的一个包覆层，使得乙中之功能特性可以适配 [Gulpjs](https://gulpjs.com) 任务流水线。
 
 
 

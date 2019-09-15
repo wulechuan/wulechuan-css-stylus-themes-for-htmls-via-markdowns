@@ -598,25 +598,25 @@ exports.author = <span class="hljs-string">'wulechun@live.com'</span>;
         
         
                 if (pageLanguageIsChinese) {
-                    const tocStatusString = !tocExists ? '无文章纲要列表' : (tocIsExpanded ? '文章纲要列表已展开': '文章纲要列表已收叠')
+                    const tocStatusString = !tocExists ? '-无文章纲要列表' : (tocIsExpanded ? '-文章纲要列表已展开': '-文章纲要列表已收叠')
         
                     if (windowInnerWidth > 900) {
-                        document.title = 'zh-Hans-CN-1-大尺寸浏览器中的效果-'   + tocStatusString
+                        document.title = 'zh-Hans-CN-1-大尺寸浏览器中的效果'   + tocStatusString
                     } else if (windowInnerWidth > 600) {
-                        document.title = 'zh-Hans-CN-2-中等尺寸浏览器中的效果-' + tocStatusString
+                        document.title = 'zh-Hans-CN-2-中等尺寸浏览器中的效果' + tocStatusString
                     } else {
-                        document.title = 'zh-Hans-CN-3-窄小尺寸浏览器中的效果-' + tocStatusString
+                        document.title = 'zh-Hans-CN-3-窄小尺寸浏览器中的效果' + tocStatusString
                     }
         
                 } else {
-                    const tocStatusString = !tocExists ? 'no-toc' : (tocIsExpanded ? 'toc-expanded' : 'toc-collapsed')
+                    const tocStatusString = !tocExists ? '-without-toc' : (tocIsExpanded ? '-with-toc-expanded' : '-with-toc-collapsed')
         
                     if (windowInnerWidth > 900) {
-                        document.title = 'en-US-example-1-in-a-wide-window-'            + tocStatusString
+                        document.title = 'en-US-example-1-in-a-wide-window'            + tocStatusString
                     } else if (windowInnerWidth > 600) {
-                        document.title = 'en-US-example-2-in-a-window-of-medium-width-' + tocStatusString
+                        document.title = 'en-US-example-2-in-a-window-of-medium-width' + tocStatusString
                     } else {
-                        document.title = 'en-US-example-3-in-a-narrow-window-'          + tocStatusString
+                        document.title = 'en-US-example-3-in-a-narrow-window'          + tocStatusString
                     }
                 }
             }

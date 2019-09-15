@@ -28,17 +28,17 @@ I've purposely prepared an example markdown article. I generate an HTML file out
 ### HTML Snapshots(Pictures)
 
 
-- [In a wide window toc collapsed](../../examples/rendered/snapshots/en-US-example-1-in-a-wide-window-toc-collapsed.png)
+- [In a wide window, with toc collapsed](../../examples/rendered/snapshots/en-US-example-1-in-a-wide-window-with-toc-collapsed.png)
 
-- [In a wide window toc expanded](../../examples/rendered/snapshots/en-US-example-1-in-a-wide-window-toc-expanded.png)
+- [In a wide window, with toc expanded](../../examples/rendered/snapshots/en-US-example-1-in-a-wide-window-with-toc-expanded.png)
 
-- [In a window of medium width toc collapsed](../../examples/rendered/snapshots/en-US-example-2-in-a-window-of-medium-width-toc-collapsed.png)
+- [In a window of medium width, with toc collapsed](../../examples/rendered/snapshots/en-US-example-2-in-a-window-of-medium-width-with-toc-collapsed.png)
 
-- [In a window of medium width toc expanded](../../examples/rendered/snapshots/en-US-example-2-in-a-window-of-medium-width-toc-expanded.png)
+- [In a window of medium width, with toc expanded](../../examples/rendered/snapshots/en-US-example-2-in-a-window-of-medium-width-with-toc-expanded.png)
 
-- [In a narrow window toc collapsed](../../examples/rendered/snapshots/en-US-example-3-in-a-narrow-window-toc-collapsed.png)
+- [In a narrow window, with toc collapsed](../../examples/rendered/snapshots/en-US-example-3-in-a-narrow-window-with-toc-collapsed.png)
 
-- [In a narrow window toc expanded](../../examples/rendered/snapshots/en-US-example-3-in-a-narrow-window-toc-expanded.png)
+- [In a narrow window, with toc expanded](../../examples/rendered/snapshots/en-US-example-3-in-a-narrow-window-with-toc-expanded.png)
 
 
 ---

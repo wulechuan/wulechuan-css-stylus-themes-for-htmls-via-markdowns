@@ -1,4 +1,6 @@
 import chalk from 'chalk'
+import path from 'path'
+
 import {
     existsSync,
     mkdirSync,
@@ -52,10 +54,12 @@ const distCSSFilePathToUse = taskSettingsOfBuildingCSSForTheOnlyTheme.shouldNotO
     taskSettingsOfBuildingCSSForTheOnlyTheme.outputFilePath1 : // uncompressed version
     taskSettingsOfBuildingCSSForTheOnlyTheme.outputFilePath2   // compressed/minified version
 
-console.log('distCSSFilePathToUse', distCSSFilePathToUse)
+const distCSSFileNameToUse = path.basename(distCSSFilePathToUse)
+
+console.log('\ndistCSSFileNameToUse:', chalk.magenta(distCSSFileNameToUse))
 
 const taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns = createTaskSettingsForGeneratingHTMLsForExampleMarkdowns({
-    distCSSFilePathToUse,
+    distCSSFileNameToUse,
     exampleOutputHTMLFilesFolderPath,
 })
 
