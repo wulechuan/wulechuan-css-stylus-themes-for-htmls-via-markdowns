@@ -1,7 +1,8 @@
 .vscode
 docs/refs
 docs/examples/rendered
-docs/*.js
+docs/examples/*.js
+docs/examples/source-markdown-files/illustrates
 gulpfile.esm.js
 gulpfile.js
 Gulpfile.js
@@ -10,3 +11,4 @@ source/themes
 test
 .eslintignore
 .eslintrc.js
+*.sh
