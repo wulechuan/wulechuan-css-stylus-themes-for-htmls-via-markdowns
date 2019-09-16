@@ -1,18 +1,19 @@
 import postCSS from 'gulp-postcss'
 import gulpStylus from 'gulp-stylus'
 
-import createOneAbstractTaskSet
-    from '../../../utils/_create-one-abstract-task-set'
+import {
+    createATaskCycle,
+} from '@wulechuan/gulp-classical-task-cycle'
 
 import getPluginsForOnePostCSSInstance
     from '../../../utils/get-plugins-for-one-postcss-instance'
 
 
 
-export default function createTaskSettingsForOneTheme(taskConfig) {
+export default function createTaskCycleForOneTheme(taskConfig) {
     const {
-        taskSetDescription,
-        taskSetSourceDescription,
+        descriptionOfCoreTask,
+        descriptionOfInputsOfCoreTask,
         sourceGlobs,
         outputFiles,
         compressions, // is a required property here, for simplicity
@@ -30,12 +31,13 @@ export default function createTaskSettingsForOneTheme(taskConfig) {
     const compressor1 = postCSS
     const compressor2 = postCSS
 
-    return createOneAbstractTaskSet({
-        taskSetDescription,
-        taskSetSourceDescription,
+    return createATaskCycle({
+        descriptionOfCoreTask,
+        descriptionOfInputsOfCoreTask,
 
         sourceGlobs,
         outputFiles,
+        firstPipeForProcessingSources: gulpStylus,
 
         compressions: {
             ...compressions,
@@ -48,7 +50,5 @@ export default function createTaskSettingsForOneTheme(taskConfig) {
             compressor2,
             compressorOptions2,
         },
-
-        sourceContentFirstProcessor: gulpStylus,
     })
 }

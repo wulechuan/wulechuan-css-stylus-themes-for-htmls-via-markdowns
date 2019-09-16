@@ -4,26 +4,27 @@ import {
 
 export default [
     {
-        taskSetSourceDescription: 'source/themes/js/table-of-contents-behaviours.js',
+        descriptionOfInputsOfCoreTask: 'source/themes/js/table-of-contents-behaviours.js',
 
         sourceGlobs: {
             rootFolderPath: './source/themes/js',
 
-            // relativeGlobsSharedWithOtherTaskSets: [],
-            relativeGlobsSpecificallyForThisTaskSet: [
+            // relativeGlobsSharedWithOtherTaskCycles: [],
+            relativeGlobsSpecificallyForThisTaskCycle: [
                 'table-of-contents-behaviours.js',
             ],
             // extraSourceGlobsToWatch: [],
         },
 
         outputFiles: {
-            folderPath: jsDistFolderRelativePath,
-            fileBaseName: 'table-of-contents-behaviours',
-            fileExtWithoutDot: 'js',
+            rootFolderPath: jsDistFolderRelativePath,
+
+            forSingleOrTwoOutputFiles: {
+                fileBaseName: 'table-of-contents-behaviours',
+                fileExtWithoutDot: 'js',
+            },
         },
 
-        compressions: {
-
-        },
+        compressions: {},
     },
 ]

@@ -1,7 +1,8 @@
 import chalk from 'chalk'
 
-import buildHighOrderTasksForABatchOfTaskSettings
-    from '../../utils/tasks-build-3-types-of-high-order-tasks'
+import {
+    create3HighOrderTasksUponMultipleTaskCycles,
+} from '@wulechuan/gulp-classical-task-cycle'
 
 import createTaskSettingsForGeneratingHTMLsForExampleMarkdowns
     from '../update-example-htmls/create-task-settings-for-generating-example-htmls'
@@ -13,8 +14,8 @@ const taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns = createTaskSettingsForG
 })
 
 
-export default buildHighOrderTasksForABatchOfTaskSettings({
-    taskSettingsArray: [ taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns ],
+export default create3HighOrderTasksUponMultipleTaskCycles({
+    taskCyclesInPallarel: [ taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns ],
 
     beforeCleaningEveryThing: function() {
         console.log(`\n正在${chalk.red('删除')}所有已存在的 HTML 文件`)

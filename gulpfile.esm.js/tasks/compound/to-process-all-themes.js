@@ -1,7 +1,8 @@
 import chalk from 'chalk'
 
-import buildHighOrderTasksForABatchOfTaskSettings
-    from '../../utils/tasks-build-3-types-of-high-order-tasks'
+import {
+    create3HighOrderTasksUponMultipleTaskCycles,
+} from '@wulechuan/gulp-classical-task-cycle'
 
 import mergeSpecificTaskConfigsWithSharedConfigsAndCreateTaskSettings
     from '../../tasks/themes/stylus/2-create-all-task-settings-for-all-themes'
@@ -27,8 +28,8 @@ const allTasksSettingsForAllThemes = [
     TaskSettingsOfCopyingESLintrcToDist,
 ]
 
-export default buildHighOrderTasksForABatchOfTaskSettings({
-    taskSettingsArray: allTasksSettingsForAllThemes,
+export default create3HighOrderTasksUponMultipleTaskCycles({
+    taskCyclesInPallarel: allTasksSettingsForAllThemes,
 
     beforeCleaningEveryThing: function() {
         console.log(`\n正在${chalk.red('删除')}所有已存在 JS 文件和所有${chalk.red('编译得到的')} CSS 文件`)

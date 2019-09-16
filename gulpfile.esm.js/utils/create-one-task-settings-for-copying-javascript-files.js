@@ -1,20 +1,21 @@
-import createOneAbstractTaskSet from './_create-one-abstract-task-set'
+import {
+    createATaskCycle,
+} from '@wulechuan/gulp-classical-task-cycle'
 
-// import gulpUglifyJs from 'gulp-uglify'
 import gulpTerser from 'gulp-terser'
 
 export default function createOneSetOfTasksForCopyingJavascriptFiles(options) {
     const {
-        taskSetDescription,
-        taskSetSourceDescription,
+        descriptionOfCoreTask,
+        descriptionOfInputsOfCoreTask,
         sourceGlobs,
         outputFiles,
         compressions, // is a required property here, for simplicity
     } = options
 
-    return createOneAbstractTaskSet({
-        taskSetDescription,
-        taskSetSourceDescription,
+    return createATaskCycle({
+        descriptionOfCoreTask,
+        descriptionOfInputsOfCoreTask,
 
         sourceGlobs,
         outputFiles,

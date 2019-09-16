@@ -11,8 +11,9 @@ import {
     parallel as gulpBuildParallelTasks,
 } from 'gulp'
 
-import buildHighOrderTasksForABatchOfTaskSettings
-    from '../../utils/tasks-build-3-types-of-high-order-tasks'
+import {
+    create3HighOrderTasksUponMultipleTaskCycles,
+} from '@wulechuan/gulp-classical-task-cycle'
 
 import allThemeJavascriptTasksSettings
     from '../../tasks/themes/js/create-all-theme-js-task-settings'
@@ -117,8 +118,8 @@ const compoundTaskSettingsForSingleTheme = {
     },
 }
 
-export default buildHighOrderTasksForABatchOfTaskSettings({
-    taskSettingsArray: [ compoundTaskSettingsForSingleTheme ],
+export default create3HighOrderTasksUponMultipleTaskCycles({
+    taskCyclesInPallarel: [ compoundTaskSettingsForSingleTheme ],
 
     beforeCleaningEveryThing: function() {
         console.log(`\n正在${chalk.red('删除')}所有已存在 JS 文件和所有${chalk.red('编译得到的')} CSS 文件`)

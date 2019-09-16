@@ -10,7 +10,7 @@ import {
     extraSourceGlobsToWatch,
 } from '../../../configs/theme-stylus-tasks'
 
-import createTaskSettingsForOneTheme
+import createTaskCycleForOneTheme
     from './1-create-task-settings-for-compilation-stylus-of-one-theme'
 
 
@@ -56,22 +56,25 @@ export default function mergeSpecificTaskConfigsWithSharedConfigs(specificTaskCo
 
 
         return {
-            // taskSetDescription,
-            taskSetSourceDescription: entryStylusFileSubPath2,
+            // descriptionOfCoreTask,
+            descriptionOfInputsOfCoreTask: entryStylusFileSubPath2,
 
             sourceGlobs: {
                 rootFolderPath: sourceGlobsRootFolderPath,
 
-                relativeGlobsSharedWithOtherTaskSets: sharedSourceRelativeGlobs,
-                relativeGlobsSpecificallyForThisTaskSet: specificSourceRelativeGlobs,
+                relativeGlobsSharedWithOtherTaskCycles: sharedSourceRelativeGlobs,
+                relativeGlobsSpecificallyForThisTaskCycle: specificSourceRelativeGlobs,
 
                 extraSourceGlobsToWatch,
             },
 
             outputFiles: {
-                folderPath: outputFolderPath,
-                fileBaseName: outputFileBaseName,
-                fileExtWithoutDot: 'css',
+                rootFolderPath: outputFolderPath,
+
+                forSingleOrTwoOutputFiles: {
+                    fileBaseName: outputFileBaseName,
+                    fileExtWithoutDot: 'css',
+                },
             },
 
             compressions: {
@@ -89,7 +92,7 @@ export default function mergeSpecificTaskConfigsWithSharedConfigs(specificTaskCo
     console.log('Source scenario `.styl` file(s) count:', chalk.magenta(allMergedTaskConfigs.length))
     console.log('Should output    `.css` file(s) count:', chalk.green(outputCSSFilesCount))
 
-    const allStylusTasksSettings = allMergedTaskConfigs.map(createTaskSettingsForOneTheme)
+    const allStylusTasksSettings = allMergedTaskConfigs.map(createTaskCycleForOneTheme)
 
     console.log(divLineForPrinting)
     console.log('')
