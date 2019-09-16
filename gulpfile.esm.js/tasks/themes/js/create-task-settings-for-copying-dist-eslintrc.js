@@ -2,10 +2,10 @@ import {
     jsDistFolderRelativePath,
 } from '../../../../global-config'
 
-import createOneTaskSettingsForCopyingJavascriptFiles
+import createOneTaskCycleForCopyingJavascriptFiles
     from '../../../utils/create-one-task-settings-for-copying-javascript-files'
 
-export default createOneTaskSettingsForCopyingJavascriptFiles({
+export default createOneTaskCycleForCopyingJavascriptFiles({
     descriptionOfInputsOfCoreTask: 'source/themes/js/.eslint.js',
 
     sourceGlobs: {

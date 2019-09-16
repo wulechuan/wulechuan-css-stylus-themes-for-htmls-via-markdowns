@@ -4,7 +4,7 @@ import {
 
 import gulpTerser from 'gulp-terser'
 
-export default function createOneSetOfTasksForCopyingJavascriptFiles(options) {
+export default function createOneTaskCycleForCopyingJavascriptFiles(options) {
     const {
         descriptionOfCoreTask,
         descriptionOfInputsOfCoreTask,

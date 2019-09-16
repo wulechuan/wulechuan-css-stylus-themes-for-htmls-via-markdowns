@@ -60,7 +60,7 @@ const markdownToHTMLConverter = createAnMarkDownToHTMLConverter({
 
 
 
-export default function createTaskSettingsForGeneratingHTMLsForExampleMarkdowns({
+export default function createTaskCycleForGeneratingHTMLsForExampleMarkdowns({
     distCSSFileNameToUse,
     exampleOutputHTMLFilesFolderPath,
 }) {

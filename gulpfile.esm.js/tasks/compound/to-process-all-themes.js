@@ -1,20 +1,15 @@
-import chalk from 'chalk'
-
 import {
     create3HighOrderTasksUponMultipleTaskCycles,
 } from '@wulechuan/gulp-classical-task-cycle'
 
-import mergeSpecificTaskConfigsWithSharedConfigsAndCreateTaskSettings
+import mergeSpecificAndSharedTaskConfigsAndCreateTaskCycles
     from '../../tasks/themes/stylus/2-create-all-task-settings-for-all-themes'
 
-import allThemeJavascriptTasksSettings
+import javascriptTaskCyclesOfAllThemes
     from '../../tasks/themes/js/create-all-theme-js-task-settings'
 
-import TaskSettingsOfCopyingESLintrcToDist
+import taskCycleOfCopyingESLintrcToDist
     from '../../tasks/themes/js/create-task-settings-for-copying-dist-eslintrc'
-
-
-
 
 import {
     specificTaskConfigsOfAllThemes,
@@ -22,22 +17,12 @@ import {
 
 
 
-const allTasksSettingsForAllThemes = [
-    ...mergeSpecificTaskConfigsWithSharedConfigsAndCreateTaskSettings(specificTaskConfigsOfAllThemes),
-    ...allThemeJavascriptTasksSettings,
-    TaskSettingsOfCopyingESLintrcToDist,
+const allTaskCyclesForAllThemes = [
+    ...mergeSpecificAndSharedTaskConfigsAndCreateTaskCycles(specificTaskConfigsOfAllThemes),
+    ...javascriptTaskCyclesOfAllThemes,
+    taskCycleOfCopyingESLintrcToDist,
 ]
 
 export default create3HighOrderTasksUponMultipleTaskCycles({
-    taskCyclesInPallarel: allTasksSettingsForAllThemes,
-
-    beforeCleaningEveryThing: function() {
-        console.log(`\n正在${chalk.red('删除')}所有已存在 JS 文件和所有${chalk.red('编译得到的')} CSS 文件`)
-    },
-    beforeBuildingEveryThingOnce: function() {
-        console.log(`\n正在依照主题配置逐一${chalk.black.bgBlue('编译')} Stylus，并${chalk.black.bgBlue('复制')} JS`)
-    },
-    beforeWatchingEveryThing: function() {
-        console.log(`\n正在依照主题配置逐一${chalk.black.bgBlue('监视')} Stylus 和 JS 文件的变动或诞生`)
-    },
+    taskCyclesInPallarel: allTaskCyclesForAllThemes,
 })

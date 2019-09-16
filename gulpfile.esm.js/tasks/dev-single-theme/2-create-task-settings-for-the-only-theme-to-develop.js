@@ -1,4 +1,4 @@
-import mergeSpecificTaskConfigsWithSharedConfigsAndCreateTaskSettings
+import mergeSpecificAndSharedTaskConfigsAndCreateTaskCycles
     from '../../tasks/themes/stylus/2-create-all-task-settings-for-all-themes'
 
 import getTaskConfigOfTheOnlyThemeToDevelop
@@ -6,16 +6,16 @@ import getTaskConfigOfTheOnlyThemeToDevelop
 
 
 
-export default function createTaskSettingsForTheOnlyThemeToDevelop(entryStylusFileSubPathOfTheOnlyThemeToDevelop) {
+export default function createTaskCycleForTheOnlyThemeToDevelop(entryStylusFileSubPathOfTheOnlyThemeToDevelop) {
     const specificTaskConfigOfTheOnlyThemeToDevelop = getTaskConfigOfTheOnlyThemeToDevelop(
         entryStylusFileSubPathOfTheOnlyThemeToDevelop
     )
 
-    const [ taskSettingsOfTheOnlyTheme ] = mergeSpecificTaskConfigsWithSharedConfigsAndCreateTaskSettings(
+    const [ taskCycleOfTheOnlyTheme ] = mergeSpecificAndSharedTaskConfigsAndCreateTaskCycles(
         [
             specificTaskConfigOfTheOnlyThemeToDevelop,
         ]
     )
 
-    return taskSettingsOfTheOnlyTheme
+    return taskCycleOfTheOnlyTheme
 }

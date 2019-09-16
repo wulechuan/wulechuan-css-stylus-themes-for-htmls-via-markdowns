@@ -15,16 +15,16 @@ import {
     create3HighOrderTasksUponMultipleTaskCycles,
 } from '@wulechuan/gulp-classical-task-cycle'
 
-import allThemeJavascriptTasksSettings
+import javascriptTaskCyclesOfAllThemes
     from '../../tasks/themes/js/create-all-theme-js-task-settings'
 
-// import taskSettingsOfCopyingESLintrcToDist
+// import taskCycleOfCopyingESLintrcToDist
 //     from '../../tasks/themes/js/create-task-settings-for-copying-dist-eslintrc'
 
-import createTaskSettingsForTheOnlyThemeToDevelop
+import createTaskCycleForTheOnlyThemeToDevelop
     from '../dev-single-theme/2-create-task-settings-for-the-only-theme-to-develop'
 
-import createTaskSettingsForGeneratingHTMLsForExampleMarkdowns
+import createTaskCycleForGeneratingHTMLsForExampleMarkdowns
     from '../update-example-htmls/create-task-settings-for-generating-example-htmls'
 
 import copyExampleAssetsToTestOutputFolder
@@ -47,40 +47,40 @@ if (!existsSync(exampleOutputHTMLFilesFolderPath)) {
 
 
 
-const taskSettingsOfBuildingCSSForTheOnlyTheme = createTaskSettingsForTheOnlyThemeToDevelop(
+const taskCycleOfBuildingCSSForTheOnlyTheme = createTaskCycleForTheOnlyThemeToDevelop(
     entryStylusFileSubPathOfTheOnlyThemeToDevelop
 )
 
-const distCSSFilePathToUse = taskSettingsOfBuildingCSSForTheOnlyTheme.shouldNotOutputCompressedVersion ?
-    taskSettingsOfBuildingCSSForTheOnlyTheme.outputFilePath1 : // uncompressed version
-    taskSettingsOfBuildingCSSForTheOnlyTheme.outputFilePath2   // compressed/minified version
+const distCSSFilePathToUse = taskCycleOfBuildingCSSForTheOnlyTheme.shouldNotOutputCompressedVersion ?
+    taskCycleOfBuildingCSSForTheOnlyTheme.outputFilePath1 : // uncompressed version
+    taskCycleOfBuildingCSSForTheOnlyTheme.outputFilePath2   // compressed/minified version
 
 const distCSSFileNameToUse = path.basename(distCSSFilePathToUse)
 
 console.log('\ndistCSSFileNameToUse:', chalk.magenta(distCSSFileNameToUse))
 
-const taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns = createTaskSettingsForGeneratingHTMLsForExampleMarkdowns({
+const taskCycleOfBuildingHTMLFilesOfExampleMarkdowns = createTaskCycleForGeneratingHTMLsForExampleMarkdowns({
     distCSSFileNameToUse,
     exampleOutputHTMLFilesFolderPath,
 })
 
 
 const allTasksSettingsForBuildingSingleTheme = [
-    taskSettingsOfBuildingCSSForTheOnlyTheme,
-    ...allThemeJavascriptTasksSettings,     // Here we always copy js files, for simplicity of task design.
-    // taskSettingsOfCopyingESLintrcToDist, // But we don't need to copy the .eslintrc.js as well.
+    taskCycleOfBuildingCSSForTheOnlyTheme,
+    ...javascriptTaskCyclesOfAllThemes,     // Here we always copy js files, for simplicity of task design.
+    // taskCycleOfCopyingESLintrcToDist, // But we don't need to copy the .eslintrc.js as well.
 ]
 
 
 
 
 const buildCSSAndCopyJS = gulpBuildParallelTasks(
-    ...allTasksSettingsForBuildingSingleTheme.map(taskSettings => taskSettings.taskBodies.buildNewOutputs)
+    ...allTasksSettingsForBuildingSingleTheme.map(taskCycle => taskCycle.taskBodies.buildNewOutputs)
 )
 
-const cleanHTMLs = taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns.taskBodies.cleanOldOutputs
+const cleanHTMLs = taskCycleOfBuildingHTMLFilesOfExampleMarkdowns.taskBodies.cleanOldOutputs
 const buildHTMLs = gulpBuildParallelTasks(
-    taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns.taskBodies.buildNewOutputs,
+    taskCycleOfBuildingHTMLFilesOfExampleMarkdowns.taskBodies.buildNewOutputs,
     copyExampleAssetsToTestOutputFolder
 )
 
@@ -90,27 +90,27 @@ const buildAllNewOutputs = gulpBuildTaskSeries(
 )
 
 const cleanAllOldOutputs = gulpBuildParallelTasks(
-    ...allTasksSettingsForBuildingSingleTheme.map(taskSettings => taskSettings.taskBodies.cleanOldOutputs),
+    ...allTasksSettingsForBuildingSingleTheme.map(taskCycle => taskCycle.taskBodies.cleanOldOutputs),
     cleanHTMLs
 )
 
 
 
 const sourceGlobsToWatch = [
-    ...allTasksSettingsForBuildingSingleTheme.reduce((allGlobs, taskSettings) => {
+    ...allTasksSettingsForBuildingSingleTheme.reduce((allGlobs, taskCycle) => {
         allGlobs = [
             ...allGlobs,
-            ...taskSettings.sourceGlobsToWatch,
+            ...taskCycle.sourceGlobsToWatch,
         ]
 
         return allGlobs
     }, []),
-    ...taskSettingsOfBuildingHTMLFilesOfExampleMarkdowns.sourceGlobsToWatch,
+    ...taskCycleOfBuildingHTMLFilesOfExampleMarkdowns.sourceGlobsToWatch,
 ]
 
 console.log('sourceGlobsToWatch', sourceGlobsToWatch)
 
-const compoundTaskSettingsForSingleTheme = {
+const simplifiedTaskCycleForCompoundTaskOfBuildingSingleTheme = {
     sourceGlobsToWatch,
     taskBodies: {
         cleanOldOutputs: cleanAllOldOutputs,
@@ -119,7 +119,7 @@ const compoundTaskSettingsForSingleTheme = {
 }
 
 export default create3HighOrderTasksUponMultipleTaskCycles({
-    taskCyclesInPallarel: [ compoundTaskSettingsForSingleTheme ],
+    taskCyclesInPallarel: [ simplifiedTaskCycleForCompoundTaskOfBuildingSingleTheme ],
 
     beforeCleaningEveryThing: function() {
         console.log(`\n正在${chalk.red('删除')}所有已存在 JS 文件和所有${chalk.red('编译得到的')} CSS 文件`)
