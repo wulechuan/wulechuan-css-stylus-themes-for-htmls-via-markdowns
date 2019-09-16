@@ -1,5 +1,5 @@
 import mergeSpecificAndSharedTaskConfigsAndCreateTaskCycles
-    from '../../tasks/themes/stylus/2-create-all-task-settings-for-all-themes'
+    from '../themes-all/stylus/2-create-all-task-cycles-for-all-themes'
 
 import getTaskConfigOfTheOnlyThemeToDevelop
     from './1-get-specific-task-config-of-the-only-theme-to-develop'

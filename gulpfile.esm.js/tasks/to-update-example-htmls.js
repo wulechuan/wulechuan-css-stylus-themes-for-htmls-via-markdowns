@@ -5,7 +5,7 @@ import {
 } from '@wulechuan/gulp-classical-task-cycle'
 
 import createTaskCycleForGeneratingHTMLsForExampleMarkdowns
-    from '../update-example-htmls/create-task-settings-for-generating-example-htmls'
+    from '../task-cycles/build-example-htmls/create-task-cycle-for-generating-example-htmls'
 
 
 const taskCycleOfBuildingHTMLFilesOfExampleMarkdowns = createTaskCycleForGeneratingHTMLsForExampleMarkdowns({

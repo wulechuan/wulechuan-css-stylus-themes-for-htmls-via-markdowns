@@ -8,10 +8,10 @@ import {
     outputFileBaseNameCommonPrefix,
     sharedSourceRelativeGlobs,
     extraSourceGlobsToWatch,
-} from '../../../configs/theme-stylus-tasks'
+} from '../../../configs/theme-stylus'
 
 import createTaskCycleForOneTheme
-    from './1-create-task-settings-for-compilation-stylus-of-one-theme'
+    from './1-create-a-task-cycle-for-compilation-stylus-of-one-theme'
 
 
 const joinPathPOSIX = path.posix.join

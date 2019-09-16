@@ -1,5 +1,5 @@
 import jsTaskBuildingOptions
-    from '../../../configs/theme-js-tasks'
+    from '../../../configs/theme-javascripts'
 
 import createOneTaskCycleForCopyingJavascriptFiles
     from '../../../utils/create-one-task-settings-for-copying-javascript-files'

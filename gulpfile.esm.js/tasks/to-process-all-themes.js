@@ -3,17 +3,17 @@ import {
 } from '@wulechuan/gulp-classical-task-cycle'
 
 import mergeSpecificAndSharedTaskConfigsAndCreateTaskCycles
-    from '../../tasks/themes/stylus/2-create-all-task-settings-for-all-themes'
+    from '../task-cycles/themes-all/stylus/2-create-all-task-cycles-for-all-themes'
 
 import javascriptTaskCyclesOfAllThemes
-    from '../../tasks/themes/js/create-all-theme-js-task-settings'
+    from '../task-cycles/themes-all/js/create-task-cycles-for-all-theme-javascripts'
 
 import taskCycleOfCopyingESLintrcToDist
-    from '../../tasks/themes/js/create-task-settings-for-copying-dist-eslintrc'
+    from '../task-cycles/themes-all/js/create-task-cycle-for-copying-dist-eslintrc'
 
 import {
     specificTaskConfigsOfAllThemes,
-} from '../../configs/theme-stylus-tasks'
+} from '../configs/theme-stylus'
 
 
 

@@ -16,26 +16,26 @@ import {
 } from '@wulechuan/gulp-classical-task-cycle'
 
 import javascriptTaskCyclesOfAllThemes
-    from '../../tasks/themes/js/create-all-theme-js-task-settings'
+    from '../task-cycles/themes-all/js/create-task-cycles-for-all-theme-javascripts'
 
 // import taskCycleOfCopyingESLintrcToDist
 //     from '../../tasks/themes/js/create-task-settings-for-copying-dist-eslintrc'
 
 import createTaskCycleForTheOnlyThemeToDevelop
-    from '../dev-single-theme/2-create-task-settings-for-the-only-theme-to-develop'
+    from '../task-cycles/theme-single/2-create-task-cycles-for-the-only-theme-to-develop'
 
 import createTaskCycleForGeneratingHTMLsForExampleMarkdowns
-    from '../update-example-htmls/create-task-settings-for-generating-example-htmls'
+    from '../task-cycles/build-example-htmls/create-task-cycle-for-generating-example-htmls'
 
 import copyExampleAssetsToTestOutputFolder
-    from '../dev-single-theme/3-copy-example-assets-to-test-folder'
+    from './to-copy-example-assets-to-test-folder'
 
 
 
 
 import {
     entryStylusFileSubPathOfTheOnlyThemeToDevelop,
-} from '../../configs/dev-single-theme-task'
+} from '../configs/dev-single-theme'
 
 
 

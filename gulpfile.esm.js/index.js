@@ -1,11 +1,11 @@
 import highOrderTasksForAllThemes
-    from './tasks/compound/to-process-all-themes'
+    from './tasks/to-process-all-themes'
 
 import highOrderTasksForDevelopmentOfSingleTheme
-    from './tasks/compound/to-process-single-theme'
+    from './tasks/to-process-single-theme'
 
 import highOrderTasksForUpdateExampleHTMLsUsingDefaultTheme
-    from './tasks/compound/to-update-example-htmls'
+    from './tasks/to-update-example-htmls'
 
 
 export const cleanAll           = highOrderTasksForAllThemes.cleanAllOldOuputs

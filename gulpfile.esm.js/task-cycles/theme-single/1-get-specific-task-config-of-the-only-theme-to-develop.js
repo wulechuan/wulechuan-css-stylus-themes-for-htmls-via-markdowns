@@ -2,7 +2,7 @@ import chalk from 'chalk'
 
 import {
     specificTaskConfigsOfAllThemes,
-} from '../../configs/theme-stylus-tasks'
+} from '../../configs/theme-stylus'
 
 
 export default function getTaskConfigOfTheOnlyThemeToDevelop(entryStylusFileSubPath) {
