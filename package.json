@@ -7,12 +7,13 @@
   "directories": {
     "source": "source",
     "dist": "dist",
+    "test": "tests",
     "doc": "docs"
   },
   "main": "index.js",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "eslint": "eslint    ./.eslintrc.js    ./gulpfile.esm.js/**/*.js    ./test/*.js    ./source/module/*.js    ./source/themes/js/**/*.js    ./global-config.js    ./index.js",
+    "eslint": "eslint    ./.eslintrc.js    ./gulpfile.esm.js/**/*.js    ./docs/examples/*.js    ./tests/*.js    ./source/module/*.js    ./source/themes/js/**/*.js    ./global-config.js    ./index.js",
     "start": "gulp  --silent devSingleTheme",
     "start2": "gulp          devSingleTheme",
     "_build": "gulp --silent buildAllThemesOnce",
@@ -20,9 +21,9 @@
     "clean": "gulp  --silent cleanAll",
     "clean2": "gulp          cleanAll",
     "updateExampleHTMLs": "gulp    --silent    updateExampleHTMLs",
-    "build": "eslint    ./source/themes/js/**/*.js    &&    npm run _build    &&    npm run updateExampleHTMLs",
-    "build2": "eslint   ./source/themes/js/**/*.js    &&    npm run _build2",
-    "test": "npm run eslint    &&    node  ./test/test-index-interfaces.js"
+    "build": "npm  run eslint    &&    npm run _build    &&    npm run updateExampleHTMLs",
+    "build2": "npm run eslint    &&    npm run _build2",
+    "test": "npm   run eslint    &&    node  ./tests/test-interfaces.js"
   },
   "keywords": [
     "markdown",

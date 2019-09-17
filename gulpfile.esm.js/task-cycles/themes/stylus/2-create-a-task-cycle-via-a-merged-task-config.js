@@ -10,7 +10,7 @@ import getPluginsForOnePostCSSInstance
 
 
 
-export default function createTaskCycleForOneTheme(taskConfig) {
+export default function createOneTaskCycleForCompilingStylusOfOneTheme(mergedTaskConfig) {
     const {
         descriptionOfCoreTask,
         descriptionOfInputsOfCoreTask,
@@ -21,7 +21,7 @@ export default function createTaskCycleForOneTheme(taskConfig) {
         extraOptions: {
             shouldDiscardMostCommentsEvenIfNotCompressCSS,
         },
-    } = taskConfig
+    } = mergedTaskConfig
 
     const _shouldDiscardComments = !!shouldDiscardMostCommentsEvenIfNotCompressCSS
 

@@ -2,23 +2,22 @@ import {
     create3HighOrderTasksUponMultipleTaskCycles,
 } from '@wulechuan/gulp-classical-task-cycle'
 
-import mergeSpecificAndSharedTaskConfigsAndCreateTaskCycles
-    from '../task-cycles/themes-all/stylus/2-create-all-task-cycles-for-all-themes'
+import createOneTaskCycleViaOneSpecificTaskConfig
+    from '../task-cycles/themes/stylus/3-create-a-task-cycle-via-a-specific-task-config'
 
 import javascriptTaskCyclesOfAllThemes
-    from '../task-cycles/themes-all/js/create-task-cycles-for-all-theme-javascripts'
+    from '../task-cycles/themes/js/create-task-cycles-for-all-theme-javascripts'
 
 import taskCycleOfCopyingESLintrcToDist
-    from '../task-cycles/themes-all/js/create-task-cycle-for-copying-dist-eslintrc'
+    from '../task-cycles/themes/js/create-task-cycle-for-copying-dist-eslintrc'
 
 import {
     specificTaskConfigsOfAllThemes,
 } from '../configs/theme-stylus'
 
 
-
 const allTaskCyclesForAllThemes = [
-    ...mergeSpecificAndSharedTaskConfigsAndCreateTaskCycles(specificTaskConfigsOfAllThemes),
+    ...specificTaskConfigsOfAllThemes.map(createOneTaskCycleViaOneSpecificTaskConfig),
     ...javascriptTaskCyclesOfAllThemes,
     taskCycleOfCopyingESLintrcToDist,
 ]

@@ -7,5 +7,5 @@ import {
 
 export default function copyExampleAssetsToTestOutputFolder() {
     return gulpReadGlobs('./docs/examples/rendered/html/illustrates/**/*')
-        .pipe(gulpWriteIn('./test/output/illustrates'))
+        .pipe(gulpWriteIn('./tests/output/illustrates'))
 }

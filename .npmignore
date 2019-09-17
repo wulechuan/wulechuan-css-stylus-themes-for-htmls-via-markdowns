@@ -9,6 +9,7 @@ Gulpfile.js
 source/module/.eslintrc.js
 source/themes
 test
+tests
 .eslintignore
 .eslintrc.js
 .markdownlint.json

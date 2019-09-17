@@ -16,13 +16,13 @@ import {
 } from '@wulechuan/gulp-classical-task-cycle'
 
 import javascriptTaskCyclesOfAllThemes
-    from '../task-cycles/themes-all/js/create-task-cycles-for-all-theme-javascripts'
+    from '../task-cycles/themes/js/create-task-cycles-for-all-theme-javascripts'
 
 // import taskCycleOfCopyingESLintrcToDist
-//     from '../../tasks/themes/js/create-task-settings-for-copying-dist-eslintrc'
+//     from '../task-cycles/themes/js/create-task-cycle-for-copying-dist-eslintrc'
 
-import createTaskCycleForTheOnlyThemeToDevelop
-    from '../task-cycles/theme-single/2-create-task-cycles-for-the-only-theme-to-develop'
+import createOneTaskCycleViaOneEntryStylusFileSubPath
+    from '../task-cycles/themes/stylus/4-create-a-task-cycle-via-an-entry-stylus-file-sub-path'
 
 import createTaskCycleForGeneratingHTMLsForExampleMarkdowns
     from '../task-cycles/build-example-htmls/create-task-cycle-for-generating-example-htmls'
@@ -30,16 +30,15 @@ import createTaskCycleForGeneratingHTMLsForExampleMarkdowns
 import copyExampleAssetsToTestOutputFolder
     from './to-copy-example-assets-to-test-folder'
 
-
-
-
 import {
     entryStylusFileSubPathOfTheOnlyThemeToDevelop,
 } from '../configs/dev-single-theme'
 
 
 
-const exampleOutputHTMLFilesFolderPath = './test/output'
+
+
+const exampleOutputHTMLFilesFolderPath = './tests/output'
 if (!existsSync(exampleOutputHTMLFilesFolderPath)) {
     mkdirSync(exampleOutputHTMLFilesFolderPath)
 }
@@ -47,7 +46,7 @@ if (!existsSync(exampleOutputHTMLFilesFolderPath)) {
 
 
 
-const taskCycleOfBuildingCSSForTheOnlyTheme = createTaskCycleForTheOnlyThemeToDevelop(
+const taskCycleOfBuildingCSSForTheOnlyTheme = createOneTaskCycleViaOneEntryStylusFileSubPath(
     entryStylusFileSubPathOfTheOnlyThemeToDevelop
 )
 
@@ -56,8 +55,8 @@ const distCSSFilePathToUse = taskCycleOfBuildingCSSForTheOnlyTheme.shouldNotOutp
     taskCycleOfBuildingCSSForTheOnlyTheme.outputFilePath2   // compressed/minified version
 
 const distCSSFileNameToUse = path.basename(distCSSFilePathToUse)
-
 console.log('\ndistCSSFileNameToUse:', chalk.magenta(distCSSFileNameToUse))
+
 
 const taskCycleOfBuildingHTMLFilesOfExampleMarkdowns = createTaskCycleForGeneratingHTMLsForExampleMarkdowns({
     distCSSFileNameToUse,

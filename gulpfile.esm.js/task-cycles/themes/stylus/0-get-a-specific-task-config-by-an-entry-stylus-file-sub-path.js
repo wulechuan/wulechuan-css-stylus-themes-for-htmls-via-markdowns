@@ -2,14 +2,14 @@ import chalk from 'chalk'
 
 import {
     specificTaskConfigsOfAllThemes,
-} from '../../configs/theme-stylus'
+} from '../../../configs/theme-stylus'
 
 
-export default function getTaskConfigOfTheOnlyThemeToDevelop(entryStylusFileSubPath) {
-    let theOnlyThemeToDevelop = null
+export default function getTaskConfigByEntryStylusFileSubPath(entryStylusFileSubPath) {
+    let theOnlyTaskSpecificConfig = null
 
     if (!entryStylusFileSubPath) {
-        theOnlyThemeToDevelop = specificTaskConfigsOfAllThemes[0]
+        theOnlyTaskSpecificConfig = specificTaskConfigsOfAllThemes[0]
     } else {
         const matchedTaskConfigs = specificTaskConfigsOfAllThemes.some(taskConfig => {
             return taskConfig.entryStylusFileSubPath === entryStylusFileSubPath
@@ -23,8 +23,8 @@ export default function getTaskConfigOfTheOnlyThemeToDevelop(entryStylusFileSubP
             }".\n    ${chalk.red('But 1 and only 1 expected.')}`)
         }
 
-        theOnlyThemeToDevelop = matchedTaskConfigs[0]
+        theOnlyTaskSpecificConfig = matchedTaskConfigs[0]
     }
 
-    return theOnlyThemeToDevelop
+    return theOnlyTaskSpecificConfig
 }

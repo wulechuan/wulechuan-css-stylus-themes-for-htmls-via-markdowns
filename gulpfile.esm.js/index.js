@@ -2,7 +2,7 @@ import highOrderTasksForAllThemes
     from './tasks/to-process-all-themes'
 
 import highOrderTasksForDevelopmentOfSingleTheme
-    from './tasks/to-process-single-theme'
+    from './tasks/to-process-single-theme-and-example-docs'
 
 import highOrderTasksForUpdateExampleHTMLsUsingDefaultTheme
     from './tasks/to-update-example-htmls'
@@ -10,7 +10,6 @@ import highOrderTasksForUpdateExampleHTMLsUsingDefaultTheme
 
 export const cleanAll           = highOrderTasksForAllThemes.cleanAllOldOuputs
 export const buildAllThemesOnce = highOrderTasksForAllThemes.buildEverythingOnce
-// export const buildAndWatch      = highOrderTasksForAllThemes.watchEverything
 
 export const devSingleTheme     = highOrderTasksForDevelopmentOfSingleTheme.watchEverything
 
