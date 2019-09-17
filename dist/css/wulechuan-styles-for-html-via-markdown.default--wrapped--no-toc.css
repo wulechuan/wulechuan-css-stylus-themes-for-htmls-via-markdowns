@@ -1135,6 +1135,9 @@ pre,
 .hljs-regexp .regexp-control-char .slash {
   opacity: 0.79;
 }
+.hljs-regexp .wlc-escape-char {
+  color: inherit;
+}
 .hljs-regexp .wlc-digit-pair-between-curly-braces .digit {
   color: #f63;
 }

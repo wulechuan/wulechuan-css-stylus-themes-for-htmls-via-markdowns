@@ -274,7 +274,7 @@ if (Array.isArray([])) {
 
 const regExp = new RegExp('\\w+', 'gi')
 
-const complexRegExp = /^\[[^\<](\(|\))\$\{[a-z\d_-]+[\w\.]{16,}a*b*\*\\,\]--toc.min.js$/gi
+const complexRegExp = /^\[[^\<](\(|\))\$\{[a-z\d_-]+[\w\.]{16,}a*b*\*\\,\]\^"--toc.min\.js$/gi
 
 console.log(window.innerHeight, window.self, global)
 
