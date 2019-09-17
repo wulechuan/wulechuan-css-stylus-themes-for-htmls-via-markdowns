@@ -120,14 +120,8 @@ const simplifiedTaskCycleForCompoundTaskOfBuildingSingleTheme = {
 export default create3HighOrderTasksUponMultipleTaskCycles({
     taskCyclesInPallarel: [ simplifiedTaskCycleForCompoundTaskOfBuildingSingleTheme ],
 
-    beforeCleaningEveryThing: function() {
-        console.log(`\n正在${chalk.red('删除')}所有已存在 JS 文件和所有${chalk.red('编译得到的')} CSS 文件`)
-    },
     beforeBuildingEveryThingOnce: function() {
         console.log(`\n正在依照唯一主题之配置${chalk.black.bgBlue('编译')} Stylus，并${chalk.black.bgBlue('复制')} JS`)
-    },
-    beforeWatchingEveryThing: function() {
-        console.log(`\n正在依照唯一主题之配置${chalk.black.bgBlue('监视')} Stylus 和 JS 文件的变动或诞生`)
     },
 })
 

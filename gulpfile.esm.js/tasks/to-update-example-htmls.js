@@ -17,13 +17,7 @@ const taskCycleOfBuildingHTMLFilesOfExampleMarkdowns = createTaskCycleForGenerat
 export default create3HighOrderTasksUponMultipleTaskCycles({
     taskCyclesInPallarel: [ taskCycleOfBuildingHTMLFilesOfExampleMarkdowns ],
 
-    beforeCleaningEveryThing: function() {
-        console.log(`\n正在${chalk.red('删除')}所有已存在的 HTML 文件`)
-    },
     beforeBuildingEveryThingOnce: function() {
         console.log(`\n正在采用默认主题${chalk.black.bgBlue('构建所有语言版本的示例文档')}的 HTML 文件`)
-    },
-    beforeWatchingEveryThing: function() {
-        console.log(`\n正在${chalk.black.bgBlue('监视')} 文件变动`)
     },
 })
