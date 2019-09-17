@@ -16,7 +16,7 @@ import createAnMarkDownToHTMLConverter from '@wulechuan/generate-html-via-markdo
 import {
     allFileEntriesKeyingByFileNames,
     syncGetContentStringOfOneFileEntry,
-} from '../../..'
+} from '@wulechuan/css-stylus-markdown-themes'
 
 
 
@@ -33,7 +33,13 @@ const exampleOutputHTMLFileNameEnUS = 'default-theming-example.en-us.html'
 const exampleOutputHTMLFileNameZhHansCN = 'default-theming-example.zh-hans-cn.html'
 
 
-const thisModuleRootFolderPath = process.cwd()
+const thisModuleRootFolderPath = process.cwd().replace(/\\/g, '/')
+console.log()
+console.log('-'.repeat(51))
+console.log('thisModuleRootFolderPath', thisModuleRootFolderPath)
+console.log('allFileEntriesKeyingByFileNames', allFileEntriesKeyingByFileNames)
+console.log('-'.repeat(51))
+console.log()
 
 
 
@@ -139,7 +145,6 @@ export default function createTaskCycleForGeneratingHTMLsForExampleMarkdowns({
 
 
     function generateHTMLOfEnUS(cb) {
-        // console.log('reading', sourceMarkdownFileEnUS)
         writeFileSync(
             outputFilePathEnUS,
 
@@ -168,7 +173,6 @@ export default function createTaskCycleForGeneratingHTMLsForExampleMarkdowns({
 
 
     function generateHTMLOfZhHansCN(cb) {
-        // console.log('reading', sourceMarkdownFileZhHansCN)
         writeFileSync(
             outputFilePathZhHansCN,
 
