@@ -9,18 +9,32 @@
     color: #f9f;
 }
 
-.wlc-escape-char,
-.hljs-string .wlc-escape-char {
+.wlc-escape-char {
     color: #c75;
+
+    .slash {
+        opacity: 0.319;
+    }
+
+    .escaped-char {
+    }
+}
+
+.hljs-string {
+
+    .wlc-escape-char {
+        color: #c75;
+
+        .slash {
+        }
+
+        .escaped-char {
+        }
+    }
 }
 
 .hljs-regexp {
     color: #f6e;
-
-    .regexp-body {
-        background-color: rgba(#f6e, 0.08);
-        // background-color: rgba(#fff, 0.06);
-    }
 
     .regexp-options {
         color: #3e1;
@@ -31,11 +45,29 @@
         color: #48f;
     }
 
-    .wlc-escape-char {
-        color: rgba(#f75, 0.3);
+    .regexp-body {
+        background-color: rgba(#f6e, 0.08);
+        // background-color: rgba(#fff, 0.06);
+    }
+
+    .regexp-control-char {
+        color: #379;
+
+        .slash {
+            opacity: 0.79;
+        }
 
         .escaped-char {
-            color: #f75;
+        }
+    }
+
+    .wlc-escape-char {
+        // color: #f75;
+
+        .slash {
+        }
+
+        .escaped-char {
         }
     }
 

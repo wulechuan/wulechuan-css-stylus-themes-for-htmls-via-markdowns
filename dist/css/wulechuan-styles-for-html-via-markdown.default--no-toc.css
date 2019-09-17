@@ -1107,15 +1107,17 @@ pre,
 .hljs-function .hljs-title {
   color: #f9f;
 }
-.wlc-escape-char,
+.wlc-escape-char {
+  color: #c75;
+}
+.wlc-escape-char .slash {
+  opacity: 0.319;
+}
 .hljs-string .wlc-escape-char {
   color: #c75;
 }
 .hljs-regexp {
   color: #f6e;
-}
-.hljs-regexp .regexp-body {
-  background-color: rgba(255,102,238,0.08);
 }
 .hljs-regexp .regexp-options {
   color: #3e1;
@@ -1124,11 +1126,14 @@ pre,
 .hljs-regexp .regexp-selector-input-end {
   color: #48f;
 }
-.hljs-regexp .wlc-escape-char {
-  color: rgba(255,119,85,0.3);
+.hljs-regexp .regexp-body {
+  background-color: rgba(255,102,238,0.08);
 }
-.hljs-regexp .wlc-escape-char .escaped-char {
-  color: #f75;
+.hljs-regexp .regexp-control-char {
+  color: #379;
+}
+.hljs-regexp .regexp-control-char .slash {
+  opacity: 0.79;
 }
 .hljs-regexp .wlc-digit-pair-between-curly-braces .digit {
   color: #f63;
