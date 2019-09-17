@@ -16,7 +16,7 @@ import createAnMarkDownToHTMLConverter from '@wulechuan/generate-html-via-markdo
 import {
     allFileEntriesKeyingByFileNames,
     syncGetContentStringOfOneFileEntry,
-} from '@wulechuan/css-stylus-markdown-themes'
+} from '../../..'
 
 
 
@@ -33,13 +33,8 @@ const exampleOutputHTMLFileNameEnUS = 'default-theming-example.en-us.html'
 const exampleOutputHTMLFileNameZhHansCN = 'default-theming-example.zh-hans-cn.html'
 
 
+
 const thisModuleRootFolderPath = process.cwd().replace(/\\/g, '/')
-console.log()
-console.log('-'.repeat(51))
-console.log('thisModuleRootFolderPath', thisModuleRootFolderPath)
-console.log('allFileEntriesKeyingByFileNames', allFileEntriesKeyingByFileNames)
-console.log('-'.repeat(51))
-console.log()
 
 
 
@@ -54,7 +49,7 @@ const sourceMarkdownFileZhHansCN = joinPathPOSIX(
 )
 
 const markdownToHTMLConverter = createAnMarkDownToHTMLConverter({
-    themesPeerModuleAllFileEntriesKeyingByFileNames: allFileEntriesKeyingByFileNames,
+    themesPeerPackageAllDistFileEntriesKeyingByFileNames: allFileEntriesKeyingByFileNames,
     syncGetContentStringOfOneFileOfThePeerModuleOfThemes: syncGetContentStringOfOneFileEntry,
 })
 
