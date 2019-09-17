@@ -471,7 +471,7 @@ body {
   scroll-behavior: smooth;
 }
 .markdown-article {
-  font-size: 18px;
+  font-size: 0.9rem;
   line-height: 1.6;
   padding: 6rem 4rem 14rem 4rem;
   max-width: 50rem;
@@ -510,6 +510,7 @@ body {
 }
 @media (max-width: 900px) {
   .markdown-article {
+    font-size: 1rem;
     line-height: 1.8;
     padding: 3rem 2rem 7rem 2rem;
   }

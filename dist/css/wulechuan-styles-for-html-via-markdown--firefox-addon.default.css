@@ -476,7 +476,7 @@ hr::after {
   scroll-behavior: smooth;
 }
 .markdownRoot {
-  font-size: 18px;
+  font-size: 0.9rem;
   line-height: 1.6;
   padding: 6rem 4rem 14rem 4rem;
   max-width: 50rem;
@@ -515,6 +515,7 @@ td > h1 .header-anchor {
 }
 @media (max-width: 900px) {
   .markdownRoot {
+    font-size: 1rem;
     line-height: 1.8;
     padding: 3rem 2rem 7rem 2rem;
   }

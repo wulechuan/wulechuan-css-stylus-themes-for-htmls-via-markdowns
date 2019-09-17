@@ -8,7 +8,7 @@ const { // All 6 interfaces are here.
     syncGetContentStringOfOneFileEntry,
     syncGetContentStringOfDefaultCSS,
     syncGetContentStringOfDefaultTOCJavascript,
-} = require('@wulechuan/css-stylus-markdown-themes') // require this module
+} = require('..') // require this module
 
 const separationLine = '-'.repeat(79)
 const separationLine2 = `\n${separationLine}\n`

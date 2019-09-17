@@ -33,12 +33,7 @@ const exampleOutputHTMLFileNameEnUS = 'default-theming-example.en-us.html'
 const exampleOutputHTMLFileNameZhHansCN = 'default-theming-example.zh-hans-cn.html'
 
 
-// const thisModuleRootFolderPath = path.resolve(process.env.PWD, '../../../..').replace(/\\/g, '/')
-const thisModuleRootFolderPath = path.dirname(
-    require.resolve('@wulechuan/css-stylus-markdown-themes/package.json')
-).replace(/\\/g, '/')
-
-
+const thisModuleRootFolderPath = process.cwd()
 
 
 

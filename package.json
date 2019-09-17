@@ -40,21 +40,12 @@
     "stylus",
     "css"
   ],
-  "homepage": "https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns.git"
-  },
-  "bugs": {
-    "url": "https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns/issues"
-  },
   "dependencies": {
     "globby": "^10.0.1"
   },
   "devDependencies": {
-    "@wulechuan/css-stylus-markdown-themes": ".",
     "@wulechuan/generate-html-via-markdown": "^1.6.4",
-    "@wulechuan/gulp-classical-task-cycle": "^0.1.2",
+    "@wulechuan/gulp-classical-task-cycle": "^0.1.3",
     "chalk": "^2.4.2",
     "cssnano": "^4.1.10",
     "del": "^3.0.0",
@@ -66,5 +57,13 @@
     "gulp-rename": "^1.4.0",
     "gulp-stylus": "^2.7.0",
     "gulp-terser": "^1.2.0"
+  },
+  "homepage": "https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns/issues"
   }
 }
