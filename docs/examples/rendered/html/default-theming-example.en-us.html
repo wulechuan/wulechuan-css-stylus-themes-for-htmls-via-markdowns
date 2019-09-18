@@ -97,7 +97,7 @@
 <pre><code class="hljs language-javascript"><span class="hljs-comment">// This is a comment.</span>
 <span class="hljs-keyword import">import</span> something <span class="hljs-keyword from">from</span> <span class="hljs-string">'somethingjs'</span>
 
-<span class="hljs-keyword var">var</span> myModule = <span class="hljs-built_in require">require</span>(<span class="hljs-string">'my-module'</span>);
+<span class="hljs-keyword var">var</span> myModule = <span class="hljs-built_in require">require</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'my-module'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>;
 
 <span class="hljs-keyword const">const</span> author = <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
     <span class="hljs-attr">name</span>: <span class="hljs-string">'wulechuan'</span>,
@@ -105,10 +105,10 @@
 <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
 <span class="hljs-keyword var">var</span> newsThatAreNotNewsAnyMore = <span class="wlc-square-bracket wlc-square-bracket-open">[</span>
-    <span class="hljs-string">'SOFTIMAGE Co<span class="wlc-escape-char regexp-selector-period">\<span class="escaped-char">.</span></span> Released SOFTIMAGE\|3D Extreme'</span>,
+    <span class="hljs-string">'SOFTIMAGE Co\. Released SOFTIMAGE\|3D Extreme'</span>,
     <span class="hljs-string">'Discreet Released 3D STUDIO MAX'</span>,
     <span class="hljs-string">'Alias|Wavefront Released Maya\|Unlimited'</span>,
-    <span class="hljs-string">'SOFTIMAGE Co<span class="wlc-escape-char regexp-selector-period">\<span class="escaped-char">.</span></span> Released SOFTIMAGE\|XSI Advanced'</span>,
+    <span class="hljs-string">'SOFTIMAGE Co\. Released SOFTIMAGE\|XSI Advanced'</span>,
     <span class="hljs-string">'Cebas Released Cinema 4D'</span>,
     <span class="hljs-string">'SideFX Released Houdini'</span>,
     <span class="hljs-string">'Pixar Released RenderMan'</span>,
@@ -123,65 +123,65 @@
 <span class="hljs-keyword let">let</span> anUndefinedValue = <span class="hljs-literal undefined">undefined</span>; <span class="hljs-comment">// A semi looks like this</span>
 <span class="hljs-keyword let">let</span> aNull = <span class="hljs-literal null">null</span>;
 
-<span class="hljs-keyword var">var</span> anInteger = (<span class="hljs-number">19</span> + <span class="hljs-number">3</span> * (<span class="hljs-number">79</span> - <span class="hljs-number">51</span>) + <span class="hljs-number">2013</span>) % <span class="hljs-number">2</span>
+<span class="hljs-keyword var">var</span> anInteger = <span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-number">19</span> + <span class="hljs-number">3</span> * <span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-number">79</span> - <span class="hljs-number">51</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> + <span class="hljs-number">2013</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> % <span class="hljs-number">2</span>
 
-<span class="hljs-keyword const">const</span> cellPhoneNumberRegExp = <span class="hljs-regexp"><span class="regexp-begin">/</span><span class="regexp-selector-input-begin">^</span><span class="regexp-body">1<span class="wlc-escape-char regexp-selector-digit">\<span class="escaped-char">d</span></span><span class="wlc-curly-brace wlc-curly-brace-open">{</span><span class="wlc-digit-pair-between-curly-braces"><span class="digit digit-1">2</span><span class="comma"></span><span class="digit digit-2"></span></span><span class="wlc-curly-brace wlc-curly-brace-close">}</span>(<span class="wlc-square-bracket wlc-square-bracket-open">[</span>- <span class="wlc-square-bracket wlc-square-bracket-close">]</span>?<span class="wlc-escape-char regexp-selector-digit">\<span class="escaped-char">d</span></span><span class="wlc-curly-brace wlc-curly-brace-open">{</span><span class="wlc-digit-pair-between-curly-braces"><span class="digit digit-1">4</span><span class="comma"></span><span class="digit digit-2"></span></span><span class="wlc-curly-brace wlc-curly-brace-close">}</span>)<span class="wlc-curly-brace wlc-curly-brace-open">{</span><span class="wlc-digit-pair-between-curly-braces"><span class="digit digit-1">2</span><span class="comma"></span><span class="digit digit-2"></span></span><span class="wlc-curly-brace wlc-curly-brace-close">}</span></span><span class="regexp-selector-input-end">$</span><span class="regexp-end">/</span><span class="regexp-options"></span></span>
+<span class="hljs-keyword const">const</span> cellPhoneNumberRegExp = <span class="hljs-regexp"><span class="regexp-begin">/</span><span class="regexp-selector-input-begin">^</span><span class="regexp-body">1<span class="regexp-selector-char regexp-selector-digit wlc-escape-char"><span class="slash">\</span><span class="control-char escaped-char">d</span></span><span class="regexp-control-char regexp-control-curly-brace curly-brace-open"><span class="control-char">{</span></span><span class="wlc-digit-pair-between-curly-braces"><span class="digit digit-1">2</span><span class="comma"></span><span class="digit digit-2"></span></span><span class="regexp-control-char regexp-control-curly-brace curly-brace-close"><span class="control-char">}</span></span><span class="regexp-control-char regexp-control-parenthesis parenthesis-open"><span class="control-char">(</span></span><span class="regexp-control-char regexp-control-square-bracket square-bracket-open"><span class="control-char">[</span></span><span class="regexp-control-char regexp-control-range-sign"><span class="control-char">-</span></span> <span class="regexp-control-char regexp-control-square-bracket square-bracket-close"><span class="control-char">]</span></span><span class="regexp-control-char regexp-control-question-mark"><span class="control-char">?</span></span><span class="regexp-selector-char regexp-selector-digit wlc-escape-char"><span class="slash">\</span><span class="control-char escaped-char">d</span></span><span class="regexp-control-char regexp-control-curly-brace curly-brace-open"><span class="control-char">{</span></span><span class="wlc-digit-pair-between-curly-braces"><span class="digit digit-1">4</span><span class="comma"></span><span class="digit digit-2"></span></span><span class="regexp-control-char regexp-control-curly-brace curly-brace-close"><span class="control-char">}</span></span><span class="regexp-control-char regexp-control-parenthesis parenthesis-close"><span class="control-char">)</span></span><span class="regexp-control-char regexp-control-curly-brace curly-brace-open"><span class="control-char">{</span></span><span class="wlc-digit-pair-between-curly-braces"><span class="digit digit-1">2</span><span class="comma"></span><span class="digit digit-2"></span></span><span class="regexp-control-char regexp-control-curly-brace curly-brace-close"><span class="control-char">}</span></span></span><span class="regexp-selector-input-end">$</span><span class="regexp-end">/</span></span>
 
 <span class="hljs-keyword let">let</span> cellPhoneNumber = <span class="hljs-string">'13345678901 '</span>
-cellPhoneNumber = cellPhoneNumber.trim()
+cellPhoneNumber = cellPhoneNumber.trim<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
 
-<span class="hljs-keyword const">const</span> cellPhoneNumberIsValid = cellPhoneNumberRegExp.test(cellPhoneNumber)
-<span class="hljs-built_in console">console</span>.log(<span class="hljs-string">'cellPhoneNumberIsValid'</span>, cellPhoneNumberIsValid) <span class="hljs-comment">// true</span>
+<span class="hljs-keyword const">const</span> cellPhoneNumberIsValid = cellPhoneNumberRegExp.test<span class="wlc-parenthesis wlc-parenthesis-open">(</span>cellPhoneNumber<span class="wlc-parenthesis wlc-parenthesis-close">)</span>
+<span class="hljs-built_in console">console</span>.log<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'cellPhoneNumberIsValid'</span>, cellPhoneNumberIsValid<span class="wlc-parenthesis wlc-parenthesis-close">)</span> <span class="hljs-comment">// true</span>
 
 <span class="hljs-keyword var">var</span> aString = <span class="hljs-string">`Meaningless <span class="hljs-subst">$<span class="wlc-curly-brace wlc-curly-brace-open">{</span>cellPhoneNumber<span class="wlc-curly-brace wlc-curly-brace-close">}</span></span> `</span> + <span class="hljs-literal true">true</span> + <span class="hljs-string">' '</span> + <span class="hljs-number">15</span> + <span class="hljs-string">' '</span> + <span class="hljs-literal false">false</span>
 
 <span class="hljs-keyword let">let</span> isAnArray = <span class="hljs-literal false">false</span>
-<span class="hljs-keyword if">if</span> (<span class="hljs-built_in Array">Array</span>.isArray(<span class="wlc-square-bracket wlc-square-bracket-open">[</span><span class="wlc-square-bracket wlc-square-bracket-close">]</span>)) <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+<span class="hljs-keyword if">if</span> <span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-built_in Array">Array</span>.isArray<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="wlc-square-bracket wlc-square-bracket-open">[</span><span class="wlc-square-bracket wlc-square-bracket-close">]</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
     isAnArray = <span class="hljs-literal true">true</span>
 <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
-<span class="hljs-keyword const">const</span> regExp = <span class="hljs-keyword new">new</span> <span class="hljs-built_in RegExp">RegExp</span>(<span class="hljs-string">'<span class="wlc-escape-char backward-slash">\<span class="escaped-char">\</span></span>w+'</span>, <span class="hljs-string">'gi'</span>)
+<span class="hljs-keyword const">const</span> regExp = <span class="hljs-keyword new">new</span> <span class="hljs-built_in RegExp">RegExp</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'<span class="wlc-escape-char backward-slash"><span class="slash">\</span><span class="escaped-char">\</span></span>w+'</span>, <span class="hljs-string">'gi'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
 
-<span class="hljs-keyword const">const</span> complexRegExp = <span class="hljs-regexp"><span class="regexp-begin">/</span><span class="regexp-selector-input-begin">^</span><span class="regexp-body"><span class="wlc-escape-char regexp-selector-square-bracket square-bracket-open">\<span class="escaped-char">[</span></span><span class="wlc-square-bracket wlc-square-bracket-open">[</span>^\&lt;<span class="wlc-square-bracket wlc-square-bracket-close">]</span>(<span class="wlc-escape-char regexp-selector-parenthesis parenthesis-open">\<span class="escaped-char">(</span></span>|<span class="wlc-escape-char regexp-selector-parenthesis parenthesis-close">\<span class="escaped-char">)</span></span>)\$<span class="wlc-escape-char regexp-selector-curly-brace curly-brace-open">\<span class="escaped-char">{</span></span><span class="wlc-square-bracket wlc-square-bracket-open">[</span>a-z<span class="wlc-escape-char regexp-selector-digit">\<span class="escaped-char">d</span></span>_-<span class="wlc-square-bracket wlc-square-bracket-close">]</span>+<span class="wlc-square-bracket wlc-square-bracket-open">[</span><span class="wlc-escape-char regexp-selector-word">\<span class="escaped-char">w</span></span><span class="wlc-escape-char regexp-selector-period">\<span class="escaped-char">.</span></span><span class="wlc-square-bracket wlc-square-bracket-close">]</span><span class="wlc-curly-brace wlc-curly-brace-open">{</span><span class="wlc-digit-pair-between-curly-braces"><span class="digit digit-1">16</span><span class="comma">,</span><span class="digit digit-2"></span></span><span class="wlc-curly-brace wlc-curly-brace-close">}</span>a*b*<span class="wlc-escape-char regexp-selector-asterisk">\<span class="escaped-char">*</span></span><span class="wlc-escape-char backward-slash">\<span class="escaped-char">\</span></span>,<span class="wlc-escape-char regexp-selector-square-bracket square-bracket-close">\<span class="escaped-char">]</span></span>\^"--toc.min<span class="wlc-escape-char regexp-selector-period">\<span class="escaped-char">.</span></span>js</span><span class="regexp-selector-input-end">$</span><span class="regexp-end">/</span><span class="regexp-options">gi</span></span>
+<span class="hljs-keyword const">const</span> complexRegExp = <span class="hljs-regexp"><span class="regexp-begin">/</span><span class="regexp-selector-input-begin">^</span><span class="regexp-body"><span class="wlc-escape-char regexp-literal-square-bracket square-bracket-open"><span class="slash">\</span><span class="escaped-char">[</span></span><span class="regexp-control-char regexp-control-square-bracket square-bracket-open"><span class="control-char">[</span></span><span class="regexp-control-char regexp-control-invert"><span class="control-char">^</span></span><span class="wlc-escape-char regexp-literal-less-than-mark">\<span class="escaped-char"><</span></span><span class="regexp-control-char regexp-control-square-bracket square-bracket-close"><span class="control-char">]</span></span><span class="regexp-control-char regexp-control-parenthesis parenthesis-open"><span class="control-char">(</span></span><span class="wlc-escape-char regexp-literal-parenthesis parenthesis-open"><span class="slash">\</span><span class="escaped-char">(</span></span><span class="regexp-control-char regexp-control-logic-or"><span class="control-char">|</span></span><span class="wlc-escape-char regexp-literal-parenthesis parenthesis-close"><span class="slash">\</span><span class="escaped-char">)</span></span><span class="regexp-control-char regexp-control-parenthesis parenthesis-close"><span class="control-char">)</span></span><span class="wlc-escape-char regexp-literal-dollar"><span class="slash">\</span><span class="escaped-char">$</span></span><span class="wlc-escape-char regexp-literal-curly-brace curly-brace-open"><span class="slash">\</span><span class="escaped-char">{</span></span><span class="regexp-control-char regexp-control-square-bracket square-bracket-open"><span class="control-char">[</span></span>a<span class="regexp-control-char regexp-control-range-sign"><span class="control-char">-</span></span>z<span class="regexp-selector-char regexp-selector-digit wlc-escape-char"><span class="slash">\</span><span class="control-char escaped-char">d</span></span>_<span class="regexp-control-char regexp-control-range-sign"><span class="control-char">-</span></span><span class="regexp-control-char regexp-control-square-bracket square-bracket-close"><span class="control-char">]</span></span><span class="regexp-control-char regexp-control-plus-sign"><span class="control-char">+</span></span><span class="regexp-control-char regexp-control-square-bracket square-bracket-open"><span class="control-char">[</span></span><span class="regexp-selector-char regexp-selector-word wlc-escape-char"><span class="slash">\</span><span class="control-char escaped-char">w</span></span><span class="wlc-escape-char regexp-literal-period"><span class="slash">\</span><span class="escaped-char">.</span></span><span class="regexp-control-char regexp-control-square-bracket square-bracket-close"><span class="control-char">]</span></span><span class="regexp-control-char regexp-control-curly-brace curly-brace-open"><span class="control-char">{</span></span><span class="wlc-digit-pair-between-curly-braces"><span class="digit digit-1">16</span><span class="comma">,</span><span class="digit digit-2"></span></span><span class="regexp-control-char regexp-control-curly-brace curly-brace-close"><span class="control-char">}</span></span>a<span class="regexp-control-char regexp-control-asterisk"><span class="control-char">*</span></span>b<span class="regexp-control-char regexp-control-asterisk"><span class="control-char">*</span></span><span class="wlc-escape-char regexp-literal-asterisk"><span class="slash">\</span><span class="escaped-char">*</span></span><span class="wlc-escape-char regexp-literal-backward-slash"><span class="slash">\</span><span class="escaped-char">\</span></span>,<span class="wlc-escape-char regexp-literal-square-bracket square-bracket-close"><span class="slash">\</span><span class="escaped-char">]</span></span><span class="wlc-escape-char regexp-literal-caret"><span class="slash">\</span><span class="escaped-char">^</span></span>"<span class="wlc-escape-char regexp-literal-minus-sign"><span class="slash">\</span><span class="escaped-char">-</span></span><span class="regexp-control-char regexp-control-range-sign"><span class="control-char">-</span></span>toc<span class="regexp-selector-char regexp-selector-any-char"><span class="control-char">.</span></span>min<span class="wlc-escape-char regexp-literal-period"><span class="slash">\</span><span class="escaped-char">.</span></span>js</span><span class="regexp-selector-input-end">$</span><span class="regexp-end">/</span><span class="regexp-options">gi</span></span>
 
-<span class="hljs-built_in console">console</span>.log(<span class="hljs-built_in window">window</span>.innerHeight, <span class="hljs-built_in window">window</span>.self, global)
+<span class="hljs-built_in console">console</span>.log<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-built_in window">window</span>.innerHeight, <span class="hljs-built_in window">window</span>.self, global<span class="wlc-parenthesis wlc-parenthesis-close">)</span>
 
-<span class="hljs-keyword const">const</span> windowMethods = <span class="hljs-built_in Object">Object</span>.keys(<span class="hljs-built_in window">window</span>).map(<span class="hljs-function"><span class="hljs-params">k</span> =&gt;</span> <span class="hljs-built_in window">window</span><span class="wlc-square-bracket wlc-square-bracket-open">[</span>k<span class="wlc-square-bracket wlc-square-bracket-close">]</span>).filter(<span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> <span class="hljs-keyword typeof">typeof</span> p === <span class="hljs-string">'function'</span>)
-<span class="hljs-built_in console">console</span>.log(windowMethods)
+<span class="hljs-keyword const">const</span> windowMethods = <span class="hljs-built_in Object">Object</span>.keys<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-built_in window">window</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>.map<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-function"><span class="hljs-params">k</span> =&gt;</span> <span class="hljs-built_in window">window</span><span class="wlc-square-bracket wlc-square-bracket-open">[</span>k<span class="wlc-square-bracket wlc-square-bracket-close">]</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>.filter<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-function"><span class="hljs-params">p</span> =&gt;</span> <span class="hljs-keyword typeof">typeof</span> p === <span class="hljs-string">'function'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
+<span class="hljs-built_in console">console</span>.log<span class="wlc-parenthesis wlc-parenthesis-open">(</span>windowMethods<span class="wlc-parenthesis wlc-parenthesis-close">)</span>
 
-<span class="hljs-keyword if">if</span> (<span class="hljs-literal false">false</span>) <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
-    <span class="hljs-keyword throw">throw</span> <span class="hljs-built_in TypeError">TypeError</span>(<span class="hljs-string">'Should not throw here!'</span>)
+<span class="hljs-keyword if">if</span> <span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-literal false">false</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+    <span class="hljs-keyword throw">throw</span> <span class="hljs-built_in TypeError">TypeError</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'Should not throw here!'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
 <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
-$(<span class="hljs-function"><span class="hljs-keyword function">function</span> (<span class="hljs-params">e</span>) </span><span class="wlc-curly-brace wlc-curly-brace-open">{</span>
-    alert(<span class="hljs-string">'DOMs are ready'</span>)
-<span class="wlc-curly-brace wlc-curly-brace-close">}</span>)
+$<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-function"><span class="hljs-keyword function">function</span> <span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-params">e</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> </span><span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+    alert<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'DOMs are ready'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
+<span class="wlc-curly-brace wlc-curly-brace-close">}</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
 
-<span class="hljs-keyword const">const</span> <span class="wlc-function-name hljs-title wlc-var-name">anArrowFunction</span> = <span class="hljs-function">(<span class="hljs-params">count</span>) =&gt;</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
-    <span class="hljs-keyword for">for</span> (<span class="hljs-keyword var">var</span> i = <span class="hljs-number">0</span>; i&lt;count; i++) <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
-        <span class="hljs-keyword if">if</span> (i === <span class="hljs-number">3</span>) <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+<span class="hljs-keyword const">const</span> <span class="wlc-function-name hljs-title wlc-var-name">anArrowFunction</span> = <span class="hljs-function"><span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-params">count</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> =&gt;</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+    <span class="hljs-keyword for">for</span> <span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-keyword var">var</span> i = <span class="hljs-number">0</span>; i&lt;count; i++<span class="wlc-parenthesis wlc-parenthesis-close">)</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+        <span class="hljs-keyword if">if</span> <span class="wlc-parenthesis wlc-parenthesis-open">(</span>i === <span class="hljs-number">3</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
             <span class="hljs-keyword continue">continue</span>
         <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
         <span class="hljs-keyword debugger">debugger</span>
 
-        <span class="hljs-keyword switch">switch</span> (i % <span class="hljs-number">2</span>) <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+        <span class="hljs-keyword switch">switch</span> <span class="wlc-parenthesis wlc-parenthesis-open">(</span>i % <span class="hljs-number">2</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
             <span class="hljs-keyword case">case</span> <span class="hljs-number">0</span>:
             <span class="hljs-keyword default">default</span>:
-                <span class="hljs-built_in console">console</span>.log(i, <span class="hljs-string">'It<span class="wlc-escape-char single-quote">\<span class="escaped-char">'</span></span>s an even number.'</span>)
+                <span class="hljs-built_in console">console</span>.log<span class="wlc-parenthesis wlc-parenthesis-open">(</span>i, <span class="hljs-string">'It<span class="wlc-escape-char single-quote"><span class="slash">\</span><span class="escaped-char">'</span></span>s an even number.'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
                 <span class="hljs-keyword break">break</span>
             <span class="hljs-keyword case">case</span> <span class="hljs-number">1</span>:
-                <span class="hljs-built_in console">console</span>.log(i, <span class="hljs-string">'It<span class="wlc-escape-char single-quote">\<span class="escaped-char">'</span></span>s an odd number.'</span>)
+                <span class="hljs-built_in console">console</span>.log<span class="wlc-parenthesis wlc-parenthesis-open">(</span>i, <span class="hljs-string">'It<span class="wlc-escape-char single-quote"><span class="slash">\</span><span class="escaped-char">'</span></span>s an odd number.'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
                 <span class="hljs-keyword break">break</span>
         <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
-        <span class="hljs-keyword if">if</span> (i &gt;= <span class="hljs-number">10000</span>) <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+        <span class="hljs-keyword if">if</span> <span class="wlc-parenthesis wlc-parenthesis-open">(</span>i &gt;= <span class="hljs-number">10000</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
             <span class="hljs-keyword break">break</span>
         <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
     <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
-<span class="hljs-built_in window">window</span>.tempString = <span class="hljs-string">'<span class="wlc-escape-char new-line">\<span class="escaped-char">n</span></span>hello<span class="wlc-escape-char new-line">\<span class="escaped-char">n</span></span>'</span>
+<span class="hljs-built_in window">window</span>.tempString = <span class="hljs-string">'<span class="wlc-escape-char new-line"><span class="slash">\</span><span class="escaped-char">n</span></span>hello<span class="wlc-escape-char new-line"><span class="slash">\</span><span class="escaped-char">n</span></span>'</span>
 <span class="hljs-keyword delete">delete</span> <span class="hljs-built_in window">window</span>.tempString
 
 
@@ -193,41 +193,41 @@ $(<span class="hljs-function"><span class="hljs-keyword function">function</span
 `</span>
 
 
-<span class="hljs-keyword var">var</span> now = <span class="hljs-keyword new">new</span> <span class="hljs-built_in Date">Date</span>()
+<span class="hljs-keyword var">var</span> now = <span class="hljs-keyword new">new</span> <span class="hljs-built_in Date">Date</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
 
-<span class="hljs-keyword const">const</span> ul = <span class="hljs-built_in Array">Array</span>.prototype.slice.apply(
-    <span class="hljs-built_in document">document</span>.querySelectorAll(<span class="hljs-string">'ul.news-list'</span>)
-)<span class="wlc-square-bracket wlc-square-bracket-open">[</span><span class="hljs-number">0</span><span class="wlc-square-bracket wlc-square-bracket-close">]</span>
+<span class="hljs-keyword const">const</span> ul = <span class="hljs-built_in Array">Array</span>.prototype.slice.apply<span class="wlc-parenthesis wlc-parenthesis-open">(</span>
+    <span class="hljs-built_in document">document</span>.querySelectorAll<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'ul.news-list'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
+<span class="wlc-parenthesis wlc-parenthesis-close">)</span><span class="wlc-square-bracket wlc-square-bracket-open">[</span><span class="hljs-number">0</span><span class="wlc-square-bracket wlc-square-bracket-close">]</span>
 
-newsThatAreNotNewsAnyMore.forEach(<span class="hljs-function"><span class="hljs-params">newsMessage</span> =&gt;</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
-    <span class="hljs-keyword const">const</span> li = <span class="hljs-built_in document">document</span>.createElement(<span class="hljs-string">'li'</span>)
+newsThatAreNotNewsAnyMore.forEach<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-function"><span class="hljs-params">newsMessage</span> =&gt;</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+    <span class="hljs-keyword const">const</span> li = <span class="hljs-built_in document">document</span>.createElement<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'li'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
     li.innerText = newsMessage
 
-    ul.appendChild(li)
-<span class="wlc-curly-brace wlc-curly-brace-close">}</span>)
+    ul.appendChild<span class="wlc-parenthesis wlc-parenthesis-open">(</span>li<span class="wlc-parenthesis wlc-parenthesis-close">)</span>
+<span class="wlc-curly-brace wlc-curly-brace-close">}</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
 
-<span class="hljs-built_in console">console</span>.log(news.length, news.join(<span class="hljs-string">''</span>).length)
+<span class="hljs-built_in console">console</span>.log<span class="wlc-parenthesis wlc-parenthesis-open">(</span>news.length, news.join<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">''</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>.length<span class="wlc-parenthesis wlc-parenthesis-close">)</span>
 
-<span class="hljs-function"><span class="hljs-keyword function">function</span> <span class="hljs-title">addTwoNumbers</span>(<span class="hljs-params">a, b</span>) </span><span class="wlc-curly-brace wlc-curly-brace-open">{</span>
-    <span class="hljs-keyword if">if</span> (<span class="hljs-keyword typeof">typeof</span> a === <span class="hljs-string">'number'</span> &amp;&amp; <span class="hljs-keyword typeof">typeof</span> b === <span class="hljs-string">'number'</span>) <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+<span class="hljs-function"><span class="hljs-keyword function">function</span> <span class="hljs-title">addTwoNumbers</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-params">a, b</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> </span><span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+    <span class="hljs-keyword if">if</span> <span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-keyword typeof">typeof</span> a === <span class="hljs-string">'number'</span> &amp;&amp; <span class="hljs-keyword typeof">typeof</span> b === <span class="hljs-string">'number'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
         <span class="hljs-keyword return">return</span> a + b
     <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
     <span class="hljs-keyword return">return</span> <span class="hljs-literal NaN">NaN</span>
 <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
-<span class="hljs-keyword async">async</span> <span class="hljs-function"><span class="hljs-keyword function">function</span> <span class="hljs-title">anAsyncFunction</span>(<span class="hljs-params">something, ...anything</span>) </span><span class="wlc-curly-brace wlc-curly-brace-open">{</span>
-    <span class="hljs-keyword await">await</span> <span class="hljs-keyword new">new</span> <span class="hljs-built_in Promise">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> resolve(), <span class="hljs-number">123</span>))
-    <span class="hljs-keyword return">return</span> +prompt(<span class="hljs-string">'now please input a number:'</span>)
+<span class="hljs-keyword async">async</span> <span class="hljs-function"><span class="hljs-keyword function">function</span> <span class="hljs-title">anAsyncFunction</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-params">something, ...anything</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> </span><span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+    <span class="hljs-keyword await">await</span> <span class="hljs-keyword new">new</span> <span class="hljs-built_in Promise">Promise</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> setTimeout<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-function"><span class="hljs-params"><span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span></span> =&gt;</span> resolve<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>, <span class="hljs-number">123</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
+    <span class="hljs-keyword return">return</span> +prompt<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'now please input a number:'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
 <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
-<span class="hljs-keyword export">export</span> <span class="hljs-keyword default">default</span> <span class="hljs-function"><span class="hljs-keyword function">function</span> <span class="hljs-title">isAPromiseObject</span>(<span class="hljs-params">input</span>) </span><span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+<span class="hljs-keyword export">export</span> <span class="hljs-keyword default">default</span> <span class="hljs-function"><span class="hljs-keyword function">function</span> <span class="hljs-title">isAPromiseObject</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-params">input</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> </span><span class="wlc-curly-brace wlc-curly-brace-open">{</span>
     <span class="hljs-comment">/*
         A multi-lined
         comment
         with indentations
         looks like this.
-    *</span><span class="regexp-selector-input-end"></span><span class="regexp-end">/</span><span class="regexp-options"></span></span>
+    */</span>
     <span class="hljs-keyword return">return</span> !!input &amp;&amp; <span class="hljs-keyword typeof">typeof</span> input.then === <span class="hljs-string">'function'</span> &amp;&amp; <span class="hljs-keyword typeof">typeof</span> input.done === <span class="hljs-string">'function'</span>
 <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
@@ -250,7 +250,7 @@ exports.author = <span class="hljs-string">'wulechun@live.com'</span>;
             <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
             <span class="hljs-attribute">border</span>: <span class="hljs-number">6px</span> solid <span class="hljs-number">#888</span>;
             <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">0.5em</span>;
-            <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0.5rem</span> <span class="hljs-number">0</span> <span class="hljs-built_in rgba">rgba</span>(0, 0, 0, 0.2);
+            <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0.5rem</span> <span class="hljs-number">0</span> <span class="hljs-built_in rgba">rgba</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span>0, 0, 0, 0.2<span class="wlc-parenthesis wlc-parenthesis-close">)</span>;
         <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
         <span class="hljs-selector-id">#app</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
@@ -259,18 +259,18 @@ exports.author = <span class="hljs-string">'wulechun@live.com'</span>;
         <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
         <span class="hljs-selector-class">.bg-view</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
-            <span class="hljs-attribute">filter</span>: <span class="hljs-built_in blur">blur</span>(16px);
-            <span class="hljs-attribute">transform</span>: <span class="hljs-built_in scaleX">scaleX</span>(-1);
+            <span class="hljs-attribute">filter</span>: <span class="hljs-built_in blur">blur</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span>16px<span class="wlc-parenthesis wlc-parenthesis-close">)</span>;
+            <span class="hljs-attribute">transform</span>: <span class="hljs-built_in scaleX">scaleX</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span>-1<span class="wlc-parenthesis wlc-parenthesis-close">)</span>;
         <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
         <span class="hljs-selector-id">#cover</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
-            <span class="hljs-attribute">backdrop-filter</span>: <span class="hljs-built_in blur">blur</span>(30px);
+            <span class="hljs-attribute">backdrop-filter</span>: <span class="hljs-built_in blur">blur</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span>30px<span class="wlc-parenthesis wlc-parenthesis-close">)</span>;
         <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
-        <span class="hljs-selector-class">.box-1</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span> <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in url">url</span>(<span class="hljs-string">'./images/beauties/beauty-1.jpg'</span>); <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
-        <span class="hljs-selector-class">.box-2</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span> <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in url">url</span>(<span class="hljs-string">'./images/beauties/beauty-2.jpg'</span>); <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
-        <span class="hljs-selector-class">.box-3</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span> <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in url">url</span>(<span class="hljs-string">'./images/beauties/beauty-3.jpg'</span>); <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
-        <span class="hljs-selector-class">.box-4</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span> <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in url">url</span>(<span class="hljs-string">'./images/beauties/beauty-4.jpg'</span>); <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
+        <span class="hljs-selector-class">.box-1</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span> <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in url">url</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'./images/beauties/beauty-1.jpg'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>; <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
+        <span class="hljs-selector-class">.box-2</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span> <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in url">url</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'./images/beauties/beauty-2.jpg'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>; <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
+        <span class="hljs-selector-class">.box-3</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span> <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in url">url</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'./images/beauties/beauty-3.jpg'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>; <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
+        <span class="hljs-selector-class">.box-4</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span> <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in url">url</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'./images/beauties/beauty-4.jpg'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>; <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
@@ -307,21 +307,21 @@ exports.author = <span class="hljs-string">'wulechun@live.com'</span>;
     <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-        <span class="hljs-keyword var">var</span> button = <span class="hljs-built_in document">document</span>.querySelector(<span class="hljs-string">'#one-button'</span>);
-        <span class="hljs-keyword var">var</span> beautyImage = <span class="hljs-built_in document">document</span>.getElementById(<span class="hljs-string">'beauty'</span>);
+        <span class="hljs-keyword var">var</span> button = <span class="hljs-built_in document">document</span>.querySelector<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'#one-button'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>;
+        <span class="hljs-keyword var">var</span> beautyImage = <span class="hljs-built_in document">document</span>.getElementById<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'beauty'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>;
 
-        button.<span class="wlc-function-name hljs-title wlc-var-name">onclick</span> = <span class="hljs-function"><span class="hljs-keyword function">function</span> (<span class="hljs-params"></span>) </span><span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+        button.<span class="wlc-function-name hljs-title wlc-var-name">onclick</span> = <span class="hljs-function"><span class="hljs-keyword function">function</span> <span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-params"></span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> </span><span class="wlc-curly-brace wlc-curly-brace-open">{</span>
             beautyImage.src = <span class="hljs-string">'./images/beauties/beauty-2.jpg'</span>;
             beautyImage.title = <span class="hljs-string">'Another gorgeous lady'</span>;
         <span class="wlc-curly-brace wlc-curly-brace-close">}</span>;
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 
     <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
-        <span class="hljs-keyword const">const</span> girl = <span class="hljs-built_in document">document</span>.querySelector(<span class="hljs-string">'img'</span>)
-        girl.addEventListener(<span class="hljs-string">'mouseover'</span>, <span class="hljs-function"><span class="hljs-keyword function">function</span> (<span class="hljs-params">event</span>) </span><span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+        <span class="hljs-keyword const">const</span> girl = <span class="hljs-built_in document">document</span>.querySelector<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'img'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
+        girl.addEventListener<span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'mouseover'</span>, <span class="hljs-function"><span class="hljs-keyword function">function</span> <span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-params">event</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> </span><span class="wlc-curly-brace wlc-curly-brace-open">{</span>
             <span class="hljs-keyword this">this</span>.src = <span class="hljs-string">'./images/beauties/beauty-3.jpg'</span>
             <span class="hljs-keyword this">this</span>.title = <span class="hljs-string">'An amazingly beautifly girl'</span>
-        <span class="wlc-curly-brace wlc-curly-brace-close">}</span>)
+        <span class="wlc-curly-brace wlc-curly-brace-close">}</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>
     </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
@@ -349,7 +349,7 @@ exports.author = <span class="hljs-string">'wulechun@live.com'</span>;
 <span class="hljs-selector-class">.back-to-top</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
     <span class="hljs-attribute">position</span>: fixed;
     <span class="hljs-attribute">display</span>: block;
-    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in url">url</span>(<span class="hljs-string">'./images/rocket.png'</span>);
+    <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in url">url</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span><span class="hljs-string">'./images/rocket.png'</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span>;
     <span class="hljs-attribute">width</span>: <span class="hljs-number">1.5rem</span>;
     <span class="hljs-attribute">height</span>: <span class="hljs-number">1.5rem</span>;
     <span class="hljs-attribute">overflow</span>: hidden;
@@ -367,7 +367,7 @@ exports.author = <span class="hljs-string">'wulechun@live.com'</span>;
     <span class="hljs-attribute">display</span>: block;
 <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
-@<span class="hljs-keyword media">media</span> screen and (max-width: <span class="hljs-number">600px</span>) <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+@<span class="hljs-keyword media">media</span> screen and <span class="wlc-parenthesis wlc-parenthesis-open">(</span>max-width: <span class="hljs-number">600px</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
     <span class="hljs-selector-class">.optional-line-break</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
         <span class="hljs-attribute">display</span>: none;
     <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
@@ -381,7 +381,7 @@ exports.author = <span class="hljs-string">'wulechun@live.com'</span>;
     <span class="hljs-attribute">color</span>: blue;
 <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
-@<span class="hljs-keyword media">media</span> (max-width: <span class="hljs-number">900px</span>) <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+@<span class="hljs-keyword media">media</span> <span class="wlc-parenthesis wlc-parenthesis-open">(</span>max-width: <span class="hljs-number">900px</span><span class="wlc-parenthesis wlc-parenthesis-close">)</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
 
     <span class="hljs-selector-tag">html</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
         <span class="hljs-attribute">font-size</span>: <span class="hljs-number">16px</span>;
@@ -400,7 +400,7 @@ exports.author = <span class="hljs-string">'wulechun@live.com'</span>;
 
 <span class="hljs-selector-class">.markdown-article-back-to-top</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
     <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#778899</span>;
-    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0.5rem</span> <span class="hljs-number">0</span> <span class="hljs-built_in rgba">rgba</span>(0, 0, 0, 0.4);
+    <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0.5rem</span> <span class="hljs-number">0</span> <span class="hljs-built_in rgba">rgba</span><span class="wlc-parenthesis wlc-parenthesis-open">(</span>0, 0, 0, 0.4<span class="wlc-parenthesis wlc-parenthesis-close">)</span>;
 <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
 @<span class="hljs-keyword keyframes">keyframes</span> fade-in <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
@@ -416,7 +416,7 @@ exports.author = <span class="hljs-string">'wulechun@live.com'</span>;
     <span class="hljs-attribute">text-indent</span>: -<span class="hljs-number">100px</span>;
 <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
-<span class="hljs-comment">/* chief navigation *</span><span class="regexp-selector-input-end"></span><span class="regexp-end">/</span><span class="regexp-options"></span></span>
+<span class="hljs-comment">/* chief navigation */</span>
 
 <span class="hljs-selector-tag">nav</span> <span class="hljs-selector-tag">ul</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
     <span class="hljs-attribute">display</span>: flex;
@@ -434,7 +434,7 @@ exports.author = <span class="hljs-string">'wulechun@live.com'</span>;
     <span class="hljs-attribute">transition</span>: all <span class="hljs-number">0.4s</span> ease-out;
 <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
-<span class="hljs-comment">/* news list *</span><span class="regexp-selector-input-end"></span><span class="regexp-end">/</span><span class="regexp-options"></span></span>
+<span class="hljs-comment">/* news list */</span>
 
 <span class="hljs-selector-class">.news-list</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
     <span class="hljs-attribute">font-size</span>: <span class="hljs-number">1.2rem</span>;
@@ -447,7 +447,7 @@ exports.author = <span class="hljs-string">'wulechun@live.com'</span>;
     <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#eee</span>;
 <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 
-<span class="hljs-selector-class">.news-list</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:nth-child(even)</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
+<span class="hljs-selector-class">.news-list</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:nth-child<span class="wlc-parenthesis wlc-parenthesis-open">(</span>even<span class="wlc-parenthesis wlc-parenthesis-close">)</span></span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
     <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#d3d3d3</span>;
 <span class="wlc-curly-brace wlc-curly-brace-close">}</span>
 </code></pre>
@@ -466,7 +466,7 @@ exports.author = <span class="hljs-string">'wulechun@live.com'</span>;
         A multi-lined comment,
         looks
         like this.
-    *</span><span class="regexp-selector-input-end"></span><span class="regexp-end">/</span><span class="regexp-options"></span></span>
+    */</span>
 
     <span class="hljs-selector-tag">h1</span>, <span class="hljs-selector-tag">h2</span>, <span class="hljs-selector-tag">h3</span>, <span class="hljs-selector-tag">h4</span>, <span class="hljs-selector-tag">h5</span>, <span class="hljs-selector-tag">h6</span>, <span class="hljs-selector-tag">dt</span> <span class="wlc-curly-brace wlc-curly-brace-open">{</span>
         <span class="hljs-attribute">padding</span>:       <span class="hljs-number">0.5rem</span>;
