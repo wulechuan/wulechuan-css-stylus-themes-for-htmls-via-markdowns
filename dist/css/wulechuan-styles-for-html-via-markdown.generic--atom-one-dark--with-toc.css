@@ -467,10 +467,10 @@ hr::after {
     margin: 1.5rem auto 2rem 0;
   }
 }
-_selectorOf_markdownArticleRoot {
+.markdown-article {
   scroll-behavior: smooth;
 }
-_selectorOf_markdownArticleRoot {
+.markdown-article {
   font-size: 0.9rem;
   line-height: 1.6;
   padding: 6rem 4rem 14rem 4rem;
@@ -479,7 +479,7 @@ _selectorOf_markdownArticleRoot {
   margin: 0 auto;
   word-break: break-word;
 }
-_selectorOf_markdownArticleRoot > h1:first-child {
+.markdown-article > h1:first-child {
   margin-top: 1em;
 }
 .document-author {
@@ -509,19 +509,19 @@ td > h1 .header-anchor {
   display: none;
 }
 @media (max-width: 900px) {
-  _selectorOf_markdownArticleRoot {
+  .markdown-article {
     font-size: 1rem;
     line-height: 1.8;
     padding: 3rem 2rem 7rem 2rem;
   }
 }
-nav.markdown-aritcle-toc {
+nav.markdown-article-toc {
   z-index: 30;
 }
 .markdown-article-toc-toggling-button {
   z-index: 60;
 }
-nav.markdown-aritcle-toc {
+nav.markdown-article-toc {
   font-size: 0.8rem;
   box-sizing: border-box;
   width: 24rem;
@@ -534,7 +534,7 @@ nav.markdown-aritcle-toc {
   top: 0;
   margin: 0;
 }
-nav.markdown-aritcle-toc a[href^="#"] {
+nav.markdown-article-toc a[href^="#"] {
   display: block;
   padding: 0.25em 0.5em;
   border: none;
@@ -543,12 +543,12 @@ nav.markdown-aritcle-toc a[href^="#"] {
   transition-duration: 0.36s;
   transition-timing-function: ease-out;
 }
-nav.markdown-aritcle-toc li {
+nav.markdown-article-toc li {
   cursor: pointer;
   margin: 0;
 }
-nav.markdown-aritcle-toc > ul,
-nav.markdown-aritcle-toc > ol {
+nav.markdown-article-toc > ul,
+nav.markdown-article-toc > ol {
   box-sizing: border-box;
   height: 100%;
   overflow: auto;
@@ -556,23 +556,23 @@ nav.markdown-aritcle-toc > ol {
   margin: 0;
   white-space: nowrap;
 }
-nav.markdown-aritcle-toc > ul ol ol,
-nav.markdown-aritcle-toc > ol ol ol,
-nav.markdown-aritcle-toc > ul ul ol,
-nav.markdown-aritcle-toc > ol ul ol,
-nav.markdown-aritcle-toc > ul ol ul,
-nav.markdown-aritcle-toc > ol ol ul,
-nav.markdown-aritcle-toc > ul ul ul,
-nav.markdown-aritcle-toc > ol ul ul {
+nav.markdown-article-toc > ul ol ol,
+nav.markdown-article-toc > ol ol ol,
+nav.markdown-article-toc > ul ul ol,
+nav.markdown-article-toc > ol ul ol,
+nav.markdown-article-toc > ul ol ul,
+nav.markdown-article-toc > ol ol ul,
+nav.markdown-article-toc > ul ul ul,
+nav.markdown-article-toc > ol ul ul {
   display: none;
 }
 body.markdown-article-toc-exists.markdown-article-toc-is-visible {
   margin-left: 24rem;
 }
-nav.markdown-aritcle-toc {
+nav.markdown-article-toc {
   display: none;
 }
-.markdown-article-toc-is-visible nav.markdown-aritcle-toc {
+.markdown-article-toc-is-visible nav.markdown-article-toc {
   display: block;
 }
 .markdown-article-toc-toggling-button {
@@ -614,8 +614,8 @@ nav.markdown-aritcle-toc {
   font-family: inherit;
 }
 @media screen and (min-width: 1001px) {
-  nav.markdown-aritcle-toc li.is-collapsed > li,
-  nav.markdown-aritcle-toc li.is-collapsed > ol {
+  nav.markdown-article-toc li.is-collapsed > li,
+  nav.markdown-article-toc li.is-collapsed > ol {
     display: none;
   }
 }
@@ -623,7 +623,7 @@ nav.markdown-aritcle-toc {
   body.markdown-article-toc-exists.markdown-article-toc-is-visible {
     margin-left: 18rem;
   }
-  nav.markdown-aritcle-toc {
+  nav.markdown-article-toc {
     width: 18rem;
   }
   .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
@@ -634,7 +634,7 @@ nav.markdown-aritcle-toc {
   body.markdown-article-toc-exists.markdown-article-toc-is-visible {
     margin-left: 0;
   }
-  nav.markdown-aritcle-toc {
+  nav.markdown-article-toc {
     width: 24rem;
   }
   .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
@@ -645,7 +645,7 @@ nav.markdown-aritcle-toc {
   body.markdown-article-toc-exists.markdown-article-toc-is-visible {
     margin-left: 0;
   }
-  nav.markdown-aritcle-toc {
+  nav.markdown-article-toc {
     width: 100%;
   }
   .markdown-article-toc-toggling-button,
@@ -654,6 +654,36 @@ nav.markdown-aritcle-toc {
     transform: translateX(-50%);
     border-radius: 2rem;
   }
+}
+.markdown-article-back-to-top {
+  z-index: 79;
+  font-size: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2em;
+  height: 2em;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  position: fixed;
+  right: 0;
+  bottom: 1.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  outline: none;
+}
+.markdown-article-back-to-top::before {
+  content: '';
+  display: inline-block;
+  box-sizing: content-box;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border: 0.32em solid transparent;
+  border-bottom-color: initial;
+  margin: 0 0 0.32em 1px;
 }
 html,
 button,
@@ -741,7 +771,7 @@ pre {
     font-weight: 400;
   }
 }
-_selectorOf_markdownArticleRoot {
+.markdown-article {
   color: #333;
   background-color: #f7f7f9;
   box-shadow: 0 0 0.4rem rgba(0,0,0,0.2);
@@ -884,37 +914,37 @@ hr {
 hr::before {
   box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.51);
 }
-nav.markdown-aritcle-toc {
+nav.markdown-article-toc {
   background-color: #222;
   box-shadow: 0 0 0.5rem rgba(0,0,0,0.4);
 }
-nav.markdown-aritcle-toc,
-nav.markdown-aritcle-toc li > a[href^="#"] {
+nav.markdown-article-toc,
+nav.markdown-article-toc li > a[href^="#"] {
   color: #aaa;
 }
-nav.markdown-aritcle-toc > ol > li.has-nested-toc-list > a[href^="#"],
-nav.markdown-aritcle-toc > ul > li.has-nested-toc-list > a[href^="#"] {
+nav.markdown-article-toc > ol > li.has-nested-toc-list > a[href^="#"],
+nav.markdown-article-toc > ul > li.has-nested-toc-list > a[href^="#"] {
   color: #fff;
 }
-nav.markdown-aritcle-toc li > a[href^="#"]:hover {
+nav.markdown-article-toc li > a[href^="#"]:hover {
   background-color: rgba(255,255,255,0.15);
 }
 @media screen and (max-width: 1000px) {
-  nav.markdown-aritcle-toc {
+  nav.markdown-article-toc {
     background-color: rgba(0,0,0,0.91);
   }
   @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
-    nav.markdown-aritcle-toc {
+    nav.markdown-article-toc {
       background-color: rgba(0,0,0,0.79);
     }
   }
   @supports (backdrop-filter: blur(20px)) {
-    nav.markdown-aritcle-toc {
+    nav.markdown-article-toc {
       backdrop-filter: blur(20px);
     }
   }
   @supports (-webkit-backdrop-filter: blur(20px)) {
-    nav.markdown-aritcle-toc {
+    nav.markdown-article-toc {
       -webkit-backdrop-filter: blur(20px);
     }
   }
@@ -925,6 +955,13 @@ nav.markdown-aritcle-toc li > a[href^="#"]:hover {
   background-color: #dd56c6;
   background-image: linear-gradient(45deg, #ff0dd6 20%, #faff27 80%);
   box-shadow: 0 0 0.3rem rgba(226,22,130,0.97);
+}
+.markdown-article-back-to-top[href^="#"],
+.markdown-article-back-to-top[href^="#"]:visited {
+  color: #000;
+  background-color: #0f0;
+  background-image: linear-gradient(-45deg, #0ff 10%, #0f0 90%);
+  box-shadow: 1px 1px 0.3em rgba(0,192,0,0.6);
 }
 pre,
 .hljs {

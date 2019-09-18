@@ -1164,7 +1164,9 @@ pre,
 .hljs-keyword.default {
   color: #fb9;
 }
-.hljs-keyword.const,
+.hljs-keyword.const {
+  color: #ae6;
+}
 .hljs-keyword.let {
   color: #dd5175;
 }
@@ -1179,7 +1181,8 @@ pre,
 }
 .hljs-keyword.debugger {
   color: #fff;
-  background-color: #f00;
+  background-color: rgba(255,0,0,0.3);
+  padding: 0.1em 0.5em 0.2em;
 }
 .hljs-literal {
   color: #2ef;
@@ -1287,13 +1290,13 @@ pre,
 .wlc-punctuation.wlc-greater-than-or-equal-to-sign,
 .wlc-punctuation.wlc-less-than-sign,
 .wlc-punctuation.wlc-less-than-or-equal-to-sign {
-  color: #888;
+  color: #fb8;
 }
 .wlc-punctuation.wlc-tripple-equal-signs {
-  color: #6c6;
+  color: #fba;
 }
 .wlc-punctuation.wlc-exclamation-mark-and-double-equal-signs {
-  color: #c66;
+  color: #a35;
 }
 .wlc-punctuation.wlc-exclamation-mark-and-equal-sign,
 .wlc-punctuation.wlc-double-equal-signs {
@@ -1301,7 +1304,7 @@ pre,
   background-color: rgba(255,51,51,0.2);
 }
 .wlc-punctuation.wlc-double-pipes {
-  color: #ff0;
+  color: #949;
 }
 .wlc-punctuation.wlc-double-ampersands {
   color: #f0f;
@@ -1310,13 +1313,13 @@ pre,
   color: #0ff;
 }
 .wlc-punctuation.wlc-exclamation-marks.even-count {
-  color: #cc6;
+  color: #abed69;
 }
 .wlc-punctuation.wlc-exclamation-marks.odd-count {
-  color: #f66;
+  color: #f15;
 }
 .wlc-punctuation.wlc-equal-sign {
-  color: #c63;
+  color: #678;
 }
 .wlc-punctuation.wlc-asterisk,
 .wlc-punctuation.wlc-forward-slash,
@@ -1325,13 +1328,13 @@ pre,
 .wlc-punctuation.wlc-plus-plus-sign,
 .wlc-punctuation.wlc-minus-sign,
 .wlc-punctuation.wlc-minus-minus-sign {
-  color: #fff;
+  color: #f79;
 }
 .wlc-punctuation.wlc-negative-sign {
-  color: #5d3;
+  color: #9f3;
 }
 .wlc-punctuation.wlc-positive-sign {
-  color: #fd3;
+  color: #39f;
 }
 .wlc-punctuation.wlc-arrow-function-sign {
   color: #7ae;
