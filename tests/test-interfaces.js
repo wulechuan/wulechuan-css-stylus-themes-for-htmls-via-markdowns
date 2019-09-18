@@ -78,14 +78,14 @@ console.log(`${
 console.log(separationLine2)
 
 
-const allCSSFileNames = Object.keys(allFileEntriesKeyingByFileNames)
+const allDistFileNames = Object.keys(allFileEntriesKeyingByFileNames)
 console.log(
     '\nAll available files in @wulechuan/css-stylus-markdown-themes:',
-    allCSSFileNames
+    allDistFileNames
 )
 console.log('-'.repeat(51))
 console.log(`${
-    chalk.red(allCSSFileNames.length)
+    chalk.red(allDistFileNames.length)
 } ${
     chalk.blue('files in total.')
 }\n\n\n`)
