@@ -1116,7 +1116,8 @@ pre,
 .hljs-string .wlc-escape-char {
   color: #c75;
 }
-.hljs-regexp {
+.hljs-regexp,
+.hljs-regexp .wlc-escape-char {
   color: #f6e;
 }
 .hljs-regexp .regexp-options {
@@ -1129,14 +1130,19 @@ pre,
 .hljs-regexp .regexp-body {
   background-color: rgba(255,102,238,0.08);
 }
-.hljs-regexp .regexp-control-char {
-  color: #379;
+.hljs-regexp .regexp-selector-char,
+.hljs-regexp .regexp-selector-char.wlc-escape-char {
+  color: #4f9;
 }
-.hljs-regexp .regexp-control-char .slash {
+.hljs-regexp .regexp-selector-char.wlc-escape-char .slash {
   opacity: 0.79;
 }
-.hljs-regexp .wlc-escape-char {
-  color: inherit;
+.hljs-regexp .regexp-control-char,
+.hljs-regexp .regexp-control-char.wlc-escape-char {
+  color: #379;
+}
+.hljs-regexp .regexp-control-char.wlc-escape-char .slash {
+  opacity: 0.79;
 }
 .hljs-regexp .wlc-digit-pair-between-curly-braces .digit {
   color: #f63;

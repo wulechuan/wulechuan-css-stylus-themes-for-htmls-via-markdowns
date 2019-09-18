@@ -34,7 +34,11 @@
 }
 
 .hljs-regexp {
-    color: #f6e;
+
+    &,
+    .wlc-escape-char {
+        color: #f6e;
+    }
 
     .regexp-options {
         color: #3e1;
@@ -50,20 +54,8 @@
         // background-color: rgba(#fff, 0.06);
     }
 
-    .regexp-control-char {
-        color: #379;
-
-        .slash {
-            opacity: 0.79;
-        }
-
-        .escaped-char {
-        }
-    }
-
     .wlc-escape-char {
         // color: #f75;
-        color: inherit;
 
         .slash {
         }
@@ -71,6 +63,44 @@
         .escaped-char {
         }
     }
+
+    
+    .regexp-selector-char {
+        
+        &,
+        &.wlc-escape-char {
+            color: #4f9;
+        }
+
+        &.wlc-escape-char {
+
+            .slash {
+                opacity: 0.79;
+            }
+
+            .escaped-char {
+            }
+        }
+    }
+
+    .regexp-control-char {
+
+        &,
+        &.wlc-escape-char {
+            color: #379;
+        }
+
+        &.wlc-escape-char {
+
+            .slash {
+                opacity: 0.79;
+            }
+
+            .escaped-char {
+            }
+        }
+    }
+
 
     .wlc-digit-pair-between-curly-braces {
 
