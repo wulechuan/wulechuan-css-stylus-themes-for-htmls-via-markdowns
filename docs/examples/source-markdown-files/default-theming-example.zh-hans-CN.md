@@ -241,7 +241,7 @@ const author = {
     age: 40,
 }
 
-var news = [
+var newsThatAreNotNewsAnyMore = [
     '孔夫子热评西方美食',
     '周瑜正式出任新航母舰长',
     '李白担任北京大学名誉副校长',
@@ -273,9 +273,13 @@ cellPhoneNumber = cellPhoneNumber.trim()
 const cellPhoneNumberIsValid = cellPhoneNumberRegExp.test(cellPhoneNumber)
 console.log('cellPhoneNumberIsValid', cellPhoneNumberIsValid) // true
 
-var aString = `Meaningless ${cellPhoneNumber} ` + !!!true + ' ' + 15 + ' ' + !false + Math.random().toFixed(4)
+var aString = `Meaningless ${cellPhoneNumber} ` + !!!true +
+    ' ' + 15 + ' ' + !false + Math.random().toFixed(4)
 
-const aBoolean = true || false && !true && !!false || !0 && !!1 || 9 < 6 && 8 >= 8 || NaN === NaN && 10 > 13;
+
+const aBoolean = true || false && !true && !!false || !0 &&
+    !!1 || 9 < 6 && 8 >= 8 || NaN === NaN && 10 > 13;
+
 
 var a, b, c, d = 11, e = 12, f, g = anInteger <= 1024 + -1e+8;
 
@@ -346,14 +350,17 @@ const ul = Array.prototype.slice.apply(
     document.querySelectorAll('ul.news-list')
 )[0]
 
-news.forEach(msg => {
+newsThatAreNotNewsAnyMore.forEach(msg => {
     const li = document.createElement('li')
     li.innerText = msg
 
     ul.appendChild(li)
 })
 
-console.log(news.length, news.join('').length)
+console.log(
+    newsThatAreNotNewsAnyMore.length,
+    newsThatAreNotNewsAnyMore.join('').length
+)
 
 function addTwoNumbers(a, b) {
     if (typeof a === 'number' && typeof b === 'number') {
