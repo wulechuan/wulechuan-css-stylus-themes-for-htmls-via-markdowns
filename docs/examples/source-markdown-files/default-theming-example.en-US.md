@@ -129,6 +129,14 @@ let aNull = null;
 
 var anInteger = (19 + 3 * (79 - 51) + 2013) % 2
 
+anInteger++;
+
+++anInteger;
+
+anInteger--;
+
+Math.max(anInteger, -90)
+
 const cellPhoneNumberRegExp = /^1\d{2}([- ]?\d{4}){2}$/
 
 let cellPhoneNumber = '13345678901 '
@@ -137,7 +145,14 @@ cellPhoneNumber = cellPhoneNumber.trim()
 const cellPhoneNumberIsValid = cellPhoneNumberRegExp.test(cellPhoneNumber)
 console.log('cellPhoneNumberIsValid', cellPhoneNumberIsValid) // true
 
-var aString = `Meaningless ${cellPhoneNumber} ` + true + ' ' + 15 + ' ' + false
+var aString = `Meaningless ${cellPhoneNumber} ` + !!!true + ' ' + 15 + ' ' + !false + Math.random().toFixed(4)
+
+const aBoolean = true || false && !true && !!false || !0 && !!1 || 9 < 6 && 8 >= 8 || NaN === NaN && 10 > 13;
+
+var a, b, c, d = 11, e = 12, f, g = anInteger <= 1024 + -1e+8;
+
+f = 2e-5 / 16;
+
 
 let isAnArray = false
 if (Array.isArray([])) {
@@ -146,7 +161,7 @@ if (Array.isArray([])) {
 
 const regExp = new RegExp('\\w+', 'gi')
 
-const complexRegExp = /^\[[^\<](\(|\))\$\{[a-z\d_-]+[\w\.]{16,}a*b*\*\\,\]\^"\--toc.min\.js$/gi
+const complexRegExp = /^\[[^\<](\(|\))\$\{[a-z\d_-]+[\w\.]{16,}a*b*\*\\,\]\^"--toc.min\.js$/gi
 
 console.log(window.innerHeight, window.self, global)
 

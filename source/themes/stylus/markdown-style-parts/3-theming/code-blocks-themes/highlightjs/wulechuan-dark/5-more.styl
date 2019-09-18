@@ -1,12 +1,106 @@
-.wlc-parenthesis,
-.wlc-square-bracket,
-.wlc-curly-brace {
+.wlc-punctuation {
     color: #666;
+
+    &.wlc-parenthesis, &.wlc-square-bracket, &.wlc-curly-brace {}
+
+    &.wlc-parenthesis {
+        &.wlc-parenthesis-open {}
+        &.wlc-parenthesis-close {}
+    }
+
+    &.wlc-square-bracket {
+        &.wlc-square-bracket-open {}
+        &.wlc-square-bracket-close {}
+    }
+
+    &.wlc-curly-brace {
+        &.wlc-curly-brace-open {}
+        &.wlc-curly-brace-close {}
+    }
+
+
+    &.wlc-colon {}
+    &.wlc-semi-colon {}
+    &.wlc-comma {}
+    &.wlc-period {}
+
+    &.wlc-greater-than-sign,
+    &.wlc-greater-than-or-equal-to-sign,
+    &.wlc-less-than-sign,
+    &.wlc-less-than-or-equal-to-sign {
+        color: #888;
+    }
+    &.wlc-tripple-equal-signs {
+        color: #6c6;
+    }
+    &.wlc-exclamation-mark-and-double-equal-signs {
+        color: #c66;
+    }
+
+    &.wlc-exclamation-mark-and-equal-sign,
+    &.wlc-double-equal-signs {
+        color: #f33;
+        background-color: #f333;
+    }
+
+    &.wlc-double-pipes {
+        color: #ff0;
+    }
+    &.wlc-double-ampersands {
+        color: #f0f;
+    }
+    &.wlc-pipe {
+        color: cyan;
+    }
+    &.wlc-exclamation-marks {
+        &.even-count {
+            color: #cc6;
+        }
+        &.odd-count {
+            color: #f66;
+        }
+    }
+
+
+    &.wlc-equal-sign {
+        color: #c63;
+    }
+
+
+    &.wlc-question-mark {}
+
+    &.wlc-asterisk,
+    &.wlc-forward-slash,
+    &.wlc-percentage-sign,
+    &.wlc-plus-sign,
+    &.wlc-plus-plus-sign,
+    &.wlc-minus-sign,
+    &.wlc-minus-minus-sign,
+    &.wlc-minus-sign {
+        color: white;
+    }
+
+    &.wlc-negative-sign {
+        color: #5d3;
+    }
+    &.wlc-positive-sign {
+        color: #fd3;
+    }
+
+    &.wlc-arrow-function-sign {
+        color: #7ae;
+    }
 }
+
 
 .wlc-function-name,
 .hljs-function .hljs-title { // javascript: function "name"
     color: #f9f;
+}
+
+
+.wlc-built-in-method-name {
+    color: #9d6;
 }
 
 .wlc-escape-char {
@@ -64,9 +158,9 @@
         }
     }
 
-    
+
     .regexp-selector-char {
-        
+
         &,
         &.wlc-escape-char {
             color: #4f9;

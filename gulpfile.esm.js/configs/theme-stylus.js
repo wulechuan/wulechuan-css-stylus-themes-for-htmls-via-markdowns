@@ -34,6 +34,31 @@ export const specificTaskConfigsOfAllThemes = [
         entryStylusFileSubPath: '_default/all-wrapped--no-toc',
         outputCSSFileBaseName: '.default--wrapped--no-toc',
     },
+
+    {
+        // shouldSkipThisTask: true,
+        entryStylusFileSubPath: '_default--atom-one-dark/non-wrapped--has-toc',
+        outputCSSFileBaseName: '.generic--atom-one-dark--with-toc',
+        shouldNotOutputUncompressedVersion: false,
+        shouldNotOutputCompressedVersion: false,
+        // shouldDiscardMostCommentsEvenIfNotCompressCSS: false,
+    },
+    {
+        // shouldSkipThisTask: true,
+        entryStylusFileSubPath: '_default--atom-one-dark/non-wrapped--no-toc',
+        outputCSSFileBaseName: '.generic--atom-one-dark--no-toc',
+    },
+    {
+        // shouldSkipThisTask: true,
+        entryStylusFileSubPath: '_default--atom-one-dark/all-wrapped--has-toc',
+        outputCSSFileBaseName: '.generic--atom-one-dark--wrapped--with-toc',
+    },
+    {
+        // shouldSkipThisTask: true,
+        entryStylusFileSubPath: '_default--atom-one-dark/all-wrapped--no-toc',
+        outputCSSFileBaseName: '.generic--atom-one-dark--wrapped--no-toc',
+    },
+
     {
         // shouldSkipThisTask: true,
         entryStylusFileSubPath: 'firefox-addon/firefox-addon-_default',

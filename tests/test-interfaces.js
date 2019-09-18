@@ -1,4 +1,5 @@
 /* eslint no-unused-vars: [ 2, { varsIgnorePattern: '.*ContentString(ButNotMinified)?$' } ] */
+const chalk = require('chalk')
 
 const { // All 6 interfaces are here.
     cssFileEntries,
@@ -10,13 +11,12 @@ const { // All 6 interfaces are here.
     syncGetContentStringOfDefaultTOCJavascript,
 } = require('..') // require this module
 
-const separationLine = '-'.repeat(79)
-const separationLine2 = `\n${separationLine}\n`
+const separationLine = '='.repeat(79)
+const separationLine2 = `\n${separationLine}`
 
 
 
 
-console.log(separationLine2)
 
 
 
@@ -46,24 +46,46 @@ const stillTheOnlyTOCJavascriptContentStringButNotMinified = syncGetContentStrin
 
 
 
-console.log(theDefaultCSSContentString)
-// console.log(alsoTheDefaultCSSContentString)
-// console.log(typoraCSSContentString)
-// console.log(the7thThemeContentString)
 
 console.log(separationLine2)
 
-console.log(theDefaultAndOnlyTOCJavascriptContentString)
-// console.log(alsoTheOnlyTOCJavascriptContentString)
-// console.log(stillTheOnlyTOCJavascriptContentStringButNonMinified)
 
-
+console.log(chalk.rgb(234, 79, 219)(theDefaultCSSContentString.slice(0, 512)))
+console.log('-'.repeat(51))
+console.log(`${
+    chalk.green(theDefaultCSSContentString.length)
+} ${
+    chalk.blue('bytes in total.')
+}${
+    theDefaultCSSContentString.length > 512 ? ' Has sliced down to [0, 512)' : ''
+}`)
 
 
 console.log(separationLine2)
+
+
+console.log(chalk.rgb(192, 150, 87)(theDefaultAndOnlyTOCJavascriptContentString.slice(0, 512)))
+console.log('-'.repeat(51))
+console.log(`${
+    chalk.green(theDefaultAndOnlyTOCJavascriptContentString.length)
+} ${
+    chalk.blue('bytes in total.')
+}${
+    theDefaultAndOnlyTOCJavascriptContentString.length > 512 ? ' Has sliced down to [0, 512)' : ''
+}`)
+
+
+console.log(separationLine2)
+
+
+const allCSSFileNames = Object.keys(allFileEntriesKeyingByFileNames)
 console.log(
-    'All available files in @wulechuan/css-stylus-markdown-themes:',
-    Object.keys(allFileEntriesKeyingByFileNames)
+    '\nAll available files in @wulechuan/css-stylus-markdown-themes:',
+    allCSSFileNames
 )
-console.log(separationLine2)
-
+console.log('-'.repeat(51))
+console.log(`${
+    chalk.red(allCSSFileNames.length)
+} ${
+    chalk.blue('files in total.')
+}`)
