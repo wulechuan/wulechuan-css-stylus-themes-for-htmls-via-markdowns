@@ -1026,7 +1026,7 @@ pre,
 .language-javascript .hljs-number,
 .language-js .hljs-number,
 .javascript .hljs-number {
-  color: #f63;
+  color: #f75;
 }
 .hljs-built_in {
   color: unset;
@@ -1203,7 +1203,7 @@ pre,
   opacity: 0.79;
 }
 .hljs-regexp .wlc-digit-pair-between-curly-braces .digit {
-  color: #f63;
+  color: #f75;
 }
 .hljs-regexp .wlc-digit-pair-between-curly-braces .comma {
   color: #666;
