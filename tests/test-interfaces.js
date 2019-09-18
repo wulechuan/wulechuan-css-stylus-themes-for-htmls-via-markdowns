@@ -88,4 +88,4 @@ console.log(`${
     chalk.red(allCSSFileNames.length)
 } ${
     chalk.blue('files in total.')
-}`)
+}\n\n\n`)
