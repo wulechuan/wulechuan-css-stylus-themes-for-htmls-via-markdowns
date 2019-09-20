@@ -304,6 +304,14 @@ if (false) {
     throw TypeError('Should not throw here!')
 }
 
+if (a == undefined) {
+    console.log('double equal signs used, instead of triple ones')
+}
+
+if (a != undefined) {
+    console.log('"!=" used, instead of "!=="')
+}
+
 $(function (e) {
     alert('DOMs are ready')
 })

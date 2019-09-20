@@ -114,7 +114,24 @@
     }
 }
 
+
+
+// ------ strings (begin) --------------------------------
+
 .hljs-string {
+
+    .wlc-string-quote {
+        color: #886;
+
+        &.open-quote {}
+        &.close-quote {}
+    }
+
+    &.empty-string .wlc-string-quote,
+    .wlc-string-body {
+        // color: #face79;
+        color: #ff9;
+    }
 
     .wlc-escape-char {
         color: #c75;
@@ -126,6 +143,38 @@
         }
     }
 }
+
+.language-typescript,
+.language-ts,
+.language-javascript,
+.language-js,
+.javascript, // <script>
+.language-xml,
+.language-html {
+
+    .hljs-string {
+        color: #ff9;
+    }
+}
+
+.language-typescript,
+.language-ts,
+.language-javascript,
+.language-js,
+.javascript, // <script>
+.css, // <style>
+.language-css {
+    // no xml, no html
+
+    .hljs-string .wlc-string-body {
+        background-color: #ffff9919;
+    }
+}
+
+// ------ strings (end) ----------------------------------
+
+
+
 
 .hljs-regexp {
 

@@ -871,26 +871,6 @@ pre,
 .hljs-meta-string {
   color: #39f;
 }
-.hljs-string {
-  color: #ff9;
-}
-.language-typescript .hljs-string,
-.language-ts .hljs-string,
-.language-javascript .hljs-string,
-.language-js .hljs-string,
-.javascript .hljs-string,
-.language-html .hljs-string {
-  color: #ff9;
-}
-.language-typescript .hljs-string,
-.language-ts .hljs-string,
-.language-javascript .hljs-string,
-.language-js .hljs-string,
-.javascript .hljs-string,
-.css .hljs-string,
-.language-css .hljs-string {
-  background-color: rgba(255,255,153,0.098);
-}
 .hljs-selector-tag {
   color: #dd5151;
 }
@@ -1171,8 +1151,33 @@ pre,
 .wlc-escape-char .slash {
   opacity: 0.319;
 }
+.hljs-string .wlc-string-quote {
+  color: #886;
+}
+.hljs-string.empty-string .wlc-string-quote,
+.hljs-string .wlc-string-body {
+  color: #ff9;
+}
 .hljs-string .wlc-escape-char {
   color: #c75;
+}
+.language-typescript .hljs-string,
+.language-ts .hljs-string,
+.language-javascript .hljs-string,
+.language-js .hljs-string,
+.javascript .hljs-string,
+.language-xml .hljs-string,
+.language-html .hljs-string {
+  color: #ff9;
+}
+.language-typescript .hljs-string .wlc-string-body,
+.language-ts .hljs-string .wlc-string-body,
+.language-javascript .hljs-string .wlc-string-body,
+.language-js .hljs-string .wlc-string-body,
+.javascript .hljs-string .wlc-string-body,
+.css .hljs-string .wlc-string-body,
+.language-css .hljs-string .wlc-string-body {
+  background-color: rgba(255,255,153,0.098);
 }
 .hljs-regexp,
 .hljs-regexp .wlc-escape-char {
