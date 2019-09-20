@@ -1152,7 +1152,7 @@ pre,
   color: #4ac;
 }
 .wlc-escape-char .slash {
-  opacity: 0.319;
+  opacity: 0.1;
 }
 .hljs-string .wlc-string-quote {
   color: #886;
@@ -1182,6 +1182,15 @@ pre,
 .language-css .hljs-string .wlc-string-body {
   background-color: rgba(255,255,153,0.098);
 }
+.hljs-regexp .regexp-close-quote,
+.hljs-regexp .regexp-open-quote {
+  color: #858;
+}
+.hljs-regexp.wlc-regexp-illegal .regexp-close-quote,
+.hljs-regexp.wlc-regexp-illegal .regexp-open-quote {
+  color: #fff;
+  background-color: #f00;
+}
 .hljs-regexp,
 .hljs-regexp .wlc-escape-char {
   color: #f6e;
@@ -1191,7 +1200,7 @@ pre,
 }
 .hljs-regexp .regexp-selector-input-begin,
 .hljs-regexp .regexp-selector-input-end {
-  color: #48f;
+  color: #f15;
 }
 .hljs-regexp .regexp-body {
   background-color: rgba(255,102,238,0.08);

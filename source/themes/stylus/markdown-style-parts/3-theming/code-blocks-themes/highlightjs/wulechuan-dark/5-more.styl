@@ -113,7 +113,7 @@
     color: #4ac;
 
     .slash {
-        opacity: 0.319;
+        opacity: 0.1;
     }
 
     .escaped-char {
@@ -184,6 +184,20 @@
 
 .hljs-regexp {
 
+    .regexp-close-quote,
+    .regexp-open-quote {
+        color: #858;
+    }
+
+    &.wlc-regexp-illegal {
+
+        .regexp-close-quote,
+        .regexp-open-quote {
+            color: #fff;
+            background-color #f00;
+        }
+    }
+
     &,
     .wlc-escape-char {
         color: #f6e;
@@ -195,7 +209,7 @@
 
     .regexp-selector-input-begin,
     .regexp-selector-input-end {
-        color: #48f;
+        color: #f15;
     }
 
     .regexp-body {
@@ -249,7 +263,6 @@
             }
         }
     }
-
 
     .wlc-digit-pair-between-curly-braces {
 

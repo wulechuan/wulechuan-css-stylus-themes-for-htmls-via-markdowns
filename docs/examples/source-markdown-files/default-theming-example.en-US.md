@@ -154,20 +154,18 @@ const aBoolean = true || false && !true && !!false || !0 &&
 
 
 var a, b, c, d = 11, e = 12, f, g = anInteger <= 1024 + -1e+8;
-
 f = 2e-5 / 16;
-
 
 let isAnArray = false
 if (Array.isArray([])) {
     isAnArray = true
 }
 
-const regExp = new RegExp('\\w+', 'gi')
+const regExp = new RegExp('\\w+', 'i')
 
-const complexRegExp = /^\[[^\<](\(|\))\$\{[a-z\d_-]+[\w\.]{16,}a*b*\*\\,\]\^"--toc.min\.js$/gi
-
-console.log(window.innerHeight, window.self, global)
+const regExp1 = /^\[[^\<](\(|\))\$\{[a-z\d_-]+[\w\.]{16,}a*b*\*\\,\]\^"--toc.min\.js$/gi;
+const regExp2 = /(^|<)[\]A-Za-z-_][_a-z\d_-:\$]*[^+][+-](>|$)/g
+const regExp3 = /[^a+]([)-+])/
 
 const windowMethods = Object.keys(window).map(k => window[k]).filter(p => typeof p === 'function')
 console.log(windowMethods)
@@ -175,17 +173,15 @@ console.log(windowMethods)
 if (false) {
     throw TypeError('Should not throw here!')
 }
-
 if (a == undefined) {
     console.log('double equal signs used, instead of triple ones')
-}
-
-if (a != undefined) {
+} else if (a != undefined) {
     console.log('"!=" used, instead of "!=="')
 }
 
 $(function (e) {
     alert('DOMs are ready')
+    console.log(window.innerHeight, window.self, global)
 })
 
 const anArrowFunction = (count) => {
