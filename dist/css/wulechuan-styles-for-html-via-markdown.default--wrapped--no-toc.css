@@ -1138,6 +1138,9 @@ pre,
 .wlc-punctuation.wlc-arrow-function-sign {
   color: #7ae;
 }
+.hljs-number.color-hex-value {
+  color: #37f;
+}
 .wlc-function-name,
 .hljs-function .hljs-title {
   color: #f9f;
@@ -1146,7 +1149,7 @@ pre,
   color: #9d6;
 }
 .wlc-escape-char {
-  color: #c75;
+  color: #4ac;
 }
 .wlc-escape-char .slash {
   opacity: 0.319;
