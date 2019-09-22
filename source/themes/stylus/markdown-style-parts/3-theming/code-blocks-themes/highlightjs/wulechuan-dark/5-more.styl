@@ -200,22 +200,6 @@
     .percentage-sign {}
 }
 
-.hljs-number.color-hex-value {
-    color: #69f;
-
-    .sharp-sign {}
-}
-
-.hljs-number.color-hex-value,
-.hljs-selector-class,
-.hljs-selector-id {
-
-    .punctuation {
-        color: inherit;
-        opacity: 0.6;    
-    }    
-}
-
 
 .wlc-function-name,
 .hljs-function .hljs-title { // javascript: function "name"
@@ -233,7 +217,7 @@
     color: #4ac;
 
     .slash {
-        opacity: 0.1;
+        opacity: 0.2;
     }
 
     .escaped-char {
@@ -411,3 +395,42 @@
         }
     }
 }
+
+
+
+
+// ------- css things (begin) -------------------------
+
+
+.hljs-number.color-hex-value {
+    color: #69f;
+
+    .sharp-sign {}
+}
+
+.hljs-number.color-hex-value,
+.hljs-selector-class,
+.hljs-selector-id {
+
+    .punctuation {
+        color: inherit;
+        opacity: 0.6;    
+    }    
+}
+
+.css-unit {
+    color: #f8b;
+
+    &.absolute-length-unit {
+        color: #c15;
+    }
+}
+
+.css-angle,
+.css-time-duration,
+.css-length {
+    .hljs-number {}
+    .css-unit {}
+}
+
+// ------- css things (end) ---------------------------

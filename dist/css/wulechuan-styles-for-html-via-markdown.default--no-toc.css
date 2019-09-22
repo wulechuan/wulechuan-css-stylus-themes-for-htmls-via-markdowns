@@ -800,7 +800,7 @@ pre,
 }
 pre,
 .hljs {
-  color: #aaa;
+  color: #ccc;
 }
 .language-html .javascript,
 .language-html .css {
@@ -1194,9 +1194,6 @@ pre,
 .punctuation.arrow-function-sign {
   color: #7ae;
 }
-.hljs-number.color-hex-value {
-  color: #37f;
-}
 .wlc-function-name,
 .hljs-function .hljs-title {
   color: #f9f;
@@ -1210,7 +1207,7 @@ pre,
 }
 .wlc-escape-char .slash,
 .escape-char .slash {
-  opacity: 0.1;
+  opacity: 0.2;
 }
 .hljs-string .wlc-string-quote {
   color: #886;
@@ -1293,6 +1290,21 @@ pre,
 }
 .hljs-regexp .digit-pair-between-curly-braces .comma {
   color: #666;
+}
+.hljs-number.color-hex-value {
+  color: #69f;
+}
+.hljs-number.color-hex-value .punctuation,
+.hljs-selector-class .punctuation,
+.hljs-selector-id .punctuation {
+  color: inherit;
+  opacity: 0.6;
+}
+.css-unit {
+  color: #f8b;
+}
+.css-unit.absolute-length-unit {
+  color: #c15;
 }
 @media print {
   a:visited,

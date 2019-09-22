@@ -598,6 +598,12 @@ nav li {
     transition: all 0.4s ease-out;
 }
 
+.disc {
+    transform: rotate(3.14159265rad);
+    transform: rotate(180deg);
+    transform: rotate(0.5turn);
+}
+
 /* news list */
 
 .news-list {
