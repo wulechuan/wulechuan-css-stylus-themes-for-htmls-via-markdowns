@@ -1138,6 +1138,62 @@ pre,
 .wlc-punctuation.wlc-arrow-function-sign {
   color: #7ae;
 }
+.punctuation {
+  color: #666;
+}
+.punctuation.greater-than-sign,
+.punctuation.greater-than-or-equal-to-sign,
+.punctuation.less-than-sign,
+.punctuation.less-than-or-equal-to-sign {
+  color: #fb8;
+}
+.punctuation.tripple-equal-signs {
+  color: #fba;
+}
+.punctuation.exclamation-mark-and-double-equal-signs {
+  color: #a35;
+}
+.punctuation.exclamation-mark-and-equal-sign,
+.punctuation.double-equal-signs {
+  color: #f33;
+  background-color: rgba(255,51,51,0.2);
+}
+.punctuation.double-pipes {
+  color: #949;
+}
+.punctuation.double-ampersands {
+  color: #f0f;
+}
+.punctuation.pipe {
+  color: #0ff;
+}
+.punctuation.exclamation-marks.even-count {
+  color: #abed69;
+}
+.punctuation.exclamation-marks.odd-count {
+  color: #f15;
+}
+.punctuation.equal-sign {
+  color: #678;
+}
+.punctuation.asterisk,
+.punctuation.forward-slash,
+.punctuation.percentage-sign,
+.punctuation.plus-sign,
+.punctuation.plus-plus-sign,
+.punctuation.minus-sign,
+.punctuation.minus-minus-sign {
+  color: #f79;
+}
+.punctuation.negative-sign {
+  color: #9f3;
+}
+.punctuation.positive-sign {
+  color: #39f;
+}
+.punctuation.arrow-function-sign {
+  color: #7ae;
+}
 .hljs-number.color-hex-value {
   color: #37f;
 }
@@ -1148,20 +1204,26 @@ pre,
 .wlc-built-in-method-name {
   color: #9d6;
 }
-.wlc-escape-char {
+.wlc-escape-char,
+.escape-char {
   color: #4ac;
 }
-.wlc-escape-char .slash {
+.wlc-escape-char .slash,
+.escape-char .slash {
   opacity: 0.1;
 }
-.hljs-string .wlc-string-quote {
+.hljs-string .wlc-string-quote,
+.hljs-string .string-quote {
   color: #886;
 }
 .hljs-string.empty-string .wlc-string-quote,
-.hljs-string .wlc-string-body {
+.hljs-string.empty-string .string-quote,
+.hljs-string .wlc-string-body,
+.hljs-string .string-body {
   color: #ff9;
 }
-.hljs-string .wlc-escape-char {
+.hljs-string .wlc-escape-char,
+.hljs-string .escape-char {
   color: #c75;
 }
 .language-typescript .hljs-string,
@@ -1186,13 +1248,14 @@ pre,
 .hljs-regexp .regexp-open-quote {
   color: #858;
 }
-.hljs-regexp.wlc-regexp-illegal .regexp-close-quote,
-.hljs-regexp.wlc-regexp-illegal .regexp-open-quote {
+.hljs-regexp.regexp-illegal .regexp-close-quote,
+.hljs-regexp.regexp-illegal .regexp-open-quote {
   color: #fff;
   background-color: #f00;
 }
-.hljs-regexp,
-.hljs-regexp .wlc-escape-char {
+.hljs-regexp .wlc-escape-char,
+.hljs-regexp .escape-char,
+.hljs-regexp {
   color: #f6e;
 }
 .hljs-regexp .regexp-options {
@@ -1205,24 +1268,28 @@ pre,
 .hljs-regexp .regexp-body {
   background-color: rgba(255,102,238,0.08);
 }
-.hljs-regexp .regexp-selector-char,
-.hljs-regexp .regexp-selector-char.wlc-escape-char {
+.hljs-regexp .regexp-selector-char.wlc-escape-char,
+.hljs-regexp .regexp-selector-char.escape-char,
+.hljs-regexp .regexp-selector-char {
   color: #4f9;
 }
-.hljs-regexp .regexp-selector-char.wlc-escape-char .slash {
+.hljs-regexp .regexp-selector-char.wlc-escape-char .slash,
+.hljs-regexp .regexp-selector-char.escape-char .slash {
   opacity: 0.79;
 }
-.hljs-regexp .regexp-control-char,
-.hljs-regexp .regexp-control-char.wlc-escape-char {
+.hljs-regexp .regexp-control-char.wlc-escape-char,
+.hljs-regexp .regexp-control-char.escape-char,
+.hljs-regexp .regexp-control-char {
   color: #379;
 }
-.hljs-regexp .regexp-control-char.wlc-escape-char .slash {
+.hljs-regexp .regexp-control-char.wlc-escape-char .slash,
+.hljs-regexp .regexp-control-char.escape-char .slash {
   opacity: 0.79;
 }
-.hljs-regexp .wlc-digit-pair-between-curly-braces .digit {
+.hljs-regexp .digit-pair-between-curly-braces .digit {
   color: #f75;
 }
-.hljs-regexp .wlc-digit-pair-between-curly-braces .comma {
+.hljs-regexp .digit-pair-between-curly-braces .comma {
   color: #666;
 }
 @media print {
