@@ -45,7 +45,7 @@
     "globby": "^10.0.1"
   },
   "devDependencies": {
-    "@wulechuan/generate-html-via-markdown": "^1.8.5",
+    "@wulechuan/generate-html-via-markdown": "^1.9.0",
     "@wulechuan/gulp-classical-task-cycle": "^0.2.2",
     "chalk": "^2.4.2",
     "cssnano": "^4.1.10",
