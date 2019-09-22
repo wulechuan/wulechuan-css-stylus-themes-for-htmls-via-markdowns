@@ -1212,7 +1212,9 @@ pre,
 .escape-char .slash {
   opacity: 0.1;
 }
-.hljs-string .wlc-string-quote,
+.hljs-string .wlc-string-quote {
+  color: #886;
+}
 .hljs-string .string-quote {
   color: #886;
 }

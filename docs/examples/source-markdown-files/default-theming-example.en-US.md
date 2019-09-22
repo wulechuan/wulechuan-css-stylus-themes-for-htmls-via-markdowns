@@ -208,7 +208,7 @@ const anArrowFunction = (count) => {
     }
 }
 
-window.tempString = '\nhello\n'
+window.tempString = '\nhello\n unnecessary escaped chars: \m \p \- \.'
 delete window.tempString
 
 
