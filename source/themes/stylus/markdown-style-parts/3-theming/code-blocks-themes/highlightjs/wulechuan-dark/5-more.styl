@@ -195,8 +195,25 @@
 }
 
 
+.percentage-value {
+    .hljs-number {}
+    .percentage-sign {}
+}
+
 .hljs-number.color-hex-value {
-    color: #37f;
+    color: #69f;
+
+    .sharp-sign {}
+}
+
+.hljs-number.color-hex-value,
+.hljs-selector-class,
+.hljs-selector-id {
+
+    .punctuation {
+        color: inherit;
+        opacity: 0.6;    
+    }    
 }
 
 
