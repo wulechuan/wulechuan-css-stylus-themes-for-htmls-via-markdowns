@@ -1086,8 +1086,8 @@ pre,
 .hljs-built_in.underscorejs {
   color: #ff6;
 }
-.hljs-built_in.currentColor {
-  color: #f9f;
+.hljs-built_in.css-current-color {
+  color: #f8f;
 }
 .wlc-punctuation {
   color: #666;
@@ -1298,6 +1298,7 @@ pre,
 .hljs-regexp .digit-pair-between-curly-braces .comma {
   color: #666;
 }
+.hljs-built_in.css-named-color,
 .hljs-number.color-hex-value {
   color: #69f;
 }
@@ -1307,11 +1308,21 @@ pre,
   color: inherit;
   opacity: 0.6;
 }
+.hljs-meta.css-exclamation-important {
+  color: #f55;
+  background-color: #422;
+}
 .css-unit {
   color: #f8b;
 }
 .css-unit.absolute-length-unit {
-  color: #c15;
+  color: #d36;
+}
+.hljs-selector-attr .hljs-attr {
+  color: #f97;
+}
+.hljs-selector-attr .punctuation.assertion {
+  color: #7f7;
 }
 @media print {
   a:visited,

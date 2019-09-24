@@ -286,8 +286,11 @@
 .language-css {
     // no xml, no html
 
-    .hljs-string .wlc-string-body {
-        background-color: #ffff9919;
+    .hljs-string {
+
+        .wlc-string-body {
+            background-color: #ffff9919;
+        }
     }
 }
 
@@ -401,10 +404,12 @@
 
 // ------- css things (begin) -------------------------
 
-
+.hljs-built_in.css-named-color,
 .hljs-number.color-hex-value {
     color: #69f;
+}
 
+.hljs-number.color-hex-value {
     .sharp-sign {}
 }
 
@@ -414,15 +419,21 @@
 
     .punctuation {
         color: inherit;
-        opacity: 0.6;    
-    }    
+        opacity: 0.6;
+    }
+}
+
+.hljs-meta.css-exclamation-important {
+    color: #f55;
+    background-color: #422;
 }
 
 .css-unit {
     color: #f8b;
 
     &.absolute-length-unit {
-        color: #c15;
+        // color: #c15;
+        color: #d36;
     }
 }
 
@@ -431,6 +442,29 @@
 .css-length {
     .hljs-number {}
     .css-unit {}
+}
+
+.hljs-selector-attr {
+
+    .hljs-attr {
+        color: #f97;
+    }
+
+    .punctuation {
+
+        &.braket {
+        }
+
+        &.assertion {
+            color: #7f7;
+        }
+    }
+
+    .hljs-string {
+
+        .string-quote {}
+        .string-body {}
+    }
 }
 
 // ------- css things (end) ---------------------------
