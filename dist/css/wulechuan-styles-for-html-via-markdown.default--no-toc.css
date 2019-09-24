@@ -1089,6 +1089,9 @@ pre,
 .hljs-built_in.css-current-color {
   color: #f8f;
 }
+.inline-pre-whitespaces {
+  white-space: pre;
+}
 .wlc-punctuation {
   color: #666;
 }
