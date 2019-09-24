@@ -984,7 +984,9 @@ pre,
 .hljs {
   color: #ccc;
 }
+.language-xml .javascript,
 .language-html .javascript,
+.language-xml .css,
 .language-html .css {
   color: #c9c8c7;
 }
@@ -1028,9 +1030,11 @@ pre,
 .hljs-name {
   color: #f79;
 }
+.language-xml,
 .language-html {
   color: #fff;
 }
+.language-xml .hljs-name,
 .language-html .hljs-name {
   color: #dd5151;
 }
@@ -1263,6 +1267,9 @@ pre,
 .hljs-built_in.lodash,
 .hljs-built_in.underscorejs {
   color: #ff6;
+}
+.hljs-built_in.currentColor {
+  color: #f9f;
 }
 .wlc-punctuation {
   color: #666;

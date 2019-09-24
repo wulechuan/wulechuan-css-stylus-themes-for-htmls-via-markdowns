@@ -584,7 +584,7 @@ a[href^="#"] {
 
 nav ul {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around !important;
     flex-wrap: wrap;
     list-style: none;
     padding: 20px 10px;
@@ -633,7 +633,7 @@ nav li {
     line-height: 1.5;
 
     small {
-        font-size: .707em; // 注释一下。但一时间觉得没啥好写的。
+        font-size: .707em; // 想注释一下，但一时间觉得没啥好写的。
     }
 
     /*
@@ -652,6 +652,94 @@ nav li {
 }
 ```
 
+### XML 代码片段
+
+节选自 SOFTIMAGE|XSI 快捷键配置文件。
+
+
+```xml
+<?xml version="1.0" encoding="iso-8859-1"?>
+<xsi_file type="Keymap" xsi_version="9.5.184.0" syntax_version="1.0">
+   <keymap name="lechuan_si2011SAP_default">
+      <keylist name="" guid="{00000000-0000-0000-0000-000000000000}">
+         <key
+            name="Help"
+            key="VK_F1"></key>
+         <key
+            name="Save Scene"
+            key="S"
+            modifier="DSCMD_CTRL"></key>
+      </keylist>
+      <keylist name="AM Transition Tool" guid="{4E7133BE-503D-41A2-84F8-48CA38BFAAAC}">
+         <key
+            name="Switch to Bridge transition"
+            key="B"></key>
+         <key
+            name="Switch to Cardinal transition"
+            key="C"></key>
+         <key
+            name="Switch to Standard transition"
+            key="T"></key>
+      <keylist name="AM Transition Tool" guid="{4E7133BE-503D-41A2-84F8-48CA38BFAAAC}">
+      </keylist>
+      <keylist name="XSI" guid="{50830560-31B5-11D0-82E7-00A0243E268D}">
+         <key
+            name="Frame All"
+            key="A"></key>
+         <key
+            name="Frame Selection"
+            key="F"></key>
+         <key
+            name="Navigate Tool"
+            key="S"></key>
+         <key
+            name="Raycast Polygon Select Tool"
+            key="U"></key>
+         <key
+            name="Select Parent in Branch"
+            key="VK_UP"
+            modifier="DSCMD_CTRL|DSCMD_ALT"></key>
+         <key
+            name="Select Tree"
+            key="T"
+            modifier="DSCMD_ALT"></key>
+         <key
+            name="Subdivide"
+            key="D"
+            modifier="DSCMD_SHIFT"></key>
+         <key
+            name="Switch to Model Toolbar"
+            key="1"></key>
+         <key
+            name="Switch to Animate Toolbar"
+            key="2"></key>
+         <key
+            name="Switch to Render Toolbar"
+            key="3"></key>
+         <key
+            name="Switch to ICE Toolbar"
+            key="4"></key>
+         <key
+            name="Switch to Simulate Toolbar"
+            key="4"
+            modifier="DSCMD_CTRL"></key>
+         <key
+            name="Scaling Tool"
+            key="X"></key>
+         <key
+            name="Translate Tool"
+            key="V"></key>
+         <key
+            name="Rotation Tool"
+            key="C"></key>
+         <key
+            name="Undo"
+            key="Z"
+            modifier="DSCMD_ALT|DSCMD_SHIFT"></key>
+      </keylist>
+   </keymap>
+</xsi_file>
+```
 
 
 ## 表格
