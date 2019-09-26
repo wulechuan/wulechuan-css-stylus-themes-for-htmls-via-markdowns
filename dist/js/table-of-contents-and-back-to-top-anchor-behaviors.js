@@ -1,13 +1,20 @@
-(function setupAndStartApp() {
-    const cssClassNameTOCExists            = 'markdown-article-toc-exists'
-    const cssClassNameTOCIsVisible         = 'markdown-article-toc-is-visible'
-    const cssClassNameTOCItemHasNestedList = 'has-nested-toc-list'
-    const cssClassNameTOCItemIsCollapsed   = 'is-collapsed'
-    const cssClassNameTOCTogglingButton    = 'markdown-article-toc-toggling-button'
+window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan = 1
+window.atBeginingShouldShowTOCWhenWindowsIsWideEnough = true
 
-    const selectorOfArticleRoot            = '.markdown-article'
-    const selectorOfBackToTopLink          = '.markdown-article-back-to-top'
-    const selectorOfTOCRoot                = 'nav.markdown-article-toc'
+;(function setupAndStartApp() {
+    const logLine = '-'.repeat(51)
+    console.log(`\n\n${logLine}\nWelcome to wulechuan's article TOC controller.\n\n ${' '.repeat(32)}wulechuan@live.com\n${logLine}\n\n`)
+
+    const cssClassNameTOCExists                  = 'markdown-article-toc-exists'
+    const cssClassNameTOCIsVisible               = 'markdown-article-toc-is-visible'
+    const cssClassNameTOCItemHasNestedList       = 'has-nested-toc-list'
+    const cssClassNameTOCItemIsCollapsed         = 'is-collapsed'
+    const cssClassNameTOCTogglingButton          = 'markdown-article-toc-toggling-button'
+    const cssClassNameTOCShowsOnly2LevelsOfItems = 'should-show-2-levels-at-most'
+
+    const selectorOfArticleRoot                  = '.markdown-article'
+    const selectorOfBackToTopLink                = '.markdown-article-back-to-top'
+    const selectorOfTOCRoot                      = 'nav.markdown-article-toc'
 
     const maxWindowWidthWhenTOCPanelCoversEntirePage     = 600  // pixels
     const maxWindowWidthToEnableArticleClickingToHideTOC = 1000 // pixels
@@ -24,6 +31,8 @@
         return
     }
 
+    const tocShouldShowOnly2LevelsOfItems = tocRoot.classList.contains(cssClassNameTOCShowsOnly2LevelsOfItems)
+
     const backToTopLink = document.querySelector(selectorOfBackToTopLink)
     if (backToTopLink) {
         backToTopLink.onclick = onBackToTopLinkClick
@@ -38,13 +47,17 @@
     const tocStatusCSSClassNamesCarrier = documentBody
     tocStatusCSSClassNamesCarrier.classList.add(cssClassNameTOCExists) // Simply make sure
 
+    markLevelIdForTOCAllItems(tocRoot)
     makeTOCItemsEachCollapsible()
 
     buildTOCPanelTogglingButton()
 
 
     let tocIsVisible
-    showOrHideTOCPanel(false)
+    showOrHideTOCPanel(
+        window.atBeginingShouldShowTOCWhenWindowsIsWideEnough &&
+        window.innerWidth >= maxWindowWidthToEnableArticleClickingToHideTOC
+    )
 
 
 
@@ -61,7 +74,7 @@
          *
          * ---------------------------------------------
          *
-         * I prefer to build button via Javascript,
+         * I prefer to build this button via Javascript,
          * because otherwise when Javascript is not allowed,
          * why do we need a button that cannot work?
          */
@@ -70,7 +83,7 @@
         let tocTogglingButton = document.querySelector(`.${cssClassNameTOCTogglingButton}`)
 
         /**
-         * 万一按钮确实业已存在呢？比如工具构建好了静态的按钮？那就不必再创建一个新的了。
+         * 万一按钮确实已j经存在呢？比如工具构建好了静态的按钮？那就不必再创建一个新的了。
          * What if the button already exists? Then we simply don't create one more.
          */
         if (!tocTogglingButton) {
@@ -124,24 +137,52 @@
         showOrHideTOCPanel(false)
     }
 
+    function markLevelIdForTOCAllItems(listRootParent, currentLevel) {
+        const listRoot = listRootParent.querySelector('ol, ul')
+        if (!listRoot) { return }
+
+        if (!currentLevel) {
+            currentLevel = 1
+        }
+
+        listRoot.classList.add(`toc-list-level-${currentLevel}`)
+
+        const lis = Array.prototype.slice.apply(listRoot.children)
+            .filter(el => el.tagName.toLowerCase() === 'li')
+
+        lis.forEach(li => {
+            li.tocLevelId = currentLevel
+            li.classList.add(`toc-list-level-${currentLevel}-item`)
+            markLevelIdForTOCAllItems(li, currentLevel + 1)
+        })
+    }
+
     function makeTOCItemsEachCollapsible() {
         const lis = Array.prototype.slice.apply(tocRoot.querySelectorAll('li'))
         lis.forEach(li => {
             if (li.querySelectorAll('li').length > 0) {
                 li.classList.add(cssClassNameTOCItemHasNestedList)
                 li.hasNestedList = true
+                li.isCollapsible = false // Temporary init value, might change below
                 li.selfAnchor = li.querySelector('a')
                 li.onclick = tocItemAnchorClickHandler
             }
         })
 
-        const lisLevel1 = Array.prototype.slice.apply(tocRoot.querySelector('ol, ul').children)
-        lisLevel1.forEach(li => {
-            if (li.hasNestedList) {
-                li.isCollapsible = true
-            }
+        let allCollapsibleLis
+        if (tocShouldShowOnly2LevelsOfItems) {
+            const lisOfLevel1 = tocRoot.querySelector('ol, ul').children
+            allCollapsibleLis = lisOfLevel1
+        } else {
+            allCollapsibleLis = tocRoot.querySelectorAll(`li.${cssClassNameTOCItemHasNestedList}`)
+        }
 
-            li.classList.add(cssClassNameTOCItemIsCollapsed)
+        Array.prototype.slice.apply(allCollapsibleLis).forEach(li => {
+            li.isCollapsible = true
+
+            if (li.tocLevelId > window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan) {
+                li.classList.add(cssClassNameTOCItemIsCollapsed)
+            }
         })
     }
 

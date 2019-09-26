@@ -75,7 +75,7 @@ export default function createTaskCycleForGeneratingHTMLsForExampleMarkdowns({
 
         if (distCSSFileNameToUse.match(/--with-toc\.(min\.)?css$/)) {
             absolutePathsOfExtraFilesToEmbedIntoHTML.push(
-                joinPathPOSIX(thisModuleRootFolderPath, 'dist/js', 'table-of-contents-behaviours.min.js')
+                joinPathPOSIX(thisModuleRootFolderPath, 'dist/js', 'table-of-contents-and-back-to-top-anchor-behaviors.min.js')
             )
         }
     }

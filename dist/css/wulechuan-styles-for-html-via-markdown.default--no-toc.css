@@ -63,6 +63,13 @@ a {
 a:not([href]) {
   font-style: italic;
 }
+a[href] {
+  border-bottom-color: currentColor;
+}
+a[href^="#"]:visited,
+a[href^="#"] {
+  border-bottom-color: transparent;
+}
 a[href]:hover {
   text-decoration: none;
   border-bottom-color: currentColor;
@@ -335,8 +342,7 @@ code {
   word-break: break-all;
 }
 pre,
-pre > code,
-pre > code * {
+pre > code {
   white-space: pre;
   word-wrap: normal;
   word-break: keep-all;
@@ -415,6 +421,18 @@ hr::after {
   transform: scaleX(-1);
 }
 @media (max-width: 900px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  h2 {
+    font-size: 1.9rem;
+  }
+  h3 {
+    font-size: 1.35rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
   blockquote {
     font-size: 100%;
   }
@@ -443,8 +461,9 @@ hr::after {
     padding-left: 1.8em;
   }
   blockquote {
-    margin-left: 0.7rem;
-    margin-right: 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
   }
   table {
     max-width: none;
@@ -452,6 +471,11 @@ hr::after {
   }
   td {
     max-width: 400px;
+  }
+  pre {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
   table pre > code {
     white-space: normal !important;
@@ -468,13 +492,17 @@ hr::after {
   font-size: 0.9rem;
   line-height: 1.6;
   padding: 6rem 4rem 14rem 4rem;
-  max-width: 50rem;
+  max-width: 51rem;
   min-height: 60rem;
   margin: 0 auto;
   word-break: break-word;
 }
 .markdown-article > h1:first-child {
   margin-top: 1em;
+}
+.markdown-article-toc-is-visible .markdown-article {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 .document-author {
   text-align: center;
@@ -506,7 +534,20 @@ td > h1 .header-anchor {
   .markdown-article {
     font-size: 1rem;
     line-height: 1.8;
-    padding: 3rem 2rem 7rem 2rem;
+    padding-top: 3rem;
+    padding-bottom: 7rem;
+  }
+  .markdown-article-toc-is-visible .markdown-article,
+  .markdown-article {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media (max-width: 600px) {
+  .markdown-article-toc-is-visible .markdown-article,
+  .markdown-article {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 .markdown-article-back-to-top {
@@ -538,6 +579,11 @@ td > h1 .header-anchor {
   border: 0.32em solid transparent;
   border-bottom-color: initial;
   margin: 0 0 0.32em 1px;
+}
+@media (max-width: 600px) {
+  .markdown-article-back-to-top {
+    margin-right: -0.25em;
+  }
 }
 html,
 button,
@@ -585,8 +631,8 @@ img {
   border-radius: 0.5rem;
 }
 blockquote {
-  border-width: 0 0 0 0.3rem;
-  border-radius: 0.3rem;
+  border-width: 0 0 0 0.32rem;
+  border-radius: 0.32rem;
 }
 table {
   border-width: 6px;
@@ -637,6 +683,11 @@ a {
 a:visited,
 a {
   color: #0f0fed;
+}
+a:hover,
+a:focus,
+a:active {
+  color: #f00;
 }
 a[href^="#"]:visited,
 a[href^="#"] {

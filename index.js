@@ -200,7 +200,7 @@ function syncGetContentStringOfDefaultCSS(shouldIgnoreCachedContent) {
  */
 function syncGetContentStringOfDefaultTOCJavascript(shouldIgnoreCachedContent) {
     return syncGetContentStringOfOneFileEntry(
-        'table-of-contents-behaviours.min.js',
+        'table-of-contents-and-back-to-top-anchor-behaviors.min.js',
         shouldIgnoreCachedContent
     )
 }

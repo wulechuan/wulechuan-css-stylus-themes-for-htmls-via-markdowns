@@ -19,14 +19,13 @@
     pre {
 
         &,
-        > code, // source code blocks
-        > code * {
+        // > code *, // Why? For Typora? I forgot.
+        > code { // source code blocks
             white-space: pre;
             word-wrap: normal;
             word-break: keep-all;
             text-align: left !important;
         }
-
 
         > code { // source code blocks
             line-height: inherit;

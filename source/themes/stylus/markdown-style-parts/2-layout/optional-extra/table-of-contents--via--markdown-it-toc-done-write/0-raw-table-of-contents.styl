@@ -42,11 +42,12 @@
             margin: 0;
             white-space: nowrap;
         }
+    }
 
+    &.should-show-2-levels-at-most {
 
-        if (!_shouldNotOnlyShow2LevelsOfTOCItems) {
-            // Let's show only 2 levels of TOC items,
-            // so all levels from the 3rd should hide, if any.
+        > ul,
+        > ol {
 
             ol, ul {
 

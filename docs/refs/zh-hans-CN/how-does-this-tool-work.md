@@ -31,7 +31,7 @@
 
 > 注意：本工具目前仅提供 CSS 文件，外加一个 Javascript 文件，作为零件备用于你的 HTML 中。本工具**并不**提供从 MarkDown 文件生成对应 HTML 内容之功能。
 >
-> 另，上文提及的备用 Javascript 零件名为 `table-of-contents-behaviours.js`。顾名思义，其用于配置 HTML 中的“**文章纲要列表（英语为 TOC）**”之交互行为。具体而言，无外乎点击一个按钮，即可显示或隐藏文章纲要列表。
+> 另，上文提及的备用 Javascript 零件名为 `table-of-contents-and-back-to-top-anchor-behaviors.js`。顾名思义，其用于配置 HTML 中的“**文章纲要列表（英语为 TOC）**”之交互行为。具体而言，无外乎点击一个按钮，即可显示或隐藏文章纲要列表。
 
 
 ### 在构建出的 CSS 中，选择器有否外层包裹的类名？

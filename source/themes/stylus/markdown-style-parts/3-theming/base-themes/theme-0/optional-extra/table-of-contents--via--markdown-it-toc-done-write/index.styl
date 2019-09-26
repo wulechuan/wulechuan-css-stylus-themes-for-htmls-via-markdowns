@@ -8,25 +8,14 @@
     }
 
 
+    & > ol > li,
+    & > ul > li,
+    &:not(.should-show-2-levels-at-most) li {
 
-    if (_shouldNotOnlyShow2LevelsOfTOCItems) {
-
-        li.has-nested-toc-list > a[href^="#"] {
+        &.has-nested-toc-list > a[href^="#"] {
             color: white;
         }
-
-    } else {
-
-        > ol,
-        > ul {
-
-            > li.has-nested-toc-list > a[href^="#"] {
-                color: white;
-            }
-        }
-
     }
-
 
 
     li > a[href^="#"]:hover {
