@@ -1,5 +1,6 @@
+window.shouldShowOnlyTwoLevelsOfTOCItemsAtMost = false
 window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan = 1
-window.atBeginingShouldShowTOCWhenWindowsIsWideEnough = true
+window.atBeginingShouldExpandTOCWhenWindowsIsWideEnough = false
 
 ;(function setupAndStartApp() {
     const logLine = '-'.repeat(51)
@@ -31,7 +32,10 @@ window.atBeginingShouldShowTOCWhenWindowsIsWideEnough = true
         return
     }
 
-    const tocShouldShowOnly2LevelsOfItems = tocRoot.classList.contains(cssClassNameTOCShowsOnly2LevelsOfItems)
+    tocRoot.classList.toggle(
+        cssClassNameTOCShowsOnly2LevelsOfItems,
+        window.shouldShowOnlyTwoLevelsOfTOCItemsAtMost
+    )
 
     const backToTopLink = document.querySelector(selectorOfBackToTopLink)
     if (backToTopLink) {
@@ -55,7 +59,7 @@ window.atBeginingShouldShowTOCWhenWindowsIsWideEnough = true
 
     let tocIsVisible
     showOrHideTOCPanel(
-        window.atBeginingShouldShowTOCWhenWindowsIsWideEnough &&
+        window.atBeginingShouldExpandTOCWhenWindowsIsWideEnough &&
         window.innerWidth >= maxWindowWidthToEnableArticleClickingToHideTOC
     )
 
@@ -170,7 +174,7 @@ window.atBeginingShouldShowTOCWhenWindowsIsWideEnough = true
         })
 
         let allCollapsibleLis
-        if (tocShouldShowOnly2LevelsOfItems) {
+        if (window.shouldShowOnlyTwoLevelsOfTOCItemsAtMost) {
             const lisOfLevel1 = tocRoot.querySelector('ol, ul').children
             allCollapsibleLis = lisOfLevel1
         } else {

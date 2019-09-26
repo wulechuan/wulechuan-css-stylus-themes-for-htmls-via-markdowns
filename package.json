@@ -42,10 +42,10 @@
     "css"
   ],
   "dependencies": {
+    "@wulechuan/generate-html-via-markdown": "file:../wulechuan-js-generate-html-via-markdown",
     "globby": "^10.0.1"
   },
   "devDependencies": {
-    "@wulechuan/generate-html-via-markdown": "^1.10.4",
     "@wulechuan/gulp-classical-task-cycle": "^0.2.2",
     "chalk": "^2.4.2",
     "cssnano": "^4.1.10",
