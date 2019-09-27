@@ -1225,6 +1225,11 @@ pre,
 .punctuation.exclamation-marks.odd-count {
   color: #f15;
 }
+.punctuation.plus-and-assign-to,
+.punctuation.minus-and-assign-to,
+.punctuation.multiply-and-assign-to,
+.punctuation.divide-by-and-assign-to,
+.punctuation.modulo-by-and-assign-to,
 .punctuation.equal-sign {
   color: #678;
 }
