@@ -149,22 +149,16 @@ td > h1 {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
-blockquote > h6:first-child,
 th > h6:first-child,
 td > h6:first-child,
-blockquote > h5:first-child,
 th > h5:first-child,
 td > h5:first-child,
-blockquote > h4:first-child,
 th > h4:first-child,
 td > h4:first-child,
-blockquote > h3:first-child,
 th > h3:first-child,
 td > h3:first-child,
-blockquote > h2:first-child,
 th > h2:first-child,
 td > h2:first-child,
-blockquote > h1:first-child,
 th > h1:first-child,
 td > h1:first-child {
   margin-top: 0.25em;
@@ -300,15 +294,21 @@ ol {
   }
 }
 blockquote {
-  font-size: 0.8rem;
   box-sizing: border-box;
   max-width: 100%;
   max-width: calc(100% - 2rem);
   display: inline-block;
   vertical-align: top;
-  padding: 0.5em 1.2em 0.6em 1em;
-  margin: 0.5em 1rem 1.5em 1rem;
+  padding: 1px 1.2em 1px 1em;
+  margin: 0.5em 1rem 1.4em 1rem;
   border-style: solid;
+}
+p + blockquote,
+li + blockquote,
+ul + blockquote,
+ol + blockquote,
+dl + blockquote {
+  margin-top: 0;
 }
 table,
 tr,
@@ -364,7 +364,7 @@ pre {
   width: calc(100% - 2rem);
   overflow-x: auto;
   padding: 0;
-  margin-top: 0.5rem;
+  margin-top: 0;
   margin-bottom: 2rem;
 }
 td > pre,
@@ -382,9 +382,6 @@ li > pre:last-child {
 blockquote > pre:last-child,
 td > pre:last-child {
   margin-bottom: 0.5rem;
-}
-p + pre {
-  margin-top: 0;
 }
 hr {
   display: block;
@@ -489,7 +486,7 @@ hr::after {
   scroll-behavior: smooth;
 }
 .markdown-article {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.6;
   padding: 6rem 4rem 14rem 4rem;
   max-width: 51rem;
@@ -590,7 +587,7 @@ button,
 input,
 textarea,
 select {
-  font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
+  font-family: 'Segoe UI', '微软雅黑', 'Microsoft Yahei UI', 'Microsoft Yahei', 'Lucida Grande', Helvetica, sans-serif;
 }
 kbd,
 pre,

@@ -149,22 +149,16 @@ body {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
-.markdown-article blockquote > h6:first-child,
 .markdown-article th > h6:first-child,
 .markdown-article td > h6:first-child,
-.markdown-article blockquote > h5:first-child,
 .markdown-article th > h5:first-child,
 .markdown-article td > h5:first-child,
-.markdown-article blockquote > h4:first-child,
 .markdown-article th > h4:first-child,
 .markdown-article td > h4:first-child,
-.markdown-article blockquote > h3:first-child,
 .markdown-article th > h3:first-child,
 .markdown-article td > h3:first-child,
-.markdown-article blockquote > h2:first-child,
 .markdown-article th > h2:first-child,
 .markdown-article td > h2:first-child,
-.markdown-article blockquote > h1:first-child,
 .markdown-article th > h1:first-child,
 .markdown-article td > h1:first-child {
   margin-top: 0.25em;
@@ -300,15 +294,21 @@ body {
   }
 }
 .markdown-article blockquote {
-  font-size: 0.8rem;
   box-sizing: border-box;
   max-width: 100%;
   max-width: calc(100% - 2rem);
   display: inline-block;
   vertical-align: top;
-  padding: 0.5em 1.2em 0.6em 1em;
-  margin: 0.5em 1rem 1.5em 1rem;
+  padding: 1px 1.2em 1px 1em;
+  margin: 0.5em 1rem 1.4em 1rem;
   border-style: solid;
+}
+.markdown-article p + blockquote,
+.markdown-article li + blockquote,
+.markdown-article ul + blockquote,
+.markdown-article ol + blockquote,
+.markdown-article dl + blockquote {
+  margin-top: 0;
 }
 .markdown-article table,
 .markdown-article tr,
@@ -364,7 +364,7 @@ body {
   width: calc(100% - 2rem);
   overflow-x: auto;
   padding: 0;
-  margin-top: 0.5rem;
+  margin-top: 0;
   margin-bottom: 2rem;
 }
 .markdown-article td > pre,
@@ -382,9 +382,6 @@ body {
 .markdown-article blockquote > pre:last-child,
 .markdown-article td > pre:last-child {
   margin-bottom: 0.5rem;
-}
-.markdown-article p + pre {
-  margin-top: 0;
 }
 .markdown-article hr {
   display: block;
@@ -489,7 +486,7 @@ body {
   scroll-behavior: smooth;
 }
 .markdown-article {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.6;
   padding: 6rem 4rem 14rem 4rem;
   max-width: 51rem;
@@ -730,7 +727,7 @@ button,
 input,
 textarea,
 select {
-  font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
+  font-family: 'Segoe UI', '微软雅黑', 'Microsoft Yahei UI', 'Microsoft Yahei', 'Lucida Grande', Helvetica, sans-serif;
 }
 kbd,
 pre,

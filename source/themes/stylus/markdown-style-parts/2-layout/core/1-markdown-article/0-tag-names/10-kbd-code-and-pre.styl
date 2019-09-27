@@ -69,7 +69,8 @@
 
         overflow-x: auto;
         padding: 0;
-        margin-top: 0.5rem;
+        // margin-top: 0.5rem;
+        margin-top: 0; // Because the "display" is now "inline-block", we don't need extra "margin-top" any more.
         margin-bottom: 2rem;
     }
 
@@ -103,7 +104,7 @@
         }
     }
 
-    p + pre {
-        margin-top: 0;
-    }
+    // p + pre {
+    //     margin-top: 0;
+    // }
 }
