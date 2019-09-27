@@ -566,10 +566,12 @@ nav.markdown-article-toc {
   top: 0;
   margin: 0;
 }
-nav.markdown-article-toc a[href^="#"] {
+nav.markdown-article-toc li > a[href^="#"] {
   display: block;
-  padding: 0.25em 0.5em;
-  border: none;
+  padding: 0.25em 0.5em 0.25em 2em;
+  border-width: 1px 0;
+  border-style: solid none;
+  margin: 0 0 0 -1.5em;
   text-decoration: none;
   transition-property: color, background-color, border-color;
   transition-duration: 0.36s;
@@ -963,14 +965,17 @@ nav.markdown-article-toc {
 nav.markdown-article-toc,
 nav.markdown-article-toc li > a[href^="#"] {
   color: #aaa;
+  border-color: transparent;
 }
 nav.markdown-article-toc > ol > li.has-nested-toc-list > a[href^="#"],
 nav.markdown-article-toc > ul > li.has-nested-toc-list > a[href^="#"],
 nav.markdown-article-toc:not(.should-show-2-levels-at-most) li.has-nested-toc-list > a[href^="#"] {
   color: #fff;
 }
+nav.markdown-article-toc li > a[href^="#"]:target,
 nav.markdown-article-toc li > a[href^="#"]:hover {
-  background-color: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.19) transparent;
+  background-image: linear-gradient(to right, transparent 0.25em, rgba(255,255,255,0.1) 4em, transparent);
 }
 @media screen and (max-width: 1000px) {
   nav.markdown-article-toc {

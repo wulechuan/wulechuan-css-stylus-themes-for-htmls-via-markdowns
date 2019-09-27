@@ -165,10 +165,12 @@ window.atBeginingShouldExpandTOCWhenWindowsIsWideEnough = false
         const lis = Array.prototype.slice.apply(tocRoot.querySelectorAll('li'))
         lis.forEach(li => {
             if (li.querySelectorAll('li').length > 0) {
+                const selfAnchor = li.querySelector('a')
+
                 li.classList.add(cssClassNameTOCItemHasNestedList)
                 li.hasNestedList = true
                 li.isCollapsible = false // Temporary init value, might change below
-                li.selfAnchor = li.querySelector('a')
+                li.selfAnchor = selfAnchor
                 li.onclick = tocItemAnchorClickHandler
             }
         })

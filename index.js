@@ -221,7 +221,9 @@ function syncGetContentStringOfDefaultCSS(shouldIgnoreCachedContent) {
 function syncGetContentStringOfDefaultTOCJavascript(shouldIgnoreCachedContent, options) {
     const entry = _getOneFileEntry(fileNameOfDefaultJavascriptForTOCBehavioursCompressed)
 
-    if (entry.fileContent && !shouldIgnoreCachedContent) {
+    const shouldRereadFileForStorage = !entry.fileContent || shouldIgnoreCachedContent
+
+    if (!shouldRereadFileForStorage && !options) {
         return entry.fileContent
     }
 
@@ -243,7 +245,13 @@ function syncGetContentStringOfDefaultTOCJavascript(shouldIgnoreCachedContent, o
 
 
 
-    const rawContentString = syncReadFileAsString(entry.fileAbsolutePath)
+    let rawContentString
+
+    if (shouldRereadFileForStorage) {
+        rawContentString = syncReadFileAsString(entry.fileAbsolutePath)
+    } else {
+        rawContentString = entry.fileContent
+    }
 
     let   contentPart1 = rawContentString.slice(0, contentSafeSliceLength)
     const contentPart2 = rawContentString.slice(contentSafeSliceLength)
