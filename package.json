@@ -12,6 +12,7 @@
   },
   "main": "index.js",
   "scripts": {
+    "beforeGitPushing": "npm run build && npm test && npm start",
     "prepublishOnly": "npm run build && npm test",
     "eslint": "eslint    ./.eslintrc.js    ./gulpfile.esm.js/**/*.js    ./docs/examples/*.js    ./tests/*.js    ./source/module/*.js    ./source/themes/js/**/*.js    ./global-config.js    ./index.js",
     "start": "gulp  --silent devSingleTheme",
