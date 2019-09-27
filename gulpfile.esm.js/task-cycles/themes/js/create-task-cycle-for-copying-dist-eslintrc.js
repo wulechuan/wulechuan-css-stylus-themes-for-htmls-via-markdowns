@@ -3,7 +3,7 @@ import {
 } from '../../../../global-config'
 
 import createOneTaskCycleForCopyingJavascriptFiles
-    from '../../../utils/create-one-task-settings-for-copying-javascript-files'
+    from '../../../utils/create-one-task-cycle-for-copying-javascript-files'
 
 export default createOneTaskCycleForCopyingJavascriptFiles({
     descriptionOfInputsOfCoreTask: 'source/themes/js/.eslint.js',

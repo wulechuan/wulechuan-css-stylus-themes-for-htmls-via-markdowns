@@ -1,14 +1,21 @@
 {__wrappingSelectorOf_markdownArticleLayoutRules} {
     
     blockquote {
-        font-size: 0.8rem;
+        // font-size: 1rem;
         box-sizing: border-box;
         max-width: 100%;
         max-width: calc(100% - 2rem);
         display: inline-block; // so that it has an auto width
         vertical-align: top;
-        padding: 0.5em 1.2em 0.6em 1em;
-        margin: 0.5em 1rem 1.5em 1rem;
+        padding: 1px 1.2em 1px 1em;
+        margin: 0.5em 1rem 1.4em 1rem;
         border-style: solid;
+    }
+
+    p, li, ul, ol, dl {
+
+        + blockquote {
+            margin-top: 0;
+        }
     }
 }

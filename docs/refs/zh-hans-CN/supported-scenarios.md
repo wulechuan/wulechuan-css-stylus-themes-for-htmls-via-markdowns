@@ -46,7 +46,7 @@
     - `./dist/css/wulechuan-styles-for-html-via-markdown.default--wrapped--with-toc.css`
     - `./dist/css/wulechuan-styles-for-html-via-markdown.default--wrapped--with-toc.min.css`
 
-    > 使用该版本的 CSS 时，不要忘记配套使用 `table-of-contents-behaviours.js`。
+    > 使用该版本的 CSS 时，不要忘记配套使用 `table-of-contents-and-back-to-top-anchor-behaviors.js`。
 
 
 
@@ -63,7 +63,7 @@
     - `./dist/css/wulechuan-styles-for-html-via-markdown.default--with-toc.css`
     - `./dist/css/wulechuan-styles-for-html-via-markdown.default--with-toc.min.css`
 
-    > 使用该版本的 CSS 时，不要忘记配套使用 `table-of-contents-behaviours.js`。
+    > 使用该版本的 CSS 时，不要忘记配套使用 `table-of-contents-and-back-to-top-anchor-behaviors.js`。
 
 
 

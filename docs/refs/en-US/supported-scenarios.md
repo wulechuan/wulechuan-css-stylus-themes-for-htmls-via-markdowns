@@ -58,7 +58,7 @@ Combining the factors mentioned above, there exist 4 variants of the "default" C
     - `./dist/css/wulechuan-styles-for-html-via-markdown.default--wrapped--with-toc.css`
     - `./dist/css/wulechuan-styles-for-html-via-markdown.default--wrapped--with-toc.min.css`
 
-    > Don't forget to use the `table-of-contents-behaviours.js` together with either of these CSS files.
+    > Don't forget to use the `table-of-contents-and-back-to-top-anchor-behaviors.js` together with either of these CSS files.
 
 
 
@@ -84,7 +84,7 @@ Combining the factors mentioned above, there exist 4 variants of the "default" C
     - `./dist/css/wulechuan-styles-for-html-via-markdown.default--with-toc.min.css`
 
 
-    > Don't forget to use the `table-of-contents-behaviours.js` together with either of these CSS files.
+    > Don't forget to use the `table-of-contents-and-back-to-top-anchor-behaviors.js` together with either of these CSS files.
 
 
 

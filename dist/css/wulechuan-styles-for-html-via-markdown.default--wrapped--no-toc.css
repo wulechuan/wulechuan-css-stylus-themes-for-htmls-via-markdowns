@@ -63,6 +63,13 @@ body {
 .markdown-article a:not([href]) {
   font-style: italic;
 }
+.markdown-article a[href] {
+  border-bottom-color: currentColor;
+}
+.markdown-article a[href^="#"]:visited,
+.markdown-article a[href^="#"] {
+  border-bottom-color: transparent;
+}
 .markdown-article a[href]:hover {
   text-decoration: none;
   border-bottom-color: currentColor;
@@ -142,22 +149,16 @@ body {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
-.markdown-article blockquote > h6:first-child,
 .markdown-article th > h6:first-child,
 .markdown-article td > h6:first-child,
-.markdown-article blockquote > h5:first-child,
 .markdown-article th > h5:first-child,
 .markdown-article td > h5:first-child,
-.markdown-article blockquote > h4:first-child,
 .markdown-article th > h4:first-child,
 .markdown-article td > h4:first-child,
-.markdown-article blockquote > h3:first-child,
 .markdown-article th > h3:first-child,
 .markdown-article td > h3:first-child,
-.markdown-article blockquote > h2:first-child,
 .markdown-article th > h2:first-child,
 .markdown-article td > h2:first-child,
-.markdown-article blockquote > h1:first-child,
 .markdown-article th > h1:first-child,
 .markdown-article td > h1:first-child {
   margin-top: 0.25em;
@@ -293,15 +294,21 @@ body {
   }
 }
 .markdown-article blockquote {
-  font-size: 0.8rem;
   box-sizing: border-box;
   max-width: 100%;
   max-width: calc(100% - 2rem);
   display: inline-block;
   vertical-align: top;
-  padding: 0.5em 1.2em 0.6em 1em;
-  margin: 0.5em 1rem 1.5em 1rem;
+  padding: 1px 1.2em 1px 1em;
+  margin: 0.5em 1rem 1.4em 1rem;
   border-style: solid;
+}
+.markdown-article p + blockquote,
+.markdown-article li + blockquote,
+.markdown-article ul + blockquote,
+.markdown-article ol + blockquote,
+.markdown-article dl + blockquote {
+  margin-top: 0;
 }
 .markdown-article table,
 .markdown-article tr,
@@ -335,8 +342,7 @@ body {
   word-break: break-all;
 }
 .markdown-article pre,
-.markdown-article pre > code,
-.markdown-article pre > code * {
+.markdown-article pre > code {
   white-space: pre;
   word-wrap: normal;
   word-break: keep-all;
@@ -358,7 +364,7 @@ body {
   width: calc(100% - 2rem);
   overflow-x: auto;
   padding: 0;
-  margin-top: 0.5rem;
+  margin-top: 0;
   margin-bottom: 2rem;
 }
 .markdown-article td > pre,
@@ -376,9 +382,6 @@ body {
 .markdown-article blockquote > pre:last-child,
 .markdown-article td > pre:last-child {
   margin-bottom: 0.5rem;
-}
-.markdown-article p + pre {
-  margin-top: 0;
 }
 .markdown-article hr {
   display: block;
@@ -415,6 +418,18 @@ body {
   transform: scaleX(-1);
 }
 @media (max-width: 900px) {
+  .markdown-article h1 {
+    font-size: 2.4rem;
+  }
+  .markdown-article h2 {
+    font-size: 1.9rem;
+  }
+  .markdown-article h3 {
+    font-size: 1.35rem;
+  }
+  .markdown-article h4 {
+    font-size: 1.2rem;
+  }
   .markdown-article blockquote {
     font-size: 100%;
   }
@@ -443,8 +458,9 @@ body {
     padding-left: 1.8em;
   }
   .markdown-article blockquote {
-    margin-left: 0.7rem;
-    margin-right: 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
   }
   .markdown-article table {
     max-width: none;
@@ -452,6 +468,11 @@ body {
   }
   .markdown-article td {
     max-width: 400px;
+  }
+  .markdown-article pre {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
   .markdown-article table pre > code {
     white-space: normal !important;
@@ -465,16 +486,20 @@ body {
   scroll-behavior: smooth;
 }
 .markdown-article {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.6;
   padding: 6rem 4rem 14rem 4rem;
-  max-width: 50rem;
+  max-width: 51rem;
   min-height: 60rem;
   margin: 0 auto;
   word-break: break-word;
 }
 .markdown-article > h1:first-child {
   margin-top: 1em;
+}
+.markdown-article-toc-is-visible .markdown-article {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 .markdown-article .document-author {
   text-align: center;
@@ -506,7 +531,20 @@ body {
   .markdown-article {
     font-size: 1rem;
     line-height: 1.8;
-    padding: 3rem 2rem 7rem 2rem;
+    padding-top: 3rem;
+    padding-bottom: 7rem;
+  }
+  .markdown-article-toc-is-visible .markdown-article,
+  .markdown-article {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media (max-width: 600px) {
+  .markdown-article-toc-is-visible .markdown-article,
+  .markdown-article {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 .markdown-article-back-to-top {
@@ -539,12 +577,17 @@ body {
   border-bottom-color: initial;
   margin: 0 0 0.32em 1px;
 }
+@media (max-width: 600px) {
+  .markdown-article-back-to-top {
+    margin-right: -0.25em;
+  }
+}
 html,
 button,
 input,
 textarea,
 select {
-  font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
+  font-family: 'Segoe UI', '微软雅黑', 'Microsoft Yahei UI', 'Microsoft Yahei', 'Lucida Grande', Helvetica, sans-serif;
 }
 kbd,
 pre,
@@ -585,8 +628,8 @@ body {
   border-radius: 0.5rem;
 }
 .markdown-article blockquote {
-  border-width: 0 0 0 0.3rem;
-  border-radius: 0.3rem;
+  border-width: 0 0 0 0.32rem;
+  border-radius: 0.32rem;
 }
 .markdown-article table {
   border-width: 6px;
@@ -637,6 +680,11 @@ body {
 .markdown-article a:visited,
 .markdown-article a {
   color: #0f0fed;
+}
+.markdown-article a:hover,
+.markdown-article a:focus,
+.markdown-article a:active {
+  color: #f00;
 }
 .markdown-article a[href^="#"]:visited,
 .markdown-article a[href^="#"] {
@@ -1177,6 +1225,11 @@ pre,
 .punctuation.exclamation-marks.odd-count {
   color: #f15;
 }
+.punctuation.plus-and-assign-to,
+.punctuation.minus-and-assign-to,
+.punctuation.multiply-and-assign-to,
+.punctuation.divide-by-and-assign-to,
+.punctuation.modulo-by-and-assign-to,
 .punctuation.equal-sign {
   color: #678;
 }

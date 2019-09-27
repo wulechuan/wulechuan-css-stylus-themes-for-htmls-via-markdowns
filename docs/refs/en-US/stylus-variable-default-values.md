@@ -40,7 +40,6 @@ _markdownArticleShouldNotScrollSmoothly = false // true means: { scroll-behavior
 
 _shouldNotOutputTitleBlock = false
 _shouldIncludeBackToTopLink = false
-_shouldNotOnlyShow2LevelsOfTOCItems = false // true means show all levels of TOC items.
 
 _shouldWrapLayoutRulesWith_selectorOf_markdownArticleRoot = false
 _shouldWrapBaseThemingRulesWith_selectorOf_markdownArticleRoot = false

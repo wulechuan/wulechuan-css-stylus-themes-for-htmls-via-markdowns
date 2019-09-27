@@ -5,7 +5,7 @@ module.exports = [
         ],
 
         shouldPairAllTheseDistJavascripts: [
-            'table-of-contents-behaviours.min.js',
+            'table-of-contents-and-back-to-top-anchor-behaviors.min.js',
         ],
     },
 ]

@@ -66,6 +66,13 @@ a {
 a:not([href]) {
   font-style: italic;
 }
+a[href] {
+  border-bottom-color: currentColor;
+}
+a[href^="#"]:visited,
+a[href^="#"] {
+  border-bottom-color: transparent;
+}
 a[href]:hover {
   text-decoration: none;
   border-bottom-color: currentColor;
@@ -145,22 +152,16 @@ td > h1 {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
-blockquote > h6:first-child,
 th > h6:first-child,
 td > h6:first-child,
-blockquote > h5:first-child,
 th > h5:first-child,
 td > h5:first-child,
-blockquote > h4:first-child,
 th > h4:first-child,
 td > h4:first-child,
-blockquote > h3:first-child,
 th > h3:first-child,
 td > h3:first-child,
-blockquote > h2:first-child,
 th > h2:first-child,
 td > h2:first-child,
-blockquote > h1:first-child,
 th > h1:first-child,
 td > h1:first-child {
   margin-top: 0.25em;
@@ -296,15 +297,21 @@ ol {
   }
 }
 blockquote {
-  font-size: 0.8rem;
   box-sizing: border-box;
   max-width: 100%;
   max-width: calc(100% - 2rem);
   display: inline-block;
   vertical-align: top;
-  padding: 0.5em 1.2em 0.6em 1em;
-  margin: 0.5em 1rem 1.5em 1rem;
+  padding: 1px 1.2em 1px 1em;
+  margin: 0.5em 1rem 1.4em 1rem;
   border-style: solid;
+}
+p + blockquote,
+li + blockquote,
+ul + blockquote,
+ol + blockquote,
+dl + blockquote {
+  margin-top: 0;
 }
 table,
 tr,
@@ -338,8 +345,7 @@ code {
   word-break: break-all;
 }
 pre,
-pre > code,
-pre > code * {
+pre > code {
   white-space: pre;
   word-wrap: normal;
   word-break: keep-all;
@@ -361,7 +367,7 @@ pre {
   width: calc(100% - 2rem);
   overflow-x: auto;
   padding: 0;
-  margin-top: 0.5rem;
+  margin-top: 0;
   margin-bottom: 2rem;
 }
 td > pre,
@@ -379,9 +385,6 @@ li > pre:last-child {
 blockquote > pre:last-child,
 td > pre:last-child {
   margin-bottom: 0.5rem;
-}
-p + pre {
-  margin-top: 0;
 }
 hr {
   display: block;
@@ -418,6 +421,18 @@ hr::after {
   transform: scaleX(-1);
 }
 @media (max-width: 900px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+  h2 {
+    font-size: 1.9rem;
+  }
+  h3 {
+    font-size: 1.35rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
   blockquote {
     font-size: 100%;
   }
@@ -446,8 +461,9 @@ hr::after {
     padding-left: 1.8em;
   }
   blockquote {
-    margin-left: 0.7rem;
-    margin-right: 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
   }
   table {
     max-width: none;
@@ -455,6 +471,11 @@ hr::after {
   }
   td {
     max-width: 400px;
+  }
+  pre {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
   table pre > code {
     white-space: normal !important;
@@ -468,16 +489,20 @@ hr::after {
   scroll-behavior: smooth;
 }
 .typora-node   #write {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.6;
   padding: 6rem 4rem 14rem 4rem;
-  max-width: 50rem;
+  max-width: 51rem;
   min-height: 60rem;
   margin: 0 auto;
   word-break: break-word;
 }
 .typora-node   #write > h1:first-child {
   margin-top: 1em;
+}
+.markdown-article-toc-is-visible .typora-node   #write {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 .document-author {
   text-align: center;
@@ -509,7 +534,20 @@ td > h1 .header-anchor {
   .typora-node   #write {
     font-size: 1rem;
     line-height: 1.8;
-    padding: 3rem 2rem 7rem 2rem;
+    padding-top: 3rem;
+    padding-bottom: 7rem;
+  }
+  .markdown-article-toc-is-visible .typora-node   #write,
+  .typora-node   #write {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media (max-width: 600px) {
+  .markdown-article-toc-is-visible .typora-node   #write,
+  .typora-node   #write {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 pre.CodeMirror-line {
@@ -547,7 +585,7 @@ button,
 input,
 textarea,
 select {
-  font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
+  font-family: 'Segoe UI', '微软雅黑', 'Microsoft Yahei UI', 'Microsoft Yahei', 'Lucida Grande', Helvetica, sans-serif;
 }
 kbd,
 pre,
@@ -588,8 +626,8 @@ img {
   border-radius: 0.5rem;
 }
 blockquote {
-  border-width: 0 0 0 0.3rem;
-  border-radius: 0.3rem;
+  border-width: 0 0 0 0.32rem;
+  border-radius: 0.32rem;
 }
 table {
   border-width: 6px;
@@ -640,6 +678,11 @@ a {
 a:visited,
 a {
   color: #0f0fed;
+}
+a:hover,
+a:focus,
+a:active {
+  color: #f00;
 }
 a[href^="#"]:visited,
 a[href^="#"] {

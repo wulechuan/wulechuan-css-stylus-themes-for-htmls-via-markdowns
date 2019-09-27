@@ -118,7 +118,7 @@ const the7thThemeContentString = syncGetContentStringOfOneFileEntry(
 const theDefaultAndOnlyTOCJavascriptContentString = syncGetContentStringOfDefaultTOCJavascript()
 
 const alsoTheOnlyTOCJavascriptContentString = syncGetContentStringOfOneFileEntry(
-    'table-of-contents-behaviours.min.js'
+    'table-of-contents-and-back-to-top-anchor-behaviors.min.js'
 )
 
 const stillTheOnlyTOCJavascriptContentStringButNotMinified = syncGetContentStringOfOneFileEntry(

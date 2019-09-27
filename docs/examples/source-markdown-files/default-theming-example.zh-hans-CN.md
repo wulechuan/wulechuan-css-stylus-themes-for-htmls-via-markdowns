@@ -113,19 +113,19 @@
 
 ##### 文档对象模型
 
-文档对象模型 (DOM) 将 web 页面与到脚本或编程语言连接起来。通常是指  JavaScript，但将 HTML、SVG 或 XML 文档建模为对象并不是 JavaScript 语言的一部分。DOM模型用一个逻辑树来表示一个文档，树的每个分支的终点都是一个节点(node)，每个节点都包含着对象(objects)。DOM的方法(methods)让你可以用特定方式操作这个树，用这些方法你可以改变文档的结构、样式或者内容。节点可以关联上事件处理器，一旦某一事件被触发了，那些事件处理器就会被执行。<sup>[1]</sup>
+文档对象模型（DOM）将 web 页面与到脚本或编程语言连接起来。通常是指  JavaScript，但将 HTML、SVG 或 XML 文档建模为对象并不是 JavaScript 语言的一部分。DOM 模型用一个逻辑树来表示一个文档，树的每个分支的终点都是一个节点（node），每个节点都包含着对象（object）。DOM 的方法（method）让你可以用特定方式操作这个树，用这些方法你可以改变文档的结构、样式或者内容。节点可以关联上事件处理器，一旦某一事件被触发了，那些事件处理器就会被执行。<sup>[1]</sup>
 
 
 
 ##### 层叠样式表对象模型
 
-CSS Object Model 是一组允许用JavaScript操纵CSS的API。 它是既DOM和HTML API之后，又一个操纵CSS的接口，从而能够动态地读取和修改CSS样式。<sup>[2]</sup>
+CSS Object Model 是一组允许用 JavaScript 操纵 CSS 的 API。 它是继 DOM 和 HTML API 之后，又一个操纵 CSS 的接口，从而能够动态地读取和修改 CSS 样式。<sup>[2]</sup>
 
 
 
 ##### 浏览器对象模型
 
-浏览器对象模型（BOM）指的是由Web浏览器暴露的所有对象组成的表示模型。BOM 与 DOM 不同，BOM 既没有标准的实现，也没有严格的定义, 所以浏览器厂商可以自由地实现 BOM。<sup>[3]</sup>
+浏览器对象模型（BOM）指的是由 Web 浏览器暴露的所有对象组成的表示模型。BOM 与 DOM 不同，BOM 既没有标准的实现，也没有严格的定义, 所以浏览器厂商可以自由地实现 BOM。<sup>[3]</sup>
 
 
 ##### 引用来源
@@ -346,6 +346,13 @@ window['temp-string-2'] = `
     occupied.
 `
 
+var num = 10;
+
+num += 2;
+num -= 2;
+num *= 2;
+num /= 2;
+num %= 2;
 
 var now = new Date()
 

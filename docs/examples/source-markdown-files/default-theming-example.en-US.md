@@ -219,6 +219,13 @@ window['temp-string-2'] = `
     occupied.
 `
 
+var num = 10;
+
+num += 2;
+num -= 2;
+num *= 2;
+num /= 2;
+num %= 2;
 
 var now = new Date()
 

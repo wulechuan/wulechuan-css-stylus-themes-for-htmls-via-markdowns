@@ -29,7 +29,7 @@ For examples:
 
 > Note that this tool, at present, only provide CSS files, plus a javascript file as a page part. This tool does **NOT** providing any functionality for converting a markdown file into an HTML file.
 >
-> The said javascript file is named `table-of-contents-behaviours.js`. And it's obviously for setting up the TOC.
+> The said javascript file is named `table-of-contents-and-back-to-top-anchor-behaviors.js`. And it's obviously for setting up the TOC.
 
 
 ### Are CSS Selectors Wrapped Safely?

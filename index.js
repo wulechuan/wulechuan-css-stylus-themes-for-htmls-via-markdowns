@@ -7,6 +7,10 @@ const {
     jsDistFolderRelativePath,
 } = require('./global-config')
 
+const fileBaseNameOfDefaultJavascriptForTOCBehaviours = 'table-of-contents-and-back-to-top-anchor-behaviors'
+const fileNameOfDefaultJavascriptForTOCBehavioursUncompressed = `${fileBaseNameOfDefaultJavascriptForTOCBehaviours}.js`
+const fileNameOfDefaultJavascriptForTOCBehavioursCompressed   = `${fileBaseNameOfDefaultJavascriptForTOCBehaviours}.min.js`
+
 const getBaseNameOf = path.basename
 const { join: joinPathPOSIX} = path.posix
 const { sync: syncGetFiles } = globby
@@ -30,7 +34,7 @@ const  jsFilePaths = syncGetFiles( jsFileGlobs)
 const cssFileEntries = cssFilePaths.map(processOneDistFile)
 const  jsFileEntries =  jsFilePaths.map(processOneDistFile)
 
-cssFileEntries.forEach(pairingJavascriptFileNamesToOneCSSFile)
+cssFileEntries.forEach(associateJavascriptFileNamesToOneCSSFile)
 
 const allFileEntriesKeyingByFileNames = cssFileEntries.concat(jsFileEntries).reduce((dict, entry) => {
     dict[entry.fileName] = entry
@@ -54,7 +58,7 @@ if (false) { // eslint-disable-line no-constant-condition
  * @property {string} fileRelativePath - Useless at present.
  * @property {string} fileAbsolutePath
  * @property {string} fileContent - File content will be cached here.
- * @property {string[]?} pairingJavascriptFileNames - File content will be cached here.
+ * @property {string[]?} associatedJavascriptFileNames - File content will be cached here.
  */
 
 
@@ -102,17 +106,17 @@ function processOneDistFile(fileAbsolutePath) {
 
 
 /**
- * Adding @property {string[]} pairingJavascriptFileNames to input entry object.
+ * Adding @property {string[]} associatedJavascriptFileNames to input entry object.
  * @param {Entry} cssFileEntry - The file entry to process.
  */
-function pairingJavascriptFileNamesToOneCSSFile(cssFileEntry) {
+function associateJavascriptFileNamesToOneCSSFile(cssFileEntry) {
     const { fileName } = cssFileEntry
 
-    if (!fileName.match(/\.css$/) || cssFileEntry.pairingJavascriptFileNames) {
+    if (!fileName.match(/\.css$/) || cssFileEntry.associatedJavascriptFileNames) {
         return
     }
 
-    const pairingJavascriptFileNames = distCSSToJavascriptPairing.reduce((jsFiles, pair) => {
+    const associatedJavascriptFileNames = distCSSToJavascriptPairing.reduce((jsFiles, pair) => {
         if (pair.anyOfTheseDistCSS.some(cssFileNameRegExp => {
             return cssFileNameRegExp.test(fileName)
         })) {
@@ -125,11 +129,11 @@ function pairingJavascriptFileNamesToOneCSSFile(cssFileEntry) {
         return jsFiles
     }, [])
 
-    if (pairingJavascriptFileNames.length < 1) {
+    if (associatedJavascriptFileNames.length < 1) {
         return
     }
 
-    cssFileEntry.pairingJavascriptFileNames = pairingJavascriptFileNames
+    cssFileEntry.associatedJavascriptFileNames = associatedJavascriptFileNames
 }
 
 
@@ -143,14 +147,7 @@ function syncReadFileAsString(fileAbsolutePath) {
 }
 
 
-
-/**
- * Get content string via a file path or an entry object.
- * @memberOf defaultExports
- * @param {Entry|string} input - The input identity of file to get content from.
- * @returns {string}
- */
-function syncGetContentStringOfOneFileEntry(input, shouldIgnoreCachedContent) {
+function _getOneFileEntry(input) {
     let entry
     let fileName
 
@@ -164,15 +161,38 @@ function syncGetContentStringOfOneFileEntry(input, shouldIgnoreCachedContent) {
         }
     }
 
-
-
     if (!entry || !fileName) {
         throw new TypeError('@wulechuan/css-stylus-markdown-themes:\n    Invalid file entry or path to reading distribution file content from.\n    fileName = "'+fileName+'"')
     }
 
-    if (!entry.fileContent || shouldIgnoreCachedContent) {
-        entry.fileContent = syncReadFileAsString(entry.fileAbsolutePath)
+    return entry
+}
+
+
+/**
+ * Get content string via a file path or an entry object.
+ * @memberOf defaultExports
+ * @param {Entry|string} input - The input identity of file to get content from.
+ * @returns {string}
+ */
+function syncGetContentStringOfOneFileEntry(input, shouldIgnoreCachedContent, options) {
+    const entry = _getOneFileEntry(input)
+
+    if (entry.fileContent && !shouldIgnoreCachedContent) {
+        return entry.fileContent
     }
+
+    const { fileAbsolutePath } = entry
+    const fileName = path.basename(fileAbsolutePath)
+
+    if ([
+        fileNameOfDefaultJavascriptForTOCBehavioursUncompressed,
+        fileNameOfDefaultJavascriptForTOCBehavioursCompressed,
+    ].includes(fileName)) {
+        return syncGetContentStringOfDefaultTOCJavascript(shouldIgnoreCachedContent, options)
+    }
+
+    entry.fileContent = syncReadFileAsString(fileAbsolutePath)
 
     return entry.fileContent
 }
@@ -198,9 +218,71 @@ function syncGetContentStringOfDefaultCSS(shouldIgnoreCachedContent) {
  * @memberOf defaultExports
  * @returns {string}
  */
-function syncGetContentStringOfDefaultTOCJavascript(shouldIgnoreCachedContent) {
-    return syncGetContentStringOfOneFileEntry(
-        'table-of-contents-behaviours.min.js',
-        shouldIgnoreCachedContent
-    )
+function syncGetContentStringOfDefaultTOCJavascript(shouldIgnoreCachedContent, options) {
+    const entry = _getOneFileEntry(fileNameOfDefaultJavascriptForTOCBehavioursCompressed)
+
+    const shouldRereadFileForStorage = !entry.fileContent || shouldIgnoreCachedContent
+
+    if (!shouldRereadFileForStorage && !options) {
+        return entry.fileContent
+    }
+
+    if (!options || typeof options !== 'object' || Array.isArray(options)) {
+        options = {}
+    }
+
+    const {
+        shouldShowOnlyTwoLevelsOfTOCItemsAtMost,
+        atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan,
+        atBeginingShouldExpandTOCWhenWindowsIsWideEnough,
+    } = options
+
+    const contentSafeSliceLength = [
+        'window.shouldShowOnlyTwoLevelsOfTOCItemsAtMost = false\n',
+        'window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan = 1\n',
+        'window.atBeginingShouldExpandTOCWhenWindowsIsWideEnough = false\n',
+    ].join('').length + 51
+
+
+
+    let rawContentString
+
+    if (shouldRereadFileForStorage) {
+        rawContentString = syncReadFileAsString(entry.fileAbsolutePath)
+    } else {
+        rawContentString = entry.fileContent
+    }
+
+    let   contentPart1 = rawContentString.slice(0, contentSafeSliceLength)
+    const contentPart2 = rawContentString.slice(contentSafeSliceLength)
+
+    if ('shouldShowOnlyTwoLevelsOfTOCItemsAtMost' in options) {
+        contentPart1 = contentPart1.replace(
+            /\b(window.shouldShowOnlyTwoLevelsOfTOCItemsAtMost\s*=\s*)(true|false|!0|!1)\b/,
+            `$1${!!shouldShowOnlyTwoLevelsOfTOCItemsAtMost}`
+        )
+    }
+
+    if (
+        typeof atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan === 'number' &&
+        atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan >= 0
+    ) {
+        contentPart1 = contentPart1.replace(
+            /\b(window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan\s*=\s*)(NaN|\d+)\b/,
+            `$1${atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan}`
+        )
+    }
+
+    if ('atBeginingShouldExpandTOCWhenWindowsIsWideEnough' in options) {
+        contentPart1 = contentPart1.replace(
+            /\b(window.atBeginingShouldExpandTOCWhenWindowsIsWideEnough\s*=\s*)(true|false|!0|!1)\b/,
+            `$1${!!atBeginingShouldExpandTOCWhenWindowsIsWideEnough}`
+        )
+    }
+
+    const contentString = `${contentPart1}${contentPart2}`
+
+    entry.fileContent = contentString
+
+    return contentString
 }

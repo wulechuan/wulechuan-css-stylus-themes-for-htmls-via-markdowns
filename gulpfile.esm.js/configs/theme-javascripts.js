@@ -4,14 +4,14 @@ import {
 
 export default [
     {
-        descriptionOfInputsOfCoreTask: 'source/themes/js/table-of-contents-behaviours.js',
+        descriptionOfInputsOfCoreTask: 'source/themes/js/table-of-contents-and-back-to-top-anchor-behaviors.js',
 
         sourceGlobs: {
             rootFolderPath: './source/themes/js',
 
             // relativeGlobsSharedWithOtherTaskCycles: [],
             relativeGlobsSpecificallyForThisTaskCycle: [
-                'table-of-contents-behaviours.js',
+                'table-of-contents-and-back-to-top-anchor-behaviors.js',
             ],
             // extraSourceGlobsToWatch: [],
         },
@@ -20,7 +20,7 @@ export default [
             rootFolderPath: jsDistFolderRelativePath,
 
             forSingleOrTwoOutputFiles: {
-                fileBaseName: 'table-of-contents-behaviours',
+                fileBaseName: 'table-of-contents-and-back-to-top-anchor-behaviors',
                 fileExtWithoutDot: 'js',
             },
         },

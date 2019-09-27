@@ -63,6 +63,13 @@ body {
 .markdown-article a:not([href]) {
   font-style: italic;
 }
+.markdown-article a[href] {
+  border-bottom-color: currentColor;
+}
+.markdown-article a[href^="#"]:visited,
+.markdown-article a[href^="#"] {
+  border-bottom-color: transparent;
+}
 .markdown-article a[href]:hover {
   text-decoration: none;
   border-bottom-color: currentColor;
@@ -142,22 +149,16 @@ body {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
-.markdown-article blockquote > h6:first-child,
 .markdown-article th > h6:first-child,
 .markdown-article td > h6:first-child,
-.markdown-article blockquote > h5:first-child,
 .markdown-article th > h5:first-child,
 .markdown-article td > h5:first-child,
-.markdown-article blockquote > h4:first-child,
 .markdown-article th > h4:first-child,
 .markdown-article td > h4:first-child,
-.markdown-article blockquote > h3:first-child,
 .markdown-article th > h3:first-child,
 .markdown-article td > h3:first-child,
-.markdown-article blockquote > h2:first-child,
 .markdown-article th > h2:first-child,
 .markdown-article td > h2:first-child,
-.markdown-article blockquote > h1:first-child,
 .markdown-article th > h1:first-child,
 .markdown-article td > h1:first-child {
   margin-top: 0.25em;
@@ -293,15 +294,21 @@ body {
   }
 }
 .markdown-article blockquote {
-  font-size: 0.8rem;
   box-sizing: border-box;
   max-width: 100%;
   max-width: calc(100% - 2rem);
   display: inline-block;
   vertical-align: top;
-  padding: 0.5em 1.2em 0.6em 1em;
-  margin: 0.5em 1rem 1.5em 1rem;
+  padding: 1px 1.2em 1px 1em;
+  margin: 0.5em 1rem 1.4em 1rem;
   border-style: solid;
+}
+.markdown-article p + blockquote,
+.markdown-article li + blockquote,
+.markdown-article ul + blockquote,
+.markdown-article ol + blockquote,
+.markdown-article dl + blockquote {
+  margin-top: 0;
 }
 .markdown-article table,
 .markdown-article tr,
@@ -335,8 +342,7 @@ body {
   word-break: break-all;
 }
 .markdown-article pre,
-.markdown-article pre > code,
-.markdown-article pre > code * {
+.markdown-article pre > code {
   white-space: pre;
   word-wrap: normal;
   word-break: keep-all;
@@ -358,7 +364,7 @@ body {
   width: calc(100% - 2rem);
   overflow-x: auto;
   padding: 0;
-  margin-top: 0.5rem;
+  margin-top: 0;
   margin-bottom: 2rem;
 }
 .markdown-article td > pre,
@@ -376,9 +382,6 @@ body {
 .markdown-article blockquote > pre:last-child,
 .markdown-article td > pre:last-child {
   margin-bottom: 0.5rem;
-}
-.markdown-article p + pre {
-  margin-top: 0;
 }
 .markdown-article hr {
   display: block;
@@ -415,6 +418,18 @@ body {
   transform: scaleX(-1);
 }
 @media (max-width: 900px) {
+  .markdown-article h1 {
+    font-size: 2.4rem;
+  }
+  .markdown-article h2 {
+    font-size: 1.9rem;
+  }
+  .markdown-article h3 {
+    font-size: 1.35rem;
+  }
+  .markdown-article h4 {
+    font-size: 1.2rem;
+  }
   .markdown-article blockquote {
     font-size: 100%;
   }
@@ -443,8 +458,9 @@ body {
     padding-left: 1.8em;
   }
   .markdown-article blockquote {
-    margin-left: 0.7rem;
-    margin-right: 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
   }
   .markdown-article table {
     max-width: none;
@@ -452,6 +468,11 @@ body {
   }
   .markdown-article td {
     max-width: 400px;
+  }
+  .markdown-article pre {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
   }
   .markdown-article table pre > code {
     white-space: normal !important;
@@ -465,16 +486,20 @@ body {
   scroll-behavior: smooth;
 }
 .markdown-article {
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.6;
   padding: 6rem 4rem 14rem 4rem;
-  max-width: 50rem;
+  max-width: 51rem;
   min-height: 60rem;
   margin: 0 auto;
   word-break: break-word;
 }
 .markdown-article > h1:first-child {
   margin-top: 1em;
+}
+.markdown-article-toc-is-visible .markdown-article {
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 .markdown-article .document-author {
   text-align: center;
@@ -506,7 +531,20 @@ body {
   .markdown-article {
     font-size: 1rem;
     line-height: 1.8;
-    padding: 3rem 2rem 7rem 2rem;
+    padding-top: 3rem;
+    padding-bottom: 7rem;
+  }
+  .markdown-article-toc-is-visible .markdown-article,
+  .markdown-article {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media (max-width: 600px) {
+  .markdown-article-toc-is-visible .markdown-article,
+  .markdown-article {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 nav.markdown-article-toc {
@@ -518,7 +556,7 @@ nav.markdown-article-toc {
 nav.markdown-article-toc {
   font-size: 0.8rem;
   box-sizing: border-box;
-  width: 24rem;
+  width: 22rem;
   max-width: 100%;
   height: 100%;
   padding: 3rem 0.5rem 2rem 0.5rem;
@@ -528,10 +566,12 @@ nav.markdown-article-toc {
   top: 0;
   margin: 0;
 }
-nav.markdown-article-toc a[href^="#"] {
+nav.markdown-article-toc li > a[href^="#"] {
   display: block;
-  padding: 0.25em 0.5em;
-  border: none;
+  padding: 0.25em 0.5em 0.25em 2em;
+  border-width: 1px 0;
+  border-style: solid none;
+  margin: 0 0 0 -1.5em;
   text-decoration: none;
   transition-property: color, background-color, border-color;
   transition-duration: 0.36s;
@@ -550,18 +590,18 @@ nav.markdown-article-toc > ol {
   margin: 0;
   white-space: nowrap;
 }
-nav.markdown-article-toc > ul ol ol,
-nav.markdown-article-toc > ol ol ol,
-nav.markdown-article-toc > ul ul ol,
-nav.markdown-article-toc > ol ul ol,
-nav.markdown-article-toc > ul ol ul,
-nav.markdown-article-toc > ol ol ul,
-nav.markdown-article-toc > ul ul ul,
-nav.markdown-article-toc > ol ul ul {
+nav.markdown-article-toc.should-show-2-levels-at-most > ul ol ol,
+nav.markdown-article-toc.should-show-2-levels-at-most > ol ol ol,
+nav.markdown-article-toc.should-show-2-levels-at-most > ul ul ol,
+nav.markdown-article-toc.should-show-2-levels-at-most > ol ul ol,
+nav.markdown-article-toc.should-show-2-levels-at-most > ul ol ul,
+nav.markdown-article-toc.should-show-2-levels-at-most > ol ol ul,
+nav.markdown-article-toc.should-show-2-levels-at-most > ul ul ul,
+nav.markdown-article-toc.should-show-2-levels-at-most > ol ul ul {
   display: none;
 }
 body.markdown-article-toc-exists.markdown-article-toc-is-visible {
-  margin-left: 24rem;
+  margin-left: 22rem;
 }
 nav.markdown-article-toc {
   display: none;
@@ -589,7 +629,7 @@ nav.markdown-article-toc {
   outline: none;
 }
 .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
-  left: 12rem;
+  left: 11rem;
   transform: translateX(-50%);
   border-top-left-radius: 2rem;
   border-bottom-left-radius: 2rem;
@@ -629,10 +669,10 @@ nav.markdown-article-toc {
     margin-left: 0;
   }
   nav.markdown-article-toc {
-    width: 24rem;
+    width: 27rem;
   }
   .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
-    left: 12rem;
+    left: 13.5rem;
   }
 }
 @media screen and (max-width: 600px) {
@@ -679,12 +719,17 @@ nav.markdown-article-toc {
   border-bottom-color: initial;
   margin: 0 0 0.32em 1px;
 }
+@media (max-width: 600px) {
+  .markdown-article-back-to-top {
+    margin-right: -0.25em;
+  }
+}
 html,
 button,
 input,
 textarea,
 select {
-  font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
+  font-family: 'Segoe UI', '微软雅黑', 'Microsoft Yahei UI', 'Microsoft Yahei', 'Lucida Grande', Helvetica, sans-serif;
 }
 kbd,
 pre,
@@ -725,8 +770,8 @@ body {
   border-radius: 0.5rem;
 }
 .markdown-article blockquote {
-  border-width: 0 0 0 0.3rem;
-  border-radius: 0.3rem;
+  border-width: 0 0 0 0.32rem;
+  border-radius: 0.32rem;
 }
 .markdown-article table {
   border-width: 6px;
@@ -777,6 +822,11 @@ body {
 .markdown-article a:visited,
 .markdown-article a {
   color: #0f0fed;
+}
+.markdown-article a:hover,
+.markdown-article a:focus,
+.markdown-article a:active {
+  color: #f00;
 }
 .markdown-article a[href^="#"]:visited,
 .markdown-article a[href^="#"] {
@@ -915,13 +965,17 @@ nav.markdown-article-toc {
 nav.markdown-article-toc,
 nav.markdown-article-toc li > a[href^="#"] {
   color: #aaa;
+  border-color: transparent;
 }
 nav.markdown-article-toc > ol > li.has-nested-toc-list > a[href^="#"],
-nav.markdown-article-toc > ul > li.has-nested-toc-list > a[href^="#"] {
+nav.markdown-article-toc > ul > li.has-nested-toc-list > a[href^="#"],
+nav.markdown-article-toc:not(.should-show-2-levels-at-most) li.has-nested-toc-list > a[href^="#"] {
   color: #fff;
 }
+nav.markdown-article-toc li > a[href^="#"]:target,
 nav.markdown-article-toc li > a[href^="#"]:hover {
-  background-color: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.19) transparent;
+  background-image: linear-gradient(to right, transparent 0.25em, rgba(255,255,255,0.1) 4em, transparent);
 }
 @media screen and (max-width: 1000px) {
   nav.markdown-article-toc {
