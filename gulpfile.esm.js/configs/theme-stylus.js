@@ -15,9 +15,6 @@ export const specificTaskConfigsOfAllThemes = [
         // shouldSkipThisTask: true,
         entryStylusFileSubPath: '_default/non-wrapped--has-toc',
         outputCSSFileBaseName: '.default--with-toc',
-        shouldNotOutputUncompressedVersion: false,
-        shouldNotOutputCompressedVersion: false,
-        // shouldDiscardMostCommentsEvenIfNotCompressCSS: false,
     },
     {
         // shouldSkipThisTask: true,
@@ -35,29 +32,53 @@ export const specificTaskConfigsOfAllThemes = [
         outputCSSFileBaseName: '.default--wrapped--no-toc',
     },
 
+    // ----------------------------------------------------
+
     {
         // shouldSkipThisTask: true,
-        entryStylusFileSubPath: '_default--atom-one-dark/non-wrapped--has-toc',
-        outputCSSFileBaseName: '.generic--atom-one-dark--with-toc',
-        shouldNotOutputUncompressedVersion: false,
-        shouldNotOutputCompressedVersion: false,
-        // shouldDiscardMostCommentsEvenIfNotCompressCSS: false,
+        entryStylusFileSubPath: '_generic/_default-dark-colored-article-theme/non-wrapped--has-toc',
+        outputCSSFileBaseName: '.default-dark--with-toc',
     },
     {
         // shouldSkipThisTask: true,
-        entryStylusFileSubPath: '_default--atom-one-dark/non-wrapped--no-toc',
-        outputCSSFileBaseName: '.generic--atom-one-dark--no-toc',
+        entryStylusFileSubPath: '_generic/_default-dark-colored-article-theme/non-wrapped--no-toc',
+        outputCSSFileBaseName: '.default-dark--no-toc',
     },
     {
         // shouldSkipThisTask: true,
-        entryStylusFileSubPath: '_default--atom-one-dark/all-wrapped--has-toc',
-        outputCSSFileBaseName: '.generic--atom-one-dark--wrapped--with-toc',
+        entryStylusFileSubPath: '_generic/_default-dark-colored-article-theme/all-wrapped--has-toc',
+        outputCSSFileBaseName: '.default-dark--wrapped--with-toc',
     },
     {
         // shouldSkipThisTask: true,
-        entryStylusFileSubPath: '_default--atom-one-dark/all-wrapped--no-toc',
-        outputCSSFileBaseName: '.generic--atom-one-dark--wrapped--no-toc',
+        entryStylusFileSubPath: '_generic/_default-dark-colored-article-theme/all-wrapped--no-toc',
+        outputCSSFileBaseName: '.default-dark--wrapped--no-toc',
     },
+
+    // ----------------------------------------------------
+
+    {
+        // shouldSkipThisTask: true,
+        entryStylusFileSubPath: '_generic/_default-light-colored-article-theme--atom-one-dark/non-wrapped--has-toc',
+        outputCSSFileBaseName: '.generic-default-light--atom-one-dark--with-toc',
+    },
+    {
+        // shouldSkipThisTask: true,
+        entryStylusFileSubPath: '_generic/_default-light-colored-article-theme--atom-one-dark/non-wrapped--no-toc',
+        outputCSSFileBaseName: '.generic-default-light--atom-one-dark--no-toc',
+    },
+    {
+        // shouldSkipThisTask: true,
+        entryStylusFileSubPath: '_generic/_default-light-colored-article-theme--atom-one-dark/all-wrapped--has-toc',
+        outputCSSFileBaseName: '.generic-default-light--atom-one-dark--wrapped--with-toc',
+    },
+    {
+        // shouldSkipThisTask: true,
+        entryStylusFileSubPath: '_generic/_default-light-colored-article-theme--atom-one-dark/all-wrapped--no-toc',
+        outputCSSFileBaseName: '.generic-default-light--atom-one-dark--wrapped--no-toc',
+    },
+
+    // ----------------------------------------------------
 
     {
         // shouldSkipThisTask: true,
