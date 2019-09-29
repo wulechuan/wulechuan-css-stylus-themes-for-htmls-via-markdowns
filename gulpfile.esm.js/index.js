@@ -2,7 +2,7 @@ import highOrderTasksForAllThemes
     from './tasks/to-process-all-themes'
 
 import highOrderTasksForDevelopmentOfSingleTheme
-    from './tasks/to-process-single-theme-and-example-docs'
+    from './tasks/to-develop-single-theme-and-build-example-docs-for-it'
 
 import highOrderTasksForUpdateExampleHTMLsUsingDefaultTheme
     from './tasks/to-update-example-htmls'

@@ -51,7 +51,7 @@
     // 该装配模板会自动根据上方定义的变量来构建 css 文件。
     //-------------------------------------------------
 
-    @import '../to-assemble-all-parts' // 该句不必触碰。恒定如此。
+    @import '../../article-style-parts/assemble-article-styles' // 该句不必触碰。恒定如此。
 
     ```
 

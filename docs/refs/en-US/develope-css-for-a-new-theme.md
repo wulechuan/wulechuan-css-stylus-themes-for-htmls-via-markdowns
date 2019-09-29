@@ -50,7 +50,7 @@ This project utitlizes [Stylus](http://stylus-lang.com/) language to generate CS
     // customized CSS accordingly.
     //-------------------------------------------------
 
-    @import '../to-assemble-all-parts' // We don't touch this line at all. It always writes this way.
+    @import '../../article-style-parts/assemble-article-styles' // We don't touch this line at all. It always writes this way.
 
     ```
 

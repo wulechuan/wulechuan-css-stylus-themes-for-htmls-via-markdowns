@@ -1,0 +1,202 @@
+/* 以下 CSS 是除代码块之外的页面整体着色方案。*/
+
+{_selectorOf_markdownArticleRoot} {
+    color: #333;
+    background-color: #f7f7f9;
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+{__wrappingSelectorOf_markdownArticleBaseThemingRules} {
+
+    a {
+        transition-property: visibility, opacity, color, background-color, border, border-radius, transform;
+        transition-duration: 0.3s;
+
+        &:visited,
+        & {
+            color: #0f0fed;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: red;
+        }
+    }
+
+    a[href^="#"] {
+        // So-called page local links.
+        // They point to the page they are in.
+
+        &:visited,
+        & {
+            color: #1b2;
+        }
+
+        // &:hover,
+        // &:focus,
+        // &:active {
+        //     color: #1b2;
+        // }
+    }
+
+    a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+        // Permanent links created by
+        // markdown-it plugin: markdown-it-anchor
+
+        &:visited,
+        & {
+            color: #e8e8e8;
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+
+        &:hover > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+            color: #888;
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+
+        > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+                
+            &:hover,
+            &:focus,
+            &:active {
+                color: #1d0;
+            }
+        }
+
+        &:target:hover,
+        &:target {
+
+            > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+                color: #1d0;
+            }
+        }
+    }
+
+
+
+
+    h1, h2, h3, h4, h5, h6,
+    dt {
+        color: #000;
+    }
+
+
+
+
+    img {
+        color: #555;
+        background-color: rgba(128, 128, 128, 0.1);
+        box-shadow: inset 0 0 0.4rem rgba(0, 0, 0, 0.29);
+    }
+
+
+
+
+    input[type="checkbox"] + label {
+        color: black;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    input[type="checkbox"]:checked + label {
+        color: #696;
+        text-shadow: -1px -1px 0 rgba(0, 128, 0, 0.1);
+    }
+
+
+
+
+    strong,
+    b,
+    em {
+        color: black;
+    }
+
+
+
+    blockquote {
+        color: #000;
+        border-color: #f80;
+        background-color: rgba(136, 136, 136, 0.2);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    }
+
+
+
+    table {
+        border-color: #111;
+        background-color: white;
+    }
+
+    thead tr,
+    th {
+        border-color: #222;
+    }
+
+    td {
+        border-color: #bbb;
+    }
+
+    thead {
+        color: #ddd;
+        background-color: #444;
+    }
+
+    tbody {
+        tr:nth-child(odd) {
+            background-color: transparent;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+
+
+    code,
+    kbd {
+        text-shadow: none !important;
+    }
+
+    code {
+        color: #a34587;
+        border-color: rgba(0, 0, 0, 0.219);
+        background-color: white;
+    }
+
+    pre code {
+        background-color: transparent !important;
+    }
+
+    kbd {
+        // color: #fff;
+        // background-color: #789abc;
+        // border-color: #fff;
+        // box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.219);
+
+        color black;
+        background-color: #fff;
+        background-image: linear-gradient(45deg, white, #eee);
+        border-color: #bbb #ddd #ddd #bbb;
+        box-shadow: 0rem 0.15rem 0 0.05rem #bbb;
+    }
+
+
+
+    hr {
+        color: rgba(128, 128, 128, 0.45);
+        background-image: linear-gradient(to right, transparent, currentColor 150%);
+    }
+
+    hr::before {
+        box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.51);
+    }
+}

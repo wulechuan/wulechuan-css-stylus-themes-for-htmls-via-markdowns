@@ -11,7 +11,7 @@ export default function getTaskConfigByEntryStylusFileSubPath(entryStylusFileSub
     if (!entryStylusFileSubPath) {
         theOnlyTaskSpecificConfig = specificTaskConfigsOfAllThemes[0]
     } else {
-        const matchedTaskConfigs = specificTaskConfigsOfAllThemes.some(taskConfig => {
+        const matchedTaskConfigs = specificTaskConfigsOfAllThemes.filter(taskConfig => {
             return taskConfig.entryStylusFileSubPath === entryStylusFileSubPath
         })
 
