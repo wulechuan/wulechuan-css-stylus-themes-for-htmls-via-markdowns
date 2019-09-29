@@ -4,7 +4,7 @@ import {
 
 export const sourceGlobsRootFolderPath        = './source/themes/stylus'
 export const outputFolderPath                 = cssDistFolderRelativePath
-export const specificSourceGlobsCommonSubPath = 'markdown-style-scenarios'
+export const specificSourceGlobsCommonSubPath = 'article-style-scenarios'
 export const outputFileBaseNameCommonPrefix   = 'wulechuan-styles-for-html-via-markdown'
 
 export const sharedSourceRelativeGlobs = []

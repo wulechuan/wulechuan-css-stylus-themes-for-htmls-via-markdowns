@@ -120,7 +120,7 @@ export default function createTaskCycleForGeneratingHTMLsForExampleMarkdowns({
         sourceGlobsToWatch: [
             sourceMarkdownFileEnUS,
             sourceMarkdownFileZhHansCN,
-            'source/themes/stylus/markdown-style-parts/**/*.styl',
+            'source/themes/stylus/article-style-parts/**/*.styl',
             absolutePathOfJavascriptForUpdatingHTMLTitle,
         ],
         taskBodies: {

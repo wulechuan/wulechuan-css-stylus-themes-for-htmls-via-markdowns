@@ -19,7 +19,7 @@ This project utitlizes [Stylus](http://stylus-lang.com/) language to generate CS
 
 ### Steps
 
-1. Create a `.styl` file under `./source/stylus/markdown-style-scenarios/` folder, or a sub-folder if prefer.
+1. Create a `.styl` file under `./source/stylus/article-style-scenarios/` folder, or a sub-folder if prefer.
 
 2. In the newly created `.styl` file, write something like this:
 
@@ -171,7 +171,7 @@ npm run clean2
 
 #### `updateExampleHTMLs`
 
-To generate or update HTML files via example markdowns. 
+To generate or update HTML files via example markdowns.
 
 ##### Usage in CLI
 
