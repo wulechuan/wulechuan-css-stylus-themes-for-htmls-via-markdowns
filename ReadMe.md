@@ -62,6 +62,8 @@ The pictures below showcase how does an article look and feel as the default CSS
 - [zh-Hans-CN: 大尺寸浏览器中的效果，文章纲要列表已收叠](./docs/examples/rendered/default-dark-colored/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png)
 
 
+### All Available Example Pictures
+
 For more pictures, see:
 
 - [Application Examples (en-US)](./docs/refs/en-US/application-examples.md).

@@ -62,7 +62,9 @@
 - [zh-Hans-CN: 大尺寸浏览器中的效果，文章纲要列表已收叠](./docs/examples/rendered/default-dark-colored/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png)
 
 
-更多例图，见：
+### 范文的所有截图
+
+更多图例，见：
 
 - 《[应用效果示例（简体中文版）](./docs/refs/zh-hans-CN/application-examples.md)》
 - 《[Application Examples (en-US)](./docs/refs/en-US/application-examples.md)》
