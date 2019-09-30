@@ -28,11 +28,15 @@
         }
 
         > code { // source code blocks
+            box-sizing: border-box;
+            display: block;
+            width: 100%;
             line-height: inherit;
-            padding: 0.5em 1em;
+            padding: 0.5rem;
             border: none !important;
             margin: 0 !important;
             border-radius: 0;
+            overflow-x: auto;
         }
     }
 
@@ -64,11 +68,10 @@
         display: inline-block;
         vertical-align: top;
 
-
+        box-sizing: border-box;
         width: calc(100% - 2rem);
 
-        overflow-x: auto;
-        padding: 0;
+        padding: 0.5rem;
         // margin-top: 0.5rem;
         margin-top: 0; // Because the "display" is now "inline-block", we don't need extra "margin-top" any more.
         margin-bottom: 2rem;
@@ -79,6 +82,7 @@
     li {
 
         > pre {
+            margin-top: 0.5rem;
             margin-left: 0;
             margin-right: 0;
             width: 100%;

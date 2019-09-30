@@ -349,11 +349,15 @@ pre > code {
   text-align: left !important;
 }
 pre > code {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
   line-height: inherit;
-  padding: 0.5em 1em;
+  padding: 0.5rem;
   border: none !important;
   margin: 0 !important;
   border-radius: 0;
+  overflow-x: auto;
 }
 pre {
   line-height: 1.6;
@@ -361,14 +365,15 @@ pre {
   margin-right: 1rem;
   display: inline-block;
   vertical-align: top;
+  box-sizing: border-box;
   width: calc(100% - 2rem);
-  overflow-x: auto;
-  padding: 0;
+  padding: 0.5rem;
   margin-top: 0;
   margin-bottom: 2rem;
 }
 td > pre,
 li > pre {
+  margin-top: 0.5rem;
   margin-left: 0;
   margin-right: 0;
   width: 100%;
@@ -401,7 +406,7 @@ hr::before {
 }
 hr::before {
   left: calc(100% + 0.6rem);
-  top: 49%;
+  top: 49.5%;
   width: 0.4rem;
   height: 0.4rem;
   margin: -0.2rem 0 0 -0.2rem;
@@ -737,7 +742,7 @@ code {
   font-family: 'consolas', 'Courier New', Courier, 'PT Mono', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', monospace;
 }
 html {
-  background-color: #333;
+  background-color: #111;
 }
 body {
   background-color: transparent;
@@ -767,7 +772,7 @@ h1 {
   padding-right: 1em;
 }
 img {
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
 }
 blockquote {
   border-width: 0 0 0 0.32rem;
@@ -811,9 +816,9 @@ pre {
   }
 }
 .markdown-article {
-  color: #333;
-  background-color: #f7f7f9;
-  box-shadow: 0 0 0.4rem rgba(0,0,0,0.2);
+  color: #797979;
+  background-color: #151515;
+  box-shadow: 0 0 0.2rem rgba(0,0,0,0.79);
 }
 a {
   transition-property: visibility, opacity, color, background-color, border, border-radius, transform;
@@ -821,20 +826,20 @@ a {
 }
 a:visited,
 a {
-  color: #0f0fed;
+  color: #68f;
 }
 a:hover,
 a:focus,
 a:active {
-  color: #f00;
+  color: #f86;
 }
 a[href^="#"]:visited,
 a[href^="#"] {
-  color: #1b2;
+  color: #7d5;
 }
 a.header-anchor[href^="#"]:visited,
 a.header-anchor[href^="#"] {
-  color: #e8e8e8;
+  color: #282828;
 }
 h1:hover > a.header-anchor[href^="#"],
 h2:hover > a.header-anchor[href^="#"],
@@ -842,7 +847,7 @@ h3:hover > a.header-anchor[href^="#"],
 h4:hover > a.header-anchor[href^="#"],
 h5:hover > a.header-anchor[href^="#"],
 h6:hover > a.header-anchor[href^="#"] {
-  color: #888;
+  color: #999;
 }
 h1 > a.header-anchor[href^="#"]:hover,
 h2 > a.header-anchor[href^="#"]:hover,
@@ -862,7 +867,7 @@ h3 > a.header-anchor[href^="#"]:active,
 h4 > a.header-anchor[href^="#"]:active,
 h5 > a.header-anchor[href^="#"]:active,
 h6 > a.header-anchor[href^="#"]:active {
-  color: #1d0;
+  color: #7d5;
 }
 h1:target:hover > a.header-anchor[href^="#"],
 h2:target:hover > a.header-anchor[href^="#"],
@@ -876,21 +881,25 @@ h3:target > a.header-anchor[href^="#"],
 h4:target > a.header-anchor[href^="#"],
 h5:target > a.header-anchor[href^="#"],
 h6:target > a.header-anchor[href^="#"] {
-  color: #1d0;
+  color: #7d5;
 }
 h1,
-h2,
+h2 {
+  color: #a3a3a3;
+}
 h3,
-h4,
+h4 {
+  color: #515151;
+}
 h5,
 h6,
 dt {
-  color: #000;
+  color: #636363;
 }
 img {
   color: #555;
-  background-color: rgba(128,128,128,0.1);
-  box-shadow: inset 0 0 0.4rem rgba(0,0,0,0.29);
+  background-color: rgba(0,0,0,0.219);
+  box-shadow: inset 0 0 0.4rem rgba(0,0,0,0.51);
 }
 input[type="checkbox"] + label {
   color: #000;
@@ -903,53 +912,53 @@ input[type="checkbox"]:checked + label {
 strong,
 b,
 em {
-  color: #000;
+  color: #ccc;
 }
 blockquote {
-  color: #000;
-  border-color: #f80;
+  color: #969696;
+  border-color: #794513;
   background-color: rgba(136,136,136,0.2);
   text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
 }
 table {
-  border-color: #111;
-  background-color: #fff;
+  border-color: #555;
+  background-color: #111;
 }
 thead tr,
 th {
-  border-color: #222;
+  border-color: #4c4c4c;
 }
 td {
-  border-color: #bbb;
+  border-color: #222;
 }
 thead {
-  color: #ddd;
-  background-color: #444;
+  color: #000;
+  background-color: #454545;
 }
 tbody tr:nth-child(odd) {
   background-color: transparent;
 }
 tbody tr:nth-child(even) {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(255,255,255,0.051);
 }
 code,
 kbd {
   text-shadow: none !important;
 }
 code {
-  color: #a34587;
-  border-color: rgba(0,0,0,0.219);
-  background-color: #fff;
+  color: #c7a;
+  border-color: rgba(255,255,255,0.219);
+  background-color: #000;
 }
 pre code {
   background-color: transparent !important;
 }
 kbd {
-  color: #000;
-  background-color: #fff;
-  background-image: linear-gradient(45deg, #fff, #eee);
-  border-color: #bbb #ddd #ddd #bbb;
-  box-shadow: 0rem 0.15rem 0 0.05rem #bbb;
+  color: #ddd;
+  background-color: #151515;
+  background-image: linear-gradient(45deg, #000, #151515);
+  border-color: #333 #454545 #454545 #333;
+  box-shadow: 0rem 0.15rem 0 0.05rem #333;
 }
 hr {
   color: rgba(128,128,128,0.45);
@@ -959,27 +968,27 @@ hr::before {
   box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.51);
 }
 nav.markdown-article-toc {
-  background-color: #222;
-  box-shadow: 0 0 0.5rem rgba(0,0,0,0.4);
+  background-color: #000;
+  box-shadow: 0 0 0.3rem rgba(0,0,0,0.79);
 }
 nav.markdown-article-toc,
 nav.markdown-article-toc li > a[href^="#"] {
-  color: #aaa;
+  color: #888;
   border-color: transparent;
 }
 nav.markdown-article-toc > ol > li.has-nested-toc-list > a[href^="#"],
 nav.markdown-article-toc > ul > li.has-nested-toc-list > a[href^="#"],
 nav.markdown-article-toc:not(.should-show-2-levels-at-most) li.has-nested-toc-list > a[href^="#"] {
-  color: #fff;
+  color: #e3e3e3;
 }
 nav.markdown-article-toc li > a[href^="#"]:target,
 nav.markdown-article-toc li > a[href^="#"]:hover {
-  border-color: rgba(255,255,255,0.19) transparent;
+  border-color: rgba(255,255,255,0.1) transparent;
   background-image: linear-gradient(to right, transparent 0.25em, rgba(255,255,255,0.1) 4em, transparent);
 }
 @media screen and (max-width: 1000px) {
   nav.markdown-article-toc {
-    background-color: rgba(0,0,0,0.91);
+    background-color: rgba(0,0,0,0.95);
   }
   @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
     nav.markdown-article-toc {
@@ -999,10 +1008,10 @@ nav.markdown-article-toc li > a[href^="#"]:hover {
 }
 .markdown-article-toc-toggling-button {
   color: #000;
-  border-color: #dd5075;
+  border-color: #d51d79;
   background-color: #dd56c6;
-  background-image: linear-gradient(45deg, #ff0dd6 20%, #faff27 80%);
-  box-shadow: 0 0 0.3rem rgba(226,22,130,0.97);
+  background-image: linear-gradient(23deg, #f1f 19%, #f66 45%, #ff6 87%);
+  box-shadow: 0 0 0.3rem rgba(213,29,121,0.9);
 }
 .markdown-article-back-to-top[href^="#"],
 .markdown-article-back-to-top[href^="#"]:visited {
@@ -1026,7 +1035,7 @@ pre > code .hljs-comment {
 }
 pre,
 .hljs {
-  background-color: #1a1b1c;
+  background-color: #2b2b2b;
 }
 pre,
 .hljs {

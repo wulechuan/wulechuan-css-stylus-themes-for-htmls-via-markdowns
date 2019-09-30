@@ -1,9 +1,9 @@
 /* 以下 CSS 是除代码块之外的页面整体着色方案。*/
 
 {_selectorOf_markdownArticleRoot} {
-    color: #333;
-    background-color: #f7f7f9;
-    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+    color: #797979;
+    background-color: #151515;
+    box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.79);
 }
 
 
@@ -18,13 +18,13 @@
 
         &:visited,
         & {
-            color: #0f0fed;
+            color: #68f;
         }
 
         &:hover,
         &:focus,
         &:active {
-            color: red;
+            color: #f86;
         }
     }
 
@@ -34,13 +34,13 @@
 
         &:visited,
         & {
-            color: #1b2;
+            color: #7d5;
         }
 
         // &:hover,
         // &:focus,
         // &:active {
-        //     color: #1b2;
+        //     color: #7d5;
         // }
     }
 
@@ -50,14 +50,14 @@
 
         &:visited,
         & {
-            color: #e8e8e8;
+            color: #282828;
         }
     }
 
     h1, h2, h3, h4, h5, h6 {
 
         &:hover > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
-            color: #888;
+            color: #999;
         }
     }
 
@@ -68,7 +68,7 @@
             &:hover,
             &:focus,
             &:active {
-                color: #1d0;
+                color: #7d5;
             }
         }
 
@@ -76,17 +76,24 @@
         &:target {
 
             > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
-                color: #1d0;
+                color: #7d5;
             }
         }
     }
 
 
 
+    h1, h2 {
+        color: #a3a3a3;
+    }
 
-    h1, h2, h3, h4, h5, h6,
+    h3, h4 {
+        color: #515151;
+    }
+    
+    h5, h6,
     dt {
-        color: #000;
+        color: #636363;
     }
 
 
@@ -94,8 +101,8 @@
 
     img {
         color: #555;
-        background-color: rgba(128, 128, 128, 0.1);
-        box-shadow: inset 0 0 0.4rem rgba(0, 0, 0, 0.29);
+        background-color: rgba(black, 0.219);
+        box-shadow: inset 0 0 0.4rem rgba(black, 0.51);
     }
 
 
@@ -117,14 +124,14 @@
     strong,
     b,
     em {
-        color: black;
+        color: #ccc;
     }
 
 
 
     blockquote {
-        color: #000;
-        border-color: #f80;
+        color: #969696;
+        border-color: #794513;
         background-color: rgba(136, 136, 136, 0.2);
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
     }
@@ -132,22 +139,22 @@
 
 
     table {
-        border-color: #111;
-        background-color: white;
+        border-color: #555;
+        background-color: #111;
     }
 
     thead tr,
     th {
-        border-color: #222;
+        border-color: #4c4c4c;
     }
 
     td {
-        border-color: #bbb;
+        border-color: #222;
     }
 
     thead {
-        color: #ddd;
-        background-color: #444;
+        color: #000;
+        background-color: #454545;
     }
 
     tbody {
@@ -156,7 +163,7 @@
         }
 
         tr:nth-child(even) {
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: rgba(white, 0.051);
         }
     }
 
@@ -167,9 +174,9 @@
     }
 
     code {
-        color: #a34587;
-        border-color: rgba(0, 0, 0, 0.219);
-        background-color: white;
+        color: #c7a;
+        border-color: rgba(white, 0.219);
+        background-color: #000;
     }
 
     pre code {
@@ -182,11 +189,11 @@
         // border-color: #fff;
         // box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.219);
 
-        color black;
-        background-color: #fff;
-        background-image: linear-gradient(45deg, white, #eee);
-        border-color: #bbb #ddd #ddd #bbb;
-        box-shadow: 0rem 0.15rem 0 0.05rem #bbb;
+        color #ddd;
+        background-color: #151515;
+        background-image: linear-gradient(45deg, black, #151515);
+        border-color: #333 #454545 #454545 #333;
+        box-shadow: 0rem 0.15rem 0 0.05rem #333;
     }
 
 

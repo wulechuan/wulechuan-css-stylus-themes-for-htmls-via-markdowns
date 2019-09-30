@@ -349,11 +349,15 @@ body {
   text-align: left !important;
 }
 .markdown-article pre > code {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
   line-height: inherit;
-  padding: 0.5em 1em;
+  padding: 0.5rem;
   border: none !important;
   margin: 0 !important;
   border-radius: 0;
+  overflow-x: auto;
 }
 .markdown-article pre {
   line-height: 1.6;
@@ -361,14 +365,15 @@ body {
   margin-right: 1rem;
   display: inline-block;
   vertical-align: top;
+  box-sizing: border-box;
   width: calc(100% - 2rem);
-  overflow-x: auto;
-  padding: 0;
+  padding: 0.5rem;
   margin-top: 0;
   margin-bottom: 2rem;
 }
 .markdown-article td > pre,
 .markdown-article li > pre {
+  margin-top: 0.5rem;
   margin-left: 0;
   margin-right: 0;
   width: 100%;
@@ -401,7 +406,7 @@ body {
 }
 .markdown-article hr::before {
   left: calc(100% + 0.6rem);
-  top: 49%;
+  top: 49.5%;
   width: 0.4rem;
   height: 0.4rem;
   margin: -0.2rem 0 0 -0.2rem;
@@ -767,7 +772,7 @@ body {
   padding-right: 1em;
 }
 .markdown-article img {
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
 }
 .markdown-article blockquote {
   border-width: 0 0 0 0.32rem;
@@ -811,7 +816,7 @@ body {
   }
 }
 .markdown-article {
-  color: #333;
+  color: #111;
   background-color: #f7f7f9;
   box-shadow: 0 0 0.4rem rgba(0,0,0,0.2);
 }
@@ -821,7 +826,7 @@ body {
 }
 .markdown-article a:visited,
 .markdown-article a {
-  color: #0f0fed;
+  color: #015eff;
 }
 .markdown-article a:hover,
 .markdown-article a:focus,
@@ -830,7 +835,7 @@ body {
 }
 .markdown-article a[href^="#"]:visited,
 .markdown-article a[href^="#"] {
-  color: #1b2;
+  color: #1b1;
 }
 .markdown-article a.header-anchor[href^="#"]:visited,
 .markdown-article a.header-anchor[href^="#"] {
@@ -842,7 +847,7 @@ body {
 .markdown-article h4:hover > a.header-anchor[href^="#"],
 .markdown-article h5:hover > a.header-anchor[href^="#"],
 .markdown-article h6:hover > a.header-anchor[href^="#"] {
-  color: #888;
+  color: #aaa;
 }
 .markdown-article h1 > a.header-anchor[href^="#"]:hover,
 .markdown-article h2 > a.header-anchor[href^="#"]:hover,
@@ -862,7 +867,7 @@ body {
 .markdown-article h4 > a.header-anchor[href^="#"]:active,
 .markdown-article h5 > a.header-anchor[href^="#"]:active,
 .markdown-article h6 > a.header-anchor[href^="#"]:active {
-  color: #1d0;
+  color: #1b1;
 }
 .markdown-article h1:target:hover > a.header-anchor[href^="#"],
 .markdown-article h2:target:hover > a.header-anchor[href^="#"],
@@ -876,12 +881,16 @@ body {
 .markdown-article h4:target > a.header-anchor[href^="#"],
 .markdown-article h5:target > a.header-anchor[href^="#"],
 .markdown-article h6:target > a.header-anchor[href^="#"] {
-  color: #1d0;
+  color: #1b1;
 }
 .markdown-article h1,
-.markdown-article h2,
+.markdown-article h2 {
+  color: #111;
+}
 .markdown-article h3,
-.markdown-article h4,
+.markdown-article h4 {
+  color: #222;
+}
 .markdown-article h5,
 .markdown-article h6,
 .markdown-article dt {
@@ -889,8 +898,8 @@ body {
 }
 .markdown-article img {
   color: #555;
-  background-color: rgba(128,128,128,0.1);
-  box-shadow: inset 0 0 0.4rem rgba(0,0,0,0.29);
+  background-color: rgba(0,0,0,0.051);
+  box-shadow: inset 0 0 0.4rem rgba(0,0,0,0.19);
 }
 .markdown-article input[type="checkbox"] + label {
   color: #000;
@@ -907,8 +916,8 @@ body {
 }
 .markdown-article blockquote {
   color: #000;
-  border-color: #f80;
-  background-color: rgba(136,136,136,0.2);
+  border-color: #f90;
+  background-color: rgba(0,0,0,0.051);
   text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
 }
 .markdown-article table {
@@ -923,21 +932,21 @@ body {
   border-color: #bbb;
 }
 .markdown-article thead {
-  color: #ddd;
+  color: #eee;
   background-color: #444;
 }
 .markdown-article tbody tr:nth-child(odd) {
   background-color: transparent;
 }
 .markdown-article tbody tr:nth-child(even) {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.051);
 }
 .markdown-article code,
 .markdown-article kbd {
   text-shadow: none !important;
 }
 .markdown-article code {
-  color: #a34587;
+  color: #b19;
   border-color: rgba(0,0,0,0.219);
   background-color: #fff;
 }
@@ -999,10 +1008,10 @@ nav.markdown-article-toc li > a[href^="#"]:hover {
 }
 .markdown-article-toc-toggling-button {
   color: #000;
-  border-color: #dd5075;
+  border-color: #d51d79;
   background-color: #dd56c6;
-  background-image: linear-gradient(45deg, #ff0dd6 20%, #faff27 80%);
-  box-shadow: 0 0 0.3rem rgba(226,22,130,0.97);
+  background-image: linear-gradient(23deg, #f1f 19%, #f66 45%, #ff6 87%);
+  box-shadow: 0 0 0.3rem rgba(213,29,121,0.9);
 }
 .markdown-article-back-to-top[href^="#"],
 .markdown-article-back-to-top[href^="#"]:visited {
@@ -1026,7 +1035,7 @@ pre > code .hljs-comment {
 }
 pre,
 .hljs {
-  background-color: #1a1b1c;
+  background-color: #2b2b2b;
 }
 pre,
 .hljs {

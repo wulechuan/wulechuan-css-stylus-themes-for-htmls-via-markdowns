@@ -1,7 +1,7 @@
 /* 以下 CSS 是除代码块之外的页面整体着色方案。*/
 
 {_selectorOf_markdownArticleRoot} {
-    color: #333;
+    color: #111;
     background-color: #f7f7f9;
     box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
 }
@@ -18,7 +18,7 @@
 
         &:visited,
         & {
-            color: #0f0fed;
+            color: #015eff;
         }
 
         &:hover,
@@ -34,13 +34,13 @@
 
         &:visited,
         & {
-            color: #1b2;
+            color: #1b1;
         }
 
         // &:hover,
         // &:focus,
         // &:active {
-        //     color: #1b2;
+        //     color: #1b1;
         // }
     }
 
@@ -57,7 +57,7 @@
     h1, h2, h3, h4, h5, h6 {
 
         &:hover > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
-            color: #888;
+            color: #aaa;
         }
     }
 
@@ -68,7 +68,7 @@
             &:hover,
             &:focus,
             &:active {
-                color: #1d0;
+                color: #1b1;
             }
         }
 
@@ -76,7 +76,7 @@
         &:target {
 
             > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
-                color: #1d0;
+                color: #1b1;
             }
         }
     }
@@ -84,7 +84,15 @@
 
 
 
-    h1, h2, h3, h4, h5, h6,
+    h1, h2 {
+        color: #111;
+    }
+    
+    h3, h4 {
+        color: #222;
+    }
+
+    h5, h6,
     dt {
         color: #000;
     }
@@ -94,8 +102,8 @@
 
     img {
         color: #555;
-        background-color: rgba(128, 128, 128, 0.1);
-        box-shadow: inset 0 0 0.4rem rgba(0, 0, 0, 0.29);
+        background-color: rgba(black, 0.051);
+        box-shadow: inset 0 0 0.4rem rgba(black, 0.19);
     }
 
 
@@ -124,8 +132,8 @@
 
     blockquote {
         color: #000;
-        border-color: #f80;
-        background-color: rgba(136, 136, 136, 0.2);
+        border-color: #f90;
+        background-color: rgba(black, 0.051);
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
     }
 
@@ -146,7 +154,7 @@
     }
 
     thead {
-        color: #ddd;
+        color: #eee;
         background-color: #444;
     }
 
@@ -156,7 +164,7 @@
         }
 
         tr:nth-child(even) {
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: rgba(black, 0.051);
         }
     }
 
@@ -167,8 +175,8 @@
     }
 
     code {
-        color: #a34587;
-        border-color: rgba(0, 0, 0, 0.219);
+        color: #b19;
+        border-color: rgba(black, 0.219);
         background-color: white;
     }
 
