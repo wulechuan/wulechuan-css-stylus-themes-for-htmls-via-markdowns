@@ -43,7 +43,7 @@ This tool generates multiple CSS files easily. It also provide a tiny js interfa
 
 
 
-## A Visual Example
+## Visual Examples
 
 A picture paints a thousand words.
 
