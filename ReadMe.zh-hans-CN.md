@@ -47,15 +47,26 @@
 一图胜千言。以下二图展示了一篇应用了本工具之默认 CSS 样式的文章之样貌。
 
 
-> 以下二图文件较大，文件大小在百万字节级别。
+> 以下各图较大，文件大小在百万字节级别。
+
+### 应用默认浅色主题的范文截图
+
+- [en-US Example: in a wide window, with TOC collapsed](./docs/examples/rendered/default-light-colored/snapshots/en-US-example-1-in-a-wide-window-with-toc-collapsed.png)
+
+- [zh-Hans-CN: 大尺寸浏览器中的效果，文章纲要列表已收叠](./docs/examples/rendered/default-light-colored/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png)
 
 
-- [en-US Example: in a wide window, with TOC collapsed](./docs/examples/rendered/snapshots/en-US-example-1-in-a-wide-window-with-toc-collapsed.png)
+### 应用默认深色主题的范文截图
 
-- [zh-Hans-CN: 大尺寸浏览器中的效果，文章纲要列表已收叠](./docs/examples/rendered/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png)
+- [en-US Example: in a wide window, with TOC collapsed](./docs/examples/rendered/default-dark-colored/snapshots/en-US-example-1-in-a-wide-window-with-toc-collapsed.png)
+
+- [zh-Hans-CN: 大尺寸浏览器中的效果，文章纲要列表已收叠](./docs/examples/rendered/default-dark-colored/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png)
 
 
-更多例图，见《[应用效果示例](./docs/refs/zh-hans-CN/application-examples.md)》一文。
+更多例图，见：
+
+- 《[应用效果示例（简体中文版）](./docs/refs/zh-hans-CN/application-examples.md)》
+- 《[Application Examples (en-US)](./docs/refs/en-US/application-examples.md)》
 
 
 
