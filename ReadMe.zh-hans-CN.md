@@ -62,11 +62,11 @@
 
 ## 使用说明
 
-- 如果你采用我的主题文件的初衷仅仅是要将你手头的一些 Markdown 文件转换成对应的 HTML 文件，那么我有以下建议：
+- 如果你采用我的这些 CSS 主题文件之初衷仅仅是要将其用于你将手头的一些 Markdown 文件转换而成的对应 HTML 文件中，以装点这些 HTML 文件，那么我有以下建议：
 
-    > 你大可以自行使用引用本 npm 包中的 CSS 文件，或自行调用本 npm 包之 JavaScript 接口，以在构建你自己的 HTML 内容时，利用这些 CSS 为其做装点。但显然需要费些功夫。更糟的是，或许此时你恰恰尚无你自己的一套解决办法来将 MarkDown 转换成 HTML，正考虑自己搭建一套工具。那么好消息来了！我强烈推荐我创建的另外两个 npm 包。它们专用于轻松快速从 Markdown 内容构建 HTML 内容，并且二者都应用了本 npm 包中的 CSS 内容和配套 JavaScript 脚本。我在本说明[文档的尾部](#相关推广)也推广了这两个软件包。你无需再另起炉灶了。它们定能助你一臂之力！
+    > 尽管你可以自行使用引用本 npm 包中的 CSS 文件，或自行调用本 npm 包之 JavaScript 接口，以在构建你自己的 HTML 内容时，利用这些 CSS 为其做装点。但显然需要费些功夫。更糟的是，或许此时你恰恰仅有想法，而尚无你自己的一套解决办法来将 MarkDown 转换成 HTML。换句话说你正考虑自己搭建一套工具。那么好消息来了！我强烈推荐我创建的另外 3 个 npm 包。它们专用于轻松、快速地从 Markdown 内容构建 HTML 内容，并且二者都应用了本 npm 包中的 CSS 内容和配套 JavaScript 脚本。我在本说明[文档的尾部](#相关推广)也推广了这 3 个软件包。你无需再另起炉灶了。它们定能助你一臂之力！
 
-- 如果你取用我的主题文件另有意图，并且须搞懂如何使用本 npm 包，那么欢迎继续阅读本文档。你要的内容就在下方。
+- 如果你取用我的主题文件另有意图，与 MarkDown 转换至 HTML 之事毫无干系，并且希望采用我的这些 CSS 主题文件。那么欲搞懂如何使用本 npm 包，欢迎继续阅读本文档。你要的内容就在下方。
 
 
 ### 手工取用本工具所生成的文件
@@ -135,7 +135,9 @@ const stillTheOnlyTOCJavascriptContentStringButNotMinified = syncGetContentStrin
 
 鄙人另有一款 NPM 包，名为“[@wulechuan/generate-html-via-markdown](https://www.npmjs.com/package/@wulechuan/generate-html-via-markdown)”。为便于指称，暂将其叫做“甲”。甲可将提供的 MarkDown 字符串转换成 HTML 字符串。此时，甲会采用本工具所预先生成的 CSS 文件来装饰甲自身产生的 HTML 内容。
 
-鄙人还有一款 NPM 包，名为“[@wulechuan/gulp-markdown-to-html](https://www.npmjs.com/package/@wulechuan/gulp-markdown-to-html)”，且作“乙”。乙恰如甲的一个包覆层，使得乙中之功能特性可以适配 [Gulpjs](https://gulpjs.com) 任务流水线。
+鄙人还有一款 NPM 包，名为“[@wulechuan/gulp-markdown-to-html](https://www.npmjs.com/package/@wulechuan/gulp-markdown-to-html)”，且作“乙”。乙恰如甲的一个包覆层，使得甲中之功能特性可以适配 [Gulpjs](https://gulpjs.com) 任务流水线。
+
+鄙人还有一款 NPM 包，名为“[@wulechuan/markdown-to-html-via-cli](https://www.npmjs.com/package/@wulechuan/markdown-to-html-via-cli)”，且作“丙”。丙恰如甲的另一个包覆层，使得任何人在安装丙后（无须令行安装甲），可以在命令行环境轻松使用甲之功能，实现从文件到文件的批量转换功能。且丙设计有多种命令行参数，以便方便订制输出。且诸君毋需担心命令行参数记忆负担过重之问题，仅需“`--help`”即可解君之忧。
 
 
 
