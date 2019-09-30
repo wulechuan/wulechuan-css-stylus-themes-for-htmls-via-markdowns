@@ -10,7 +10,26 @@
 repoRootFolder=$(dirname `readlink -f "$0"`)
 
 function collect-firefox-screenshot-files {
-    local snapshotTargetFolderSubPah="docs/examples/rendered/snapshots"
+    local themeSubFolderName
+    echo "\$1=\"$1\""
+
+    if   [ "$1" == 'l' ] || [ "$1" == 'light' ]; then
+        themeSubFolderName='default-light-colored'
+    elif [ "$1" == 'd' ] || [ "$1" == 'dark' ]; then
+        themeSubFolderName='default-dark-colored'
+    else
+        echo -e "\e[31mPlease specify the theme sub folder id:\e[0m"
+        echo -e "    \e[32ml\e[0m or \e[32mlight\e[0m"
+        echo -e "    \e[32md\e[0m or \e[32mdark\e[0m"
+        echo
+
+        unset -f collect-firefox-screenshot-files
+        unset repoRootFolder
+
+        exit 1
+    fi
+
+    local snapshotTargetFolderSubPah="docs/examples/rendered/$themeSubFolderName/snapshots"
     local firefoxScreenshotFilesFolderPath="/d/Users/wulechuan/Downloads"
     local firefoxScreenshotFilesNamingPrefix="Screenshot_`date "+%Y-%m-%d"` "
 
@@ -90,12 +109,12 @@ function collect-firefox-screenshot-files {
         mv    -f    "$sourceFilePath"    "$snapshotTargetFolderPath/"
     done
 
-
+    echo
     echo -e "\e[30;42m DONE \e[0m\n"
+
+    unset -f collect-firefox-screenshot-files
+    unset repoRootFolder
 }
 
 
-collect-firefox-screenshot-files
-
-unset -f collect-firefox-screenshot-files
-unset repoRootFolder
+collect-firefox-screenshot-files    $*
