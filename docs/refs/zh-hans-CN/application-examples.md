@@ -16,6 +16,8 @@
 
 一图胜千言。我有意准备了一个 MarkDown 范文，用其他工具将其转换成 HTML 版本的范文。再利用本工具之“默认” CSS 文件修饰 HTML 文件。并截图以示诸君。
 
+-----
+
 ### 原始 MarkDown 范文
 
 - [default-theming-example.zh-hans-CN.md](../../examples/source-markdown-files/default-theming-example.zh-hans-CN.md)
