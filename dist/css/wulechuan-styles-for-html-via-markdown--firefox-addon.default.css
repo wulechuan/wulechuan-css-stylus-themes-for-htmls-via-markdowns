@@ -64,6 +64,7 @@ a {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: transparent;
+  text-shadow: inherit;
 }
 a:not([href]) {
   font-style: italic;
@@ -333,13 +334,17 @@ table {
   min-width: 64%;
 }
 kbd,
+code,
+pre {
+  font-weight: 300;
+}
+kbd,
 code {
   display: inline-block;
   vertical-align: baseline;
   line-height: 1;
   min-height: 1em;
   min-width: 0.5em;
-  font-weight: normal;
   font-style: normal;
   border-style: solid;
 }
@@ -706,7 +711,6 @@ a#__markdown-viewer__download {
 #__markdown-viewer__toc::before {
   text-align: center;
   display: block;
-  font-weight: bold;
   margin: 0 auto 0.5rem auto;
   text-decoration: none;
   font-weight: normal;
@@ -772,7 +776,7 @@ select {
 kbd,
 pre,
 code {
-  font-family: 'consolas', 'Courier New', Courier, 'PT Mono', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', monospace;
+  font-family: 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', monospace;
 }
 html {
   background-color: #bbb;
@@ -951,7 +955,6 @@ blockquote {
   color: #000;
   border-color: #f90;
   background-color: rgba(0,0,0,0.051);
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
 }
 table {
   border-color: #111;

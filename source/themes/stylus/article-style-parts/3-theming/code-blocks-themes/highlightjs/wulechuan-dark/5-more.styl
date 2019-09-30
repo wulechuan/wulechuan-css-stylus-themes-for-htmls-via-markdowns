@@ -273,35 +273,32 @@
     }
 }
 
-.language-typescript,
-.language-ts,
-.language-javascript,
-.language-js,
-.javascript, // <script>
+.hljs-string {
+    color: #ff9;
+}
+
 .language-xml,
 .language-html {
 
     .hljs-string {
-        color: #ff9;
-    }
-}
 
-.language-typescript,
-.language-ts,
-.language-javascript,
-.language-js,
-.javascript, // <script>
-.css, // <style>
-.language-css {
-    // no xml, no html
-
-    .hljs-string {
-
-        .wlc-string-body {
-            background-color: #ffff9919;
+        .wlc-string-body, // [ DEPRECATED ]
+        .string-body {
+            background-color: transparent;
         }
     }
 }
+
+.javascript .hljs-string, // <script> inside HTML/XML
+.css        .hljs-string, // <style>  inside HTML/XML
+.hljs-string {
+
+    .wlc-string-body, // [ DEPRECATED ]
+    .string-body {
+        background-color: #ffff9919;
+    }
+}
+
 
 // ------ strings (end) ----------------------------------
 
@@ -428,7 +425,7 @@
 
     .punctuation {
         color: inherit;
-        opacity: 0.6;
+        opacity: 0.51;
     }
 }
 

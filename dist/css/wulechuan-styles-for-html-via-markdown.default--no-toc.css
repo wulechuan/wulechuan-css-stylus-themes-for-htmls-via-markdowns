@@ -59,6 +59,7 @@ a {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: transparent;
+  text-shadow: inherit;
 }
 a:not([href]) {
   font-style: italic;
@@ -328,13 +329,17 @@ table {
   min-width: 64%;
 }
 kbd,
+code,
+pre {
+  font-weight: 300;
+}
+kbd,
 code {
   display: inline-block;
   vertical-align: baseline;
   line-height: 1;
   min-height: 1em;
   min-width: 0.5em;
-  font-weight: normal;
   font-style: normal;
   border-style: solid;
 }
@@ -597,7 +602,7 @@ select {
 kbd,
 pre,
 code {
-  font-family: 'consolas', 'Courier New', Courier, 'PT Mono', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', monospace;
+  font-family: 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', monospace;
 }
 html {
   background-color: #bbb;
@@ -776,7 +781,6 @@ blockquote {
   color: #000;
   border-color: #f90;
   background-color: rgba(0,0,0,0.051);
-  text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
 }
 table {
   border-color: #111;
@@ -847,7 +851,7 @@ pre > code .hljs-comment {
 }
 pre,
 .hljs {
-  background-color: #2b2b2b;
+  background-color: #111;
 }
 pre,
 .hljs {
@@ -868,7 +872,7 @@ pre,
   color: #555;
 }
 .hljs-meta {
-  color: #888;
+  color: #555;
 }
 .hljs-doctag,
 .hljs-formula {
@@ -1291,22 +1295,21 @@ pre,
 .hljs-string .escape-char {
   color: #c75;
 }
-.language-typescript .hljs-string,
-.language-ts .hljs-string,
-.language-javascript .hljs-string,
-.language-js .hljs-string,
-.javascript .hljs-string,
-.language-xml .hljs-string,
-.language-html .hljs-string {
+.hljs-string {
   color: #ff9;
 }
-.language-typescript .hljs-string .wlc-string-body,
-.language-ts .hljs-string .wlc-string-body,
-.language-javascript .hljs-string .wlc-string-body,
-.language-js .hljs-string .wlc-string-body,
+.language-xml .hljs-string .wlc-string-body,
+.language-html .hljs-string .wlc-string-body,
+.language-xml .hljs-string .string-body,
+.language-html .hljs-string .string-body {
+  background-color: transparent;
+}
 .javascript .hljs-string .wlc-string-body,
 .css .hljs-string .wlc-string-body,
-.language-css .hljs-string .wlc-string-body {
+.hljs-string .wlc-string-body,
+.javascript .hljs-string .string-body,
+.css .hljs-string .string-body,
+.hljs-string .string-body {
   background-color: rgba(255,255,153,0.098);
 }
 .hljs-regexp .regexp-close-quote,
@@ -1365,7 +1368,7 @@ pre,
 .hljs-selector-class .punctuation,
 .hljs-selector-id .punctuation {
   color: inherit;
-  opacity: 0.6;
+  opacity: 0.51;
 }
 .hljs-meta.css-exclamation-important {
   color: #f55;

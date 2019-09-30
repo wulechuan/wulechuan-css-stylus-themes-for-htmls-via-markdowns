@@ -1,8 +1,8 @@
 /* 以下 CSS 是除代码块之外的页面整体着色方案。*/
 
 {_selectorOf_markdownArticleRoot} {
-    color: #797979;
-    background-color: #151515;
+    color: #a3a3a3;
+    background-color: #1e1e1e;
     box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.79);
 }
 
@@ -50,14 +50,14 @@
 
         &:visited,
         & {
-            color: #282828;
+            color: #333;
         }
     }
 
     h1, h2, h3, h4, h5, h6 {
 
         &:hover > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
-            color: #999;
+            color: #666;
         }
     }
 
@@ -84,16 +84,16 @@
 
 
     h1, h2 {
-        color: #a3a3a3;
+        color: #b6b6b6;
     }
 
     h3, h4 {
-        color: #515151;
+        color: #797979;
     }
     
     h5, h6,
     dt {
-        color: #636363;
+        color: #ddd;
     }
 
 
@@ -109,12 +109,12 @@
 
 
     input[type="checkbox"] + label {
-        color: black;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        color: #ddd;
+        // text-shadow: 1px 1px 2px rgba(black, 0.2);
     }
 
     input[type="checkbox"]:checked + label {
-        color: #696;
+        color: #aba;
         text-shadow: -1px -1px 0 rgba(0, 128, 0, 0.1);
     }
 
@@ -124,28 +124,32 @@
     strong,
     b,
     em {
-        color: #ccc;
+        color: #eee;
     }
 
 
 
     blockquote {
-        color: #969696;
+        color: #b6b6b6;
         border-color: #794513;
-        background-color: rgba(136, 136, 136, 0.2);
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+        background-color: rgba(white, 0.051);
+        // text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.79);
     }
 
 
 
     table {
+        color: #b6b6b6;
         border-color: #555;
-        background-color: #111;
+        background-color: #2b2b2b;
     }
 
-    thead tr,
+    thead tr {
+        border-color: #515151;
+    }
+
     th {
-        border-color: #4c4c4c;
+        border-color: #3a3a3a;
     }
 
     td {
@@ -163,7 +167,7 @@
         }
 
         tr:nth-child(even) {
-            background-color: rgba(white, 0.051);
+            background-color: rgba(white, 0.0319);
         }
     }
 
@@ -174,9 +178,9 @@
     }
 
     code {
-        color: #c7a;
+        color: #d8b;
         border-color: rgba(white, 0.219);
-        background-color: #000;
+        background-color: #050505;
     }
 
     pre code {
@@ -192,8 +196,8 @@
         color #ddd;
         background-color: #151515;
         background-image: linear-gradient(45deg, black, #151515);
-        border-color: #333 #454545 #454545 #333;
-        box-shadow: 0rem 0.15rem 0 0.05rem #333;
+        border-color: #191919 #131313 #131313 #191919;
+        box-shadow: 0rem 0.15rem 0 0.05rem #000;
     }
 
 
