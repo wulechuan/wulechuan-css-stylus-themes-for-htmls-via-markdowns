@@ -27,7 +27,7 @@
 
 本品可方便的产出一组 CSS 文件。并且额外提供了一个很小巧的 JavaScript 接口，使得其它 JavaScript 工具包亦可较方便的使用这些 CSS 文件之内容。
 
-
+**消息：深色主题已经制作完成！**
 
 ## 文档章节
 
@@ -146,8 +146,6 @@ const stillTheOnlyTOCJavascriptContentStringButNotMinified = syncGetContentStrin
 ## 未来计划
 
 - 考虑引入更多的 Stylus 变量，来控制主题。但我有疑虑。过分工程化可能反而导致源代码难以理解，不便定制。
-- 制作更多的主题？深色款？
-- 更多的【基本主题】+【代码着色主题】的组合项？
 - 覆盖 Typora 中“纲要列表”的原有样式？
 
 

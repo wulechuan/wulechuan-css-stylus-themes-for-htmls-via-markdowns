@@ -28,6 +28,7 @@
 
 This tool generates multiple CSS files easily. It also provide a tiny js interface, so that other js tools can utilize contents of those CSS files easily.
 
+**News: Now we have a dark theme.**
 
 ## Documentation Chapters
 
@@ -143,8 +144,6 @@ Yet there is a third npm package of mine, name "[@wulechuan/markdown-to-html-via
 ## TODOS
 
 - Consider introducing more stylus variables for theming. I'm not sure it worths me at present. Too many arguments would make this tool much worse to understand.
-- More base themes, like a dark theme?
-- More combinations of base themes and code block themes?
 - Typora built-in TOC styling?
 
 
