@@ -62,18 +62,18 @@
                     elementToScrollArticleDownTo: element1ToScrollArticleDownTo,
                     tocItemAnchorToFakeHover: tocItemAnchor1,
                     articleScrollYOffset: -5,
-                    tocPanelScrollY: 32,
+                    tocPanelScrollY: 27,
                 },
                 'in-window-of-medium-width': {
                     elementToScrollArticleDownTo: element2ToScrollArticleDownTo,
                     tocItemAnchorToFakeHover: tocItemAnchor2,
-                    articleScrollYOffset: -160,
+                    articleScrollYOffset: -79,
                     tocPanelScrollY: 300,
                 },
                 'in-narrow-window': {
                     elementToScrollArticleDownTo: element2ToScrollArticleDownTo,
                     tocItemAnchorToFakeHover: tocItemAnchor2,
-                    articleScrollYOffset: -550,
+                    articleScrollYOffset: -190, // Value diff from English article
                     tocPanelScrollY: 0,
                 },
             }
@@ -83,18 +83,18 @@
                     elementToScrollArticleDownTo: element1ToScrollArticleDownTo,
                     tocItemAnchorToFakeHover: tocItemAnchor1,
                     articleScrollYOffset: 5,
-                    tocPanelScrollY: 32,
+                    tocPanelScrollY: 27,
                 },
                 'in-window-of-medium-width': {
                     elementToScrollArticleDownTo: element2ToScrollArticleDownTo,
                     tocItemAnchorToFakeHover: tocItemAnchor2,
-                    articleScrollYOffset: -160,
+                    articleScrollYOffset: -79,
                     tocPanelScrollY: 300,
                 },
                 'in-narrow-window': {
                     elementToScrollArticleDownTo: element2ToScrollArticleDownTo,
                     tocItemAnchorToFakeHover: tocItemAnchor2,
-                    articleScrollYOffset: -550,
+                    articleScrollYOffset: -480,
                     tocPanelScrollY: 0,
                 },
             }

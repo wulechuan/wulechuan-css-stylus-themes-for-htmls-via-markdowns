@@ -66,6 +66,7 @@ function collect-firefox-screenshot-files {
 
 
     echo
+    mkdir    -p    "$snapshotTargetFolderPath/"
 
 
     for sourceFilePath in "${firefoxScreenshotFilesFolderPath}/"*.png; do

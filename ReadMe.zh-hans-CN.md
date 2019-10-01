@@ -50,16 +50,14 @@
 
 ### 应用默认浅色主题的范文截图
 
-- [en-US Example: in a wide window, with TOC collapsed](./docs/examples/rendered/default-light-colored/snapshots/en-US-example-1-in-a-wide-window-with-toc-collapsed.png)
-
-- [zh-Hans-CN: 大尺寸浏览器中的效果，文章纲要列表已收叠](./docs/examples/rendered/default-light-colored/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png)
+- [Snapshot: In default light-colored theme, in a wide window, with toc collapsed](./docs/examples/rendered/snapshots/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
+- [示例：简体中文范文配默认浅色主题，在大尺寸浏览器中的效果（目录已收叠）](./docs/examples/rendered/snapshots/示例：简体中文范文配默认浅色主题，在大尺寸浏览器中的效果（目录已收叠）.png)
 
 
 ### 应用默认深色主题的范文截图
 
-- [en-US Example: in a wide window, with TOC collapsed](./docs/examples/rendered/default-dark-colored/snapshots/en-US-example-1-in-a-wide-window-with-toc-collapsed.png)
-
-- [zh-Hans-CN: 大尺寸浏览器中的效果，文章纲要列表已收叠](./docs/examples/rendered/default-dark-colored/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png)
+- [Snapshot: In default dark-colored theme, in a wide window, with toc collapsed](./docs/examples/rendered/snapshots/example_en-US_default-dark-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
+- [示例：简体中文范文配默认深色主题，在大尺寸浏览器中的效果（目录已收叠）](./docs/examples/rendered/snapshots/示例：简体中文范文配默认深色主题，在大尺寸浏览器中的效果（目录已收叠）.png)
 
 
 ### 范文的所有截图
