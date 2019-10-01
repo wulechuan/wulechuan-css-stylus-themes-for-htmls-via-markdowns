@@ -16,7 +16,7 @@
     "firefox": "start    firefox    ./tests/output/example-htmls-with-snapshot-helpers/example.en-us.default-light-colored-theme.html    ./tests/output/example-htmls-with-snapshot-helpers/example.en-us.default-dark-colored-theme.html    ./tests/output/example-htmls-with-snapshot-helpers/example.zh-hans-cn.default-light-colored-theme.html    ./tests/output/example-htmls-with-snapshot-helpers/example.zh-hans-cn.default-dark-colored-theme.html",
     "updateExampleHTMLs": "gulp    --silent    updateExampleHTMLs    &&    npm  run  firefox",
     "updateExampleHTMLs2": "gulp               updateExampleHTMLs    &&    npm  run  firefox",
-    "beforeGitPushing": "npm  run  build    &&    npm  test    &&    npm  run  updateExampleHTMLs",
+    "beforeGitPushing": "npm  run  build    &&    npm  test",
     "prepublishOnly": "npm    run  build    &&    npm  test",
     "_openDevHTMLs": "start  ./tests/output/default-theming-example.dark-colored-theme.zh-hans-cn.html    ./tests/output/default-theming-example.light-colored-theme.zh-hans-cn.html",
     "start": "gulp  --silent devSingleThemeOnce    &&    npm  run  _openDevHTMLs    &&    gulp  --silent  devSingleTheme",
