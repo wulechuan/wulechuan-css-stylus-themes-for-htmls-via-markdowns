@@ -987,7 +987,6 @@ nav.markdown-article-toc > ul > li.has-nested-toc-list > a[href^="#"],
 nav.markdown-article-toc:not(.should-show-2-levels-at-most) li.has-nested-toc-list > a[href^="#"] {
   color: #e3e3e3;
 }
-nav.markdown-article-toc li > a[href^="#"]:target,
 nav.markdown-article-toc li > a[href^="#"]:hover {
   border-color: rgba(255,255,255,0.1) transparent;
   background-image: linear-gradient(to right, transparent 0.25em, rgba(255,255,255,0.1) 4em, transparent);

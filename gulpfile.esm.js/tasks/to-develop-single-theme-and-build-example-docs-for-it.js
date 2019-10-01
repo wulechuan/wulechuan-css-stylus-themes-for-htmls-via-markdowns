@@ -2,11 +2,6 @@ import chalk from 'chalk'
 import path from 'path'
 
 import {
-    existsSync,
-    mkdirSync,
-} from 'fs'
-
-import {
     series   as gulpBuildTaskSeries,
     parallel as gulpBuildParallelTasks,
 } from 'gulp'
@@ -27,7 +22,7 @@ import createOneTaskCycleViaOneEntryStylusFileSubPath
 import createTaskCycleForGeneratingHTMLsForExampleMarkdowns
     from '../task-cycles/build-example-htmls/create-task-cycle-for-generating-example-htmls'
 
-import copyExampleAssetsToTestOutputFolder
+import createTaskBodyForCopyingExampleAssetsTo
     from './to-copy-example-assets-to-test-folder'
 
 import {
@@ -36,12 +31,17 @@ import {
 
 
 
+const exampleOutputHTMLFilesFolderPath  = './tests/output/theme-in-developement'
+const exampleOutputHTMLFileNameEnUS     = 'default-theming-example.--DEV--.en-us.html'
+const exampleOutputHTMLFileNameZhHansCN = 'default-theming-example.--DEV--.zh-hans-cn.html'
+const subPathsOfExtraHelperFilesToEmbed = [
+    'docs/examples/auto-update-html-document-title.js',
+    'docs/examples/example-snapshots-helper.js',
+]
 
 
-const exampleOutputHTMLFilesFolderPath = './tests/output'
-if (!existsSync(exampleOutputHTMLFilesFolderPath)) {
-    mkdirSync(exampleOutputHTMLFilesFolderPath)
-}
+
+
 
 
 
@@ -61,13 +61,16 @@ console.log('\ndistCSSFileNameToUse:', chalk.magenta(distCSSFileNameToUse))
 const taskCycleOfBuildingHTMLFilesOfExampleMarkdowns = createTaskCycleForGeneratingHTMLsForExampleMarkdowns({
     distCSSFileNameToUse,
     exampleOutputHTMLFilesFolderPath,
+    exampleOutputHTMLFileNameEnUS,
+    exampleOutputHTMLFileNameZhHansCN,
+    subPathsOfExtraHelperFilesToEmbed,
 })
 
 
 const allTasksSettingsForBuildingSingleTheme = [
     taskCycleOfBuildingCSSForTheOnlyTheme,
     ...javascriptTaskCyclesOfAllThemes,     // Here we always copy js files, for simplicity of task design.
-    // taskCycleOfCopyingESLintrcToDist, // But we don't need to copy the .eslintrc.js as well.
+    // taskCycleOfCopyingESLintrcToDist,    // But we don't need to copy the .eslintrc.js.
 ]
 
 
@@ -80,7 +83,7 @@ const buildCSSAndCopyJS = gulpBuildParallelTasks(
 const cleanHTMLs = taskCycleOfBuildingHTMLFilesOfExampleMarkdowns.taskBodies.cleanOldOutputs
 const buildHTMLs = gulpBuildParallelTasks(
     taskCycleOfBuildingHTMLFilesOfExampleMarkdowns.taskBodies.buildNewOutputs,
-    copyExampleAssetsToTestOutputFolder
+    createTaskBodyForCopyingExampleAssetsTo(exampleOutputHTMLFilesFolderPath)
 )
 
 const buildAllNewOutputs = gulpBuildTaskSeries(

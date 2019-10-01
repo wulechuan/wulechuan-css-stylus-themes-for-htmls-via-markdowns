@@ -76,7 +76,7 @@ This project utitlizes [Stylus](http://stylus-lang.com/) language to generate CS
 
     -   Method 2 (recommanded)
 
-        To make computer automatically rebuild your theme whenever a change applies to ANY source `.styl` file of yours. What's better, 2 dynamically auto updating HTML files are generated for you, under the `./tests/output/` folder. All you need to do is constantly refresh your web browser to see what've changed in either of the HTML files.
+        To make computer automatically rebuild your theme whenever a change applies to ANY source `.styl` file of yours. What's better, 2 dynamically auto updating HTML files are generated for you, under the `./tests/output/theme-in-developement/` folder. All you need to do is constantly refresh your web browser to see what've changed in either of the HTML files.
 
         Steps:
 
@@ -84,7 +84,7 @@ This project utitlizes [Stylus](http://stylus-lang.com/) language to generate CS
         2.  Open a command line tool, like **bash**, **Git Bash**, **PowerShell**, **WSL**, or **Windows comannd**.
         3.  `cd` to the folder of this repository.
         4.  type `npm start` and press <kbd>enter</kbd> key.
-        5.  Open either or both of the HTML files generated under the `./tests/output/` folder with your favorite web browser(s).
+        5.  Open either or both of the HTML files generated under the `./tests/output/theme-in-developement/` folder with your favorite web browser(s).
         6.  Make some changes to your `.styl` files.
         7.  Refresh your web browser(s) to see the results.
         8.  Also note that the `.css` files are constantly updating inside the `./dist/css/` folder. But I guess you seldom care about them during the development process.

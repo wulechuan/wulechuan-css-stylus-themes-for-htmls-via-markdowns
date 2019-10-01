@@ -20,7 +20,7 @@
 
 ### 原始 MarkDown 范文
 
-- [default-theming-example.zh-hans-CN.md](../../examples/source-markdown-files/default-theming-example.zh-hans-CN.md)
+- [theming-example-article.zh-hans-CN.md](../../examples/source-markdown-files/theming-example-article.zh-hans-CN.md)
 
 -----
 
@@ -30,38 +30,39 @@
 
 ##### HTML 范文本身
 
-- [default-theming-example.zh-hans-cn.html](../../examples/rendered/default-light-colored/html/default-theming-example.zh-hans-cn.html)
+- [example.zh-hans-cn.default-light-colored-theme.html](../../examples/rendered/html/example.zh-hans-cn.default-light-colored-theme.html)
 
 
 ##### HTML 范文的截图（于 FireFox 浏览器）
 
 > 注意：某些截图尺寸巨大，文件大小在百万字节级别。
 
-- [大尺寸浏览器中的效果，文章纲要列表已收叠](../../examples/rendered/default-light-colored/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png)
-- [大尺寸浏览器中的效果，文章纲要列表已展开](../../examples/rendered/default-light-colored/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已展开.png)
-- [中等尺寸浏览器中的效果，文章纲要列表已收叠](../../examples/rendered/default-light-colored/snapshots/zh-Hans-CN-2-中等尺寸浏览器中的效果-文章纲要列表已收叠.png)
-- [中等尺寸浏览器中的效果，文章纲要列表已展开](../../examples/rendered/default-light-colored/snapshots/zh-Hans-CN-2-中等尺寸浏览器中的效果-文章纲要列表已展开.png)
-- [窄小尺寸浏览器中的效果，文章纲要列表已收叠](../../examples/rendered/default-light-colored/snapshots/zh-Hans-CN-3-窄小尺寸浏览器中的效果-文章纲要列表已收叠.png)
-- [窄小尺寸浏览器中的效果，文章纲要列表已展开](../../examples/rendered/default-light-colored/snapshots/zh-Hans-CN-3-窄小尺寸浏览器中的效果-文章纲要列表已展开.png)
+
+- [示例：简体中文范文配默认浅色主题，在大尺寸浏览器中的效果（目录已收叠）](../../examples/rendered/snapshots/示例：简体中文范文配默认浅色主题，在大尺寸浏览器中的效果（目录已收叠）.png)
+- [示例：简体中文范文配默认浅色主题，在大尺寸浏览器中的效果（目录已展开）](../../examples/rendered/snapshots/示例：简体中文范文配默认浅色主题，在大尺寸浏览器中的效果（目录已展开）.png)
+- [示例：简体中文范文配默认浅色主题，在中等尺寸浏览器中的效果（目录已收叠）](../../examples/rendered/snapshots/示例：简体中文范文配默认浅色主题，在中等尺寸浏览器中的效果（目录已收叠）.png)
+- [示例：简体中文范文配默认浅色主题，在中等尺寸浏览器中的效果（目录已展开）](../../examples/rendered/snapshots/示例：简体中文范文配默认浅色主题，在中等尺寸浏览器中的效果（目录已展开）.png)
+- [示例：简体中文范文配默认浅色主题，在窄小尺寸浏览器中的效果（目录已收叠）](../../examples/rendered/snapshots/示例：简体中文范文配默认浅色主题，在窄小尺寸浏览器中的效果（目录已收叠）.png)
+- [示例：简体中文范文配默认浅色主题，在窄小尺寸浏览器中的效果（目录已展开）](../../examples/rendered/snapshots/示例：简体中文范文配默认浅色主题，在窄小尺寸浏览器中的效果（目录已展开）.png)
 
 
 #### 采用默认深色主题的 HTML 范文
 
 ##### HTML 范文本身
 
-- [default-theming-example.zh-hans-cn.html](../../examples/rendered/default-dark-colored/html/default-theming-example.zh-hans-cn.html)
+- [example.zh-hans-cn.default-dark-colored-theme.html](../../examples/rendered/html/example.zh-hans-cn.default-dark-colored-theme.html)
 
 
 ##### HTML 范文的截图（于 FireFox 浏览器）
 
 > 注意：某些截图尺寸巨大，文件大小在百万字节级别。
 
-- [大尺寸浏览器中的效果，文章纲要列表已收叠](../../examples/rendered/default-dark-colored/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已收叠.png)
-- [大尺寸浏览器中的效果，文章纲要列表已展开](../../examples/rendered/default-dark-colored/snapshots/zh-Hans-CN-1-大尺寸浏览器中的效果-文章纲要列表已展开.png)
-- [中等尺寸浏览器中的效果，文章纲要列表已收叠](../../examples/rendered/default-dark-colored/snapshots/zh-Hans-CN-2-中等尺寸浏览器中的效果-文章纲要列表已收叠.png)
-- [中等尺寸浏览器中的效果，文章纲要列表已展开](../../examples/rendered/default-dark-colored/snapshots/zh-Hans-CN-2-中等尺寸浏览器中的效果-文章纲要列表已展开.png)
-- [窄小尺寸浏览器中的效果，文章纲要列表已收叠](../../examples/rendered/default-dark-colored/snapshots/zh-Hans-CN-3-窄小尺寸浏览器中的效果-文章纲要列表已收叠.png)
-- [窄小尺寸浏览器中的效果，文章纲要列表已展开](../../examples/rendered/default-dark-colored/snapshots/zh-Hans-CN-3-窄小尺寸浏览器中的效果-文章纲要列表已展开.png)
+- [示例：简体中文范文配深色主题，在大尺寸浏览器中的效果（目录已收叠）](../../examples/rendered/snapshots/示例：简体中文范文配深色主题，在大尺寸浏览器中的效果（目录已收叠）.png)
+- [示例：简体中文范文配深色主题，在大尺寸浏览器中的效果（目录已展开）](../../examples/rendered/snapshots/示例：简体中文范文配深色主题，在大尺寸浏览器中的效果（目录已展开）.png)
+- [示例：简体中文范文配深色主题，在中等尺寸浏览器中的效果（目录已收叠）](../../examples/rendered/snapshots/示例：简体中文范文配深色主题，在中等尺寸浏览器中的效果（目录已收叠）.png)
+- [示例：简体中文范文配深色主题，在中等尺寸浏览器中的效果（目录已展开）](../../examples/rendered/snapshots/示例：简体中文范文配深色主题，在中等尺寸浏览器中的效果（目录已展开）.png)
+- [示例：简体中文范文配深色主题，在窄小尺寸浏览器中的效果（目录已收叠）](../../examples/rendered/snapshots/示例：简体中文范文配深色主题，在窄小尺寸浏览器中的效果（目录已收叠）.png)
+- [示例：简体中文范文配深色主题，在窄小尺寸浏览器中的效果（目录已展开）](../../examples/rendered/snapshots/示例：简体中文范文配深色主题，在窄小尺寸浏览器中的效果（目录已展开）.png)
 
 
 -----

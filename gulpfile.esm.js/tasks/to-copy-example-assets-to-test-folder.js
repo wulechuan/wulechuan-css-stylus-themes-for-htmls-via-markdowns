@@ -1,11 +1,15 @@
-// import chalk from 'chalk'
+import path from 'path'
 
 import {
     src  as gulpReadGlobs,
     dest as gulpWriteIn,
 } from 'gulp'
 
-export default function copyExampleAssetsToTestOutputFolder() {
-    return gulpReadGlobs('./docs/examples/rendered/html/illustrates/**/*')
-        .pipe(gulpWriteIn('./tests/output/illustrates'))
+const joinPathPOSIX = path.posix.join
+
+export default function createTaskBodyForCopyingExampleAssetsTo(assetsOutputFolder) {
+    return function toCopyExampleAssets() {
+        return gulpReadGlobs('./docs/examples/source-markdown-files/illustrates/**/*')
+            .pipe(gulpWriteIn(joinPathPOSIX(assetsOutputFolder, 'illustrates')))
+    }
 }

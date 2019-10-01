@@ -21,7 +21,7 @@ I've purposely prepared an example markdown article. I generate 2 HTML files out
 
 ### Raw MarkDown
 
-- [default-theming-example.en-US.md](../../examples/source-markdown-files/default-theming-example.en-US.md)
+- [theming-example-article.en-US.md](../../examples/source-markdown-files/theming-example-article.en-US.md)
 
 -----
 
@@ -32,18 +32,18 @@ I've purposely prepared an example markdown article. I generate 2 HTML files out
 
 ##### The HTML File
 
-- [default-theming-example.en-us.html](../../examples/rendered/default-light-colored/html/default-theming-example.en-us.html)
+- [example.en-us.default-light-colored-theme.html](../../examples/rendered/html/example.en-us.default-light-colored-theme.html)
 
 ##### The Snapshots(Pictures) of the HTML File in FireFox Browser
 
 > Some picture files are very large, file sizes in mega bytes.
 
-- [In a wide window, with toc collapsed](../../examples/rendered/default-light-colored/snapshots/en-US-example-1-in-a-wide-window-with-toc-collapsed.png)
-- [In a wide window, with toc expanded](../../examples/rendered/default-light-colored/snapshots/en-US-example-1-in-a-wide-window-with-toc-expanded.png)
-- [In a window of medium width, with toc collapsed](../../examples/rendered/default-light-colored/snapshots/en-US-example-2-in-a-window-of-medium-width-with-toc-collapsed.png)
-- [In a window of medium width, with toc expanded](../../examples/rendered/default-light-colored/snapshots/en-US-example-2-in-a-window-of-medium-width-with-toc-expanded.png)
-- [In a narrow window, with toc collapsed](../../examples/rendered/default-light-colored/snapshots/en-US-example-3-in-a-narrow-window-with-toc-collapsed.png)
-- [In a narrow window, with toc expanded](../../examples/rendered/default-light-colored/snapshots/en-US-example-3-in-a-narrow-window-with-toc-expanded.png)
+- [Snapshot: In default light-colored theme, in a wide window, with toc collapsed](../../examples/rendered/snapshots/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
+- [Snapshot: In default light-colored theme, in a wide window, with toc expanded](../../examples/rendered/snapshots/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-expanded.png)
+- [Snapshot: In default light-colored theme, in a window of medium width, with toc collapsed](../../examples/rendered/snapshots/example_en-US_default-light-colored-theme_2-in-a-window-of-medium-width_with-toc-collapsed.png)
+- [Snapshot: In default light-colored theme, in a window of medium width, with toc expanded](../../examples/rendered/snapshots/example_en-US_default-light-colored-theme_2-in-a-window-of-medium-width_with-toc-expanded.png)
+- [Snapshot: In default light-colored theme, in a narrow window, with toc collapsed](../../examples/rendered/snapshots/example_en-US_default-light-colored-theme_3-in-a-narrow-window_with-toc-collapsed.png)
+- [Snapshot: In default light-colored theme, in a narrow window, with toc expanded](../../examples/rendered/snapshots/example_en-US_default-light-colored-theme_3-in-a-narrow-window_with-toc-expanded.png)
 
 
 
@@ -52,17 +52,17 @@ I've purposely prepared an example markdown article. I generate 2 HTML files out
 
 ##### The HTML File
 
-- [default-theming-example.en-us.html](../../examples/rendered/default-dark-colored/html/default-theming-example.en-us.html)
+- [example.en-us.default-dark-colored-theme.html](../../examples/rendered/html/example.en-us.default-dark-colored-theme.html)
 
 ##### The Snapshots(Pictures) of the HTML File in FireFox Browser
 
 > Some picture files are very large, file sizes in mega bytes.
 
-- [In a wide window, with toc collapsed](../../examples/rendered/default-dark-colored/snapshots/en-US-example-1-in-a-wide-window-with-toc-collapsed.png)
-- [In a wide window, with toc expanded](../../examples/rendered/default-dark-colored/snapshots/en-US-example-1-in-a-wide-window-with-toc-expanded.png)
-- [In a window of medium width, with toc collapsed](../../examples/rendered/default-dark-colored/snapshots/en-US-example-2-in-a-window-of-medium-width-with-toc-collapsed.png)
-- [In a window of medium width, with toc expanded](../../examples/rendered/default-dark-colored/snapshots/en-US-example-2-in-a-window-of-medium-width-with-toc-expanded.png)
-- [In a narrow window, with toc collapsed](../../examples/rendered/default-dark-colored/snapshots/en-US-example-3-in-a-narrow-window-with-toc-collapsed.png)
-- [In a narrow window, with toc expanded](../../examples/rendered/default-dark-colored/snapshots/en-US-example-3-in-a-narrow-window-with-toc-expanded.png)
+- [Snapshot: In default dark-colored theme, in a wide window, with toc collapsed](../../examples/rendered/snapshots/example_en-US_default-dark-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
+- [Snapshot: In default dark-colored theme, in a wide window, with toc expanded](../../examples/rendered/snapshots/example_en-US_default-dark-colored-theme_1-in-a-wide-window_with-toc-expanded.png)
+- [Snapshot: In default dark-colored theme, in a window of medium width, with toc collapsed](../../examples/rendered/snapshots/example_en-US_default-dark-colored-theme_2-in-a-window-of-medium-width_with-toc-collapsed.png)
+- [Snapshot: In default dark-colored theme, in a window of medium width, with toc expanded](../../examples/rendered/snapshots/example_en-US_default-dark-colored-theme_2-in-a-window-of-medium-width_with-toc-expanded.png)
+- [Snapshot: In default dark-colored theme, in a narrow window, with toc collapsed](../../examples/rendered/snapshots/example_en-US_default-dark-colored-theme_3-in-a-narrow-window_with-toc-collapsed.png)
+- [Snapshot: In default dark-colored theme, in a narrow window, with toc expanded](../../examples/rendered/snapshots/example_en-US_default-dark-colored-theme_3-in-a-narrow-window_with-toc-expanded.png)
 
 

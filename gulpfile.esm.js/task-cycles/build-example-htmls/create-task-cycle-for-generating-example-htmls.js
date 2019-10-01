@@ -3,6 +3,9 @@ import path from 'path'
 import { readFileSync, writeFileSync } from 'fs'
 import del from 'del'
 
+import {
+    mkdirpSync,
+} from 'fs-extra'
 
 import {
     // series   as gulpBuildTaskSeries,
@@ -25,12 +28,10 @@ const joinPathPOSIX = path.posix.join
 
 
 
-const exampleSourceMarkdonwFilesFolderPath = './docs/examples/source-markdown-files'
-const exampleSourceMarkdownFileNameEnUS = 'default-theming-example.en-US.md'
-const exampleSourceMarkdownFileNameZhHansCN = 'default-theming-example.zh-hans-CN.md'
+const exampleSourceMarkdonwFilesFolderPath  = './docs/examples/source-markdown-files'
+const exampleSourceMarkdownFileNameEnUS     = 'theming-example-article.en-US.md'
+const exampleSourceMarkdownFileNameZhHansCN = 'theming-example-article.zh-hans-CN.md'
 
-const exampleOutputHTMLFileNameEnUS = 'default-theming-example.en-us.html'
-const exampleOutputHTMLFileNameZhHansCN = 'default-theming-example.zh-hans-cn.html'
 
 
 
@@ -59,14 +60,17 @@ const markdownToHTMLConverter = createAnMarkDownToHTMLConverter({
 export default function createTaskCycleForGeneratingHTMLsForExampleMarkdowns({
     distCSSFileNameToUse,
     exampleOutputHTMLFilesFolderPath,
+    exampleOutputHTMLFileNameEnUS,
+    exampleOutputHTMLFileNameZhHansCN,
+    subPathsOfExtraHelperFilesToEmbed,
 }) {
-    const absolutePathOfJavascriptForUpdatingHTMLTitle = joinPathPOSIX(
-        thisModuleRootFolderPath,
-        'docs/examples/',
-        'auto-update-html-document-title.js'
+    mkdirpSync(exampleOutputHTMLFilesFolderPath)
+
+    const absolutePathsOfExtraJavascriptsToEmbed =subPathsOfExtraHelperFilesToEmbed.map(
+        subPath => joinPathPOSIX(thisModuleRootFolderPath, subPath)
     )
 
-    const absolutePathsOfExtraFilesToEmbedIntoHTML = []
+    let absolutePathsOfExtraFilesToEmbedIntoHTML = []
 
     if (distCSSFileNameToUse) {
         absolutePathsOfExtraFilesToEmbedIntoHTML.push(
@@ -81,7 +85,10 @@ export default function createTaskCycleForGeneratingHTMLsForExampleMarkdowns({
     }
 
 
-    absolutePathsOfExtraFilesToEmbedIntoHTML.push(absolutePathOfJavascriptForUpdatingHTMLTitle)
+    absolutePathsOfExtraFilesToEmbedIntoHTML = [
+        ...absolutePathsOfExtraFilesToEmbedIntoHTML,
+        ...absolutePathsOfExtraJavascriptsToEmbed,
+    ]
 
 
 
@@ -121,7 +128,7 @@ export default function createTaskCycleForGeneratingHTMLsForExampleMarkdowns({
             sourceMarkdownFileEnUS,
             sourceMarkdownFileZhHansCN,
             'source/themes/stylus/article-style-parts/**/*.styl',
-            absolutePathOfJavascriptForUpdatingHTMLTitle,
+            ...absolutePathsOfExtraJavascriptsToEmbed,
         ],
         taskBodies: {
             cleanOldOutputs: cleanBothOldHTMLFiles,

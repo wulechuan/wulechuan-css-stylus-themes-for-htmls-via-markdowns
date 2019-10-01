@@ -9,13 +9,15 @@
  * BUT with a prefix!
  *
  * Please also refer to this bash file:
- *     `<this-repo-root-folder>/collect-firefox-screenshot-files.sh`
+ *     `<this-repo-root-folder>/to-collect-firefox-screenshot-files.sh`
  * to automatially rename files and move renamed files
  * into correct folder.
  */
 
 (function () {
     const pageLanguageIsChinese = !!document.documentElement.lang.match(/zh|-?CN|-?[hH]ans/i)
+    const themeTypeDetectingDOM = document.documentElement
+    const darkThemeIsApplied = detectWhetherTheDarkThemeIsApplied()
 
     updateDocumentTitle()
 
@@ -31,6 +33,18 @@
 
 
 
+    function detectWhetherTheDarkThemeIsApplied() {
+        const computedStyle = window.getComputedStyle(themeTypeDetectingDOM)
+        const { backgroundColor } = computedStyle
+        const rgbValues = backgroundColor.split(/[(),]/).slice(1, 4).map(s => parseInt(s))
+
+        // console.log('html { background-color:', backgroundColor, '}')
+        console.log('html background color RGB values:', ...rgbValues)
+
+        return rgbValues.reduce((allDark, v) => {
+            return allDark && v <= 30
+        }, true)
+    }
 
     function updateDocumentTitle() {
         const windowInnerWidth = window.innerWidth
@@ -40,25 +54,27 @@
 
 
         if (pageLanguageIsChinese) {
-            const tocStatusString = !tocExists ? '-无文章纲要列表' : (tocIsExpanded ? '-文章纲要列表已展开': '-文章纲要列表已收叠')
+            const themeTypeString = darkThemeIsApplied ? '默认深色' : '默认浅色'
+            const tocStatusString = !tocExists ? '无目录' : (tocIsExpanded ? '目录已展开': '目录已收叠')
 
             if (windowInnerWidth > 900) {
-                document.title = 'zh-Hans-CN-1-大尺寸浏览器中的效果'   + tocStatusString
+                document.title = `示例：简体中文范文配${themeTypeString}主题，在大尺寸浏览器中的效果（${tocStatusString}）`
             } else if (windowInnerWidth > 600) {
-                document.title = 'zh-Hans-CN-2-中等尺寸浏览器中的效果' + tocStatusString
+                document.title = `示例：简体中文范文配${themeTypeString}主题，在中等尺寸浏览器中的效果（${tocStatusString}）`
             } else {
-                document.title = 'zh-Hans-CN-3-窄小尺寸浏览器中的效果' + tocStatusString
+                document.title = `示例：简体中文范文配${themeTypeString}主题，在窄小尺寸浏览器中的效果（${tocStatusString}）`
             }
 
         } else {
-            const tocStatusString = !tocExists ? '-without-toc' : (tocIsExpanded ? '-with-toc-expanded' : '-with-toc-collapsed')
+            const themeTypeString = darkThemeIsApplied ? 'default-dark-colored-theme' : 'default-light-colored-theme'
+            const tocStatusString = !tocExists ? 'without-toc' : (tocIsExpanded ? 'with-toc-expanded' : 'with-toc-collapsed')
 
             if (windowInnerWidth > 900) {
-                document.title = 'en-US-example-1-in-a-wide-window'            + tocStatusString
+                document.title = themeTypeString + `example_en-US_${themeTypeString}-1-in-a-wide-window_${tocStatusString}`
             } else if (windowInnerWidth > 600) {
-                document.title = 'en-US-example-2-in-a-window-of-medium-width' + tocStatusString
+                document.title = themeTypeString + `example_en-US_${themeTypeString}-2-in-a-window-of-medium-width_${tocStatusString}`
             } else {
-                document.title = 'en-US-example-3-in-a-narrow-window'          + tocStatusString
+                document.title = themeTypeString + `example_en-US_${themeTypeString}-3-in-a-narrow-window_${tocStatusString}`
             }
         }
     }
