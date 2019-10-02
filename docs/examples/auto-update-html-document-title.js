@@ -70,11 +70,11 @@
             const tocStatusString = !tocExists ? 'without-toc' : (tocIsExpanded ? 'with-toc-expanded' : 'with-toc-collapsed')
 
             if (windowInnerWidth > 900) {
-                document.title = `example_en-US_${themeTypeString}-1-in-a-wide-window_${tocStatusString}`
+                document.title = `example_en-US_${themeTypeString}_1-in-a-wide-window_${tocStatusString}`
             } else if (windowInnerWidth > 600) {
-                document.title = `example_en-US_${themeTypeString}-2-in-a-window-of-medium-width_${tocStatusString}`
+                document.title = `example_en-US_${themeTypeString}_2-in-a-window-of-medium-width_${tocStatusString}`
             } else {
-                document.title = `example_en-US_${themeTypeString}-3-in-a-narrow-window_${tocStatusString}`
+                document.title = `example_en-US_${themeTypeString}_3-in-a-narrow-window_${tocStatusString}`
             }
         }
     }
