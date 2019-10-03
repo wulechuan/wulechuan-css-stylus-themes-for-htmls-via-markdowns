@@ -1,6 +1,6 @@
 window.shouldShowOnlyTwoLevelsOfTOCItemsAtMost = false
 window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan = 1
-window.atBeginingShouldExpandTOCWhenWindowsIsWideEnough = false
+window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
 
 ;(function setupAndStartApp() {
     const logLine = '-'.repeat(51)
@@ -59,7 +59,7 @@ window.atBeginingShouldExpandTOCWhenWindowsIsWideEnough = false
 
     let tocIsVisible
     showOrHideTOCPanel(
-        window.atBeginingShouldExpandTOCWhenWindowsIsWideEnough &&
+        window.atBeginingShouldExpandTOCWhenWindowIsWideEnough &&
         window.innerWidth >= maxWindowWidthToEnableArticleClickingToHideTOC
     )
 

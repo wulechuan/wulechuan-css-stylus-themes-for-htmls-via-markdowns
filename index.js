@@ -234,13 +234,22 @@ function syncGetContentStringOfDefaultTOCJavascript(shouldIgnoreCachedContent, o
     const {
         shouldShowOnlyTwoLevelsOfTOCItemsAtMost,
         atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan,
-        atBeginingShouldExpandTOCWhenWindowsIsWideEnough,
     } = options
+
+    let shouldReplaceValueForOptionAtBeginingShouldExpandTOCWhenWindowIsWideEnough = false
+    let atBeginingShouldExpandTOCWhenWindowIsWideEnough
+    if ('atBeginingShouldExpandTOCWhenWindowIsWideEnough' in options) {
+        shouldReplaceValueForOptionAtBeginingShouldExpandTOCWhenWindowIsWideEnough = true
+        atBeginingShouldExpandTOCWhenWindowIsWideEnough = options.atBeginingShouldExpandTOCWhenWindowIsWideEnough
+    } else if ('atBeginingShouldExpandTOCWhenWindowsIsWideEnough' in options) {
+        shouldReplaceValueForOptionAtBeginingShouldExpandTOCWhenWindowIsWideEnough = true
+        atBeginingShouldExpandTOCWhenWindowIsWideEnough = options.atBeginingShouldExpandTOCWhenWindowsIsWideEnough
+    }
 
     const contentSafeSliceLength = [
         'window.shouldShowOnlyTwoLevelsOfTOCItemsAtMost = false\n',
         'window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan = 1\n',
-        'window.atBeginingShouldExpandTOCWhenWindowsIsWideEnough = false\n',
+        'window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false\n',
     ].join('').length + 51
 
 
@@ -273,10 +282,10 @@ function syncGetContentStringOfDefaultTOCJavascript(shouldIgnoreCachedContent, o
         )
     }
 
-    if ('atBeginingShouldExpandTOCWhenWindowsIsWideEnough' in options) {
+    if (shouldReplaceValueForOptionAtBeginingShouldExpandTOCWhenWindowIsWideEnough) {
         contentPart1 = contentPart1.replace(
-            /\b(window.atBeginingShouldExpandTOCWhenWindowsIsWideEnough\s*=\s*)(true|false|!0|!1)\b/,
-            `$1${!!atBeginingShouldExpandTOCWhenWindowsIsWideEnough}`
+            /\b(window.atBeginingShouldExpandTOCWhenWindowIsWideEnough\s*=\s*)(true|false|!0|!1)\b/,
+            `$1${!!atBeginingShouldExpandTOCWhenWindowIsWideEnough}`
         )
     }
 
