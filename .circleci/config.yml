@@ -35,4 +35,4 @@ jobs:
       #     key: v1-dependencies-{{ checksum "package.json" }}
 
       # Now run tests!
-      - run: npm _testAllWithoutLintingWithoutBrowser
+      - run: npm  run  _testAllWithoutLintingWithoutBrowser
