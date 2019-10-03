@@ -2,7 +2,7 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "wulechuan <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "6.2.2",
+  "version": "6.2.3",
   "description": "A collection of CSS themes for Markdown generated HTML contents.",
   "directories": {
     "source": "source",
@@ -14,7 +14,7 @@
   "scripts": {
     "eslint": "eslint    ./.eslintrc.js    ./gulpfile.esm.js/**/*.js    ./docs/examples/*.js    ./tests/*.js    ./source/module/*.js    ./source/themes/js/**/*.js    ./global-config.js    ./index.js",
     "firefox": "start    firefox    ./tests/output/example-htmls-with-snapshot-helpers/example.en-us.default-light-colored-theme.html    ./tests/output/example-htmls-with-snapshot-helpers/example.en-us.default-dark-colored-theme.html    ./tests/output/example-htmls-with-snapshot-helpers/example.zh-hans-cn.default-light-colored-theme.html    ./tests/output/example-htmls-with-snapshot-helpers/example.zh-hans-cn.default-dark-colored-theme.html",
-    "openDevHTMLs": "start          ./tests/output/theme-in-developement/default-theming-example.--DEV--.zh-hans-cn.html    ./tests/output/theme-in-developement/default-theming-example.--DEV--.zh-hans-cn.html",
+    "openDevHTMLs": "start          ./tests/output/theme-in-developement/default-theming-example.--DEV--.en-us.html    ./tests/output/theme-in-developement/default-theming-example.--DEV--.zh-hans-cn.html",
     "clean": "gulp                --silent  cleanAll",
     "clean2": "gulp                         cleanAll",
     "_build": "gulp               --silent  buildAllThemesOnce",
