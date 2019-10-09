@@ -474,7 +474,7 @@ exports.author = 'wulechun@live.com';
         <img id="beauty" src="./images/beauties/beauty-1.jpg" alt="此处本应有美女" tilte="一位大美女">
     </div>
 
-    <script>
+    <script id="js-example-1" type="text/javascript">
         var button = document.querySelector('#one-button');
         var beautyImage = document.getElementById('beauty');
 
@@ -484,7 +484,7 @@ exports.author = 'wulechun@live.com';
         };
     </script>
 
-    <script>
+    <script id="js-example-2" async>
         const girl = document.querySelector('img')
         girl.addEventListener('mouseover', function (event) {
             this.src = './images/beauties/beauty-3.jpg'
