@@ -55,12 +55,12 @@ The pictures below showcase how does an article look and feel as the default CSS
 
 
 - [Snapshot: In default light-colored theme, in a wide window, with toc collapsed](./docs/examples/rendered/snapshots/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
-- [示例：简体中文范文配默认浅色主题，1 在宽大尺寸浏览器中的效果（目录已收叠）](./docs/examples/rendered/snapshots/示例：简体中文范文配默认浅色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
+- [示例：简体中文范文配默认浅色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./docs/examples/rendered/snapshots/示例：简体中文范文配默认浅色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
 
 ### Examples with a Dark-colored Theme Applied
 
 - [Snapshot: In default dark-colored theme, in a wide window, with toc collapsed](./docs/examples/rendered/snapshots/example_en-US_default-dark-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
-- [示例：简体中文范文配默认深色主题，1 在宽大尺寸浏览器中的效果（目录已收叠）](./docs/examples/rendered/snapshots/示例：简体中文范文配默认深色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
+- [示例：简体中文范文配默认深色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./docs/examples/rendered/snapshots/示例：简体中文范文配默认深色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
 
 
 ### All Available Example Pictures

@@ -51,13 +51,13 @@
 ### 应用默认浅色主题的范文截图
 
 - [Snapshot: In default light-colored theme, in a wide window, with toc collapsed](./docs/examples/rendered/snapshots/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
-- [示例：简体中文范文配默认浅色主题，1 在宽大尺寸浏览器中的效果（目录已收叠）](./docs/examples/rendered/snapshots/示例：简体中文范文配默认浅色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
+- [示例：简体中文范文配默认浅色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./docs/examples/rendered/snapshots/示例：简体中文范文配默认浅色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
 
 
 ### 应用默认深色主题的范文截图
 
 - [Snapshot: In default dark-colored theme, in a wide window, with toc collapsed](./docs/examples/rendered/snapshots/example_en-US_default-dark-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
-- [示例：简体中文范文配默认深色主题，1 在宽大尺寸浏览器中的效果（目录已收叠）](./docs/examples/rendered/snapshots/示例：简体中文范文配默认深色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
+- [示例：简体中文范文配默认深色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./docs/examples/rendered/snapshots/示例：简体中文范文配默认深色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
 
 
 ### 范文的所有截图
