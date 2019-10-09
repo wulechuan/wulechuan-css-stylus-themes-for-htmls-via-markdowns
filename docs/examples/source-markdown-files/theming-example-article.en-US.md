@@ -645,8 +645,8 @@ From a keyboard mapping configuration file of SOFTIMAGE|XSI.
 <table>
     <thead>
         <tr>
-            <th style="width: 120px;">A</td>
-            <th>B</td>
+            <th style="width: 120px;">A</th>
+            <th>B</th>
         </tr>
     </thead>
 <tbody>

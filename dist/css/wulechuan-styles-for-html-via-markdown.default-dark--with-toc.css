@@ -1469,10 +1469,10 @@ pre,
   opacity: 0.2;
 }
 .hljs-string .wlc-string-quote {
-  color: #886;
+  color: #996;
 }
 .hljs-string .string-quote {
-  color: #886;
+  color: #996;
 }
 .hljs-string.empty-string .wlc-string-quote,
 .hljs-string.empty-string .string-quote,
@@ -1483,6 +1483,13 @@ pre,
 .hljs-string .wlc-escape-char,
 .hljs-string .escape-char {
   color: #c75;
+}
+.hljs-string.string-illegal .string-quote {
+  color: #966;
+}
+.hljs-string.string-illegal.empty-string .string-quote,
+.hljs-string.string-illegal .string-body {
+  color: #f99;
 }
 .hljs-string {
   color: #ff9;
@@ -1500,6 +1507,11 @@ pre,
 .css .hljs-string .string-body,
 .hljs-string .string-body {
   background-color: rgba(255,255,153,0.098);
+}
+.javascript .hljs-string.string-illegal .string-body,
+.css .hljs-string.string-illegal .string-body,
+.hljs-string.string-illegal .string-body {
+  background-color: rgba(255,153,153,0.098);
 }
 .hljs-regexp .regexp-close-quote,
 .hljs-regexp .regexp-open-quote {

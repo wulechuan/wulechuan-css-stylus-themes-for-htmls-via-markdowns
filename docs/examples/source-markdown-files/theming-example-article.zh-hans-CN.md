@@ -769,8 +769,8 @@ nav li {
 <table>
     <thead>
         <tr>
-            <th style="width: 120px;">甲</td>
-            <th>乙</td>
+            <th style="width: 120px;">甲</th>
+            <th>乙</th>
         </tr>
     </thead>
 <tbody>

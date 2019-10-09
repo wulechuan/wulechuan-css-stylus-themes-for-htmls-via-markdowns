@@ -240,14 +240,14 @@
 .hljs-string {
 
     .wlc-string-quote { // [ DEPRECATED ]
-        color: #886;
+        color: #996;
 
         &.open-quote  {} // [ DEPRECATED ]
         &.close-quote {} // [ DEPRECATED ]
     }
 
     .string-quote {
-        color: #886;
+        color: #996;
 
         &.string-open-quote {}
         &.string-close-quote {}
@@ -269,6 +269,21 @@
         }
 
         .escaped-char {
+        }
+    }
+
+    &.string-illegal {
+
+        .string-quote {
+            color: #966;
+
+            &.string-open-quote {}
+            &.string-close-quote {}
+        }
+
+        &.empty-string .string-quote,
+        .string-body {
+            color: #f99;
         }
     }
 }
@@ -296,6 +311,15 @@
     .wlc-string-body, // [ DEPRECATED ]
     .string-body {
         background-color: #ffff9919;
+    }
+}
+
+.javascript .hljs-string.string-illegal, // <script> inside HTML/XML
+.css        .hljs-string.string-illegal, // <style>  inside HTML/XML
+.hljs-string.string-illegal {
+
+    .string-body {
+        background-color: #ff999919;
     }
 }
 
