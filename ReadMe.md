@@ -149,7 +149,7 @@ There's another npm package of mine, named "[@wulechuan/generate-html-via-markdo
 
 Yet there is a third npm package of mine, name "[@wulechuan/gulp-markdown-to-html](https://www.npmjs.com/package/@wulechuan/gulp-markdown-to-html)". Let's call it package B. Package B works like a wrapper of the package A, make functionalities of A work just fine in [Gulpjs](https://gulpjs.com) pipelines.
 
-Yet there is a third npm package of mine, name "[@wulechuan/markdown-to-html-via-cli](https://www.npmjs.com/package/@wulechuan/markdown-to-html-via-cli)". Let's call it package C. Package C works like another wrapper of the package A, make functionalities of A work just fine in CLI environments. This is a really easy way for you to convert any MarkDown files into HTML files, in batch!
+There is another npm package of mine, name "[@wulechuan/markdown-to-html-via-cli](https://www.npmjs.com/package/@wulechuan/markdown-to-html-via-cli)". Let's call it package C. Package C works like another wrapper of the package A, make functionalities of A work just fine in CLI environments. This is a really easy way for you to convert any MarkDown files into HTML files, in batch!
 
 
 ## TODOS
