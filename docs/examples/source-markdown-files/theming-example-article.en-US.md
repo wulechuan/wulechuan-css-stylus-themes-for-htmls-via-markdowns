@@ -286,7 +286,7 @@ exports.author = 'wulechun@live.com';
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Wulechuan's example document</title>
     <!-- A single line comment. -->
-    <style>
+    <style id="my-embedded-styles">
         div {
             width:  100px;
             height: 200px;

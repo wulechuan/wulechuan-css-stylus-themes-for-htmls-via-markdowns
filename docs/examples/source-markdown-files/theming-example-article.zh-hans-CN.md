@@ -412,7 +412,7 @@ exports.author = 'wulechun@live.com';
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>乐川的示范文档</title>
     <!-- 这是简短的单行注释。 -->
-    <style>
+    <style id="my-embedded-styles">
         div {
             width:  100px;
             height: 200px;
