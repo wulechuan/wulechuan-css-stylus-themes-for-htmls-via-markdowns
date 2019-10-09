@@ -58,11 +58,11 @@
             const tocStatusString = !tocExists ? '无目录' : (tocIsExpanded ? '目录已展开': '目录已收叠')
 
             if (windowInnerWidth > 900) {
-                document.title = `示例：简体中文范文配${themeTypeString}主题，在大尺寸浏览器中的效果（${tocStatusString}）`
+                document.title = `示例：简体中文范文配${themeTypeString}主题，1-在宽大尺寸浏览器中的效果（${tocStatusString}）`
             } else if (windowInnerWidth > 600) {
-                document.title = `示例：简体中文范文配${themeTypeString}主题，在中等尺寸浏览器中的效果（${tocStatusString}）`
+                document.title = `示例：简体中文范文配${themeTypeString}主题，2-在中等尺寸浏览器中的效果（${tocStatusString}）`
             } else {
-                document.title = `示例：简体中文范文配${themeTypeString}主题，在窄小尺寸浏览器中的效果（${tocStatusString}）`
+                document.title = `示例：简体中文范文配${themeTypeString}主题，3-在窄小尺寸浏览器中的效果（${tocStatusString}）`
             }
 
         } else {
