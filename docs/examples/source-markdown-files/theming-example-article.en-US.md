@@ -190,6 +190,10 @@ const anArrowFunction = (count) => {
             continue
         }
 
+        if (i !== 6) {
+            console.log('Not six')
+        }
+
         debugger
 
         switch (i % 2) {
@@ -397,7 +401,7 @@ html, body {
 .back-to-top {
     position: fixed;
     display: block;
-    background-image: url('./images/rocket.png');
+    background-image: url('./images/black-rocket.png');
     width: 1.5rem;
     height: 1.5rem;
     overflow: hidden;
@@ -519,7 +523,12 @@ nav li {
     line-height: 1.5;
 
     small {
-        font-size: .707em; // A comment that says nothing valuable.
+        font-size: .707em; // 想注释一下，但一时间觉得没啥好写的。
+        color blue
+    }
+
+    .blue {
+        color navy
     }
 
     /*
