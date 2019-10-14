@@ -391,6 +391,10 @@ body {
 }
 .markdown-article blockquote > pre:last-child,
 .markdown-article td > pre:last-child {
+  margin-bottom: 1rem;
+}
+.markdown-article blockquote > pre:first-child:last-child,
+.markdown-article td > pre:first-child:last-child {
   margin-bottom: 0.5rem;
 }
 .markdown-article hr {
