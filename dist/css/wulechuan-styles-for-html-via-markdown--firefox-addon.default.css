@@ -316,6 +316,16 @@ ol + blockquote,
 dl + blockquote {
   margin-top: 0;
 }
+details {
+  margin: 0.5rem auto 1.5rem auto;
+}
+summary {
+  padding: 0.25em 0.5em;
+  margin: 0 -0.5em;
+}
+pre + details {
+  margin-top: -0.5rem;
+}
 table,
 tr,
 td,
@@ -381,6 +391,7 @@ pre {
   margin-top: 0;
   margin-bottom: 2rem;
 }
+details > pre,
 td > pre,
 li > pre {
   margin-top: 0.5rem;
@@ -400,6 +411,9 @@ td > pre:last-child {
 }
 blockquote > pre:first-child:last-child,
 td > pre:first-child:last-child {
+  margin-bottom: 0.5rem;
+}
+details > pre:last-child {
   margin-bottom: 0.5rem;
 }
 hr {

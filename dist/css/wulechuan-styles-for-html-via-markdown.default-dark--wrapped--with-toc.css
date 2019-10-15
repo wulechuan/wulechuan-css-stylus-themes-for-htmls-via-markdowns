@@ -311,6 +311,16 @@ body {
 .markdown-article dl + blockquote {
   margin-top: 0;
 }
+.markdown-article details {
+  margin: 0.5rem auto 1.5rem auto;
+}
+.markdown-article summary {
+  padding: 0.25em 0.5em;
+  margin: 0 -0.5em;
+}
+.markdown-article pre + details {
+  margin-top: -0.5rem;
+}
 .markdown-article table,
 .markdown-article tr,
 .markdown-article td,
@@ -376,6 +386,7 @@ body {
   margin-top: 0;
   margin-bottom: 2rem;
 }
+.markdown-article details > pre,
 .markdown-article td > pre,
 .markdown-article li > pre {
   margin-top: 0.5rem;
@@ -395,6 +406,9 @@ body {
 }
 .markdown-article blockquote > pre:first-child:last-child,
 .markdown-article td > pre:first-child:last-child {
+  margin-bottom: 0.5rem;
+}
+.markdown-article details > pre:last-child {
   margin-bottom: 0.5rem;
 }
 .markdown-article hr {
