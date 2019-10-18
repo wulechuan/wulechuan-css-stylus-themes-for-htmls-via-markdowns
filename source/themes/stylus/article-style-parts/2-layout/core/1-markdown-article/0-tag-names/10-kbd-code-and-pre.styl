@@ -35,7 +35,7 @@
             display: block;
             width: 100%;
             line-height: inherit;
-            padding: 0.5rem;
+            padding: 0.25rem 0.5rem;
             border: none !important;
             margin: 0 !important;
             border-radius: 0;
@@ -63,21 +63,10 @@
         line-height: 1.6;
 
 
-        margin-left: 1rem;
-        margin-right: 1rem;
-
-        // The 2 lines below are for better alignments
-        // of list-style dots, when a <pre> is a child of a <li>.
-        display: inline-block;
-        vertical-align: top;
-
+        display: block;
         box-sizing: border-box;
-        width: calc(100% - 2rem);
-
         padding: 0.5rem;
-        // margin-top: 0.5rem;
-        margin-top: 0; // Because the "display" is now "inline-block", we don't need extra "margin-top" any more.
-        margin-bottom: 2rem;
+        margin: 0.5rem 1rem 2rem;
     }
 
 
@@ -86,10 +75,7 @@
     li {
 
         > pre {
-            margin-top: 0.5rem;
             margin-left: 0;
-            margin-right: 0;
-            width: 100%;
         }
     }
 
@@ -98,6 +84,12 @@
 
         > pre:first-child {
             margin-top: 0; // maybe 0.25em is better?
+
+            // The 2 lines below are for better alignments
+            // of list-style dots, when a <pre> is a child of a <li>.
+            display: inline-block;
+            vertical-align: top;
+            width: calc(100% - 1rem);
         }
 
         > pre:last-child {

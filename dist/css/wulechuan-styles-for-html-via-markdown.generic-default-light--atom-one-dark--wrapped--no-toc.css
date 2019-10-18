@@ -301,15 +301,8 @@ body {
   display: inline-block;
   vertical-align: top;
   padding: 1px 1.2em 1px 1em;
-  margin: 0.5em 1rem 1.4em 1rem;
+  margin: 0 1rem 1.4em 1rem;
   border-style: solid;
-}
-.markdown-article p + blockquote,
-.markdown-article li + blockquote,
-.markdown-article ul + blockquote,
-.markdown-article ol + blockquote,
-.markdown-article dl + blockquote {
-  margin-top: 0;
 }
 .markdown-article details {
   margin: 0.5rem auto 1.5rem auto;
@@ -368,7 +361,7 @@ body {
   display: block;
   width: 100%;
   line-height: inherit;
-  padding: 0.5rem;
+  padding: 0.25rem 0.5rem;
   border: none !important;
   margin: 0 !important;
   border-radius: 0;
@@ -376,26 +369,21 @@ body {
 }
 .markdown-article pre {
   line-height: 1.6;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  display: inline-block;
-  vertical-align: top;
+  display: block;
   box-sizing: border-box;
-  width: calc(100% - 2rem);
   padding: 0.5rem;
-  margin-top: 0;
-  margin-bottom: 2rem;
+  margin: 0.5rem 1rem 2rem;
 }
 .markdown-article details > pre,
 .markdown-article td > pre,
 .markdown-article li > pre {
-  margin-top: 0.5rem;
   margin-left: 0;
-  margin-right: 0;
-  width: 100%;
 }
 .markdown-article li > pre:first-child {
   margin-top: 0;
+  display: inline-block;
+  vertical-align: top;
+  width: calc(100% - 1rem);
 }
 .markdown-article li > pre:last-child {
   margin-bottom: 1rem;
