@@ -388,12 +388,17 @@ body {
 .markdown-article li > pre:last-child {
   margin-bottom: 1rem;
 }
+.markdown-article blockquote > pre:first-child,
+.markdown-article td > pre:first-child {
+  margin-top: 1.5rem;
+}
 .markdown-article blockquote > pre:last-child,
 .markdown-article td > pre:last-child {
   margin-bottom: 1rem;
 }
 .markdown-article blockquote > pre:first-child:last-child,
 .markdown-article td > pre:first-child:last-child {
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 .markdown-article details > pre:last-child {

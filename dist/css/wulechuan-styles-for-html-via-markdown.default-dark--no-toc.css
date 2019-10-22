@@ -388,12 +388,17 @@ li > pre:first-child {
 li > pre:last-child {
   margin-bottom: 1rem;
 }
+blockquote > pre:first-child,
+td > pre:first-child {
+  margin-top: 1.5rem;
+}
 blockquote > pre:last-child,
 td > pre:last-child {
   margin-bottom: 1rem;
 }
 blockquote > pre:first-child:last-child,
 td > pre:first-child:last-child {
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 details > pre:last-child {
