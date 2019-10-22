@@ -301,7 +301,7 @@ blockquote {
   display: inline-block;
   vertical-align: top;
   padding: 1px 1.2em 1px 1em;
-  margin: 0 1rem 1.4em 1rem;
+  margin: 0.5rem 1rem 1.5rem 1rem;
   border-style: solid;
 }
 details {
@@ -309,7 +309,7 @@ details {
 }
 summary {
   padding: 0.25em 0.5em;
-  margin: 0 -0.5em;
+  margin: 0 -0.5em 0.5rem;
 }
 pre + details {
   margin-top: -0.5rem;
@@ -379,14 +379,15 @@ td > pre,
 li > pre {
   margin-left: 0;
 }
+details > pre,
+td > pre {
+  margin-right: 0;
+}
 li > pre:first-child {
   margin-top: 0;
   display: inline-block;
   vertical-align: top;
   width: calc(100% - 1rem);
-}
-li > pre:last-child {
-  margin-bottom: 1rem;
 }
 blockquote > pre:first-child,
 td > pre:first-child {
@@ -1384,6 +1385,9 @@ pre,
 }
 .hljs-regexp .digit-pair-between-curly-braces .comma {
   color: #666;
+}
+.hljs-attr.async {
+  color: #09f;
 }
 .hljs-built_in.css-named-color,
 .hljs-number.color-hex-value {

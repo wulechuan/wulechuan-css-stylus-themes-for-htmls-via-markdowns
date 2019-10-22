@@ -53,55 +53,55 @@
 
 再来看看行文中的【代码词汇】或【术语】：例如`孙行者`和`计算机`，又如 `querySelector` 和 `querySelectorAll` 早已取代了老式的 `getElementsById` 和 `getElementsByTagName` 等。
 
-计算机键盘快捷键，其视觉样式如是：<kbd>Ctrl</kbd>+<kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</kbd>；又例：如今，<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>s</kbd> 这一组合键早已广泛用于各种现代计算机软件中，代表（将工作内容或文件）`另存为`（一文件）之功能。
+计算机键盘快捷键，其视觉样式如是：<kbd>Ctrl</kbd>+<kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</kbd>；又例：如今，<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>s</kbd> 这一组合键早已广泛用于各种现代计算机软件中，代表（将工作内容或文件）`另存为`（壹文件）之功能。
 
 还有时候，有些内容会故意被“杠掉”，即被中划线划去，表示此内容不正确，不应采纳，应作废。例如：~~地球是平的~~。
 
 
 #### 多级列表
 
-1. 第 1 级第 1 项
+1.  第 1 级第 1 项
 
-2. 第 1 级第 2 项
+2.  第 1 级第 2 项
 
-    1. 西施，约 2522 岁
-    2. 王昭君，2070 岁
-    3. 貂蝉，约 1820 岁
-    4. 杨玉环，1300 岁
-    5. 我媳妇儿，永远 20 岁
+    1.  西施，约 2522 岁
+    2.  王昭君，2070 岁
+    3.  貂蝉，约 1820 岁
+    4.  杨玉环，1300 岁
+    5.  我媳妇儿，永远 20 岁
 
-3. 第 1 级第 3 项
+3.  第 1 级第 3 项
 
-    - 孔夫子热评西方美食
-    - 周瑜正式出任新航母舰长
-    - 李白担任北京大学名誉副校长
-    - 岳鹏举在南方各地视察防御工事
-    - 祖冲之发表全新论文，受到中科院表彰
-    - 武松打虎一案受到自然保护主义者质疑，有关部门已正式展开调查
-    - 李广在 2019 亚洲射箭锦标赛再次夺魁
+    -   孔夫子热评西方美食
+    -   周瑜正式出任新航母舰长
+    -   李白担任北京大学名誉副校长
+    -   岳鹏举在南方各地视察防御工事
+    -   祖冲之发表全新论文，受到中科院表彰
+    -   武松打虎一案受到自然保护主义者质疑，有关部门已正式展开调查
+    -   李广在 2019 亚洲射箭锦标赛再次夺魁
 
-4. 第 1 级第 4 项
+4.  第 1 级第 4 项
 
-5. 第 1 级第 5 项
+5.  第 1 级第 5 项
 
-    - 第 2 级第 1 项
+    -   第 2 级第 1 项
 
-    - 第 2 级第 2 项
+    -   第 2 级第 2 项
 
-    - 第 2 级第 3 项
+    -   第 2 级第 3 项
 
-        - 甲：李哪吒
-        - 乙：敖丙
-        - 丙：李靖
-        - 丁：殷夫人
-        - 戊：太乙真人
-        - 己：申公豹
-        - 庚：东海龙王
-        - 辛：元始天尊
-        - 壬：巡海夜叉
-        - 癸：长生云
+        -   甲：李哪吒
+        -   乙：敖丙
+        -   丙：李靖
+        -   丁：殷夫人
+        -   戊：太乙真人
+        -   己：申公豹
+        -   庚：东海龙王
+        -   辛：元始天尊
+        -   壬：巡海夜叉
+        -   癸：长生云
 
-6. 第 1 级第 6 项
+6.  第 1 级第 6 项
 
 
 ### 多级标题
@@ -268,7 +268,7 @@ CSS Object Model 是一组允许用 JavaScript 操纵 CSS 的 API。 它是继 D
     getCircumference(100);
     ```
 
-    > circumference [sər'kʌmf(ə)rəns]：圆周长。
+    > `circumference` _[sər'kʌmf(ə)rəns]_ 圆周长
 
 
 下面是不在列表项内的代码片段。
@@ -531,13 +531,61 @@ exports.author = 'wulechun@live.com';
         };
     </script>
 
-    <script id="js-example-2" async>
-        const girl = document.querySelector('img')
-        girl.addEventListener('mouseover', function (event) {
-            this.src = './images/beauties/beauty-3.jpg'
-            this.title = '绝色美人'
-        })
+    <script id="js-example-2">
+        var girl = {
+            buy: function ( clothesName ) {
+                if (!this.has( clothesName )) {
+                    this[ clothesName ] = true;
+                    console.log('我刚买了', clothesName);
+                } else {
+                    console.log('我已经有', clothesName, '了。钱省着点花吧。');
+                }
+            },
+
+            has: function ( clothesName ) {
+                return !!this[ clothesName ];
+            }
+        };
+
+        girl.buy('连衣裙');
+        girl.buy('热裤');
+        girl.buy('风衣');
+        girl.buy('风衣');
+        girl.buy('羽绒服');
+        girl.buy('复古丝巾');
+        girl.buy('复古丝巾');
+        girl.buy('连衣裙');
+        girl.buy('复古丝巾');
     </script>
+
+    <script>
+        var flower = '郁金香';
+        var tree   = '木兰';
+
+        function house() {
+            var flower = '水仙'; // 与外界的变量重名了，同为 flower。
+
+            console.log('我写生，画了', flower); // 屋子里的水仙，而不是田野里的郁金香。
+            console.log('我写生，画了', tree);
+
+            flower = '月季'; // 改动发生在局部，即函数体内。外界不会受影响。
+            console.log('我写生，画了', flower); // 屋子里的月季。
+        }
+
+
+        console.log(flower); // 郁金香
+
+        house();
+
+        /*
+            外界看不到函数 house 的局部变量，
+            函数 house 中的同名 flower 的变动也不会影响外界。
+            因此外界的 flower 仍旧是郁金香。
+        */
+        console.log(flower); // 郁金香
+    </script>
+
+    <script src="vue-jquery-angluar-react.min.js" async>
 </body>
 </html>
 ```
