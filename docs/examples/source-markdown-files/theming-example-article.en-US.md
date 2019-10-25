@@ -95,6 +95,37 @@ See, it's a website for anyone, but mostly engineers.
 
 ## Code Snippets
 
+-   Code Snippet Nested under a List Item
+
+    ```js
+    function getCircleArea(r) {
+        return 3.14159265 * r * r;
+    }
+
+    getCircleArea(100);
+    ```
+
+-   ```js
+    function getCircumference(r) {
+        return 2 * 3.14159265 * r;
+    }
+
+    getCircumference(100);
+    ```
+
+
+Below is a code snippet nested under details block.
+
+<details open>
+<summary>Foldable Code Snippet</summary>
+
+```js
+console.log(NaN === NaN); // false
+```
+
+</details>
+
+
 ### A JavaScript Snippet
 
 ```javascript

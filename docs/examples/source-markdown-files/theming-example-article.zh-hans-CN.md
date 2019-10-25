@@ -273,8 +273,17 @@ CSS Object Model 是一组允许用 JavaScript 操纵 CSS 的 API。 它是继 D
 
 下面是不在列表项内的代码片段。
 
+<details open>
+<summary>折叠内容中的代码块</summary>
 
-```javascript
+```js
+console.log(NaN === NaN); // false
+```
+
+</details>
+
+
+```js
 // 这是一句行尾注释。好吧，我承认它恰好在这一行的开头。
 import something from 'somethingjs'
 

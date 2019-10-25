@@ -300,16 +300,17 @@ blockquote {
   max-width: calc(100% - 2rem);
   display: inline-block;
   vertical-align: top;
-  padding: 1px 1.2em 1px 1em;
-  margin: 0.5rem 1rem 1.5rem 1rem;
   border-style: solid;
+  padding: 1px 1.2em 1px 1em;
+  margin: 0 0.7rem 1.5rem;
 }
 details {
   margin: 0.5rem auto 1.5rem auto;
+  padding: 0.5rem;
 }
 summary {
-  padding: 0.25em 0.5em;
-  margin: 0 -0.5em 0.5rem;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem;
 }
 pre + details {
   margin-top: -0.5rem;
@@ -374,13 +375,15 @@ pre {
   padding: 0.5rem;
   margin: 0.5rem 1rem 2rem;
 }
-details > pre,
 td > pre,
 li > pre {
   margin-left: 0;
 }
-details > pre,
 td > pre {
+  margin-right: 0;
+}
+li > details > pre {
+  margin-left: 0;
   margin-right: 0;
 }
 li > pre:first-child {
@@ -401,6 +404,10 @@ blockquote > pre:first-child:last-child,
 td > pre:first-child:last-child {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+details > pre {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 details > pre:last-child {
   margin-bottom: 0.5rem;
@@ -652,6 +659,9 @@ img {
 blockquote {
   border-width: 0 0 0 0.32rem;
   border-radius: 0.32rem;
+}
+details {
+  border-radius: 0.3rem;
 }
 table {
   border-width: 6px;
