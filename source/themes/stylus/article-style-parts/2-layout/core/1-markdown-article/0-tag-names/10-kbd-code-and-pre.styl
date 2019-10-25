@@ -75,6 +75,7 @@
 
         > pre {
             margin-left: 0;
+            margin-right: 0;
         }
     }
 
@@ -87,11 +88,6 @@
 
     li {
 
-        > details > pre {
-            margin-left: 0;
-            margin-right: 0;
-        }
-
         > pre:first-child {
             margin-top: 0; // maybe 0.25em is better?
 
@@ -99,12 +95,8 @@
             // of list-style dots, when a <pre> is a child of a <li>.
             display: inline-block;
             vertical-align: top;
-            width: calc(100% - 1rem);
+            width: 100%;
         }
-
-        // > pre:last-child {
-        //     margin-bottom: 1rem;
-        // }
     }
 
     blockquote,

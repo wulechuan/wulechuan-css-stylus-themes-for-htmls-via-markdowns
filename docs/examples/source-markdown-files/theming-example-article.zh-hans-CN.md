@@ -247,7 +247,7 @@ CSS Object Model 是一组允许用 JavaScript 操纵 CSS 的 API。 它是继 D
 
 ## 程序代码片段示例集
 
-### Javascript 代码片段
+### JavaScript 代码片段
 
 -   列表项中的代码片段
 
@@ -270,11 +270,21 @@ CSS Object Model 是一组允许用 JavaScript 操纵 CSS 的 API。 它是继 D
 
     > `circumference` _[sər'kʌmf(ə)rəns]_ 圆周长
 
+    <details open>
+    <summary>折叠内容中的代码块1</summary>
+
+    ```js
+    var age = +prompt('你多大了？');
+    ```
+
+    </details>
+
+
 
 下面是不在列表项内的代码片段。
 
 <details open>
-<summary>折叠内容中的代码块</summary>
+<summary>折叠内容中的代码块2</summary>
 
 ```js
 console.log(NaN === NaN); // false

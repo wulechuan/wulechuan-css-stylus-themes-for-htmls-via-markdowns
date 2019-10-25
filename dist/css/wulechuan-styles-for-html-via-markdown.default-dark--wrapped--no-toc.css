@@ -283,7 +283,7 @@ body {
 }
 .markdown-article ul,
 .markdown-article ol {
-  padding-left: 2em;
+  padding: 0.25em 1rem 0.25em 2em;
 }
 @-moz-document url-prefix() {
   .markdown-article ul,
@@ -305,8 +305,12 @@ body {
   margin: 0 0.7rem 1.5rem;
 }
 .markdown-article details {
-  margin: 0.5rem auto 1.5rem auto;
+  margin: 0.5rem 1rem 1.5rem;
   padding: 0.5rem;
+}
+.markdown-article li > details {
+  margin-left: 0;
+  margin-right: 0;
 }
 .markdown-article summary {
   padding: 0.25rem 0.5rem;
@@ -378,19 +382,16 @@ body {
 .markdown-article td > pre,
 .markdown-article li > pre {
   margin-left: 0;
-}
-.markdown-article td > pre {
   margin-right: 0;
 }
-.markdown-article li > details > pre {
-  margin-left: 0;
+.markdown-article td > pre {
   margin-right: 0;
 }
 .markdown-article li > pre:first-child {
   margin-top: 0;
   display: inline-block;
   vertical-align: top;
-  width: calc(100% - 1rem);
+  width: 100%;
 }
 .markdown-article blockquote > pre:first-child,
 .markdown-article td > pre:first-child {
@@ -485,6 +486,7 @@ body {
   .markdown-article ul,
   .markdown-article ol {
     padding-left: 1.8em;
+    padding-right: 0;
   }
   .markdown-article blockquote {
     margin-left: 0;
@@ -501,7 +503,6 @@ body {
   .markdown-article pre {
     margin-left: 0;
     margin-right: 0;
-    width: 100%;
   }
   .markdown-article table pre > code {
     white-space: normal !important;
@@ -657,11 +658,15 @@ body {
   border-radius: 0.3rem;
 }
 .markdown-article blockquote {
-  border-width: 0 0 0 0.32rem;
+  border-width: 0 0 0 0.33rem;
   border-radius: 0.32rem;
 }
 .markdown-article details {
-  border-radius: 0.3rem;
+  border-radius: 0.36rem;
+}
+.markdown-article summary:focus,
+.markdown-article summary:active {
+  outline: none;
 }
 .markdown-article table {
   border-width: 6px;
@@ -802,6 +807,14 @@ body {
   color: #b6b6b6;
   border-color: #794513;
   background-color: rgba(255,255,255,0.051);
+}
+.markdown-article details {
+  background-color: rgba(0,0,0,0.079);
+  box-shadow: inset 0 0 0.25rem rgba(0,0,0,0.319);
+}
+.markdown-article summary:focus,
+.markdown-article summary:active {
+  color: #7d5;
 }
 .markdown-article table {
   color: #b6b6b6;

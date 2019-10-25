@@ -288,7 +288,7 @@ blockquote dd:last-child {
 }
 ul,
 ol {
-  padding-left: 2em;
+  padding: 0.25em 1rem 0.25em 2em;
 }
 @-moz-document url-prefix() {
   ul,
@@ -310,8 +310,12 @@ blockquote {
   margin: 0 0.7rem 1.5rem;
 }
 details {
-  margin: 0.5rem auto 1.5rem auto;
+  margin: 0.5rem 1rem 1.5rem;
   padding: 0.5rem;
+}
+li > details {
+  margin-left: 0;
+  margin-right: 0;
 }
 summary {
   padding: 0.25rem 0.5rem;
@@ -383,19 +387,16 @@ pre {
 td > pre,
 li > pre {
   margin-left: 0;
-}
-td > pre {
   margin-right: 0;
 }
-li > details > pre {
-  margin-left: 0;
+td > pre {
   margin-right: 0;
 }
 li > pre:first-child {
   margin-top: 0;
   display: inline-block;
   vertical-align: top;
-  width: calc(100% - 1rem);
+  width: 100%;
 }
 blockquote > pre:first-child,
 td > pre:first-child {
@@ -490,6 +491,7 @@ hr::after {
   ul,
   ol {
     padding-left: 1.8em;
+    padding-right: 0;
   }
   blockquote {
     margin-left: 0;
@@ -506,7 +508,6 @@ hr::after {
   pre {
     margin-left: 0;
     margin-right: 0;
-    width: 100%;
   }
   table pre > code {
     white-space: normal !important;
@@ -831,11 +832,15 @@ img {
   border-radius: 0.3rem;
 }
 blockquote {
-  border-width: 0 0 0 0.32rem;
+  border-width: 0 0 0 0.33rem;
   border-radius: 0.32rem;
 }
 details {
-  border-radius: 0.3rem;
+  border-radius: 0.36rem;
+}
+summary:focus,
+summary:active {
+  outline: none;
 }
 table {
   border-width: 6px;
@@ -979,8 +984,12 @@ blockquote {
   background-color: rgba(0,0,0,0.051);
 }
 details {
-  background-color: rgba(128,128,128,0.15);
-  box-shadow: inset 0 0 0.25rem rgba(0,0,0,0.15);
+  background-color: rgba(128,128,128,0.079);
+  box-shadow: inset 0 0 0.25rem rgba(0,0,0,0.079);
+}
+summary:focus,
+summary:active {
+  color: #1b1;
 }
 table {
   border-color: #111;
