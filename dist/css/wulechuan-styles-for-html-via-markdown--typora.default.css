@@ -286,7 +286,7 @@ blockquote dd:last-child {
 }
 ul,
 ol {
-  padding: 0.25em 1rem 0.25em 2em;
+  padding: 0 1rem 0 2em;
 }
 @-moz-document url-prefix() {
   ul,
