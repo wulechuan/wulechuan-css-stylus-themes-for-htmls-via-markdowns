@@ -1081,6 +1081,8 @@ pre,
 .hljs {
   color: #ccc;
 }
+.language-xml .actionscript,
+.language-html .actionscript,
 .language-xml .javascript,
 .language-html .javascript,
 .language-xml .css,
@@ -1147,6 +1149,7 @@ pre,
 .language-ts .hljs-attr,
 .language-javascript .hljs-attr,
 .language-js .hljs-attr,
+.actionscript .hljs-attr,
 .javascript .hljs-attr {
   color: #fff;
 }
@@ -1288,6 +1291,7 @@ pre,
 .language-ts .hljs-number,
 .language-javascript .hljs-number,
 .language-js .hljs-number,
+.actionscript .hljs-number,
 .javascript .hljs-number {
   color: #f75;
 }
@@ -1535,14 +1539,17 @@ pre,
 .language-html .hljs-string .string-body {
   background-color: transparent;
 }
+.actionscript .hljs-string .wlc-string-body,
 .javascript .hljs-string .wlc-string-body,
 .css .hljs-string .wlc-string-body,
 .hljs-string .wlc-string-body,
+.actionscript .hljs-string .string-body,
 .javascript .hljs-string .string-body,
 .css .hljs-string .string-body,
 .hljs-string .string-body {
   background-color: rgba(255,255,153,0.098);
 }
+.actionscript .hljs-string.string-illegal .string-body,
 .javascript .hljs-string.string-illegal .string-body,
 .css .hljs-string.string-illegal .string-body,
 .hljs-string.string-illegal .string-body {
