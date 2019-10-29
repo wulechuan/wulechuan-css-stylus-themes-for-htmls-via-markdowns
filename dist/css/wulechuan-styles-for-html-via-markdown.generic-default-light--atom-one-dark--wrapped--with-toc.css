@@ -24,7 +24,7 @@ summary {
   text-align: center;
 }
 body {
-  padding: 3rem 1rem 4rem 1rem;
+  padding: 3rem 1rem 6rem 1rem;
 }
 @media (max-width: 600px) {
   html {
@@ -619,6 +619,12 @@ nav.markdown-article-toc > ol {
   padding: 0.5rem 1.5rem 4.5rem 2rem;
   margin: 0;
   white-space: nowrap;
+}
+nav.markdown-article-toc > ul ol,
+nav.markdown-article-toc > ol ol,
+nav.markdown-article-toc > ul ul,
+nav.markdown-article-toc > ol ul {
+  padding-right: 0;
 }
 nav.markdown-article-toc.should-show-2-levels-at-most > ul ol ol,
 nav.markdown-article-toc.should-show-2-levels-at-most > ol ol ol,

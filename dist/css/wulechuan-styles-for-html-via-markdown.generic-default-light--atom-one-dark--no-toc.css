@@ -24,7 +24,7 @@ summary {
   text-align: center;
 }
 body {
-  padding: 3rem 1rem 4rem 1rem;
+  padding: 3rem 1rem 6rem 1rem;
 }
 @media (max-width: 600px) {
   html {
