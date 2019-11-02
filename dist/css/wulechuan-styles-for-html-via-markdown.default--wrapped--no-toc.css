@@ -262,6 +262,7 @@ body {
 }
 .markdown-article li {
   margin: 0.5em 0;
+  padding: 0 0.5rem;
 }
 .markdown-article dt {
   padding-top: 0.5em;
@@ -306,7 +307,7 @@ body {
 }
 .markdown-article details {
   margin: 0.5rem 1rem 1.5rem;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 .markdown-article li > details {
   margin-left: 0;
@@ -314,7 +315,7 @@ body {
 }
 .markdown-article summary {
   padding: 0.25rem 0.5rem;
-  margin: 0.25rem;
+  margin: 0.25rem -0.25rem;
 }
 .markdown-article pre + details {
   margin-top: -0.5rem;
@@ -407,8 +408,8 @@ body {
   margin-bottom: 0.5rem;
 }
 .markdown-article details > pre {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  margin-left: 0;
+  margin-right: 0;
 }
 .markdown-article details > pre:last-child {
   margin-bottom: 0.5rem;
@@ -446,6 +447,11 @@ body {
   background-color: inherit;
   background-image: inherit !important;
   transform: scaleX(-1);
+}
+.markdown-article video {
+  display: block;
+  width: calc(100% - 2rem);
+  margin: 1.5rem auto;
 }
 @media (max-width: 900px) {
   .markdown-article h1 {
@@ -510,6 +516,9 @@ body {
   }
   .markdown-article hr {
     margin: 1.5rem auto 2rem 0;
+  }
+  .markdown-article video {
+    width: 100%;
   }
 }
 .markdown-article {
@@ -658,8 +667,8 @@ body {
   border-radius: 0.3rem;
 }
 .markdown-article blockquote {
-  border-width: 0 0 0 0.33rem;
-  border-radius: 0.32rem;
+  border-width: 0 0 0 0.32rem;
+  border-radius: 0.3rem;
 }
 .markdown-article details {
   border-radius: 0.36rem;

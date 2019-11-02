@@ -262,6 +262,7 @@ blockquote em {
 }
 li {
   margin: 0.5em 0;
+  padding: 0 0.5rem;
 }
 dt {
   padding-top: 0.5em;
@@ -306,7 +307,7 @@ blockquote {
 }
 details {
   margin: 0.5rem 1rem 1.5rem;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
 }
 li > details {
   margin-left: 0;
@@ -314,7 +315,7 @@ li > details {
 }
 summary {
   padding: 0.25rem 0.5rem;
-  margin: 0.25rem;
+  margin: 0.25rem -0.25rem;
 }
 pre + details {
   margin-top: -0.5rem;
@@ -407,8 +408,8 @@ td > pre:first-child:last-child {
   margin-bottom: 0.5rem;
 }
 details > pre {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  margin-left: 0;
+  margin-right: 0;
 }
 details > pre:last-child {
   margin-bottom: 0.5rem;
@@ -446,6 +447,11 @@ hr::after {
   background-color: inherit;
   background-image: inherit !important;
   transform: scaleX(-1);
+}
+video {
+  display: block;
+  width: calc(100% - 2rem);
+  margin: 1.5rem auto;
 }
 @media (max-width: 900px) {
   h1 {
@@ -510,6 +516,9 @@ hr::after {
   }
   hr {
     margin: 1.5rem auto 2rem 0;
+  }
+  video {
+    width: 100%;
   }
 }
 .markdown-article {
@@ -658,8 +667,8 @@ img {
   border-radius: 0.3rem;
 }
 blockquote {
-  border-width: 0 0 0 0.33rem;
-  border-radius: 0.32rem;
+  border-width: 0 0 0 0.32rem;
+  border-radius: 0.3rem;
 }
 details {
   border-radius: 0.36rem;

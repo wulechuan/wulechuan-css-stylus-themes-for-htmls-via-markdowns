@@ -2,7 +2,7 @@
 
 <p class="document-author">作者：吴乐川</p>
 
-------
+---
 
 ## 自然语言范文
 
@@ -140,7 +140,7 @@ CSS Object Model 是一组允许用 JavaScript 操纵 CSS 的 API。 它是继 D
 > 上文[3]来自 [维基百科](https://zh.wikipedia.org/wiki/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B)，但故意没有作为引用段落，以便呈现正常段落文字的样貌。
 
 
-------
+---
 
 
 
@@ -243,7 +243,25 @@ CSS Object Model 是一组允许用 JavaScript 操纵 CSS 的 API。 它是继 D
 ![大美女](./images/beauty.jpg)
 
 
-------
+---
+
+## 视频
+
+<video controls>
+    <source src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.webm" type="video/webm">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
+
+<details open>
+<summary>在折叠内容块中的视频</summary>
+<video controls>
+    <source src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.webm" type="video/webm">
+</video>
+</details>
+
+---
+
 
 ## 程序代码片段示例集
 

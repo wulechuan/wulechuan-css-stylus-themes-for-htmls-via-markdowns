@@ -2,7 +2,7 @@
 
 <p class="document-author">wulechuan@live.com</p>
 
-------
+---
 
 ## Articles
 
@@ -91,6 +91,28 @@ See, it's a website for anyone, but mostly engineers.
 ### An Image that Fails to Load
 
 ![A Beauty](./images/beauty.jpg)
+
+---
+
+
+
+## Videos
+
+<video controls>
+    <source src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.webm" type="video/webm">
+    Sorry, your browser doesn't support embedded videos.
+</video>
+
+
+<details open>
+<summary>A Video Nested in a Details Block</summary>
+<video controls>
+    <source src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.webm" type="video/webm">
+</video>
+</details>
+
+---
+
 
 
 ## Code Snippets
