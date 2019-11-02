@@ -4,7 +4,13 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
 
 ;(function setupAndStartApp() {
     const logLine = '-'.repeat(51)
-    console.log(`\n\n${logLine}\nWelcome to wulechuan's article TOC controller.\n\n ${' '.repeat(32)}wulechuan@live.com\n${logLine}\n\n`)
+    console.log(`\n\n${
+        logLine
+    }\nWelcome to wulechuan's article TOC controller.\n\n ${
+        ' '.repeat(32)
+    }wulechuan@live.com\n${
+        logLine
+    }\n\n`)
 
     const cssClassNameTOCExists                  = 'markdown-article-toc-exists'
     const cssClassNameTOCIsVisible               = 'markdown-article-toc-is-visible'
