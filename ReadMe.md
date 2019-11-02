@@ -155,6 +155,7 @@ There is another npm package of mine, name "[@wulechuan/markdown-to-html-via-cli
 ## TODOS
 
 - If zero items In TOC, TOC and its toggling button should **NOT** show at all.
+- Update snapshot. Firefox failed to take snapshots for web pages containing videos.
 - Consider introducing more stylus variables for theming. I'm not sure it worths me at present. Too many arguments would make this tool much worse to understand.
 - Typora built-in TOC styling?
 
