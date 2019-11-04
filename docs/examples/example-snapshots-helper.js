@@ -35,7 +35,7 @@
             throw new Error('tocPanelScrollingDOM not found.')
         }
 
-        const tocItemAnchor1 = tocPanelDOM.querySelector('.toc-list-level-1 > li:nth-child(3) > a')
+        const tocItemAnchor1 = tocPanelDOM.querySelector('.toc-list-level-1 > li:nth-child(4) > a')
         const tocItemAnchor2 = tocPanelDOM.querySelector('.toc-list-level-1 > li:nth-child(2) > a')
         const element1ToScrollArticleDownTo = findFirstNearestElementToText('aBoolean')
         const element2ToScrollArticleDownTo = markdownArticleDOM.querySelector('img[src="./illustrates/duan-er-pretty.jpg"]')

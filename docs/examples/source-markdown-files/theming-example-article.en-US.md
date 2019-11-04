@@ -99,7 +99,7 @@ See, it's a website for anyone, but mostly engineers.
 ## Videos
 
 <video controls>
-    <source src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.webm" type="video/webm">
+    <source src="./illustrates/flower.webm" type="video/webm">
     Sorry, your browser doesn't support embedded videos.
 </video>
 
@@ -107,7 +107,8 @@ See, it's a website for anyone, but mostly engineers.
 <details open>
 <summary>A Video Nested in a Details Block</summary>
 <video controls>
-    <source src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.webm" type="video/webm">
+    <source src="./illustrates/flower.webm" type="video/webm">
+    Sorry, your browser doesn't support embedded videos.
 </video>
 </details>
 

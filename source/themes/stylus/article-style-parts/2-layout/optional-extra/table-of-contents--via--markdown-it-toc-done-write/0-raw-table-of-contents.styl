@@ -16,21 +16,23 @@
         // scroll-behavior: smooth;
     }
 
-    li > a[href^="#"] {
-        display: block;
-        padding: 0.25em 0.5em 0.25em 2em;
-        border-width: 1px 0;
-        border-style: solid none;
-        margin: 0 0 0 -1.5em;
-        text-decoration: none;
-        transition-property: color, background-color, border-color;
-        transition-duration: 0.36s;
-        transition-timing-function: ease-out;
-    }
 
     li {
         cursor: pointer;
         margin: 0;
+        padding-right: 0;
+
+        > a[href^="#"] {
+            display: block;
+            padding: 0.25em 0.5em 0.25em 2em;
+            border-width: 1px 0;
+            border-style: solid none;
+            margin: 0 0 0 -2em;
+            text-decoration: none;
+            transition-property: color, background-color, border-color;
+            transition-duration: 0.36s;
+            transition-timing-function: ease-out;
+        }
     }
 
     > ul,
@@ -40,9 +42,9 @@
             box-sizing: border-box;
             height: 100%;
             overflow: auto;
-            padding: 0.5rem 1.5rem 4.5rem 2rem;
+            padding: 0.5rem 1.5rem 4.5rem 1.5rem;
             margin: 0;
-            white-space: nowrap;
+            // white-space: nowrap;
         }
 
         ol, ul {

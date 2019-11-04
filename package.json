@@ -2,7 +2,7 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "wulechuan <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "6.3.23",
+  "version": "6.3.24",
   "description": "A collection of CSS themes for Markdown generated HTML contents.",
   "directories": {
     "source": "source",

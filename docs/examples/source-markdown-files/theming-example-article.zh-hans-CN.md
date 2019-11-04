@@ -248,15 +248,18 @@ CSS Object Model 是一组允许用 JavaScript 操纵 CSS 的 API。 它是继 D
 ## 视频
 
 <video controls>
-    <source src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.webm" type="video/webm">
-    Sorry, your browser doesn't support embedded videos.
+    <source src="./illustrates/flower.webm" type="video/webm">
+    <source src="./illustrates/冒泡排序-演示-图片来自《一像素》原始版.mp4" type="video/mp4">
+    抱歉，该浏览器不支持视频。
 </video>
 
 
 <details open>
 <summary>在折叠内容块中的视频</summary>
 <video controls>
-    <source src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.webm" type="video/webm">
+    <source src="./illustrates/flower.webm" type="video/webm">
+    <source src="./illustrates/冒泡排序-演示-图片来自《一像素》原始版.mp4" type="video/mp4">
+    抱歉，该浏览器不支持视频。
 </video>
 </details>
 
