@@ -30,7 +30,7 @@ See [https://highlightjs.org/](https://highlightjs.org/).
 
 ##### markdown-it
 
-[markdown-it](https://www.npmjs.com/package/markdown-it)'s nice plugin [markdown-it-highlightjs](https://www.npmjs.com/package/markdown-it-highlightjs) can generate code blocks that are able to colorize via CSS. And it obviously utilizes HighlightJS.
+[markdown-it](https://www.npmjs.com/package/markdown-it)'s nice plugin [markdown-it-highlightjs](https://www.npmjs.com/package/markdown-it-highlightjs) can generate code blocks that are able to colorize via CSS. And obviously it utilizes HighlightJS.
 
 
 

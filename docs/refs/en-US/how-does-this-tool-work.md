@@ -14,7 +14,7 @@
 
 ### CSS are compiled out of Stylus
 
-I designed a flex framework. Upon that there are several provided [Stylus](http://stylus-lang.com/) files (`.styl`) as configurations. So that multiple versions of CSS can be produced in one go, each targeting different environment/scenario. For each scenario, we get 1 or 2 `.css` files. If 2 are produced, that's because one of them is a minified CSS. If only 1 CSS file is produced, then depending on the configuration, it can be either an uncompress one or a compress one.
+I designed a flex framework. Upon that there are several provided [Stylus](http://stylus-lang.com/) files (`.styl`) as configurations, each targeting different environment/scenario. So multiple versions of CSS can be produced in one go. For each scenario, we get 1 or 2 `.css` files. If 2 are produced, that's because one of them is a minified CSS. If only 1 CSS file is produced, then depending on the configuration, it can be either an uncompress one or a compress one.
 
 **In short, each `.styl` file is a configuration, targeting one scenario, and produces CSS file(s).**
 

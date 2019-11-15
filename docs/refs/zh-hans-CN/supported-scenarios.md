@@ -32,7 +32,7 @@
 粗略的想像，该场景应该仅有一个 CSS 文件。然乎？非也！
 
 - 因为依据 CSS 选择器被“包裹”与否，输出的内容会有两种变体。
-- 并且，针对这些功能“孱弱”的 HTML 文件，我还额外设计了“文章纲要列表（英语为 TOC）”的样式。而这部分样式我设计成了可选的。故而，有否纲要也会产生变体。
+- 并且，针对这些功能“孱弱”的 HTML 文件，我还额外设计了“文章目录（英语为 TOC）”的样式。而这部分样式我设计成了可选的。故而，有否纲要也会产生变体。
 
 排列组合不难算出，默认场景的变体共有 4 种，合计 8 个 CSS 文件，如下：
 
@@ -67,9 +67,9 @@
 
 
 
-#### 默认场景中【文章纲要列表】的 HTML 标签结构
+#### 默认场景中【文章目录】的 HTML 标签结构
 
-纲要的 HTML 标签结构主体来源于 [markdown-it-toc-done-right](https://www.npmjs.com/package/markdown-it-toc-done-right)，并配上我认为必要的少量额外标签。其结构如下：
+目录的 HTML 标签结构主体来源于 [markdown-it-toc-done-right](https://www.npmjs.com/package/markdown-it-toc-done-right)，并配上我认为必要的少量额外标签。其结构如下：
 
 
 ```html
@@ -87,8 +87,7 @@
 > 自动化产生 HTML 的 Javascript 程序不包含在本工具中。因为我认为其超出了本工具的工作主题。
 >
 > 本工具中针对该纲要列表的 CSS 定义确实于上述 Javascript 程序存在耦合。但我认为囊括这些与外界耦合的 CSS 定义是必要的，恰如本工具另有囊括之 CSS 定义与 Typora、Visual Studio Code 耦合一样。
->
-> 顺便提一下，我的上述转化程序虽基于业已成熟的 markdown-it 生态，但我的程序本身还不够成熟，故亦未单独设立公开的 Git 仓库。
+
 
 ---
 
@@ -103,7 +102,7 @@
 
 #### 用法
 
-在你的 MarkDown 文件的任何位置（例如文档首部）添加一句原生 HTML 代码。而后在 Visual Studio Code 中照常预览该 MarkDown 文件即可。
+在你的 MarkDown 文档的任何位置（例如文档首部）添加一句原生 HTML 代码。而后在 Visual Studio Code 中照常预览该 MarkDown 文件即可。
 
 须添加的原生 HTML 代码如下：
 

@@ -107,8 +107,6 @@ The markup structure of the said TOC parts are based on the output of [markdown-
 > This tool does **NOT** provide any Javascript programs for converting a markdown file into an HTML file. I insist that the converting tool should exist apart from this one. Because the converting functionality is out of the scope of this tool.
 >
 > The existence of the CSS definitions over the TOC HTML parts generated outside this tool is acceptable to me. Otherwise, I should not include anything for Typora or Vistual Studio Code either, should I?
->
-> BTW, the converting tool is not for public yet. 'Cause I'm not sure it's ready.
 
 ---
 

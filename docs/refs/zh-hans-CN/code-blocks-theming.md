@@ -24,14 +24,14 @@
 
 #### 简介
 
-See [https://highlightjs.org/](https://highlightjs.org/).
+见 [https://highlightjs.org/](https://highlightjs.org/)。
 
 
 #### 应用案例
 
 ##### markdown-it
 
-[markdown-it](https://www.npmjs.com/package/markdown-it) 的插件 [markdown-it-highlightjs](https://www.npmjs.com/package/markdown-it-highlightjs) 可产生可着色代码块。据其名称不能看出，其采用 HighlightJS 技术。
+[markdown-it](https://www.npmjs.com/package/markdown-it) 的插件 [markdown-it-highlightjs](https://www.npmjs.com/package/markdown-it-highlightjs) 可产生可着色代码块。据其名称不难看出，其采用 HighlightJS 技术。
 
 
 
@@ -41,7 +41,7 @@ See [https://highlightjs.org/](https://highlightjs.org/).
 
 #### 简介
 
-See [https://codemirror.net/](https://codemirror.net/).
+见 [https://codemirror.net/](https://codemirror.net/)。
 
 
 #### 应用案例
