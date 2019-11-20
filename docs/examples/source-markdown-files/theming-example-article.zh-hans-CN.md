@@ -72,9 +72,7 @@
 
 3.  第 1 级第 3 项
 
-    -   孔夫子热评西方美食
     -   周瑜正式出任新航母舰长
-    -   李白担任北京大学名誉副校长
     -   岳鹏举在南方各地视察防御工事
     -   祖冲之发表全新论文，受到中科院表彰
     -   武松打虎一案受到自然保护主义者质疑，有关部门已正式展开调查
@@ -124,10 +122,6 @@ CSS Object Model 是一组允许用 JavaScript 操纵 CSS 的 API。 它是继 D
 
 
 
-##### 浏览器对象模型
-
-浏览器对象模型（BOM）指的是由 Web 浏览器暴露的所有对象组成的表示模型。BOM 与 DOM 不同，BOM 既没有标准的实现，也没有严格的定义, 所以浏览器厂商可以自由地实现 BOM。<sup>[3]</sup>
-
 
 ##### 引用来源
 
@@ -135,9 +129,6 @@ CSS Object Model 是一组允许用 JavaScript 操纵 CSS 的 API。 它是继 D
 
 
 > 上文[2]来自 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/CSS_Object_Model)，但故意没有作为引用段落，以便呈现正常段落文字的样貌。
-
-
-> 上文[3]来自 [维基百科](https://zh.wikipedia.org/wiki/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B)，但故意没有作为引用段落，以便呈现正常段落文字的样貌。
 
 
 ---
@@ -317,7 +308,6 @@ console.log(NaN === NaN); // false
 ```js
 // 这是一句行尾注释。好吧，我承认它恰好在这一行的开头。
 import something from 'somethingjs'
-
 var myModule = require('my-module');
 
 const author = {
@@ -335,23 +325,18 @@ var newsThatAreNotNewsAnyMore = [
     '李广在 2019 亚洲射箭锦标赛再次夺魁',
 ]
 
-
-let anUndefinedValue = undefined; // 看看语句结尾分号的效果
-let aNull = null;
-
-var anInteger = (19 + 3 * (79 - 51) + 2013) % 2
-
+let   anUndefinedValue = undefined; // 看看语句结尾分号的效果
+const aNull = null;
+var   anInteger = (19 + 3 * (79 - 51) + 2013) % 2
 anInteger++;
-
 ++anInteger;
-
 anInteger--;
 
 Math.max(anInteger, -90)
 
 const cellPhoneNumberRegExp = /^1\d{2}([- ]?\d{4}){2}$/
 
-let cellPhoneNumber = '13345678901 '
+let cellPhoneNumber = '13345678901  '
 cellPhoneNumber = cellPhoneNumber.trim()
 
 const cellPhoneNumberIsValid = cellPhoneNumberRegExp.test(cellPhoneNumber)
@@ -360,7 +345,6 @@ console.log('cellPhoneNumberIsValid', cellPhoneNumberIsValid) // true
 var aString = `Meaningless ${cellPhoneNumber} ` + !!!true +
     ' ' + 15 + ' ' + !false + Math.random().toFixed(4)
 
-
 const aBoolean = true || false && !true && !!false || !0 &&
     !!1 || 9 < 6 && 8 >= 8 || NaN === NaN && 10 > 13;
 
@@ -368,9 +352,7 @@ var a, b, c, d = 11, e = 12, f, g = anInteger <= 1024 + -1e+8;
 f = 2e-5 / 16;
 
 let isAnArray = false
-if (Array.isArray([])) {
-    isAnArray = true
-}
+if (Array.isArray([])) { isAnArray = true }
 
 const regExp = new RegExp('\\w+', 'i')
 
@@ -395,11 +377,9 @@ $(function (e) {
     console.log(window.innerHeight, window.self, global)
 })
 
-const anArrowFunction = (count) => {
+const anArrowFunction = count => {
     for (var i = 0; i<count; i++) {
-        if (i === 3) {
-            continue
-        }
+        if (i === 3) { continue }
 
         if (i !== 6) {
             console.log('Not six')
@@ -417,15 +397,12 @@ const anArrowFunction = (count) => {
                 break
         }
 
-        if (i >= 10000) {
-            break
-        }
+        if (i >= 10000) { break }
     }
 }
 
 window.tempString = '\nhello\n unnecessary escaped chars: \m \p \- \.'
 delete window.tempString
-
 
 window['temp-string-2'] = `
     multiple
@@ -435,7 +412,6 @@ window['temp-string-2'] = `
 `
 
 var num = 10;
-
 num += 2;
 num -= 2;
 num *= 2;
@@ -464,7 +440,6 @@ function addTwoNumbers(a, b) {
     if (typeof a === 'number' && typeof b === 'number') {
         return a + b
     }
-
     return NaN
 }
 
@@ -477,14 +452,12 @@ export default function isAPromiseObject(input) {
     /*
         这就是
         啰哩吧嗦的
-        多行注释
-        的效果。瞅瞅吧。
+        多行注释的效果。瞅瞅吧。
     */
     return !!input && typeof input.then === 'function' && typeof input.done === 'function'
 }
 
 module.exports = { content: 'nothing' };
-
 exports.author = 'wulechun@live.com';
 ```
 
@@ -551,8 +524,7 @@ exports.author = 'wulechun@live.com';
     <!--
         这是啰哩吧嗦的多行注释，
         写这么多行，
-        只是为了能令其
-        多占据几行。
+        只是为了能令其多占据几行。
         你瞧，大体如此。
     -->
 
@@ -562,26 +534,23 @@ exports.author = 'wulechun@live.com';
     </div>
 
     <script id="js-example-1" type="text/javascript">
-        var button = document.querySelector('#one-button');
         var beautyImage = document.getElementById('beauty');
-
-        button.onclick = function () {
+        document.querySelector('#one-button').onclick = function () {
             beautyImage.src = './images/beauties/beauty-2.jpg';
             beautyImage.title = '另一位大美女';
         };
     </script>
 
-    <script id="js-example-2">
+    <script>
         var girl = {
             buy: function ( clothesName ) {
-                if (!this.has( clothesName )) {
+                if ( !this.has( clothesName ) ) {
                     this[ clothesName ] = true;
                     console.log('我刚买了', clothesName);
                 } else {
                     console.log('我已经有', clothesName, '了。钱省着点花吧。');
                 }
             },
-
             has: function ( clothesName ) {
                 return !!this[ clothesName ];
             }
@@ -596,33 +565,6 @@ exports.author = 'wulechun@live.com';
         girl.buy('复古丝巾');
         girl.buy('连衣裙');
         girl.buy('复古丝巾');
-    </script>
-
-    <script>
-        var flower = '郁金香';
-        var tree   = '木兰';
-
-        function house() {
-            var flower = '水仙'; // 与外界的变量重名了，同为 flower。
-
-            console.log('我写生，画了', flower); // 屋子里的水仙，而不是田野里的郁金香。
-            console.log('我写生，画了', tree);
-
-            flower = '月季'; // 改动发生在局部，即函数体内。外界不会受影响。
-            console.log('我写生，画了', flower); // 屋子里的月季。
-        }
-
-
-        console.log(flower); // 郁金香
-
-        house();
-
-        /*
-            外界看不到函数 house 的局部变量，
-            函数 house 中的同名 flower 的变动也不会影响外界。
-            因此外界的 flower 仍旧是郁金香。
-        */
-        console.log(flower); // 郁金香
     </script>
 
     <script src="vue-jquery-angluar-react.min.js" async>
@@ -724,7 +666,6 @@ a[href^="#"] {
 }
 
 /* chief navigation */
-
 nav ul {
     display: flex;
     justify-content: space-around !important;
@@ -748,7 +689,6 @@ nav li {
 }
 
 /* news list */
-
 .news-list {
     font-size: 1.2rem;
     list-style: none;
@@ -787,8 +727,7 @@ nav li {
     /*
         这是啰哩吧嗦的多行注释，
         写这么多行，
-        只是为了能令其
-        多占据几行。
+        只是为了能令其多占据几行。
         你瞧，大体如此。
     */
 
@@ -809,15 +748,6 @@ nav li {
 <?xml version="1.0" encoding="iso-8859-1"?>
 <xsi_file type="Keymap" xsi_version="9.5.184.0" syntax_version="1.0">
    <keymap name="lechuan_si2011SAP_default">
-      <keylist name="" guid="{00000000-0000-0000-0000-000000000000}">
-         <key
-            name="Help"
-            key="VK_F1"></key>
-         <key
-            name="Save Scene"
-            key="S"
-            modifier="DSCMD_CTRL"></key>
-      </keylist>
       <keylist name="AM Transition Tool" guid="{4E7133BE-503D-41A2-84F8-48CA38BFAAAC}">
          <key
             name="Switch to Bridge transition"
@@ -843,10 +773,6 @@ nav li {
          <key
             name="Raycast Polygon Select Tool"
             key="U"></key>
-         <key
-            name="Select Parent in Branch"
-            key="VK_UP"
-            modifier="DSCMD_CTRL|DSCMD_ALT"></key>
          <key
             name="Select Tree"
             key="T"
@@ -880,10 +806,6 @@ nav li {
          <key
             name="Rotation Tool"
             key="C"></key>
-         <key
-            name="Undo"
-            key="Z"
-            modifier="DSCMD_ALT|DSCMD_SHIFT"></key>
       </keylist>
    </keymap>
 </xsi_file>
