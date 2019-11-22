@@ -501,7 +501,10 @@ video {
   blockquote {
     margin-left: 0;
     margin-right: 0;
-    max-width: 100%;
+  }
+  details {
+    margin-left: 0;
+    margin-right: 0;
   }
   table {
     max-width: none;

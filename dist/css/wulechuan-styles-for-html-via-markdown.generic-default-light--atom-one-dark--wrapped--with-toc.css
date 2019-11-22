@@ -496,7 +496,10 @@ body {
   .markdown-article blockquote {
     margin-left: 0;
     margin-right: 0;
-    max-width: 100%;
+  }
+  .markdown-article details {
+    margin-left: 0;
+    margin-right: 0;
   }
   .markdown-article table {
     max-width: none;
