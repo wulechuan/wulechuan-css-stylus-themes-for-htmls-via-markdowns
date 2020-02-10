@@ -125,10 +125,10 @@ CSS Object Model 是一组允许用 JavaScript 操纵 CSS 的 API。 它是继 D
 
 ##### 引用来源
 
-> 上文[1]来自 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Document_Object_Model)，但故意没有作为引用段落，以便呈现正常段落文字的样貌。
+> 上文[1]来自 [MDN](https://developer.mozilla.org/zh-CN/documents/Web/API/Document_Object_Model)，但故意没有作为引用段落，以便呈现正常段落文字的样貌。
 
 
-> 上文[2]来自 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/CSS_Object_Model)，但故意没有作为引用段落，以便呈现正常段落文字的样貌。
+> 上文[2]来自 [MDN](https://developer.mozilla.org/zh-CN/documents/Web/API/CSS_Object_Model)，但故意没有作为引用段落，以便呈现正常段落文字的样貌。
 
 
 ---

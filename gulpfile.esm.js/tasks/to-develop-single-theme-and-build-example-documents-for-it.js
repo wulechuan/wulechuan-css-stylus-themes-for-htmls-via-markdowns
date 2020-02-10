@@ -35,8 +35,8 @@ const exampleOutputHTMLFilesFolderPath  = './tests/output/theme-in-developement'
 const exampleOutputHTMLFileNameEnUS     = 'default-theming-example.--DEV--.en-us.html'
 const exampleOutputHTMLFileNameZhHansCN = 'default-theming-example.--DEV--.zh-hans-cn.html'
 const subPathsOfExtraHelperFilesToEmbed = [
-    // 'docs/examples/auto-update-html-document-title.js',
-    // 'docs/examples/example-snapshots-helper.js',
+    // 'documents/examples/auto-update-html-document-title.js',
+    // 'documents/examples/example-snapshots-helper.js',
 ]
 
 

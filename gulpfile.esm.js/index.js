@@ -6,7 +6,7 @@ import highOrderTasksForAllThemes
     from './tasks/to-process-all-themes'
 
 import highOrderTasksForDevelopmentOfSingleTheme
-    from './tasks/to-develop-single-theme-and-build-example-docs-for-it'
+    from './tasks/to-develop-single-theme-and-build-example-documents-for-it'
 
 import {
     taskBodyForCopyingAllAssetsFilesForAllExamples,

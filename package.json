@@ -8,11 +8,11 @@
     "source": "source",
     "dist": "dist",
     "test": "tests",
-    "doc": "docs"
+    "doc": "documents"
   },
   "main": "index.js",
   "scripts": {
-    "eslint": "eslint    ./.eslintrc.js    ./gulpfile.esm.js/**/*.js    ./docs/examples/*.js    ./tests/*.js    ./source/module/*.js    ./source/themes/js/**/*.js    ./global-config.js    ./index.js",
+    "eslint": "eslint    ./.eslintrc.js    ./gulpfile.esm.js/**/*.js    ./documents/examples/*.js    ./tests/*.js    ./source/module/*.js    ./source/themes/js/**/*.js    ./global-config.js    ./index.js",
     "firefox": "start    firefox    ./tests/output/example-htmls-with-snapshot-helpers/example.en-us.default-light-colored-theme.html    ./tests/output/example-htmls-with-snapshot-helpers/example.en-us.default-dark-colored-theme.html    ./tests/output/example-htmls-with-snapshot-helpers/example.zh-hans-cn.default-light-colored-theme.html    ./tests/output/example-htmls-with-snapshot-helpers/example.zh-hans-cn.default-dark-colored-theme.html",
     "openDevHTMLs": "start          ./tests/output/theme-in-developement/default-theming-example.--DEV--.en-us.html    &&    start       ./tests/output/theme-in-developement/default-theming-example.--DEV--.zh-hans-cn.html",
     "clean": "gulp                --silent  cleanAll",

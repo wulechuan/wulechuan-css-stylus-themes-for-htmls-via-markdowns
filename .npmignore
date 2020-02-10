@@ -1,8 +1,8 @@
 .vscode
-docs/refs
-docs/examples/rendered
-docs/examples/*.js
-docs/examples/source-markdown-files/illustrates
+documents/refs
+documents/examples/rendered
+documents/examples/*.js
+documents/examples/source-markdown-files/illustrates
 gulpfile.esm.js
 gulpfile.js
 Gulpfile.js

@@ -9,7 +9,7 @@ const joinPathPOSIX = path.posix.join
 
 export default function createTaskBodyForCopyingExampleAssetsTo(assetsOutputFolder) {
     return function toCopyExampleAssets() {
-        return gulpReadGlobs('./docs/examples/source-markdown-files/illustrates/**/*')
+        return gulpReadGlobs('./documents/examples/source-markdown-files/illustrates/**/*')
             .pipe(gulpWriteIn(joinPathPOSIX(assetsOutputFolder, 'illustrates')))
     }
 }

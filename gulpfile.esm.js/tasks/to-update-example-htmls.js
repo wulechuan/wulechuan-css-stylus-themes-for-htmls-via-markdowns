@@ -22,17 +22,17 @@ const exampleOutputHTMLFileNameEnUSDark      = 'example.en-us.default-dark-color
 const exampleOutputHTMLFileNameZhHansCNLight = 'example.zh-hans-cn.default-light-colored-theme.html'
 const exampleOutputHTMLFileNameZhHansCNDark  = 'example.zh-hans-cn.default-dark-colored-theme.html'
 
-const releasingExampleLightThemeHTMLFilesOutputFolderPath = './docs/examples/rendered/html'
-const releasingExampleDarkThemeHTMLFilesOutputFolderPath  = './docs/examples/rendered/html'
+const releasingExampleLightThemeHTMLFilesOutputFolderPath = './documents/examples/rendered/html'
+const releasingExampleDarkThemeHTMLFilesOutputFolderPath  = './documents/examples/rendered/html'
 const pathsOfExtraFilesToEmbedIntoReleasingHTMLFiles = [
-    // 'docs/examples/auto-update-html-document-title.js',
-    // 'docs/examples/example-snapshots-helper.js',
+    // 'documents/examples/auto-update-html-document-title.js',
+    // 'documents/examples/example-snapshots-helper.js',
 ]
 
 const snapshotHelperHTMLFilesOutputFolderPath = './tests/output/example-htmls-with-snapshot-helpers'
 const pathsOfExtraHelperFilesToEmbedIntoHTMLFilesForTakingSnapshotsEasier = [
-    'docs/examples/auto-update-html-document-title.js',
-    'docs/examples/example-snapshots-helper.js',
+    'documents/examples/auto-update-html-document-title.js',
+    'documents/examples/example-snapshots-helper.js',
 ]
 
 const taskCyclesOfBuildingHTMLFilesOfExampleMarkdowns = [

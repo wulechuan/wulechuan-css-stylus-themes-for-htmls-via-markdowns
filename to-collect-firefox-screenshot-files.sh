@@ -14,7 +14,7 @@ function collect-firefox-screenshot-files {
     local firefoxScreenshotFilesNamingPrefix="Screenshot_`date "+%Y-%m-%d"` "
 
 
-    local snapshotTargetFolderSubPah="docs/examples/rendered/snapshots"
+    local snapshotTargetFolderSubPah="documents/examples/rendered/snapshots"
 
 
     local snapshotTargetFolderPath="${repoRootFolder}/${snapshotTargetFolderSubPah}"

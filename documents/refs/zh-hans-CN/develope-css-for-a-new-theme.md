@@ -233,7 +233,7 @@ npm run updateExampleHTMLs2
 
 - `./.eslintrc.js`
 - `./gulpfile.esm.js/**/*.js`
-- `./docs/examples/*.js`
+- `./documents/examples/*.js`
 - `./test/*.js`
 - `./source/module/*.js`
 - `./source/themes/js/**/*.js`

@@ -33,11 +33,11 @@ This tool generates multiple CSS files easily. It also provides a tiny javasript
 
 > These links lead to a different page each.
 
-- [Introduction](./docs/refs/en-US/introduction.md)
-- [How does this Tool Work](./docs/refs/en-US/how-does-this-tool-work.md)
-- [Application Examples](./docs/refs/en-US/application-examples.md)
-- [Supported Scenarios so far](./docs/refs/en-US/supported-scenarios.md)
-- [Develope CSS for a New Theme](./docs/refs/en-US/develope-css-for-a-new-theme.md)
+- [Introduction](./documents/refs/en-US/introduction.md)
+- [How does this Tool Work](./documents/refs/en-US/how-does-this-tool-work.md)
+- [Application Examples](./documents/refs/en-US/application-examples.md)
+- [Supported Scenarios so far](./documents/refs/en-US/supported-scenarios.md)
+- [Develope CSS for a New Theme](./documents/refs/en-US/develope-css-for-a-new-theme.md)
 
 
 
@@ -53,21 +53,21 @@ The pictures below showcase how does an article look and feel as the default CSS
 ### Examples with a Light-colored Theme Applied
 
 
-- [Snapshot: In default light-colored theme, in a wide window, with toc collapsed](./docs/examples/rendered/snapshots/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
-- [示例：简体中文范文配默认浅色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./docs/examples/rendered/snapshots/示例：简体中文范文配默认浅色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
+- [Snapshot: In default light-colored theme, in a wide window, with toc collapsed](./documents/examples/rendered/snapshots/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
+- [示例：简体中文范文配默认浅色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./documents/examples/rendered/snapshots/示例：简体中文范文配默认浅色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
 
 ### Examples with a Dark-colored Theme Applied
 
-- [Snapshot: In default dark-colored theme, in a wide window, with toc collapsed](./docs/examples/rendered/snapshots/example_en-US_default-dark-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
-- [示例：简体中文范文配默认深色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./docs/examples/rendered/snapshots/示例：简体中文范文配默认深色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
+- [Snapshot: In default dark-colored theme, in a wide window, with toc collapsed](./documents/examples/rendered/snapshots/example_en-US_default-dark-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
+- [示例：简体中文范文配默认深色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./documents/examples/rendered/snapshots/示例：简体中文范文配默认深色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
 
 
 ### All Available Example Pictures
 
 For more pictures, see:
 
-- [Application Examples (en-US)](./docs/refs/en-US/application-examples.md).
-- [Application Examples (zh-hans-CN)](./docs/refs/zh-hans-CN/application-examples.md).
+- [Application Examples (en-US)](./documents/refs/en-US/application-examples.md).
+- [Application Examples (zh-hans-CN)](./documents/refs/zh-hans-CN/application-examples.md).
 
 
 

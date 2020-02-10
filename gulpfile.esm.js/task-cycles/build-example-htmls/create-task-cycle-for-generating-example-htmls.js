@@ -28,7 +28,7 @@ const joinPathPOSIX = path.posix.join
 
 
 
-const exampleSourceMarkdonwFilesFolderPath  = './docs/examples/source-markdown-files'
+const exampleSourceMarkdonwFilesFolderPath  = './documents/examples/source-markdown-files'
 const exampleSourceMarkdownFileNameEnUS     = 'theming-example-article.en-US.md'
 const exampleSourceMarkdownFileNameZhHansCN = 'theming-example-article.zh-hans-CN.md'
 

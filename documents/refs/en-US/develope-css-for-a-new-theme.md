@@ -227,7 +227,7 @@ To lint all discovered Javascript files according to these globs:
 
 - `./.eslintrc.js`
 - `./gulpfile.esm.js/**/*.js`
-- `./docs/examples/*.js`
+- `./documents/examples/*.js`
 - `./test/*.js`
 - `./source/module/*.js`
 - `./source/themes/js/**/*.js`
