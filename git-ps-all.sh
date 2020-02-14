@@ -4,6 +4,10 @@ echo
 echo 开始
 echo
 
+
+
+
+
 echo
 echo --- 阿里云 --------------------------
 echo
@@ -11,7 +15,11 @@ echo
 git ps aliyun
 
 echo
-echo
+
+
+
+
+
 echo
 echo --- 码云 ----------------------------
 echo
@@ -19,12 +27,22 @@ echo
 git ps gitee
 
 echo
-echo
+
+
+
+
+
 echo
 echo --- GitHub -------------------------
 echo
 
 git ps github
+
+echo
+
+
+
+
 
 echo
 echo 结束
