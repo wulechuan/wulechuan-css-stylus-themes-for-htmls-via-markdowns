@@ -81,51 +81,66 @@ body {
 .markdown-article h4,
 .markdown-article h5,
 .markdown-article h6,
+.markdown-article dt,
+.markdown-article p {
+  text-align: justify;
+}
+.markdown-article h1,
+.markdown-article h2,
+.markdown-article h3,
+.markdown-article h4,
+.markdown-article h5,
+.markdown-article h6,
 .markdown-article dt {
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  letter-spacing: 0.05em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
   border-width: 0;
-  line-height: 1.5;
 }
 .markdown-article h1 {
-  font-size: 2.7rem;
+  font-size: 2.5rem;
+  line-height: 1.25;
   margin-top: 2em;
   margin-bottom: 0.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
 .markdown-article h2 {
-  font-size: 2.1rem;
+  font-size: 1.9rem;
+  line-height: 1.25;
   margin-top: 3em;
   margin-bottom: 0.5em;
 }
 .markdown-article h3 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
+  line-height: 1.5;
   margin-top: 2em;
   margin-bottom: 0.3em;
 }
 .markdown-article h4 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
+  line-height: 1.5;
   margin-top: 2em;
   margin-bottom: 0.5em;
 }
 .markdown-article h5 {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
-.markdown-article h6 {
-  font-size: 1em;
+.markdown-article h6,
+.markdown-article dt {
+  font-size: 0.9rem;
+  line-height: 1.5;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
-.markdown-article h5 + h6 {
-  margin-top: 0;
-}
+.markdown-article h5 + h6,
 .markdown-article h4 + h5,
 .markdown-article h3 + h4,
 .markdown-article h2 + h3 {
-  margin-top: -0.5em;
+  margin-top: 0.5em;
 }
 .markdown-article blockquote > h6,
 .markdown-article th > h6,
@@ -150,25 +165,26 @@ body {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
-.markdown-article th > h6:first-child,
-.markdown-article td > h6:first-child,
-.markdown-article th > h5:first-child,
-.markdown-article td > h5:first-child,
-.markdown-article th > h4:first-child,
-.markdown-article td > h4:first-child,
-.markdown-article th > h3:first-child,
-.markdown-article td > h3:first-child,
-.markdown-article th > h2:first-child,
-.markdown-article td > h2:first-child,
-.markdown-article th > h1:first-child,
-.markdown-article td > h1:first-child {
-  margin-top: 0.25em;
+.markdown-article blockquote > h4 ~ p:last-child,
+.markdown-article th > h4 ~ p:last-child,
+.markdown-article td > h4 ~ p:last-child,
+.markdown-article blockquote > h3 ~ p:last-child,
+.markdown-article th > h3 ~ p:last-child,
+.markdown-article td > h3 ~ p:last-child,
+.markdown-article blockquote > h2 ~ p:last-child,
+.markdown-article th > h2 ~ p:last-child,
+.markdown-article td > h2 ~ p:last-child,
+.markdown-article blockquote > h1 ~ p:last-child,
+.markdown-article th > h1 ~ p:last-child,
+.markdown-article td > h1 ~ p:last-child {
+  margin-bottom: 1.25em;
 }
 .markdown-article p {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
+  line-height: 1.8;
 }
 .markdown-article sub,
 .markdown-article sup {
@@ -260,6 +276,10 @@ body {
 .markdown-article blockquote em {
   color: inherit;
 }
+.markdown-article li,
+.markdown-article dd {
+  text-align: justify;
+}
 .markdown-article li {
   margin: 0.5em 0;
   padding: 0 0.5rem;
@@ -328,7 +348,9 @@ body {
 }
 .markdown-article td,
 .markdown-article th {
+  text-align: justify;
   padding: 0.25em 0.75em;
+  min-width: 3rem;
 }
 .markdown-article table {
   border-collapse: collapse;
@@ -353,6 +375,7 @@ body {
 }
 .markdown-article code {
   word-break: break-all;
+  white-space: pre-wrap;
 }
 .markdown-article pre,
 .markdown-article pre > code {
@@ -453,18 +476,6 @@ body {
   margin: 1.5rem auto;
 }
 @media (max-width: 900px) {
-  .markdown-article h1 {
-    font-size: 2.4rem;
-  }
-  .markdown-article h2 {
-    font-size: 1.9rem;
-  }
-  .markdown-article h3 {
-    font-size: 1.35rem;
-  }
-  .markdown-article h4 {
-    font-size: 1.2rem;
-  }
   .markdown-article blockquote {
     font-size: 100%;
   }
@@ -527,7 +538,7 @@ body {
   scroll-behavior: smooth;
 }
 .markdown-article {
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.6;
   padding: 6rem 4rem 14rem 4rem;
   max-width: 51rem;
@@ -570,7 +581,7 @@ body {
 }
 @media (max-width: 900px) {
   .markdown-article {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.8;
     padding-top: 3rem;
     padding-bottom: 7rem;
@@ -627,7 +638,8 @@ html,
 button,
 input,
 textarea,
-select {
+select,
+option {
   font-family: 'Segoe UI', '微软雅黑', 'Microsoft Yahei UI', 'Microsoft Yahei', 'Lucida Grande', Helvetica, sans-serif;
 }
 kbd,
@@ -653,13 +665,13 @@ body {
   font-weight: 400;
 }
 .markdown-article h4 {
-  font-weight: 400;
+  font-weight: 600;
 }
 .markdown-article h5 {
-  font-weight: bold;
+  font-weight: 600;
 }
 .markdown-article h6 {
-  font-weight: bolder;
+  font-weight: 600;
 }
 .markdown-article h1 {
   padding-left: 1em;

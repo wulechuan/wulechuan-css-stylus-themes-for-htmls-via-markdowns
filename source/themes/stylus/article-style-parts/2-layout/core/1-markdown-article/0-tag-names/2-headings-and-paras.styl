@@ -1,61 +1,76 @@
 {__wrappingSelectorOf_markdownArticleLayoutRules} {
 
+    h1, h2, h3, h4, h5, h6, dt, p {
+        text-align: justify
+    }
+
     h1, h2, h3, h4, h5, h6, dt {
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-        border-width: 0;
-        line-height: 1.5;
         letter-spacing: 0.05em;
+
+        padding-top:    0.25em;
+        padding-bottom: 0.25em;
+
+        border-width: 0;
     }
 
     h1 {
         font-size: 2.5rem;
-        margin-top: 2em;
-        margin-bottom: 0.5em;
-        padding-top: 0.25em;
+        line-height: 1.25;
+
+        margin-top:     2em;
+        margin-bottom:  0.5em;
+
+        padding-top:    0.25em;
         padding-bottom: 0.25em;
     }
 
     h2 {
         font-size: 1.9rem;
-        margin-top: 3em;
+        line-height: 1.25;
+
+        margin-top:    3em;
         margin-bottom: 0.5em;
     }
 
     h3 {
         font-size: 1.35rem;
-        margin-top: 2em;
+        line-height: 1.5;
+
+        margin-top:    2em;
         margin-bottom: 0.3em;
     }
 
     h4 {
         font-size: 1.15rem;
-        margin-top: 2em;
+        line-height: 1.5;
+
+        margin-top:    2em;
         margin-bottom: 0.5em;
     }
 
     h5 {
         font-size: 0.95rem;
-        margin-top: 1.5em;
+        line-height: 1.5;
+
+        margin-top:    1.5em;
         margin-bottom: 0.5em;
     }
 
     h6, dt {
         font-size: 0.9rem;
-        margin-top: 1.5em;
+        line-height: 1.5;
+
+        margin-top:    1.5em;
         margin-bottom: 0.5em;
     }
 
 
 
-    h5 + h6 {
-        margin-top: 0;
-    }
-
+    h5 + h6,
     h4 + h5,
     h3 + h4,
     h2 + h3 {
-        margin-top: -0.5em;
+        margin-top: 0.5em;
     }
 
     h1 + h2 {
@@ -86,6 +101,16 @@
             padding-top: 0.25em;
             padding-bottom: 0.25em;
         }
+
+        > h4,
+        > h3,
+        > h2,
+        > h1 {
+
+            ~ p:last-child {
+                margin-bottom 1.25em
+            }
+        }
     }
 
     blockquote {
@@ -113,7 +138,7 @@
         > h1 {
 
             &:first-child {
-                margin-top: 0.25em;
+                // margin-top: 0.25em;
             }
         }
     }
@@ -122,10 +147,12 @@
 
 
     p {
-        margin-top: 0.5em;
+        margin-top:    0.5em;
         margin-bottom: 0.5em;
 
-        padding-top: 0.25em;
+        padding-top:    0.25em;
         padding-bottom: 0.25em;
+
+        line-height: 1.8;
     }
 }

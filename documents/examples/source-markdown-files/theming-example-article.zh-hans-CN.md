@@ -51,7 +51,7 @@
 
 如果一个链接指向**本文**，不妨称其为**文内链接**，而不应生硬的由英语直译为所谓“本地链接”。另，文内链接看起来与应与指向其它文章或网址的链接稍有不同，以为明示。暗示不堪用，明示才好。小例一则：跳转至本文《[程序代码片段示例集](#程序代码片段示例集)》。
 
-再来看看行文中的【代码词汇】或【术语】：例如`孙行者`和`计算机`，又如 `querySelector` 和 `querySelectorAll` 早已取代了老式的 `getElementsById` 和 `getElementsByTagName` 等。
+再来看看行文中的【代码词汇】或【术语】：例如`孙行者`和`计算机`，又如 `querySelector` 和 `querySelectorAll` 早已取代了老式的 `getElementsById` 和 `getElementsByTagName` 等。术语框中的多个连续空格也应得到保留，例如 `这后面有四个空格    这前面有四个空格`。
 
 计算机键盘快捷键，其视觉样式如是：<kbd>Ctrl</kbd>+<kbd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</kbd>；又例：如今，<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>s</kbd> 这一组合键早已广泛用于各种现代计算机软件中，代表（将工作内容或文件）`另存为`（壹文件）之功能。
 
