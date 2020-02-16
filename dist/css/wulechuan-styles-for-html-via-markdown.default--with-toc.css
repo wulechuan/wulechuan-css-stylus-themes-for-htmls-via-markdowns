@@ -86,36 +86,38 @@ dt {
   padding-bottom: 0.5em;
   border-width: 0;
   line-height: 1.5;
+  letter-spacing: 0.05em;
 }
 h1 {
-  font-size: 2.7rem;
+  font-size: 2.5rem;
   margin-top: 2em;
   margin-bottom: 0.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
 }
 h2 {
-  font-size: 2.1rem;
+  font-size: 1.9rem;
   margin-top: 3em;
   margin-bottom: 0.5em;
 }
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   margin-top: 2em;
   margin-bottom: 0.3em;
 }
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   margin-top: 2em;
   margin-bottom: 0.5em;
 }
 h5 {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
-h6 {
-  font-size: 1em;
+h6,
+dt {
+  font-size: 0.9rem;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
@@ -453,18 +455,6 @@ video {
   margin: 1.5rem auto;
 }
 @media (max-width: 900px) {
-  h1 {
-    font-size: 2.4rem;
-  }
-  h2 {
-    font-size: 1.9rem;
-  }
-  h3 {
-    font-size: 1.35rem;
-  }
-  h4 {
-    font-size: 1.2rem;
-  }
   blockquote {
     font-size: 100%;
   }
@@ -527,7 +517,7 @@ video {
   scroll-behavior: smooth;
 }
 .markdown-article {
-  font-size: 1rem;
+  font-size: 0.9rem;
   line-height: 1.6;
   padding: 6rem 4rem 14rem 4rem;
   max-width: 51rem;
@@ -570,7 +560,7 @@ td > h1 .header-anchor {
 }
 @media (max-width: 900px) {
   .markdown-article {
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.8;
     padding-top: 3rem;
     padding-bottom: 7rem;
@@ -775,7 +765,8 @@ html,
 button,
 input,
 textarea,
-select {
+select,
+option {
   font-family: 'Segoe UI', '微软雅黑', 'Microsoft Yahei UI', 'Microsoft Yahei', 'Lucida Grande', Helvetica, sans-serif;
 }
 kbd,
@@ -801,13 +792,13 @@ h3 {
   font-weight: 400;
 }
 h4 {
-  font-weight: 400;
+  font-weight: 600;
 }
 h5 {
-  font-weight: bold;
+  font-weight: 600;
 }
 h6 {
-  font-weight: bolder;
+  font-weight: 600;
 }
 h1 {
   padding-left: 1em;

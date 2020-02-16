@@ -3,14 +3,14 @@ window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan = 1
 window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
 
 ;(function setupAndStartApp() {
-    const logLine = '-'.repeat(51)
-    console.log(`\n\n${
+    const logLine = '-'.repeat(80)
+    console.log(`\n${
         logLine
     }\nWelcome to wulechuan's article TOC controller.\n\n ${
-        ' '.repeat(32)
+        ' '.repeat(61)
     }wulechuan@live.com\n${
         logLine
-    }\n\n`)
+    }\nhttps://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns\n\n\n`)
 
     const cssClassNameTOCExists                  = 'markdown-article-toc-exists'
     const cssClassNameTOCIsVisible               = 'markdown-article-toc-is-visible'
@@ -64,6 +64,8 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
 
 
     let tocIsVisible
+    let lastURLHashString = ''
+
     showOrHideTOCPanel(
         window.atBeginingShouldExpandTOCWhenWindowIsWideEnough &&
         window.innerWidth >= maxWindowWidthToEnableArticleClickingToHideTOC
@@ -202,31 +204,39 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
         e.stopPropagation()
 
         const { srcElement } = e
+        const liElement = this
+        const { selfAnchor } = liElement
 
-        if (srcElement !== this && srcElement !== this.selfAnchor) {
+        if (srcElement !== liElement && srcElement !== selfAnchor) {
             return undefined
         }
 
-        let TOCItemIsAllowedToCollapse = this.isCollapsible
-        let shouldNotFollowLinkOfThisTOCItem = false
+        const hrefOfThisAnchor = selfAnchor.href
+        let hashOfThisAnchor = ''
+
+        if (hrefOfThisAnchor.match(/#/)) {
+            hashOfThisAnchor = `#${hrefOfThisAnchor.split('#').pop()}`
+        }
+
+
+
+        const shouldGoToHashOfThisAnchor = !!hashOfThisAnchor && (lastURLHashString !== hashOfThisAnchor)
+        const forceToExpand = shouldGoToHashOfThisAnchor
+
+        lastURLHashString = hashOfThisAnchor
+
+        let TOCItemIsCollapsibleInCurrentSituation = liElement.isCollapsible
 
         if (isTOCPanelCoveringEntirePage()) {
-            TOCItemIsAllowedToCollapse = false
+            TOCItemIsCollapsibleInCurrentSituation = false
         }
 
-        if (TOCItemIsAllowedToCollapse) {
-            if (this.classList.contains(cssClassNameTOCItemIsCollapsed)) {
-                this.classList.remove(cssClassNameTOCItemIsCollapsed)
+        if (TOCItemIsCollapsibleInCurrentSituation) {
+            if (liElement.classList.contains(cssClassNameTOCItemIsCollapsed) || forceToExpand) {
+                liElement.classList.remove(cssClassNameTOCItemIsCollapsed)
             } else {
-                this.classList.add(cssClassNameTOCItemIsCollapsed)
-                shouldNotFollowLinkOfThisTOCItem = true
+                liElement.classList.add(cssClassNameTOCItemIsCollapsed)
             }
-        } else {
-            this.classList.remove(cssClassNameTOCItemIsCollapsed)
-        }
-
-        if (shouldNotFollowLinkOfThisTOCItem) {
-            return false
         }
     }
 })()
