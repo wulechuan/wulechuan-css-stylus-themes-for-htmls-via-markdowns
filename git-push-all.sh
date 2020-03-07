@@ -12,7 +12,7 @@ echo
 echo -e "--- \e[35m阿里云\e[0m --------------------------"
 echo
 
-git ps aliyun
+git  push  aliyun
 
 echo
 
@@ -24,7 +24,7 @@ echo
 echo -e "--- \e[31m码云\e[0m ----------------------------"
 echo
 
-git ps gitee
+git  push  gitee
 
 echo
 
@@ -36,7 +36,7 @@ echo
 echo -e "--- \e[33mGitHub\e[0m -------------------------"
 echo
 
-git ps github
+git  push  github
 
 echo
 
