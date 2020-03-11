@@ -1,3 +1,4 @@
+.circleci
 .vscode
 documents/**/*
 gulpfile.esm.js
