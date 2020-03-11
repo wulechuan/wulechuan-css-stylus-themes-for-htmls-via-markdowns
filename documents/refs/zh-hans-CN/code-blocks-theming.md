@@ -2,7 +2,7 @@
 
 # 吴乐川的 HTML 文章之样式集
 
-- 回到 [中文文章列表页](../../../ReadMe.zh-hans-CN.md)
+- 回到 [中文文章列表页](../../../ReadMe.md)
 
 
 ## Multilingual Editions of this Article

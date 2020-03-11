@@ -2,7 +2,7 @@
 
 # 吴乐川的 HTML 文章之样式集
 
-- 回到 [中文文章列表页](../../../ReadMe.zh-hans-CN.md)
+- 回到 [中文文章列表页](../../../ReadMe.md)
 
 
 ## Multilingual Editions of this Article
@@ -107,7 +107,7 @@
 须添加的原生 HTML 代码如下：
 
 ```html
-<link rel="stylesheet" href="{你想选用的CSS文件的存放路径}/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
+<link rel="stylesheet" href="./node_modules/@wulechuan/css-stylus-markdown-themes/dist/css/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
 ```
 
 > 提示：添加原始 HTML 代码的动作本身就可在 Visual Studio Code 中完成。

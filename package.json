@@ -2,7 +2,7 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "wulechuan <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "6.4.0",
+  "version": "6.4.1",
   "description": "A collection of CSS themes for HTML contents generated via MarkDowns.",
   "directories": {
     "source": "source",
@@ -50,7 +50,7 @@
   ],
   "dependencies": {
     "@wulechuan/generate-html-via-markdown": "v2.8.9",
-    "globby": "^10.0.1"
+    "globby": "^10.0.2"
   },
   "devDependencies": {
     "@wulechuan/gulp-classical-task-cycle": "^0.2.2",

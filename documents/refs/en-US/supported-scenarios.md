@@ -2,7 +2,7 @@
 
 # Wulechuan's HTML Article Themes
 
-- Go back to [ReadMe.md](../../../ReadMe.md)
+- Go back to [ReadMe.en-US.md](../../../ReadMe.en-US.md)
 
 
 ## Multilingual Editions of this Article
@@ -121,12 +121,12 @@ This one is specifically for the preview page generated inside Microsoft [Visual
 
 #### Usage
 
-Add a raw HTML line (see below) into your markdown file, and then preview the markdown file in your VS Code as normal.
+Add a raw HTML line (see below) into your markdown file, and then preview the markdown file in your VS Code as usual.
 
 The HTML line to embed into your markdown file looks like this:
 
 ```html
-<link rel="stylesheet" href="{YOUR_REAL_FILE_PATH_HERE}/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
+<link rel="stylesheet" href="./node_modules/@wulechuan/css-stylus-markdown-themes/dist/css/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
 ```
 
 ---
