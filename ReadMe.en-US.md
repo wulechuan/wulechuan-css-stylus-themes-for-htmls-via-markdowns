@@ -26,7 +26,9 @@
 
 ## What's This
 
-This tool provides multiple CSS files directly. The CSS files are used for dressing up an HTML article. And the said HTML article is typically generated out of a MarkDown file. This tool also provides a tiny javasript interface, so that other JavaScript tools can utilize contents of those CSS files easily, programatically.
+This tool provides multiple CSS files directly. The CSS files are used for dressing up an HTML article. And the said HTML article is typically generated out of a MarkDown file.
+
+This tool also provides a tiny javasript interface, so that other JavaScript tools can utilize contents of those CSS files easily, programatically. See below [Use as a Nodejs Package](#use-as-a-nodejs-package).
 
 This tool can also be used to generate new CSS files according to customizations. This means people can utilize this tool to create themes (aka `.css` files) of their own flavors, for their HTML articles.
 
