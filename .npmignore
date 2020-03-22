@@ -1,5 +1,5 @@
 .circleci
-.vs
+.vs/**/*
 .vscode
 
 # 记住！须保留 documents/examples/source-markdown-files！

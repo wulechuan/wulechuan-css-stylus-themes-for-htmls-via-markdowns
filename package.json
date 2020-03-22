@@ -2,7 +2,7 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "wulechuan <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "6.4.11",
+  "version": "6.4.12",
   "description": "A collection of CSS themes for HTML contents generated via MarkDowns.",
   "directories": {
     "source": "source",
@@ -57,7 +57,11 @@
     "文字排版美学",
     "文章“皮肤”",
     "文章中的代码着色",
-    "用于美化文章的样式"
+    "用于美化文章的样式",
+    "尺寸自适应式排版",
+    "自适应式排版",
+    "移动设备上的文字排版",
+    "小尺寸屏幕上的文字排版"
   ],
   "dependencies": {
     "globby": "^11.0.0"
