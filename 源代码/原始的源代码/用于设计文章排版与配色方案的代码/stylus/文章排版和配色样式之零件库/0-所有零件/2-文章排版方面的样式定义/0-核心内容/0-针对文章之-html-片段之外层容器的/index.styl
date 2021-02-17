@@ -1,0 +1,31 @@
+{_selectorOf_markdownArticleParent} {
+    padding: 3rem 1rem 6rem 1rem;
+}
+
+if (_selectorOf_markdownArticleParent != 'body') {
+    {_selectorOf_markdownArticleParent} {
+        margin: 0;
+    }
+}
+
+
+
+
+
+/* 以下为外层容器在窄窗口中时的补充定义 */
+
+@media (max-width: 900px) {
+    // html {
+    //     font-size: 18px;
+    // }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 16px;
+    }
+
+    {_selectorOf_markdownArticleParent} {
+        padding: 0;
+    }
+}

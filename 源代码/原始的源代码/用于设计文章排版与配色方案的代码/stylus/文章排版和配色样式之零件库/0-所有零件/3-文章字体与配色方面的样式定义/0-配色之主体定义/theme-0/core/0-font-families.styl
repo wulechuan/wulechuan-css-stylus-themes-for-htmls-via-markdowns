@@ -1,0 +1,17 @@
+__fontFamily_importantMark = ''
+
+if (_fontFamily_shouldMarkAsImportantRule) {
+    __fontFamily_importantMark = '!important'
+}
+
+{_selectorsOf_fontFamily_baseFontFamilyCarriers}, button, input, textarea, select, option {
+    font-family: 'Segoe UI', '微软雅黑', 'Microsoft Yahei UI', 'Microsoft Yahei', 'Lucida Grande', Helvetica, sans-serif unquote(__fontFamily_importantMark);
+
+    // @media screen and (min-width: 2600px) {
+    //     font-family: 'Segoe UI', '楷体', 'Microsoft Yahei UI', 'Lucida Grande', Helvetica, sans-serif unquote(__fontFamily_importantMark);
+    // }
+}
+
+{_selectorsOf_fontFamily_monospaceFontFamilyCarriers} {
+    font-family: 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', monospace unquote(__fontFamily_importantMark);
+}

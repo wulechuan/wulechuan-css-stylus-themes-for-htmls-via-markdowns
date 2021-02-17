@@ -1,0 +1,369 @@
+const 甄选描述符之工具 = require('globby')
+const 路径工具 = require('path')
+const 文件系统工具 = require('fs')
+const 粉笔 = require('chalk')
+
+const {
+    发布的层叠样式表之根文件夹之相对路径,
+    发布的配套Javascript之根文件夹之相对路径,
+} = require('./本项目之全局配置项集')
+
+const 本项目官方选定之所谓默认的Javascript文件之名称之基本名 = 'table-of-contents-and-back-to-top-anchor-behaviors'
+const 本项目所谓默认的Javascript文件之未压缩版之文件完整名称 = `${本项目官方选定之所谓默认的Javascript文件之名称之基本名}.js`
+const 本项目所谓默认的Javascript文件之已压缩版之文件完整名称 = `${本项目官方选定之所谓默认的Javascript文件之名称之基本名}.min.js`
+
+const { basename: 从文件路径中提取文件名称 } = 路径工具
+const { join: 遵循POSIX标准拼接路径 } = 路径工具.posix
+const { sync: 根据文件甄选描述符扫描文件系统并求出所有匹配的文件之绝对路径 } = 甄选描述符之工具
+const { readFileSync: 非回调式读取文件内容 } = 文件系统工具
+
+
+
+
+
+const 本项目之根路径 = 路径工具.dirname(require.resolve('./package.json'))
+
+const 用于将层叠样式表文件与Javascript文件进行配对关联的配置项集 = require(
+    './源代码/原始的源代码/本工具作为其他-javascript-工具之依赖模块时的代码/令发布的层叠样式表与-javascript-文件建立关联'
+)
+
+
+const 所有已发布的层叠样式表文件之甄选描述符 = 遵循POSIX标准拼接路径(本项目之根路径, 发布的层叠样式表之根文件夹之相对路径, '**/*.css').replace(/\\/g, '/')
+const 所有已发布的Javascript文件之甄选描述符 = 遵循POSIX标准拼接路径(本项目之根路径,  发布的配套Javascript之根文件夹之相对路径, '**/*.js' ).replace(/\\/g, '/')
+
+const 所有已发布之层叠样式表文件之绝对路径 = 根据文件甄选描述符扫描文件系统并求出所有匹配的文件之绝对路径(所有已发布的层叠样式表文件之甄选描述符)
+const 所有已发布之Javascript文件之绝对路径 = 根据文件甄选描述符扫描文件系统并求出所有匹配的文件之绝对路径(所有已发布的Javascript文件之甄选描述符)
+
+const 所有层叠样式表文件之简易描述项之集 = 所有已发布之层叠样式表文件之绝对路径.map(根据文件路径构建文件简易描述项)
+const 所有Javascript文件之简易描述项之集 = 所有已发布之Javascript文件之绝对路径.map(根据文件路径构建文件简易描述项)
+
+所有层叠样式表文件之简易描述项之集.forEach(某层叠样式表之文件描述项 => 依照配置将一组Javascript与某层叠样式表进行配对关联(
+    某层叠样式表之文件描述项,
+    用于将层叠样式表文件与Javascript文件进行配对关联的配置项集
+))
+
+const 以文件名称为索引之所有文件之字典 = 所有层叠样式表文件之简易描述项之集.concat(所有Javascript文件之简易描述项之集).reduce((汇总字典, 某文件之简易描述项) => {
+    汇总字典[某文件之简易描述项.文件名称] = 某文件之简易描述项
+    return 汇总字典
+}, {})
+
+
+if (false) { // eslint-disable-line no-constant-condition
+    console.log('-'.repeat(60))
+    console.log(本项目之根路径)
+    console.log(所有层叠样式表文件之简易描述项之集)
+    console.log(所有Javascript文件之简易描述项之集)
+    console.log('-'.repeat(60))
+}
+
+
+
+/**
+ * @typedef {Object} 吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项
+ * @property {string} 文件名称
+ * @property {string} 文件之相对路径
+ * @property {string} 文件之绝对路径
+ * @property {string} 文件内容全文
+ * @property {string} 所有应与之配套使用之Javascript之文件名称
+ * @property {string} fileName
+ * @property {string} fileRelativePath - Useless at present.
+ * @property {string} fileAbsolutePath
+ * @property {string} fileContent - File content will be cached here.
+ * @property {string[]?} associatedJavascriptFileNames
+ */
+
+
+
+/**
+ * @namespace defaultExports
+ * @property {吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项[]} 所有已发布之层叠样式表文件之简易描述项之集
+ * @property {吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项[]} 所有已发布之Javascript文件之简易描述项之集
+ * @property {object} 以文件名称为索引之所有文件之字典
+ *
+ * @property {Function} 获取某一已发布之文件之完整内容字符串
+ * @property {Function} 获取本项目官方选定之所谓默认层叠样式表之完整内容字符串
+ * @property {Function} 获取本项目官方选定之所谓默认Javascript之完整内容字符串
+ *
+ * @property {吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项[]} cssFileEntries
+ * @property {吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项[]} jsFileEntries
+ * @property {object} allFileEntriesKeyingByFileNames
+ *
+ * @property {Function} syncGetContentStringOfOneFileEntry
+ * @property {Function} syncGetContentStringOfDefaultCSS
+ * @property {Function} syncGetContentStringOfDefaultTOCJavascript
+ */
+module.exports = {
+    所有已发布之层叠样式表文件之简易描述项之集: 所有层叠样式表文件之简易描述项之集,
+    所有已发布之Javascript文件之简易描述项之集: 所有Javascript文件之简易描述项之集,
+
+    /**
+     * @enum {吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项}
+     */
+    以文件名称为索引之所有文件之字典,
+
+    获取某一已发布之文件之完整内容字符串,
+    获取本项目官方选定之所谓默认层叠样式表之完整内容字符串,
+    获取本项目官方选定之所谓默认Javascript之完整内容字符串,
+
+    // 以下为陈旧的采用外国字命名之诸接口。
+
+    cssFileEntries: 所有层叠样式表文件之简易描述项之集,
+    jsFileEntries: 所有Javascript文件之简易描述项之集,
+
+    /**
+     * @enum {吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项}
+     */
+    allFileEntriesKeyingByFileNames: 以文件名称为索引之所有文件之字典,
+
+    syncGetContentStringOfOneFileEntry: 获取某一已发布之文件之完整内容字符串,
+    syncGetContentStringOfDefaultCSS: 获取本项目官方选定之所谓默认层叠样式表之完整内容字符串,
+    syncGetContentStringOfDefaultTOCJavascript: 获取本项目官方选定之所谓默认Javascript之完整内容字符串,
+}
+
+
+
+/**
+ * To prepare an entry object for a file,
+ * so that, the content of the said file
+ * can be easily fetched via this entry object.
+ * Note that this object also caches the
+ * content of the file once read.
+ * @param {string} 某文件之绝对路径 - The absolute path of a file to process.
+ * @returns {吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项}
+ */
+function 根据文件路径构建文件简易描述项(某文件之绝对路径) {
+    const 文件名称 = 从文件路径中提取文件名称(某文件之绝对路径)
+    const 文件之相对路径 = 路径工具.relative(本项目之根路径, 某文件之绝对路径)
+    return {
+        文件名称,
+        文件之相对路径,
+        文件之绝对路径: 某文件之绝对路径,
+        文件内容全文: '',
+
+        // 以下为陈旧的采用外国字命名之诸接口。
+
+        fileName: 文件名称,
+        fileRelativePath: 文件之相对路径,
+        fileAbsolutePath: 某文件之绝对路径,
+        fileContent: '',
+    }
+}
+
+
+
+/**
+ * Adding @property {string[]} 所有应与之配套使用之Javascript之文件名称 to input entry object.
+ * Adding @property {string[]} associatedJavascriptFileNames to input entry object.
+ * @param {吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项} 某层叠样式表之文件描述项 - The file entry to process.
+ */
+function 依照配置将一组Javascript与某层叠样式表进行配对关联(某层叠样式表之文件描述项, 将Javascript与层叠样式表文件配对关联的配置集) {
+    const { 文件名称: 层叠样式表文件之名称 } = 某层叠样式表之文件描述项
+
+    if (!层叠样式表文件之名称.match(/\.css$/) || 某层叠样式表之文件描述项.所有应与之配套使用之Javascript之文件名称 || 某层叠样式表之文件描述项.associatedJavascriptFileNames) {
+        return
+    }
+
+    const 所有应与该叠样式表配套使用的Javascript之文件名称 = 将Javascript与层叠样式表文件配对关联的配置集.reduce(
+        (搜集好的应关联的Javascript文件之总集, 定义关联的配置项) => {
+            if (定义关联的配置项.用于匹配层叠样式表文件名称的正则表达式集.some(用于匹配文件名称的某正则表达式 => {
+                return 用于匹配文件名称的某正则表达式.test(层叠样式表文件之名称)
+            })) {
+                搜集好的应关联的Javascript文件之总集 = [
+                    ...搜集好的应关联的Javascript文件之总集,
+                    ...定义关联的配置项.凡匹配之层叠样式表均应该关联的Javascript文件集,
+                ]
+            }
+
+            return 搜集好的应关联的Javascript文件之总集
+        },
+
+        [] // 搜集好的应关联的Javascript文件之总集
+    )
+
+    if (所有应与该叠样式表配套使用的Javascript之文件名称.length < 1) {
+        return
+    }
+
+    某层叠样式表之文件描述项.associatedJavascriptFileNames = 所有应与该叠样式表配套使用的Javascript之文件名称
+    某层叠样式表之文件描述项.所有应与之配套使用之Javascript之文件名称 = 所有应与该叠样式表配套使用的Javascript之文件名称
+}
+
+
+/**
+ * To read a file.
+ * @param {string} 文件之绝对路径 - The absolute path of a file.
+ * @returns {string}
+ */
+function 非回调式读取文件内容为字符串(文件之绝对路径) {
+    return 非回调式读取文件内容(文件之绝对路径).toString()
+}
+
+
+/**
+ *
+ * @param {string|吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项} 文件描述项或文件名称
+ * @returns {吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项}
+ */
+function 拾取某一文件描述对象(文件描述项或文件名称) {
+    let 命中的文件简易描述项
+    let 命中的文件之名称
+
+    if (文件描述项或文件名称) {
+        if (typeof 文件描述项或文件名称 === 'object') {
+            命中的文件简易描述项 = 文件描述项或文件名称
+            命中的文件之名称 = 命中的文件简易描述项.文件名称
+        } else if (typeof 文件描述项或文件名称 === 'string') {
+            命中的文件之名称 = 文件描述项或文件名称
+            命中的文件简易描述项 = 以文件名称为索引之所有文件之字典[命中的文件之名称]
+        }
+    }
+
+    // console.log('\n\n文件描述项或文件名称', 文件描述项或文件名称, '\n命中的文件简易描述项', 命中的文件简易描述项, '\n命中的文件之名称', 命中的文件之名称)
+
+    if (!命中的文件简易描述项 || !命中的文件之名称) {
+        throw new TypeError(`\n    ${
+            粉笔.red('@wulechuan/css-stylus-markdown-themes：')
+        }\n${
+            ' '.repeat(8)
+        }${
+            粉笔.red('欲读取某文件之内容全文时，给出的【文件名称】或【文件简易描述项】无效。')
+        }\n\n        文件描述项或文件名称 = "${
+            粉笔.yellow(文件描述项或文件名称)
+        }"\n        命中的文件之名称     = "${
+            粉笔.yellow(命中的文件之名称)
+        }"\n`)
+    }
+
+    return 命中的文件简易描述项
+}
+
+
+/**
+ * Get content string via a file path or an entry object.
+ * @memberOf defaultExports
+ * @param {string|吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项} 文件描述项或文件名称 - The input identity of file to get content from.
+ * @param {Boolean?} 不应采用已经缓存的旧内容
+ * @param {Object?} 获取配套默认Javascript的配置项集
+ * @returns {string}
+ */
+function 获取某一已发布之文件之完整内容字符串(文件描述项或文件名称, 不应采用已经缓存的旧内容, 获取配套默认Javascript的配置项集) {
+    const 命中的文件简易描述项 = 拾取某一文件描述对象(文件描述项或文件名称)
+
+    if (命中的文件简易描述项.文件内容全文 && !不应采用已经缓存的旧内容) {
+        return 命中的文件简易描述项.文件内容全文
+    }
+
+    const { 文件之绝对路径 } = 命中的文件简易描述项
+    const 文件名称 = 从文件路径中提取文件名称(文件之绝对路径)
+
+    if ([
+        本项目所谓默认的Javascript文件之未压缩版之文件完整名称,
+        本项目所谓默认的Javascript文件之已压缩版之文件完整名称,
+    ].includes(文件名称)) {
+        return 获取本项目官方选定之所谓默认Javascript之完整内容字符串(不应采用已经缓存的旧内容, 获取配套默认Javascript的配置项集)
+    }
+
+    // 读取后立即将文件内容进行缓存。
+    命中的文件简易描述项.文件内容全文 = 非回调式读取文件内容为字符串(文件之绝对路径)
+
+    return 命中的文件简易描述项.文件内容全文
+}
+
+
+
+/**
+ * Get content string of the default css file (minified version).
+ * @memberOf defaultExports
+ * @returns {string}
+ */
+function 获取本项目官方选定之所谓默认层叠样式表之完整内容字符串(不应采用已经缓存的旧内容) {
+    return 获取某一已发布之文件之完整内容字符串(
+        'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css',
+        不应采用已经缓存的旧内容
+    )
+}
+
+
+
+/**
+ * Get content string of the default TOC javascript file (minified version).
+ * @memberOf defaultExports
+ * @returns {string}
+ */
+function 获取本项目官方选定之所谓默认Javascript之完整内容字符串(不应采用已经缓存的旧内容, 本函数之配置项集) {
+    const 命中的文件简易描述项 = 拾取某一文件描述对象(本项目所谓默认的Javascript文件之已压缩版之文件完整名称)
+
+    const shouldRereadFileForStorage = !命中的文件简易描述项.文件内容全文 || 不应采用已经缓存的旧内容
+
+    if (!shouldRereadFileForStorage && !本函数之配置项集) {
+        return 命中的文件简易描述项.文件内容全文
+    }
+
+    if (!本函数之配置项集 || typeof 本函数之配置项集 !== 'object' || Array.isArray(本函数之配置项集)) {
+        本函数之配置项集 = {}
+    }
+
+    const {
+        shouldShowOnlyTwoLevelsOfTOCItemsAtMost,
+        atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan,
+    } = 本函数之配置项集
+
+    let shouldReplaceValueForOptionAtBeginingShouldExpandTOCWhenWindowIsWideEnough = false
+    let atBeginingShouldExpandTOCWhenWindowIsWideEnough
+    if ('atBeginingShouldExpandTOCWhenWindowIsWideEnough' in 本函数之配置项集) {
+        shouldReplaceValueForOptionAtBeginingShouldExpandTOCWhenWindowIsWideEnough = true
+        atBeginingShouldExpandTOCWhenWindowIsWideEnough = 本函数之配置项集.atBeginingShouldExpandTOCWhenWindowIsWideEnough
+    } else if ('atBeginingShouldExpandTOCWhenWindowsIsWideEnough' in 本函数之配置项集) {
+        shouldReplaceValueForOptionAtBeginingShouldExpandTOCWhenWindowIsWideEnough = true
+        atBeginingShouldExpandTOCWhenWindowIsWideEnough = 本函数之配置项集.atBeginingShouldExpandTOCWhenWindowsIsWideEnough
+    }
+
+    const 应从文件内容首部截取的待编辑部分之长度之保守值 = [
+        'window.shouldShowOnlyTwoLevelsOfTOCItemsAtMost = false\n',
+        'window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan = 1\n',
+        'window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false\n',
+    ].join('').length + 51 // 在已知的应截取的字符串之长度上再加上一个正整数，以求保险。
+
+
+
+    let 该Javascript文件之完整原始内容
+
+    if (shouldRereadFileForStorage) {
+        该Javascript文件之完整原始内容 = 非回调式读取文件内容为字符串(命中的文件简易描述项.fileAbsolutePath)
+    } else {
+        该Javascript文件之完整原始内容 = 命中的文件简易描述项.文件内容全文
+    }
+
+    let   首部须编辑之片段 = 该Javascript文件之完整原始内容.slice(0, 应从文件内容首部截取的待编辑部分之长度之保守值)
+    const 余下不应变动之片段 = 该Javascript文件之完整原始内容.slice(应从文件内容首部截取的待编辑部分之长度之保守值)
+
+    if ('shouldShowOnlyTwoLevelsOfTOCItemsAtMost' in 本函数之配置项集) {
+        首部须编辑之片段 = 首部须编辑之片段.replace(
+            /\b(window.shouldShowOnlyTwoLevelsOfTOCItemsAtMost\s*=\s*)(true|false|!0|!1)\b/,
+            `$1${!!shouldShowOnlyTwoLevelsOfTOCItemsAtMost}`
+        )
+    }
+
+    if (
+        typeof atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan === 'number' &&
+        atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan >= 0
+    ) {
+        首部须编辑之片段 = 首部须编辑之片段.replace(
+            /\b(window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan\s*=\s*)(NaN|\d+)\b/,
+            `$1${atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan}`
+        )
+    }
+
+    if (shouldReplaceValueForOptionAtBeginingShouldExpandTOCWhenWindowIsWideEnough) {
+        首部须编辑之片段 = 首部须编辑之片段.replace(
+            /\b(window.atBeginingShouldExpandTOCWhenWindowIsWideEnough\s*=\s*)(true|false|!0|!1)\b/,
+            `$1${!!atBeginingShouldExpandTOCWhenWindowIsWideEnough}`
+        )
+    }
+
+    const 修订好的文件内容全文 = `${首部须编辑之片段}${余下不应变动之片段}`
+
+    命中的文件简易描述项.文件内容全文 = 修订好的文件内容全文
+
+    return 修订好的文件内容全文
+}

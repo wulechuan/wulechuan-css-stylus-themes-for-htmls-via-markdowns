@@ -1,0 +1,5 @@
+checkRequiredVariable(variableName, exampleValue) {
+    if !lookup(variableName) {
+        error('Stylus variable REQUIRED: ' + variableName + '.\n                 example: ' + variableName + ' = "' + exampleValue + '"')
+    }
+}

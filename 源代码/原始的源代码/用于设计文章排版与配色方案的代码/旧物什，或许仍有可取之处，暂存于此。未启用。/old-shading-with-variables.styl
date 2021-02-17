@@ -1,0 +1,98 @@
+& {
+    regularTextColor = #333;
+
+    themingChiefColor1 = #088aee;
+    themingChiefColor1Active = (themingChiefColor1 + 10%);
+
+    externalLinkTextColor = themingChiefColor1;
+    externalActiveLinkTextColor = themingChiefColor1Active;
+
+    selfPageLinkTextColor = #5187b3;
+    selfPageActiveLinkTextColor = (selfPageLinkTextColor + 10%);
+
+    inlineCodeTextColor = #a34587;
+    snippetBlockCodeDefaultColor = #aaa;
+    defaultDividingLineColor = rgba(black, 0.219);
+
+
+    & {
+        color: regularTextColor;
+        background-color: #f4f4f4;
+    }
+
+    a {
+        &,
+        &:visited {
+            color: externalLinkTextColor;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: externalActiveLinkTextColor;
+        }
+
+        &[href^="#"] {
+            &,
+            &:visited {
+                color: selfPageLinkTextColor;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: selfPageActiveLinkTextColor;
+            }
+        }
+    }
+
+    strong, b, em,
+    h1, h2, h3, h4, h5, h6, dt {
+        color: black;
+    }
+
+    blockquote {
+        color black;
+    }
+
+    p, ol, ul, dl,
+    table {
+        color: regularTextColor;
+    }
+
+    strong, b, em,
+    h1, h2, h3, h4, h5, h6,
+    p, ol, ul, dl,
+    blockquote,
+    table {
+        code {
+            color:            inlineCodeTextColor;
+            border-color:     defaultDividingLineColor;
+            background-color: rgba(white, 0.319);
+        }
+    }
+
+    kbd {
+        color:            #fff;
+        border-color:     #fff;
+        background-color: #789abc;
+        box-shadow: 1px 1px 1px 0 rgba(black, 0.219);
+    }
+
+    hr {
+        border-color: defaultDividingLineColor;
+        background-color: defaultDividingLineColor;
+    }
+
+    pre {
+        background-color: #131313;
+
+        code {
+            color: snippetBlockCodeDefaultColor;
+        }
+    }
+
+    blockquote {
+        border-color: themingChiefColor1;
+    }
+}

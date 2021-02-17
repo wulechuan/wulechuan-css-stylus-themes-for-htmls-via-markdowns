@@ -1,0 +1,59 @@
+{_selectorOf_markdownArticleParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
+    margin-left: tocPanel_defaultWidth;
+}
+
+{_selectorOf_tocByMarkdownItTOCDoneRight} {
+    display: none;
+}
+
+.markdown-article-toc-is-visible {_selectorOf_tocByMarkdownItTOCDoneRight} {
+    display: block;
+}
+
+
+
+.markdown-article-toc-toggling-button {
+    font-size: 0.8rem;
+
+    box-sizing: content-box;
+    display: block;
+    border: 1px solid transparent;
+    line-height: 1;
+    padding: 0.5em 1.2em;
+    border-radius: 0 2rem 2rem 0;
+
+    position: fixed;
+    top: 0.8rem;
+
+    cursor: pointer;
+
+    transition: all 0.3s;
+    
+    left: -0.5rem;
+    transform: translateX(0);
+
+    &:active,
+    &:focus {
+        outline: none;
+    }
+}
+
+.markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
+    left: (tocPanel_defaultWidth / 2);
+    transform: translateX(-50%);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+.markdown-article-toc-toggling-button::before {
+    content: 'TOC';
+    font-family: sans-serif;
+}
+
+{languageSelectors('zh', 'hans', 'CN')} {
+
+    .markdown-article-toc-toggling-button::before {
+        content: '目录';
+        font-family: inherit;
+    }
+}

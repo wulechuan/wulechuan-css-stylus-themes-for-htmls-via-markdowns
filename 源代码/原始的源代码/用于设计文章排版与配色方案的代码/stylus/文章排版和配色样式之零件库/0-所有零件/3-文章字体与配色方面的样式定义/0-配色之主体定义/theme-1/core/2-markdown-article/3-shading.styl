@@ -1,0 +1,223 @@
+/* 以下 CSS 是除代码块之外的页面整体着色方案。*/
+
+{_selectorOf_markdownArticleRoot} {
+    color: #a3a3a3;
+    background-color: #1e1e1e;
+    box-shadow: 0 0 0.2rem rgba(0, 0, 0, 0.79);
+}
+
+
+
+
+
+{__wrappingSelectorOf_markdownArticleBaseThemingRules} {
+
+    a {
+        transition-property: visibility, opacity, color, background-color, border, border-radius, transform;
+        transition-duration: 0.3s;
+
+        &:visited,
+        & {
+            color: #68f;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: #f86;
+        }
+    }
+
+    a[href^="#"] {
+        // So-called page local links.
+        // They point to the page they are in.
+
+        &:visited,
+        & {
+            color: #7d5;
+        }
+
+        // &:hover,
+        // &:focus,
+        // &:active {
+        //     color: #7d5;
+        // }
+    }
+
+    a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+        // Permanent links created by
+        // markdown-it plugin: markdown-it-anchor
+
+        &:visited,
+        & {
+            color: #333;
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+
+        &:hover > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+            color: #666;
+        }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+
+        > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+                
+            &:hover,
+            &:focus,
+            &:active {
+                color: #7d5;
+            }
+        }
+
+        &:target:hover,
+        &:target {
+
+            > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+                color: #7d5;
+            }
+        }
+    }
+
+
+
+    h1, h2 {
+        color: #b6b6b6;
+    }
+
+    h3, h4 {
+        color: #797979;
+    }
+    
+    h5, h6,
+    dt {
+        color: #ddd;
+    }
+
+
+
+
+    img {
+        color: #555;
+        background-color: rgba(black, 0.219);
+        box-shadow: inset 0 0 0.4rem rgba(black, 0.51);
+    }
+
+
+
+
+    input[type="checkbox"] + label {
+        color: #ddd;
+        // text-shadow: 1px 1px 2px rgba(black, 0.2);
+    }
+
+    input[type="checkbox"]:checked + label {
+        color: #aba;
+        text-shadow: -1px -1px 0 rgba(0, 128, 0, 0.1);
+    }
+
+
+
+
+    strong,
+    b,
+    em {
+        color: #eee;
+    }
+
+
+
+    blockquote {
+        color: #b6b6b6;
+        border-color: #794513;
+        background-color: rgba(white, 0.051);
+        // text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.79);
+    }
+
+
+    details {
+        background-color: rgba(0, 0, 0, 0.079);
+        box-shadow: inset 0 0 0.25rem rgba(0, 0, 0, 0.319);
+    }
+
+    summary:focus,
+    summary:active {
+        color: #7d5;
+    }
+
+
+    table {
+        color: #b6b6b6;
+        border-color: #555;
+        background-color: #2b2b2b;
+    }
+
+    thead tr {
+        border-color: #515151;
+    }
+
+    th {
+        border-color: #3a3a3a;
+    }
+
+    td {
+        border-color: #222;
+    }
+
+    thead {
+        color: #000;
+        background-color: #454545;
+    }
+
+    tbody {
+        tr:nth-child(odd) {
+            background-color: transparent;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(white, 0.0319);
+        }
+    }
+
+
+    code,
+    kbd {
+        text-shadow: none !important;
+    }
+
+    code {
+        color: #d8b;
+        border-color: rgba(white, 0.219);
+        background-color: #050505;
+    }
+
+    pre code {
+        background-color: transparent !important;
+    }
+
+    kbd {
+        // color: #fff;
+        // background-color: #789abc;
+        // border-color: #fff;
+        // box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.219);
+
+        color #ddd;
+        background-color: #151515;
+        background-image: linear-gradient(45deg, black, #151515);
+        border-color: #191919 #131313 #131313 #191919;
+        box-shadow: 0rem 0.15rem 0 0.05rem #000;
+    }
+
+
+
+    hr {
+        color: rgba(128, 128, 128, 0.45);
+        background-image: linear-gradient(to right, transparent, currentColor 150%);
+    }
+
+    hr::before {
+        box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.51);
+    }
+}

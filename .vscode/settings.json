@@ -1,0 +1,12 @@
+{
+    "files.exclude": {
+        "**/node_modules": true,
+        "**/.DS_Store": true,
+        "package-lock.json": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "源代码/发布的源代码": true
+    }
+}

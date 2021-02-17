@@ -1,0 +1,56 @@
+{_selectorOf_tocByMarkdownItTOCDoneRight} {
+    background-color: #222;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.4);
+
+    &,
+    li > a[href^="#"] {
+        color: #aaa;
+        border-color: transparent;
+    }
+
+
+    & > ol > li,
+    & > ul > li,
+    &:not(.should-show-2-levels-at-most) li {
+
+        &.has-nested-toc-list > a[href^="#"] {
+            color: white;
+        }
+    }
+
+
+    li > a[href^="#"] {
+
+        &:hover {
+            border-color: rgba(white, 0.19) transparent;
+            background-image: linear-gradient(to right, transparent 0.25em, rgba(white, 0.1) 4em, transparent)
+        }
+    }
+
+
+    
+    @media screen and (max-width: 1000px) {
+
+        background-color: rgba(0, 0, 0, 0.91);
+
+        @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
+            background-color: rgba(0, 0, 0, 0.79);
+        }
+
+        @supports (backdrop-filter: blur(20px)) {
+            backdrop-filter: blur(20px)
+        }
+
+        @supports (-webkit-backdrop-filter: blur(20px)) {
+            -webkit-backdrop-filter: blur(20px)
+        }
+    }
+}
+
+.markdown-article-toc-toggling-button {
+    color: black;
+    border-color: #d51d79;
+    background-color: #dd56c6;
+    background-image: linear-gradient(23deg, #F1F 19%, #f66 45%, #ff6 87%);
+    box-shadow: 0 0 0.3rem rgba(@border-color, 0.9);
+}

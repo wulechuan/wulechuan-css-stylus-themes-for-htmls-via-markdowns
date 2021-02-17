@@ -1,0 +1,16 @@
+tocPanel_defaultWidth = 22rem
+tocPanel_widthWhenWindowWidthNoMoreThan1400 = 18rem
+tocPanel_widthWhenWindowWidthNoMoreThan1000 = 27rem // Window innerWidth 1000px or narrower, TOC floats over aritlce
+tocPanel_widthWhenWindowWidthNoMoreThan600 = 100%
+
+// z-indices
+{_selectorOf_tocByMarkdownItTOCDoneRight} {
+    z-index: 30;
+}
+.markdown-article-toc-toggling-button {
+    z-index: 60;
+}
+
+@import './0-raw-table-of-contents'
+@import './1-extra-things-designed-by-wulechuan'
+@import './2-everything-when-in-small-windows'

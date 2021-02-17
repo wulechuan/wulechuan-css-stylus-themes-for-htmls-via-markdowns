@@ -1,0 +1,69 @@
+@media screen and (min-width: 1001px) {
+
+    {_selectorOf_tocByMarkdownItTOCDoneRight} li.is-collapsed {
+
+        > li,
+        > ol {
+            display: none;
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: 1400px) and (min-width: 1001px) {
+
+    {_selectorOf_markdownArticleParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
+        margin-left: tocPanel_widthWhenWindowWidthNoMoreThan1400;
+    }
+
+    {_selectorOf_tocByMarkdownItTOCDoneRight} {
+        width: tocPanel_widthWhenWindowWidthNoMoreThan1400;
+    }
+
+    .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
+        left: (tocPanel_widthWhenWindowWidthNoMoreThan1400 / 2);
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+    {_selectorOf_markdownArticleParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
+        margin-left: 0;
+    }
+
+    {_selectorOf_tocByMarkdownItTOCDoneRight} {
+        width: tocPanel_widthWhenWindowWidthNoMoreThan1000;
+    }
+
+    .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
+        left: (tocPanel_widthWhenWindowWidthNoMoreThan1000 / 2);
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 600px) {
+
+    {_selectorOf_markdownArticleParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
+        margin-left: 0;
+    }
+
+    {_selectorOf_tocByMarkdownItTOCDoneRight} {
+        width: tocPanel_widthWhenWindowWidthNoMoreThan600;
+    }
+
+    .markdown-article-toc-toggling-button,
+    .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
+        left: (tocPanel_widthWhenWindowWidthNoMoreThan600 / 2);
+        transform: translateX(-50%);
+        border-radius: 2rem;
+    }
+}

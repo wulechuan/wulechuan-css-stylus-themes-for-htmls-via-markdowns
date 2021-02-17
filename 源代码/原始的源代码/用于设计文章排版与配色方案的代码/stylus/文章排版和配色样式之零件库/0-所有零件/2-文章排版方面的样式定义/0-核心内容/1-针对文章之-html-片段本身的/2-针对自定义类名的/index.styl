@@ -1,0 +1,71 @@
+/*
+    以下层叠样式表内容主要涉及“自定义类名”。这些类名它们并不通用。
+    自动化程序（如 markdown-it 或 Typora ）也无法在由标准的
+    MarkDown 内容产生的 HTML 中创造出使用这些自定义类名的 HTML 标签。
+
+    因此，这些类名无效用，除非在 MarkDown 文件中手工注入采用这些类名的 HTML 标签。
+*/
+
+{_selectorOf_markdownArticleRoot} {
+
+    & {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        padding: 6rem 4rem 14rem 4rem;
+        max-width: 51rem;
+        min-height: 60rem;
+        margin: 0 auto;
+        word-break: break-word;
+        // word-wrap: break-word;
+        // line-break: strict;
+    }
+
+    if (!_markdownArticleShouldNotScrollSmoothly) {
+        scroll-behavior: smooth;
+    }
+
+    > h1:first-child {
+        margin-top: 1em;
+    }
+}
+
+.markdown-article-toc-is-visible {
+
+    {_selectorOf_markdownArticleRoot} {
+        padding-left:  3rem;
+        padding-right: 3rem;
+    }
+}
+
+
+
+{__wrappingSelectorOf_markdownArticleLayoutRoot} {
+
+    .document-author {
+        text-align: center;
+    }
+
+    .centered {
+        text-align: center;
+    }
+
+    /* markdown-it plugin: markdown-it-anchor */
+    {_selectorOf_markdownArticleHeadingsPermantLinkAnchors} {
+        margin-left: -0.75em; // mark sure texts of the h1, h2 are centered.
+    }
+
+    blockquote, th, td {
+
+        > h6,
+        > h5,
+        > h4,
+        > h3,
+        > h2,
+        > h1 {
+
+            {_selectorOf_markdownArticleHeadingsPermantLinkAnchors} {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,144 @@
+{__wrappingSelectorOf_markdownArticleLayoutRoot} {
+
+    kbd, code, pre {
+        font-weight: 300;
+    }
+
+    kbd, code {
+        display: inline-block;
+        vertical-align: baseline;
+        line-height: 1;
+        min-height: 1em;
+        min-width: 0.5em;
+        font-style: normal;
+        border-style: solid;
+    }
+
+    code { // inline code phrases
+        font-size: inherit;
+        word-break: break-all;
+        white-space: pre-wrap;
+    }
+
+    kbd {
+        font-size: 90%;
+    }
+
+    pre {
+
+        &,
+        // > code *, // Why? For Typora? I forgot.
+        > code { // source code blocks
+            white-space: pre;
+            word-wrap: normal;
+            word-break: keep-all;
+            text-align: left !important;
+        }
+
+        > code { // source code blocks
+            box-sizing: border-box;
+            display: block;
+            width: 100%;
+            line-height: inherit;
+            padding: 0.25rem 0.5rem;
+            border: none !important;
+            margin: 0 !important;
+            border-radius: 0;
+            overflow-x: auto;
+        }
+    }
+
+
+
+    pre {
+        // If content entities (e.g. comments), have
+        // a semi-transparent background-color,
+        // then value of 1.5 works fine with the "PT Mono" font face.
+        // **BUT** still not perfect!
+        // line-height: 1.5;
+
+        // If content entities (e.g. comments), have
+        // a semi-transparent background-color,
+        // then value of 1.65 works fine with the "Consolas" font face.
+        // **BUT** still not perfect!
+        // line-height: 1.65;
+
+        // Now I decide that nothing have a semi-transparent
+        // background-color.
+        line-height: 1.6;
+
+
+        display: block;
+        box-sizing: border-box;
+        padding: 0.5rem;
+        margin: 0.5rem 1rem 2rem;
+    }
+
+
+
+    td,
+    li {
+
+        > pre {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    td {
+
+        > pre {
+            margin-right: 0;
+        }
+    }
+
+    li {
+
+        > pre:first-child {
+            margin-top: 0; // maybe 0.25em is better?
+
+            // The 2 lines below are for better alignments
+            // of list-style dots, when a <pre> is a child of a <li>.
+            display: inline-block;
+            vertical-align: top;
+            width: 100%;
+        }
+    }
+
+    blockquote,
+    td {
+
+        > pre:first-child {
+            margin-top: 1.5rem;
+        }
+
+        > pre:last-child {
+            margin-bottom: 1rem;
+        }
+
+        > pre:first-child:last-child {
+            margin-top:    0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    details {
+
+        > pre {
+            // margin-left:  0.5rem;
+            // margin-right: 0.5rem;
+            margin-left:  0;
+            margin-right: 0;
+        }
+
+        > pre:last-child {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+
+
+    // p + pre {
+    //     margin-top: 0;
+    // }
+}

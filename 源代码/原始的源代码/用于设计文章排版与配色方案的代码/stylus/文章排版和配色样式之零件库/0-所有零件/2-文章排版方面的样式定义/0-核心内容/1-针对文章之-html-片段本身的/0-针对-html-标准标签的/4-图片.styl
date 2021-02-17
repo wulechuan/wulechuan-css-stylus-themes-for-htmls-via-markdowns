@@ -1,0 +1,84 @@
+{__wrappingSelectorOf_markdownArticleLayoutRoot} {
+
+    img {
+        display: block;
+        box-sizing: content-box;
+        padding: 0.5rem;
+        max-width: 75%;
+        border-style: none;
+        margin: 0.5rem auto 1rem auto;
+
+        // Rules below are for images fail to load,
+        // a.k.a. for the alt texts of those images.
+        text-align: center;
+        font-size: 100%;
+        white-space: normal;
+        word-break: break-word;
+        font-style: italic;
+        font-weight: normal;
+    }
+
+
+    img { // default language (lang omitted). Contents below are in en-US.
+
+        &::before {
+            content: 'Image failed to load. No description of the image.';
+        }
+
+
+        &[alt]::before {
+            content: 'Image failed to load. Image descriptioin: \A"';
+        }
+
+        &[alt]::after {
+            content: '"';
+        }
+
+
+        @-moz-document url-prefix() {
+            /* firefox utilizes the ::before psuedo element
+            of an <img> to print the "alt" attribute of
+            the said <img>. So we can only use the ::after
+            psuedo element. */
+
+            &::after,
+            &[alt]::after {
+                content:' (Image failed to load)';
+            }
+        }
+    }
+
+
+    {languageSelectors('zh', 'hans', 'CN')} {
+
+        img {
+
+            &::before {
+                content: '图片加载失败。图片内容未知。';
+            }
+
+
+
+            &[alt]::before {
+                content: '图片加载失败。图片内容的大致描述为：\A“';
+            }
+
+            &[alt]::after {
+                content: '”';
+            }
+
+
+            @-moz-document url-prefix() {
+                /* firefox utilizes the ::before psuedo element
+                of an <img> to print the "alt" attribute of
+                the said <img>. So we can only use the ::after
+                psuedo element. */
+
+                &::after,
+                &[alt]::after {
+                    content:'（图片加载失败）';
+                }
+            }
+        }
+    }
+}

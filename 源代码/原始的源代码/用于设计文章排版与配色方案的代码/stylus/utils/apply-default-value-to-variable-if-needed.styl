@@ -1,0 +1,5 @@
+applyDefaultValueToAGlobalVariableIfNeeded(variableName, defaultValue) {
+    if !lookup(variableName) {
+        define(variableName, defaultValue, true)
+    }
+}

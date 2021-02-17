@@ -1,0 +1,287 @@
+/* 以下 CSS 节选自 FireFox 插件【Markdown Viewer Webext】的原始 CSS。 */
+
+input#__markdown-viewer__show-tools:not(:checked)~.toggleable {
+    max-height: 0;
+    max-width: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#__markdown-viewer__tools select,
+#__markdown-viewer__toc * {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#__markdown-viewer__tools > p {
+    text-align: center;
+    padding: 0 .5em;
+}
+
+
+
+
+/* 以下 CSS 内容特别针对 FireFox 插件【Markdown Viewer Webext】样貌做改进。 */
+
+// .markdownRoot {
+//     font-size: 0.9rem;
+//     line-height: 1.5;
+//     padding: 6rem 4rem 14rem 4rem;
+//     max-width: 50rem;
+//     min-height: 60rem;
+//     margin: 0 auto;
+// }
+
+
+
+
+
+
+#__markdown-viewer__tools {
+
+    &,
+    & * {
+        font-size: 0.7rem;
+    }
+
+    & {
+        box-sizing: border-box;
+        max-width: none;
+        max-height: 90%;
+        display: flex;
+        flex-direction: column-reverse;
+        z-index: 100;
+        border-radius: 0.3rem;
+    }
+
+    &.hidden {
+        display: none;
+    }
+    &.fixed {
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    > label[for="__markdown-viewer__show-tools"] {
+        float: none;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        width: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        min-height: 0;
+        min-width: 0;
+        padding: 0;
+        text-align: center;
+        position: absolute;
+        margin: 0;
+        top: 0.5rem;
+        right: 0.5rem;
+        border-radius: 50%;
+        z-index: 20;
+        cursor: pointer;
+
+
+        &::after {
+            content: '';
+            float: none;
+            right: auto;
+            margin: 0 auto;
+            font-size: inherit;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            transition: border-bottom .1s, border-top .1s .1s;
+        }
+    }
+
+
+
+    .toggleable {
+        display: block;
+        margin: 0 auto 0 auto;
+        padding: 0.5rem;
+        box-sizing: border-box;
+        width: 0;
+        overflow: hidden !important;
+        position: relative;
+        text-align: left;
+        transition: none !important;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            box-sizing: content-box;
+        }
+
+        &:last-child {
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+    }
+
+
+    #__markdown-viewer__toc::after {
+        content: none;
+    }
+
+
+    #__markdown-viewer__toc + .toggleable {
+        display: none !important;
+    }
+}
+
+input#__markdown-viewer__show-tools {
+    display: none;
+
+    &:not(:checked) {
+
+        & ~ label {
+            margin: 0;
+        }
+    }
+
+    &:checked {
+
+        & ~ label::after {
+            border-top-width: 0;
+            border-bottom-width: 4px;
+            transition: border-top .1s, border-bottom .1s .1s;
+        }
+
+
+        & ~ .toggleable {
+            max-height: none;
+            width: 100% !important;
+        }
+    }
+}
+
+
+
+
+
+#__markdown-viewer__tools .toggleable select {
+    display: block;
+    box-sizing: border-box;
+    height: 2em;
+    margin: 0.5rem auto;
+    padding: 0.2em 0.5em;
+    max-width: 15rem;
+}
+select#__markdown-viewer__mdselect,
+select#__markdown-viewer__hlselect {
+    width: 100%;
+}
+
+a#__markdown-viewer__download {
+    -moz-appearance: button !important;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    width: 8rem;
+    margin: 0.25rem auto;
+    padding: 0.2em 1em;
+    border-radius: 0.2rem;
+}
+
+
+#__markdown-viewer__toc {
+    display: block;
+    height: 20rem;
+    max-height: none;
+    padding: .5em;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0.25rem 0.5rem 0.5rem 0.5rem;
+    overflow: visible;
+
+
+    &::before {
+        text-align: center;
+        display: block;
+
+        margin: 0 auto 0.5rem auto;
+        text-decoration: none;
+        font-weight: normal;
+        opacity: 0.5;
+    }
+
+
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    > ul {
+        box-sizing: border-box;
+        padding: 0.5rem 0.5rem 2rem 0.5rem;
+        height: calc(100% - 2rem);
+        overflow: auto;
+
+        ul {
+            padding-left: 2em;
+        }
+    }
+
+    li {
+        margin: 0;
+        line-height: 1.5;
+
+        &::marker {
+            margin-right: 0.2em;
+        }
+    }
+
+    a[href^="#"] {
+        text-decoration: none;
+        border: none;
+        display: block;
+        margin: 0;
+        padding: 0.25em 1em;
+    }
+}
+
+
+
+
+#_markdown-viewer__toc::before {
+    content: 'Table of Contents';
+}
+
+{languageSelectors('zh', 'hans', 'CN')} {
+
+    #__markdown-viewer__toc::before {
+        content: '目录';
+    }
+}
+
+
+
+
+@media (max-width: 600px) {
+    // .markdownRoot {
+    //     padding: 3rem 2rem 7rem 2rem;
+    // }
+
+    #__markdown-viewer__tools.fixed {
+        top: 0.2rem;
+        right: 0.2rem;
+    }
+}
+
+@media print {
+    html body #__markdown-viewer__tools {
+        display: none !important;
+    }
+}

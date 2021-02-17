@@ -1,0 +1,539 @@
+.inline-pre-whitespaces {
+    white-space: pre;
+}
+
+.wlc-punctuation { // [ DEPRECATED ]
+    color: #666;
+
+    &.wlc-parenthesis, &.wlc-square-bracket, &.wlc-curly-brace {} // [ DEPRECATED ]
+    &.parenthesis, &.square-bracket, &.curly-brace {}
+
+    &.wlc-parenthesis { // [ DEPRECATED ]
+        &.wlc-parenthesis-open {} // [ DEPRECATED ]
+        &.wlc-parenthesis-close {} // [ DEPRECATED ]
+    }
+
+    &.wlc-square-bracket { // [ DEPRECATED ]
+        &.wlc-square-bracket-open {} // [ DEPRECATED ]
+        &.wlc-square-bracket-close {} // [ DEPRECATED ]
+    }
+
+    &.wlc-curly-brace { // [ DEPRECATED ]
+        &.wlc-curly-brace-open {} // [ DEPRECATED ]
+        &.wlc-curly-brace-close {} // [ DEPRECATED ]
+    }
+
+
+    &.wlc-colon {} // [ DEPRECATED ]
+    &.wlc-semi-colon {} // [ DEPRECATED ]
+    &.wlc-comma {} // [ DEPRECATED ]
+    &.wlc-period {} // [ DEPRECATED ]
+
+
+    &.wlc-greater-than-sign, // [ DEPRECATED ]
+    &.wlc-greater-than-or-equal-to-sign, // [ DEPRECATED ]
+    &.wlc-less-than-sign, // [ DEPRECATED ]
+    &.wlc-less-than-or-equal-to-sign { // [ DEPRECATED ]
+        color: #fb8;
+    }
+    &.wlc-tripple-equal-signs { // [ DEPRECATED ]
+        color: #fba;
+    }
+    &.wlc-exclamation-mark-and-double-equal-signs { // [ DEPRECATED ]
+        color: #a35;
+    }
+
+    &.wlc-exclamation-mark-and-equal-sign, // [ DEPRECATED ]
+    &.wlc-double-equal-signs { // [ DEPRECATED ]
+        color: #f33;
+        background-color: #f333;
+    }
+
+    &.wlc-double-pipes { // [ DEPRECATED ]
+        color: #949;
+    }
+    &.wlc-double-ampersands { // [ DEPRECATED ]
+        color: #f0f;
+    }
+    &.wlc-pipe { // [ DEPRECATED ]
+        color: cyan;
+    }
+
+
+    &.wlc-exclamation-marks { // [ DEPRECATED ]
+
+        &.even-count {
+            color: #abed69;
+        }
+
+        &.odd-count {
+            color: #f15;
+        }
+    }
+
+
+    &.wlc-equal-sign { // [ DEPRECATED ]
+        color: #678;
+    }
+
+
+    &.wlc-question-mark {} // [ DEPRECATED ]
+
+    &.wlc-asterisk, // [ DEPRECATED ]
+    &.wlc-forward-slash, // [ DEPRECATED ]
+    &.wlc-percentage-sign, // [ DEPRECATED ]
+    &.wlc-plus-sign, // [ DEPRECATED ]
+    &.wlc-plus-plus-sign, // [ DEPRECATED ]
+    &.wlc-minus-sign, // [ DEPRECATED ]
+    &.wlc-minus-minus-sign, // [ DEPRECATED ]
+    &.wlc-minus-sign { // [ DEPRECATED ]
+        color: #f79;
+    }
+
+    &.wlc-negative-sign { // [ DEPRECATED ]
+        color: #9f3;
+    }
+    &.wlc-positive-sign { // [ DEPRECATED ]
+        color: #39f;
+    }
+
+    &.wlc-arrow-function-sign { // [ DEPRECATED ]
+        color: #7ae;
+    }
+}
+
+
+.punctuation {
+    color: #666;
+
+    &.parenthesis, &.square-bracket, &.curly-brace {}
+
+    &.parenthesis {
+        &.open-parenthesis {}
+        &.close-parenthesis {}
+    }
+
+    &.bracket {
+        &.open-bracket {}
+        &.close-bracket {}
+    }
+
+    &.curly-brace {
+        &.open-curly-brace {}
+        &.close-curly-brace {}
+    }
+
+
+    &.colon {}
+    &.semi-colon {}
+    &.comma {}
+    &.period {}
+
+
+    &.greater-than-sign,
+    &.greater-than-or-equal-to-sign,
+    &.less-than-sign,
+    &.less-than-or-equal-to-sign {
+        color: #fb8;
+    }
+    &.tripple-equal-signs {
+        color: #fba;
+    }
+    &.exclamation-mark-and-double-equal-signs {
+        color: #a35;
+    }
+
+    &.exclamation-mark-and-equal-sign,
+    &.double-equal-signs {
+        color: #f33;
+        background-color: #f333;
+    }
+
+    &.double-pipes {
+        color: #949;
+    }
+    &.double-ampersands {
+        color: #f0f;
+    }
+    &.pipe {
+        color: cyan;
+    }
+    &.exclamation-marks {
+        &.even-count {
+            color: #abed69;
+        }
+        &.odd-count {
+            color: #f15;
+        }
+    }
+
+
+    &.plus-and-assign-to,      // +=
+    &.minus-and-assign-to,     // -=
+    &.multiply-and-assign-to,  // *=
+    &.divide-by-and-assign-to, // /=
+    &.modulo-by-and-assign-to, // %=
+    &.equal-sign {
+        color: #678;
+    }
+
+
+    &.question-mark {}
+
+    &.asterisk,
+    &.forward-slash,
+    &.percentage-sign,
+    &.plus-sign,
+    &.plus-plus-sign,
+    &.minus-sign,
+    &.minus-minus-sign,
+    &.minus-sign {
+        color: #f79;
+    }
+
+    &.negative-sign {
+        color: #9f3;
+    }
+    &.positive-sign {
+        color: #39f;
+    }
+
+    &.arrow-function-sign {
+        color: #7ae;
+    }
+}
+
+
+.percentage-value {
+    .hljs-number {}
+    .percentage-sign {}
+}
+
+
+.wlc-function-name,
+.hljs-function .hljs-title { // javascript: function "name"
+    color: #f9f;
+}
+
+
+.wlc-built-in-method-name {
+    color: #9d6;
+}
+
+.wlc-escape-char, // [ DEPRECATED ]
+.escape-char {
+    // color: #c75;
+    color: #4ac;
+
+    .slash {
+        opacity: 0.2;
+    }
+
+    .escaped-char {
+    }
+}
+
+
+
+// ------ strings (begin) --------------------------------
+
+.hljs-string {
+
+    .wlc-string-quote { // [ DEPRECATED ]
+        color: #996;
+
+        &.open-quote  {} // [ DEPRECATED ]
+        &.close-quote {} // [ DEPRECATED ]
+    }
+
+    .string-quote {
+        color: #996;
+
+        &.string-open-quote {}
+        &.string-close-quote {}
+    }
+
+    &.empty-string .wlc-string-quote, // [ DEPRECATED ]
+    &.empty-string .string-quote,
+    .wlc-string-body,  // [ DEPRECATED ]
+    .string-body {
+        // color: #face79;
+        color: #ff9;
+    }
+
+    .wlc-escape-char, // [ DEPRECATED ]
+    .escape-char {
+        color: #c75;
+
+        .slash {
+        }
+
+        .escaped-char {
+        }
+    }
+
+    &.string-illegal {
+
+        .string-quote {
+            color: #966;
+
+            &.string-open-quote {}
+            &.string-close-quote {}
+        }
+
+        &.empty-string .string-quote,
+        .string-body {
+            color: #f99;
+        }
+    }
+}
+
+.hljs-string {
+    color: #ff9;
+}
+
+.language-xml,
+.language-html {
+
+    .hljs-string {
+
+        .wlc-string-body, // [ DEPRECATED ]
+        .string-body {
+            background-color: transparent;
+        }
+    }
+}
+
+.actionscript .hljs-string, // <script> inside HTML/XML
+.javascript   .hljs-string, // <script> inside HTML/XML
+.css          .hljs-string, // <style>  inside HTML/XML
+.hljs-string {
+
+    .wlc-string-body, // [ DEPRECATED ]
+    .string-body {
+        background-color: #ffff9919;
+    }
+}
+
+.actionscript .hljs-string.string-illegal, // <script> inside HTML/XML
+.javascript   .hljs-string.string-illegal, // <script> inside HTML/XML
+.css          .hljs-string.string-illegal, // <style>  inside HTML/XML
+.hljs-string.string-illegal {
+
+    .string-body {
+        background-color: #ff999919;
+    }
+}
+
+
+// ------ strings (end) ----------------------------------
+
+
+
+
+.hljs-regexp {
+
+    .regexp-close-quote,
+    .regexp-open-quote {
+        color: #858;
+    }
+
+    &.regexp-illegal {
+
+        .regexp-close-quote,
+        .regexp-open-quote {
+            color: #fff;
+            background-color #f00;
+        }
+    }
+
+    .wlc-escape-char, // [ DEPRECATED ]
+    .escape-char,
+    & {
+        color: #f6e;
+    }
+
+    .regexp-options {
+        color: #3e1;
+    }
+
+    .regexp-selector-input-begin,
+    .regexp-selector-input-end {
+        color: #f15;
+    }
+
+    .regexp-body {
+        background-color: rgba(#f6e, 0.08);
+        // background-color: rgba(#fff, 0.06);
+    }
+
+    .wlc-escape-char, // [ DEPRECATED ]
+    .escape-char {
+        // color: #f75;
+
+        .slash {
+        }
+
+        .escaped-char {
+        }
+    }
+
+
+    .regexp-selector-char {
+
+        &.wlc-escape-char, // [ DEPRECATED ]
+        &.escape-char,
+        & {
+            color: #4f9;
+        }
+
+        &.wlc-escape-char, // [ DEPRECATED ]
+        &.escape-char {
+
+            .slash {
+                opacity: 0.79;
+            }
+
+            .escaped-char {
+            }
+        }
+    }
+
+    .regexp-control-char {
+
+        &.wlc-escape-char, // [ DEPRECATED ]
+        &.escape-char,
+        & {
+            color: #379;
+        }
+
+        &.wlc-escape-char, // [ DEPRECATED ]
+        &.escape-char {
+
+            .slash {
+                opacity: 0.79;
+            }
+
+            .escaped-char {
+            }
+        }
+    }
+
+    .digit-pair-between-curly-braces {
+
+        .digit {
+            color: #f75;
+        }
+
+        .comma {
+            color: #666;
+        }
+    }
+}
+
+
+// ------- HTML & XML things (begin) -----------------------
+
+.hljs-attr.async {
+    color: #09f;
+}
+
+// ------- HTML & XML things (end) -------------------------
+
+
+// ------- css things (begin) -------------------------
+
+.hljs-built_in.css-named-color,
+.hljs-number.color-hex-value {
+    color: #69f;
+}
+
+.hljs-number.color-hex-value {
+    .sharp-sign {}
+}
+
+.hljs-number.color-hex-value,
+.hljs-selector-class,
+.hljs-selector-id {
+
+    .punctuation {
+        color: inherit;
+        opacity: 0.51;
+    }
+}
+
+.hljs-meta.css-exclamation-important {
+    color: #f55;
+    background-color: #422;
+}
+
+.css-unit {
+    color: #f8b;
+
+    &.absolute-length-unit {
+        // color: #c15;
+        color: #d36;
+    }
+}
+
+.css-angle,
+.css-time-duration,
+.css-length {
+    .hljs-number {}
+    .css-unit {}
+}
+
+.hljs-selector-attr {
+
+    .hljs-attr {
+        color: #f97;
+    }
+
+    .punctuation {
+
+        &.braket {
+        }
+
+        &.assertion {
+            color: #7f7;
+        }
+    }
+
+    .hljs-string {
+
+        .string-quote {}
+        .string-body {}
+    }
+}
+
+.language-stylus,
+.language-less,
+.language-sass,
+.language-css,
+.css { // <style>
+
+    .hljs-keyword {
+        &.at_document,
+        &.at_page,
+        &.at_font-face,
+        &.at_viewport,
+        &.at_counter-style,
+        &.at_supports,
+        &.at_font-feature-values,
+        &.at_swash,
+        &.at_ornaments,
+        &.at_annotation,
+        &.at_stylistic,
+        &.at_styleset ,
+        &.at_character-variant,
+        &.at_import,
+        &.at_charset,
+        &.at_namespace,
+        &.at_keyframes,
+        &.at_media {
+            color: #a6f;
+        }
+    }
+}
+
+// ------- css things (end) ---------------------------
