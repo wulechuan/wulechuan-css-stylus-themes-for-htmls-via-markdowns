@@ -8,7 +8,7 @@
 
 ## Multilingual Editions of this Article
 
-- [English version of this ReadMe](./ReadMe.en-US.md)
+- [English version of this ReadMe](./文档/说明书/en-US/ReadMe.md)
 
 
 
@@ -99,6 +99,8 @@
 
 ### 将本项目主文件作为 Nodejs 模块调用
 
+> 下例节选自《`测试集/用于测试本项目之Javascript接口的测试代码集.js`》。
+
 ```js
 const { // 全 12 个接口项如下。其中 6 个是采用汉语命名的，是新的；另 6 个是采用外国字命名的，是旧的。
     所有已发布之层叠样式表文件之简易描述项之集, // 这是一个数组。
@@ -121,35 +123,36 @@ const { // 全 12 个接口项如下。其中 6 个是采用汉语命名的，�
 } = require('@wulechuan/css-stylus-markdown-themes') // require 本模块
 
 
-console.log('-'.repeat(60))
-console.log(
-    'All available files in @wulechuan/css-stylus-markdown-themes:',
-    Object.keys(allFileEntriesKeyingByFileNames)
-)
-console.log('-'.repeat(60))
 
-const theDefaultCSSContentString = syncGetContentStringOfDefaultCSS()
 
-const alsoTheDefaultCSSContentString = syncGetContentStringOfOneFileEntry(
+
+const 所谓默认层叠样式表文件之内容全文 = 获取本项目官方选定之所谓默认层叠样式表之完整内容字符串()
+
+const 这也是默认层叠样式表文件之内容全文 = 获取某一已发布之文件之完整内容字符串(
     'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
 )
 
-const typoraCSSContentString = syncGetContentStringOfOneFileEntry(
+const 这是针对Typora软件环境的层叠样式表文件之内容全文 = 获取某一已发布之文件之完整内容字符串(
     'wulechuan-styles-for-html-via-markdown--typora.default.css'
 )
 
-const the7thThemeContentString = syncGetContentStringOfOneFileEntry(
-    cssFileEntries[6]
+const 这是第7个层叠样式表文件之内容全文 = 获取某一已发布之文件之完整内容字符串(
+    所有已发布之层叠样式表文件之简易描述项之集[6]
 )
 
-const theDefaultAndOnlyTOCJavascriptContentString = syncGetContentStringOfDefaultTOCJavascript()
 
-const alsoTheOnlyTOCJavascriptContentString = syncGetContentStringOfOneFileEntry(
+
+
+
+// 以下演示了三种不同的方法，其任一均可获得默认的并且也是目前唯一的 JavaScript 文件之内容全文。
+const 这是所谓默认同时也是目前唯一的Javascript文件之内容全文 = 获取本项目官方选定之所谓默认Javascript之完整内容字符串()
+
+const 这也是目前唯一的Javascript文件之内容全文 = 获取某一已发布之文件之完整内容字符串(
     'table-of-contents-and-back-to-top-anchor-behaviors.min.js'
 )
 
-const stillTheOnlyTOCJavascriptContentStringButNotMinified = syncGetContentStringOfOneFileEntry(
-    jsFileEntries[0]
+const 这还是目前唯一的Javascript文件之内容全文 = 获取某一已发布之文件之完整内容字符串(
+    所有已发布之Javascript文件之简易描述项之集[0]
 )
 ```
 

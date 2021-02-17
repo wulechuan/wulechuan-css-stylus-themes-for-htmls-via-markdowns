@@ -5,7 +5,7 @@
 
 ## Multilingual Editions of this Article
 
-- [汉语版文档](./ReadMe.md)
+- [汉语文档](../../../ReadMe.md)
 
 
 
@@ -37,11 +37,11 @@ This tool can also be used to generate new CSS files according to customizations
 
 > These links lead to a different page each.
 
-- [Introduction](./文档/说明书/en-US/introduction.md)
-- [How does this Tool Work](./文档/说明书/en-US/how-does-this-tool-work.md)
-- [Application Examples](./文档/说明书/en-US/application-examples.md)
-- [Supported Scenarios so far](./文档/说明书/en-US/supported-scenarios.md)
-- [Develope CSS for a New Theme](./文档/说明书/en-US/develope-css-for-a-new-theme.md)
+- [Introduction](./introduction.md)
+- [How does this Tool Work](./how-does-this-tool-work.md)
+- [Application Examples](./application-examples.md)
+- [Supported Scenarios so far](./supported-scenarios.md)
+- [Develope CSS for a New Theme](./develope-css-for-a-new-theme.md)
 
 
 
@@ -70,8 +70,8 @@ The pictures below showcase how does an article look and feel as the default CSS
 
 For more pictures, see:
 
-- [Application Examples (en-US)](./文档/说明书/en-US/application-examples.md).
-- [Application Examples (zh-hans-CN)](./文档/说明书/汉语/关于文章排版与配色效果示例集的说明.md).
+- [Application Examples (en-US)](./application-examples.md).
+- [Application Examples (zh-hans-CN)](../汉语/关于文章排版与配色效果示例集的说明.md).
 
 
 
