@@ -23,4 +23,4 @@ gulpfile.esm.js
 源代码/原始的源代码/本工具作为其他-javascript-工具之依赖模块时的代码/.eslintrc.js
 源代码/原始的源代码/用于设计文章排版与配色方案的代码
 
-index.js.带有-jsdocs-标记的版本（已作废，仅备份与此）
+index.js.带有*
