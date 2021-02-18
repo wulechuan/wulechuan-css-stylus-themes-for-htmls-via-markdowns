@@ -1534,6 +1534,9 @@ pre,
 .escape-char .slash {
   opacity: 0.2;
 }
+.hljs-string > .punctuation {
+  color: inherit;
+}
 .hljs-string .wlc-string-quote {
   color: #996;
 }
