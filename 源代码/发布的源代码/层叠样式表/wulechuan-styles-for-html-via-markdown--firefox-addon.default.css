@@ -30,19 +30,37 @@
     该 FireFox 插件为：【Markdown Viewer Webext】。
         见：https://addons.mozilla.org/firefox/addon/markdown-viewer-webext/
 */
-html {
+.markdown-article-back-to-top,
+nav.markdown-aritcle-toc,
+.markdownRoot {
   font-size: 20px;
+}
+@media screen and (min-width: 1960px) {
+  .markdown-article-back-to-top,
+  nav.markdown-aritcle-toc,
+  .markdownRoot {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 2600px) {
+  .markdown-article-back-to-top,
+  nav.markdown-aritcle-toc,
+  .markdownRoot {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .markdown-article-back-to-top,
+  nav.markdown-aritcle-toc,
+  .markdownRoot {
+    font-size: 16px;
+  }
 }
 body {
   margin: 0;
-}
-body {
-  padding: 3rem 1rem 6rem 1rem;
+  padding: 60px 20px 120px 20px;
 }
 @media (max-width: 600px) {
-  html {
-    font-size: 16px;
-  }
   body {
     padding: 0;
   }
@@ -96,7 +114,7 @@ dt {
   border-width: 0;
 }
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.4em;
   line-height: 1.25;
   margin-top: 2em;
   margin-bottom: 0.5em;
@@ -104,32 +122,32 @@ h1 {
   padding-bottom: 0.25em;
 }
 h2 {
-  font-size: 1.9rem;
+  font-size: 1.9em;
   line-height: 1.25;
   margin-top: 3em;
   margin-bottom: 0.5em;
 }
 h3 {
-  font-size: 1.35rem;
+  font-size: 1.4em;
   line-height: 1.5;
   margin-top: 2em;
   margin-bottom: 0.3em;
 }
 h4 {
-  font-size: 1.15rem;
+  font-size: 1.2em;
   line-height: 1.5;
   margin-top: 2em;
   margin-bottom: 0.5em;
 }
 h5 {
-  font-size: 1rem;
+  font-size: 1.1em;
   line-height: 1.5;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
 h6,
 dt {
-  font-size: 0.9rem;
+  font-size: 1em;
   line-height: 1.5;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
@@ -182,7 +200,7 @@ p {
   margin-bottom: 0.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
-  line-height: 1.8;
+  line-height: 1.66;
 }
 sub,
 sup {
@@ -191,7 +209,7 @@ sup {
 small,
 sup,
 sub {
-  font-size: 70%;
+  font-size: 75%;
 }
 blockquote strong,
 blockquote b,
@@ -201,10 +219,10 @@ blockquote em {
 img {
   display: block;
   box-sizing: content-box;
-  padding: 0.5rem;
+  padding: 0.5em;
   max-width: 75%;
   border-style: none;
-  margin: 0.5rem auto 1rem auto;
+  margin: 0.5em auto 1em auto;
   text-align: center;
   font-size: 100%;
   white-space: normal;
@@ -269,8 +287,8 @@ img[alt]::after {
 }
 video {
   display: block;
-  width: calc(100% - 2rem);
-  margin: 1.5rem auto;
+  width: calc(100% - 2em);
+  margin: 1.5em auto;
 }
 blockquote {
   box-sizing: border-box;
@@ -279,11 +297,11 @@ blockquote {
   vertical-align: top;
   border-style: solid;
   padding: 1px 1.2em 1px 1em;
-  margin: 0 1rem 1.5rem;
+  margin: 0 1em 1.5em;
 }
 details {
-  margin: 0.5rem 1rem 1.5rem;
-  padding: 0.5rem 1rem;
+  margin: 0.5em 1em 1.5em;
+  padding: 0.5em 1em;
 }
 li > details {
   margin-left: 0;
@@ -291,11 +309,11 @@ li > details {
 }
 summary {
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  margin: 0.25rem -0.25rem;
+  padding: 0.25em 0.5em;
+  margin: 0.25em -0.25em;
 }
 pre + details {
-  margin-top: -0.5rem;
+  margin-top: -0.5em;
 }
 kbd,
 code,
@@ -318,7 +336,7 @@ code {
   white-space: pre-wrap;
 }
 kbd {
-  font-size: 90%;
+  font-size: 80%;
 }
 pre,
 pre > code {
@@ -332,7 +350,7 @@ pre > code {
   display: block;
   width: 100%;
   line-height: inherit;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25em 0.5em;
   border: none !important;
   margin: 0 !important;
   border-radius: 0;
@@ -342,8 +360,8 @@ pre {
   line-height: 1.6;
   display: block;
   box-sizing: border-box;
-  padding: 0.5rem;
-  margin: 0.5rem 1rem 2rem;
+  padding: 0.5em;
+  margin: 0.5em 1em 2em;
 }
 td > pre,
 li > pre {
@@ -361,23 +379,23 @@ li > pre:first-child {
 }
 blockquote > pre:first-child,
 td > pre:first-child {
-  margin-top: 1.5rem;
+  margin-top: 1.5em;
 }
 blockquote > pre:last-child,
 td > pre:last-child {
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
 }
 blockquote > pre:first-child:last-child,
 td > pre:first-child:last-child {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 details > pre {
   margin-left: 0;
   margin-right: 0;
 }
 details > pre:last-child {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5em;
 }
 input[type="checkbox"] {
   width: 1.4em;
@@ -395,7 +413,7 @@ dd {
 }
 li {
   margin: 0.5em 0;
-  padding: 0 0.5rem;
+  padding: 0 0.5em;
 }
 dt {
   padding-top: 0.5em;
@@ -417,7 +435,7 @@ blockquote dd:last-child {
 }
 ul,
 ol {
-  padding: 0 1rem 0 2em;
+  padding: 0 1em 0 2.5em;
 }
 @-moz-document url-prefix() {
   ul,
@@ -439,21 +457,21 @@ td,
 th {
   text-align: justify;
   padding: 0.25em 0.75em;
-  min-width: 3rem;
+  min-width: 3em;
 }
 table {
   border-collapse: collapse;
-  margin: 1rem auto;
+  margin: 1em auto;
   max-width: 96%;
   min-width: 64%;
 }
 hr {
   display: block;
   position: relative;
-  margin: 3rem auto 4rem 0;
+  margin: 3em auto 4em 0;
   border-width: 0;
   height: 1px;
-  width: calc(50% - 0.6rem);
+  width: calc(50% - 0.6em);
   overflow: visible !important;
   background-color: transparent;
 }
@@ -464,11 +482,11 @@ hr::before {
   position: absolute;
 }
 hr::before {
-  left: calc(100% + 0.6rem);
+  left: calc(100% + 0.6em);
   top: 49.5%;
-  width: 0.4rem;
-  height: 0.4rem;
-  margin: -0.2rem 0 0 -0.2rem;
+  width: 0.4em;
+  height: 0.4em;
+  margin: -0.2em 0 0 -0.2em;
   border-radius: 50%;
   background-color: currentColor;
 }
@@ -476,34 +494,30 @@ hr::after {
   left: 100%;
   width: 100%;
   height: 100%;
-  margin-left: 1.2rem;
+  margin-left: 1.2em;
   background-color: inherit;
   background-image: inherit !important;
   transform: scaleX(-1);
 }
-@media (max-width: 900px) {
-  blockquote {
-    font-size: 100%;
-  }
-}
 @media (max-width: 600px) {
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.8em;
   }
   h2 {
-    font-size: 1.6rem;
+    font-size: 1.6em;
   }
   h3 {
-    font-size: 1.4rem;
+    font-size: 1.4em;
   }
   h4 {
-    font-size: 1.2rem;
+    font-size: 1.2em;
   }
   h5 {
-    font-size: 1.1rem;
+    font-size: 1.1em;
   }
-  h6 {
-    font-size: 1rem;
+  h6,
+  dt {
+    font-size: 1em;
   }
   ul,
   ol {
@@ -534,7 +548,7 @@ hr::after {
     word-break: break-all;
   }
   hr {
-    margin: 1.5rem auto 2rem 0;
+    margin: 1.5em auto 2em 0;
   }
   video {
     width: 100%;
@@ -544,11 +558,10 @@ hr::after {
   scroll-behavior: smooth;
 }
 .markdownRoot {
-  font-size: 0.9rem;
   line-height: 1.6;
-  padding: 6rem 4rem 14rem 4rem;
-  max-width: 51rem;
-  min-height: 60rem;
+  padding: 6em 4em 14em 4em;
+  max-width: 51em;
+  min-height: 60em;
   margin: 0 auto;
   word-break: break-word;
 }
@@ -556,8 +569,8 @@ hr::after {
   margin-top: 1em;
 }
 .markdown-article-toc-is-visible .markdownRoot {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 3em;
+  padding-right: 3em;
 }
 .document-author {
   text-align: center;
@@ -590,22 +603,20 @@ td > h1 .header-anchor {
 }
 @media (max-width: 900px) {
   .markdownRoot {
-    font-size: 0.9rem;
-    line-height: 1.8;
-    padding-top: 3rem;
-    padding-bottom: 7rem;
+    padding-top: 3em;
+    padding-bottom: 7em;
   }
   .markdown-article-toc-is-visible .markdownRoot,
   .markdownRoot {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 3em;
+    padding-right: 3em;
   }
 }
 @media (max-width: 600px) {
   .markdown-article-toc-is-visible .markdownRoot,
   .markdownRoot {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
   }
 }
 input#__markdown-viewer__show-tools:not(:checked)~.toggleable {
@@ -812,7 +823,7 @@ a#__markdown-viewer__download {
     display: none !important;
   }
 }
-html,
+.markdownRoot,
 button,
 input,
 textarea,
@@ -843,7 +854,7 @@ h3 {
   font-weight: 400;
 }
 h4 {
-  font-weight: 600;
+  font-weight: 500;
 }
 h5 {
   font-weight: 600;
@@ -852,14 +863,14 @@ h6 {
   font-weight: 600;
 }
 img {
-  border-radius: 0.3rem;
+  border-radius: 0.3em;
 }
 blockquote {
-  border-width: 0 0 0 0.32rem;
-  border-radius: 0.3rem;
+  border-width: 0 0 0 0.32em;
+  border-radius: 0.3em;
 }
 details {
-  border-radius: 0.36rem;
+  border-radius: 0.36em;
 }
 summary:focus,
 summary:active {
@@ -883,19 +894,19 @@ code {
   border-width: 1px;
 }
 kbd {
-  border-radius: 0.25rem;
+  border-radius: 0.25em;
   margin: -0.15em 0.2em;
   padding: 0.15em 0.3em;
   position: relative;
   top: -0.15em;
 }
 code {
-  border-radius: 0.2rem;
+  border-radius: 0.2em;
   margin: 0.1em;
   padding: 0.1em 0.2em;
 }
 pre {
-  border-radius: 0.3rem;
+  border-radius: 0.3em;
 }
 @media (max-width: 600px) {
   h1 {
@@ -905,7 +916,7 @@ pre {
 .markdownRoot {
   color: #111;
   background-color: #f7f7f9;
-  box-shadow: 0 0 0.4rem rgba(0,0,0,0.2);
+  box-shadow: 0 0 0.4em rgba(0,0,0,0.2);
 }
 a {
   transition-property: visibility, opacity, color, background-color, border, border-radius, transform;
@@ -986,7 +997,7 @@ dt {
 img {
   color: #555;
   background-color: rgba(0,0,0,0.051);
-  box-shadow: inset 0 0 0.4rem rgba(0,0,0,0.19);
+  box-shadow: inset 0 0 0.5em rgba(0,0,0,0.19);
 }
 input[type="checkbox"] + label {
   color: #000;
@@ -1008,7 +1019,7 @@ blockquote {
 }
 details {
   background-color: rgba(128,128,128,0.079);
-  box-shadow: inset 0 0 0.25rem rgba(0,0,0,0.079);
+  box-shadow: inset 0 0 0.25em rgba(0,0,0,0.079);
 }
 summary:focus,
 summary:active {
@@ -1052,7 +1063,7 @@ kbd {
   background-color: #fff;
   background-image: linear-gradient(45deg, #fff, #eee);
   border-color: #bbb #ddd #ddd #bbb;
-  box-shadow: 0rem 0.15rem 0 0.05rem #bbb;
+  box-shadow: 0em 0.15em 0 0.05em #bbb;
 }
 hr {
   color: rgba(128,128,128,0.45);
@@ -1063,13 +1074,13 @@ hr::before {
 }
 #__markdown-viewer__tools {
   font-family: 'Segoe UI', 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', 'Lucida Grande', Helvetica, sans-serif;
-  box-shadow: 0 0 0.5rem 0 rgba(0,0,0,0.319);
+  box-shadow: 0 0 0.5em 0 rgba(0,0,0,0.319);
   background-color: #555;
   color: #eee;
 }
 #__markdown-viewer__tools > label[for="__markdown-viewer__show-tools"] {
   background-color: #333;
-  box-shadow: 0 0 0.2rem 0 rgba(255,255,255,0.51);
+  box-shadow: 0 0 0.2em 0 rgba(255,255,255,0.51);
 }
 #__markdown-viewer__tools > label[for="__markdown-viewer__show-tools"]::after {
   border-color: #fff transparent;
