@@ -20,13 +20,17 @@
 _optionalSecondaryTitleBlockSourceFileName = ''
 
 
-_selectorsOf_fontFamily_baseFontFamilyCarriers      = 'html'
+_selectorOf_markdownArticleParent = 'body' // This is also the parent of the div.markdown-article-toc-panel, if the div exists.
+_selectorOf_markdownArticleRoot = '' // Empty means no selector at all
+_selectorOf_markdownArticleBackplateBackgroundColorCarrier = 'html'
+
+
+
+_selectorsOf_fontFamily_baseFontFamilyCarriers      = _selectorOf_markdownArticleRoot
+_selectorsOf_fontFamily_baseFontSizeCarriers        = _selectorOf_markdownArticleRoot
 _selectorsOf_fontFamily_monospaceFontFamilyCarriers = 'kbd, pre, code'
 
-_selectorOf_markdownArticleRoot = '' // Empty means no selector at all
-_selectorOf_markdownArticleParent = 'body' // This is also the parent of the div.markdown-article-toc-panel, if the div exists.
 
-_selectorOf_markdownArticleBackplateBackgroundColorCarrier = 'html'
 
 _selectorOf_tocByMarkdownItTOCDoneRight = 'nav.markdown-article-toc'
 _selectorOf_backToTopLink = '.markdown-article-back-to-top'

@@ -13,23 +13,40 @@
 
 
 .markdown-article-toc-toggling-button {
-    font-size: 0.8rem;
+    font-size: 20px;
+
+    @media screen and (min-width: 1960px) {
+        font-size 36px
+    }
+
+    @media screen and (min-width: 2600px) {
+        font-size 50px
+    }
+
+    // @media screen and (max-width: 900px) {
+    //     font-size: 18px;
+    // }
+
+    @media screen and (max-width: 600px) {
+        font-size: 16px;
+    }
 
     box-sizing: content-box;
     display: block;
     border: 1px solid transparent;
-    line-height: 1;
-    padding: 0.5em 1.2em;
-    border-radius: 0 2rem 2rem 0;
+    height: 1em;
+    width: 1.6em;
+    padding: 0.25em 1em;
+    border-radius: 0 219px 219px 0;
 
     position: fixed;
-    top: 0.8rem;
+    top: 1em;
 
     cursor: pointer;
 
     transition: all 0.3s;
     
-    left: -0.5rem;
+    left: -0.5em;
     transform: translateX(0);
 
     &:active,
@@ -41,11 +58,16 @@
 .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
     left: (tocPanel_defaultWidth / 2);
     transform: translateX(-50%);
-    border-top-left-radius: 2rem;
-    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 219px;
+    border-bottom-left-radius: 219px;
 }
 
 .markdown-article-toc-toggling-button::before {
+    display block
+    font-size 0.8em
+    height 1.25em
+    line-height 1.25em
+    overflow visible
     content: 'TOC';
     font-family: sans-serif;
 }

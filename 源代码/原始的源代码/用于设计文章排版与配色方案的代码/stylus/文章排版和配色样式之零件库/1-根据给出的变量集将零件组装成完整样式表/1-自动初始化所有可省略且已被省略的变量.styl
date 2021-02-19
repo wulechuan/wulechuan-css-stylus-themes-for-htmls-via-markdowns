@@ -1,25 +1,54 @@
 @import '../../utils/apply-default-value-to-variable-if-needed'
-    
-applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_selectorsOf_fontFamily_baseFontFamilyCarriers',
-    defaultValue: 'html'
-)
 
 applyDefaultValueToAGlobalVariableIfNeeded(
     variableName: '_selectorsOf_fontFamily_monospaceFontFamilyCarriers',
     defaultValue: 'kbd, pre, code'
 )
 
-if !lookup('_selectorOf_markdownArticleRoot') {
-    // _selectorOf_markdownArticleRoot = ''
-    warn('@wulechuan: Variable "_selectorOf_markdownArticleRoot" is set to empty.')
-    _shouldWrapCodeBlockThemingRulesWith_selectorOf_markdownArticleRoot = false
-}
-
 applyDefaultValueToAGlobalVariableIfNeeded(
     variableName: '_selectorOf_markdownArticleParent',
     defaultValue: 'body'
 )
+
+if lookup('_selectorOf_markdownArticleRoot') {
+    applyDefaultValueToAGlobalVariableIfNeeded(
+        variableName: '_selectorsOf_fontFamily_baseFontFamilyCarriers',
+        defaultValue: _selectorOf_markdownArticleRoot
+    )
+
+    applyDefaultValueToAGlobalVariableIfNeeded(
+        variableName: '_selectorsOf_fontFamily_baseFontSizeCarriers',
+        defaultValue: _selectorOf_markdownArticleRoot
+    )
+} else {
+    // _selectorOf_markdownArticleRoot = ''
+
+    warn('@wulechuan: Variable "_selectorOf_markdownArticleRoot" is set to empty.')
+    _shouldWrapCodeBlockThemingRulesWith_selectorOf_markdownArticleRoot = false
+
+    if (_selectorOf_markdownArticleParent == 'body' || _selectorOf_markdownArticleParent == 'html') {
+        applyDefaultValueToAGlobalVariableIfNeeded(
+            variableName: '_selectorsOf_fontFamily_baseFontFamilyCarriers',
+            defaultValue: 'html'
+        )
+
+        applyDefaultValueToAGlobalVariableIfNeeded(
+            variableName: '_selectorsOf_fontFamily_baseFontSizeCarriers',
+            defaultValue: 'html'
+        )
+    } else {
+        applyDefaultValueToAGlobalVariableIfNeeded(
+            variableName: '_selectorsOf_fontFamily_baseFontFamilyCarriers',
+            defaultValue: _selectorOf_markdownArticleParent
+        )
+
+        applyDefaultValueToAGlobalVariableIfNeeded(
+            variableName: '_selectorsOf_fontFamily_baseFontSizeCarriers',
+            defaultValue: _selectorOf_markdownArticleParent
+        )
+    }
+}
+
 
 applyDefaultValueToAGlobalVariableIfNeeded(
     variableName: '_selectorOf_markdownArticleBackplateBackgroundColorCarrier',

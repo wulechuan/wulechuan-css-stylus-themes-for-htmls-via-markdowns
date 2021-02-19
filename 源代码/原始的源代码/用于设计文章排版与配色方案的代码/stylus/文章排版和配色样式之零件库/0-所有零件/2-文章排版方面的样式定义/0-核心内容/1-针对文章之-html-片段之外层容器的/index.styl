@@ -1,0 +1,17 @@
+{_selectorOf_markdownArticleParent} {
+    margin: 0;
+
+    if (
+        _selectorsOf_fontFamily_baseFontSizeCarriers == _selectorOf_markdownArticleParent || \
+        _selectorsOf_fontFamily_baseFontSizeCarriers == 'body' || \
+        _selectorsOf_fontFamily_baseFontSizeCarriers == 'html'
+    ) {
+        padding 3em 1em 6em 1em
+    } else {
+        padding: 60px 20px 120px 20px;
+    }
+    
+    @media (max-width: 600px) {
+        padding: 0;
+    }
+}
