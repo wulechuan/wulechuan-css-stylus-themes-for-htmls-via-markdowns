@@ -11,23 +11,23 @@ import {
 } from '@wulechuan/gulp-classical-task-cycle'
 
 import 为所有排版与配色方案构建所有须发布之Javascript文件之诸任务闭环
-    from '../用于构建任务闭环的工具集/用于生成可发布之源代码的/处理并构建出-javascript-文件/为所有须发布的-javascript-文件的构建任务逐一构建出任务闭环'
+    from '../02-用于构建任务闭环的工具集/用于生成可发布之源代码的/处理并构建出-javascript-文件/为所有须发布的-javascript-文件的构建任务逐一构建出任务闭环'
 
 // import taskCycleOfCopyingESLintrcToDist
-//     from '../用于构建任务闭环的工具集/用于生成可发布之源代码的/处理并构建出-javascript-文件/构建一个任务闭环用以复制发布内容专属的-eslintrc-文件'
+//     from '../02-用于构建任务闭环的工具集/用于生成可发布之源代码的/处理并构建出-javascript-文件/构建一个任务闭环用以复制发布内容专属的-eslintrc-文件'
 
 import createOneTaskCycleViaOneEntryStylusFileSubPath
-    from '../用于构建任务闭环的工具集/用于生成可发布之源代码的/处理-stylus-文件并构建出-css-文件/4-create-a-task-cycle-via-an-entry-stylus-file-sub-path'
+    from '../02-用于构建任务闭环的工具集/用于生成可发布之源代码的/处理-stylus-文件并构建出-css-文件/4-create-a-task-cycle-via-an-entry-stylus-file-sub-path'
 
 import 构建一个任务闭环以将一Markdown文件转换成HTML文件
-    from '../用于构建任务闭环的工具集/用于构建效果呈现示例之文章的/构建一个任务闭环以创建效果呈现示例之文章'
+    from '../02-用于构建任务闭环的工具集/用于构建效果呈现示例之文章的/构建一个任务闭环以创建效果呈现示例之文章'
 
 import 构建简单任务用以将某示例性HTML配套的插图等资源复制到目标文件夹
-    from '../用于构建简单任务的工具集/构建简单任务用以将某示例性-html-配套的插图等资源复制到目标文件夹'
+    from '../01-用于构建简单任务的工具集/构建简单任务用以将某示例性-html-配套的插图等资源复制到目标文件夹'
 
 import {
     正着手开发的排版与配色方案之入口Stylus文件之相对路径,
-} from '../任务之配置项集/针对用于开发某一特定排版与配色方案的任务的'
+} from '../00-任务之配置项集/针对用于开发某一特定排版与配色方案的任务的'
 
 
 
