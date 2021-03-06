@@ -47,6 +47,10 @@ const 用于构建各范文之诸任务闭环之列表 = [
         须额外嵌入各产出之HTML文件之文件之相对路径之列表: [],
     }),
 
+    /**
+     * 以下两组任务构建的 HTML 文件看似与上方任务构建的 HTML 文件无异。
+     * 实则下方的 HTML 注入了额外的 Javascript 代码，用以辅助本人在为各 HTML 制作大量截图时提供便利。
+     */
     构建一个任务闭环以将一Markdown文件转换成HTML文件({
         // 欲采用的已发布之层叠样式表文件之名称: 'wulechuan-styles-for-html-via-markdown.default--with-toc.min.css',
         产出诸HTML文件之存放文件夹之相对路径: 不囊括于本工具发布内容之中而仅作截图辅助工具之用之所有HTML文件之存放文件夹之相对路径,
