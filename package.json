@@ -2,7 +2,7 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "wulechuan <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "7.0.1",
+  "version": "7.0.2",
   "description": "吴乐川的 HTML 文章排版与配色之方案集。本工具用于构建一组层叠样式表（即 CSS ）文件，本工具亦现场提供了一组层叠样式表文件。凡这些样式表，均可用于美化采用超文本标记语言（即 HTML ）格式存储的文章。且不必同时取用多个样式表文件，仅取其一足矣。",
   "directories": {
     "source": "源代码/原始的源代码",
@@ -37,18 +37,6 @@
   "keywords": [
     "markdown",
     "html",
-    "article",
-    "typography",
-    "theme",
-    "theming",
-    "styling",
-    "style",
-    "skin",
-    "shading",
-    "coloring",
-    "stylus",
-    "cascading-style-sheet",
-    "cascading-style-sheets",
     "可读性改善",
     "层叠样式表",
     "样式",
@@ -63,7 +51,19 @@
     "尺寸自适应式排版",
     "自适应式排版",
     "移动设备上的文字排版",
-    "小尺寸屏幕上的文字排版"
+    "小尺寸屏幕上的文字排版",
+    "article",
+    "typography",
+    "theme",
+    "theming",
+    "styling",
+    "style",
+    "skin",
+    "shading",
+    "coloring",
+    "stylus",
+    "cascading-style-sheet",
+    "cascading-style-sheets"
   ],
   "dependencies": {
     "globby": "^11.0.2"
