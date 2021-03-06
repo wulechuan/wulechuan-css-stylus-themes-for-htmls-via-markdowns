@@ -1,28 +1,28 @@
 import {
-    series as gulpSeries,
+    series as 构建严格依序执行以下gulp任务之总任务,
 } from 'gulp'
 
-import highOrderTasksForAllThemes
-    from './构建好的任务闭环或简单任务/to-process-all-themes'
+import 批量构建所有排版与配色方案之诸任务之总任务闭环
+    from './构建好的任务闭环或简单任务/批量构建所有排版与配色方案之诸任务之总任务闭环'
 
-import highOrderTasksForDevelopmentOfSingleTheme
-    from './构建好的任务闭环或简单任务/to-develop-single-theme-and-build-example-htmls-for-it'
+import 构建当前正着手开发之唯一排版与配色方案之总任务闭环
+    from './构建好的任务闭环或简单任务/构建当前正着手开发之唯一排版与配色方案之总任务闭环'
 
 import {
-    taskBodyForCopyingAllAssetsFilesForAllExamples,
-    highOrderTaskForBuildingAllHTMLFiles,
-} from './构建好的任务闭环或简单任务/to-update-example-htmls'
+    将所有须产出之HTML文件对应之插图等媒体资源复制到位之任务之本体函数,
+    并驾齐驱构建多篇文章之HTML之诸任务之总任务闭环,
+} from './构建好的任务闭环或简单任务/并驾齐驱构建多篇文章之-html-之诸任务之总任务闭环'
 
 
-export const cleanAll           = highOrderTasksForAllThemes.cleanAllOldOuputs
-export const buildAllThemesOnce = highOrderTasksForAllThemes.buildEverythingOnce
+export const cleanAll           = 批量构建所有排版与配色方案之诸任务之总任务闭环.cleanAllOldOuputs
+export const buildAllThemesOnce = 批量构建所有排版与配色方案之诸任务之总任务闭环.buildEverythingOnce
 
-export const devSingleThemeOnce = highOrderTasksForDevelopmentOfSingleTheme.buildEverythingOnce
-export const devSingleTheme     = highOrderTasksForDevelopmentOfSingleTheme.watchEverything
+export const devSingleThemeOnce = 构建当前正着手开发之唯一排版与配色方案之总任务闭环.buildEverythingOnce
+export const devSingleTheme     = 构建当前正着手开发之唯一排版与配色方案之总任务闭环.watchEverything
 
-export const updateExampleHTMLs = gulpSeries(
-    taskBodyForCopyingAllAssetsFilesForAllExamples,
-    highOrderTaskForBuildingAllHTMLFiles.buildEverythingOnce
+export const updateExampleHTMLs = 构建严格依序执行以下gulp任务之总任务(
+    将所有须产出之HTML文件对应之插图等媒体资源复制到位之任务之本体函数,
+    并驾齐驱构建多篇文章之HTML之诸任务之总任务闭环.buildEverythingOnce
 )
 
 export default devSingleTheme

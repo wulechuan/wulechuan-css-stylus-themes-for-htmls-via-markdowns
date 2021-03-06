@@ -1,10 +1,10 @@
 import 路径工具 from 'path'
 
 import {
-    sourceGlobsRootFolderPath,
-    outputFolderPath,
-    specificSourceGlobsCommonSubPath,
-    outputFileBaseNameCommonPrefix,
+    所涉一切文件甄选描述符之公共根文件夹之相对路径,
+    发布的层叠样式表之根文件夹之相对路径,
+    所有应用场景之入口Stylus文件相对路径之公共起始部分,
+    产出之一切层叠样式表文件之名称之共有前缀,
     sharedSourceRelativeGlobs,
     extraSourceGlobsToWatch,
 } from '../../../任务之配置项集/针对构建所有须发布之层叠样式表之任务的'
@@ -17,32 +17,32 @@ const { join: 遵循POSIX标准拼接路径 } = 路径工具.posix
 
 export default function mergeSharedTaskConfigWithOneSpecificTaskConfig(specificTaskConfig) {
     const {
-        entryStylusFileSubPath,
-        outputCSSFileBaseName,
+        作为编译入口之Stylus文件之内层路径,
+        编译Stylus最终产出之层叠样式表文件之名称之特征部分,
         shouldNotOutputUncompressedVersion,
-        shouldNotOutputCompressedVersion,
+        不必产出压缩过的层叠样式表和压缩过的Javascript文件,
         shouldDiscardMostCommentsEvenIfNotCompressCSS,
     } = specificTaskConfig
 
-    if (shouldNotOutputUncompressedVersion && shouldNotOutputCompressedVersion) {
-        throw new RangeError(`Why don't we output anything for "${entryStylusFileSubPath}"?`)
+    if (shouldNotOutputUncompressedVersion && 不必产出压缩过的层叠样式表和压缩过的Javascript文件) {
+        throw new RangeError(`Why don't we output anything for "${作为编译入口之Stylus文件之内层路径}"?`)
     }
 
-    const entryStylusFileSubPath2 = `${entryStylusFileSubPath}.styl`
-    const outputFileBaseName = `${outputFileBaseNameCommonPrefix}${outputCSSFileBaseName}`
+    const 作为编译入口之Stylus文件之内层路径2 = `${作为编译入口之Stylus文件之内层路径}.styl`
+    const outputFileBaseName = `${产出之一切层叠样式表文件之名称之共有前缀}${编译Stylus最终产出之层叠样式表文件之名称之特征部分}`
 
     const specificSourceRelativeGlobs = [
-        遵循POSIX标准拼接路径(specificSourceGlobsCommonSubPath, entryStylusFileSubPath2),
+        遵循POSIX标准拼接路径(所有应用场景之入口Stylus文件相对路径之公共起始部分, 作为编译入口之Stylus文件之内层路径2),
     ]
 
 
 
     return {
         // descriptionOfCoreTask,
-        descriptionOfInputsOfCoreTask: entryStylusFileSubPath2,
+        descriptionOfInputsOfCoreTask: 作为编译入口之Stylus文件之内层路径2,
 
         sourceGlobs: {
-            rootFolderPath: sourceGlobsRootFolderPath,
+            rootFolderPath: 所涉一切文件甄选描述符之公共根文件夹之相对路径,
 
             relativeGlobsSharedWithOtherTaskCycles: sharedSourceRelativeGlobs,
             relativeGlobsSpecificallyForThisTaskCycle: specificSourceRelativeGlobs,
@@ -51,7 +51,7 @@ export default function mergeSharedTaskConfigWithOneSpecificTaskConfig(specificT
         },
 
         outputFiles: {
-            rootFolderPath: outputFolderPath,
+            rootFolderPath: 发布的层叠样式表之根文件夹之相对路径,
 
             forSingleOrTwoOutputFiles: {
                 fileBaseName: outputFileBaseName,
@@ -61,7 +61,7 @@ export default function mergeSharedTaskConfigWithOneSpecificTaskConfig(specificT
 
         compressions: {
             shouldNotOutputUncompressedVersion,
-            shouldNotOutputCompressedVersion,
+            shouldNotOutputCompressedVersion: 不必产出压缩过的层叠样式表和压缩过的Javascript文件,
         },
 
         extraOptions: {

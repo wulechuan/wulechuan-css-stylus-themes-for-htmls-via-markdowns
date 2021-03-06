@@ -12,12 +12,12 @@ import taskCycleOfCopyingESLintrcToDist
     from '../用于构建任务闭环的工具集/用于生成可发布之源代码的/处理并构建出-javascript-文件/构建一个任务闭环用以复制发布内容专属的-eslintrc-文件'
 
 import {
-    specificTaskConfigsOfAllThemes,
+    诸排版与配色方案之构建任务各自特有之配置之汇总列表,
 } from '../任务之配置项集/针对构建所有须发布之层叠样式表之任务的'
 
 
 const allTaskCyclesForAllThemes = [
-    ...specificTaskConfigsOfAllThemes.map(createOneTaskCycleViaOneSpecificTaskConfig),
+    ...诸排版与配色方案之构建任务各自特有之配置之汇总列表.map(createOneTaskCycleViaOneSpecificTaskConfig),
     ...javascriptTaskCyclesOfAllThemes,
     taskCycleOfCopyingESLintrcToDist,
 ]

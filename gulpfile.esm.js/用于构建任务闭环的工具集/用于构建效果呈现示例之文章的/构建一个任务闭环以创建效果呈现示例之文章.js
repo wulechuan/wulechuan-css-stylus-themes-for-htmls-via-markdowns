@@ -10,11 +10,11 @@ import {
 } from 'fs-extra'
 
 import {
-    parallel as 构建并行运转的一组Gulp任务,
+    parallel as 构建并行运转以下Gulp任务之总任务,
 } from 'gulp'
 
 
-import createAnMarkDownToHTMLConverter from '@wulechuan/generate-html-via-markdown/core'
+import 构建一个用于将Markdown内容字符串转换为HTML字符串的转换器 from '@wulechuan/generate-html-via-markdown/core'
 
 
 import {
@@ -50,7 +50,7 @@ const sourceMarkdownFileZhHansCN = 遵循POSIX标准拼接路径(
     exampleSourceMarkdownFileNameZhHansCN
 )
 
-const 将Markdown内容的字符串转换成HTML内容的字符串 = createAnMarkDownToHTMLConverter({
+const 将Markdown内容字符串转换为HTML内容的转换器 = 构建一个用于将Markdown内容字符串转换为HTML字符串的转换器({
     themesPeerPackageAllDistFileEntriesKeyingByFileNames: 以文件名称为索引之所有文件之字典,
     syncGetContentStringOfOneFileOfThePeerModuleOfThemes: 获取某一已发布之文件之完整内容字符串,
 })
@@ -58,12 +58,12 @@ const 将Markdown内容的字符串转换成HTML内容的字符串 = createAnMar
 
 
 
-export default function createTaskCycleForGeneratingHTMLsForExampleMarkdowns({
+export default function 构建一个任务闭环以将一Markdown文件转换成HTML文件({
     欲采用的已发布之层叠样式表文件之名称: 须嵌入HTML文件的层叠样式表文件之文件名称,
-    exampleOutputHTMLFilesFolderPath: 存放示例性HTML文件之文件夹之相对路径,
-    exampleOutputHTMLFileNameZhHansCN: 汉语版HTML文件之文件名称,
-    exampleOutputHTMLFileNameEnUS: 英国话版的HTML文件之文件名称,
-    subPathsOfExtraHelperFilesToEmbed: 其他须一并嵌入HTML文件的Javascript文件之相对路径集,
+    产出诸HTML文件之存放文件夹之相对路径: 存放示例性HTML文件之文件夹之相对路径,
+    自汉语文章产出之HTML文件之名称: 汉语版HTML文件之文件名称,
+    自英国话文章产出之HTML文件之名称: 英国话版的HTML文件之文件名称,
+    须额外嵌入各产出之HTML文件之文件之相对路径之列表: 其他须一并嵌入HTML文件的Javascript文件之相对路径集,
 }) {
     mkdirpSync(存放示例性HTML文件之文件夹之相对路径)
 
@@ -119,7 +119,7 @@ export default function createTaskCycleForGeneratingHTMLsForExampleMarkdowns({
         absolutePathsOfExtraFilesToEmbedIntoHTML: 首要须嵌入HTML文件的各文件之绝对路径集,
     }
 
-    const 构建所有HTML文件 = 构建并行运转的一组Gulp任务(
+    const 构建所有HTML文件 = 构建并行运转以下Gulp任务之总任务(
         构建汉语版的HTML文件,
         构建英国话版的HTML文件
     )
@@ -151,7 +151,7 @@ export default function createTaskCycleForGeneratingHTMLsForExampleMarkdowns({
         writeFileSync(
             英国话版HTML文件之绝对路径,
 
-            将Markdown内容的字符串转换成HTML内容的字符串(
+            将Markdown内容字符串转换为HTML内容的转换器(
                 readFileSync(sourceMarkdownFileEnUS).toString(),
 
                 {
@@ -179,7 +179,7 @@ export default function createTaskCycleForGeneratingHTMLsForExampleMarkdowns({
         writeFileSync(
             汉语版HTML文件之绝对路径,
 
-            将Markdown内容的字符串转换成HTML内容的字符串(
+            将Markdown内容字符串转换为HTML内容的转换器(
                 readFileSync(sourceMarkdownFileZhHansCN).toString(),
 
                 {
