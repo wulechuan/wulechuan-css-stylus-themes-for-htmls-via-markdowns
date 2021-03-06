@@ -6,7 +6,7 @@ const 粉笔 = require('chalk')
 const {
     发布的层叠样式表之根文件夹之相对路径,
     发布的配套Javascript之根文件夹之相对路径,
-} = require('./本项目之全局配置项集')
+} = require('../../../本项目之全局配置项集')
 
 const 本项目官方选定之所谓默认的Javascript文件之名称之基本名 = 'table-of-contents-and-back-to-top-anchor-behaviors'
 const 本项目所谓默认的Javascript文件之未压缩版之文件完整名称 = `${本项目官方选定之所谓默认的Javascript文件之名称之基本名}.js`
