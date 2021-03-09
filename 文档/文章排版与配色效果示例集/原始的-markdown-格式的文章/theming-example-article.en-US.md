@@ -696,11 +696,11 @@ From a keyboard mapping configuration file of SOFTIMAGE|XSI.
 
 | Key        | Value           |
 | ---------- | --------------- |
-| Name       | wulechuan       |
+| Name       | Wulechuan       |
 | Gender     | Male            |
 | Birth Year | 1979            |
 | Hometown   | Nanchang, China |
-| Loved      | `SOFTIMAGE|XSI` |
+| Loved      | `SOFTIMAGE\|XSI` |
 
 
 ### Another Table, Which Contains Code Snippets

@@ -41,7 +41,7 @@ nav.markdown-article-toc,
   .markdown-article-back-to-top,
   nav.markdown-article-toc,
   .markdown-article {
-    font-size: 50px;
+    font-size: 48px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -96,20 +96,8 @@ body {
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
-.markdown-article h1,
-.markdown-article h2,
-.markdown-article h3,
-.markdown-article h4,
-.markdown-article h5,
-.markdown-article h6,
-.markdown-article dt {
-  letter-spacing: 0.05em;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
-  border-width: 0;
-}
 .markdown-article h1 {
-  font-size: 2.4em;
+  font-size: 2.3em;
   line-height: 1.25;
   margin-top: 2em;
   margin-bottom: 0.5em;
@@ -117,35 +105,73 @@ body {
   padding-bottom: 0.25em;
 }
 .markdown-article h2 {
-  font-size: 1.9em;
+  font-size: 1.8em;
   line-height: 1.25;
   margin-top: 3em;
   margin-bottom: 0.5em;
 }
 .markdown-article h3 {
   font-size: 1.4em;
-  line-height: 1.5;
+  line-height: 1.33;
   margin-top: 2em;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.5em;
 }
 .markdown-article h4 {
   font-size: 1.2em;
-  line-height: 1.5;
+  line-height: 1.33;
   margin-top: 2em;
   margin-bottom: 0.5em;
 }
 .markdown-article h5 {
   font-size: 1.1em;
-  line-height: 1.5;
+  line-height: 1.33;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
 .markdown-article h6,
 .markdown-article dt {
   font-size: 1em;
-  line-height: 1.5;
+  line-height: 1.33;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
+}
+.markdown-article h1,
+.markdown-article h2,
+.markdown-article h3,
+.markdown-article h4,
+.markdown-article h5,
+.markdown-article h6,
+.markdown-article dt {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  border-width: 0;
+}
+.markdown-article h1,
+.markdown-article h2 {
+  letter-spacing: 0.05em;
+  text-indent: 0.05em;
+}
+.markdown-article [lang*="zh-" i] h1,
+.markdown-article [lang*="-hans" i] h1,
+.markdown-article [lang*="-CN" i] h1,
+.markdown-article [lang*="zh-"] h1,
+.markdown-article [lang*="-hans"] h1,
+.markdown-article [lang*="-CN"] h1,
+.markdown-article [lang*="zh-" i] h2,
+.markdown-article [lang*="-hans" i] h2,
+.markdown-article [lang*="-CN" i] h2,
+.markdown-article [lang*="zh-"] h2,
+.markdown-article [lang*="-hans"] h2,
+.markdown-article [lang*="-CN"] h2 {
+  letter-spacing: 0.2em;
+  text-indent: 0.2em;
+}
+.markdown-article h3,
+.markdown-article h4,
+.markdown-article h5,
+.markdown-article h6,
+.markdown-article dt {
+  letter-spacing: 0.05em;
 }
 .markdown-article h5 + h6,
 .markdown-article h4 + h5,
@@ -831,7 +857,7 @@ option {
 kbd,
 pre,
 code {
-  font-family: 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', monospace;
+  font-family: 'Cascadia Code', 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', monospace;
 }
 html {
   background-color: #0d0d0d;

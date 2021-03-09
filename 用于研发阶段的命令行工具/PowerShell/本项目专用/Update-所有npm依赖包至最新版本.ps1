@@ -4,11 +4,11 @@ npm  i  -D `
     '@wulechuan/generate-html-via-markdown@^2'
 
 npm  i  -D `
-    'eslint@latest' `
     '@wulechuan/gulp-classical-task-cycle@latest' `
     'chalk@latest' `
     'cssnano@latest' `
     'del@latest' `
+    'eslint@latest' `
     'esm@latest' `
     'fs-extra@latest' `
     'gulp@latest' `
@@ -17,4 +17,5 @@ npm  i  -D `
     'gulp-postcss@latest' `
     'gulp-rename@latest' `
     'gulp-stylus@latest' `
-    'gulp-terser@latest'
+    'gulp-terser@latest' `
+    'postcss@latest'

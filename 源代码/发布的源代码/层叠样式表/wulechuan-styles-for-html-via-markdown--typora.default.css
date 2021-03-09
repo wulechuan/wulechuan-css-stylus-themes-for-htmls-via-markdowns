@@ -41,7 +41,7 @@ nav.markdown-aritcle-toc,
   .markdown-article-back-to-top,
   nav.markdown-aritcle-toc,
   .typora-node   #write {
-    font-size: 50px;
+    font-size: 48px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -96,20 +96,8 @@ p {
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-dt {
-  letter-spacing: 0.05em;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
-  border-width: 0;
-}
 h1 {
-  font-size: 2.4em;
+  font-size: 2.3em;
   line-height: 1.25;
   margin-top: 2em;
   margin-bottom: 0.5em;
@@ -117,35 +105,73 @@ h1 {
   padding-bottom: 0.25em;
 }
 h2 {
-  font-size: 1.9em;
+  font-size: 1.8em;
   line-height: 1.25;
   margin-top: 3em;
   margin-bottom: 0.5em;
 }
 h3 {
   font-size: 1.4em;
-  line-height: 1.5;
+  line-height: 1.33;
   margin-top: 2em;
-  margin-bottom: 0.3em;
+  margin-bottom: 0.5em;
 }
 h4 {
   font-size: 1.2em;
-  line-height: 1.5;
+  line-height: 1.33;
   margin-top: 2em;
   margin-bottom: 0.5em;
 }
 h5 {
   font-size: 1.1em;
-  line-height: 1.5;
+  line-height: 1.33;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
 h6,
 dt {
   font-size: 1em;
-  line-height: 1.5;
+  line-height: 1.33;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dt {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  border-width: 0;
+}
+h1,
+h2 {
+  letter-spacing: 0.05em;
+  text-indent: 0.05em;
+}
+[lang*="zh-" i] h1,
+[lang*="-hans" i] h1,
+[lang*="-CN" i] h1,
+[lang*="zh-"] h1,
+[lang*="-hans"] h1,
+[lang*="-CN"] h1,
+[lang*="zh-" i] h2,
+[lang*="-hans" i] h2,
+[lang*="-CN" i] h2,
+[lang*="zh-"] h2,
+[lang*="-hans"] h2,
+[lang*="-CN"] h2 {
+  letter-spacing: 0.2em;
+  text-indent: 0.2em;
+}
+h3,
+h4,
+h5,
+h6,
+dt {
+  letter-spacing: 0.05em;
 }
 h5 + h6,
 h4 + h5,
@@ -655,7 +681,7 @@ option {
 kbd,
 pre,
 code {
-  font-family: 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', monospace;
+  font-family: 'Cascadia Code', 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', monospace;
 }
 html {
   background-color: #bbb;
