@@ -50,13 +50,14 @@ const 以文件名称为索引之所有文件之字典 = 所有已发布之层�
 }, {})
 
 
-if (false) { // eslint-disable-line no-constant-condition
-    console.log('-'.repeat(60))
-    console.log(本项目之根路径)
-    console.log(所有已发布之层叠样式表文件之简易描述项之集)
-    console.log(所有已发布之Javascript文件之简易描述项之集)
-    console.log('-'.repeat(60))
-}
+
+
+
+// console.log('-'.repeat(60))
+// console.log(本项目之根路径)
+// console.log(所有已发布之层叠样式表文件之简易描述项之集)
+// console.log(所有已发布之Javascript文件之简易描述项之集)
+// console.log('-'.repeat(60))
 
 
 
@@ -235,27 +236,34 @@ function 获取本项目官方选定之所谓默认Javascript之完整内容字�
         本函数之配置项集 = {}
     }
 
+
+
+
+
     const {
+        // 注意： 【展开文章纲要列表面板】与【展开文章纲要列表的某一条目】不是一回事。
+
+        为求文章纲要列表简洁明了故意仅显示两层条目以至于较深层级条目形同作废,
         shouldShowOnlyTwoLevelsOfTOCItemsAtMost,
+
+        浏览器打开HTML文章最初之时文章纲要列表中凡层级深于该值之条目均应收叠,
         atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan,
+
+        浏览器打开HTML文章最初之时若浏览器窗口足够宽大则直接展开文章纲要列表之面板,
+        atBeginingShouldExpandTOCWhenWindowIsWideEnough,
     } = 本函数之配置项集
 
-    let 须在文件内容首部做以下内容偷换_atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
 
-    let atBeginingShouldExpandTOCWhenWindowIsWideEnough
-    if ('atBeginingShouldExpandTOCWhenWindowIsWideEnough' in 本函数之配置项集) {
-        须在文件内容首部做以下内容偷换_atBeginingShouldExpandTOCWhenWindowIsWideEnough = true
-        atBeginingShouldExpandTOCWhenWindowIsWideEnough = 本函数之配置项集.atBeginingShouldExpandTOCWhenWindowIsWideEnough
-    } else if ('atBeginingShouldExpandTOCWhenWindowsIsWideEnough' in 本函数之配置项集) { // 曾经有拼写错误： Window 误作 Windows
-        须在文件内容首部做以下内容偷换_atBeginingShouldExpandTOCWhenWindowIsWideEnough = true
-        atBeginingShouldExpandTOCWhenWindowIsWideEnough = 本函数之配置项集.atBeginingShouldExpandTOCWhenWindowsIsWideEnough
-    }
 
-    const 应从文件内容首部截取的待编辑部分之长度之保守值 = [
+
+
+    const 应从文件内容首部截取的待编辑部分之长度之保守值 = [ // 以下摘取源代码之原始片段，用以计算该段代码之字符串长度。
         'window.shouldShowOnlyTwoLevelsOfTOCItemsAtMost = false\n',
         'window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan = 1\n',
         'window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false\n',
-    ].join('').length + 51 // 在已知的应截取的字符串之长度上再加上一个正整数，以求保险。
+    ].join('').length + 51 // 在已知的应截取的字符串之长度上再加上一个靠谱的正整数，以求保险。
+
+
 
 
 
@@ -270,29 +278,78 @@ function 获取本项目官方选定之所谓默认Javascript之完整内容字�
     let   首部须编辑之片段 = 该Javascript文件之完整原始内容.slice(0, 应从文件内容首部截取的待编辑部分之长度之保守值)
     const 余下不应变动之片段 = 该Javascript文件之完整原始内容.slice(应从文件内容首部截取的待编辑部分之长度之保守值)
 
-    if ('shouldShowOnlyTwoLevelsOfTOCItemsAtMost' in 本函数之配置项集) {
+
+
+
+
+    let _为求文章纲要列表简洁明了故意仅显示两层条目
+
+    if (typeof shouldShowOnlyTwoLevelsOfTOCItemsAtMost !== 'undefined') {
+        _为求文章纲要列表简洁明了故意仅显示两层条目 = !!shouldShowOnlyTwoLevelsOfTOCItemsAtMost
+    }
+
+    if (typeof 为求文章纲要列表简洁明了故意仅显示两层条目以至于较深层级条目形同作废 !== 'undefined') {
+        _为求文章纲要列表简洁明了故意仅显示两层条目 = !!为求文章纲要列表简洁明了故意仅显示两层条目以至于较深层级条目形同作废
+    }
+
+    if (typeof _为求文章纲要列表简洁明了故意仅显示两层条目 === 'boolean') {
         首部须编辑之片段 = 首部须编辑之片段.replace(
             /\b(window.shouldShowOnlyTwoLevelsOfTOCItemsAtMost\s*=\s*)(true|false|!0|!1)\b/,
-            `$1${!!shouldShowOnlyTwoLevelsOfTOCItemsAtMost}`
+            `$1${_为求文章纲要列表简洁明了故意仅显示两层条目}`
         )
     }
+
+
+
+
+
+    let _最初之时文章纲要列表中凡层级深于该值之条目均应收叠
 
     if (
         typeof atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan === 'number' &&
         atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan >= 0
     ) {
+        _最初之时文章纲要列表中凡层级深于该值之条目均应收叠 = atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan
+    }
+
+    if (
+        typeof 浏览器打开HTML文章最初之时文章纲要列表中凡层级深于该值之条目均应收叠 === 'number' &&
+        浏览器打开HTML文章最初之时文章纲要列表中凡层级深于该值之条目均应收叠 >= 0
+    ) {
+        _最初之时文章纲要列表中凡层级深于该值之条目均应收叠 = 浏览器打开HTML文章最初之时文章纲要列表中凡层级深于该值之条目均应收叠
+    }
+
+    if (typeof _最初之时文章纲要列表中凡层级深于该值之条目均应收叠 === 'number') {
         首部须编辑之片段 = 首部须编辑之片段.replace(
             /\b(window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan\s*=\s*)(NaN|\d+)\b/,
-            `$1${atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan}`
+            `$1${_最初之时文章纲要列表中凡层级深于该值之条目均应收叠}`
         )
     }
 
-    if (须在文件内容首部做以下内容偷换_atBeginingShouldExpandTOCWhenWindowIsWideEnough) {
+
+
+
+
+    let _最初之时若浏览器窗口足够宽大则直接展开文章纲要面板
+
+    if (typeof atBeginingShouldExpandTOCWhenWindowIsWideEnough !== 'undefined') {
+        _最初之时若浏览器窗口足够宽大则直接展开文章纲要面板 = !!atBeginingShouldExpandTOCWhenWindowIsWideEnough
+    }
+
+    if (typeof 浏览器打开HTML文章最初之时若浏览器窗口足够宽大则直接展开文章纲要列表之面板 !== 'undefined') {
+        _最初之时若浏览器窗口足够宽大则直接展开文章纲要面板 = !!浏览器打开HTML文章最初之时若浏览器窗口足够宽大则直接展开文章纲要列表之面板
+    }
+
+    if (typeof _最初之时若浏览器窗口足够宽大则直接展开文章纲要面板 === 'boolean') {
         首部须编辑之片段 = 首部须编辑之片段.replace(
             /\b(window.atBeginingShouldExpandTOCWhenWindowIsWideEnough\s*=\s*)(true|false|!0|!1)\b/,
-            `$1${!!atBeginingShouldExpandTOCWhenWindowIsWideEnough}`
+            `$1${_最初之时若浏览器窗口足够宽大则直接展开文章纲要面板}`
         )
     }
+
+
+
+
 
     const 修订好的文件内容全文 = `${首部须编辑之片段}${余下不应变动之片段}`
 
