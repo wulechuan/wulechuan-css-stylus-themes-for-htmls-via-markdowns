@@ -24,7 +24,7 @@
     "_update-example-htmls2": "gulp           updateExampleHTMLs",
     "start": "gulp                  --silent  devSingleThemeOnce    &&    npm  run  open-dev-htmls    &&    gulp  --silent  devSingleTheme",
     "start2": "gulp                           devSingleThemeOnce    &&    npm  run  open-dev-htmls    &&    gulp            devSingleTheme",
-    "_test-package-interfaces": "node  ./测试集/用于测试本项目之Javascript接口的测试代码集.js",
+    "_test-package-interfaces": "node  ./测试集/用于测试本项目之-javascript-接口的测试代码集.js",
     "_test-all-without-linting-without-browser": "npm  run  _test-package-interfaces                &&    npm  run  _build2    &&    npm  run  _update-example-htmls2    &&    gulp  devSingleThemeOnce",
     "update-example-htmls": "npm                  run  _update-example-htmls                        &&    npm  run  firefox",
     "update-example-htmls2": "npm                 run  _update-example-htmls2                       &&    npm  run  firefox",

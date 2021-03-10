@@ -60,14 +60,14 @@
 
 ### 应用默认浅色主题的范文截图
 
-- [Snapshot: In default light-colored theme, in a wide window, with toc collapsed](./文档/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
 - [示例：简体中文范文配默认浅色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./文档/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/示例：简体中文范文配默认浅色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
+- [Snapshot: In default light-colored theme, in a wide window, with toc collapsed](./文档/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
 
 
 ### 应用默认深色主题的范文截图
 
-- [Snapshot: In default dark-colored theme, in a wide window, with toc collapsed](./文档/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/example_en-US_default-dark-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
 - [示例：简体中文范文配默认深色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./文档/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/示例：简体中文范文配默认深色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
+- [Snapshot: In default dark-colored theme, in a wide window, with toc collapsed](./文档/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/example_en-US_default-dark-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
 
 
 ### 范文的所有截图
@@ -112,7 +112,7 @@
 
 ### 将本项目主文件作为 Nodejs 模块调用
 
-> 下例节选自《`测试集/用于测试本项目之Javascript接口的测试代码集.js`》。
+> 下例节选自《`测试集/用于测试本项目之-javascript-接口的测试代码集.js`》。
 
 ```js
 const { // 全 12 个接口项如下。其中 6 个是采用汉语命名的，是新的；另 6 个是采用外国字命名的，是旧的。
