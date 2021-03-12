@@ -42,7 +42,7 @@ const 所有Javascript文件之简易描述项之集 = 所有已发布之Javascr
     用于将层叠样式表文件与Javascript文件进行配对关联的配置项集
 ))
 
-const 以文件名称为索引之所有文件之字典 = 所有层叠样式表文件之简易描述项之集.concat(所有Javascript文件之简易描述项之集).reduce((汇总字典, 某文件之简易描述项) => {
+const 以文件名称为索引之所有文件简易描述项之字典 = 所有层叠样式表文件之简易描述项之集.concat(所有Javascript文件之简易描述项之集).reduce((汇总字典, 某文件之简易描述项) => {
     汇总字典[某文件之简易描述项.文件名称] = 某文件之简易描述项
     return 汇总字典
 }, {})
@@ -78,7 +78,7 @@ if (false) { // eslint-disable-line no-constant-condition
  * @namespace defaultExports
  * @property {吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项[]} 所有已发布之层叠样式表文件之简易描述项之集
  * @property {吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项[]} 所有已发布之Javascript文件之简易描述项之集
- * @property {object} 以文件名称为索引之所有文件之字典
+ * @property {object} 以文件名称为索引之所有文件简易描述项之字典
  *
  * @property {Function} 获取某一已发布之文件之完整内容字符串
  * @property {Function} 获取本项目官方选定之所谓默认层叠样式表之完整内容字符串
@@ -99,7 +99,7 @@ module.exports = {
     /**
      * @enum {吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项}
      */
-    以文件名称为索引之所有文件之字典,
+    以文件名称为索引之所有文件简易描述项之字典,
 
     获取某一已发布之文件之完整内容字符串,
     获取本项目官方选定之所谓默认层叠样式表之完整内容字符串,
@@ -113,7 +113,7 @@ module.exports = {
     /**
      * @enum {吴乐川用于美化文章的层叠样式表集之数据类型之文件简易描述项}
      */
-    allFileEntriesKeyingByFileNames: 以文件名称为索引之所有文件之字典,
+    allFileEntriesKeyingByFileNames: 以文件名称为索引之所有文件简易描述项之字典,
 
     syncGetContentStringOfOneFileEntry: 获取某一已发布之文件之完整内容字符串,
     syncGetContentStringOfDefaultCSS: 获取本项目官方选定之所谓默认层叠样式表之完整内容字符串,
@@ -214,7 +214,7 @@ function 拾取某一文件描述对象(文件描述项或文件名称) {
             命中的文件之名称 = 命中的文件简易描述项.文件名称
         } else if (typeof 文件描述项或文件名称 === 'string') {
             命中的文件之名称 = 文件描述项或文件名称
-            命中的文件简易描述项 = 以文件名称为索引之所有文件之字典[命中的文件之名称]
+            命中的文件简易描述项 = 以文件名称为索引之所有文件简易描述项之字典[命中的文件之名称]
         }
     }
 

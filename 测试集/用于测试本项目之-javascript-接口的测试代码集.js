@@ -4,7 +4,7 @@ const 粉笔 = require('chalk')
 const { // 全 6 个接口项如下：
     所有已发布之层叠样式表文件之简易描述项之集,
     所有已发布之Javascript文件之简易描述项之集,
-    以文件名称为索引之所有文件之字典,
+    以文件名称为索引之所有文件简易描述项之字典,
 
     获取某一已发布之文件之完整内容字符串,
     获取本项目官方选定之所谓默认层叠样式表之完整内容字符串,
@@ -92,7 +92,7 @@ console.log(上方留有空白行的分隔线)
 
 
 
-const 本项目发布的所有层叠样式表和Javascript文件之名称列表 = Object.keys(以文件名称为索引之所有文件之字典)
+const 本项目发布的所有层叠样式表和Javascript文件之名称列表 = Object.keys(以文件名称为索引之所有文件简易描述项之字典)
 console.log(
     '\n@wulechuan/css-stylus-markdown-themes 项目发布的所有层叠样式表和Javascript文件之名称列表：',
     本项目发布的所有层叠样式表和Javascript文件之名称列表

@@ -18,7 +18,7 @@ import 构建一个用于将Markdown内容字符串转换为HTML字符串的转�
 
 
 import {
-    以文件名称为索引之所有文件之字典,
+    以文件名称为索引之所有文件简易描述项之字典,
     获取某一已发布之文件之完整内容字符串,
 } from '../../..'
 
@@ -51,7 +51,7 @@ const sourceMarkdownFileZhHansCN = 遵循POSIX标准拼接路径(
 )
 
 const 将Markdown内容字符串转换为HTML内容的转换器 = 构建一个用于将Markdown内容字符串转换为HTML字符串的转换器({
-    themesPeerPackageAllDistFileEntriesKeyingByFileNames: 以文件名称为索引之所有文件之字典,
+    themesPeerPackageAllDistFileEntriesKeyingByFileNames: 以文件名称为索引之所有文件简易描述项之字典,
     syncGetContentStringOfOneFileOfThePeerModuleOfThemes: 获取某一已发布之文件之完整内容字符串,
 })
 

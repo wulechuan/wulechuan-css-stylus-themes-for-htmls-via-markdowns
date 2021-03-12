@@ -17,6 +17,7 @@ const 本项目所谓默认的Javascript文件之已压缩版之文件完整名�
 const { basename: 从文件路径中提取文件名称 } = 路径工具
 const { join: 遵循POSIX标准拼接路径 } = 路径工具.posix
 
+// 【文件甄选描述符】即外国话所谓 “ glob ”、“ globs ”。
 const { sync: 根据文件甄选描述符扫描文件系统并求出所有匹配的文件之绝对路径 } = 甄选描述符之工具
 
 const { readFileSync: 非回调式读取文件内容 } = 文件系统工具
@@ -39,12 +40,16 @@ const 所有已发布之Javascript文件之绝对路径 = 根据文件甄选描�
 const 所有已发布之层叠样式表文件之简易描述项之集 = 所有已发布之层叠样式表文件之绝对路径.map(根据文件路径构建文件简易描述项)
 const 所有已发布之Javascript文件之简易描述项之集 = 所有已发布之Javascript文件之绝对路径.map(根据文件路径构建文件简易描述项)
 
-所有已发布之层叠样式表文件之简易描述项之集.forEach(某层叠样式表之文件描述项 => 依照配置将一组Javascript与某层叠样式表进行配对关联(
-    某层叠样式表之文件描述项,
-    用于将层叠样式表文件与Javascript文件进行配对关联的配置项集
-))
+所有已发布之层叠样式表文件之简易描述项之集.forEach(某层叠样式表之文件描述项 => {
+    return 依照配置将一组Javascript与某层叠样式表进行配对关联(
+        某层叠样式表之文件描述项,
+        用于将层叠样式表文件与Javascript文件进行配对关联的配置项集
+    )
+})
 
-const 以文件名称为索引之所有文件之字典 = 所有已发布之层叠样式表文件之简易描述项之集.concat(所有已发布之Javascript文件之简易描述项之集).reduce((汇总字典, 某文件之简易描述项) => {
+const 以文件名称为索引之所有文件简易描述项之字典 = 所有已发布之层叠样式表文件之简易描述项之集.concat(
+    所有已发布之Javascript文件之简易描述项之集
+).reduce((汇总字典, 某文件之简易描述项) => {
     汇总字典[某文件之简易描述项.文件名称] = 某文件之简易描述项
     return 汇总字典
 }, {})
@@ -67,7 +72,10 @@ module.exports = {
     所有已发布之层叠样式表文件之简易描述项之集,
     所有已发布之Javascript文件之简易描述项之集,
 
-    以文件名称为索引之所有文件之字典,
+    以文件名称为索引之所有文件简易描述项之字典,
+
+    // 已因命名不够明确而废弃（仍可用但不推荐）。请改用 “ 以文件名称为索引之所有文件简易描述项之字典 ”。
+    以文件名称为索引之所有文件之字典: 以文件名称为索引之所有文件简易描述项之字典,
 
     获取某一已发布之文件之完整内容字符串,
     获取本项目官方选定之所谓默认层叠样式表之完整内容字符串,
@@ -78,7 +86,7 @@ module.exports = {
     cssFileEntries: 所有已发布之层叠样式表文件之简易描述项之集,
     jsFileEntries: 所有已发布之Javascript文件之简易描述项之集,
 
-    allFileEntriesKeyingByFileNames: 以文件名称为索引之所有文件之字典,
+    allFileEntriesKeyingByFileNames: 以文件名称为索引之所有文件简易描述项之字典,
 
     syncGetContentStringOfOneFileEntry: 获取某一已发布之文件之完整内容字符串,
     syncGetContentStringOfDefaultCSS: 获取本项目官方选定之所谓默认层叠样式表之完整内容字符串,
@@ -161,7 +169,7 @@ function 拾取某一文件描述对象(文件描述项或文件名称) {
             命中的文件之名称 = 命中的文件简易描述项.文件名称
         } else if (typeof 文件描述项或文件名称 === 'string') {
             命中的文件之名称 = 文件描述项或文件名称
-            命中的文件简易描述项 = 以文件名称为索引之所有文件之字典[命中的文件之名称]
+            命中的文件简易描述项 = 以文件名称为索引之所有文件简易描述项之字典[命中的文件之名称]
         }
     }
 
@@ -241,7 +249,7 @@ function 获取本项目官方选定之所谓默认Javascript之完整内容字�
 
 
     const {
-        // 注意： 【展开文章纲要列表面板】与【展开文章纲要列表的某一条目】不是一回事。
+        // 注意： 【展开文章纲要列表面板】与【展开文章纲要列表的某一条目】并非一回事。
 
         为求文章纲要列表简洁明了故意仅显示两层条目以至于较深层级条目形同作废,
         shouldShowOnlyTwoLevelsOfTOCItemsAtMost,
@@ -257,7 +265,7 @@ function 获取本项目官方选定之所谓默认Javascript之完整内容字�
 
 
 
-    const 应从文件内容首部截取的待编辑部分之长度之保守值 = [ // 以下摘取源代码之原始片段，用以计算该段代码之字符串长度。
+    const 应从文件内容首部截取的待编辑部分之长度之保守值 = [ // 以下摘取了源代码之首部之原始片段，用以计算该段代码之字符串长度。
         'window.shouldShowOnlyTwoLevelsOfTOCItemsAtMost = false\n',
         'window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan = 1\n',
         'window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false\n',
