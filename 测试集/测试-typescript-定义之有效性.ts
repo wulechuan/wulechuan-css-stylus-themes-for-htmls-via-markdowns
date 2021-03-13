@@ -1,7 +1,7 @@
 /**
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  *
- * 我不打算令 nodejs 运行本 JavaScript 文件之代码。
+ * 我不打算以任何方式运行本 TypeScript 文件之代码。
  * 设计本文件纯粹是为了在其中测试本工具之 TypeScript 定义是否起效。
  * 具体而言，我会在本文中打字，观察我的代码编辑器（ VSCode ）能否给出正确的代码提示。
  *
@@ -16,8 +16,15 @@
 
 
 
+/**
+ * 根据 TypeScript 之官方文档该篇：
+ *     https://www.typescriptlang.org/docs/handbook/modules.html#export--and-import--require
+ * 之内容，应该采用 import xxxx = require('yyyy') 之语法。故从之。
+ * 
+ * 然，我发现古典的 import xxxx from 'yyyy' 之写法亦能正常运转。有些疑惑。
+ */
 /** */
-const 文章样式工具之总接口 = require('..')
+import 文章样式工具之总接口 = require('..')
 
 
 
@@ -36,10 +43,10 @@ const 文章样式工具之总接口 = require('..')
     为求文章纲要列表简洁明了故意仅显示两层条目以至于较深层级条目形同作废: false,
 })
 
-
-
-
-
+   
+   
+   
+   
 /**
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * 请输入以下测试性文字，并观察代码编辑器是否能给出正确的代码提示。
@@ -47,4 +54,4 @@ const 文章样式工具之总接口 = require('..')
 
 文章样式工具之总接口.以文件名称为索引之所有文件简易描述项之字典['wulechuan-styles-for-html-via-markdown.default--no-toc.min.css']
 */
-文章样式工具之总接口.以文件名称为索引之所有文件简易描述项之字典['wulechuan-styles-for-html-via-markdown--firefox-addon.default.css']
+文章样式工具之总接口.以文件名称为索引之所有文件简易描述项之字典['wulechuan-styles-for-html-via-markdown.default--with-toc.min.css']

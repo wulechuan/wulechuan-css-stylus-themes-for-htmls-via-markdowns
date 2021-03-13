@@ -1,5 +1,6 @@
 /// <reference path="./index.d.ts" />
 
+// 【文件甄选描述符】即外国话所谓 “ glob ”、“ globs ”。
 const 甄选描述符之工具 = require('globby')
 const 路径工具 = require('path')
 const 文件系统工具 = require('fs')
@@ -17,7 +18,6 @@ const 本项目所谓默认的Javascript文件之已压缩版之文件完整名�
 const { basename: 从文件路径中提取文件名称 } = 路径工具
 const { join: 遵循POSIX标准拼接路径 } = 路径工具.posix
 
-// 【文件甄选描述符】即外国话所谓 “ glob ”、“ globs ”。
 const { sync: 根据文件甄选描述符扫描文件系统并求出所有匹配的文件之绝对路径 } = 甄选描述符之工具
 
 const { readFileSync: 非回调式读取文件内容 } = 文件系统工具
