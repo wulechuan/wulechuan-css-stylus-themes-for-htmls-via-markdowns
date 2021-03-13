@@ -2,45 +2,55 @@ declare const 默认导出之内容: 默认导出之内容.本模块之总接口
 export = 默认导出之内容;
 
 declare namespace 默认导出之内容 {
-    export type 类型定义之由本工具内建之层叠样式表文件之名称 = (
-        | 'wulechuan-styles-for-html-via-markdown--firefox-addon.default.css'
+    export type 类型定义之内建之层叠样式表文件之名称之凡不含文章目录者 = (
         | 'wulechuan-styles-for-html-via-markdown--typora.default.css'
         | 'wulechuan-styles-for-html-via-markdown--vscode.default.min.css'
+
         | 'wulechuan-styles-for-html-via-markdown.default--no-toc.css'
         | 'wulechuan-styles-for-html-via-markdown.default--no-toc.min.css'
-        | 'wulechuan-styles-for-html-via-markdown.default--with-toc.css'
-        | 'wulechuan-styles-for-html-via-markdown.default--with-toc.min.css'
         | 'wulechuan-styles-for-html-via-markdown.default--wrapped--no-toc.css'
         | 'wulechuan-styles-for-html-via-markdown.default--wrapped--no-toc.min.css'
-        | 'wulechuan-styles-for-html-via-markdown.default--wrapped--with-toc.css'
-        | 'wulechuan-styles-for-html-via-markdown.default--wrapped--with-toc.min.css'
         | 'wulechuan-styles-for-html-via-markdown.default-dark--no-toc.css'
         | 'wulechuan-styles-for-html-via-markdown.default-dark--no-toc.min.css'
-        | 'wulechuan-styles-for-html-via-markdown.default-dark--with-toc.css'
-        | 'wulechuan-styles-for-html-via-markdown.default-dark--with-toc.min.css'
         | 'wulechuan-styles-for-html-via-markdown.default-dark--wrapped--no-toc.css'
         | 'wulechuan-styles-for-html-via-markdown.default-dark--wrapped--no-toc.min.css'
-        | 'wulechuan-styles-for-html-via-markdown.default-dark--wrapped--with-toc.css'
-        | 'wulechuan-styles-for-html-via-markdown.default-dark--wrapped--with-toc.min.css'
         | 'wulechuan-styles-for-html-via-markdown.generic-default-light--atom-one-dark--no-toc.css'
         | 'wulechuan-styles-for-html-via-markdown.generic-default-light--atom-one-dark--no-toc.min.css'
-        | 'wulechuan-styles-for-html-via-markdown.generic-default-light--atom-one-dark--with-toc.css'
-        | 'wulechuan-styles-for-html-via-markdown.generic-default-light--atom-one-dark--with-toc.min.css'
         | 'wulechuan-styles-for-html-via-markdown.generic-default-light--atom-one-dark--wrapped--no-toc.css'
         | 'wulechuan-styles-for-html-via-markdown.generic-default-light--atom-one-dark--wrapped--no-toc.min.css'
+    )
+
+    export type 类型定义之内建之层叠样式表文件之名称之凡含有文章目录者 = (
+        | 'wulechuan-styles-for-html-via-markdown--firefox-addon.default.css'
+
+        | 'wulechuan-styles-for-html-via-markdown.default--with-toc.css'
+        | 'wulechuan-styles-for-html-via-markdown.default--with-toc.min.css'
+        | 'wulechuan-styles-for-html-via-markdown.default--wrapped--with-toc.css'
+        | 'wulechuan-styles-for-html-via-markdown.default--wrapped--with-toc.min.css'
+        | 'wulechuan-styles-for-html-via-markdown.default-dark--with-toc.css'
+        | 'wulechuan-styles-for-html-via-markdown.default-dark--with-toc.min.css'
+        | 'wulechuan-styles-for-html-via-markdown.default-dark--wrapped--with-toc.css'
+        | 'wulechuan-styles-for-html-via-markdown.default-dark--wrapped--with-toc.min.css'
+        | 'wulechuan-styles-for-html-via-markdown.generic-default-light--atom-one-dark--with-toc.css'
+        | 'wulechuan-styles-for-html-via-markdown.generic-default-light--atom-one-dark--with-toc.min.css'
         | 'wulechuan-styles-for-html-via-markdown.generic-default-light--atom-one-dark--wrapped--with-toc.css'
         | 'wulechuan-styles-for-html-via-markdown.generic-default-light--atom-one-dark--wrapped--with-toc.min.css'
+    )
+
+    export type 类型定义之内建之层叠样式表文件之名称 = (
+        | 类型定义之内建之层叠样式表文件之名称之凡不含文章目录者
+        | 类型定义之内建之层叠样式表文件之名称之凡含有文章目录者
     );
 
     export type 类型定义之文件简易描述项 = {
-        文件名称: 类型定义之由本工具内建之层叠样式表文件之名称;
+        文件名称: 类型定义之内建之层叠样式表文件之名称;
         文件之相对路径: string;
         文件之绝对路径: string;
         文件内容全文: string;
-
+    } & {
         // 以下为陈旧的采用外国字命名之诸接口。
 
-        fileName: string;
+        fileName: 类型定义之内建之层叠样式表文件之名称;
         fileRelativePath: string;
         fileAbsolutePath: string;
         fileContent: string;
@@ -50,7 +60,7 @@ declare namespace 默认导出之内容 {
     //     [文件名称: string]: 类型定义之文件简易描述项;
     // };
     export type 类型定义之文件简易描述项字典 = Record<
-        类型定义之由本工具内建之层叠样式表文件之名称, 类型定义之文件简易描述项
+        类型定义之内建之层叠样式表文件之名称, 类型定义之文件简易描述项
     >;
 
     export type 类型定义之定制默认Javascript文件之选项集 = {
@@ -98,15 +108,13 @@ declare namespace 默认导出之内容 {
     export type 本模块之总接口 = {
         所有层叠样式表文件之简易描述项之集: Array<类型定义之文件简易描述项>;
         所有Javascript文件之简易描述项之集: Array<类型定义之文件简易描述项>;
-        以文件名称为索引之所有文件简易描述项之字典: 类型定义之文件简易描述项字典;
 
-        // 已因命名不够明确而废弃（仍可用但不推荐）。请改用 “ 以文件名称为索引之所有文件简易描述项之字典 ”。
-        以文件名称为索引之所有文件之字典: 类型定义之文件简易描述项字典;
+        以文件名称为索引之所有文件简易描述项之字典: 类型定义之文件简易描述项字典;
 
         获取某一已发布之文件之完整内容字符串: 类型定义之获取某特定文件之完整内容字符串之函数;
         获取本项目官方选定之所谓默认层叠样式表之完整内容字符串: 类型定义之获取所谓默认层叠样式表文件之完整内容字符串之函数;
         获取本项目官方选定之所谓默认Javascript之完整内容字符串: 类型定义之获取所谓默认Javacript文件之完整内容字符串之函数;
-
+    } & {
         // 以下为陈旧的采用外国字命名之诸接口。
 
         cssFileEntries: Array<类型定义之文件简易描述项>;

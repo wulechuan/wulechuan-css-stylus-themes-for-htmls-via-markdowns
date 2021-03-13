@@ -20,7 +20,7 @@
  * 根据 TypeScript 之官方文档该篇：
  *     https://www.typescriptlang.org/docs/handbook/modules.html#export--and-import--require
  * 之内容，应该采用 import xxxx = require('yyyy') 之语法。故从之。
- * 
+ *
  * 然，我发现古典的 import xxxx from 'yyyy' 之写法亦能正常运转。有些疑惑。
  */
 /** */
@@ -44,10 +44,10 @@ import 文章样式工具之总接口 = require('..')
     为求文章纲要列表简洁明了故意仅显示两层条目以至于较深层级条目形同作废: false,
 })
 
-   
-   
-   
-   
+
+
+
+
 /**
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * 请输入以下测试性文字，并观察代码编辑器是否能给出正确的代码提示。
