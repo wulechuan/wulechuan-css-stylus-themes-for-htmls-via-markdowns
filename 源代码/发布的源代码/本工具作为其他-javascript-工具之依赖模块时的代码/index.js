@@ -1,4 +1,4 @@
-/// <reference path="../../../types/index.d.ts" />
+/// <reference path="./index.d.ts" />
 
 const 甄选描述符之工具 = require('globby')
 const 路径工具 = require('path')

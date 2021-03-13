@@ -8,7 +8,7 @@ const 路径工具 = require('path')
 
 const { join: 遵循POSIX标准拼接路径 } = 路径工具.posix
 
-const 发布之内容之根文件夹之相对路径 = './源代码/发布的源代码'
+const 发布之内容之根文件夹之相对路径 = './源代码/发布的源代码/文章排版与配色方案集'
 
 const 存放发布的层叠样式表之文件夹之名称 = '层叠样式表'
 const 存放发布的配套Javascript之文件夹之名称 = 'javascript'

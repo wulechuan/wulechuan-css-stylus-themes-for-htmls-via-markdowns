@@ -75,12 +75,20 @@ export default function 构建一个任务闭环以将一Markdown文件转换成
 
     if (须嵌入HTML文件的层叠样式表文件之文件名称) {
         首要须嵌入HTML文件的各文件之绝对路径集.push(
-            遵循POSIX标准拼接路径(本项目之根文件夹之绝对路径, '源代码/发布的源代码/层叠样式表', 须嵌入HTML文件的层叠样式表文件之文件名称)
+            遵循POSIX标准拼接路径(
+                本项目之根文件夹之绝对路径,
+                '源代码/发布的源代码/文章排版与配色方案集/层叠样式表',
+                须嵌入HTML文件的层叠样式表文件之文件名称
+            )
         )
 
         if (须嵌入HTML文件的层叠样式表文件之文件名称.match(/--with-toc\.(min\.)?css$/)) {
             首要须嵌入HTML文件的各文件之绝对路径集.push(
-                遵循POSIX标准拼接路径(本项目之根文件夹之绝对路径, '源代码/发布的源代码/javascript', 'table-of-contents-and-back-to-top-anchor-behaviors.min.js')
+                遵循POSIX标准拼接路径(
+                    本项目之根文件夹之绝对路径,
+                    '源代码/发布的源代码/文章排版与配色方案集/javascript',
+                    'table-of-contents-and-back-to-top-anchor-behaviors.min.js'
+                )
             )
         }
     }

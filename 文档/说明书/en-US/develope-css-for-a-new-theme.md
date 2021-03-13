@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../../源代码/发布的源代码/层叠样式表/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
+<link rel="stylesheet" href="../../../源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
 
 # Wulechuan's HTML Article Themes
 
@@ -70,7 +70,7 @@ This project utitlizes [Stylus](http://stylus-lang.com/) language to generate CS
         2.  `cd` to the folder of this repository.
         3.  type `npm run build` and press <kbd>enter</kbd> key.
         4.  Wait for the program to end.
-        5.  Checkout the `./源代码/发布的源代码/层叠样式表` folder for your own CSS file.
+        5.  Checkout the `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表` folder for your own CSS file.
 
 
 
@@ -87,7 +87,7 @@ This project utitlizes [Stylus](http://stylus-lang.com/) language to generate CS
         5.  Open either or both of the HTML files generated under the `./测试集/产生的临时文件/示例性-html-文件集（仅限于当前正在开发的排版与配色方案）/` folder with your favorite web browser(s).
         6.  Make some changes to your `.styl` files.
         7.  Refresh your web browser(s) to see the changes.
-        8.  Also note that the `.css` files are constantly updating inside the `./源代码/发布的源代码/层叠样式表/` folder. But I guess you seldom care about them during the development process.
+        8.  Also note that the `.css` files are constantly updating inside the `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表/` folder. But I guess you seldom care about them during the development process.
 
 
 
@@ -173,7 +173,7 @@ npm run build2
 
 #### `clean` and `clean2`
 
-Delete all generated CSS files of all scenarios. They exist in the `./源代码/发布的源代码/层叠样式表/` folder .
+Delete all generated CSS files of all scenarios. They exist in the `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表/` folder .
 
 
 > Note that if a scenario configuration changes its output CSS file basename, then the exiting CSS file(s) with old basename will **NOT** be erased by this script. You have to manually delete these old files.
@@ -229,10 +229,9 @@ To lint all discovered Javascript files according to these globs:
 - `./gulpfile.esm.js/**/*.js`
 - `./文档/文章排版与配色效果示例集/*.js`
 - `./测试集/*.js`
-- `./源代码/原始的源代码/本工具作为其他-javascript-工具之依赖模块时的代码/*.js`
+- `./源代码/发布的源代码/本工具作为其他-javascript-工具之依赖模块时的代码/*.js`
 - `./源代码/原始的源代码/用于设计文章排版与配色方案的代码/js/**/*.js`
 - `./本项目之全局配置项集.js`
-- `./index.js`
 
 The famous [eslint](https://eslint.org) empowers this feature.
 

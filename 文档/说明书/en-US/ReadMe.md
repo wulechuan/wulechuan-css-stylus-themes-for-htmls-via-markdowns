@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="./源代码/发布的源代码/层叠样式表/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
+<link rel="stylesheet" href="../../../源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
 
 # Wulechuan's HTML Article Themes
 
@@ -99,11 +99,11 @@ For more pictures, see:
 
 #### CSS Files
 
-Simply use any CSS file located under the `./源代码/发布的源代码/层叠样式表` folder.
+Simply use any CSS file located under the `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表` folder.
 
 #### Javascript File(s)
 
-Simply use any Javascript file located under the `./源代码/发布的源代码/javascript` folder.
+Simply use any Javascript file located under the `./源代码/发布的源代码/文章排版与配色方案集/javascript` folder.
 
 
 

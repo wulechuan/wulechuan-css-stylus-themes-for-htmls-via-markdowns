@@ -23,7 +23,7 @@ gulpfile.esm.js
 
 测试集
 
-源代码/原始的源代码/本工具作为其他-javascript-工具之依赖模块时的代码/.eslintrc.js
+源代码/发布的源代码/本工具作为其他-javascript-工具之依赖模块时的代码/.eslintrc.js
 源代码/原始的源代码/用于设计文章排版与配色方案的代码
 
 index.js.带有*

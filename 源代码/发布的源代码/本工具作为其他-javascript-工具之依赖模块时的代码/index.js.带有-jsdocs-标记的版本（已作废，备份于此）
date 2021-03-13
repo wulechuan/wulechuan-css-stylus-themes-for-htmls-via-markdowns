@@ -24,7 +24,7 @@ const { readFileSync: 非回调式读取文件内容 } = 文件系统工具
 const 本项目之根路径 = 路径工具.dirname(require.resolve('./package.json'))
 
 const 用于将层叠样式表文件与Javascript文件进行配对关联的配置项集 = require(
-    './源代码/原始的源代码/本工具作为其他-javascript-工具之依赖模块时的代码/令发布的层叠样式表与-javascript-文件建立关联'
+    './源代码/发布的源代码/本工具作为其他-javascript-工具之依赖模块时的代码/令发布的层叠样式表与-javascript-文件建立关联'
 )
 
 

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../../../源代码/发布的源代码/层叠样式表/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
+<link rel="stylesheet" href="../../../源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
 
 # Wulechuan's HTML Article Themes
 
@@ -43,8 +43,8 @@ Combining the factors mentioned above, there exist 4 variants of the "default" C
 
     Files:
 
-    - `./源代码/发布的源代码/层叠样式表/wulechuan-styles-for-html-via-markdown.default--wrapped--no-toc.css`
-    - `./源代码/发布的源代码/层叠样式表/wulechuan-styles-for-html-via-markdown.default--wrapped--no-toc.min.css`
+    - `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown.default--wrapped--no-toc.css`
+    - `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown.default--wrapped--no-toc.min.css`
 
 
 
@@ -55,8 +55,8 @@ Combining the factors mentioned above, there exist 4 variants of the "default" C
 
     Files:
 
-    - `./源代码/发布的源代码/层叠样式表/wulechuan-styles-for-html-via-markdown.default--wrapped--with-toc.css`
-    - `./源代码/发布的源代码/层叠样式表/wulechuan-styles-for-html-via-markdown.default--wrapped--with-toc.min.css`
+    - `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown.default--wrapped--with-toc.css`
+    - `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown.default--wrapped--with-toc.min.css`
 
     > Don't forget to use the `table-of-contents-and-back-to-top-anchor-behaviors.js` together with either of these CSS files.
 
@@ -69,8 +69,8 @@ Combining the factors mentioned above, there exist 4 variants of the "default" C
 
     Files:
 
-    - `./源代码/发布的源代码/层叠样式表/wulechuan-styles-for-html-via-markdown.default--no-toc.css`
-    - `./源代码/发布的源代码/层叠样式表/wulechuan-styles-for-html-via-markdown.default--no-toc.min.css`
+    - `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown.default--no-toc.css`
+    - `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown.default--no-toc.min.css`
 
 
 4. **Selectors non-wrapped, with TOC**
@@ -80,8 +80,8 @@ Combining the factors mentioned above, there exist 4 variants of the "default" C
 
     Files:
 
-    - `./源代码/发布的源代码/层叠样式表/wulechuan-styles-for-html-via-markdown.default--with-toc.css`
-    - `./源代码/发布的源代码/层叠样式表/wulechuan-styles-for-html-via-markdown.default--with-toc.min.css`
+    - `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown.default--with-toc.css`
+    - `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown.default--with-toc.min.css`
 
 
     > Don't forget to use the `table-of-contents-and-back-to-top-anchor-behaviors.js` together with either of these CSS files.
@@ -115,7 +115,7 @@ The markup structure of the said TOC parts are based on the output of [markdown-
 
 File:
 
-- `./源代码/发布的源代码/层叠样式表/wulechuan-styles-for-html-via-markdown--vscode.default.min.css`
+- `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown--vscode.default.min.css`
 
 This one is specifically for the preview page generated inside Microsoft [Visual Studio Code](https://code.visualstudio.com).
 
@@ -126,7 +126,7 @@ Add a raw HTML line (see below) into your markdown file, and then preview the ma
 The HTML line to embed into your markdown file looks like this:
 
 ```html
-<link rel="stylesheet" href="./node_modules/@wulechuan/css-stylus-markdown-themes/源代码/发布的源代码/层叠样式表/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
+<link rel="stylesheet" href="./node_modules/@wulechuan/css-stylus-markdown-themes/源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
 ```
 
 ---
@@ -139,7 +139,7 @@ The HTML line to embed into your markdown file looks like this:
 
 File:
 
-- `./源代码/发布的源代码/层叠样式表/wulechuan-styles-for-html-via-markdown--firefox-addon.default.css`
+- `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown--firefox-addon.default.css`
 
 This one is specifically for the nice markdown processing addon of Firefox browser. The addon is named "[Markdown Viewer Webext](https://addons.mozilla.org/zh-CN/firefox/addon/markdown-viewer-webext/)".
 
@@ -164,7 +164,7 @@ This one is specifically for the nice markdown processing addon of Firefox brows
 
 File:
 
-- `./源代码/发布的源代码/层叠样式表/wulechuan-styles-for-html-via-markdown--typora.default.css`
+- `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown--typora.default.css`
 
 [Typora](https://typora.io/) is a really great tool for both reading and writing markdown files. The app allows users to customize the look and feel of the markdown(HTML in fact) inside it.
 
