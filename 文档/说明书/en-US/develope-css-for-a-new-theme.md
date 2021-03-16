@@ -38,7 +38,7 @@ This project utitlizes [Stylus](http://stylus-lang.com/) language to generate CS
 
     _selectorOf_markdownArticleBackplateBackgroundColorCarrier = 'body'
 
-    _selectorsOf_fontFamily_baseFontFamilyCarriers = 'html, article, .my-markdown-article'
+    _selectorsOf_fontFamily_baseFontFamilyCarriers = 'article, .my-markdown-article'
 
 
 
@@ -118,7 +118,7 @@ Starts a batch of file watchers to watch all source `.styl` files. As long as a 
 
 ##### Usage in CLI
 
-To make gulp running in `--silent` mode, do either
+To run gulp in standard mode, do either
 
 ```bash
 npm start
@@ -130,16 +130,17 @@ or
 npm run start
 ```
 
-> Either way results in a cleaner console but is difficult to debug gulp scripts.
+> Either way, gulp exceptions(aka errors) are not swallowed.
 
 
-To run gulp in standard mode, do this:
+To make gulp running in `--silent` mode, do this:
 
 ```bash
 npm run start2
 ```
 
-> This way, gulp exceptions(aka errors) are not swallowed.
+> This way results in a cleaner console but is difficult to debug gulp scripts.
+
 
 
 #### `build` and `build2`

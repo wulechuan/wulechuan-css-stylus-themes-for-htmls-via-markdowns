@@ -1,3 +1,7 @@
+@import '../theming-variables'
+
+
+
 __fontFamily_importantMark = ''
 
 if (_fontFamily_shouldMarkAsImportantRule) {
@@ -5,7 +9,7 @@ if (_fontFamily_shouldMarkAsImportantRule) {
 }
 
 {_selectorsOf_fontFamily_baseFontFamilyCarriers}, button, input, textarea, select, option {
-    font-family: 'Segoe UI', '微软雅黑', 'Microsoft Yahei UI', 'Microsoft Yahei', 'Lucida Grande', Helvetica, sans-serif unquote(__fontFamily_importantMark);
+    font-family: _fontFamilyValueOf_articleFontFamilyCarrier unquote(__fontFamily_importantMark);
 
     // @media screen and (min-width: 2600px) {
     //     font-family: 'Segoe UI', '楷体', 'Microsoft Yahei UI', 'Lucida Grande', Helvetica, sans-serif unquote(__fontFamily_importantMark);
