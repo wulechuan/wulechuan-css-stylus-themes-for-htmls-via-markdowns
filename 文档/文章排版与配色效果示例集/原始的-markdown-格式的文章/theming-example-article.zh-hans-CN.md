@@ -537,14 +537,14 @@ exports.author = 'wulechun@live.com';
 
     <div id="app">
         <button id="one-button">我是按钮</button><br>
-        <img id="beauty" src="./images/beauties/beauty-1.jpg" alt="此处本应有美女" tilte="一位大美女">
+        <img id="beauty" src="./images/beauties/beauty-1.jpg" alt="此处本应有美女" tilte="一位绝色美人">
     </div>
 
     <script id="js-example-1" type="text/javascript">
         var beautyImage = document.getElementById('beauty');
         document.querySelector('#one-button').onclick = function () {
             beautyImage.src = './images/beauties/beauty-2.jpg';
-            beautyImage.title = '另一位大美女';
+            beautyImage.title = '另一位绝色美人';
         };
     </script>
 
