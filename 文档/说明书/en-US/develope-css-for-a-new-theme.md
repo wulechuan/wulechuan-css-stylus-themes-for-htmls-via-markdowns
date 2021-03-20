@@ -27,18 +27,24 @@ This project utitlizes [Stylus](http://stylus-lang.com/) language to generate CS
     //-------------------------------------------------
     // Set values for all variable.
     // Note:
-    //     Any variable starts with underscore('_') is an optional variable.
+    //     Any variable starts with underscore('_')
+    //     is an optional variable.
+    //
     //     Others, required!
+    //     As of v7.2.0, The only required stylus variable
+    //     is named with prefix of "REQUIRED_".
+    //     If there were any new required ones,
+    //     they would also be named with the prefix.
     //-------------------------------------------------
 
-    codeBlocksThemeName = 'atom-one-dark'
+    REQUIRED_sourceFolderNameOf_chosenThemingTypeOfCodeBlocks = 'atom-one-dark'
 
-    _selectorOf_markdownArticleParent = 'body > #app'
-    _selectorOf_markdownArticleRoot   = '.my-markdown-article'
+    _selectorOf_article_rootParent = 'body > #app'
+    _selectorOf_article_root   = '.my-markdown-article'
 
-    _selectorOf_markdownArticleBackplateBackgroundColorCarrier = 'body'
+    _selectorOf_article_backdropBackgroundColorCarrier = 'body'
 
-    _selectorsOf_fontFamily_baseFontFamilyCarriers = 'article, .my-markdown-article'
+    _selectorsOf_fontFamily_baseFontFamilyCarriers     = 'article, .my-markdown-article'
 
 
 
@@ -50,7 +56,8 @@ This project utitlizes [Stylus](http://stylus-lang.com/) language to generate CS
     // customized CSS accordingly.
     //-------------------------------------------------
 
-    @import '../../文章排版和配色样式之零件库/1-根据给出的变量集将零件组装成完整样式表' // We don't touch this line at all. It always writes this way.
+    // We don't touch this line at all. It always writes this way.
+    @import '../../文章排版和配色样式之零件库/1-根据给出的变量集将零件组装成完整样式表'
 
     ```
 

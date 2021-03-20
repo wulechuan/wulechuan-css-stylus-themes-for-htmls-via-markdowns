@@ -4,7 +4,7 @@
 
 /* 以下 CSS 是除代码块之外的页面整体着色方案。*/
 
-{_selectorOf_markdownArticleRoot} {
+{_selectorOf_article_root} {
     color: #a3a3a3;
     background-color: #1e1e1e;
     box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.79);
@@ -46,7 +46,7 @@
         // }
     }
 
-    a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+    a{_selectorOf_article_headingsPermantLinkAnchors}[href^="#"] {
         // Permanent links created by
         // markdown-it plugin: markdown-it-anchor
 
@@ -58,14 +58,14 @@
 
     h1, h2, h3, h4, h5, h6 {
 
-        &:hover > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+        &:hover > a{_selectorOf_article_headingsPermantLinkAnchors}[href^="#"] {
             color: #666;
         }
     }
 
     h1, h2, h3, h4, h5, h6 {
 
-        > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+        > a{_selectorOf_article_headingsPermantLinkAnchors}[href^="#"] {
                 
             &:hover,
             &:focus,
@@ -77,7 +77,7 @@
         &:target:hover,
         &:target {
 
-            > a{_selectorOf_markdownArticleHeadingsPermantLinkAnchors}[href^="#"] {
+            > a{_selectorOf_article_headingsPermantLinkAnchors}[href^="#"] {
                 color: #7d5;
             }
         }

@@ -4,7 +4,7 @@
 
 @media screen and (min-width: 1001px) {
 
-    {_selectorOf_tocByMarkdownItTOCDoneRight} li.is-collapsed {
+    {_selectorOf_TOC_byMarkdownItTOCDoneRight} li.is-collapsed {
 
         > li,
         > ol {
@@ -16,7 +16,7 @@
 
 
 @media screen and (min-width: 1960px) {
-    {_selectorOf_markdownArticleParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
+    {_selectorOf_article_rootParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
         MIXIN_forArticleParent_setMarginLeft(
             FontSize_WhenWindowWidthNoLessThan_1960px,
             TOCPanel_defaultWidth,
@@ -25,7 +25,7 @@
 }
 
 @media screen and (min-width: 2600px) {
-    {_selectorOf_markdownArticleParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
+    {_selectorOf_article_rootParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
         MIXIN_forArticleParent_setMarginLeft(
             FontSize_WhenWindowWidthNoLessThan_2600px,
             TOCPanel_defaultWidth,
@@ -35,14 +35,14 @@
 
 @media screen and (max-width: 1400px) and (min-width: 1001px) {
 
-    {_selectorOf_markdownArticleParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
+    {_selectorOf_article_rootParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
         MIXIN_forArticleParent_setMarginLeft(
             FontSize_Default,
             TOCPanel_defaultWidth,
         );
     }
 
-    {_selectorOf_tocByMarkdownItTOCDoneRight} {
+    {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
         width: TOCPanel_width_whenWindowWidthNoMoreThan_1400px;
     }
 
@@ -57,11 +57,11 @@
 
 @media screen and (max-width: 1000px) {
 
-    {_selectorOf_markdownArticleParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
+    {_selectorOf_article_rootParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
         margin-left: 0;
     }
 
-    {_selectorOf_tocByMarkdownItTOCDoneRight} {
+    {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
         width: TOCPanel_width_whenWindowWidthNoMoreThan_1000px;
     }
 
@@ -76,11 +76,11 @@
 
 @media screen and (max-width: 600px) {
 
-    {_selectorOf_markdownArticleParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
+    {_selectorOf_article_rootParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
         margin-left: 0;
     }
 
-    {_selectorOf_tocByMarkdownItTOCDoneRight} {
+    {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
         width: TOCPanel_width_whenWindowWidthNoMoreThan_600px;
     }
 

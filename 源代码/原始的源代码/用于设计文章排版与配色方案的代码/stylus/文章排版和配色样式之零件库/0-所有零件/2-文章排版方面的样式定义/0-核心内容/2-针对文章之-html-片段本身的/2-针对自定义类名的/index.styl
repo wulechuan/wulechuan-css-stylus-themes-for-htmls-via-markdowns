@@ -6,7 +6,7 @@
     因此，这些类名无效用，除非在 MarkDown 文件中手工注入采用这些类名的 HTML 标签。
 */
 
-{_selectorOf_markdownArticleRoot} {
+{_selectorOf_article_root} {
 
     & {
         line-height: 1.6;
@@ -19,7 +19,7 @@
         // line-break: strict;
     }
 
-    if (!_markdownArticleShouldNotScrollSmoothly) {
+    if (!_shouldNotEnableScrollSmoothlyFor_article_root) {
         scroll-behavior: smooth;
     }
 
@@ -30,7 +30,7 @@
 
 .markdown-article-toc-is-visible {
 
-    {_selectorOf_markdownArticleRoot} {
+    {_selectorOf_article_root} {
         padding-left:  3em;
         padding-right: 3em;
     }
@@ -49,7 +49,7 @@
     }
 
     /* markdown-it plugin: markdown-it-anchor */
-    {_selectorOf_markdownArticleHeadingsPermantLinkAnchors} {
+    {_selectorOf_article_headingsPermantLinkAnchors} {
         margin-left: -0.75em; // mark sure texts of the h1, h2 are centered.
     }
 
@@ -62,7 +62,7 @@
         > h2,
         > h1 {
 
-            {_selectorOf_markdownArticleHeadingsPermantLinkAnchors} {
+            {_selectorOf_article_headingsPermantLinkAnchors} {
                 display: none;
             }
         }

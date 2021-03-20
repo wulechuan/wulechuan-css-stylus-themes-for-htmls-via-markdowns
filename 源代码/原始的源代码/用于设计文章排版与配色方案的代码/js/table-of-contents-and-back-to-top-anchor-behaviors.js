@@ -3,14 +3,79 @@ window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan = 1
 window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
 
 ;(function setupAndStartApp() {
-    const logLine = '-'.repeat(80)
-    console.log(`\n${
-        logLine
-    }\nWelcome to wulechuan's article TOC controller.\n\n ${
-        ' '.repeat(61)
-    }wulechuan@live.com\n${
-        logLine
-    }\nhttps://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns\n\n\n`)
+    const gitRepoURIs = [
+        'https://gitee.com/nanchang-wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns.git',
+        // 'https://code.aliyun.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns.git',
+        'https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns.git',
+    ]
+
+    const lengthOfLongestURI = gitRepoURIs.reduce((maxLength, uri) => Math.max(maxLength, uri.length), 0)
+    const fullWidth = lengthOfLongestURI + 0
+    const chineseFullWidth = Math.floor(fullWidth / 2) + 6 // 除以 2 得到的汉字宽限并不准确，不妨加上几个字。
+
+    const printSingleLine = '-'.repeat(fullWidth)
+    const printDoubleLine = '='.repeat(fullWidth)
+
+    const emailAddress = 'wulechuan@live.com'
+    const timeStamp = '北京时间 2021-03-21'
+
+    const welcomeZhHansCN = '欢迎使用吴乐川设计的用于控制文章目录之交互的控制器。'
+    const welcomeEn = 'Welcome to wulechuan\'s article TOC controller.'
+
+    const words = '中国人——特别是汉族人，理应坚持广泛、规范地使用汉语。凡非必要之情形不说外国话、不用外国字。此乃天经地义！\n然则每当必要，亦不排斥采用外国之语言。不妨博世界之学问，养中国之精神。\n本人亦支持少数民族坚持采用自己民族的传统语言。仍须强调，凡中国人，皆应会用汉语、积极使用汉语，此乃中华各民族之大一统之必由。'
+
+    const wordLines = []
+    words.split('\n').forEach(rawLine => {
+        wordLines.push('')
+
+        wordLines.push('    ' + rawLine.slice(0, chineseFullWidth - 4))
+
+        let restWords = rawLine.slice(chineseFullWidth - 4)
+
+        while (restWords.length > 0) {
+            const matchingResult = restWords.match(/^(，|。|！|，”|。”|！”| 》，|》。| 》！| 》，”| 》。”| 》！”)/)
+            if (matchingResult) {
+                const $1 = matchingResult[1]
+                const lastLine = wordLines[wordLines.length - 1]
+                wordLines[wordLines.length - 1] = lastLine + $1
+                restWords = restWords.slice($1.length)
+            }
+
+            const newLine = restWords.slice(0, chineseFullWidth)
+            if (newLine) {
+                wordLines.push(newLine)
+            }
+            restWords = restWords.slice(newLine.length)
+        }
+    })
+
+    console.log(
+        `\n${
+            printDoubleLine
+        }\n\n${
+            welcomeZhHansCN
+        }\n（ ${
+            welcomeEn
+        } ）\n\n${
+            ' '.repeat(fullWidth - emailAddress.length)
+        }${
+            emailAddress
+        }\n${
+            ' '.repeat(fullWidth - timeStamp.length - 3)
+        }${
+            timeStamp
+        }\n\n${
+            printSingleLine
+        }\n\n${
+            gitRepoURIs.join('\n')
+        }\n\n${
+            printSingleLine
+        }\n${
+            wordLines.join('\n')
+        }\n\n${
+            printDoubleLine
+        }\n\n\n`
+    )
 
     const cssClassNameTOCExists                  = 'markdown-article-toc-exists'
     const cssClassNameTOCIsVisible               = 'markdown-article-toc-is-visible'

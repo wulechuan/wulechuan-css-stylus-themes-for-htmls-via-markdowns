@@ -15,15 +15,15 @@ MIXIN_forArticleParent_setMarginLeft(TOCPanel_fontSize_unitInEMs, TOCPanel_width
         radio = TOCPanel_fontSize_unitInEMs / assumedArticleParentFontSize_unitInPixels
     }
 
-    p( \
-        unquote('\nTOCPanel_width_unitInEMs =') \
-        TOCPanel_width_unitInEMs \
-        unquote('\nTOCPanel_fontSize_unitInEMs =') \
-        TOCPanel_fontSize_unitInEMs \
-        unquote('\nratio of font-size of TOC and article over font-size of article parent:') \
-        radio \
-        unquote('\n') \
-    )
+    // p( \
+    //     unquote('\nTOCPanel_width_unitInEMs =') \
+    //     TOCPanel_width_unitInEMs \
+    //     unquote('\nTOCPanel_fontSize_unitInEMs =') \
+    //     TOCPanel_fontSize_unitInEMs \
+    //     unquote('\nratio of font-size of TOC and article over font-size of article parent:') \
+    //     radio \
+    //     unquote('\n') \
+    // )
 
     marginLeftValue = TOCPanel_width_unitInEMs * radio
 

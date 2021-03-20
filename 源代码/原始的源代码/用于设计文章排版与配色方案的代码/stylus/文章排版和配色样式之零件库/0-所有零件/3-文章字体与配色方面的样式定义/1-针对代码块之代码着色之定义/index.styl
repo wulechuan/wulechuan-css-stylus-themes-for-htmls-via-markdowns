@@ -1,12 +1,14 @@
 __wrappingSelectorOf_markdownArticleCodeBlockThemingRules = ''
-if _shouldWrapCodeBlockThemingRulesWith_selectorOf_markdownArticleRoot {
-    __wrappingSelectorOf_markdownArticleCodeBlockThemingRules = _selectorOf_markdownArticleRoot
+if _shouldWrapAllCSSRulesOf_codeBlockTheming___withSelectorOf_article_root {
+    __wrappingSelectorOf_markdownArticleCodeBlockThemingRules = _selectorOf_article_root
 }
 
-{__wrappingSelectorOf_markdownArticleCodeBlockThemingRules} {
-    @import './' + _folderNameOf_codeBlocksType + '/' + codeBlocksThemeName
 
-    if lookup('_optionalCodeBlockThemingPartName') {
-        @import './optional-extra/' + _optionalCodeBlockThemingPartName
+
+{__wrappingSelectorOf_markdownArticleCodeBlockThemingRules} {
+    @import './' + _sourceFolderNameOf_chosenTechniqueTypeOfCodeBlocks + '/' + REQUIRED_sourceFolderNameOf_chosenThemingTypeOfCodeBlocks
+
+    if lookup('_sourceFileOrFolderNamesOf_codeBlockTheming____additionalParts') {
+        @import './optional-extra/' + _sourceFileOrFolderNamesOf_codeBlockTheming____additionalParts
     }
 }

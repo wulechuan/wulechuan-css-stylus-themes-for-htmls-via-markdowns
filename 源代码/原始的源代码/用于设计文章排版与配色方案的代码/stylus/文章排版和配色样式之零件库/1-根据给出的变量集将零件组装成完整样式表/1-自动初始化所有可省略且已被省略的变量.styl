@@ -6,27 +6,27 @@ applyDefaultValueToAGlobalVariableIfNeeded(
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_selectorOf_markdownArticleParent',
+    variableName: '_selectorOf_article_rootParent',
     defaultValue: 'body'
 )
 
-if lookup('_selectorOf_markdownArticleRoot') {
+if lookup('_selectorOf_article_root') {
     applyDefaultValueToAGlobalVariableIfNeeded(
         variableName: '_selectorsOf_fontFamily_baseFontFamilyCarriers',
-        defaultValue: _selectorOf_markdownArticleRoot
+        defaultValue: _selectorOf_article_root
     )
 
     applyDefaultValueToAGlobalVariableIfNeeded(
         variableName: '_selectorsOf_fontSize_baseFontSizeCarriers',
-        defaultValue: _selectorOf_markdownArticleRoot
+        defaultValue: _selectorOf_article_root
     )
 } else {
-    // _selectorOf_markdownArticleRoot = ''
+    // _selectorOf_article_root = ''
 
-    warn('@wulechuan: Variable "_selectorOf_markdownArticleRoot" is set to empty.')
-    _shouldWrapCodeBlockThemingRulesWith_selectorOf_markdownArticleRoot = false
+    warn('@wulechuan: Variable "_selectorOf_article_root" is set to empty.')
+    _shouldWrapAllCSSRulesOf_codeBlockTheming___withSelectorOf_article_root = false
 
-    if (_selectorOf_markdownArticleParent == 'body' || _selectorOf_markdownArticleParent == 'html') {
+    if (_selectorOf_article_rootParent == 'body' || _selectorOf_article_rootParent == 'html') {
         applyDefaultValueToAGlobalVariableIfNeeded(
             variableName: '_selectorsOf_fontFamily_baseFontFamilyCarriers',
             defaultValue: 'html'
@@ -39,29 +39,29 @@ if lookup('_selectorOf_markdownArticleRoot') {
     } else {
         applyDefaultValueToAGlobalVariableIfNeeded(
             variableName: '_selectorsOf_fontFamily_baseFontFamilyCarriers',
-            defaultValue: _selectorOf_markdownArticleParent
+            defaultValue: _selectorOf_article_rootParent
         )
 
         applyDefaultValueToAGlobalVariableIfNeeded(
             variableName: '_selectorsOf_fontSize_baseFontSizeCarriers',
-            defaultValue: _selectorOf_markdownArticleParent
+            defaultValue: _selectorOf_article_rootParent
         )
     }
 }
 
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_selectorOf_markdownArticleBackplateBackgroundColorCarrier',
+    variableName: '_selectorOf_article_backdropBackgroundColorCarrier',
     defaultValue: 'html'
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_selectorOf_markdownArticleHeadingsPermantLinkAnchors',
+    variableName: '_selectorOf_article_headingsPermantLinkAnchors',
     defaultValue: '.header-anchor'
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_selectorOf_tocByMarkdownItTOCDoneRight',
+    variableName: '_selectorOf_TOC_byMarkdownItTOCDoneRight',
     defaultValue: 'nav.markdown-aritcle-toc'
 )
 
@@ -71,47 +71,47 @@ applyDefaultValueToAGlobalVariableIfNeeded(
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_folderNameOf_baseTheme',
+    variableName: '_sourceFolderNameOf_articleChiefTheming',
     defaultValue: 'theme-0'
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_folderNameOf_codeBlocksType',
+    variableName: '_sourceFolderNameOf_chosenTechniqueTypeOfCodeBlocks',
     defaultValue: 'highlightjs'
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_fontFamily_shouldMarkAsImportantRule',
+    variableName: '_shouldMarkImportantForValueOf_fontFamily',
     defaultValue: false
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_shouldNotOutputTitleBlock',
+    variableName: '_shouldNotWriteTitleBockAtBeginningOfEachOutputCSSFile',
     defaultValue: false
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_shouldIncludeBackToTopLink',
+    variableName: '_shouldIncludeGenerialOptionalPart_backToTopLink',
     defaultValue: false
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_markdownArticleShouldNotScrollSmoothly',
+    variableName: '_shouldNotEnableScrollSmoothlyFor_article_root',
     defaultValue: false
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_shouldWrapLayoutRulesWith_selectorOf_markdownArticleRoot',
+    variableName: '_shouldWrapAllCSSRulesOf_artcileLayout______withSelectorOf_article_root',
     defaultValue: false
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_shouldWrapBaseThemingRulesWith_selectorOf_markdownArticleRoot',
+    variableName: '_shouldWrapAllCSSRulesOf_articleBaseTheming_withSelectorOf_article_root',
     defaultValue: false
 )
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_shouldWrapCodeBlockThemingRulesWith_selectorOf_markdownArticleRoot',
+    variableName: '_shouldWrapAllCSSRulesOf_codeBlockTheming___withSelectorOf_article_root',
     defaultValue: false
 )
 
