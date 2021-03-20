@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. ./用于研发阶段的命令行工具/bash/通用/wulechuan-git-push-to-single-origin.sh
+. ./用于研发阶段的命令行工具/bash/.通用/wulechuan-git-push-to-single-origin.sh
 
 echo
 echo -e "\e[42;30m Git 推送至所有源：开始 \e[0;0m"
