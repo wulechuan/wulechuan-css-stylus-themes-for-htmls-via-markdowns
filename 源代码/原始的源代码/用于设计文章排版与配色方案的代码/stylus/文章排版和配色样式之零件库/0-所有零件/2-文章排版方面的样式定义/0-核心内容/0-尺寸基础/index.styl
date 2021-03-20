@@ -1,21 +1,5 @@
-{_selectorOf_backToTopLink},
-{_selectorOf_tocByMarkdownItTOCDoneRight},
-{_selectorsOf_fontFamily_baseFontSizeCarriers} {
-    font-size: 20px;
+@import './_mixins'
 
-    @media screen and (min-width: 1960px) {
-        font-size 36px
-    }
-
-    @media screen and (min-width: 2600px) {
-        font-size 48px
-    }
-
-    // @media screen and (max-width: 900px) {
-    //     font-size: 18px;
-    // }
-
-    @media screen and (max-width: 600px) {
-        font-size: 16px;
-    }
+{_selectorsOf_fontSize_baseFontSizeCarriers} {
+    MIXIN_defineFontSizes();
 }

@@ -27,7 +27,7 @@ _selectorOf_markdownArticleBackplateBackgroundColorCarrier = 'html'
 
 
 _selectorsOf_fontFamily_baseFontFamilyCarriers      = _selectorOf_markdownArticleRoot
-_selectorsOf_fontFamily_baseFontSizeCarriers        = _selectorOf_markdownArticleRoot
+_selectorsOf_fontSize_baseFontSizeCarriers          = _selectorOf_markdownArticleRoot
 _selectorsOf_fontFamily_monospaceFontFamilyCarriers = 'kbd, pre, code'
 
 

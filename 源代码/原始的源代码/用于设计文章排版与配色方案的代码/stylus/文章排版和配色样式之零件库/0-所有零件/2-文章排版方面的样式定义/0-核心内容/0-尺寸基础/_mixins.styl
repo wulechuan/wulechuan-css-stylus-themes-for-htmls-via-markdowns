@@ -1,0 +1,24 @@
+FontSize_Default = 20px
+FontSize_WhenWindowWidthNoMoreThan_600px = 16px
+FontSize_WhenWindowWidthNoLessThan_1960px = 36px
+FontSize_WhenWindowWidthNoLessThan_2600px = 48px
+
+MIXIN_defineFontSizes() {
+    font-size: 20px;
+
+    @media screen and (min-width: 1960px) {
+        font-size FontSize_WhenWindowWidthNoLessThan_1960px
+    }
+
+    @media screen and (min-width: 2600px) {
+        font-size FontSize_WhenWindowWidthNoLessThan_2600px
+    }
+
+    // @media screen and (max-width: 900px) {
+    //     font-size: 18px;
+    // }
+
+    @media screen and (max-width: 600px) {
+        font-size: FontSize_WhenWindowWidthNoMoreThan_600px;
+    }
+}

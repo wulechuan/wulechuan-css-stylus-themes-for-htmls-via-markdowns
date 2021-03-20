@@ -1,8 +1,14 @@
+@import '../../0-核心内容/0-尺寸基础/_mixins'
+
+
+
 {_selectorOf_tocByMarkdownItTOCDoneRight} {
 
     & {
+        MIXIN_defineFontSizes();
+
         box-sizing: border-box;
-        width: tocPanel_defaultWidth;
+        width: TOCPanel_defaultWidth;
         max-width: 100%;
         height: 100%;
         padding: 3em 0.5em 2em 0.5em;

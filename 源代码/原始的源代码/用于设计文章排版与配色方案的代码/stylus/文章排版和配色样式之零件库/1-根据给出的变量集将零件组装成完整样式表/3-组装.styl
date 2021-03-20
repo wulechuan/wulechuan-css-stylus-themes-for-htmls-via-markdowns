@@ -18,25 +18,26 @@ if !_shouldNotOutputTitleBlock {
 
 @import '../0-所有零件/2-文章排版方面的样式定义/0-核心内容'
 
+if _shouldIncludeBackToTopLink {
+    @import '../0-所有零件/2-文章排版方面的样式定义/1-按需取用的附加定义/back-to-top-link'
+}
+
 if lookup('_optionalLayoutPartName') {
     @import '../0-所有零件/2-文章排版方面的样式定义/1-按需取用的附加定义/' + _optionalLayoutPartName
 }
 
-if _shouldIncludeBackToTopLink {
-    @import '../0-所有零件/2-文章排版方面的样式定义/1-按需取用的附加定义/back-to-top-link'
-}
 
 
 
 
 @import '../0-所有零件/3-文章字体与配色方面的样式定义/0-配色之主体定义/' + _folderNameOf_baseTheme + '/core'
 
-if lookup('_optionalBaseThemingPartName') {
-    @import '../0-所有零件/3-文章字体与配色方面的样式定义/0-配色之主体定义/' + _folderNameOf_baseTheme + '/optional-extra/' + _optionalBaseThemingPartName
-}
-
 if _shouldIncludeBackToTopLink {
     @import '../0-所有零件/3-文章字体与配色方面的样式定义/0-配色之主体定义/' + _folderNameOf_baseTheme + '/optional-extra/back-to-top-link'
+}
+
+if lookup('_optionalBaseThemingPartName') {
+    @import '../0-所有零件/3-文章字体与配色方面的样式定义/0-配色之主体定义/' + _folderNameOf_baseTheme + '/optional-extra/' + _optionalBaseThemingPartName
 }
 
 @import '../0-所有零件/3-文章字体与配色方面的样式定义/1-针对代码块之代码着色之定义'

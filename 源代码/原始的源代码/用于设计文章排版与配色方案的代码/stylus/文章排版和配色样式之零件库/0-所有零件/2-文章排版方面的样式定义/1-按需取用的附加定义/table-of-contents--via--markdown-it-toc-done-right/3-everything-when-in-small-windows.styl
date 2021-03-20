@@ -1,3 +1,7 @@
+@import '../../0-核心内容/0-尺寸基础/_mixins'
+
+
+
 @media screen and (min-width: 1001px) {
 
     {_selectorOf_tocByMarkdownItTOCDoneRight} li.is-collapsed {
@@ -11,19 +15,39 @@
 
 
 
+@media screen and (min-width: 1960px) {
+    {_selectorOf_markdownArticleParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
+        MIXIN_forArticleParent_setMarginLeft(
+            FontSize_WhenWindowWidthNoLessThan_1960px,
+            TOCPanel_defaultWidth,
+        );
+    }
+}
+
+@media screen and (min-width: 2600px) {
+    {_selectorOf_markdownArticleParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
+        MIXIN_forArticleParent_setMarginLeft(
+            FontSize_WhenWindowWidthNoLessThan_2600px,
+            TOCPanel_defaultWidth,
+        );
+    }
+}
 
 @media screen and (max-width: 1400px) and (min-width: 1001px) {
 
     {_selectorOf_markdownArticleParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
-        margin-left: tocPanel_widthWhenWindowWidthNoMoreThan1400;
+        MIXIN_forArticleParent_setMarginLeft(
+            FontSize_Default,
+            TOCPanel_defaultWidth,
+        );
     }
 
     {_selectorOf_tocByMarkdownItTOCDoneRight} {
-        width: tocPanel_widthWhenWindowWidthNoMoreThan1400;
+        width: TOCPanel_width_whenWindowWidthNoMoreThan_1400px;
     }
 
     .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
-        left: (tocPanel_widthWhenWindowWidthNoMoreThan1400 / 2);
+        left: (TOCPanel_width_whenWindowWidthNoMoreThan_1400px / 2);
     }
 }
 
@@ -38,11 +62,11 @@
     }
 
     {_selectorOf_tocByMarkdownItTOCDoneRight} {
-        width: tocPanel_widthWhenWindowWidthNoMoreThan1000;
+        width: TOCPanel_width_whenWindowWidthNoMoreThan_1000px;
     }
 
     .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
-        left: (tocPanel_widthWhenWindowWidthNoMoreThan1000 / 2);
+        left: (TOCPanel_width_whenWindowWidthNoMoreThan_1000px / 2);
     }
 }
 
@@ -57,12 +81,12 @@
     }
 
     {_selectorOf_tocByMarkdownItTOCDoneRight} {
-        width: tocPanel_widthWhenWindowWidthNoMoreThan600;
+        width: TOCPanel_width_whenWindowWidthNoMoreThan_600px;
     }
 
     .markdown-article-toc-toggling-button,
     .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
-        left: (tocPanel_widthWhenWindowWidthNoMoreThan600 / 2);
+        left: (TOCPanel_width_whenWindowWidthNoMoreThan_600px / 2);
         transform: translateX(-50%);
         border-radius: 219px;
     }

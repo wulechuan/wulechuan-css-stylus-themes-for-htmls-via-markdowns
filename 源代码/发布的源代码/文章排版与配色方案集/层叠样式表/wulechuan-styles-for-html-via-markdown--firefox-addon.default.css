@@ -1,4 +1,4 @@
-/*
+/*!
  *  本层叠样式表用于定义一篇超文本标记语言存储之文章之排版、配色等，
  *  以期美化文章版面、改善文章的可读性，并奢望给文章之读者带去额外愉悦。
  *  本套样式乃是有吴乐川研发之专门工具构建而得。
@@ -12,6 +12,7 @@
  *
  *
  *
+ *                                             吾乃南昌吴乐川是也
  *                                          wulechuan@live.com
  *                                                  2021-02-15
  *
@@ -24,34 +25,26 @@
  *    - https://gitee.com/nanchang-wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns.git
  *    - https://code.aliyun.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns.git
  *    - https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns.git
-*/
+ */
 /*
     该版本的 CSS 注入了一些针对性的代码，以美化 FireFox 插件的某些 HTML 元素。
     该 FireFox 插件为：【Markdown Viewer Webext】。
         见：https://addons.mozilla.org/firefox/addon/markdown-viewer-webext/
 */
-.markdown-article-back-to-top,
-nav.markdown-aritcle-toc,
 .markdownRoot {
   font-size: 20px;
 }
 @media screen and (min-width: 1960px) {
-  .markdown-article-back-to-top,
-  nav.markdown-aritcle-toc,
   .markdownRoot {
     font-size: 36px;
   }
 }
 @media screen and (min-width: 2600px) {
-  .markdown-article-back-to-top,
-  nav.markdown-aritcle-toc,
   .markdownRoot {
     font-size: 48px;
   }
 }
 @media screen and (max-width: 600px) {
-  .markdown-article-back-to-top,
-  nav.markdown-aritcle-toc,
   .markdownRoot {
     font-size: 16px;
   }
@@ -940,7 +933,7 @@ pre {
   }
 }
 .markdownRoot {
-  color: #111;
+  color: #000;
   background-color: #f7f7f9;
   box-shadow: 0 0 0.4em rgba(0,0,0,0.2);
 }

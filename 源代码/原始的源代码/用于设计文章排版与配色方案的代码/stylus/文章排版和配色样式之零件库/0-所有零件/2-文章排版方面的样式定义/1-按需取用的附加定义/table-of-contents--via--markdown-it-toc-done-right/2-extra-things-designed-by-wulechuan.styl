@@ -1,5 +1,9 @@
+@import '../../0-核心内容/0-尺寸基础/_mixins'
+
+
+
 {_selectorOf_markdownArticleParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
-    margin-left: tocPanel_defaultWidth;
+    MIXIN_forArticleParent_setMarginLeft(FontSize_Default, TOCPanel_defaultWidth);
 }
 
 {_selectorOf_tocByMarkdownItTOCDoneRight} {
@@ -13,31 +17,16 @@
 
 
 .markdown-article-toc-toggling-button {
-    font-size: 20px;
-
-    @media screen and (min-width: 1960px) {
-        font-size 36px
-    }
-
-    @media screen and (min-width: 2600px) {
-        font-size 50px
-    }
-
-    // @media screen and (max-width: 900px) {
-    //     font-size: 18px;
-    // }
-
-    @media screen and (max-width: 600px) {
-        font-size: 16px;
-    }
+    MIXIN_defineFontSizes();
 
     box-sizing: content-box;
     display: block;
     border: 1px solid transparent;
     height: 1em;
-    width: 1.6em;
+    width: 1.8em;
     padding: 0.25em 1em;
     border-radius: 0 219px 219px 0;
+    white-space: nowrap;
 
     position: fixed;
     top: 1em;
@@ -56,7 +45,7 @@
 }
 
 .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
-    left: (tocPanel_defaultWidth / 2);
+    left: (TOCPanel_defaultWidth / 2);
     transform: translateX(-50%);
     border-top-left-radius: 219px;
     border-bottom-left-radius: 219px;
