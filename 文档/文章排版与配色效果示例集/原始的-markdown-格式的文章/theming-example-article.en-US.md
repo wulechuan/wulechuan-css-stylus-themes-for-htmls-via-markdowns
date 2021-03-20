@@ -695,7 +695,7 @@ From a keyboard mapping configuration file of SOFTIMAGE|XSI.
 ### A Table
 
 | Key        | Value           |
-| ---------- | --------------- |
+| ---------: | --------------- |
 | Name       | Wulechuan       |
 | Gender     | Male            |
 | Birth Year | 1979            |
@@ -708,7 +708,7 @@ From a keyboard mapping configuration file of SOFTIMAGE|XSI.
 <table>
     <thead>
         <tr>
-            <th style="width: 120px;">A</th>
+            <th style="width: 7em;">A</th>
             <th>B</th>
         </tr>
     </thead>
