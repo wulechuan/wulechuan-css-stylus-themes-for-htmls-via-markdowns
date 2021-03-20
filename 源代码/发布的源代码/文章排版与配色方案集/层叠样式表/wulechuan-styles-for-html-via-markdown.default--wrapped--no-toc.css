@@ -29,14 +29,14 @@
 .markdown-article {
   font-size: 20px;
 }
-@media screen and (min-width: 1960px) {
+@media screen and (min-width: 2190px) {
   .markdown-article {
-    font-size: 36px;
+    font-size: 28px;
   }
 }
-@media screen and (min-width: 2600px) {
+@media screen and (min-width: 2879px) {
   .markdown-article {
-    font-size: 48px;
+    font-size: 40px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -652,14 +652,14 @@ body {
   cursor: pointer;
   outline: none;
 }
-@media screen and (min-width: 1960px) {
+@media screen and (min-width: 2190px) {
   .markdown-article-back-to-top {
-    font-size: 36px;
+    font-size: 28px;
   }
 }
-@media screen and (min-width: 2600px) {
+@media screen and (min-width: 2879px) {
   .markdown-article-back-to-top {
-    font-size: 48px;
+    font-size: 40px;
   }
 }
 @media screen and (max-width: 600px) {
