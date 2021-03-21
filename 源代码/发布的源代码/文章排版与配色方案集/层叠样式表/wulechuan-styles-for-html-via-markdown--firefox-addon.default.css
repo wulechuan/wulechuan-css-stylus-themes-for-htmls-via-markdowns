@@ -51,7 +51,28 @@
 }
 body {
   margin: 0;
-  padding: 60px 20px 120px 20px;
+}
+body {
+  padding-top: 3.75em;
+  padding-right: 1.25em;
+  padding-bottom: 7.5em;
+  padding-left: 1.25em;
+}
+@media screen and (min-width: 2190px) {
+  body {
+    padding-top: 5.25em;
+    padding-right: 1.75em;
+    padding-bottom: 10.5em;
+    padding-left: 1.75em;
+  }
+}
+@media screen and (min-width: 2879px) {
+  body {
+    padding-top: 7.5em;
+    padding-right: 2.5em;
+    padding-bottom: 15em;
+    padding-left: 2.5em;
+  }
 }
 @media (max-width: 600px) {
   body {

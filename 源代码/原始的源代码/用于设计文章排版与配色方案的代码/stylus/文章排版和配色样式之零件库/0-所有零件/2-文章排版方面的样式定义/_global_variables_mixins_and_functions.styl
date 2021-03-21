@@ -1,0 +1,47 @@
+FontSize_WhenWindowWidthNoMoreThan__600px = 16px
+FontSize_Default                          = 20px
+FontSize_WhenWindowWidthNoLessThan_2190px = 28px
+FontSize_WhenWindowWidthNoLessThan_2879px = 40px
+
+MIXIN_defineFontSizes() {
+    font-size: 20px;
+
+    @media screen and (min-width: 2190px) {
+        font-size FontSize_WhenWindowWidthNoLessThan_2190px
+    }
+
+    @media screen and (min-width: 2879px) {
+        font-size FontSize_WhenWindowWidthNoLessThan_2879px
+    }
+
+    // @media screen and (max-width: 900px) {
+    //     font-size: 18px;
+    // }
+
+    @media screen and (max-width: 600px) {
+        font-size: FontSize_WhenWindowWidthNoMoreThan__600px;
+    }
+}
+
+FUNC_GetRatioOf_FontSizeOfCurrentScopeOverFontSizeOfArticleParent(fontSizeOfCurrentScope__unitInPixels, fontSizeOfArticleParent_unitInPixels = 16px, shouldDebug = false) {
+    // fontSizeOfArticleParent_unitInPixels is usually the font-size of html or body, but not necessarily.
+    $ratio = 1 // ratio of font-size of TOC and article over font-size of article parent
+
+    if (_selectorsOf_fontSize_baseFontSizeCarriers != 'body' && _selectorsOf_fontSize_baseFontSizeCarriers != 'html') {
+        $ratio = fontSizeOfCurrentScope__unitInPixels / fontSizeOfArticleParent_unitInPixels
+    }
+
+    if (shouldDebug) {
+        p( \
+            unquote('\n fontSizeOfCurrentScope__unitInPixels =') \
+            fontSizeOfCurrentScope__unitInPixels \
+            unquote('\n fontSizeOfArticleParent_unitInPixels =') \
+            fontSizeOfArticleParent_unitInPixels \
+            unquote('\n ratio of font-size of current scope over font-size of article parent:') \
+            $ratio \
+            unquote('\n') \
+        )
+    }
+
+    return $ratio
+}

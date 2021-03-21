@@ -1,16 +1,25 @@
+@import '../../_global_variables_mixins_and_functions'
+@import './_mixins'
+
+
+
+
+
 {_selectorOf_article_rootParent} {
     margin: 0;
 
-    if (
-        _selectorsOf_fontSize_baseFontSizeCarriers == _selectorOf_article_rootParent || \
-        _selectorsOf_fontSize_baseFontSizeCarriers == 'body' || \
-        _selectorsOf_fontSize_baseFontSizeCarriers == 'html'
-    ) {
-        padding 3em 1em 6em 1em
-    } else {
-        padding: 60px 20px 120px 20px;
+    & {
+        MIXIN_forArticalParent_setPaddings(FontSize_Default)
     }
-    
+
+    @media screen and (min-width: 2190px) {
+        MIXIN_forArticalParent_setPaddings(FontSize_WhenWindowWidthNoLessThan_2190px)
+    }
+
+    @media screen and (min-width: 2879px) {
+        MIXIN_forArticalParent_setPaddings(FontSize_WhenWindowWidthNoLessThan_2879px)
+    }
+   
     @media (max-width: 600px) {
         padding: 0;
     }

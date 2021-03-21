@@ -1,0 +1,27 @@
+@import '../../_global_variables_mixins_and_functions'
+
+
+
+
+
+MIXIN_forArticalParent_setPaddings(ArticleRoot_FontSize_UnitInPixels, PaddingTop = 3em, PaddingRight = 1em, PaddingBottom = 6em, PaddingLeft = PaddingRight, shouldDebug = true) {
+    $Ratio = FUNC_GetRatioOf_FontSizeOfCurrentScopeOverFontSizeOfArticleParent(ArticleRoot_FontSize_UnitInPixels)
+
+    $PaddingTop    = PaddingTop    * $Ratio
+    $PaddingRight  = PaddingRight  * $Ratio
+    $PaddingBottom = PaddingBottom * $Ratio
+    $PaddingLeft   = PaddingLeft   * $Ratio
+
+    if true {
+        p(unquote('$Ratio') $Ratio)
+        p(unquote('padding-top   ') PaddingTop    unquote('=>') $PaddingTop)
+        p(unquote('padding-right ') PaddingRight  unquote('=>') $PaddingRight)
+        p(unquote('padding-bottom') PaddingBottom unquote('=>') $PaddingBottom)
+        p(unquote('padding-left  ') PaddingLeft   unquote('=>') $PaddingLeft)
+    }
+
+    padding-top    $PaddingTop
+    padding-right  $PaddingRight
+    padding-bottom $PaddingBottom
+    padding-left   $PaddingLeft
+}

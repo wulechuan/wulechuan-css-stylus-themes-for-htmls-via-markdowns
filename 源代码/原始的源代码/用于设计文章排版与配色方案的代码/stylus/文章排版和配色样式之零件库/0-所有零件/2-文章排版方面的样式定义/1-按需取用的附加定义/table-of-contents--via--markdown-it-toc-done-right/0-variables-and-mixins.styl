@@ -1,3 +1,9 @@
+@import '../../_global_variables_mixins_and_functions'
+
+
+
+
+
 TOCPanel_defaultWidth = 22em
 TOCPanel_width_whenWindowWidthNoMoreThan_1400px = 18em
 
@@ -7,25 +13,13 @@ TOCPanel_width_whenWindowWidthNoMoreThan_600px = 100%
 
 
 
-MIXIN_forArticleParent_setMarginLeft(TOCPanel_fontSize_unitInEMs, TOCPanel_width_unitInEMs) {
-    radio = 1 // ratio of font-size of TOC and article over font-size of article parent
 
-    if (_selectorsOf_fontSize_baseFontSizeCarriers != 'body' && _selectorsOf_fontSize_baseFontSizeCarriers != 'html') {
-        assumedArticleParentFontSize_unitInPixels = 16px // usually the font-size of html or body, but not necessarily.
-        radio = TOCPanel_fontSize_unitInEMs / assumedArticleParentFontSize_unitInPixels
+
+MIXIN_forArticleParent_setMarginLeft(TOCPanel_fontSize_unitInPixels, TOCPanel_width_unitInEMs) {
+    // p(unquote('TOCPanel_width_unitInEMs') TOCPanel_width_unitInEMs)
+    $ratio = FUNC_GetRatioOf_FontSizeOfCurrentScopeOverFontSizeOfArticleParent(TOCPanel_fontSize_unitInPixels)
+
+    if (unit(TOCPanel_width_unitInEMs) == 'em') {
+        margin-left TOCPanel_width_unitInEMs * $ratio
     }
-
-    // p( \
-    //     unquote('\nTOCPanel_width_unitInEMs =') \
-    //     TOCPanel_width_unitInEMs \
-    //     unquote('\nTOCPanel_fontSize_unitInEMs =') \
-    //     TOCPanel_fontSize_unitInEMs \
-    //     unquote('\nratio of font-size of TOC and article over font-size of article parent:') \
-    //     radio \
-    //     unquote('\n') \
-    // )
-
-    marginLeftValue = TOCPanel_width_unitInEMs * radio
-
-    margin-left marginLeftValue
 }
