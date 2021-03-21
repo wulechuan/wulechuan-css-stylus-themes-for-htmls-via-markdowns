@@ -1,13 +1,19 @@
+@import '../../../../_global-variables-mixinx-and-functions'
 @import '../../theming-variables'
-
-
 @import '../font-family-of-toc'
+
+
 
 
 
 {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
     background-color: #222;
     box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.4);
+
+    > ul,
+    > ol {
+        MIXIN_DefineWebkitScrollBar(white, $SizeScale = 1.25);
+    }
 
     &,
     li > a[href^="#"] {
