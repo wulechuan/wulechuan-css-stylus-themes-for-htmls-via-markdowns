@@ -269,7 +269,7 @@ body {
   content: 'Image failed to load. No description of the image.';
 }
 .markdown-article img[alt]::before {
-  content: 'Image failed to load. Image descriptioin: \A"';
+  content: 'Image failed to load. Image description: \A"';
 }
 .markdown-article img[alt]::after {
   content: '"';
@@ -1218,6 +1218,10 @@ nav.markdown-article-toc li > a[href^="#"]:hover {
 .hljs-link {
   text-decoration: underline;
 }
+pre > code {
+  scrollbar-color: rgba(204,204,204,0.75) rgba(204,204,204,0.15);
+  scrollbar-width: thin;
+}
 pre > code::-webkit-scrollbar {
   border-radius: 0.1em;
   width: 1.2em;
@@ -1249,7 +1253,6 @@ pre > code::-webkit-scrollbar-thumb:hover {
 }
 pre > code::-webkit-scrollbar-track {
   border-width: 0.4em;
-  margin-inline: ;
   background-color: rgba(255,255,255,0.1);
   box-shadow: inset 0 0 0 0.05em rgba(255,255,255,0.219);
 }

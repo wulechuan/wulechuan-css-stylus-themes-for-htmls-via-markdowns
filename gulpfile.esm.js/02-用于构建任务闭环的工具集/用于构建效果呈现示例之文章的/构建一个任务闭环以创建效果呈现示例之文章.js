@@ -14,7 +14,7 @@ import {
 } from 'gulp'
 
 
-import 构建一个用于将Markdown内容字符串转换为HTML字符串的转换器 from '@wulechuan/generate-html-via-markdown/core'
+import 构建一个用于将Markdown内容字符串转换为HTML字符串的转换器 from '@wulechuan/generate-html-via-markdown/源代码/转换器之构建器'
 
 
 import {
@@ -51,8 +51,10 @@ const sourceMarkdownFileZhHansCN = 遵循POSIX标准拼接路径(
 )
 
 const 将Markdown内容字符串转换为HTML内容的转换器 = 构建一个用于将Markdown内容字符串转换为HTML字符串的转换器({
-    themesPeerPackageAllDistFileEntriesKeyingByFileNames: 以文件名称为索引之所有文件简易描述项之字典,
-    syncGetContentStringOfOneFileOfThePeerModuleOfThemes: 获取某一已发布之文件之完整内容字符串,
+    peer依赖包提供用以获取某特定文件之完整内容字符串之函数: 获取某一已发布之文件之完整内容字符串,
+    peer依赖包提供的以文件名称为索引之所有文件简易描述项之字典: 以文件名称为索引之所有文件简易描述项之字典,
+    不应采纳本工具之源代码之缓存版本以应对本工具研发阶段之要求: false,
+    应输出MarkdownIt生态工具集之原始产出以便验证之而非输出正式内容: false,
 })
 
 
@@ -71,10 +73,13 @@ export default function 构建一个任务闭环以将一Markdown文件转换成
         某相对路径 => 遵循POSIX标准拼接路径(本项目之根文件夹之绝对路径, 某相对路径)
     )
 
-    let 首要须嵌入HTML文件的各文件之绝对路径集 = []
+    let 不应采用任何由本工具内建之层叠样式表 = false
+    let 须要须嵌入HTML文件的各文件之绝对路径集 = []
 
     if (须嵌入HTML文件的层叠样式表文件之文件名称) {
-        首要须嵌入HTML文件的各文件之绝对路径集.push(
+        不应采用任何由本工具内建之层叠样式表 = true
+
+        须要须嵌入HTML文件的各文件之绝对路径集.push(
             遵循POSIX标准拼接路径(
                 本项目之根文件夹之绝对路径,
                 '源代码/发布的源代码/文章排版与配色方案集/层叠样式表',
@@ -83,7 +88,7 @@ export default function 构建一个任务闭环以将一Markdown文件转换成
         )
 
         if (须嵌入HTML文件的层叠样式表文件之文件名称.match(/--with-toc\.(min\.)?css$/)) {
-            首要须嵌入HTML文件的各文件之绝对路径集.push(
+            须要须嵌入HTML文件的各文件之绝对路径集.push(
                 遵循POSIX标准拼接路径(
                     本项目之根文件夹之绝对路径,
                     '源代码/发布的源代码/文章排版与配色方案集/javascript',
@@ -94,8 +99,9 @@ export default function 构建一个任务闭环以将一Markdown文件转换成
     }
 
 
-    首要须嵌入HTML文件的各文件之绝对路径集 = [
-        ...首要须嵌入HTML文件的各文件之绝对路径集,
+
+    须要须嵌入HTML文件的各文件之绝对路径集 = [
+        ...须要须嵌入HTML文件的各文件之绝对路径集,
         ...其他须一并嵌入HTML文件的Javascript文件之绝对路径集,
     ]
 
@@ -121,11 +127,6 @@ export default function 构建一个任务闭环以将一Markdown文件转换成
 
 
 
-
-    const manipulationsOverHTML = {
-        shouldNotUseInternalCSSThemingFiles: !!须嵌入HTML文件的层叠样式表文件之文件名称,
-        absolutePathsOfExtraFilesToEmbedIntoHTML: 首要须嵌入HTML文件的各文件之绝对路径集,
-    }
 
     const 构建所有HTML文件 = 构建并行运转以下Gulp任务之总任务(
         构建汉语版的HTML文件,
@@ -155,25 +156,26 @@ export default function 构建一个任务闭环以将一Markdown文件转换成
 
 
 
-    function 构建英国话版的HTML文件(通知Gulp该任务结束之回调函数) {
+    function 构建汉语版的HTML文件(通知Gulp该任务结束之回调函数) {
         writeFileSync(
-            英国话版HTML文件之绝对路径,
+            汉语版HTML文件之绝对路径,
 
             将Markdown内容字符串转换为HTML内容的转换器(
-                readFileSync(sourceMarkdownFileEnUS).toString(),
+                readFileSync(sourceMarkdownFileZhHansCN).toString(),
 
                 {
-                    shouldLogVerbosely: false,
+                    须在控制台打印详尽细节: false,
 
-                    manipulationsOverHTML: {
-                        ...manipulationsOverHTML,
-
-                        htmlTagLanguage: 'en-US',
+                    对HTML做进一步处理之阶段: {
+                        不应采用任何由本工具内建之层叠样式表,
+                        凡内容须注入产出之HTML中之所有外来文件: {
+                            应禁止采用Require语句对这些文件之缓存内容以确保计算机进程反复读取各文件时恒取用各文件最新之内容全文: true,
+                            依次给出之外来文件之绝对路径序列: 须要须嵌入HTML文件的各文件之绝对路径集,
+                        },
                     },
 
-                    sundries: {
-                        // shouldDisableCachingForInternalThemeFiles: true,
-                        shouldDisableCachingForExternalFiles: true,
+                    杂项: {
+                        控制台打印信息须改用英国话: false,
                     },
                 }
             )
@@ -183,23 +185,29 @@ export default function 构建一个任务闭环以将一Markdown文件转换成
     }
 
 
-    function 构建汉语版的HTML文件(通知Gulp该任务结束之回调函数) {
+
+    function 构建英国话版的HTML文件(通知Gulp该任务结束之回调函数) {
         writeFileSync(
-            汉语版HTML文件之绝对路径,
+            英国话版HTML文件之绝对路径,
 
             将Markdown内容字符串转换为HTML内容的转换器(
-                readFileSync(sourceMarkdownFileZhHansCN).toString(),
+                readFileSync(sourceMarkdownFileEnUS).toString(),
 
                 {
-                    shouldLogVerbosely: false,
+                    须在控制台打印详尽细节: false,
 
-                    sundries: {
-                        shouldConsoleLogsInChinese: true,
-                        // shouldDisableCachingForInternalThemeFiles: true,
-                        shouldDisableCachingForExternalFiles: true,
+                    对HTML做进一步处理之阶段: {
+                        不应采用任何由本工具内建之层叠样式表,
+                        产出之HTML文件之HTML标签之语言属性之取值: 'en-US',
+                        凡内容须注入产出之HTML中之所有外来文件: {
+                            应禁止采用Require语句对这些文件之缓存内容以确保计算机进程反复读取各文件时恒取用各文件最新之内容全文: true,
+                            依次给出之外来文件之绝对路径序列: 须要须嵌入HTML文件的各文件之绝对路径集,
+                        },
                     },
 
-                    manipulationsOverHTML,
+                    杂项: {
+                        控制台打印信息须改用英国话: true,
+                    },
                 }
             )
         )

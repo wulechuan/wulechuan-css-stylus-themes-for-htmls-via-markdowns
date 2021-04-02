@@ -1,3 +1,14 @@
+MIXIN_DefineFireFoxScrollBar($BaseColor = black) {
+    $TrackColor       = rgba($BaseColor, 0.15)
+    // $TrackColor_hover = rgba($BaseColor, 0.19)
+
+    $SliderColor       = rgba($BaseColor, 0.75)
+    // $SliderColor_Hover = rgba($BaseColor, 1)
+
+    scrollbar-color: $SliderColor $TrackColor;
+    scrollbar-width: thin;
+}
+
 MIXIN_DefineWebkitScrollBar($BaseColor = black, $SizeScale = 1) {
     & {
         // scrollbar-gutter: always both;
@@ -26,8 +37,6 @@ MIXIN_DefineWebkitScrollBar($BaseColor = black, $SizeScale = 1) {
 
         &::-webkit-scrollbar-button {
             display none
-            // margin-line (0.6em* $SizeScale)
-            // margin-block @margin-inline
 
             // background-color rgba($BaseColor, 0.15)
 
@@ -47,8 +56,6 @@ MIXIN_DefineWebkitScrollBar($BaseColor = black, $SizeScale = 1) {
 
         &::-webkit-scrollbar-track {
             border-width: (0.4em * $SizeScale);
-            // margin-block (- @border-width);
-            margin-inline @margin-block;
             background-color: rgba($BaseColor, 0.1);
             box-shadow inset 0 0 0 (0.05em * $SizeScale) rgba($BaseColor, 0.219)
 

@@ -1,5 +1,5 @@
 (function () {
-    const cssClassNameOfTOCItemAnchorsFakeHovering = 'fake-hovering'
+    const cssClassNameOfTOCItemAnchorsFakeHovering  = 'fake-hovering'
     const minWindowInnerWidthThatMeansWide          = 1000 // pixels
     const minWindowInnerWidthThatMeansOfMediumWidth = 600  // pixels
     const markdownArticleScrollingDOM = document.documentElement
@@ -9,6 +9,7 @@
     const themeTypeDetectingDOM = document.documentElement
 
 
+
     const pageLanguageIsChinese = !!document.documentElement.lang.match(/zh|-?CN|-?[hH]ans/i)
     const tocExists = markdownArticleParentDOM.classList.contains('markdown-article-toc-exists')
     const darkThemeIsApplied = detectWhetherTheDarkThemeIsApplied()
@@ -16,6 +17,7 @@
 
 
     const arraySlice = Array.prototype.slice
+
 
 
     let tocPanelDOM = null
@@ -100,6 +102,8 @@
             }
         }
 
+
+
         const styleTagForTOCItemAnchorsFakeHover = document.createElement('style')
 
         if (darkThemeIsApplied) {
@@ -117,6 +121,26 @@
         }
 
         document.head.appendChild(styleTagForTOCItemAnchorsFakeHover)
+
+
+
+        const styleTagForDisableAllTransitionsAndAnimations = document.createElement('style')
+
+        if (darkThemeIsApplied) {
+            styleTagForDisableAllTransitionsAndAnimations.innerHTML = `
+            * {
+                transition: none !important;
+                animation: none !important;
+            }`
+        } else {
+            styleTagForDisableAllTransitionsAndAnimations.innerHTML = `
+            * {
+                transition: none !important;
+                animation: none !important;
+            }`
+        }
+
+        document.head.appendChild(styleTagForDisableAllTransitionsAndAnimations)
     }
 
     // updateStatusesOfWindowAndTOCPanelItem()

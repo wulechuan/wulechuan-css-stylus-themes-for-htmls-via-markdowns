@@ -176,6 +176,7 @@ function 拾取某一文件描述对象(文件描述项或文件名称) {
     // console.log('\n\n文件描述项或文件名称', 文件描述项或文件名称, '\n命中的文件简易描述项', 命中的文件简易描述项, '\n命中的文件之名称', 命中的文件之名称)
 
     if (!命中的文件简易描述项 || !命中的文件之名称) {
+        // console.log('以文件名称为索引之所有文件简易描述项之字典', Object.keys(以文件名称为索引之所有文件简易描述项之字典))
         throw new TypeError(`\n    ${
             粉笔.red('@wulechuan/css-stylus-markdown-themes：')
         }\n${

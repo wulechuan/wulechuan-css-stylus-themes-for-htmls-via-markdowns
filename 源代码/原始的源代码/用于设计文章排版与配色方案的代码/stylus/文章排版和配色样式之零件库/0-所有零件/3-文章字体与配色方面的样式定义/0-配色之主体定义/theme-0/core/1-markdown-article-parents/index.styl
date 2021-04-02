@@ -1,9 +1,15 @@
+@import '../../../_global-variables-mixinx-and-functions'
 @import '../../theming-variables'
 
 
 
 {_selectorOf_article_backdropBackgroundColorCarrier} {
+    MIXIN_DefineFireFoxScrollBar(#333);
     background-color: #bbb;
+}
+
+{_selectorOf_article_rootParent} {
+    MIXIN_DefineWebkitScrollBar(black);
 }
 
 if (_selectorOf_article_backdropBackgroundColorCarrier == 'html' && _selectorOf_article_root != 'body') {
