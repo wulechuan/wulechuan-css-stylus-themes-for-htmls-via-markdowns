@@ -3,71 +3,78 @@
 
 
 {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
-
-    & {
-        MIXIN_defineFontSizes();
-
-        box-sizing: border-box;
-        width: TOCPanel_defaultWidth;
-        max-width: 100%;
-        height: 100%;
-        padding: 3em 0.5em 2em 0.5em;
-        overflow: auto;
-
-        position: fixed;
-        left: 0;
-        top: 0;
-        margin: 0;
-        // scroll-behavior: smooth;
-    }
+    MIXIN_defineFontSizes();
+}
 
 
 
-    li {
-        cursor: pointer;
-        margin: 0;
-        padding-right: 0;
+@media screen {
 
-        > a[href^="#"] {
-            display: block;
-            padding: 0.25em 0.5em 0.25em 2em;
-            border-width: 1px 0;
-            border-style: solid none;
-            margin: 0 0 0 -2em;
-            text-decoration: none;
-            transition-property: color, background-color, border-color;
-            transition-duration: 0.36s;
-            transition-timing-function: ease-out;
-        }
-    }
-
-    > ul,
-    > ol {
-        font-size 0.8em
+    {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
 
         & {
             box-sizing: border-box;
+            width: TOCPanel_defaultWidth;
+            max-width: 100%;
             height: 100%;
-            padding: 0.5em 1.5em 4.5em 1.5em;
-            margin: 0;
+            padding: 3em 0.5em 2em 0.5em;
             overflow: auto;
-            // white-space: nowrap;
+
+            position: fixed;
+            left: 0;
+            top: 0;
+            margin: 0;
+            // scroll-behavior: smooth;
         }
 
-        ol, ul {
+
+
+        li {
+            cursor: pointer;
+            margin: 0;
             padding-right: 0;
-        }
-    }
 
-    &.should-show-2-levels-at-most {
+            > a[href^="#"] {
+                display: block;
+                padding: 0.25em 0.5em 0.25em 2em;
+                border-width: 1px 0;
+                border-style: solid none;
+                margin: 0 0 0 -2em;
+                text-decoration: none;
+                transition-property: color, background-color, border-color;
+                transition-duration: 0.36s;
+                transition-timing-function: ease-out;
+            }
+        }
 
         > ul,
         > ol {
+            font-size 0.8em
+
+            & {
+                box-sizing: border-box;
+                height: 100%;
+                padding: 0.5em 1.5em 4.5em 1.5em;
+                margin: 0;
+                overflow: auto;
+                // white-space: nowrap;
+            }
 
             ol, ul {
+                padding-right: 0;
+            }
+        }
+
+        &.should-show-2-levels-at-most {
+
+            > ul,
+            > ol {
 
                 ol, ul {
-                    display: none;
+
+                    ol, ul {
+                        display: none;
+                    }
                 }
             }
         }

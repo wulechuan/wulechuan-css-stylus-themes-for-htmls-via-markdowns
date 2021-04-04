@@ -2,69 +2,77 @@
 
 
 
-{_selectorOf_article_rootParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
-    MIXIN_forArticleParent_setMarginLeft(FontSize_Default, TOCPanel_defaultWidth);
-}
-
-{_selectorOf_TOC_byMarkdownItTOCDoneRight} {
-    display: none;
-}
-
-.markdown-article-toc-is-visible {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
-    display: block;
-}
-
-
-
 .markdown-article-toc-toggling-button {
     MIXIN_defineFontSizes();
+}
 
-    box-sizing: content-box;
-    display: block;
-    border: 1px solid transparent;
-    height: 1em;
-    width: 1.8em;
-    padding: 0.25em 1em;
-    border-radius: 0 219px 219px 0;
-    white-space: nowrap;
 
-    position: fixed;
-    top: 1em;
 
-    cursor: pointer;
+@media screen {
 
-    transition: all 0.3s;
-    
-    left: -0.5em;
-    transform: translateX(0);
-
-    &:active,
-    &:focus {
-        outline: none;
+    {_selectorOf_article_rootParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
+        MIXIN_forArticleParent_setMarginLeft(FontSize_Default, TOCPanel_defaultWidth);
     }
-}
 
-.markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
-    left: (TOCPanel_defaultWidth / 2);
-    transform: translateX(-50%);
-    border-top-left-radius: 219px;
-    border-bottom-left-radius: 219px;
-}
+    {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
+        display: none;
+    }
 
-.markdown-article-toc-toggling-button::before {
-    display block
-    font-size 0.8em
-    height 1.25em
-    line-height 1.25em
-    overflow visible
-    content: 'TOC';
-    font-family: sans-serif;
-}
+    .markdown-article-toc-is-visible {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
+        display: block;
+    }
 
-{languageSelectors('zh', 'hans', 'CN')} {
+
+
+    .markdown-article-toc-toggling-button {
+        box-sizing: content-box;
+        display: block;
+        border: 1px solid transparent;
+        height: 1em;
+        width: 1.8em;
+        padding: 0.25em 1em;
+        border-radius: 0 219px 219px 0;
+        white-space: nowrap;
+
+        position: fixed;
+        top: 1em;
+
+        cursor: pointer;
+
+        transition: all 0.3s;
+
+        left: -0.5em;
+        transform: translateX(0);
+
+        &:active,
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
+        left: (TOCPanel_defaultWidth / 2);
+        transform: translateX(-50%);
+        border-top-left-radius: 219px;
+        border-bottom-left-radius: 219px;
+    }
 
     .markdown-article-toc-toggling-button::before {
-        content: '目录';
-        font-family: inherit;
+        display block
+        font-size 0.8em
+        height 1.25em
+        line-height 1.25em
+        overflow visible
+        content: 'TOC';
+        font-family: sans-serif;
+    }
+
+    {languageSelectors('zh', 'hans', 'CN')} {
+
+        .markdown-article-toc-toggling-button::before {
+            content: '目录';
+            font-family: inherit;
+            line-height 1.1em
+        }
     }
 }

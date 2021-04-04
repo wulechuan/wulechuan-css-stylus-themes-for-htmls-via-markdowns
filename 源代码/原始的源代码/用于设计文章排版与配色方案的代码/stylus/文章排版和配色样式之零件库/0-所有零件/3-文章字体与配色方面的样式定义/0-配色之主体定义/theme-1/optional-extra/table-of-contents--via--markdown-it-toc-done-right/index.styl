@@ -6,40 +6,59 @@
 
 
 
-{_selectorOf_TOC_byMarkdownItTOCDoneRight} {
-    background-color: #000;
-    box-shadow: 0 0 0.3em rgba(black, 0.79);
+@media screen {
 
-    &,
-    li > a[href^="#"] {
-        color: #888;
-        border-color: transparent;
-    }
+    {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
+        background-color: #000;
+        box-shadow: 0 0 0.3em rgba(black, 0.79);
+
+        &,
+        li > a[href^="#"] {
+            color: #888;
+            border-color: transparent;
+        }
 
 
-    & > ol > li,
-    & > ul > li,
-    &:not(.should-show-2-levels-at-most) li {
+        & > ol > li,
+        & > ul > li,
+        &:not(.should-show-2-levels-at-most) li {
 
-        &.has-nested-toc-list > a[href^="#"] {
-            color: #e3e3e3;
+            &.has-nested-toc-list > a[href^="#"] {
+                color: #e3e3e3;
+            }
+        }
+
+
+        li > a[href^="#"] {
+
+            &:hover {
+                border-color: rgba(white, 0.1) transparent;
+                background-image: linear-gradient(to right, transparent 0.25em, rgba(white, 0.1) 4em, transparent)
+            }
         }
     }
 
-
-    li > a[href^="#"] {
-
-        &:hover {
-            border-color: rgba(white, 0.1) transparent;
-            background-image: linear-gradient(to right, transparent 0.25em, rgba(white, 0.1) 4em, transparent)
-        }
+    .markdown-article-toc-toggling-button {
+        color: #000;
+        border-color: #f03090;
+        background-color: #eb52d1;
+        background-image: linear-gradient(23deg, #f1f 19%, #f88 45%, #ffa 87%);
+        box-shadow: 0 0 0.15em #c93d91;
     }
+}
 
 
-    
-    @media screen and (max-width: 1000px) {
 
-        background-color: rgba(black, 0.95);
+
+
+@media screen and (max-width: 1000px) {
+
+    {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
+        // 在较窄之窗口或屏幕中，文章纲要面板展开时与文章本体在布局上有交叠。纲要面板覆盖这主体。
+        // 因此须令纲要面板之底色少许透明。
+        // 又，若浏览器支持背景模糊效果，则纲要面板之底色透明度应再提升些许。
+
+        background-color: rgba(black, 0.93);
 
         @supports (backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px)) {
             background-color: rgba(black, 0.79);
@@ -53,12 +72,4 @@
             -webkit-backdrop-filter: blur(20px)
         }
     }
-}
-
-.markdown-article-toc-toggling-button {
-    color: black;
-    border-color: #d51d79;
-    background-color: #dd56c6;
-    background-image: linear-gradient(23deg, #F1F 19%, #f66 45%, #ff6 87%);
-    box-shadow: 0 0 0.3em rgba(@border-color, 0.9);
 }

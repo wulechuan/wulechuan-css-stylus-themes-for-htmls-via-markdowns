@@ -2,18 +2,21 @@
 
 
 
-{_selectorOf_backToTopLink} {
+@media screen {
 
-    &[href^="#"] {
+    {_selectorOf_backToTopLink} {
 
-        &,
-        &:visited {
-            color: black;
+        &[href^="#"] {
 
-            &::before {
-                background-color: lime;
-                background-image: linear-gradient(-45deg, cyan 15%, lime 79%);
-                box-shadow: 1px 1px 0.3em rgba(0, 192, 0, 0.6);
+            &,
+            &:visited {
+                color: black;
+
+                &::before {
+                    background-color: lime;
+                    background-image: linear-gradient(-45deg, cyan 15%, lime 79%);
+                    box-shadow: 1px 1px 0.3em rgba(0, 192, 0, 0.6);
+                }
             }
         }
     }
