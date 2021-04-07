@@ -3,7 +3,7 @@
 npm  i      'globby@latest'
 
 npm  i  -D \
-    '@wulechuan/generate-html-via-markdown@^3'
+    '@wulechuan/generate-html-via-markdown@latest'
 
 npm  i  -D \
     '@wulechuan/gulp-classical-task-cycle@latest' \
