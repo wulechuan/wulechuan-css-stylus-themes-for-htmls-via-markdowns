@@ -1,4 +1,6 @@
-npm  i      'globby@latest'
+#
+
+npm  i 'globby@latest'
 
 npm  i  -D `
     '@wulechuan/generate-html-via-markdown@latest'
