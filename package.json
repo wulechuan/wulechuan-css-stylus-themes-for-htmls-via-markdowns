@@ -74,13 +74,13 @@
     "url": "https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns/issues"
   },
   "dependencies": {
-    "globby": "^13.1.1"
+    "globby": "^11.1.0"
   },
   "devDependencies": {
     "@wulechuan/cli-scripts--git-push": "^1.0.1",
     "@wulechuan/generate-html-via-markdown": "^3.0.9",
     "@wulechuan/gulp-classical-task-cycle": "^0.3.0",
-    "chalk": "^5.0.0",
+    "chalk": "^4.1.2",
     "cssnano": "^5.1.0",
     "del": "^6.0.0",
     "eslint": "^8.10.0",
