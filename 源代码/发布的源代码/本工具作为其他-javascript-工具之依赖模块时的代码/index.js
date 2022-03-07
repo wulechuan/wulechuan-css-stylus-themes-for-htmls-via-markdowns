@@ -4,7 +4,7 @@
 const 甄选描述符之工具 = require('globby')
 const 路径工具 = require('path')
 const 文件系统工具 = require('fs')
-const 粉笔 = require('chalk')
+const 彩色粉笔工具 = require('chalk')
 
 const {
     发布的层叠样式表之根文件夹之相对路径,
@@ -178,15 +178,15 @@ function 拾取某一文件描述对象(文件描述项或文件名称) {
     if (!命中的文件简易描述项 || !命中的文件之名称) {
         // console.log('以文件名称为索引之所有文件简易描述项之字典', Object.keys(以文件名称为索引之所有文件简易描述项之字典))
         throw new TypeError(`\n    ${
-            粉笔.red('@wulechuan/css-stylus-markdown-themes：')
+            彩色粉笔工具.red('@wulechuan/css-stylus-markdown-themes：')
         }\n${
             ' '.repeat(8)
         }${
-            粉笔.red('欲读取某文件之内容全文时，给出的【文件名称】或【文件简易描述项】无效。')
+            彩色粉笔工具.red('欲读取某文件之内容全文时，给出的【文件名称】或【文件简易描述项】无效。')
         }\n\n        文件描述项或文件名称 = "${
-            粉笔.yellow(文件描述项或文件名称)
+            彩色粉笔工具.yellow(文件描述项或文件名称)
         }"\n        命中的文件之名称     = "${
-            粉笔.yellow(命中的文件之名称)
+            彩色粉笔工具.yellow(命中的文件之名称)
         }"\n`)
     }
 

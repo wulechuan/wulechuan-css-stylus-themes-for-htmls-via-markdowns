@@ -1,4 +1,4 @@
-import chalk from 'chalk'
+import 彩色粉笔工具 from 'chalk'
 
 import {
     诸排版与配色方案之构建任务各自特有之配置之汇总列表,
@@ -19,8 +19,8 @@ export default function getTaskConfigByEntryStylusFileSubPath(作为编译入口
 
         if (matchedTaskConfigsCount !== 1) {
             throw new RangeError(`${matchedTaskConfigsCount} theme tasks matched by "${
-                chalk.yellow(作为编译入口之Stylus文件之内层路径)
-            }".\n    ${chalk.red('But 1 and only 1 expected.')}`)
+                彩色粉笔工具.yellow(作为编译入口之Stylus文件之内层路径)
+            }".\n    ${彩色粉笔工具.red('But 1 and only 1 expected.')}`)
         }
 
         theOnlyTaskSpecificConfig = matchedTaskConfigs[0]

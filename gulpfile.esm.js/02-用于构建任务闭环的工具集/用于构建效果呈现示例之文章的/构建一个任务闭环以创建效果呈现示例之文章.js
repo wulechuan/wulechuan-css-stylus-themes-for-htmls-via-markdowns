@@ -1,4 +1,4 @@
-import 粉笔 from 'chalk'
+import 彩色粉笔工具 from 'chalk'
 
 import 路径工具 from 'path'
 
@@ -151,8 +151,8 @@ export default function 构建一个任务闭环以将一Markdown文件转换成
 
 
     function 删除所有旧版HTML文件() {
-        console.log(`\n${粉笔.red('Deleting these files if exist')}:`)
-        一切可能存在的旧输出文件之绝对路径集.forEach(filePath => console.log('    ', 粉笔.yellow(filePath)))
+        console.log(`\n${彩色粉笔工具.red('Deleting these files if exist')}:`)
+        一切可能存在的旧输出文件之绝对路径集.forEach(filePath => console.log('    ', 彩色粉笔工具.yellow(filePath)))
         return 删除文件(一切可能存在的旧输出文件之绝对路径集)
     }
 
