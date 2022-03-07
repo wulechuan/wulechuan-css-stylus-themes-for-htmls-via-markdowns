@@ -579,6 +579,38 @@ exports.author = 'wulechun@live.com';
 </html>
 ```
 
+```html
+<!DOCTYPE html>
+<html lang="zh-hans-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>乐川的示范文档</title>
+</head>
+<body>
+    <h1>DOM 的概念</h1>
+    <div>我是一个DIV</div>
+    <ul>
+        <li>第一个表的第1项</li>
+        <li>第一个表的第2项</li>
+    </ul>
+    <ul>
+        <li>第二个表的第1项</li>
+        这里还有一行文字呢
+        <li>第二个表的第2项</li>
+        <li>第二个表的第3项</li>
+        <li>第二个表的第4项</li>
+        <!-- 插播一则养生广告：每天呼吸空气有助于维持生命。 -->
+        <ul>
+            <li>第三个表的第1项</li>
+            <li>第三个表的第2项</li>
+        </ul>
+        <li>第二个表的第5项</li>
+    </ul>
+</body>
+</html>
+```
 
 ### CSS 代码片段
 

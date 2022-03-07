@@ -74,24 +74,24 @@
     "url": "https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns/issues"
   },
   "dependencies": {
-    "globby": "^11.0.3"
+    "globby": "^13.1.1"
   },
   "devDependencies": {
-    "@wulechuan/generate-html-via-markdown": "^3.0.5",
+    "@wulechuan/generate-html-via-markdown": "^3.0.9",
     "@wulechuan/gulp-classical-task-cycle": "^0.3.0",
-    "chalk": "^4.1.0",
-    "cssnano": "^4.1.11",
+    "chalk": "^5.0.0",
+    "cssnano": "^5.1.0",
     "del": "^6.0.0",
-    "eslint": "^7.23.0",
+    "eslint": "^8.10.0",
     "esm": "^3.2.25",
-    "fs-extra": "^9.1.0",
+    "fs-extra": "^10.0.1",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-pipe": "^1.0.4",
-    "gulp-postcss": "^9.0.0",
+    "gulp-postcss": "^9.0.1",
     "gulp-rename": "^2.0.0",
-    "gulp-stylus": "^2.7.0",
-    "gulp-terser": "^2.0.1",
-    "postcss": "^8.2.9"
+    "gulp-stylus": "^2.7.1",
+    "gulp-terser": "^2.1.0",
+    "postcss": "^8.4.8"
   }
 }
