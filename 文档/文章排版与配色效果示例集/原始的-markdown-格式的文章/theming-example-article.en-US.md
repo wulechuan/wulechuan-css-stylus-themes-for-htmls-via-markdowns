@@ -449,7 +449,7 @@ html, body {
     display: flex;
     position: relative;
     width: 100%;
-    font-family: 'Segoe UI', 'Microsoft Yahei UI', serif;
+    font-family: 'Segoe UI', 'Microsoft YaHei UI', serif;
 }
 
 .back-to-top {

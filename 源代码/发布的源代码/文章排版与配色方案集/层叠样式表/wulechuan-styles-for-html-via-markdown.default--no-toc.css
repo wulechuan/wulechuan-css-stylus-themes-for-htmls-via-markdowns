@@ -372,6 +372,7 @@ code {
 }
 kbd {
   font-size: 80%;
+  letter-spacing: 0;
 }
 pre,
 pre > code {
@@ -733,12 +734,12 @@ input,
 textarea,
 select,
 option {
-  font-family: 'Segoe UI', '微软雅黑', 'Microsoft Yahei UI', 'Microsoft Yahei', 'Lucida Grande', Helvetica, sans-serif;
+  font-family: 'Segoe UI', '微软雅黑', 'Microsoft YaHei UI', 'Microsoft YaHei', 'Lucida Grande', Helvetica, sans-serif;
 }
 kbd,
 pre,
 code {
-  font-family: 'Cascadia Code', 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', monospace;
+  font-family: 'Cascadia Code', 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft YaHei UI', 'Microsoft YaHei', '微软雅黑', monospace;
 }
 html {
   scrollbar-color: rgba(51,51,51,0.75) rgba(51,51,51,0.15);

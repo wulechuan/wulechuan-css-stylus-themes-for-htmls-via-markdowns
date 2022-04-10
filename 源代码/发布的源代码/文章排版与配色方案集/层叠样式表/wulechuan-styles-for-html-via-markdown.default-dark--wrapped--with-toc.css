@@ -372,6 +372,7 @@ body {
 }
 .markdown-article kbd {
   font-size: 80%;
+  letter-spacing: 0;
 }
 .markdown-article pre,
 .markdown-article pre > code {
@@ -948,12 +949,12 @@ input,
 textarea,
 select,
 option {
-  font-family: 'Segoe UI', '微软雅黑', 'Microsoft Yahei UI', 'Microsoft Yahei', 'Lucida Grande', Helvetica, sans-serif;
+  font-family: 'Segoe UI', '微软雅黑', 'Microsoft YaHei UI', 'Microsoft YaHei', 'Lucida Grande', Helvetica, sans-serif;
 }
 kbd,
 pre,
 code {
-  font-family: 'Cascadia Code', 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft Yahei UI', 'Microsoft Yahei', '微软雅黑', monospace;
+  font-family: 'Cascadia Code', 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft YaHei UI', 'Microsoft YaHei', '微软雅黑', monospace;
 }
 html {
   background-color: #0d0d0d;
@@ -1206,7 +1207,7 @@ body {
   }
 }
 nav.markdown-article-toc {
-  font-family: 'Segoe UI', '微软雅黑', 'Microsoft Yahei UI', 'Microsoft Yahei', 'Lucida Grande', Helvetica, sans-serif;
+  font-family: 'Segoe UI', '微软雅黑', 'Microsoft YaHei UI', 'Microsoft YaHei', 'Lucida Grande', Helvetica, sans-serif;
 }
 @media screen {
   nav.markdown-article-toc {
