@@ -2,7 +2,7 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "吴乐川 <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "7.2.7",
+  "version": "7.2.8",
   "description": "吴乐川的 HTML 文章排版与配色之方案集。本工具用于构建一组层叠样式表（即 CSS ）文件，本工具亦现场提供了一组层叠样式表文件。凡这些样式表，均可用于美化采用超文本标记语言（即 HTML ）格式存储的文章。且不必同时取用多个样式表文件，仅取其一足矣。",
   "directories": {
     "source": "源代码/原始的源代码",
@@ -31,8 +31,8 @@
     "test": "npm    run  eslint        &&    npm  run  _test-all-without-linting-without-browser    &&    npm  run  firefox    &&    npm  run  open-dev-htmls",
     "build": "npm   run  eslint        &&    npm  run  _build                                       &&    npm  run  update-example-htmls",
     "build2": "npm  run  eslint        &&    npm  run  _build2                                      &&    npm  run  update-example-htmls2",
-    "before-git-commit": "npm    test",
-    "prepublishOnly": "npm     test"
+    "before-git-commit": "npm  i    &&    npm  test",
+    "prepublishOnly": "npm     i    &&    npm  test"
   },
   "keywords": [
     "markdown",
