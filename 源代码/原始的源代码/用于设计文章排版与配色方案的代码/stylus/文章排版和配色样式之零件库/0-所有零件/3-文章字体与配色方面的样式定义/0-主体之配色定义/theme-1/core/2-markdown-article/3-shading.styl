@@ -5,7 +5,7 @@
 /* 以下 CSS 是除代码块之外的页面整体着色方案。*/
 
 {_selectorOf_article_root} {
-    color: #a3a3a3;
+    color: #888;
     background-color: #1e1e1e;
     box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.79);
 }
@@ -20,30 +20,28 @@
 
         &:visited,
         & {
-            color: #68f;
+            color: #79f;
         }
 
         &:hover,
         &:focus,
         &:active {
-            color: #f86;
+            color: #9bf;
         }
     }
 
     a[href^="#"] {
-        // So-called page local links.
-        // They point to the page they are in.
 
         &:visited,
         & {
-            color: #7d5;
+            color: #6c5;
         }
 
-        // &:hover,
-        // &:focus,
-        // &:active {
-        //     color: #7d5;
-        // }
+        &:hover,
+        &:focus,
+        &:active {
+            color: #9e8;
+        }
     }
 
     a{_selectorOf_article_headingsPermantLinkAnchors}[href^="#"] {
@@ -59,45 +57,45 @@
     h1, h2, h3, h4, h5, h6 {
 
         &:hover > a{_selectorOf_article_headingsPermantLinkAnchors}[href^="#"] {
-            color: #666;
+            color: #6c5;
         }
     }
 
     h1, h2, h3, h4, h5, h6 {
 
         > a{_selectorOf_article_headingsPermantLinkAnchors}[href^="#"] {
-                
+
             &:hover,
             &:focus,
             &:active {
-                color: #7d5;
-            }
-        }
-
-        &:target:hover,
-        &:target {
-
-            > a{_selectorOf_article_headingsPermantLinkAnchors}[href^="#"] {
-                color: #7d5;
+                color: #9e8;
             }
         }
     }
 
 
 
-    h1, h2 {
-        color: #b6b6b6;
-    }
+    // h1, h2 {
+    //     color: #b6b6b6;
+    // }
 
-    h3, h4 {
-        color: #797979;
-    }
-    
-    h5, h6,
-    dt {
-        color: #ddd;
-    }
+    // h3, h4 {
+    //     color: #aaa;
+    // }
 
+    // h5, h6,
+    // dt {
+    //     color: #ddd;
+    // }
+
+
+
+    s {
+        color: #944;
+        text-decoration-color: #f44;
+        text-decoration-style: solid;
+        text-decoration-thickness: 3px;
+    }
 
 
 
@@ -106,7 +104,6 @@
         background-color: rgba(black, 0.219);
         box-shadow: inset 0 0 0.5em rgba(black, 0.51);
     }
-
 
 
 
@@ -122,11 +119,25 @@
 
 
 
-
-    strong,
     b,
+    i {
+        color: #bbb;
+    }
+
+    strong {
+        color: #ec9;
+        background-color: #423824;
+    }
+
     em {
-        color: #eee;
+        color: #9bd;
+        background-color: #193851;
+    }
+
+    strong em,
+    em strong {
+        color: #fbb;
+        background-color #511919;
     }
 
 
@@ -139,6 +150,7 @@
     }
 
 
+
     details {
         background-color: rgba(0, 0, 0, 0.079);
         box-shadow: inset 0 0 0.25em rgba(0, 0, 0, 0.319);
@@ -148,6 +160,7 @@
     summary:active {
         color: #7d5;
     }
+
 
 
     table {
@@ -184,6 +197,7 @@
     }
 
 
+
     code,
     kbd {
         text-shadow: none !important;
@@ -193,6 +207,10 @@
         color: #d8b;
         border-color: rgba(white, 0.219);
         background-color: #050505;
+    }
+
+    a > code {
+        color: inherit;
     }
 
     pre code {

@@ -2,10 +2,9 @@
 
     a {
         font-size: inherit;
-        text-decoration: none;
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-bottom-color: transparent;
+        text-decoration-line: underline;
+        text-underline-offset: 0.15em;
+        // text-decoration-color: transparent;
         text-shadow: inherit;
     }
 
@@ -13,22 +12,16 @@
         font-style: italic;
     }
 
-    a[href] {
-        border-bottom-color: currentColor;
-    }
-
     a[href^="#"] {
-        // So-called page local links.
-        // They point to the page they are in.
 
         &:visited,
         & {
-            border-bottom-color: transparent;
+            text-decoration-style: dotted;
+            // text-decoration-color: transparent;
         }
     }
 
     a[href]:hover {
-        text-decoration: none;
-        border-bottom-color: currentColor;
+        text-decoration-color: currentColor;
     }
 }

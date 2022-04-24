@@ -2,7 +2,7 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "吴乐川 <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "7.2.8",
+  "version": "7.3.0",
   "description": "吴乐川的 HTML 文章排版与配色之方案集。本工具用于构建一组层叠样式表（即 CSS ）文件，本工具亦现场提供了一组层叠样式表文件。凡这些样式表，均可用于美化采用超文本标记语言（即 HTML ）格式存储的文章。且不必同时取用多个样式表文件，仅取其一足矣。",
   "directories": {
     "source": "源代码/原始的源代码",
@@ -77,15 +77,15 @@
     "globby": "^11.1.0"
   },
   "devDependencies": {
-    "@wulechuan/cli-scripts--git-push": "^1.0.1",
+    "@wulechuan/cli-scripts--git-push": "^2.0.0",
     "@wulechuan/generate-html-via-markdown": "^3.0.9",
     "@wulechuan/gulp-classical-task-cycle": "^0.3.0",
     "chalk": "^4.1.2",
-    "cssnano": "^5.1.0",
+    "cssnano": "^5.1.7",
     "del": "^6.0.0",
-    "eslint": "^8.10.0",
+    "eslint": "^8.14.0",
     "esm": "^3.2.25",
-    "fs-extra": "^10.0.1",
+    "fs-extra": "^10.1.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-pipe": "^1.0.4",
@@ -93,6 +93,6 @@
     "gulp-rename": "^2.0.0",
     "gulp-stylus": "^2.7.1",
     "gulp-terser": "^2.1.0",
-    "postcss": "^8.4.8"
+    "postcss": "^8.4.12"
   }
 }

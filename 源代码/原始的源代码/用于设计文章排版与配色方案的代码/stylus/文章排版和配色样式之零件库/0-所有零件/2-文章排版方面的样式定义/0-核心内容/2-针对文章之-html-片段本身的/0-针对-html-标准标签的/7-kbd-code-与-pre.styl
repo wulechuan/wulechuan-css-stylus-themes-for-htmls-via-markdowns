@@ -1,13 +1,17 @@
 {__wrappingSelectorOf_markdownArticleLayoutRoot} {
 
     kbd, code, pre {
-        font-weight: 300;
+        font-weight: 350;
+        text-indent: 0;
     }
 
     kbd, code {
         display: inline-block;
         vertical-align: baseline;
-        line-height: 1;
+        line-height: 1.25;
+        padding-left 0.25em;
+        padding-right 0.25em;
+        // letter-spacing: 0;
         min-height: 1em;
         min-width: 0.5em;
         font-style: normal;
@@ -20,6 +24,21 @@
         white-space: pre-wrap;
     }
 
+    {languageSelectors('zh', 'hans', 'CN')} {
+
+        code {
+            padding-left: 0.4em
+        }
+    }
+
+    a > code {
+        text-decoration-line: inherit;
+        text-decoration-style: inherit;
+        // text-underline-offset: 0.15em;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
     kbd {
         font-size: 80%;
         letter-spacing: 0;
@@ -30,6 +49,7 @@
         &,
         // > code *, // Why? For Typora? I forgot.
         > code { // source code blocks
+            letter-spacing: 0;
             white-space: pre;
             word-wrap: normal;
             word-break: keep-all;

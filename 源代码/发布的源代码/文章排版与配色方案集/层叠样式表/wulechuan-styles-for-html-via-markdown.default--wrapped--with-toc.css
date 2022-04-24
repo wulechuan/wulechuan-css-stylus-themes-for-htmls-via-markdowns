@@ -74,27 +74,29 @@ body {
     padding: 0;
   }
 }
+.markdown-article [lang*="zh-" i],
+.markdown-article [lang*="-hans" i],
+.markdown-article [lang*="-CN" i],
+.markdown-article [lang*="zh-"],
+.markdown-article [lang*="-hans"],
+.markdown-article [lang*="-CN"] {
+  letter-spacing: 0.2em;
+}
 .markdown-article a {
   font-size: inherit;
-  text-decoration: none;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: transparent;
+  text-decoration-line: underline;
+  text-underline-offset: 0.15em;
   text-shadow: inherit;
 }
 .markdown-article a:not([href]) {
   font-style: italic;
 }
-.markdown-article a[href] {
-  border-bottom-color: currentColor;
-}
 .markdown-article a[href^="#"]:visited,
 .markdown-article a[href^="#"] {
-  border-bottom-color: transparent;
+  text-decoration-style: dotted;
 }
 .markdown-article a[href]:hover {
-  text-decoration: none;
-  border-bottom-color: currentColor;
+  text-decoration-color: currentColor;
 }
 .markdown-article h1,
 .markdown-article h2,
@@ -112,42 +114,52 @@ body {
 }
 .markdown-article h1 {
   font-size: 2.3em;
-  line-height: 1.25;
+  line-height: 1.33;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   margin-top: 2em;
-  margin-bottom: 0.5em;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
+  margin-bottom: 1em;
 }
 .markdown-article h2 {
   font-size: 1.8em;
-  line-height: 1.25;
+  line-height: 1.33;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   margin-top: 3em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 .markdown-article h3 {
   font-size: 1.4em;
-  line-height: 1.33;
-  margin-top: 2em;
-  margin-bottom: 0.5em;
+  line-height: 1.5;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
 }
 .markdown-article h4 {
   font-size: 1.2em;
-  line-height: 1.33;
+  line-height: 1.5;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   margin-top: 2em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 .markdown-article h5 {
   font-size: 1.1em;
-  line-height: 1.33;
+  line-height: 1.5;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
 }
 .markdown-article h6,
 .markdown-article dt {
   font-size: 1em;
-  line-height: 1.33;
+  line-height: 1.5;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
 }
 .markdown-article h1,
 .markdown-article h2,
@@ -159,11 +171,6 @@ body {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   border-width: 0;
-}
-.markdown-article h1,
-.markdown-article h2 {
-  letter-spacing: 0.05em;
-  text-indent: 0.05em;
 }
 .markdown-article [lang*="zh-" i] h1,
 .markdown-article [lang*="-hans" i] h1,
@@ -178,14 +185,6 @@ body {
 .markdown-article [lang*="-hans"] h2,
 .markdown-article [lang*="-CN"] h2 {
   letter-spacing: 0.2em;
-  text-indent: 0.2em;
-}
-.markdown-article h3,
-.markdown-article h4,
-.markdown-article h5,
-.markdown-article h6,
-.markdown-article dt {
-  letter-spacing: 0.05em;
 }
 .markdown-article h5 + h6,
 .markdown-article h4 + h5,
@@ -231,11 +230,65 @@ body {
   margin-bottom: 1.25em;
 }
 .markdown-article p {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
-  line-height: 1.66;
+  line-height: 1.8;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.markdown-article blockquote > p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.markdown-article h1 + p,
+.markdown-article h2 + p,
+.markdown-article h3 + p,
+.markdown-article h4 + p,
+.markdown-article h5 + p,
+.markdown-article h6 + p {
+  margin-top: 0.5em;
+}
+.markdown-article center,
+.markdown-article center > * {
+  text-align: center;
+}
+.markdown-article [lang*="zh-" i] p,
+.markdown-article [lang*="-hans" i] p,
+.markdown-article [lang*="-CN" i] p,
+.markdown-article [lang*="zh-"] p,
+.markdown-article [lang*="-hans"] p,
+.markdown-article [lang*="-CN"] p {
+  text-indent: 2.4em;
+}
+.markdown-article [lang*="zh-" i] li > p:only-of-type,
+.markdown-article [lang*="-hans" i] li > p:only-of-type,
+.markdown-article [lang*="-CN" i] li > p:only-of-type,
+.markdown-article [lang*="zh-"] li > p:only-of-type,
+.markdown-article [lang*="-hans"] li > p:only-of-type,
+.markdown-article [lang*="-CN"] li > p:only-of-type,
+.markdown-article [lang*="zh-" i] li > p:first-child,
+.markdown-article [lang*="-hans" i] li > p:first-child,
+.markdown-article [lang*="-CN" i] li > p:first-child,
+.markdown-article [lang*="zh-"] li > p:first-child,
+.markdown-article [lang*="-hans"] li > p:first-child,
+.markdown-article [lang*="-CN"] li > p:first-child {
+  text-indent: 0;
+}
+.markdown-article [lang*="zh-" i] blockquote > p:only-of-type,
+.markdown-article [lang*="-hans" i] blockquote > p:only-of-type,
+.markdown-article [lang*="-CN" i] blockquote > p:only-of-type,
+.markdown-article [lang*="zh-"] blockquote > p:only-of-type,
+.markdown-article [lang*="-hans"] blockquote > p:only-of-type,
+.markdown-article [lang*="-CN"] blockquote > p:only-of-type {
+  text-indent: 0;
+}
+.markdown-article [lang*="zh-" i] center p,
+.markdown-article [lang*="-hans" i] center p,
+.markdown-article [lang*="-CN" i] center p,
+.markdown-article [lang*="zh-"] center p,
+.markdown-article [lang*="-hans"] center p,
+.markdown-article [lang*="-CN"] center p {
+  text-indent: 0;
 }
 .markdown-article sub,
 .markdown-article sup {
@@ -245,11 +298,6 @@ body {
 .markdown-article sup,
 .markdown-article sub {
   font-size: 75%;
-}
-.markdown-article blockquote strong,
-.markdown-article blockquote b,
-.markdown-article blockquote em {
-  color: inherit;
 }
 .markdown-article img {
   display: block;
@@ -327,12 +375,12 @@ body {
 }
 .markdown-article blockquote {
   box-sizing: border-box;
-  max-width: 100%;
+  max-width: calc(100% - 4em);
   display: inline-block;
   vertical-align: top;
   border-style: solid;
-  padding: 1px 1.2em 1px 1em;
-  margin: 0 1em 1.5em;
+  padding: 1px 1.5em 1px 1.3em;
+  margin: 0 1em 1.5em 3em;
 }
 .markdown-article details {
   margin: 0.5em 1em 1.5em;
@@ -353,13 +401,16 @@ body {
 .markdown-article kbd,
 .markdown-article code,
 .markdown-article pre {
-  font-weight: 300;
+  font-weight: 350;
+  text-indent: 0;
 }
 .markdown-article kbd,
 .markdown-article code {
   display: inline-block;
   vertical-align: baseline;
-  line-height: 1;
+  line-height: 1.25;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
   min-height: 1em;
   min-width: 0.5em;
   font-style: normal;
@@ -370,12 +421,27 @@ body {
   word-break: break-all;
   white-space: pre-wrap;
 }
+.markdown-article [lang*="zh-" i] code,
+.markdown-article [lang*="-hans" i] code,
+.markdown-article [lang*="-CN" i] code,
+.markdown-article [lang*="zh-"] code,
+.markdown-article [lang*="-hans"] code,
+.markdown-article [lang*="-CN"] code {
+  padding-left: 0.4em;
+}
+.markdown-article a > code {
+  text-decoration-line: inherit;
+  text-decoration-style: inherit;
+  margin-left: 0;
+  margin-right: 0;
+}
 .markdown-article kbd {
   font-size: 80%;
   letter-spacing: 0;
 }
 .markdown-article pre,
 .markdown-article pre > code {
+  letter-spacing: 0;
   white-space: pre;
   word-wrap: normal;
   word-break: keep-all;
@@ -563,6 +629,7 @@ body {
   .markdown-article blockquote {
     margin-left: 0;
     margin-right: 0;
+    max-width: 100%;
   }
   .markdown-article details {
     margin-left: 0;
@@ -615,7 +682,8 @@ body {
   text-align: center;
 }
 .markdown-article .header-anchor {
-  margin-left: -0.75em;
+  margin-left: -1em;
+  text-decoration-line: none;
 }
 .markdown-article blockquote > h6 .header-anchor,
 .markdown-article th > h6 .header-anchor,
@@ -776,7 +844,7 @@ nav.markdown-article-toc {
     border-width: 1px 0;
     border-style: solid none;
     margin: 0 0 0 -2em;
-    text-decoration: none;
+    text-decoration-line: none;
     transition-property: color, background-color, border-color;
     transition-duration: 0.36s;
     transition-timing-function: ease-out;
@@ -949,7 +1017,7 @@ input,
 textarea,
 select,
 option {
-  font-family: 'Segoe UI', '微软雅黑', 'Microsoft YaHei UI', 'Microsoft YaHei', 'Lucida Grande', Helvetica, sans-serif;
+  font-family: '微软雅黑', 'Microsoft YaHei UI', 'Microsoft YaHei', 'Segoe UI', 'Lucida Grande', Helvetica, sans-serif;
 }
 kbd,
 pre,
@@ -957,14 +1025,17 @@ code {
   font-family: 'Cascadia Code', 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft YaHei UI', 'Microsoft YaHei', '微软雅黑', monospace;
 }
 html {
-  scrollbar-color: rgba(51,51,51,0.75) rgba(51,51,51,0.15);
-  scrollbar-width: thin;
   background-color: #bbb;
 }
+body {
+  scrollbar-color: rgba(51,51,51,0.75) rgba(51,51,51,0.15);
+  scrollbar-width: thin;
+/* autoprefixer: off */
+}
 body::-webkit-scrollbar {
-  border-radius: 0.15em;
-  width: 1.8em;
-  height: 1.8em;
+  border-radius: 0;
+  width: 1.125em;
+  height: 1.125em;
 }
 body::-webkit-scrollbar:hover {
   background-color: rgba(0,0,0,0.15);
@@ -984,19 +1055,19 @@ body::-webkit-scrollbar-button {
   display: none;
 }
 body::-webkit-scrollbar-thumb {
-  border-width: 0.75em;
-  background-color: rgba(0,0,0,0.51);
+  border-width: 0.45em;
+  background-color: rgba(0,0,0,0.45);
 }
 body::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0,0,0,0.96);
+  background-color: #000;
 }
 body::-webkit-scrollbar-track {
-  border-width: 0.6em;
+  border-width: 0.3em;
   background-color: rgba(0,0,0,0.1);
-  box-shadow: inset 0 0 0 0.075em rgba(0,0,0,0.219);
+  box-shadow: inset 0 0 0 0.075em rgba(0,0,0,0.1);
 }
 body::-webkit-scrollbar-track:hover {
-  box-shadow: inset 0 0 0 0.075em rgba(0,0,0,0.45);
+  box-shadow: inset 0 0 0 0.075em rgba(0,0,0,0.515);
 }
 body::-webkit-scrollbar-track-piece {
   display: none;
@@ -1008,11 +1079,11 @@ body {
   background-color: transparent;
 }
 .markdown-article h1 {
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
 }
 .markdown-article h2 {
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
 }
 .markdown-article h3 {
@@ -1025,6 +1096,17 @@ body {
   font-weight: 600;
 }
 .markdown-article h6 {
+  font-weight: 600;
+}
+.markdown-article p {
+  font-weight: 400;
+}
+.markdown-article em,
+.markdown-article strong {
+  font-weight: 500;
+}
+.markdown-article em strong,
+.markdown-article strong em {
   font-weight: 600;
 }
 .markdown-article img {
@@ -1075,7 +1157,7 @@ body {
 }
 @media (max-width: 600px) {
   .markdown-article h1 {
-    font-weight: 400;
+    font-weight: 450;
   }
 }
 .markdown-article {
@@ -1089,16 +1171,21 @@ body {
 }
 .markdown-article a:visited,
 .markdown-article a {
-  color: #015eff;
+  color: #37f;
 }
 .markdown-article a:hover,
 .markdown-article a:focus,
 .markdown-article a:active {
-  color: #f00;
+  color: #7bf;
 }
 .markdown-article a[href^="#"]:visited,
 .markdown-article a[href^="#"] {
-  color: #1b1;
+  color: #2b2;
+}
+.markdown-article a[href^="#"]:hover,
+.markdown-article a[href^="#"]:focus,
+.markdown-article a[href^="#"]:active {
+  color: #88e388;
 }
 .markdown-article a.header-anchor[href^="#"]:visited,
 .markdown-article a.header-anchor[href^="#"] {
@@ -1110,7 +1197,7 @@ body {
 .markdown-article h4:hover > a.header-anchor[href^="#"],
 .markdown-article h5:hover > a.header-anchor[href^="#"],
 .markdown-article h6:hover > a.header-anchor[href^="#"] {
-  color: #aaa;
+  color: #2b2;
 }
 .markdown-article h1 > a.header-anchor[href^="#"]:hover,
 .markdown-article h2 > a.header-anchor[href^="#"]:hover,
@@ -1130,34 +1217,13 @@ body {
 .markdown-article h4 > a.header-anchor[href^="#"]:active,
 .markdown-article h5 > a.header-anchor[href^="#"]:active,
 .markdown-article h6 > a.header-anchor[href^="#"]:active {
-  color: #1b1;
+  color: #88e388;
 }
-.markdown-article h1:target:hover > a.header-anchor[href^="#"],
-.markdown-article h2:target:hover > a.header-anchor[href^="#"],
-.markdown-article h3:target:hover > a.header-anchor[href^="#"],
-.markdown-article h4:target:hover > a.header-anchor[href^="#"],
-.markdown-article h5:target:hover > a.header-anchor[href^="#"],
-.markdown-article h6:target:hover > a.header-anchor[href^="#"],
-.markdown-article h1:target > a.header-anchor[href^="#"],
-.markdown-article h2:target > a.header-anchor[href^="#"],
-.markdown-article h3:target > a.header-anchor[href^="#"],
-.markdown-article h4:target > a.header-anchor[href^="#"],
-.markdown-article h5:target > a.header-anchor[href^="#"],
-.markdown-article h6:target > a.header-anchor[href^="#"] {
-  color: #1b1;
-}
-.markdown-article h1,
-.markdown-article h2 {
-  color: #111;
-}
-.markdown-article h3,
-.markdown-article h4 {
-  color: #222;
-}
-.markdown-article h5,
-.markdown-article h6,
-.markdown-article dt {
-  color: #000;
+.markdown-article s {
+  color: #fcc;
+  text-decoration-color: #f00;
+  text-decoration-style: solid;
+  text-decoration-thickness: 3px;
 }
 .markdown-article img {
   color: #555;
@@ -1172,10 +1238,22 @@ body {
   color: #696;
   text-shadow: -1px -1px 0 rgba(0,128,0,0.1);
 }
-.markdown-article strong,
 .markdown-article b,
+.markdown-article i {
+  color: #000;
+}
+.markdown-article strong {
+  color: #000;
+  background-color: rgba(204,255,187,0.867);
+}
 .markdown-article em {
   color: #000;
+  background-color: rgba(255,238,187,0.667);
+}
+.markdown-article strong em,
+.markdown-article em strong {
+  color: #500;
+  background-color: #ffe3e3;
 }
 .markdown-article blockquote {
   color: #000;
@@ -1217,8 +1295,11 @@ body {
 }
 .markdown-article code {
   color: #b19;
-  border-color: rgba(0,0,0,0.219);
+  border-color: rgba(0,0,0,0.15);
   background-color: #fff;
+}
+.markdown-article a > code {
+  color: inherit;
 }
 .markdown-article pre code {
   background-color: transparent !important;
@@ -1250,7 +1331,7 @@ body {
   }
 }
 nav.markdown-article-toc {
-  font-family: 'Segoe UI', '微软雅黑', 'Microsoft YaHei UI', 'Microsoft YaHei', 'Lucida Grande', Helvetica, sans-serif;
+  font-family: '微软雅黑', 'Microsoft YaHei UI', 'Microsoft YaHei', 'Segoe UI', 'Lucida Grande', Helvetica, sans-serif;
 }
 @media screen {
   nav.markdown-article-toc {
@@ -1259,14 +1340,15 @@ nav.markdown-article-toc {
   }
   nav.markdown-article-toc > ul,
   nav.markdown-article-toc > ol {
+/* autoprefixer: off */
     scrollbar-color: rgba(204,204,204,0.75) rgba(204,204,204,0.15);
     scrollbar-width: thin;
   }
   nav.markdown-article-toc > ul::-webkit-scrollbar,
   nav.markdown-article-toc > ol::-webkit-scrollbar {
-    border-radius: 0.125em;
-    width: 1.5em;
-    height: 1.5em;
+    border-radius: 0;
+    width: 0.9375em;
+    height: 0.9375em;
   }
   nav.markdown-article-toc > ul::-webkit-scrollbar:hover,
   nav.markdown-article-toc > ol::-webkit-scrollbar:hover {
@@ -1295,22 +1377,22 @@ nav.markdown-article-toc {
   }
   nav.markdown-article-toc > ul::-webkit-scrollbar-thumb,
   nav.markdown-article-toc > ol::-webkit-scrollbar-thumb {
-    border-width: 0.625em;
-    background-color: rgba(255,255,255,0.51);
+    border-width: 0.375em;
+    background-color: rgba(255,255,255,0.45);
   }
   nav.markdown-article-toc > ul::-webkit-scrollbar-thumb:hover,
   nav.markdown-article-toc > ol::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(255,255,255,0.96);
+    background-color: #fff;
   }
   nav.markdown-article-toc > ul::-webkit-scrollbar-track,
   nav.markdown-article-toc > ol::-webkit-scrollbar-track {
-    border-width: 0.5em;
+    border-width: 0.25em;
     background-color: rgba(255,255,255,0.1);
-    box-shadow: inset 0 0 0 0.0625em rgba(255,255,255,0.219);
+    box-shadow: inset 0 0 0 0.0625em rgba(255,255,255,0.1);
   }
   nav.markdown-article-toc > ul::-webkit-scrollbar-track:hover,
   nav.markdown-article-toc > ol::-webkit-scrollbar-track:hover {
-    box-shadow: inset 0 0 0 0.0625em rgba(255,255,255,0.45);
+    box-shadow: inset 0 0 0 0.0625em rgba(255,255,255,0.515);
   }
   nav.markdown-article-toc > ul::-webkit-scrollbar-track-piece,
   nav.markdown-article-toc > ol::-webkit-scrollbar-track-piece {
@@ -1369,16 +1451,17 @@ nav.markdown-article-toc {
   font-weight: bold;
 }
 .hljs-link {
-  text-decoration: underline;
+  text-decoration-line: underline;
 }
 pre > code {
+/* autoprefixer: off */
   scrollbar-color: rgba(204,204,204,0.75) rgba(204,204,204,0.15);
   scrollbar-width: thin;
 }
 pre > code::-webkit-scrollbar {
-  border-radius: 0.1em;
-  width: 1.2em;
-  height: 1.2em;
+  border-radius: 0;
+  width: 0.75em;
+  height: 0.75em;
 }
 pre > code::-webkit-scrollbar:hover {
   background-color: rgba(255,255,255,0.15);
@@ -1398,19 +1481,19 @@ pre > code::-webkit-scrollbar-button {
   display: none;
 }
 pre > code::-webkit-scrollbar-thumb {
-  border-width: 0.5em;
-  background-color: rgba(255,255,255,0.51);
+  border-width: 0.3em;
+  background-color: rgba(255,255,255,0.45);
 }
 pre > code::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255,255,255,0.96);
+  background-color: #fff;
 }
 pre > code::-webkit-scrollbar-track {
-  border-width: 0.4em;
+  border-width: 0.2em;
   background-color: rgba(255,255,255,0.1);
-  box-shadow: inset 0 0 0 0.05em rgba(255,255,255,0.219);
+  box-shadow: inset 0 0 0 0.05em rgba(255,255,255,0.1);
 }
 pre > code::-webkit-scrollbar-track:hover {
-  box-shadow: inset 0 0 0 0.05em rgba(255,255,255,0.45);
+  box-shadow: inset 0 0 0 0.05em rgba(255,255,255,0.515);
 }
 pre > code::-webkit-scrollbar-track-piece {
   display: none;
@@ -2079,7 +2162,7 @@ pre,
 @media print {
   a:visited,
   a {
-    text-decoration: underline;
+    text-decoration-line: underline;
   }
   a[href]::after {
     content: ' (' attr(href) ')';

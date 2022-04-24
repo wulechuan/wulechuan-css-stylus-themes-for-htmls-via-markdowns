@@ -74,27 +74,29 @@
     padding: 0;
   }
 }
+[lang*="zh-" i],
+[lang*="-hans" i],
+[lang*="-CN" i],
+[lang*="zh-"],
+[lang*="-hans"],
+[lang*="-CN"] {
+  letter-spacing: 0.2em;
+}
 a {
   font-size: inherit;
-  text-decoration: none;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: transparent;
+  text-decoration-line: underline;
+  text-underline-offset: 0.15em;
   text-shadow: inherit;
 }
 a:not([href]) {
   font-style: italic;
 }
-a[href] {
-  border-bottom-color: currentColor;
-}
 a[href^="#"]:visited,
 a[href^="#"] {
-  border-bottom-color: transparent;
+  text-decoration-style: dotted;
 }
 a[href]:hover {
-  text-decoration: none;
-  border-bottom-color: currentColor;
+  text-decoration-color: currentColor;
 }
 h1,
 h2,
@@ -112,42 +114,52 @@ p {
 }
 h1 {
   font-size: 2.3em;
-  line-height: 1.25;
+  line-height: 1.33;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   margin-top: 2em;
-  margin-bottom: 0.5em;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
+  margin-bottom: 1em;
 }
 h2 {
   font-size: 1.8em;
-  line-height: 1.25;
+  line-height: 1.33;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   margin-top: 3em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 h3 {
   font-size: 1.4em;
-  line-height: 1.33;
-  margin-top: 2em;
-  margin-bottom: 0.5em;
+  line-height: 1.5;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
 }
 h4 {
   font-size: 1.2em;
-  line-height: 1.33;
+  line-height: 1.5;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   margin-top: 2em;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 h5 {
   font-size: 1.1em;
-  line-height: 1.33;
+  line-height: 1.5;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
 }
 h6,
 dt {
   font-size: 1em;
-  line-height: 1.33;
+  line-height: 1.5;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
 }
 h1,
 h2,
@@ -159,11 +171,6 @@ dt {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   border-width: 0;
-}
-h1,
-h2 {
-  letter-spacing: 0.05em;
-  text-indent: 0.05em;
 }
 [lang*="zh-" i] h1,
 [lang*="-hans" i] h1,
@@ -178,14 +185,6 @@ h2 {
 [lang*="-hans"] h2,
 [lang*="-CN"] h2 {
   letter-spacing: 0.2em;
-  text-indent: 0.2em;
-}
-h3,
-h4,
-h5,
-h6,
-dt {
-  letter-spacing: 0.05em;
 }
 h5 + h6,
 h4 + h5,
@@ -231,11 +230,65 @@ td > h1 ~ p:last-child {
   margin-bottom: 1.25em;
 }
 p {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
-  line-height: 1.66;
+  line-height: 1.8;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+blockquote > p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  margin-top: 0.5em;
+}
+center,
+center > * {
+  text-align: center;
+}
+[lang*="zh-" i] p,
+[lang*="-hans" i] p,
+[lang*="-CN" i] p,
+[lang*="zh-"] p,
+[lang*="-hans"] p,
+[lang*="-CN"] p {
+  text-indent: 2.4em;
+}
+[lang*="zh-" i] li > p:only-of-type,
+[lang*="-hans" i] li > p:only-of-type,
+[lang*="-CN" i] li > p:only-of-type,
+[lang*="zh-"] li > p:only-of-type,
+[lang*="-hans"] li > p:only-of-type,
+[lang*="-CN"] li > p:only-of-type,
+[lang*="zh-" i] li > p:first-child,
+[lang*="-hans" i] li > p:first-child,
+[lang*="-CN" i] li > p:first-child,
+[lang*="zh-"] li > p:first-child,
+[lang*="-hans"] li > p:first-child,
+[lang*="-CN"] li > p:first-child {
+  text-indent: 0;
+}
+[lang*="zh-" i] blockquote > p:only-of-type,
+[lang*="-hans" i] blockquote > p:only-of-type,
+[lang*="-CN" i] blockquote > p:only-of-type,
+[lang*="zh-"] blockquote > p:only-of-type,
+[lang*="-hans"] blockquote > p:only-of-type,
+[lang*="-CN"] blockquote > p:only-of-type {
+  text-indent: 0;
+}
+[lang*="zh-" i] center p,
+[lang*="-hans" i] center p,
+[lang*="-CN" i] center p,
+[lang*="zh-"] center p,
+[lang*="-hans"] center p,
+[lang*="-CN"] center p {
+  text-indent: 0;
 }
 sub,
 sup {
@@ -245,11 +298,6 @@ small,
 sup,
 sub {
   font-size: 75%;
-}
-blockquote strong,
-blockquote b,
-blockquote em {
-  color: inherit;
 }
 img {
   display: block;
@@ -327,12 +375,12 @@ video {
 }
 blockquote {
   box-sizing: border-box;
-  max-width: 100%;
+  max-width: calc(100% - 4em);
   display: inline-block;
   vertical-align: top;
   border-style: solid;
-  padding: 1px 1.2em 1px 1em;
-  margin: 0 1em 1.5em;
+  padding: 1px 1.5em 1px 1.3em;
+  margin: 0 1em 1.5em 3em;
 }
 details {
   margin: 0.5em 1em 1.5em;
@@ -353,13 +401,16 @@ pre + details {
 kbd,
 code,
 pre {
-  font-weight: 300;
+  font-weight: 350;
+  text-indent: 0;
 }
 kbd,
 code {
   display: inline-block;
   vertical-align: baseline;
-  line-height: 1;
+  line-height: 1.25;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
   min-height: 1em;
   min-width: 0.5em;
   font-style: normal;
@@ -370,12 +421,27 @@ code {
   word-break: break-all;
   white-space: pre-wrap;
 }
+[lang*="zh-" i] code,
+[lang*="-hans" i] code,
+[lang*="-CN" i] code,
+[lang*="zh-"] code,
+[lang*="-hans"] code,
+[lang*="-CN"] code {
+  padding-left: 0.4em;
+}
+a > code {
+  text-decoration-line: inherit;
+  text-decoration-style: inherit;
+  margin-left: 0;
+  margin-right: 0;
+}
 kbd {
   font-size: 80%;
   letter-spacing: 0;
 }
 pre,
 pre > code {
+  letter-spacing: 0;
   white-space: pre;
   word-wrap: normal;
   word-break: keep-all;
@@ -563,6 +629,7 @@ hr::after {
   blockquote {
     margin-left: 0;
     margin-right: 0;
+    max-width: 100%;
   }
   details {
     margin-left: 0;
@@ -615,7 +682,8 @@ hr::after {
   text-align: center;
 }
 .header-anchor {
-  margin-left: -0.75em;
+  margin-left: -1em;
+  text-decoration-line: none;
 }
 blockquote > h6 .header-anchor,
 th > h6 .header-anchor,
@@ -691,7 +759,7 @@ input,
 textarea,
 select,
 option {
-  font-family: 'Segoe UI', '微软雅黑', 'Microsoft YaHei UI', 'Microsoft YaHei', 'Lucida Grande', Helvetica, sans-serif;
+  font-family: '微软雅黑', 'Microsoft YaHei UI', 'Microsoft YaHei', 'Segoe UI', 'Lucida Grande', Helvetica, sans-serif;
 }
 kbd,
 pre,
@@ -699,14 +767,17 @@ code {
   font-family: 'Cascadia Code', 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft YaHei UI', 'Microsoft YaHei', '微软雅黑', monospace;
 }
 html {
-  scrollbar-color: rgba(51,51,51,0.75) rgba(51,51,51,0.15);
-  scrollbar-width: thin;
   background-color: #bbb;
 }
+.typora-node > content {
+  scrollbar-color: rgba(51,51,51,0.75) rgba(51,51,51,0.15);
+  scrollbar-width: thin;
+/* autoprefixer: off */
+}
 .typora-node > content::-webkit-scrollbar {
-  border-radius: 0.15em;
-  width: 1.8em;
-  height: 1.8em;
+  border-radius: 0;
+  width: 1.125em;
+  height: 1.125em;
 }
 .typora-node > content::-webkit-scrollbar:hover {
   background-color: rgba(0,0,0,0.15);
@@ -726,19 +797,19 @@ html {
   display: none;
 }
 .typora-node > content::-webkit-scrollbar-thumb {
-  border-width: 0.75em;
-  background-color: rgba(0,0,0,0.51);
+  border-width: 0.45em;
+  background-color: rgba(0,0,0,0.45);
 }
 .typora-node > content::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0,0,0,0.96);
+  background-color: #000;
 }
 .typora-node > content::-webkit-scrollbar-track {
-  border-width: 0.6em;
+  border-width: 0.3em;
   background-color: rgba(0,0,0,0.1);
-  box-shadow: inset 0 0 0 0.075em rgba(0,0,0,0.219);
+  box-shadow: inset 0 0 0 0.075em rgba(0,0,0,0.1);
 }
 .typora-node > content::-webkit-scrollbar-track:hover {
-  box-shadow: inset 0 0 0 0.075em rgba(0,0,0,0.45);
+  box-shadow: inset 0 0 0 0.075em rgba(0,0,0,0.515);
 }
 .typora-node > content::-webkit-scrollbar-track-piece {
   display: none;
@@ -750,11 +821,11 @@ body {
   background-color: transparent;
 }
 h1 {
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
 }
 h2 {
-  font-weight: 300;
+  font-weight: 400;
   text-align: center;
 }
 h3 {
@@ -767,6 +838,17 @@ h5 {
   font-weight: 600;
 }
 h6 {
+  font-weight: 600;
+}
+p {
+  font-weight: 400;
+}
+em,
+strong {
+  font-weight: 500;
+}
+em strong,
+strong em {
   font-weight: 600;
 }
 img {
@@ -817,7 +899,7 @@ pre {
 }
 @media (max-width: 600px) {
   h1 {
-    font-weight: 400;
+    font-weight: 450;
   }
 }
 .typora-node   #write {
@@ -831,16 +913,21 @@ a {
 }
 a:visited,
 a {
-  color: #015eff;
+  color: #37f;
 }
 a:hover,
 a:focus,
 a:active {
-  color: #f00;
+  color: #7bf;
 }
 a[href^="#"]:visited,
 a[href^="#"] {
-  color: #1b1;
+  color: #2b2;
+}
+a[href^="#"]:hover,
+a[href^="#"]:focus,
+a[href^="#"]:active {
+  color: #88e388;
 }
 a.header-anchor[href^="#"]:visited,
 a.header-anchor[href^="#"] {
@@ -852,7 +939,7 @@ h3:hover > a.header-anchor[href^="#"],
 h4:hover > a.header-anchor[href^="#"],
 h5:hover > a.header-anchor[href^="#"],
 h6:hover > a.header-anchor[href^="#"] {
-  color: #aaa;
+  color: #2b2;
 }
 h1 > a.header-anchor[href^="#"]:hover,
 h2 > a.header-anchor[href^="#"]:hover,
@@ -872,34 +959,13 @@ h3 > a.header-anchor[href^="#"]:active,
 h4 > a.header-anchor[href^="#"]:active,
 h5 > a.header-anchor[href^="#"]:active,
 h6 > a.header-anchor[href^="#"]:active {
-  color: #1b1;
+  color: #88e388;
 }
-h1:target:hover > a.header-anchor[href^="#"],
-h2:target:hover > a.header-anchor[href^="#"],
-h3:target:hover > a.header-anchor[href^="#"],
-h4:target:hover > a.header-anchor[href^="#"],
-h5:target:hover > a.header-anchor[href^="#"],
-h6:target:hover > a.header-anchor[href^="#"],
-h1:target > a.header-anchor[href^="#"],
-h2:target > a.header-anchor[href^="#"],
-h3:target > a.header-anchor[href^="#"],
-h4:target > a.header-anchor[href^="#"],
-h5:target > a.header-anchor[href^="#"],
-h6:target > a.header-anchor[href^="#"] {
-  color: #1b1;
-}
-h1,
-h2 {
-  color: #111;
-}
-h3,
-h4 {
-  color: #222;
-}
-h5,
-h6,
-dt {
-  color: #000;
+s {
+  color: #fcc;
+  text-decoration-color: #f00;
+  text-decoration-style: solid;
+  text-decoration-thickness: 3px;
 }
 img {
   color: #555;
@@ -914,10 +980,22 @@ input[type="checkbox"]:checked + label {
   color: #696;
   text-shadow: -1px -1px 0 rgba(0,128,0,0.1);
 }
-strong,
 b,
+i {
+  color: #000;
+}
+strong {
+  color: #000;
+  background-color: rgba(204,255,187,0.867);
+}
 em {
   color: #000;
+  background-color: rgba(255,238,187,0.667);
+}
+strong em,
+em strong {
+  color: #500;
+  background-color: #ffe3e3;
 }
 blockquote {
   color: #000;
@@ -959,8 +1037,11 @@ kbd {
 }
 code {
   color: #b19;
-  border-color: rgba(0,0,0,0.219);
+  border-color: rgba(0,0,0,0.15);
   background-color: #fff;
+}
+a > code {
+  color: inherit;
 }
 pre code {
   background-color: transparent !important;
@@ -1047,7 +1128,7 @@ hr::before {
 @media print {
   a:visited,
   a {
-    text-decoration: underline;
+    text-decoration-line: underline;
   }
   a[href]::after {
     content: ' (' attr(href) ')';

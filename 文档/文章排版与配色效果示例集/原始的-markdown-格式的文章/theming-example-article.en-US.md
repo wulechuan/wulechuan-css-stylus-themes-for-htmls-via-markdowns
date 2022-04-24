@@ -1,4 +1,4 @@
-# Wulechuan's Article CSS Styles Examples
+# Wulechuan&apos;s Article CSS Styles Examples
 
 <p class="document-author">wulechuan@live.com</p>
 
@@ -449,7 +449,7 @@ html, body {
     display: flex;
     position: relative;
     width: 100%;
-    font-family: 'Segoe UI', 'Microsoft YaHei UI', serif;
+    font-family: 'Microsoft YaHei UI', 'Segoe UI', serif;
 }
 
 .back-to-top {
@@ -480,7 +480,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline !important;
+    text-decoration-line: underline !important;
 }
 
 a[href^="#"] {
