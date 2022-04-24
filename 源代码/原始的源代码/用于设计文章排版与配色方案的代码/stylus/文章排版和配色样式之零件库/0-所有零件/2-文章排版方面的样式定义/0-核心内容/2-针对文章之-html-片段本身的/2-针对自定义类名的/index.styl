@@ -41,12 +41,26 @@
 {__wrappingSelectorOf_markdownArticleLayoutRoot} {
 
     .document-author {
+        text-indent: 0;
         text-align: center;
     }
 
     .centered {
+        text-indent: 0;
         text-align: center;
     }
+
+    {languageSelectors('zh', 'hans', 'CN')} {
+        .document-author {
+            text-indent: 0;
+        }
+
+        .centered {
+            text-indent: 0;
+        }
+    }
+
+
 
     /* markdown-it plugin: markdown-it-anchor */
     {_selectorOf_article_headingsPermantLinkAnchors} {

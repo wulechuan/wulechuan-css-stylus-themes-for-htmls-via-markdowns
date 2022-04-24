@@ -676,10 +676,28 @@ body {
   padding-right: 3em;
 }
 .markdown-article .document-author {
+  text-indent: 0;
   text-align: center;
 }
 .markdown-article .centered {
+  text-indent: 0;
   text-align: center;
+}
+.markdown-article [lang*="zh-" i] .document-author,
+.markdown-article [lang*="-hans" i] .document-author,
+.markdown-article [lang*="-CN" i] .document-author,
+.markdown-article [lang*="zh-"] .document-author,
+.markdown-article [lang*="-hans"] .document-author,
+.markdown-article [lang*="-CN"] .document-author {
+  text-indent: 0;
+}
+.markdown-article [lang*="zh-" i] .centered,
+.markdown-article [lang*="-hans" i] .centered,
+.markdown-article [lang*="-CN" i] .centered,
+.markdown-article [lang*="zh-"] .centered,
+.markdown-article [lang*="-hans"] .centered,
+.markdown-article [lang*="-CN"] .centered {
+  text-indent: 0;
 }
 .markdown-article .header-anchor {
   margin-left: -1em;
@@ -1080,10 +1098,12 @@ body {
 }
 .markdown-article h1 {
   font-weight: 400;
+  text-indent: 0;
   text-align: center;
 }
 .markdown-article h2 {
   font-weight: 400;
+  text-indent: 0;
   text-align: center;
 }
 .markdown-article h3 {

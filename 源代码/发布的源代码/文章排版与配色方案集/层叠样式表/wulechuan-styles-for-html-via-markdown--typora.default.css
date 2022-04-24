@@ -676,10 +676,28 @@ hr::after {
   padding-right: 3em;
 }
 .document-author {
+  text-indent: 0;
   text-align: center;
 }
 .centered {
+  text-indent: 0;
   text-align: center;
+}
+[lang*="zh-" i] .document-author,
+[lang*="-hans" i] .document-author,
+[lang*="-CN" i] .document-author,
+[lang*="zh-"] .document-author,
+[lang*="-hans"] .document-author,
+[lang*="-CN"] .document-author {
+  text-indent: 0;
+}
+[lang*="zh-" i] .centered,
+[lang*="-hans" i] .centered,
+[lang*="-CN" i] .centered,
+[lang*="zh-"] .centered,
+[lang*="-hans"] .centered,
+[lang*="-CN"] .centered {
+  text-indent: 0;
 }
 .header-anchor {
   margin-left: -1em;
@@ -822,10 +840,12 @@ body {
 }
 h1 {
   font-weight: 400;
+  text-indent: 0;
   text-align: center;
 }
 h2 {
   font-weight: 400;
+  text-indent: 0;
   text-align: center;
 }
 h3 {
