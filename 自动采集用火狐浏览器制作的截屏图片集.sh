@@ -14,7 +14,7 @@ function collect-firefox-screenshot-files {
     local firefoxScreenshotFilesNamingPrefix="Screenshot_`date "+%Y-%m-%d"` "
 
 
-    local snapshotTargetFolderSubPah="文档/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图"
+    local snapshotTargetFolderSubPah="文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图"
 
 
     local snapshotTargetFolderPath="${repoRootFolder}/${snapshotTargetFolderSubPah}"

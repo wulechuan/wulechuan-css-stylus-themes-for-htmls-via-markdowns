@@ -840,60 +840,162 @@ nav.markdown-article-toc {
 }
 @media screen {
   nav.markdown-article-toc {
+    user-select: text;
     box-sizing: border-box;
-    width: 22em;
+    width: 28em;
     max-width: 100%;
     height: 100%;
-    padding: 3em 0.5em 2em 0.5em;
+    padding: 3em 0.5em 1.5em 0.5em;
     overflow: auto;
     position: fixed;
     left: 0;
     top: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+  nav.markdown-article-toc ol,
+  nav.markdown-article-toc ul {
+    counter-reset: wlc-article-toc;
+    margin: 0 0 2em;
+  }
+  nav.markdown-article-toc > ol,
+  nav.markdown-article-toc > ul {
+    font-size: 0.8em;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    padding: 0.5em 0.5em 4.5em 0.5em;
+    height: 100%;
+    overflow: auto;
+  }
+  nav.markdown-article-toc > ol ol,
+  nav.markdown-article-toc > ul ol,
+  nav.markdown-article-toc > ol ul,
+  nav.markdown-article-toc > ul ul {
+    padding: 0 0 0 0.5em;
+  }
+  nav.markdown-article-toc > ol ol,
+  nav.markdown-article-toc > ul ol {
+    margin-left: -1em;
+  }
+  nav.markdown-article-toc > ol ol ol,
+  nav.markdown-article-toc > ul ol ol,
+  nav.markdown-article-toc > ol ul ol,
+  nav.markdown-article-toc > ul ul ol {
+    margin-left: -1.75em;
+  }
+  nav.markdown-article-toc > ol ol ol ol,
+  nav.markdown-article-toc > ul ol ol ol,
+  nav.markdown-article-toc > ol ul ol ol,
+  nav.markdown-article-toc > ul ul ol ol,
+  nav.markdown-article-toc > ol ol ul ol,
+  nav.markdown-article-toc > ul ol ul ol,
+  nav.markdown-article-toc > ol ul ul ol,
+  nav.markdown-article-toc > ul ul ul ol {
+    margin-left: -2.5em;
+  }
+  nav.markdown-article-toc.should-show-2-levels-at-most > ol ol ol,
+  nav.markdown-article-toc.should-show-2-levels-at-most > ul ol ol,
+  nav.markdown-article-toc.should-show-2-levels-at-most > ol ul ol,
+  nav.markdown-article-toc.should-show-2-levels-at-most > ul ul ol,
+  nav.markdown-article-toc.should-show-2-levels-at-most > ol ol ul,
+  nav.markdown-article-toc.should-show-2-levels-at-most > ul ol ul,
+  nav.markdown-article-toc.should-show-2-levels-at-most > ol ul ul,
+  nav.markdown-article-toc.should-show-2-levels-at-most > ul ul ul {
+    display: none;
   }
   nav.markdown-article-toc li {
     cursor: pointer;
-    margin: 0;
+    margin: 0.25em 0;
+    line-height: 1.5;
     padding-right: 0;
+    position: relative;
   }
+  nav.markdown-article-toc li::before,
   nav.markdown-article-toc li > a[href^="#"] {
     display: block;
-    padding: 0.25em 0.5em 0.25em 2em;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
     border-width: 1px 0;
     border-style: solid none;
-    margin: 0 0 0 -2em;
-    text-decoration-line: none;
     transition-property: color, background-color, border-color;
     transition-duration: 0.36s;
     transition-timing-function: ease-out;
   }
-  nav.markdown-article-toc > ul,
-  nav.markdown-article-toc > ol {
-    font-size: 0.8em;
-  }
-  nav.markdown-article-toc > ul,
-  nav.markdown-article-toc > ol {
-    box-sizing: border-box;
-    height: 100%;
-    padding: 0.5em 1.5em 4.5em 1.5em;
+  nav.markdown-article-toc li::before {
+    position: absolute;
+    left: 0;
+    top: 0;
     margin: 0;
-    overflow: auto;
+    text-align: right;
+    border-color: transparent;
   }
-  nav.markdown-article-toc > ul ol,
-  nav.markdown-article-toc > ol ol,
-  nav.markdown-article-toc > ul ul,
-  nav.markdown-article-toc > ol ul {
-    padding-right: 0;
+  nav.markdown-article-toc li > a[href^="#"] {
+    padding-right: 0.5em;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-decoration-line: none;
   }
-  nav.markdown-article-toc.should-show-2-levels-at-most > ul ol ol,
-  nav.markdown-article-toc.should-show-2-levels-at-most > ol ol ol,
-  nav.markdown-article-toc.should-show-2-levels-at-most > ul ul ol,
-  nav.markdown-article-toc.should-show-2-levels-at-most > ol ul ol,
-  nav.markdown-article-toc.should-show-2-levels-at-most > ul ol ul,
-  nav.markdown-article-toc.should-show-2-levels-at-most > ol ol ul,
-  nav.markdown-article-toc.should-show-2-levels-at-most > ul ul ul,
-  nav.markdown-article-toc.should-show-2-levels-at-most > ol ul ul {
-    display: none;
+  nav.markdown-article-toc ol > li {
+    counter-increment: wlc-article-toc;
+    list-style-type: none;
+  }
+  nav.markdown-article-toc ol > li {
+    padding-left: 4.75em;
+  }
+  nav.markdown-article-toc ol > li::before {
+    width: 4.75em;
+  }
+  nav.markdown-article-toc ol > li > a[href^="#"] {
+    padding-left: 5.75em;
+    margin-left: -4.75em;
+  }
+  nav.markdown-article-toc ol > li::before {
+    content: counters(wlc-article-toc, '.', wlc-article-toc);
+  }
+  nav.markdown-article-toc > ol > li {
+    padding-left: 2em;
+  }
+  nav.markdown-article-toc > ol > li::before {
+    width: 2em;
+  }
+  nav.markdown-article-toc > ol > li > a[href^="#"] {
+    padding-left: 3em;
+    margin-left: -2em;
+  }
+  nav.markdown-article-toc > ol > li > ol > li,
+  nav.markdown-article-toc > ol > li > ul > li {
+    padding-left: 2.75em;
+  }
+  nav.markdown-article-toc > ol > li > ol > li::before,
+  nav.markdown-article-toc > ol > li > ul > li::before {
+    width: 2.75em;
+  }
+  nav.markdown-article-toc > ol > li > ol > li > a[href^="#"],
+  nav.markdown-article-toc > ol > li > ul > li > a[href^="#"] {
+    padding-left: 3.75em;
+    margin-left: -2.75em;
+  }
+  nav.markdown-article-toc > ol > li > ol > li > ol > li,
+  nav.markdown-article-toc > ol > li > ul > li > ol > li,
+  nav.markdown-article-toc > ol > li > ol > li > ul > li,
+  nav.markdown-article-toc > ol > li > ul > li > ul > li {
+    padding-left: 3.75em;
+  }
+  nav.markdown-article-toc > ol > li > ol > li > ol > li::before,
+  nav.markdown-article-toc > ol > li > ul > li > ol > li::before,
+  nav.markdown-article-toc > ol > li > ol > li > ul > li::before,
+  nav.markdown-article-toc > ol > li > ul > li > ul > li::before {
+    width: 3.75em;
+  }
+  nav.markdown-article-toc > ol > li > ol > li > ol > li > a[href^="#"],
+  nav.markdown-article-toc > ol > li > ul > li > ol > li > a[href^="#"],
+  nav.markdown-article-toc > ol > li > ol > li > ul > li > a[href^="#"],
+  nav.markdown-article-toc > ol > li > ul > li > ul > li > a[href^="#"] {
+    padding-left: 4.75em;
+    margin-left: -3.75em;
   }
 }
 .markdown-article-toc-toggling-button {
@@ -916,15 +1018,16 @@ nav.markdown-article-toc {
 }
 @media screen {
   body.markdown-article-toc-exists.markdown-article-toc-is-visible {
-    margin-left: 27.5em;
+    margin-left: 35em;
   }
   nav.markdown-article-toc {
     display: none;
   }
   .markdown-article-toc-is-visible nav.markdown-article-toc {
-    display: block;
+    display: flex;
   }
   .markdown-article-toc-toggling-button {
+    user-select: none;
     box-sizing: content-box;
     display: block;
     border: 1px solid transparent;
@@ -945,7 +1048,7 @@ nav.markdown-article-toc {
     outline: none;
   }
   .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
-    left: 11em;
+    left: 14em;
     transform: translateX(-50%);
     border-top-left-radius: 219px;
     border-bottom-left-radius: 219px;
@@ -978,23 +1081,23 @@ nav.markdown-article-toc {
 }
 @media screen and (min-width: 2190px) {
   body.markdown-article-toc-exists.markdown-article-toc-is-visible {
-    margin-left: 38.5em;
+    margin-left: 49em;
   }
 }
 @media screen and (min-width: 2879px) {
   body.markdown-article-toc-exists.markdown-article-toc-is-visible {
-    margin-left: 55em;
+    margin-left: 70em;
   }
 }
 @media screen and (max-width: 1400px) and (min-width: 1001px) {
   body.markdown-article-toc-exists.markdown-article-toc-is-visible {
-    margin-left: 22.5em;
+    margin-left: 27.5em;
   }
   nav.markdown-article-toc {
-    width: 18em;
+    width: 22em;
   }
   .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
-    left: 9em;
+    left: 11em;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -1002,10 +1105,44 @@ nav.markdown-article-toc {
     margin-left: 0;
   }
   nav.markdown-article-toc {
-    width: 27em;
+    width: 28em;
+  }
+  nav.markdown-article-toc > ol ol,
+  nav.markdown-article-toc > ul ol,
+  nav.markdown-article-toc > ol ul,
+  nav.markdown-article-toc > ul ul {
+    margin-left: -1.25em;
+  }
+  nav.markdown-article-toc > ol ol ol,
+  nav.markdown-article-toc > ul ol ol,
+  nav.markdown-article-toc > ol ul ol,
+  nav.markdown-article-toc > ul ul ol,
+  nav.markdown-article-toc > ol ol ul,
+  nav.markdown-article-toc > ul ol ul,
+  nav.markdown-article-toc > ol ul ul,
+  nav.markdown-article-toc > ul ul ul {
+    margin-left: -2em;
+  }
+  nav.markdown-article-toc > ol ol ol ol,
+  nav.markdown-article-toc > ul ol ol ol,
+  nav.markdown-article-toc > ol ul ol ol,
+  nav.markdown-article-toc > ul ul ol ol,
+  nav.markdown-article-toc > ol ol ul ol,
+  nav.markdown-article-toc > ul ol ul ol,
+  nav.markdown-article-toc > ol ul ul ol,
+  nav.markdown-article-toc > ul ul ul ol,
+  nav.markdown-article-toc > ol ol ol ul,
+  nav.markdown-article-toc > ul ol ol ul,
+  nav.markdown-article-toc > ol ul ol ul,
+  nav.markdown-article-toc > ul ul ol ul,
+  nav.markdown-article-toc > ol ol ul ul,
+  nav.markdown-article-toc > ul ol ul ul,
+  nav.markdown-article-toc > ol ul ul ul,
+  nav.markdown-article-toc > ul ul ul ul {
+    margin-left: -2.75em;
   }
   .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
-    left: 13.5em;
+    left: 14em;
   }
 }
 @media screen and (max-width: 600px) {
@@ -1355,6 +1492,7 @@ nav.markdown-article-toc {
 }
 @media screen {
   nav.markdown-article-toc {
+    color: #aaa;
     background-color: #222;
     box-shadow: 0 0 0.5em rgba(0,0,0,0.4);
   }
@@ -1422,15 +1560,28 @@ nav.markdown-article-toc {
   nav.markdown-article-toc > ol::-webkit-scrollbar-corner {
     display: none;
   }
-  nav.markdown-article-toc,
+  nav.markdown-article-toc li::before {
+    color: #555;
+  }
   nav.markdown-article-toc li > a[href^="#"] {
-    color: #aaa;
+    color: inherit;
     border-color: transparent;
+  }
+  nav.markdown-article-toc > ol > li.has-nested-toc-list.is-expanded > a[href^="#"],
+  nav.markdown-article-toc > ul > li.has-nested-toc-list.is-expanded > a[href^="#"],
+  nav.markdown-article-toc:not(.should-show-2-levels-at-most) li.has-nested-toc-list.is-expanded > a[href^="#"] {
+    color: #496;
   }
   nav.markdown-article-toc > ol > li.has-nested-toc-list > a[href^="#"],
   nav.markdown-article-toc > ul > li.has-nested-toc-list > a[href^="#"],
   nav.markdown-article-toc:not(.should-show-2-levels-at-most) li.has-nested-toc-list > a[href^="#"] {
-    color: #fff;
+    color: #6f9;
+  }
+  nav.markdown-article-toc > ol > li.has-nested-toc-list > a[href^="#"]:hover,
+  nav.markdown-article-toc > ul > li.has-nested-toc-list > a[href^="#"]:hover,
+  nav.markdown-article-toc:not(.should-show-2-levels-at-most) li.has-nested-toc-list > a[href^="#"]:hover {
+    color: #6f9;
+    background-color: rgba(221,255,238,0.067);
   }
   nav.markdown-article-toc li > a[href^="#"]:hover {
     border-color: rgba(255,255,255,0.19) transparent;
@@ -1462,6 +1613,14 @@ nav.markdown-article-toc {
     nav.markdown-article-toc {
       -webkit-backdrop-filter: blur(20px);
     }
+  }
+  nav.markdown-article-toc > ol > li.has-nested-toc-list > a[href^="#"],
+  nav.markdown-article-toc > ul > li.has-nested-toc-list > a[href^="#"],
+  nav.markdown-article-toc:not(.should-show-2-levels-at-most) li.has-nested-toc-list > a[href^="#"],
+  nav.markdown-article-toc > ol > li.has-nested-toc-list.is-expanded > a[href^="#"],
+  nav.markdown-article-toc > ul > li.has-nested-toc-list.is-expanded > a[href^="#"],
+  nav.markdown-article-toc:not(.should-show-2-levels-at-most) li.has-nested-toc-list.is-expanded > a[href^="#"] {
+    color: #ddd;
   }
 }
 .hljs-emphasis {

@@ -13,67 +13,171 @@
     {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
 
         & {
+            user-select: text;
             box-sizing: border-box;
-            width: TOCPanel_defaultWidth;
+            width: TOCPanel_width__default;
             max-width: 100%;
             height: 100%;
-            padding: 3em 0.5em 2em 0.5em;
+            padding: 3em 0.5em 1.5em 0.5em;
             overflow: auto;
 
             position: fixed;
             left: 0;
             top: 0;
             margin: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
             // scroll-behavior: smooth;
+        }
+
+
+
+        ol, ul {
+            counter-reset: wlc-article-toc;
+            margin: 0 0 2em;
+        }
+
+        > ol,
+        > ul {
+            font-size: 0.8em;
+            margin-bottom: 0;
+            box-sizing: border-box;
+            padding: 0.5em 0.5em 4.5em 0.5em;
+            height: 100%;
+            overflow: auto;
+
+            ol, ul {
+                padding: 0 0 0 0.5em;
+            }
+        }
+        
+        > ol,
+        > ul {
+
+            ol {
+                margin-left: -1em;
+            }
+
+            ol, ul {
+
+                ol {
+                    margin-left: -1.75em;
+                }
+
+                ol, ul {
+
+                    ol {
+                        margin-left: -2.5em;
+                    }
+                }
+            }
+        }
+
+        &.should-show-2-levels-at-most {
+
+            > ol,
+            > ul {
+
+                ol, ul {
+
+                    ol, ul {
+                        display: none;
+                    }
+                }
+            }
         }
 
 
 
         li {
             cursor: pointer;
-            margin: 0;
+            margin: 0.25em 0;
+            line-height: 1.5;
             padding-right: 0;
+            position: relative;
 
+            &::before,
             > a[href^="#"] {
                 display: block;
-                padding: 0.25em 0.5em 0.25em 2em;
+                padding-top: 0.25em;
+                padding-bottom: 0.25em;
                 border-width: 1px 0;
                 border-style: solid none;
-                margin: 0 0 0 -2em;
-                text-decoration-line: none;
                 transition-property: color, background-color, border-color;
                 transition-duration: 0.36s;
                 transition-timing-function: ease-out;
             }
-        }
 
-        > ul,
-        > ol {
-            font-size 0.8em
-
-            & {
-                box-sizing: border-box;
-                height: 100%;
-                padding: 0.5em 1.5em 4.5em 1.5em;
+            &::before {
+                position: absolute;
+                left: 0;
+                top: 0;
                 margin: 0;
-                overflow: auto;
-                // white-space: nowrap;
+                text-align: right;
+                border-color: transparent;
             }
 
-            ol, ul {
-                padding-right: 0;
+            > a[href^="#"] {
+                padding-right: 0.5em;
+                margin-right: 0;
+                margin-top: 0;
+                margin-bottom: 0;
+                text-decoration-line: none;
             }
         }
 
-        &.should-show-2-levels-at-most {
 
-            > ul,
-            > ol {
 
-                ol, ul {
+        // @counter-style counter-sytle__wlc-article-toc {
+        //     system: symbols;
+        //     symbols: counters(wlc-article-toc, '.', wlc-article-toc);
+        // }
 
-                    ol, ul {
-                        display: none;
+        MIXIN_DefineLiLeftSpaceWidth($LiLeftSpaceWidthForIndices = 4.75em) {
+            & {
+                padding-left: $LiLeftSpaceWidthForIndices;
+
+                &::before {
+                    width: $LiLeftSpaceWidthForIndices;
+                }
+
+                > a[href^="#"] {
+                    padding-left: ($LiLeftSpaceWidthForIndices + 1em);
+                    margin-left: (-1 * $LiLeftSpaceWidthForIndices);
+                }
+            }
+        }
+
+        ol > li {
+            counter-increment: wlc-article-toc;
+            // list-style-type: counter-sytle__wlc-article-toc;
+            list-style-type: none;
+            MIXIN_DefineLiLeftSpaceWidth();
+
+            &::before {
+                content: counters(wlc-article-toc, '.', wlc-article-toc);
+            }
+        }
+
+        > ol {
+
+            > li {
+                MIXIN_DefineLiLeftSpaceWidth(2em);
+
+                > ol,
+                > ul {
+
+                    > li {
+                        MIXIN_DefineLiLeftSpaceWidth(2.75em);
+
+                        > ol,
+                        > ul {
+
+                            > li {
+                                MIXIN_DefineLiLeftSpaceWidth(3.75em);
+                            }
+                        }
                     }
                 }
             }

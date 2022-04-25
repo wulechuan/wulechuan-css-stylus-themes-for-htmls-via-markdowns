@@ -7,8 +7,11 @@
 @media screen {
 
     {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
+        color: #999;
         background-color: #000;
         box-shadow: 0 0 0.3em rgba(black, 0.79);
+
+
 
         > ul,
         > ol {
@@ -16,21 +19,44 @@
             MIXIN_DefineFireFoxScrollBar(#ccc);
         }
 
-        &,
-        li > a[href^="#"] {
-            color: #888;
-            border-color: transparent;
+        li {
+
+            &::before {
+                color: #444;
+            }
+
+            > a[href^="#"] {
+                color: inherit;
+                border-color: transparent;
+            }
         }
+
 
 
         & > ol > li,
         & > ul > li,
         &:not(.should-show-2-levels-at-most) li {
 
-            &.has-nested-toc-list > a[href^="#"] {
-                color: #e3e3e3;
+            &.has-nested-toc-list {
+
+                &.is-expanded {
+
+                    > a[href^="#"] {
+                        color: #374;
+                    }
+                }
+
+                > a[href^="#"] {
+                    color: #6d8;
+
+                    &:hover {
+                        color: #6d8;
+                        background-color: #dfe1;
+                    }
+                }
             }
         }
+
 
 
         li > a[href^="#"] {
@@ -74,6 +100,22 @@
 
         @supports (-webkit-backdrop-filter: blur(20px)) {
             -webkit-backdrop-filter: blur(20px)
+        }
+
+        & > ol > li,
+        & > ul > li,
+        &:not(.should-show-2-levels-at-most) li {
+
+            &.has-nested-toc-list {
+
+                &,
+                &.is-expanded {
+
+                    > a[href^="#"] {
+                        color: #aaa;
+                    }
+                }
+            }
         }
     }
 }

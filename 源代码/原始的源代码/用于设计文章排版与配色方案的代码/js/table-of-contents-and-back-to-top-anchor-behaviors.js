@@ -2,7 +2,7 @@ window.shouldShowOnlyTwoLevelsOfTOCItemsAtMost = false
 window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan = 1
 window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
 
-;(function setupAndStartApp() {
+;(function setupAndStartApp () {
     const gitRepoURIs = [
         'https://gitee.com/nanchang-wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns.git',
         // 'https://code.aliyun.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns.git',
@@ -81,6 +81,7 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
     const cssClassNameTOCIsVisible               = 'markdown-article-toc-is-visible'
     const cssClassNameTOCItemHasNestedList       = 'has-nested-toc-list'
     const cssClassNameTOCItemIsCollapsed         = 'is-collapsed'
+    const cssClassNameTOCItemIsExpanded          = 'is-expanded'
     const cssClassNameTOCTogglingButton          = 'markdown-article-toc-toggling-button'
     const cssClassNameTOCShowsOnly2LevelsOfItems = 'should-show-2-levels-at-most'
 
@@ -143,10 +144,10 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
 
 
 
-    function buildTOCPanelTogglingButton() {
+    function buildTOCPanelTogglingButton () {
         /**
          * 我倾向于用 Javascript 来临时构建该按钮。
-         * 因为如果一共苛刻的环境仅允许读文档，而不允许
+         * 因为如果一个苛刻的环境仅允许读文档，而不允许
          * Javascript 程序运行，那咱们还要切换按钮干嘛？
          *
          * ---------------------------------------------
@@ -160,7 +161,7 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
         let tocTogglingButton = document.querySelector(`.${cssClassNameTOCTogglingButton}`)
 
         /**
-         * 万一按钮确实已j经存在呢？比如工具构建好了静态的按钮？那就不必再创建一个新的了。
+         * 万一按钮确实已经存在呢？比如工具构建好了静态的按钮？那就不必再创建一个新的了。
          * What if the button already exists? Then we simply don't create one more.
          */
         if (!tocTogglingButton) {
@@ -181,24 +182,24 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
         return tocTogglingButton
     }
 
-    function onTOCTogglingButtonClick() {
+    function onTOCTogglingButtonClick () {
         showOrHideTOCPanel(!tocIsVisible)
     }
 
-    function showOrHideTOCPanel(isToShowIt) {
+    function showOrHideTOCPanel (isToShowIt) {
         tocStatusCSSClassNamesCarrier.classList.toggle(cssClassNameTOCIsVisible, isToShowIt)
         tocIsVisible = isToShowIt
     }
 
-    function isTOCPanelFloatingOverArticle() {
+    function isTOCPanelFloatingOverArticle () {
         return window.innerWidth <= maxWindowWidthToEnableArticleClickingToHideTOC
     }
 
-    function isTOCPanelCoveringEntirePage() {
+    function isTOCPanelCoveringEntirePage () {
         return window.innerWidth <= maxWindowWidthWhenTOCPanelCoversEntirePage
     }
 
-    function onArticleClick() {
+    function onArticleClick () {
         if (!isTOCPanelFloatingOverArticle()) {
             return
         }
@@ -206,7 +207,7 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
         showOrHideTOCPanel(false)
     }
 
-    function onBackToTopLinkClick() {
+    function onBackToTopLinkClick () {
         if (!isTOCPanelCoveringEntirePage()) {
             return
         }
@@ -214,7 +215,7 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
         showOrHideTOCPanel(false)
     }
 
-    function markLevelIdForTOCAllItems(listRootParent, currentLevel) {
+    function markLevelIdForTOCAllItems (listRootParent, currentLevel) {
         const listRoot = listRootParent.querySelector('ol, ul')
         if (!listRoot) { return }
 
@@ -234,7 +235,7 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
         })
     }
 
-    function makeTOCItemsEachCollapsible() {
+    function makeTOCItemsEachCollapsible () {
         const lis = Array.prototype.slice.apply(tocRoot.querySelectorAll('li'))
         lis.forEach(li => {
             if (li.querySelectorAll('li').length > 0) {
@@ -258,14 +259,12 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
 
         Array.prototype.slice.apply(allCollapsibleLis).forEach(li => {
             li.isCollapsible = true
-
-            if (li.tocLevelId > window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan) {
-                li.classList.add(cssClassNameTOCItemIsCollapsed)
-            }
+            const liShouldExpand = li.tocLevelId <= window.atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan
+            collapseOrExpandSingleLiElement(li, liShouldExpand)
         })
     }
 
-    function tocItemAnchorClickHandler(e) {
+    function tocItemAnchorClickHandler (e) {
         e.stopPropagation()
 
         const { srcElement } = e
@@ -297,10 +296,27 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
         }
 
         if (TOCItemIsCollapsibleInCurrentSituation) {
-            if (liElement.classList.contains(cssClassNameTOCItemIsCollapsed) || forceToExpand) {
-                liElement.classList.remove(cssClassNameTOCItemIsCollapsed)
-            } else {
-                liElement.classList.add(cssClassNameTOCItemIsCollapsed)
+            const { classList } = liElement
+            const liShouldExpand = classList.contains(cssClassNameTOCItemIsCollapsed) || forceToExpand
+            collapseOrExpandSingleLiElement(liElement, liShouldExpand)
+        }
+    }
+
+    function collapseOrExpandSingleLiElement (liElement, shouldExpand) {
+        const { classList } = liElement
+        if (shouldExpand) {
+            if (!classList.contains(cssClassNameTOCItemIsExpanded)) {
+                classList.add(cssClassNameTOCItemIsExpanded)
+            }
+            if (classList.contains(cssClassNameTOCItemIsCollapsed)) {
+                classList.remove(cssClassNameTOCItemIsCollapsed)
+            }
+        } else {
+            if (!classList.contains(cssClassNameTOCItemIsCollapsed)) {
+                classList.add(cssClassNameTOCItemIsCollapsed)
+            }
+            if (classList.contains(cssClassNameTOCItemIsExpanded)) {
+                classList.remove(cssClassNameTOCItemIsExpanded)
             }
         }
     }

@@ -19,7 +19,7 @@
     {_selectorOf_article_rootParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
         MIXIN_forArticleParent_setMarginLeft(
             FontSize_WhenWindowWidthNoLessThan_2190px,
-            TOCPanel_defaultWidth,
+            TOCPanel_width__default,
         );
     }
 }
@@ -28,7 +28,7 @@
     {_selectorOf_article_rootParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
         MIXIN_forArticleParent_setMarginLeft(
             FontSize_WhenWindowWidthNoLessThan_2879px,
-            TOCPanel_defaultWidth,
+            TOCPanel_width__default,
         );
     }
 }
@@ -63,6 +63,22 @@
 
     {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
         width: TOCPanel_width_whenWindowWidthNoMoreThan_1000px;
+
+        > ol,
+        > ul {
+
+            ol, ul {
+                margin-left: -1.25em;
+
+                ol, ul {
+                    margin-left: -2em;
+
+                    ol, ul {
+                        margin-left: -2.75em;
+                    }
+                }
+            }
+        }
     }
 
     .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {

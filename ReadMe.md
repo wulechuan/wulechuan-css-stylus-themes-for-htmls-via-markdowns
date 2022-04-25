@@ -10,7 +10,7 @@
 
 ## Multilingual Editions of this Article
 
-- [English version of this ReadMe](./文档/说明书/en-US/ReadMe.md)
+- [English version of this ReadMe](./文档集集/说明书/en-US/ReadMe.md)
 
 
 
@@ -39,15 +39,15 @@
 
 
 
-## 文档章节
+## 文档集章节
 
 > 以下章节均存在于单独的文件中，并非本文章之部分。
 
-- 《[本工具之简介](./文档/说明书/汉语/本工具之简介.md)》
-- 《[关于文章排版与配色效果示例集的说明（含最终视觉效果）](./文档/说明书/汉语/关于文章排版与配色效果示例集的说明.md)》
-- 《[本工具构建层叠样式表时所采用之内在规则之介绍](./文档/说明书/汉语/本工具构建层叠样式表时所采用之内在规则之介绍.md)》
-- 《[业已支持的应用场景](./文档/说明书/汉语/业已支持的应用场景.md)》
-- 《[采用本工具开发一套新的文章排版与配色方案之详细步骤](./文档/说明书/汉语/采用本工具开发一套新的文章排版与配色方案之详细步骤.md)》
+- 《[本工具之简介](./文档集/说明书/汉语/本工具之简介.md)》
+- 《[关于文章排版与配色效果示例集的说明（含最终视觉效果）](./文档集/说明书/汉语/关于文章排版与配色效果示例集的说明.md)》
+- 《[本工具构建层叠样式表时所采用之内在规则之介绍](./文档集/说明书/汉语/本工具构建层叠样式表时所采用之内在规则之介绍.md)》
+- 《[业已支持的应用场景](./文档集/说明书/汉语/业已支持的应用场景.md)》
+- 《[采用本工具开发一套新的文章排版与配色方案之详细步骤](./文档集/说明书/汉语/采用本工具开发一套新的文章排版与配色方案之详细步骤.md)》
 
 
 
@@ -60,24 +60,24 @@
 
 ### 应用默认浅色主题的范文截图
 
-- [示例：简体中文范文配默认浅色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./文档/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/示例：简体中文范文配默认浅色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
-- [Snapshot: In default light-colored theme, in a wide window, with toc collapsed](./文档/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
+- [示例：简体中文范文配默认浅色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/示例：简体中文范文配默认浅色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
+- [Snapshot: In default light-colored theme, in a wide window, with toc collapsed](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
 
 
 ### 应用默认深色主题的范文截图
 
-- [示例：简体中文范文配默认深色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./文档/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/示例：简体中文范文配默认深色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
-- [Snapshot: In default dark-colored theme, in a wide window, with toc collapsed](./文档/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/example_en-US_default-dark-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
+- [示例：简体中文范文配默认深色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/示例：简体中文范文配默认深色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
+- [Snapshot: In default dark-colored theme, in a wide window, with toc collapsed](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/example_en-US_default-dark-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
 
 
 ### 范文的所有截图
 
 两篇范文之截图不止于上文中提及的四幅。更多图例，见：
 
-- 《[应用效果示例（汉语版）](./文档/说明书/汉语/关于文章排版与配色效果示例集的说明.md)》
-- 《[Application Examples (en-US)](./文档/说明书/en-US/application-examples.md)》
+- 《[应用效果示例（汉语版）](./文档集/说明书/汉语/关于文章排版与配色效果示例集的说明.md)》
+- 《[Application Examples (en-US)](./文档集/说明书/en-US/application-examples.md)》
 
-另附《[示范文章之截图之制作指南](./文档/说明书/汉语/示范文章之截图之制作指南.md)》
+另附《[示范文章之截图之制作指南](./文档集/说明书/汉语/示范文章之截图之制作指南.md)》
 
 
 

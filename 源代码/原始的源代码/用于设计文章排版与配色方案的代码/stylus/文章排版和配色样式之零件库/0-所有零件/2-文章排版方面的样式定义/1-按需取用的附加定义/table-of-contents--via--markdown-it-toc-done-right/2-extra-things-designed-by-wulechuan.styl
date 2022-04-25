@@ -11,7 +11,7 @@
 @media screen {
 
     {_selectorOf_article_rootParent}.markdown-article-toc-exists.markdown-article-toc-is-visible {
-        MIXIN_forArticleParent_setMarginLeft(FontSize_Default, TOCPanel_defaultWidth);
+        MIXIN_forArticleParent_setMarginLeft(FontSize_Default, TOCPanel_width__default);
     }
 
     {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
@@ -19,12 +19,13 @@
     }
 
     .markdown-article-toc-is-visible {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
-        display: block;
+        display: flex;
     }
 
 
 
     .markdown-article-toc-toggling-button {
+        user-select: none;
         box-sizing: content-box;
         display: block;
         border: 1px solid transparent;
@@ -51,7 +52,7 @@
     }
 
     .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
-        left: (TOCPanel_defaultWidth / 2);
+        left: (TOCPanel_width__default / 2);
         transform: translateX(-50%);
         border-top-left-radius: 219px;
         border-bottom-left-radius: 219px;

@@ -29,7 +29,7 @@ import {
 const { join: 遵循POSIX标准拼接路径 } = 路径工具.posix
 
 
-const exampleSourceMarkdonwFilesFolderPath  = './文档/文章排版与配色效果示例集/原始的-markdown-格式的文章'
+const exampleSourceMarkdonwFilesFolderPath  = './文档集/文章排版与配色效果示例集/原始的-markdown-格式的文章'
 const exampleSourceMarkdownFileNameEnUS     = 'theming-example-article.en-US.md'
 const exampleSourceMarkdownFileNameZhHansCN = 'theming-example-article.zh-hans-CN.md'
 
