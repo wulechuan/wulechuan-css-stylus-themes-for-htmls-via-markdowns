@@ -1148,17 +1148,21 @@ hr::before {
 @media print {
   a:visited,
   a {
-    text-decoration-line: underline;
+    text-decoration-line: underline !important;
   }
   a[href]::after {
-    content: ' (' attr(href) ')';
+    content: ' (' attr(href) ')' !important;
   }
   abbr[title]::after {
-    content: ' (' attr(title) ')';
+    content: ' (' attr(title) ')' !important;
   }
   a[href^='#']::after,
   a[href^='javascript:']::after {
-    content: '';
+    content: '' !important;
+  }
+  b,
+  strong {
+    font-weight: bold !important;
   }
   pre,
   blockquote {

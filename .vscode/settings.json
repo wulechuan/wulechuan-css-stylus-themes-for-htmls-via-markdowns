@@ -7,6 +7,7 @@
     "search.exclude": {
         "**/node_modules": true,
         "**/bower_components": true,
-        "源代码/发布的源代码/文章排版与配色方案集": true
+        "源代码/发布的源代码/文章排版与配色方案集": true,
+        "文档集/**/*.html": true,
     }
 }

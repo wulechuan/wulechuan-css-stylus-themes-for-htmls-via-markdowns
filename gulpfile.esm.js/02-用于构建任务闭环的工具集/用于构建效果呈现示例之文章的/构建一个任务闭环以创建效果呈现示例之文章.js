@@ -168,6 +168,10 @@ export default function 构建一个任务闭环以将一Markdown文件转换成
                 {
                     须在控制台打印详尽细节: false,
 
+                    将Markdown转换为HTML之阶段: {
+                        文章纲要列表应采用UL标签而非OL标签: false,
+                    },
+
                     对HTML做进一步处理之阶段: {
                         不应采用任何由本工具内建之层叠样式表,
                         凡内容须注入产出之HTML中之所有外来文件: {
@@ -197,6 +201,10 @@ export default function 构建一个任务闭环以将一Markdown文件转换成
 
                 {
                     须在控制台打印详尽细节: false,
+
+                    将Markdown转换为HTML之阶段: {
+                        文章纲要列表应采用UL标签而非OL标签: true,
+                    },
 
                     对HTML做进一步处理之阶段: {
                         不应采用任何由本工具内建之层叠样式表,

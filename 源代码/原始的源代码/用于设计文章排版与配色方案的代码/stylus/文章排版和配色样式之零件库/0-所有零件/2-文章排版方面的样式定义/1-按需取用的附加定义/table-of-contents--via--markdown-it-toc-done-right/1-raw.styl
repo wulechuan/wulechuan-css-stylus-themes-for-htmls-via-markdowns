@@ -47,30 +47,12 @@
             height: 100%;
             overflow: auto;
 
-            ol, ul {
+            ol {
                 padding: 0 0 0 0.5em;
             }
-        }
-        
-        > ol,
-        > ul {
 
-            ol {
-                margin-left: -1em;
-            }
-
-            ol, ul {
-
-                ol {
-                    margin-left: -1.75em;
-                }
-
-                ol, ul {
-
-                    ol {
-                        margin-left: -2.5em;
-                    }
-                }
+            ul {
+                padding: 0 0 0 2em;
             }
         }
 
@@ -79,10 +61,17 @@
             > ol,
             > ul {
 
-                ol, ul {
+                > li {
 
-                    ol, ul {
-                        display: none;
+                    > ol,
+                    > ul {
+
+                        > li {
+
+                            ol, ul {
+                                display: none;
+                            }
+                        }
                     }
                 }
             }
@@ -161,21 +150,47 @@
         }
 
         > ol {
+            margin-left: 0;
 
             > li {
                 MIXIN_DefineLiLeftSpaceWidth(2em);
+            }
+        }
+
+        > ol,
+        > ul {
+
+            > li {
+
+                > ol {
+                    margin-left: -1em;
+
+                    > li {
+                        MIXIN_DefineLiLeftSpaceWidth(2.75em);
+                    }
+                }
 
                 > ol,
                 > ul {
 
                     > li {
-                        MIXIN_DefineLiLeftSpaceWidth(2.75em);
+
+                        > ol {
+                            margin-left: -1.75em;
+
+                            > li {
+                                MIXIN_DefineLiLeftSpaceWidth(3.75em);
+                            }
+                        }
 
                         > ol,
                         > ul {
 
                             > li {
-                                MIXIN_DefineLiLeftSpaceWidth(3.75em);
+
+                                > ol {
+                                    margin-left: -2.5em;
+                                }
                             }
                         }
                     }

@@ -870,39 +870,21 @@ nav.markdown-article-toc {
     overflow: auto;
   }
   nav.markdown-article-toc > ol ol,
-  nav.markdown-article-toc > ul ol,
-  nav.markdown-article-toc > ol ul,
-  nav.markdown-article-toc > ul ul {
+  nav.markdown-article-toc > ul ol {
     padding: 0 0 0 0.5em;
   }
-  nav.markdown-article-toc > ol ol,
-  nav.markdown-article-toc > ul ol {
-    margin-left: -1em;
+  nav.markdown-article-toc > ol ul,
+  nav.markdown-article-toc > ul ul {
+    padding: 0 0 0 2em;
   }
-  nav.markdown-article-toc > ol ol ol,
-  nav.markdown-article-toc > ul ol ol,
-  nav.markdown-article-toc > ol ul ol,
-  nav.markdown-article-toc > ul ul ol {
-    margin-left: -1.75em;
-  }
-  nav.markdown-article-toc > ol ol ol ol,
-  nav.markdown-article-toc > ul ol ol ol,
-  nav.markdown-article-toc > ol ul ol ol,
-  nav.markdown-article-toc > ul ul ol ol,
-  nav.markdown-article-toc > ol ol ul ol,
-  nav.markdown-article-toc > ul ol ul ol,
-  nav.markdown-article-toc > ol ul ul ol,
-  nav.markdown-article-toc > ul ul ul ol {
-    margin-left: -2.5em;
-  }
-  nav.markdown-article-toc.should-show-2-levels-at-most > ol ol ol,
-  nav.markdown-article-toc.should-show-2-levels-at-most > ul ol ol,
-  nav.markdown-article-toc.should-show-2-levels-at-most > ol ul ol,
-  nav.markdown-article-toc.should-show-2-levels-at-most > ul ul ol,
-  nav.markdown-article-toc.should-show-2-levels-at-most > ol ol ul,
-  nav.markdown-article-toc.should-show-2-levels-at-most > ul ol ul,
-  nav.markdown-article-toc.should-show-2-levels-at-most > ol ul ul,
-  nav.markdown-article-toc.should-show-2-levels-at-most > ul ul ul {
+  nav.markdown-article-toc.should-show-2-levels-at-most > ol > li > ol > li ol,
+  nav.markdown-article-toc.should-show-2-levels-at-most > ul > li > ol > li ol,
+  nav.markdown-article-toc.should-show-2-levels-at-most > ol > li > ul > li ol,
+  nav.markdown-article-toc.should-show-2-levels-at-most > ul > li > ul > li ol,
+  nav.markdown-article-toc.should-show-2-levels-at-most > ol > li > ol > li ul,
+  nav.markdown-article-toc.should-show-2-levels-at-most > ul > li > ol > li ul,
+  nav.markdown-article-toc.should-show-2-levels-at-most > ol > li > ul > li ul,
+  nav.markdown-article-toc.should-show-2-levels-at-most > ul > li > ul > li ul {
     display: none;
   }
   nav.markdown-article-toc li {
@@ -955,6 +937,9 @@ nav.markdown-article-toc {
   nav.markdown-article-toc ol > li::before {
     content: counters(wlc-article-toc, '.', wlc-article-toc);
   }
+  nav.markdown-article-toc > ol {
+    margin-left: 0;
+  }
   nav.markdown-article-toc > ol > li {
     padding-left: 2em;
   }
@@ -965,37 +950,57 @@ nav.markdown-article-toc {
     padding-left: 3em;
     margin-left: -2em;
   }
+  nav.markdown-article-toc > ol > li > ol,
+  nav.markdown-article-toc > ul > li > ol {
+    margin-left: -1em;
+  }
   nav.markdown-article-toc > ol > li > ol > li,
-  nav.markdown-article-toc > ol > li > ul > li {
+  nav.markdown-article-toc > ul > li > ol > li {
     padding-left: 2.75em;
   }
   nav.markdown-article-toc > ol > li > ol > li::before,
-  nav.markdown-article-toc > ol > li > ul > li::before {
+  nav.markdown-article-toc > ul > li > ol > li::before {
     width: 2.75em;
   }
   nav.markdown-article-toc > ol > li > ol > li > a[href^="#"],
-  nav.markdown-article-toc > ol > li > ul > li > a[href^="#"] {
+  nav.markdown-article-toc > ul > li > ol > li > a[href^="#"] {
     padding-left: 3.75em;
     margin-left: -2.75em;
   }
+  nav.markdown-article-toc > ol > li > ol > li > ol,
+  nav.markdown-article-toc > ul > li > ol > li > ol,
+  nav.markdown-article-toc > ol > li > ul > li > ol,
+  nav.markdown-article-toc > ul > li > ul > li > ol {
+    margin-left: -1.75em;
+  }
   nav.markdown-article-toc > ol > li > ol > li > ol > li,
+  nav.markdown-article-toc > ul > li > ol > li > ol > li,
   nav.markdown-article-toc > ol > li > ul > li > ol > li,
-  nav.markdown-article-toc > ol > li > ol > li > ul > li,
-  nav.markdown-article-toc > ol > li > ul > li > ul > li {
+  nav.markdown-article-toc > ul > li > ul > li > ol > li {
     padding-left: 3.75em;
   }
   nav.markdown-article-toc > ol > li > ol > li > ol > li::before,
+  nav.markdown-article-toc > ul > li > ol > li > ol > li::before,
   nav.markdown-article-toc > ol > li > ul > li > ol > li::before,
-  nav.markdown-article-toc > ol > li > ol > li > ul > li::before,
-  nav.markdown-article-toc > ol > li > ul > li > ul > li::before {
+  nav.markdown-article-toc > ul > li > ul > li > ol > li::before {
     width: 3.75em;
   }
   nav.markdown-article-toc > ol > li > ol > li > ol > li > a[href^="#"],
+  nav.markdown-article-toc > ul > li > ol > li > ol > li > a[href^="#"],
   nav.markdown-article-toc > ol > li > ul > li > ol > li > a[href^="#"],
-  nav.markdown-article-toc > ol > li > ol > li > ul > li > a[href^="#"],
-  nav.markdown-article-toc > ol > li > ul > li > ul > li > a[href^="#"] {
+  nav.markdown-article-toc > ul > li > ul > li > ol > li > a[href^="#"] {
     padding-left: 4.75em;
     margin-left: -3.75em;
+  }
+  nav.markdown-article-toc > ol > li > ol > li > ol > li > ol,
+  nav.markdown-article-toc > ul > li > ol > li > ol > li > ol,
+  nav.markdown-article-toc > ol > li > ul > li > ol > li > ol,
+  nav.markdown-article-toc > ul > li > ul > li > ol > li > ol,
+  nav.markdown-article-toc > ol > li > ol > li > ul > li > ol,
+  nav.markdown-article-toc > ul > li > ol > li > ul > li > ol,
+  nav.markdown-article-toc > ol > li > ul > li > ul > li > ol,
+  nav.markdown-article-toc > ul > li > ul > li > ul > li > ol {
+    margin-left: -2.5em;
   }
 }
 .markdown-article-toc-toggling-button {
@@ -1074,8 +1079,8 @@ nav.markdown-article-toc {
   }
 }
 @media screen and (min-width: 1001px) {
-  nav.markdown-article-toc li.is-collapsed > li,
-  nav.markdown-article-toc li.is-collapsed > ol {
+  nav.markdown-article-toc li.is-collapsed > ol,
+  nav.markdown-article-toc li.is-collapsed > ul {
     display: none;
   }
 }
@@ -2343,17 +2348,21 @@ pre,
 @media print {
   a:visited,
   a {
-    text-decoration-line: underline;
+    text-decoration-line: underline !important;
   }
   a[href]::after {
-    content: ' (' attr(href) ')';
+    content: ' (' attr(href) ')' !important;
   }
   abbr[title]::after {
-    content: ' (' attr(title) ')';
+    content: ' (' attr(title) ')' !important;
   }
   a[href^='#']::after,
   a[href^='javascript:']::after {
-    content: '';
+    content: '' !important;
+  }
+  b,
+  strong {
+    font-weight: bold !important;
   }
   pre,
   blockquote {

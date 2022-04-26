@@ -274,7 +274,7 @@ CSS Object Model 是一组允许用 JavaScript 操纵 CSS 的 API。 它是继 D
 
 ### JavaScript 代码片段
 
-#### 列表项中的代码片段1
+#### 列表项中的代码片段
 
 -   先定义一个函数：
 
