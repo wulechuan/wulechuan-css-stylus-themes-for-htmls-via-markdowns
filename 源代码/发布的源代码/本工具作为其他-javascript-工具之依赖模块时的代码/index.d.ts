@@ -1,8 +1,8 @@
-declare const 默认导出之内容: 默认导出之内容.本模块之总接口;
-export = 默认导出之内容;
+declare const _本工具默认导出之内容_临时名称: _本工具默认导出之内容_临时名称.范_本模块之总接口;
+export = _本工具默认导出之内容_临时名称;
 
-declare namespace 默认导出之内容 {
-    export type 类型定义之内建之层叠样式表文件之名称之凡不含文章目录者 = (
+declare namespace _本工具默认导出之内容_临时名称 {
+    export type 范_内建之层叠样式表文件之名称之凡不含文章目录者 = (
         | 'wulechuan-styles-for-html-via-markdown--typora.default.css'
         | 'wulechuan-styles-for-html-via-markdown--vscode.default.min.css'
 
@@ -20,7 +20,7 @@ declare namespace 默认导出之内容 {
         | 'wulechuan-styles-for-html-via-markdown.generic-default-light--atom-one-dark--wrapped--no-toc.min.css'
     )
 
-    export type 类型定义之内建之层叠样式表文件之名称之凡含有文章目录者 = (
+    export type 范_内建之层叠样式表文件之名称之凡含有文章目录者 = (
         | 'wulechuan-styles-for-html-via-markdown--firefox-addon.default.css'
 
         | 'wulechuan-styles-for-html-via-markdown.default--with-toc.css'
@@ -37,33 +37,33 @@ declare namespace 默认导出之内容 {
         | 'wulechuan-styles-for-html-via-markdown.generic-default-light--atom-one-dark--wrapped--with-toc.min.css'
     )
 
-    export type 类型定义之内建之层叠样式表文件之名称 = (
-        | 类型定义之内建之层叠样式表文件之名称之凡不含文章目录者
-        | 类型定义之内建之层叠样式表文件之名称之凡含有文章目录者
+    export type 范_内建之层叠样式表文件之名称 = (
+        | 范_内建之层叠样式表文件之名称之凡不含文章目录者
+        | 范_内建之层叠样式表文件之名称之凡含有文章目录者
     );
 
-    export type 类型定义之文件简易描述项 = {
-        文件名称: 类型定义之内建之层叠样式表文件之名称;
+    export type 范_文件简易描述项 = {
+        文件名称: 范_内建之层叠样式表文件之名称;
         文件之相对路径: string;
         文件之绝对路径: string;
         文件内容全文: string;
     } & {
         // 以下为陈旧的采用外国字命名之诸接口。
 
-        fileName: 类型定义之内建之层叠样式表文件之名称;
+        fileName: 范_内建之层叠样式表文件之名称;
         fileRelativePath: string;
         fileAbsolutePath: string;
         fileContent: string;
     };
 
-    // export type 类型定义之文件简易描述项字典 = {
-    //     [文件名称: string]: 类型定义之文件简易描述项;
+    // export type 范_文件简易描述项字典 = {
+    //     [文件名称: string]: 范_文件简易描述项;
     // };
-    export type 类型定义之文件简易描述项字典 = Record<
-        类型定义之内建之层叠样式表文件之名称, 类型定义之文件简易描述项
+    export type 范_文件简易描述项字典 = Record<
+        范_内建之层叠样式表文件之名称, 范_文件简易描述项
     >;
 
-    export type 类型定义之定制默认Javascript文件之选项集 = {
+    export type 范_定制默认Javascript文件之选项集 = {
         /**
          * 注意：
          * 【展开文章纲要列表面板】与【展开文章纲要列表的某一条目】不是一回事。
@@ -84,46 +84,46 @@ declare namespace 默认导出之内容 {
 
 
 
-    export type 类型定义之获取某特定文件之完整内容字符串之函数 = (
-        文件描述项或文件名称: 类型定义之文件简易描述项 | 类型定义之文件简易描述项['文件名称'],
+    export type 范_获取某特定文件之完整内容字符串之函数 = (
+        文件描述项或文件名称: 范_文件简易描述项 | 范_文件简易描述项['文件名称'],
         不应采用已经缓存的旧内容?: boolean,
 
         // 实际上目前仅包含针对 JavaScript 内容定制之选项。对层叠样式表之内容无任何作用。
-        配置项集?: 类型定义之定制默认Javascript文件之选项集
+        配置项集?: 范_定制默认Javascript文件之选项集
     ) => string;
 
-    export type 类型定义之获取所谓默认层叠样式表文件之完整内容字符串之函数 = (
+    export type 范_获取所谓默认层叠样式表文件之完整内容字符串之函数 = (
         不应采用已经缓存的旧内容?: boolean
     ) => string;
 
-    export type 类型定义之获取所谓默认Javacript文件之完整内容字符串之函数 = (
+    export type 范_获取所谓默认Javacript文件之完整内容字符串之函数 = (
         不应采用已经缓存的旧内容?: boolean,
-        本函数之配置项集?: 类型定义之定制默认Javascript文件之选项集
+        本函数之配置项集?: 范_定制默认Javascript文件之选项集
     ) => string;
 
 
 
 
 
-    export type 本模块之总接口 = {
-        所有层叠样式表文件之简易描述项之集: Array<类型定义之文件简易描述项>;
-        所有Javascript文件之简易描述项之集: Array<类型定义之文件简易描述项>;
+    export type 范_本模块之总接口 = {
+        所有层叠样式表文件之简易描述项之集: Array<范_文件简易描述项>;
+        所有Javascript文件之简易描述项之集: Array<范_文件简易描述项>;
 
-        以文件名称为索引之所有文件简易描述项之字典: 类型定义之文件简易描述项字典;
+        以文件名称为索引之所有文件简易描述项之字典: 范_文件简易描述项字典;
 
-        获取某一已发布之文件之完整内容字符串: 类型定义之获取某特定文件之完整内容字符串之函数;
-        获取本项目官方选定之所谓默认层叠样式表之完整内容字符串: 类型定义之获取所谓默认层叠样式表文件之完整内容字符串之函数;
-        获取本项目官方选定之所谓默认Javascript之完整内容字符串: 类型定义之获取所谓默认Javacript文件之完整内容字符串之函数;
+        获取某一已发布之文件之完整内容字符串: 范_获取某特定文件之完整内容字符串之函数;
+        获取本项目官方选定之所谓默认层叠样式表之完整内容字符串: 范_获取所谓默认层叠样式表文件之完整内容字符串之函数;
+        获取本项目官方选定之所谓默认Javascript之完整内容字符串: 范_获取所谓默认Javacript文件之完整内容字符串之函数;
     } & {
         // 以下为陈旧的采用外国字命名之诸接口。
 
-        cssFileEntries: Array<类型定义之文件简易描述项>;
-        jsFileEntries: Array<类型定义之文件简易描述项>;
+        cssFileEntries: Array<范_文件简易描述项>;
+        jsFileEntries: Array<范_文件简易描述项>;
 
-        allFileEntriesKeyingByFileNames: 类型定义之文件简易描述项字典;
+        allFileEntriesKeyingByFileNames: 范_文件简易描述项字典;
 
-        syncGetContentStringOfOneFileEntry: 类型定义之获取某特定文件之完整内容字符串之函数;
-        syncGetContentStringOfDefaultCSS: 类型定义之获取所谓默认层叠样式表文件之完整内容字符串之函数;
-        syncGetContentStringOfDefaultTOCJavascript: 类型定义之获取所谓默认Javacript文件之完整内容字符串之函数;
+        syncGetContentStringOfOneFileEntry: 范_获取某特定文件之完整内容字符串之函数;
+        syncGetContentStringOfDefaultCSS: 范_获取所谓默认层叠样式表文件之完整内容字符串之函数;
+        syncGetContentStringOfDefaultTOCJavascript: 范_获取所谓默认Javacript文件之完整内容字符串之函数;
     };
 }
