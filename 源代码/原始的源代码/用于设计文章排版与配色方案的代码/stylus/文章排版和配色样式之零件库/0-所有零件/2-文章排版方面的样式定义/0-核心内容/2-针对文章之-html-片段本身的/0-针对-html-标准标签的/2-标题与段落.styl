@@ -1,6 +1,6 @@
 {__wrappingSelectorOf_markdownArticleLayoutRoot} {
 
-    h1, h2, h3, h4, h5, h6, dt, p {
+    h1, h2, h3, h4, h5, h6, dt {
         text-align: justify
         margin-left: -0.5em;
         margin-right: -0.5em;
@@ -9,19 +9,45 @@
     }
 
     h1 {
-        font-size: 2.3em;
+        font-size: 2.75em;
         line-height: 1.33;
 
         padding-top:    0.5em;
         padding-bottom: 0.5em;
 
-        margin-top:     2em;
+        margin-top:     3em;
         margin-bottom:  1em;
+
+        small {
+            font-size: (0.667em);
+        }
     }
 
     h2 {
-        font-size: 1.8em;
+        font-size: 2.2em;
         line-height: 1.33;
+
+        padding-top:    0.5em;
+        padding-bottom: 0.5em;
+
+        margin-top:    4em;
+        margin-bottom: 1em;
+    }
+
+    h3 {
+        font-size: 1.75em;
+        line-height: 1.5;
+
+        padding-top:    0.5em;
+        padding-bottom: 0.5em;
+
+        margin-top:    3.5em;
+        margin-bottom: 1em;
+    }
+
+    h4 {
+        font-size: 1.33em;
+        line-height: 1.5;
 
         padding-top:    0.5em;
         padding-bottom: 0.5em;
@@ -30,41 +56,19 @@
         margin-bottom: 1em;
     }
 
-    h3 {
-        font-size: 1.4em;
-        line-height: 1.5;
-
-        padding-top:    0.5em;
-        padding-bottom: 0.5em;
-
-        margin-top:    2.5em;
-        margin-bottom: 1em;
-    }
-
-    h4 {
+    h5 {
         font-size: 1.2em;
         line-height: 1.5;
 
         padding-top:    0.5em;
         padding-bottom: 0.5em;
 
-        margin-top:    2em;
-        margin-bottom: 1em;
-    }
-
-    h5 {
-        font-size: 1.1em;
-        line-height: 1.5;
-
-        padding-top:    0.5em;
-        padding-bottom: 0.5em;
-
-        margin-top:    1.5em;
+        margin-top:    3em;
         margin-bottom: 0.75em;
     }
 
     h6, dt {
-        font-size: 1em;
+        font-size: 1.1em;
         line-height: 1.5;
 
         padding-top:    0.5em;
@@ -83,7 +87,7 @@
 
     {languageSelectors('zh', 'hans', 'CN')} {
         h1, h2 {
-            letter-spacing: 0.2em;
+            letter-spacing: 0.15em;
         }
     }
 
@@ -171,11 +175,16 @@
 
 
     p {
-        padding-top:    0.25em;
-        padding-bottom: 0.25em;
-
+        text-align: justify
         line-height: 1.8;
 
+        padding-top:    0.25em;
+        padding-bottom: 0.25em;
+        padding-left:   0.5em;
+        padding-right:  0.5em;
+
+        margin-left:   1em;
+        margin-right:  1em;
         margin-top:    1em;
         margin-bottom: 1em;
     }
@@ -183,15 +192,21 @@
     blockquote {
 
         > p {
+            margin-left:   0.5em;
+            margin-right:  0.5em;
             margin-top:    0.5em;
             margin-bottom: 0.5em;
         }
     }
 
+    li > p {
+        margin-left 0;
+    }
+
     h1, h2, h3, h4, h5, h6 {
 
         + p {
-            margin-top:    0.5em;
+            margin-top: 0em;
         }
     }
 

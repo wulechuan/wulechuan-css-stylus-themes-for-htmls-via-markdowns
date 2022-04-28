@@ -84,15 +84,25 @@ body {
 }
 .markdown-article a {
   font-size: inherit;
-  text-decoration-line: underline;
-  text-underline-offset: 0.15em;
   text-shadow: inherit;
 }
 .markdown-article a:not([href]) {
   font-style: italic;
 }
-.markdown-article a[href^="#"]:visited,
-.markdown-article a[href^="#"] {
+.markdown-article s > a[href] {
+  color: inherit;
+  text-decoration-line: inherit;
+  text-decoration-style: inherit;
+  text-decoration-color: inherit;
+  text-decoration-thickness: inherit;
+}
+.markdown-article a[href],
+.markdown-article s > a[href]:hover {
+  text-decoration-line: underline;
+  text-underline-offset: 0.15em;
+}
+.markdown-article a[href^="#"],
+.markdown-article s > a[href^="#"]:hover {
   text-decoration-style: dotted;
 }
 .markdown-article a[href]:hover {
@@ -104,8 +114,7 @@ body {
 .markdown-article h4,
 .markdown-article h5,
 .markdown-article h6,
-.markdown-article dt,
-.markdown-article p {
+.markdown-article dt {
   text-align: justify;
   margin-left: -0.5em;
   margin-right: -0.5em;
@@ -113,48 +122,51 @@ body {
   padding-right: 0.5em;
 }
 .markdown-article h1 {
-  font-size: 2.3em;
-  line-height: 1.33;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 2em;
-  margin-bottom: 1em;
-}
-.markdown-article h2 {
-  font-size: 1.8em;
+  font-size: 2.75em;
   line-height: 1.33;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-top: 3em;
   margin-bottom: 1em;
 }
+.markdown-article h1 small {
+  font-size: 0.667em;
+}
+.markdown-article h2 {
+  font-size: 2.2em;
+  line-height: 1.33;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 4em;
+  margin-bottom: 1em;
+}
 .markdown-article h3 {
-  font-size: 1.4em;
+  font-size: 1.75em;
   line-height: 1.5;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  margin-top: 2.5em;
+  margin-top: 3.5em;
   margin-bottom: 1em;
 }
 .markdown-article h4 {
+  font-size: 1.33em;
+  line-height: 1.5;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+.markdown-article h5 {
   font-size: 1.2em;
   line-height: 1.5;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  margin-top: 2em;
-  margin-bottom: 1em;
-}
-.markdown-article h5 {
-  font-size: 1.1em;
-  line-height: 1.5;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 1.5em;
+  margin-top: 3em;
   margin-bottom: 0.75em;
 }
 .markdown-article h6,
 .markdown-article dt {
-  font-size: 1em;
+  font-size: 1.1em;
   line-height: 1.5;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -184,7 +196,7 @@ body {
 .markdown-article [lang*="zh-"] h2,
 .markdown-article [lang*="-hans"] h2,
 .markdown-article [lang*="-CN"] h2 {
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
 }
 .markdown-article h5 + h6,
 .markdown-article h4 + h5,
@@ -230,15 +242,25 @@ body {
   margin-bottom: 1.25em;
 }
 .markdown-article p {
+  text-align: justify;
+  line-height: 1.8;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
-  line-height: 1.8;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-left: 1em;
+  margin-right: 1em;
   margin-top: 1em;
   margin-bottom: 1em;
 }
 .markdown-article blockquote > p {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+}
+.markdown-article li > p {
+  margin-left: 0;
 }
 .markdown-article h1 + p,
 .markdown-article h2 + p,
@@ -246,7 +268,7 @@ body {
 .markdown-article h4 + p,
 .markdown-article h5 + p,
 .markdown-article h6 + p {
-  margin-top: 0.5em;
+  margin-top: 0em;
 }
 .markdown-article center,
 .markdown-article center > * {
@@ -375,12 +397,15 @@ body {
 }
 .markdown-article blockquote {
   box-sizing: border-box;
-  max-width: calc(100% - 4em);
   display: inline-block;
   vertical-align: top;
   border-style: solid;
-  padding: 1px 1.5em 1px 1.3em;
-  margin: 0 1em 1.5em 3em;
+  padding: 1px 1.25em 1px 1.15em;
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  margin-left: 3em;
+  margin-right: 1em;
+  max-width: calc(100% - 4em);
 }
 .markdown-article details {
   margin: 0.5em 1em 1.5em;
@@ -416,10 +441,18 @@ body {
   font-style: normal;
   border-style: solid;
 }
+.markdown-article kbd {
+  margin: -0.15em 0.2em;
+  padding: 0.15em 0.3em;
+  position: relative;
+  top: -0.15em;
+}
 .markdown-article code {
   font-size: inherit;
   word-break: break-all;
   white-space: pre-wrap;
+  margin: 0.1em;
+  padding: 0.1em 0.2em;
 }
 .markdown-article [lang*="zh-" i] code,
 .markdown-article [lang*="-hans" i] code,
@@ -429,9 +462,13 @@ body {
 .markdown-article [lang*="-CN"] code {
   padding-left: 0.4em;
 }
-.markdown-article a > code {
+.markdown-article a > code,
+.markdown-article s > code {
+  color: inherit;
   text-decoration-line: inherit;
   text-decoration-style: inherit;
+  text-decoration-color: inherit;
+  text-decoration-thickness: inherit;
   margin-left: 0;
   margin-right: 0;
 }
@@ -463,7 +500,7 @@ body {
   display: block;
   box-sizing: border-box;
   padding: 0.5em;
-  margin: 0.5em 1em 2em;
+  margin: 0.5em 2em 2em;
 }
 .markdown-article td > pre,
 .markdown-article li > pre {
@@ -514,7 +551,7 @@ body {
   text-align: justify;
 }
 .markdown-article li {
-  margin: 0.5em 0;
+  margin: 1em 0;
   padding: 0 0.5em;
 }
 .markdown-article dt {
@@ -626,9 +663,15 @@ body {
     padding-left: 1.8em;
     padding-right: 0;
   }
+  .markdown-article p {
+    margin-left: 0;
+    margin-right: 0;
+  }
   .markdown-article blockquote {
     margin-left: 0;
     margin-right: 0;
+    padding-left: 1em;
+    padding-right: 1em;
     max-width: 100%;
   }
   .markdown-article details {
@@ -699,9 +742,11 @@ body {
 .markdown-article [lang*="-CN"] .centered {
   text-indent: 0;
 }
-.markdown-article .header-anchor {
+.markdown-article .header-anchor,
+.markdown-article a.header-anchor {
   margin-left: -1em;
   text-decoration-line: none;
+  font-weight: normal;
 }
 .markdown-article blockquote > h6 .header-anchor,
 .markdown-article th > h6 .header-anchor,
@@ -739,6 +784,10 @@ body {
   .markdown-article {
     padding-left: 1.5em;
     padding-right: 1.5em;
+  }
+  .header-anchor,
+  a.header-anchor {
+    margin-left: -0.5em;
   }
 }
 .markdown-article-back-to-top {
@@ -947,15 +996,9 @@ body {
 }
 .markdown-article kbd {
   border-radius: 0.25em;
-  margin: -0.15em 0.2em;
-  padding: 0.15em 0.3em;
-  position: relative;
-  top: -0.15em;
 }
 .markdown-article code {
   border-radius: 0.2em;
-  margin: 0.1em;
-  padding: 0.1em 0.2em;
 }
 .markdown-article pre {
   border-radius: 0.3em;
@@ -1103,8 +1146,9 @@ body {
   border-color: rgba(0,0,0,0.15);
   background-color: #fff;
 }
-.markdown-article a > code {
-  color: inherit;
+.markdown-article s > a,
+.markdown-article s > code {
+  border-color: rgba(255,0,0,0.1);
 }
 .markdown-article pre code {
   background-color: transparent !important;

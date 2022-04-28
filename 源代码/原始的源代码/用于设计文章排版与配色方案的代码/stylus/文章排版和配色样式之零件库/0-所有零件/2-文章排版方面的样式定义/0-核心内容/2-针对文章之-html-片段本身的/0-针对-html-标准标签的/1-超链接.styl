@@ -2,9 +2,6 @@
 
     a {
         font-size: inherit;
-        text-decoration-line: underline;
-        text-underline-offset: 0.15em;
-        // text-decoration-color: transparent;
         text-shadow: inherit;
     }
 
@@ -12,13 +9,24 @@
         font-style: italic;
     }
 
-    a[href^="#"] {
+    s > a[href] {
+        color: inherit;
+        text-decoration-line: inherit;
+        text-decoration-style: inherit;
+        text-decoration-color: inherit;
+        text-decoration-thickness: inherit;
+    }
 
-        &:visited,
-        & {
-            text-decoration-style: dotted;
-            // text-decoration-color: transparent;
-        }
+    a[href],
+    s > a[href]:hover {
+        text-decoration-line: underline;
+        text-underline-offset: 0.15em;
+    }
+
+    a[href^="#"],
+    // a[href^="#"]:visited,
+    s > a[href^="#"]:hover {
+        text-decoration-style: dotted;
     }
 
     a[href]:hover {

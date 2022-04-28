@@ -84,15 +84,25 @@
 }
 a {
   font-size: inherit;
-  text-decoration-line: underline;
-  text-underline-offset: 0.15em;
   text-shadow: inherit;
 }
 a:not([href]) {
   font-style: italic;
 }
-a[href^="#"]:visited,
-a[href^="#"] {
+s > a[href] {
+  color: inherit;
+  text-decoration-line: inherit;
+  text-decoration-style: inherit;
+  text-decoration-color: inherit;
+  text-decoration-thickness: inherit;
+}
+a[href],
+s > a[href]:hover {
+  text-decoration-line: underline;
+  text-underline-offset: 0.15em;
+}
+a[href^="#"],
+s > a[href^="#"]:hover {
   text-decoration-style: dotted;
 }
 a[href]:hover {
@@ -104,8 +114,7 @@ h3,
 h4,
 h5,
 h6,
-dt,
-p {
+dt {
   text-align: justify;
   margin-left: -0.5em;
   margin-right: -0.5em;
@@ -113,48 +122,51 @@ p {
   padding-right: 0.5em;
 }
 h1 {
-  font-size: 2.3em;
-  line-height: 1.33;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 2em;
-  margin-bottom: 1em;
-}
-h2 {
-  font-size: 1.8em;
+  font-size: 2.75em;
   line-height: 1.33;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-top: 3em;
   margin-bottom: 1em;
 }
+h1 small {
+  font-size: 0.667em;
+}
+h2 {
+  font-size: 2.2em;
+  line-height: 1.33;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 4em;
+  margin-bottom: 1em;
+}
 h3 {
-  font-size: 1.4em;
+  font-size: 1.75em;
   line-height: 1.5;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  margin-top: 2.5em;
+  margin-top: 3.5em;
   margin-bottom: 1em;
 }
 h4 {
+  font-size: 1.33em;
+  line-height: 1.5;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+h5 {
   font-size: 1.2em;
   line-height: 1.5;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
-  margin-top: 2em;
-  margin-bottom: 1em;
-}
-h5 {
-  font-size: 1.1em;
-  line-height: 1.5;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 1.5em;
+  margin-top: 3em;
   margin-bottom: 0.75em;
 }
 h6,
 dt {
-  font-size: 1em;
+  font-size: 1.1em;
   line-height: 1.5;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -184,7 +196,7 @@ dt {
 [lang*="zh-"] h2,
 [lang*="-hans"] h2,
 [lang*="-CN"] h2 {
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
 }
 h5 + h6,
 h4 + h5,
@@ -230,15 +242,25 @@ td > h1 ~ p:last-child {
   margin-bottom: 1.25em;
 }
 p {
+  text-align: justify;
+  line-height: 1.8;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
-  line-height: 1.8;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-left: 1em;
+  margin-right: 1em;
   margin-top: 1em;
   margin-bottom: 1em;
 }
 blockquote > p {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+}
+li > p {
+  margin-left: 0;
 }
 h1 + p,
 h2 + p,
@@ -246,7 +268,7 @@ h3 + p,
 h4 + p,
 h5 + p,
 h6 + p {
-  margin-top: 0.5em;
+  margin-top: 0em;
 }
 center,
 center > * {
@@ -375,12 +397,15 @@ video {
 }
 blockquote {
   box-sizing: border-box;
-  max-width: calc(100% - 4em);
   display: inline-block;
   vertical-align: top;
   border-style: solid;
-  padding: 1px 1.5em 1px 1.3em;
-  margin: 0 1em 1.5em 3em;
+  padding: 1px 1.25em 1px 1.15em;
+  margin-top: 0;
+  margin-bottom: 1.5em;
+  margin-left: 3em;
+  margin-right: 1em;
+  max-width: calc(100% - 4em);
 }
 details {
   margin: 0.5em 1em 1.5em;
@@ -416,10 +441,18 @@ code {
   font-style: normal;
   border-style: solid;
 }
+kbd {
+  margin: -0.15em 0.2em;
+  padding: 0.15em 0.3em;
+  position: relative;
+  top: -0.15em;
+}
 code {
   font-size: inherit;
   word-break: break-all;
   white-space: pre-wrap;
+  margin: 0.1em;
+  padding: 0.1em 0.2em;
 }
 [lang*="zh-" i] code,
 [lang*="-hans" i] code,
@@ -429,9 +462,13 @@ code {
 [lang*="-CN"] code {
   padding-left: 0.4em;
 }
-a > code {
+a > code,
+s > code {
+  color: inherit;
   text-decoration-line: inherit;
   text-decoration-style: inherit;
+  text-decoration-color: inherit;
+  text-decoration-thickness: inherit;
   margin-left: 0;
   margin-right: 0;
 }
@@ -463,7 +500,7 @@ pre {
   display: block;
   box-sizing: border-box;
   padding: 0.5em;
-  margin: 0.5em 1em 2em;
+  margin: 0.5em 2em 2em;
 }
 td > pre,
 li > pre {
@@ -514,7 +551,7 @@ dd {
   text-align: justify;
 }
 li {
-  margin: 0.5em 0;
+  margin: 1em 0;
   padding: 0 0.5em;
 }
 dt {
@@ -626,9 +663,15 @@ hr::after {
     padding-left: 1.8em;
     padding-right: 0;
   }
+  p {
+    margin-left: 0;
+    margin-right: 0;
+  }
   blockquote {
     margin-left: 0;
     margin-right: 0;
+    padding-left: 1em;
+    padding-right: 1em;
     max-width: 100%;
   }
   details {
@@ -699,9 +742,11 @@ hr::after {
 [lang*="-CN"] .centered {
   text-indent: 0;
 }
-.header-anchor {
+.header-anchor,
+a.header-anchor {
   margin-left: -1em;
   text-decoration-line: none;
+  font-weight: normal;
 }
 blockquote > h6 .header-anchor,
 th > h6 .header-anchor,
@@ -739,6 +784,10 @@ td > h1 .header-anchor {
   .typora-node   #write {
     padding-left: 1.5em;
     padding-right: 1.5em;
+  }
+  .header-anchor,
+  a.header-anchor {
+    margin-left: -0.5em;
   }
 }
 pre.CodeMirror-line {
@@ -904,15 +953,9 @@ code {
 }
 kbd {
   border-radius: 0.25em;
-  margin: -0.15em 0.2em;
-  padding: 0.15em 0.3em;
-  position: relative;
-  top: -0.15em;
 }
 code {
   border-radius: 0.2em;
-  margin: 0.1em;
-  padding: 0.1em 0.2em;
 }
 pre {
   border-radius: 0.3em;
@@ -1060,8 +1103,9 @@ code {
   border-color: rgba(0,0,0,0.15);
   background-color: #fff;
 }
-a > code {
-  color: inherit;
+s > a,
+s > code {
+  border-color: rgba(255,0,0,0.1);
 }
 pre code {
   background-color: transparent !important;

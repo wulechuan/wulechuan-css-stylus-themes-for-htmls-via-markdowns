@@ -1,3 +1,4 @@
+@import '../../../_global-variables-mixinx-and-functions'
 @import '../../theming-variables'
 
 
@@ -9,6 +10,8 @@
     background-color: #1e1e1e;
     box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.79);
 }
+
+
 
 
 
@@ -205,12 +208,13 @@
 
     code {
         color: #d8b;
-        border-color: rgba(white, 0.219);
+        border-color: rgba(white, 0.319);
         background-color: #050505;
     }
 
-    a > code {
-        color: inherit;
+    s > a,
+    s > code {
+        border-color: rgba(#f88, 0.2);
     }
 
     pre code {
