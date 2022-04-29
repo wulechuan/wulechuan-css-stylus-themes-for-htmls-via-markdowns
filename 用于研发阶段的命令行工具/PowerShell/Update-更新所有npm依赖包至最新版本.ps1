@@ -8,7 +8,7 @@ Write-Host
 
 Write-Host  -NoNewline  -F 'DarkRed'                '===== npm i    '
 Write-Host  -NoNewline  -F 'White'    -B 'DarkRed'  '特定版本'
-Write-Host              -F 'DarkRed'                '的【产品依赖包】 ============================'
+Write-Host              -F 'DarkRed'                '之【产品依赖包】 ============================'
 
 Write-Host
 
@@ -22,7 +22,7 @@ npm  i `
 
 
 # -------------------------------------------------------
-#          最晚版本之【产品依赖包】
+#          最末版本之【产品依赖包】
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # 顺便提醒，虽然一般而言 latest 版本应恰为最高版本，但并不确保。
 # -------------------------------------------------------
@@ -35,7 +35,7 @@ Write-Host
 
 Write-Host  -NoNewline  -F 'DarkRed'                '===== npm i    '
 Write-Host  -NoNewline  -F 'DarkRed'                '最末版本'
-Write-Host              -F 'DarkRed'                '的【产品依赖包】 ============================'
+Write-Host              -F 'DarkRed'                '之【产品依赖包】 ============================'
 
 Write-Host
 
@@ -57,7 +57,7 @@ Write-Host
 
 Write-Host  -NoNewline  -F 'DarkGreen'              '===== npm i -D '
 Write-Host  -NoNewline  -F 'Black'      -B 'Green'  '特定版本'
-Write-Host              -F 'DarkGreen'              '的【研发依赖包】 ============================'
+Write-Host              -F 'DarkGreen'              '之【研发依赖包】 ============================'
 
 Write-Host
 
@@ -71,7 +71,7 @@ npm  i  -D `
 
 
 # -------------------------------------------------------
-#          最晚版本之【研发依赖包】
+#          最末版本之【研发依赖包】
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # 顺便提醒，虽然一般而言 latest 版本应恰为最高版本，但并不确保。
 # -------------------------------------------------------
@@ -84,7 +84,7 @@ Write-Host
 
 Write-Host  -NoNewline  -F 'DarkGreen'              '===== npm i -D '
 Write-Host  -NoNewline  -F 'DarkGreen'              '最末版本'
-Write-Host              -F 'DarkGreen'              '的【研发依赖包】 ============================'
+Write-Host              -F 'DarkGreen'              '之【研发依赖包】 ============================'
 
 Write-Host
 
