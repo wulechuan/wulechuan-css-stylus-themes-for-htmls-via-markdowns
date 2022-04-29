@@ -34,6 +34,36 @@
     "每当制作集得之版本之前": "npm  i    &&    npm  test",
     "prepublishOnly": "npm       i    &&    npm  test"
   },
+  "homepage": "https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns/issues"
+  },
+  "dependencies": {
+    "globby": "^11.1.0"
+  },
+  "devDependencies": {
+    "@wulechuan/cli-scripts--git-push": "^2.0.2",
+    "@wulechuan/generate-html-via-markdown": "^3.2.0",
+    "@wulechuan/gulp-classical-task-cycle": "^0.3.0",
+    "chalk": "^4.1.2",
+    "cssnano": "^5.1.7",
+    "del": "^6.0.0",
+    "eslint": "^8.14.0",
+    "esm": "^3.2.25",
+    "fs-extra": "^10.1.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-pipe": "^1.0.4",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-stylus": "^2.7.1",
+    "gulp-terser": "^2.1.0",
+    "postcss": "^8.4.12"
+  },
   "keywords": [
     "markdown",
     "html",
@@ -64,35 +94,5 @@
     "stylus",
     "cascading-style-sheet",
     "cascading-style-sheets"
-  ],
-  "homepage": "https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns.git"
-  },
-  "bugs": {
-    "url": "https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns/issues"
-  },
-  "dependencies": {
-    "globby": "^11.1.0"
-  },
-  "devDependencies": {
-    "@wulechuan/cli-scripts--git-push": "^2.0.2",
-    "@wulechuan/generate-html-via-markdown": "^3.2.0",
-    "@wulechuan/gulp-classical-task-cycle": "^0.3.0",
-    "chalk": "^4.1.2",
-    "cssnano": "^5.1.7",
-    "del": "^6.0.0",
-    "eslint": "^8.14.0",
-    "esm": "^3.2.25",
-    "fs-extra": "^10.1.0",
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-pipe": "^1.0.4",
-    "gulp-postcss": "^9.0.1",
-    "gulp-rename": "^2.0.0",
-    "gulp-stylus": "^2.7.1",
-    "gulp-terser": "^2.1.0",
-    "postcss": "^8.4.12"
-  }
+  ]
 }
