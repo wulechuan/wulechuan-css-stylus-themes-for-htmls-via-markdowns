@@ -54,7 +54,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-stylus": "^2.7.1",
     "gulp-terser": "^2.1.0",
-    "postcss": "^8.4.12"
+    "postcss": "^8.4.13"
   },
   "homepage": "https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns#readme",
   "repository": {
