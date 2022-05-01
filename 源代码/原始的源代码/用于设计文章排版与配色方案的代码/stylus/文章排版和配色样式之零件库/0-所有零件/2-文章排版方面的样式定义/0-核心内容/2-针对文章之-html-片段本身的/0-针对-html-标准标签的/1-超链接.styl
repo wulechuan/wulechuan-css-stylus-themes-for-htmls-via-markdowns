@@ -9,27 +9,39 @@
         font-style: italic;
     }
 
-    s > a[href] {
-        color: inherit;
-        text-decoration-line: inherit;
-        text-decoration-style: inherit;
-        text-decoration-color: inherit;
-        text-decoration-thickness: inherit;
-    }
-
-    a[href],
-    s > a[href]:hover {
+    a[href] {
+        cursor: pointer;
         text-decoration-line: underline;
-        text-underline-offset: 0.15em;
+        text-decoration-style: solid;
+        text-underline-offset: 0.2em;
     }
 
-    a[href^="#"],
-    // a[href^="#"]:visited,
-    s > a[href^="#"]:hover {
+    a[href^="#"] {
         text-decoration-style: dotted;
     }
 
     a[href]:hover {
         text-decoration-color: currentColor;
+    }
+
+    s a {
+
+        &,
+        &:hover {
+            color: inherit;
+            text-decoration-line: inherit;
+            text-decoration-style: inherit;
+            text-decoration-color: inherit;
+            text-decoration-thickness: inherit;
+        }
+    }
+
+    s a[href],
+    a[href] s {
+
+        &,
+        &:hover {
+            text-decoration-line: line-through underline;
+        }
     }
 }

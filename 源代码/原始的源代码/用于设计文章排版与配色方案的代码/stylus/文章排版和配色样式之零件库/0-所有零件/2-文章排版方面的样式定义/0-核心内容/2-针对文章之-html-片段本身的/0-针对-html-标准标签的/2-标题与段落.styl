@@ -1,16 +1,22 @@
 {__wrappingSelectorOf_markdownArticleLayoutRoot} {
 
+    s {
+        text-decoration-line: line-through;
+        text-decoration-style: solid;
+    }
+
     h1, h2, h3, h4, h5, h6, dt {
         text-align: justify
         margin-left: -0.5em;
         margin-right: -0.5em;
         padding-left: 0.5em;
         padding-right: 0.5em;
+        cursor: text;
     }
 
     h1 {
         font-size: 2.75em;
-        line-height: 1.33;
+        line-height: 1.667;
 
         padding-top:    0.5em;
         padding-bottom: 0.5em;
@@ -18,14 +24,42 @@
         margin-top:     3em;
         margin-bottom:  1em;
 
+        p,
         small {
-            font-size: (0.667em);
+            font-size: 0.667em;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            text-align: left;
+            line-height: 1.33;
+            margin-top: 1em;
+        }
+
+        small p,
+        p small {
+            font-size: 100%;
         }
     }
 
+    {languageSelectors('zh', 'hans', 'CN')} {
+
+        h1 {
+
+            small,
+            p {
+                text-indent: -2.7em;
+                margin-left: 3.7em;
+            }
+        }
+    }
+
+
+
+
+
     h2 {
         font-size: 2.2em;
-        line-height: 1.33;
+        line-height: 1.667;
 
         padding-top:    0.5em;
         padding-bottom: 0.5em;
@@ -36,7 +70,7 @@
 
     h3 {
         font-size: 1.75em;
-        line-height: 1.5;
+        line-height: 1.667;
 
         padding-top:    0.5em;
         padding-bottom: 0.5em;
@@ -47,7 +81,7 @@
 
     h4 {
         font-size: 1.33em;
-        line-height: 1.5;
+        line-height: 1.667;
 
         padding-top:    0.5em;
         padding-bottom: 0.5em;
@@ -58,7 +92,7 @@
 
     h5 {
         font-size: 1.2em;
-        line-height: 1.5;
+        line-height: 1.667;
 
         padding-top:    0.5em;
         padding-bottom: 0.5em;
@@ -69,7 +103,7 @@
 
     h6, dt {
         font-size: 1.1em;
-        line-height: 1.5;
+        line-height: 1.667;
 
         padding-top:    0.5em;
         padding-bottom: 0.5em;
@@ -86,6 +120,7 @@
     }
 
     {languageSelectors('zh', 'hans', 'CN')} {
+
         h1, h2 {
             letter-spacing: 0.15em;
         }
@@ -175,7 +210,8 @@
 
 
     p {
-        text-align: justify
+        cursor: text;
+        text-align: justify;
         line-height: 1.8;
 
         padding-top:    0.25em;

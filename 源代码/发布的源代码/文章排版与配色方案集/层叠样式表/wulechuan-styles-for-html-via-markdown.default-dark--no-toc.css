@@ -89,24 +89,35 @@ a {
 a:not([href]) {
   font-style: italic;
 }
-s > a[href] {
+a[href] {
+  cursor: pointer;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-underline-offset: 0.2em;
+}
+a[href^="#"] {
+  text-decoration-style: dotted;
+}
+a[href]:hover {
+  text-decoration-color: currentColor;
+}
+s a,
+s a:hover {
   color: inherit;
   text-decoration-line: inherit;
   text-decoration-style: inherit;
   text-decoration-color: inherit;
   text-decoration-thickness: inherit;
 }
-a[href],
-s > a[href]:hover {
-  text-decoration-line: underline;
-  text-underline-offset: 0.15em;
+s a[href],
+a[href] s,
+s a[href]:hover,
+a[href] s:hover {
+  text-decoration-line: line-through underline;
 }
-a[href^="#"],
-s > a[href^="#"]:hover {
-  text-decoration-style: dotted;
-}
-a[href]:hover {
-  text-decoration-color: currentColor;
+s {
+  text-decoration-line: line-through;
+  text-decoration-style: solid;
 }
 h1,
 h2,
@@ -120,21 +131,48 @@ dt {
   margin-right: -0.5em;
   padding-left: 0.5em;
   padding-right: 0.5em;
+  cursor: text;
 }
 h1 {
   font-size: 2.75em;
-  line-height: 1.33;
+  line-height: 1.667;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-top: 3em;
   margin-bottom: 1em;
 }
+h1 p,
 h1 small {
   font-size: 0.667em;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: left;
+  line-height: 1.33;
+  margin-top: 1em;
+}
+h1 small p,
+h1 p small {
+  font-size: 100%;
+}
+[lang*="zh-" i] h1 small,
+[lang*="-hans" i] h1 small,
+[lang*="-CN" i] h1 small,
+[lang*="zh-"] h1 small,
+[lang*="-hans"] h1 small,
+[lang*="-CN"] h1 small,
+[lang*="zh-" i] h1 p,
+[lang*="-hans" i] h1 p,
+[lang*="-CN" i] h1 p,
+[lang*="zh-"] h1 p,
+[lang*="-hans"] h1 p,
+[lang*="-CN"] h1 p {
+  text-indent: -2.7em;
+  margin-left: 3.7em;
 }
 h2 {
   font-size: 2.2em;
-  line-height: 1.33;
+  line-height: 1.667;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-top: 4em;
@@ -142,7 +180,7 @@ h2 {
 }
 h3 {
   font-size: 1.75em;
-  line-height: 1.5;
+  line-height: 1.667;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-top: 3.5em;
@@ -150,7 +188,7 @@ h3 {
 }
 h4 {
   font-size: 1.33em;
-  line-height: 1.5;
+  line-height: 1.667;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-top: 3em;
@@ -158,7 +196,7 @@ h4 {
 }
 h5 {
   font-size: 1.2em;
-  line-height: 1.5;
+  line-height: 1.667;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-top: 3em;
@@ -167,7 +205,7 @@ h5 {
 h6,
 dt {
   font-size: 1.1em;
-  line-height: 1.5;
+  line-height: 1.667;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   margin-top: 1.5em;
@@ -242,6 +280,7 @@ td > h1 ~ p:last-child {
   margin-bottom: 1.25em;
 }
 p {
+  cursor: text;
   text-align: justify;
   line-height: 1.8;
   padding-top: 0.25em;
@@ -320,6 +359,15 @@ small,
 sup,
 sub {
   font-size: 75%;
+}
+a strong,
+s strong,
+a em,
+s em {
+  text-decoration-color: inherit;
+  text-decoration-line: inherit;
+  text-decoration-style: inherit;
+  text-decoration-thickness: inherit;
 }
 img {
   display: block;
@@ -452,7 +500,10 @@ code {
   word-break: break-all;
   white-space: pre-wrap;
   margin: 0.1em;
-  padding: 0.1em 0.2em;
+  padding: 0.15em 0.2em;
+  position: relative;
+  top: -0.05em;
+  cursor: text;
 }
 [lang*="zh-" i] code,
 [lang*="-hans" i] code,
@@ -462,15 +513,21 @@ code {
 [lang*="-CN"] code {
   padding-left: 0.4em;
 }
-a > code,
-s > code {
+strong code,
+em code {
+  font-style: inherit;
+  font-weight: inherit;
+}
+a code,
+s code {
   color: inherit;
   text-decoration-line: inherit;
   text-decoration-style: inherit;
   text-decoration-color: inherit;
   text-decoration-thickness: inherit;
-  margin-left: 0;
-  margin-right: 0;
+}
+a code {
+  cursor: pointer;
 }
 kbd {
   font-size: 80%;
@@ -483,6 +540,9 @@ pre > code {
   word-wrap: normal;
   word-break: keep-all;
   text-align: left !important;
+  position: static;
+  top: auto;
+  cursor: auto;
 }
 pre > code {
   box-sizing: border-box;
@@ -549,6 +609,7 @@ label[for] {
 li,
 dd {
   text-align: justify;
+  line-height: 1.8;
 }
 li {
   margin: 1em 0;
@@ -574,7 +635,7 @@ blockquote dd:last-child {
 }
 ul,
 ol {
-  padding: 0 1em 0 2.5em;
+  padding: 0 1em 0 3em;
 }
 @-moz-document url-prefix() {
   ul,
@@ -959,6 +1020,7 @@ em,
 strong {
   font-weight: 500;
 }
+b,
 em strong,
 strong em {
   font-weight: 600;
@@ -1009,31 +1071,21 @@ pre {
   }
 }
 .markdown-article {
-  color: #888;
-  background-color: #1e1e1e;
-  box-shadow: 0 0 0.2em rgba(0,0,0,0.79);
+  color: #a9a9ab;
+  background-color: #2c2b2a;
+  box-shadow: 0 0 0.4em rgba(0,0,0,0.51);
 }
-a {
-  transition-property: visibility, opacity, color, background-color, border, border-radius, transform;
+a,
+a strong,
+a em,
+a b,
+a i,
+a code {
+  transition-property: visibility, opacity, color, border-color, background-color, text-decoration-color, outline-color, border-radius, transform;
   transition-duration: 0.3s;
 }
-a:visited,
 a {
-  color: #79f;
-}
-a:hover,
-a:focus,
-a:active {
-  color: #9bf;
-}
-a[href^="#"]:visited,
-a[href^="#"] {
-  color: #6c5;
-}
-a[href^="#"]:hover,
-a[href^="#"]:focus,
-a[href^="#"]:active {
-  color: #9e8;
+  text-decoration-thickness: 0.1em;
 }
 a.header-anchor[href^="#"]:visited,
 a.header-anchor[href^="#"] {
@@ -1045,7 +1097,7 @@ h3:hover > a.header-anchor[href^="#"],
 h4:hover > a.header-anchor[href^="#"],
 h5:hover > a.header-anchor[href^="#"],
 h6:hover > a.header-anchor[href^="#"] {
-  color: #6c5;
+  color: #7c6;
 }
 h1 > a.header-anchor[href^="#"]:hover,
 h2 > a.header-anchor[href^="#"]:hover,
@@ -1066,12 +1118,7 @@ h4 > a.header-anchor[href^="#"]:active,
 h5 > a.header-anchor[href^="#"]:active,
 h6 > a.header-anchor[href^="#"]:active {
   color: #9e8;
-}
-s {
-  color: #944;
-  text-decoration-color: #f44;
-  text-decoration-style: solid;
-  text-decoration-thickness: 3px;
+  background-color: transparent;
 }
 img {
   color: #555;
@@ -1085,82 +1132,1819 @@ input[type="checkbox"]:checked + label {
   color: #aba;
   text-shadow: -1px -1px 0 rgba(0,128,0,0.1);
 }
+code {
+  color: #dad;
+  border-color: rgba(255,255,255,0.219);
+  background-color: #151515;
+  text-shadow: none;
+}
+b,
+strong {
+  font-style: normal;
+}
+i,
+em,
+em > strong {
+  font-style: italic;
+}
 b,
 i {
-  color: #bbb;
+  color: #aaa;
 }
 strong {
-  color: #ec9;
-  background-color: #423824;
+  color: #fd9;
+  background-color: #453927;
+}
+strong code {
+  color: #eda;
+  border-color: rgba(153,136,85,0.515);
+  background-color: rgba(21,21,21,0.6);
 }
 em {
-  color: #9bd;
-  background-color: #193851;
+  color: #d1b2e3;
+  background-color: rgba(136,102,170,0.333);
 }
-strong em,
-em strong {
-  color: #fbb;
-  background-color: #511919;
+em code {
+  color: #dbe;
+  border-color: rgba(170,136,187,0.515);
+  background-color: rgba(21,21,21,0.6);
 }
-blockquote {
-  color: #b6b6b6;
-  border-color: #794513;
-  background-color: rgba(255,255,255,0.051);
+s,
+s em,
+em s,
+s strong,
+strong s,
+s a,
+s a em,
+s em a,
+s a strong,
+s strong a,
+a s,
+a s em,
+a em s,
+a s strong,
+a strong s,
+em a s,
+em s a,
+strong a s,
+strong s a,
+s code,
+s em code,
+em s code,
+s strong code,
+strong s code,
+s a code,
+s a em code,
+s em a code,
+s a strong code,
+s strong a code,
+a s code,
+a s em code,
+a em s code,
+a s strong code,
+a strong s code,
+em a s code,
+em s a code,
+strong a s code,
+strong s a code {
+  color: #a66;
+  text-decoration-color: #de4545;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0.1em;
 }
-details {
-  background-color: rgba(0,0,0,0.079);
-  box-shadow: inset 0 0 0.25em rgba(0,0,0,0.319);
+s code,
+s em code,
+em s code,
+s strong code,
+strong s code,
+s a code,
+s a em code,
+s em a code,
+s a strong code,
+s strong a code,
+a s code,
+a s em code,
+a em s code,
+a s strong code,
+a strong s code,
+em a s code,
+em s a code,
+strong a s code,
+strong s a code {
+  border-color: rgba(187,102,102,0.15);
+  background-color: rgba(21,21,21,0.4);
 }
-summary:focus,
-summary:active {
-  color: #7d5;
+em strong,
+strong em {
+  color: #ecc;
 }
-table {
-  color: #b6b6b6;
-  border-color: #555;
-  background-color: #2b2b2b;
+em strong code,
+strong em code {
+  color: #fdd;
 }
-thead tr {
-  border-color: #515151;
+em strong,
+strong em {
+  background-color: rgba(85,0,0,0.533);
 }
-th {
-  border-color: #3a3a3a;
+em strong code,
+strong em code {
+  border-color: rgba(187,102,102,0.515);
+  background-color: rgba(21,21,21,0.6);
 }
-td {
-  border-color: #222;
+s em strong,
+s strong em,
+em s strong,
+em strong s,
+strong s em,
+strong em s,
+s em strong code,
+s strong em code,
+em s strong code,
+em strong s code,
+strong s em code,
+strong em s code {
+  color: #866;
+  text-decoration-style: solid;
 }
-thead {
-  color: #000;
-  background-color: #454545;
+s em strong code,
+s strong em code,
+em s strong code,
+em strong s code,
+strong s em code,
+strong em s code {
+  border-color: rgba(221,119,119,0.2);
+  background-color: rgba(68,68,68,0.8);
 }
-tbody tr:nth-child(odd) {
+a,
+a:visited {
+  color: #3bc;
+}
+s a,
+s a em,
+s em a,
+s a strong,
+s strong a,
+a s,
+a s em,
+a em s,
+a s strong,
+a strong s,
+em a s,
+em s a,
+strong a s,
+strong s a,
+s a code,
+s a em code,
+s em a code,
+s a strong code,
+s strong a code,
+a s code,
+a s em code,
+a em s code,
+a s strong code,
+a strong s code,
+em a s code,
+em s a code,
+strong a s code,
+strong s a code {
+  color: #3bc;
+}
+s a code,
+s a em code,
+s em a code,
+s a strong code,
+s strong a code,
+a s code,
+a s em code,
+a em s code,
+a s strong code,
+a strong s code,
+em a s code,
+em s a code,
+strong a s code,
+strong s a code {
+  border-color: rgba(255,255,255,0.219);
+}
+a em strong,
+a strong em,
+em a strong,
+em strong a,
+strong a em,
+strong em a,
+a em strong code,
+a strong em code,
+em a strong code,
+em strong a code,
+strong a em code,
+strong em a code {
+  color: #fee;
+}
+a em strong code,
+a strong em code,
+em a strong code,
+em strong a code,
+strong a em code,
+strong em a code {
+  border-color: #855;
+}
+s a em strong,
+s a strong em,
+s em a strong,
+s em strong a,
+s strong a em,
+s strong em a,
+a s em strong,
+a s strong em,
+a em s strong,
+a em strong s,
+a strong s em,
+a strong em s,
+em s a strong,
+em s strong a,
+em a s strong,
+em a strong s,
+em strong s a,
+em strong a s,
+strong s a em,
+strong s em a,
+strong a s em,
+strong a em s,
+strong em s a,
+strong em a s,
+s a em strong code,
+s a strong em code,
+s em a strong code,
+s em strong a code,
+s strong a em code,
+s strong em a code,
+a s em strong code,
+a s strong em code,
+a em s strong code,
+a em strong s code,
+a strong s em code,
+a strong em s code,
+em s a strong code,
+em s strong a code,
+em a s strong code,
+em a strong s code,
+em strong s a code,
+em strong a s code,
+strong s a em code,
+strong s em a code,
+strong a s em code,
+strong a em s code,
+strong em s a code,
+strong em a s code {
+  color: #e3a3c3;
+}
+a:hover,
+a:hover code {
+  color: #5df;
+}
+a:hover {
   background-color: transparent;
 }
-tbody tr:nth-child(even) {
-  background-color: rgba(255,255,255,0.032);
+a:hover code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
 }
-code,
-kbd {
-  text-shadow: none !important;
+a:hover em,
+em a:hover,
+a:hover strong,
+strong a:hover,
+a:hover em code,
+em a:hover code,
+a:hover strong code,
+strong a:hover code {
+  color: #5df;
 }
-code {
-  color: #d8b;
-  border-color: rgba(255,255,255,0.319);
-  background-color: #050505;
+a:hover em,
+em a:hover,
+a:hover strong,
+strong a:hover {
+  background-color: transparent;
 }
-s > a,
-s > code {
-  border-color: rgba(255,136,136,0.2);
+a:hover em code,
+em a:hover code,
+a:hover strong code,
+strong a:hover code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+s a:hover,
+s a:hover em,
+s em a:hover,
+s a:hover strong,
+s strong a:hover,
+a:hover s,
+a:hover s em,
+a:hover em s,
+a:hover s strong,
+a:hover strong s,
+em a:hover s,
+em s a:hover,
+strong a:hover s,
+strong s a:hover,
+s a:hover code,
+s a:hover em code,
+s em a:hover code,
+s a:hover strong code,
+s strong a:hover code,
+a:hover s code,
+a:hover s em code,
+a:hover em s code,
+a:hover s strong code,
+a:hover strong s code,
+em a:hover s code,
+em s a:hover code,
+strong a:hover s code,
+strong s a:hover code {
+  color: #5df;
+}
+s a:hover,
+s a:hover em,
+s em a:hover,
+s a:hover strong,
+s strong a:hover,
+a:hover s,
+a:hover s em,
+a:hover em s,
+a:hover s strong,
+a:hover strong s,
+em a:hover s,
+em s a:hover,
+strong a:hover s,
+strong s a:hover {
+  background-color: transparent;
+}
+s a:hover code,
+s a:hover em code,
+s em a:hover code,
+s a:hover strong code,
+s strong a:hover code,
+a:hover s code,
+a:hover s em code,
+a:hover em s code,
+a:hover s strong code,
+a:hover strong s code,
+em a:hover s code,
+em s a:hover code,
+strong a:hover s code,
+strong s a:hover code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a:hover em strong,
+a:hover strong em,
+em a:hover strong,
+em strong a:hover,
+strong a:hover em,
+strong em a:hover,
+a:hover em strong code,
+a:hover strong em code,
+em a:hover strong code,
+em strong a:hover code,
+strong a:hover em code,
+strong em a:hover code {
+  color: #5df;
+}
+a:hover em strong,
+a:hover strong em,
+em a:hover strong,
+em strong a:hover,
+strong a:hover em,
+strong em a:hover {
+  background-color: transparent;
+}
+a:hover em strong code,
+a:hover strong em code,
+em a:hover strong code,
+em strong a:hover code,
+strong a:hover em code,
+strong em a:hover code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+s a:hover em strong,
+s a:hover strong em,
+s em a:hover strong,
+s em strong a:hover,
+s strong a:hover em,
+s strong em a:hover,
+a:hover s em strong,
+a:hover s strong em,
+a:hover em s strong,
+a:hover em strong s,
+a:hover strong s em,
+a:hover strong em s,
+em s a:hover strong,
+em s strong a:hover,
+em a:hover s strong,
+em a:hover strong s,
+em strong s a:hover,
+em strong a:hover s,
+strong s a:hover em,
+strong s em a:hover,
+strong a:hover s em,
+strong a:hover em s,
+strong em s a:hover,
+strong em a:hover s,
+s a:hover em strong code,
+s a:hover strong em code,
+s em a:hover strong code,
+s em strong a:hover code,
+s strong a:hover em code,
+s strong em a:hover code,
+a:hover s em strong code,
+a:hover s strong em code,
+a:hover em s strong code,
+a:hover em strong s code,
+a:hover strong s em code,
+a:hover strong em s code,
+em s a:hover strong code,
+em s strong a:hover code,
+em a:hover s strong code,
+em a:hover strong s code,
+em strong s a:hover code,
+em strong a:hover s code,
+strong s a:hover em code,
+strong s em a:hover code,
+strong a:hover s em code,
+strong a:hover em s code,
+strong em s a:hover code,
+strong em a:hover s code {
+  color: #5df;
+}
+s a:hover em strong,
+s a:hover strong em,
+s em a:hover strong,
+s em strong a:hover,
+s strong a:hover em,
+s strong em a:hover,
+a:hover s em strong,
+a:hover s strong em,
+a:hover em s strong,
+a:hover em strong s,
+a:hover strong s em,
+a:hover strong em s,
+em s a:hover strong,
+em s strong a:hover,
+em a:hover s strong,
+em a:hover strong s,
+em strong s a:hover,
+em strong a:hover s,
+strong s a:hover em,
+strong s em a:hover,
+strong a:hover s em,
+strong a:hover em s,
+strong em s a:hover,
+strong em a:hover s {
+  background-color: transparent;
+}
+s a:hover em strong code,
+s a:hover strong em code,
+s em a:hover strong code,
+s em strong a:hover code,
+s strong a:hover em code,
+s strong em a:hover code,
+a:hover s em strong code,
+a:hover s strong em code,
+a:hover em s strong code,
+a:hover em strong s code,
+a:hover strong s em code,
+a:hover strong em s code,
+em s a:hover strong code,
+em s strong a:hover code,
+em a:hover s strong code,
+em a:hover strong s code,
+em strong s a:hover code,
+em strong a:hover s code,
+strong s a:hover em code,
+strong s em a:hover code,
+strong a:hover s em code,
+strong a:hover em s code,
+strong em s a:hover code,
+strong em a:hover s code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a:active,
+a:active code {
+  color: #5df;
+}
+a:active {
+  background-color: transparent;
+}
+a:active code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a:active em,
+em a:active,
+a:active strong,
+strong a:active,
+a:active em code,
+em a:active code,
+a:active strong code,
+strong a:active code {
+  color: #5df;
+}
+a:active em,
+em a:active,
+a:active strong,
+strong a:active {
+  background-color: transparent;
+}
+a:active em code,
+em a:active code,
+a:active strong code,
+strong a:active code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+s a:active,
+s a:active em,
+s em a:active,
+s a:active strong,
+s strong a:active,
+a:active s,
+a:active s em,
+a:active em s,
+a:active s strong,
+a:active strong s,
+em a:active s,
+em s a:active,
+strong a:active s,
+strong s a:active,
+s a:active code,
+s a:active em code,
+s em a:active code,
+s a:active strong code,
+s strong a:active code,
+a:active s code,
+a:active s em code,
+a:active em s code,
+a:active s strong code,
+a:active strong s code,
+em a:active s code,
+em s a:active code,
+strong a:active s code,
+strong s a:active code {
+  color: #5df;
+}
+s a:active,
+s a:active em,
+s em a:active,
+s a:active strong,
+s strong a:active,
+a:active s,
+a:active s em,
+a:active em s,
+a:active s strong,
+a:active strong s,
+em a:active s,
+em s a:active,
+strong a:active s,
+strong s a:active {
+  background-color: transparent;
+}
+s a:active code,
+s a:active em code,
+s em a:active code,
+s a:active strong code,
+s strong a:active code,
+a:active s code,
+a:active s em code,
+a:active em s code,
+a:active s strong code,
+a:active strong s code,
+em a:active s code,
+em s a:active code,
+strong a:active s code,
+strong s a:active code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a:active em strong,
+a:active strong em,
+em a:active strong,
+em strong a:active,
+strong a:active em,
+strong em a:active,
+a:active em strong code,
+a:active strong em code,
+em a:active strong code,
+em strong a:active code,
+strong a:active em code,
+strong em a:active code {
+  color: #5df;
+}
+a:active em strong,
+a:active strong em,
+em a:active strong,
+em strong a:active,
+strong a:active em,
+strong em a:active {
+  background-color: transparent;
+}
+a:active em strong code,
+a:active strong em code,
+em a:active strong code,
+em strong a:active code,
+strong a:active em code,
+strong em a:active code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+s a:active em strong,
+s a:active strong em,
+s em a:active strong,
+s em strong a:active,
+s strong a:active em,
+s strong em a:active,
+a:active s em strong,
+a:active s strong em,
+a:active em s strong,
+a:active em strong s,
+a:active strong s em,
+a:active strong em s,
+em s a:active strong,
+em s strong a:active,
+em a:active s strong,
+em a:active strong s,
+em strong s a:active,
+em strong a:active s,
+strong s a:active em,
+strong s em a:active,
+strong a:active s em,
+strong a:active em s,
+strong em s a:active,
+strong em a:active s,
+s a:active em strong code,
+s a:active strong em code,
+s em a:active strong code,
+s em strong a:active code,
+s strong a:active em code,
+s strong em a:active code,
+a:active s em strong code,
+a:active s strong em code,
+a:active em s strong code,
+a:active em strong s code,
+a:active strong s em code,
+a:active strong em s code,
+em s a:active strong code,
+em s strong a:active code,
+em a:active s strong code,
+em a:active strong s code,
+em strong s a:active code,
+em strong a:active s code,
+strong s a:active em code,
+strong s em a:active code,
+strong a:active s em code,
+strong a:active em s code,
+strong em s a:active code,
+strong em a:active s code {
+  color: #5df;
+}
+s a:active em strong,
+s a:active strong em,
+s em a:active strong,
+s em strong a:active,
+s strong a:active em,
+s strong em a:active,
+a:active s em strong,
+a:active s strong em,
+a:active em s strong,
+a:active em strong s,
+a:active strong s em,
+a:active strong em s,
+em s a:active strong,
+em s strong a:active,
+em a:active s strong,
+em a:active strong s,
+em strong s a:active,
+em strong a:active s,
+strong s a:active em,
+strong s em a:active,
+strong a:active s em,
+strong a:active em s,
+strong em s a:active,
+strong em a:active s {
+  background-color: transparent;
+}
+s a:active em strong code,
+s a:active strong em code,
+s em a:active strong code,
+s em strong a:active code,
+s strong a:active em code,
+s strong em a:active code,
+a:active s em strong code,
+a:active s strong em code,
+a:active em s strong code,
+a:active em strong s code,
+a:active strong s em code,
+a:active strong em s code,
+em s a:active strong code,
+em s strong a:active code,
+em a:active s strong code,
+em a:active strong s code,
+em strong s a:active code,
+em strong a:active s code,
+strong s a:active em code,
+strong s em a:active code,
+strong a:active s em code,
+strong a:active em s code,
+strong em s a:active code,
+strong em a:active s code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a:focus,
+a:focus code {
+  color: #5df;
+}
+a:focus {
+  background-color: transparent;
+}
+a:focus code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a:focus em,
+em a:focus,
+a:focus strong,
+strong a:focus,
+a:focus em code,
+em a:focus code,
+a:focus strong code,
+strong a:focus code {
+  color: #5df;
+}
+a:focus em,
+em a:focus,
+a:focus strong,
+strong a:focus {
+  background-color: transparent;
+}
+a:focus em code,
+em a:focus code,
+a:focus strong code,
+strong a:focus code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+s a:focus,
+s a:focus em,
+s em a:focus,
+s a:focus strong,
+s strong a:focus,
+a:focus s,
+a:focus s em,
+a:focus em s,
+a:focus s strong,
+a:focus strong s,
+em a:focus s,
+em s a:focus,
+strong a:focus s,
+strong s a:focus,
+s a:focus code,
+s a:focus em code,
+s em a:focus code,
+s a:focus strong code,
+s strong a:focus code,
+a:focus s code,
+a:focus s em code,
+a:focus em s code,
+a:focus s strong code,
+a:focus strong s code,
+em a:focus s code,
+em s a:focus code,
+strong a:focus s code,
+strong s a:focus code {
+  color: #5df;
+}
+s a:focus,
+s a:focus em,
+s em a:focus,
+s a:focus strong,
+s strong a:focus,
+a:focus s,
+a:focus s em,
+a:focus em s,
+a:focus s strong,
+a:focus strong s,
+em a:focus s,
+em s a:focus,
+strong a:focus s,
+strong s a:focus {
+  background-color: transparent;
+}
+s a:focus code,
+s a:focus em code,
+s em a:focus code,
+s a:focus strong code,
+s strong a:focus code,
+a:focus s code,
+a:focus s em code,
+a:focus em s code,
+a:focus s strong code,
+a:focus strong s code,
+em a:focus s code,
+em s a:focus code,
+strong a:focus s code,
+strong s a:focus code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a:focus em strong,
+a:focus strong em,
+em a:focus strong,
+em strong a:focus,
+strong a:focus em,
+strong em a:focus,
+a:focus em strong code,
+a:focus strong em code,
+em a:focus strong code,
+em strong a:focus code,
+strong a:focus em code,
+strong em a:focus code {
+  color: #5df;
+}
+a:focus em strong,
+a:focus strong em,
+em a:focus strong,
+em strong a:focus,
+strong a:focus em,
+strong em a:focus {
+  background-color: transparent;
+}
+a:focus em strong code,
+a:focus strong em code,
+em a:focus strong code,
+em strong a:focus code,
+strong a:focus em code,
+strong em a:focus code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+s a:focus em strong,
+s a:focus strong em,
+s em a:focus strong,
+s em strong a:focus,
+s strong a:focus em,
+s strong em a:focus,
+a:focus s em strong,
+a:focus s strong em,
+a:focus em s strong,
+a:focus em strong s,
+a:focus strong s em,
+a:focus strong em s,
+em s a:focus strong,
+em s strong a:focus,
+em a:focus s strong,
+em a:focus strong s,
+em strong s a:focus,
+em strong a:focus s,
+strong s a:focus em,
+strong s em a:focus,
+strong a:focus s em,
+strong a:focus em s,
+strong em s a:focus,
+strong em a:focus s,
+s a:focus em strong code,
+s a:focus strong em code,
+s em a:focus strong code,
+s em strong a:focus code,
+s strong a:focus em code,
+s strong em a:focus code,
+a:focus s em strong code,
+a:focus s strong em code,
+a:focus em s strong code,
+a:focus em strong s code,
+a:focus strong s em code,
+a:focus strong em s code,
+em s a:focus strong code,
+em s strong a:focus code,
+em a:focus s strong code,
+em a:focus strong s code,
+em strong s a:focus code,
+em strong a:focus s code,
+strong s a:focus em code,
+strong s em a:focus code,
+strong a:focus s em code,
+strong a:focus em s code,
+strong em s a:focus code,
+strong em a:focus s code {
+  color: #5df;
+}
+s a:focus em strong,
+s a:focus strong em,
+s em a:focus strong,
+s em strong a:focus,
+s strong a:focus em,
+s strong em a:focus,
+a:focus s em strong,
+a:focus s strong em,
+a:focus em s strong,
+a:focus em strong s,
+a:focus strong s em,
+a:focus strong em s,
+em s a:focus strong,
+em s strong a:focus,
+em a:focus s strong,
+em a:focus strong s,
+em strong s a:focus,
+em strong a:focus s,
+strong s a:focus em,
+strong s em a:focus,
+strong a:focus s em,
+strong a:focus em s,
+strong em s a:focus,
+strong em a:focus s {
+  background-color: transparent;
+}
+s a:focus em strong code,
+s a:focus strong em code,
+s em a:focus strong code,
+s em strong a:focus code,
+s strong a:focus em code,
+s strong em a:focus code,
+a:focus s em strong code,
+a:focus s strong em code,
+a:focus em s strong code,
+a:focus em strong s code,
+a:focus strong s em code,
+a:focus strong em s code,
+em s a:focus strong code,
+em s strong a:focus code,
+em a:focus s strong code,
+em a:focus strong s code,
+em strong s a:focus code,
+em strong a:focus s code,
+strong s a:focus em code,
+strong s em a:focus code,
+strong a:focus s em code,
+strong a:focus em s code,
+strong em s a:focus code,
+strong em a:focus s code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a[href^="#"],
+a[href^="#"]:visited {
+  color: #7c6;
+}
+s a[href^="#"],
+s a[href^="#"] em,
+s em a[href^="#"],
+s a[href^="#"] strong,
+s strong a[href^="#"],
+a[href^="#"] s,
+a[href^="#"] s em,
+a[href^="#"] em s,
+a[href^="#"] s strong,
+a[href^="#"] strong s,
+em a[href^="#"] s,
+em s a[href^="#"],
+strong a[href^="#"] s,
+strong s a[href^="#"],
+s a[href^="#"] code,
+s a[href^="#"] em code,
+s em a[href^="#"] code,
+s a[href^="#"] strong code,
+s strong a[href^="#"] code,
+a[href^="#"] s code,
+a[href^="#"] s em code,
+a[href^="#"] em s code,
+a[href^="#"] s strong code,
+a[href^="#"] strong s code,
+em a[href^="#"] s code,
+em s a[href^="#"] code,
+strong a[href^="#"] s code,
+strong s a[href^="#"] code {
+  color: #7c6;
+}
+s a[href^="#"] code,
+s a[href^="#"] em code,
+s em a[href^="#"] code,
+s a[href^="#"] strong code,
+s strong a[href^="#"] code,
+a[href^="#"] s code,
+a[href^="#"] s em code,
+a[href^="#"] em s code,
+a[href^="#"] s strong code,
+a[href^="#"] strong s code,
+em a[href^="#"] s code,
+em s a[href^="#"] code,
+strong a[href^="#"] s code,
+strong s a[href^="#"] code {
+  border-color: rgba(255,255,255,0.219);
+}
+a[href^="#"] em strong,
+a[href^="#"] strong em,
+em a[href^="#"] strong,
+em strong a[href^="#"],
+strong a[href^="#"] em,
+strong em a[href^="#"],
+a[href^="#"] em strong code,
+a[href^="#"] strong em code,
+em a[href^="#"] strong code,
+em strong a[href^="#"] code,
+strong a[href^="#"] em code,
+strong em a[href^="#"] code {
+  color: #fdd;
+}
+a[href^="#"] em strong code,
+a[href^="#"] strong em code,
+em a[href^="#"] strong code,
+em strong a[href^="#"] code,
+strong a[href^="#"] em code,
+strong em a[href^="#"] code {
+  border-color: #855;
+}
+s a[href^="#"] em strong,
+s a[href^="#"] strong em,
+s em a[href^="#"] strong,
+s em strong a[href^="#"],
+s strong a[href^="#"] em,
+s strong em a[href^="#"],
+a[href^="#"] s em strong,
+a[href^="#"] s strong em,
+a[href^="#"] em s strong,
+a[href^="#"] em strong s,
+a[href^="#"] strong s em,
+a[href^="#"] strong em s,
+em s a[href^="#"] strong,
+em s strong a[href^="#"],
+em a[href^="#"] s strong,
+em a[href^="#"] strong s,
+em strong s a[href^="#"],
+em strong a[href^="#"] s,
+strong s a[href^="#"] em,
+strong s em a[href^="#"],
+strong a[href^="#"] s em,
+strong a[href^="#"] em s,
+strong em s a[href^="#"],
+strong em a[href^="#"] s,
+s a[href^="#"] em strong code,
+s a[href^="#"] strong em code,
+s em a[href^="#"] strong code,
+s em strong a[href^="#"] code,
+s strong a[href^="#"] em code,
+s strong em a[href^="#"] code,
+a[href^="#"] s em strong code,
+a[href^="#"] s strong em code,
+a[href^="#"] em s strong code,
+a[href^="#"] em strong s code,
+a[href^="#"] strong s em code,
+a[href^="#"] strong em s code,
+em s a[href^="#"] strong code,
+em s strong a[href^="#"] code,
+em a[href^="#"] s strong code,
+em a[href^="#"] strong s code,
+em strong s a[href^="#"] code,
+em strong a[href^="#"] s code,
+strong s a[href^="#"] em code,
+strong s em a[href^="#"] code,
+strong a[href^="#"] s em code,
+strong a[href^="#"] em s code,
+strong em s a[href^="#"] code,
+strong em a[href^="#"] s code {
+  color: #f66;
+}
+a[href^="#"]:hover,
+a[href^="#"]:hover code {
+  color: #9e8;
+}
+a[href^="#"]:hover {
+  background-color: transparent;
+}
+a[href^="#"]:hover code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a[href^="#"]:hover em,
+em a[href^="#"]:hover,
+a[href^="#"]:hover strong,
+strong a[href^="#"]:hover,
+a[href^="#"]:hover em code,
+em a[href^="#"]:hover code,
+a[href^="#"]:hover strong code,
+strong a[href^="#"]:hover code {
+  color: #9e8;
+}
+a[href^="#"]:hover em,
+em a[href^="#"]:hover,
+a[href^="#"]:hover strong,
+strong a[href^="#"]:hover {
+  background-color: transparent;
+}
+a[href^="#"]:hover em code,
+em a[href^="#"]:hover code,
+a[href^="#"]:hover strong code,
+strong a[href^="#"]:hover code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+s a[href^="#"]:hover,
+s a[href^="#"]:hover em,
+s em a[href^="#"]:hover,
+s a[href^="#"]:hover strong,
+s strong a[href^="#"]:hover,
+a[href^="#"]:hover s,
+a[href^="#"]:hover s em,
+a[href^="#"]:hover em s,
+a[href^="#"]:hover s strong,
+a[href^="#"]:hover strong s,
+em a[href^="#"]:hover s,
+em s a[href^="#"]:hover,
+strong a[href^="#"]:hover s,
+strong s a[href^="#"]:hover,
+s a[href^="#"]:hover code,
+s a[href^="#"]:hover em code,
+s em a[href^="#"]:hover code,
+s a[href^="#"]:hover strong code,
+s strong a[href^="#"]:hover code,
+a[href^="#"]:hover s code,
+a[href^="#"]:hover s em code,
+a[href^="#"]:hover em s code,
+a[href^="#"]:hover s strong code,
+a[href^="#"]:hover strong s code,
+em a[href^="#"]:hover s code,
+em s a[href^="#"]:hover code,
+strong a[href^="#"]:hover s code,
+strong s a[href^="#"]:hover code {
+  color: #9e8;
+}
+s a[href^="#"]:hover,
+s a[href^="#"]:hover em,
+s em a[href^="#"]:hover,
+s a[href^="#"]:hover strong,
+s strong a[href^="#"]:hover,
+a[href^="#"]:hover s,
+a[href^="#"]:hover s em,
+a[href^="#"]:hover em s,
+a[href^="#"]:hover s strong,
+a[href^="#"]:hover strong s,
+em a[href^="#"]:hover s,
+em s a[href^="#"]:hover,
+strong a[href^="#"]:hover s,
+strong s a[href^="#"]:hover {
+  background-color: transparent;
+}
+s a[href^="#"]:hover code,
+s a[href^="#"]:hover em code,
+s em a[href^="#"]:hover code,
+s a[href^="#"]:hover strong code,
+s strong a[href^="#"]:hover code,
+a[href^="#"]:hover s code,
+a[href^="#"]:hover s em code,
+a[href^="#"]:hover em s code,
+a[href^="#"]:hover s strong code,
+a[href^="#"]:hover strong s code,
+em a[href^="#"]:hover s code,
+em s a[href^="#"]:hover code,
+strong a[href^="#"]:hover s code,
+strong s a[href^="#"]:hover code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a[href^="#"]:hover em strong,
+a[href^="#"]:hover strong em,
+em a[href^="#"]:hover strong,
+em strong a[href^="#"]:hover,
+strong a[href^="#"]:hover em,
+strong em a[href^="#"]:hover,
+a[href^="#"]:hover em strong code,
+a[href^="#"]:hover strong em code,
+em a[href^="#"]:hover strong code,
+em strong a[href^="#"]:hover code,
+strong a[href^="#"]:hover em code,
+strong em a[href^="#"]:hover code {
+  color: #9e8;
+}
+a[href^="#"]:hover em strong,
+a[href^="#"]:hover strong em,
+em a[href^="#"]:hover strong,
+em strong a[href^="#"]:hover,
+strong a[href^="#"]:hover em,
+strong em a[href^="#"]:hover {
+  background-color: transparent;
+}
+a[href^="#"]:hover em strong code,
+a[href^="#"]:hover strong em code,
+em a[href^="#"]:hover strong code,
+em strong a[href^="#"]:hover code,
+strong a[href^="#"]:hover em code,
+strong em a[href^="#"]:hover code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+s a[href^="#"]:hover em strong,
+s a[href^="#"]:hover strong em,
+s em a[href^="#"]:hover strong,
+s em strong a[href^="#"]:hover,
+s strong a[href^="#"]:hover em,
+s strong em a[href^="#"]:hover,
+a[href^="#"]:hover s em strong,
+a[href^="#"]:hover s strong em,
+a[href^="#"]:hover em s strong,
+a[href^="#"]:hover em strong s,
+a[href^="#"]:hover strong s em,
+a[href^="#"]:hover strong em s,
+em s a[href^="#"]:hover strong,
+em s strong a[href^="#"]:hover,
+em a[href^="#"]:hover s strong,
+em a[href^="#"]:hover strong s,
+em strong s a[href^="#"]:hover,
+em strong a[href^="#"]:hover s,
+strong s a[href^="#"]:hover em,
+strong s em a[href^="#"]:hover,
+strong a[href^="#"]:hover s em,
+strong a[href^="#"]:hover em s,
+strong em s a[href^="#"]:hover,
+strong em a[href^="#"]:hover s,
+s a[href^="#"]:hover em strong code,
+s a[href^="#"]:hover strong em code,
+s em a[href^="#"]:hover strong code,
+s em strong a[href^="#"]:hover code,
+s strong a[href^="#"]:hover em code,
+s strong em a[href^="#"]:hover code,
+a[href^="#"]:hover s em strong code,
+a[href^="#"]:hover s strong em code,
+a[href^="#"]:hover em s strong code,
+a[href^="#"]:hover em strong s code,
+a[href^="#"]:hover strong s em code,
+a[href^="#"]:hover strong em s code,
+em s a[href^="#"]:hover strong code,
+em s strong a[href^="#"]:hover code,
+em a[href^="#"]:hover s strong code,
+em a[href^="#"]:hover strong s code,
+em strong s a[href^="#"]:hover code,
+em strong a[href^="#"]:hover s code,
+strong s a[href^="#"]:hover em code,
+strong s em a[href^="#"]:hover code,
+strong a[href^="#"]:hover s em code,
+strong a[href^="#"]:hover em s code,
+strong em s a[href^="#"]:hover code,
+strong em a[href^="#"]:hover s code {
+  color: #9e8;
+}
+s a[href^="#"]:hover em strong,
+s a[href^="#"]:hover strong em,
+s em a[href^="#"]:hover strong,
+s em strong a[href^="#"]:hover,
+s strong a[href^="#"]:hover em,
+s strong em a[href^="#"]:hover,
+a[href^="#"]:hover s em strong,
+a[href^="#"]:hover s strong em,
+a[href^="#"]:hover em s strong,
+a[href^="#"]:hover em strong s,
+a[href^="#"]:hover strong s em,
+a[href^="#"]:hover strong em s,
+em s a[href^="#"]:hover strong,
+em s strong a[href^="#"]:hover,
+em a[href^="#"]:hover s strong,
+em a[href^="#"]:hover strong s,
+em strong s a[href^="#"]:hover,
+em strong a[href^="#"]:hover s,
+strong s a[href^="#"]:hover em,
+strong s em a[href^="#"]:hover,
+strong a[href^="#"]:hover s em,
+strong a[href^="#"]:hover em s,
+strong em s a[href^="#"]:hover,
+strong em a[href^="#"]:hover s {
+  background-color: transparent;
+}
+s a[href^="#"]:hover em strong code,
+s a[href^="#"]:hover strong em code,
+s em a[href^="#"]:hover strong code,
+s em strong a[href^="#"]:hover code,
+s strong a[href^="#"]:hover em code,
+s strong em a[href^="#"]:hover code,
+a[href^="#"]:hover s em strong code,
+a[href^="#"]:hover s strong em code,
+a[href^="#"]:hover em s strong code,
+a[href^="#"]:hover em strong s code,
+a[href^="#"]:hover strong s em code,
+a[href^="#"]:hover strong em s code,
+em s a[href^="#"]:hover strong code,
+em s strong a[href^="#"]:hover code,
+em a[href^="#"]:hover s strong code,
+em a[href^="#"]:hover strong s code,
+em strong s a[href^="#"]:hover code,
+em strong a[href^="#"]:hover s code,
+strong s a[href^="#"]:hover em code,
+strong s em a[href^="#"]:hover code,
+strong a[href^="#"]:hover s em code,
+strong a[href^="#"]:hover em s code,
+strong em s a[href^="#"]:hover code,
+strong em a[href^="#"]:hover s code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a[href^="#"]:active,
+a[href^="#"]:active code {
+  color: #9e8;
+}
+a[href^="#"]:active {
+  background-color: transparent;
+}
+a[href^="#"]:active code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a[href^="#"]:active em,
+em a[href^="#"]:active,
+a[href^="#"]:active strong,
+strong a[href^="#"]:active,
+a[href^="#"]:active em code,
+em a[href^="#"]:active code,
+a[href^="#"]:active strong code,
+strong a[href^="#"]:active code {
+  color: #9e8;
+}
+a[href^="#"]:active em,
+em a[href^="#"]:active,
+a[href^="#"]:active strong,
+strong a[href^="#"]:active {
+  background-color: transparent;
+}
+a[href^="#"]:active em code,
+em a[href^="#"]:active code,
+a[href^="#"]:active strong code,
+strong a[href^="#"]:active code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+s a[href^="#"]:active,
+s a[href^="#"]:active em,
+s em a[href^="#"]:active,
+s a[href^="#"]:active strong,
+s strong a[href^="#"]:active,
+a[href^="#"]:active s,
+a[href^="#"]:active s em,
+a[href^="#"]:active em s,
+a[href^="#"]:active s strong,
+a[href^="#"]:active strong s,
+em a[href^="#"]:active s,
+em s a[href^="#"]:active,
+strong a[href^="#"]:active s,
+strong s a[href^="#"]:active,
+s a[href^="#"]:active code,
+s a[href^="#"]:active em code,
+s em a[href^="#"]:active code,
+s a[href^="#"]:active strong code,
+s strong a[href^="#"]:active code,
+a[href^="#"]:active s code,
+a[href^="#"]:active s em code,
+a[href^="#"]:active em s code,
+a[href^="#"]:active s strong code,
+a[href^="#"]:active strong s code,
+em a[href^="#"]:active s code,
+em s a[href^="#"]:active code,
+strong a[href^="#"]:active s code,
+strong s a[href^="#"]:active code {
+  color: #9e8;
+}
+s a[href^="#"]:active,
+s a[href^="#"]:active em,
+s em a[href^="#"]:active,
+s a[href^="#"]:active strong,
+s strong a[href^="#"]:active,
+a[href^="#"]:active s,
+a[href^="#"]:active s em,
+a[href^="#"]:active em s,
+a[href^="#"]:active s strong,
+a[href^="#"]:active strong s,
+em a[href^="#"]:active s,
+em s a[href^="#"]:active,
+strong a[href^="#"]:active s,
+strong s a[href^="#"]:active {
+  background-color: transparent;
+}
+s a[href^="#"]:active code,
+s a[href^="#"]:active em code,
+s em a[href^="#"]:active code,
+s a[href^="#"]:active strong code,
+s strong a[href^="#"]:active code,
+a[href^="#"]:active s code,
+a[href^="#"]:active s em code,
+a[href^="#"]:active em s code,
+a[href^="#"]:active s strong code,
+a[href^="#"]:active strong s code,
+em a[href^="#"]:active s code,
+em s a[href^="#"]:active code,
+strong a[href^="#"]:active s code,
+strong s a[href^="#"]:active code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a[href^="#"]:active em strong,
+a[href^="#"]:active strong em,
+em a[href^="#"]:active strong,
+em strong a[href^="#"]:active,
+strong a[href^="#"]:active em,
+strong em a[href^="#"]:active,
+a[href^="#"]:active em strong code,
+a[href^="#"]:active strong em code,
+em a[href^="#"]:active strong code,
+em strong a[href^="#"]:active code,
+strong a[href^="#"]:active em code,
+strong em a[href^="#"]:active code {
+  color: #9e8;
+}
+a[href^="#"]:active em strong,
+a[href^="#"]:active strong em,
+em a[href^="#"]:active strong,
+em strong a[href^="#"]:active,
+strong a[href^="#"]:active em,
+strong em a[href^="#"]:active {
+  background-color: transparent;
+}
+a[href^="#"]:active em strong code,
+a[href^="#"]:active strong em code,
+em a[href^="#"]:active strong code,
+em strong a[href^="#"]:active code,
+strong a[href^="#"]:active em code,
+strong em a[href^="#"]:active code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+s a[href^="#"]:active em strong,
+s a[href^="#"]:active strong em,
+s em a[href^="#"]:active strong,
+s em strong a[href^="#"]:active,
+s strong a[href^="#"]:active em,
+s strong em a[href^="#"]:active,
+a[href^="#"]:active s em strong,
+a[href^="#"]:active s strong em,
+a[href^="#"]:active em s strong,
+a[href^="#"]:active em strong s,
+a[href^="#"]:active strong s em,
+a[href^="#"]:active strong em s,
+em s a[href^="#"]:active strong,
+em s strong a[href^="#"]:active,
+em a[href^="#"]:active s strong,
+em a[href^="#"]:active strong s,
+em strong s a[href^="#"]:active,
+em strong a[href^="#"]:active s,
+strong s a[href^="#"]:active em,
+strong s em a[href^="#"]:active,
+strong a[href^="#"]:active s em,
+strong a[href^="#"]:active em s,
+strong em s a[href^="#"]:active,
+strong em a[href^="#"]:active s,
+s a[href^="#"]:active em strong code,
+s a[href^="#"]:active strong em code,
+s em a[href^="#"]:active strong code,
+s em strong a[href^="#"]:active code,
+s strong a[href^="#"]:active em code,
+s strong em a[href^="#"]:active code,
+a[href^="#"]:active s em strong code,
+a[href^="#"]:active s strong em code,
+a[href^="#"]:active em s strong code,
+a[href^="#"]:active em strong s code,
+a[href^="#"]:active strong s em code,
+a[href^="#"]:active strong em s code,
+em s a[href^="#"]:active strong code,
+em s strong a[href^="#"]:active code,
+em a[href^="#"]:active s strong code,
+em a[href^="#"]:active strong s code,
+em strong s a[href^="#"]:active code,
+em strong a[href^="#"]:active s code,
+strong s a[href^="#"]:active em code,
+strong s em a[href^="#"]:active code,
+strong a[href^="#"]:active s em code,
+strong a[href^="#"]:active em s code,
+strong em s a[href^="#"]:active code,
+strong em a[href^="#"]:active s code {
+  color: #9e8;
+}
+s a[href^="#"]:active em strong,
+s a[href^="#"]:active strong em,
+s em a[href^="#"]:active strong,
+s em strong a[href^="#"]:active,
+s strong a[href^="#"]:active em,
+s strong em a[href^="#"]:active,
+a[href^="#"]:active s em strong,
+a[href^="#"]:active s strong em,
+a[href^="#"]:active em s strong,
+a[href^="#"]:active em strong s,
+a[href^="#"]:active strong s em,
+a[href^="#"]:active strong em s,
+em s a[href^="#"]:active strong,
+em s strong a[href^="#"]:active,
+em a[href^="#"]:active s strong,
+em a[href^="#"]:active strong s,
+em strong s a[href^="#"]:active,
+em strong a[href^="#"]:active s,
+strong s a[href^="#"]:active em,
+strong s em a[href^="#"]:active,
+strong a[href^="#"]:active s em,
+strong a[href^="#"]:active em s,
+strong em s a[href^="#"]:active,
+strong em a[href^="#"]:active s {
+  background-color: transparent;
+}
+s a[href^="#"]:active em strong code,
+s a[href^="#"]:active strong em code,
+s em a[href^="#"]:active strong code,
+s em strong a[href^="#"]:active code,
+s strong a[href^="#"]:active em code,
+s strong em a[href^="#"]:active code,
+a[href^="#"]:active s em strong code,
+a[href^="#"]:active s strong em code,
+a[href^="#"]:active em s strong code,
+a[href^="#"]:active em strong s code,
+a[href^="#"]:active strong s em code,
+a[href^="#"]:active strong em s code,
+em s a[href^="#"]:active strong code,
+em s strong a[href^="#"]:active code,
+em a[href^="#"]:active s strong code,
+em a[href^="#"]:active strong s code,
+em strong s a[href^="#"]:active code,
+em strong a[href^="#"]:active s code,
+strong s a[href^="#"]:active em code,
+strong s em a[href^="#"]:active code,
+strong a[href^="#"]:active s em code,
+strong a[href^="#"]:active em s code,
+strong em s a[href^="#"]:active code,
+strong em a[href^="#"]:active s code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a[href^="#"]:focus,
+a[href^="#"]:focus code {
+  color: #9e8;
+}
+a[href^="#"]:focus {
+  background-color: transparent;
+}
+a[href^="#"]:focus code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a[href^="#"]:focus em,
+em a[href^="#"]:focus,
+a[href^="#"]:focus strong,
+strong a[href^="#"]:focus,
+a[href^="#"]:focus em code,
+em a[href^="#"]:focus code,
+a[href^="#"]:focus strong code,
+strong a[href^="#"]:focus code {
+  color: #9e8;
+}
+a[href^="#"]:focus em,
+em a[href^="#"]:focus,
+a[href^="#"]:focus strong,
+strong a[href^="#"]:focus {
+  background-color: transparent;
+}
+a[href^="#"]:focus em code,
+em a[href^="#"]:focus code,
+a[href^="#"]:focus strong code,
+strong a[href^="#"]:focus code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+s a[href^="#"]:focus,
+s a[href^="#"]:focus em,
+s em a[href^="#"]:focus,
+s a[href^="#"]:focus strong,
+s strong a[href^="#"]:focus,
+a[href^="#"]:focus s,
+a[href^="#"]:focus s em,
+a[href^="#"]:focus em s,
+a[href^="#"]:focus s strong,
+a[href^="#"]:focus strong s,
+em a[href^="#"]:focus s,
+em s a[href^="#"]:focus,
+strong a[href^="#"]:focus s,
+strong s a[href^="#"]:focus,
+s a[href^="#"]:focus code,
+s a[href^="#"]:focus em code,
+s em a[href^="#"]:focus code,
+s a[href^="#"]:focus strong code,
+s strong a[href^="#"]:focus code,
+a[href^="#"]:focus s code,
+a[href^="#"]:focus s em code,
+a[href^="#"]:focus em s code,
+a[href^="#"]:focus s strong code,
+a[href^="#"]:focus strong s code,
+em a[href^="#"]:focus s code,
+em s a[href^="#"]:focus code,
+strong a[href^="#"]:focus s code,
+strong s a[href^="#"]:focus code {
+  color: #9e8;
+}
+s a[href^="#"]:focus,
+s a[href^="#"]:focus em,
+s em a[href^="#"]:focus,
+s a[href^="#"]:focus strong,
+s strong a[href^="#"]:focus,
+a[href^="#"]:focus s,
+a[href^="#"]:focus s em,
+a[href^="#"]:focus em s,
+a[href^="#"]:focus s strong,
+a[href^="#"]:focus strong s,
+em a[href^="#"]:focus s,
+em s a[href^="#"]:focus,
+strong a[href^="#"]:focus s,
+strong s a[href^="#"]:focus {
+  background-color: transparent;
+}
+s a[href^="#"]:focus code,
+s a[href^="#"]:focus em code,
+s em a[href^="#"]:focus code,
+s a[href^="#"]:focus strong code,
+s strong a[href^="#"]:focus code,
+a[href^="#"]:focus s code,
+a[href^="#"]:focus s em code,
+a[href^="#"]:focus em s code,
+a[href^="#"]:focus s strong code,
+a[href^="#"]:focus strong s code,
+em a[href^="#"]:focus s code,
+em s a[href^="#"]:focus code,
+strong a[href^="#"]:focus s code,
+strong s a[href^="#"]:focus code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+a[href^="#"]:focus em strong,
+a[href^="#"]:focus strong em,
+em a[href^="#"]:focus strong,
+em strong a[href^="#"]:focus,
+strong a[href^="#"]:focus em,
+strong em a[href^="#"]:focus,
+a[href^="#"]:focus em strong code,
+a[href^="#"]:focus strong em code,
+em a[href^="#"]:focus strong code,
+em strong a[href^="#"]:focus code,
+strong a[href^="#"]:focus em code,
+strong em a[href^="#"]:focus code {
+  color: #9e8;
+}
+a[href^="#"]:focus em strong,
+a[href^="#"]:focus strong em,
+em a[href^="#"]:focus strong,
+em strong a[href^="#"]:focus,
+strong a[href^="#"]:focus em,
+strong em a[href^="#"]:focus {
+  background-color: transparent;
+}
+a[href^="#"]:focus em strong code,
+a[href^="#"]:focus strong em code,
+em a[href^="#"]:focus strong code,
+em strong a[href^="#"]:focus code,
+strong a[href^="#"]:focus em code,
+strong em a[href^="#"]:focus code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
+}
+s a[href^="#"]:focus em strong,
+s a[href^="#"]:focus strong em,
+s em a[href^="#"]:focus strong,
+s em strong a[href^="#"]:focus,
+s strong a[href^="#"]:focus em,
+s strong em a[href^="#"]:focus,
+a[href^="#"]:focus s em strong,
+a[href^="#"]:focus s strong em,
+a[href^="#"]:focus em s strong,
+a[href^="#"]:focus em strong s,
+a[href^="#"]:focus strong s em,
+a[href^="#"]:focus strong em s,
+em s a[href^="#"]:focus strong,
+em s strong a[href^="#"]:focus,
+em a[href^="#"]:focus s strong,
+em a[href^="#"]:focus strong s,
+em strong s a[href^="#"]:focus,
+em strong a[href^="#"]:focus s,
+strong s a[href^="#"]:focus em,
+strong s em a[href^="#"]:focus,
+strong a[href^="#"]:focus s em,
+strong a[href^="#"]:focus em s,
+strong em s a[href^="#"]:focus,
+strong em a[href^="#"]:focus s,
+s a[href^="#"]:focus em strong code,
+s a[href^="#"]:focus strong em code,
+s em a[href^="#"]:focus strong code,
+s em strong a[href^="#"]:focus code,
+s strong a[href^="#"]:focus em code,
+s strong em a[href^="#"]:focus code,
+a[href^="#"]:focus s em strong code,
+a[href^="#"]:focus s strong em code,
+a[href^="#"]:focus em s strong code,
+a[href^="#"]:focus em strong s code,
+a[href^="#"]:focus strong s em code,
+a[href^="#"]:focus strong em s code,
+em s a[href^="#"]:focus strong code,
+em s strong a[href^="#"]:focus code,
+em a[href^="#"]:focus s strong code,
+em a[href^="#"]:focus strong s code,
+em strong s a[href^="#"]:focus code,
+em strong a[href^="#"]:focus s code,
+strong s a[href^="#"]:focus em code,
+strong s em a[href^="#"]:focus code,
+strong a[href^="#"]:focus s em code,
+strong a[href^="#"]:focus em s code,
+strong em s a[href^="#"]:focus code,
+strong em a[href^="#"]:focus s code {
+  color: #9e8;
+}
+s a[href^="#"]:focus em strong,
+s a[href^="#"]:focus strong em,
+s em a[href^="#"]:focus strong,
+s em strong a[href^="#"]:focus,
+s strong a[href^="#"]:focus em,
+s strong em a[href^="#"]:focus,
+a[href^="#"]:focus s em strong,
+a[href^="#"]:focus s strong em,
+a[href^="#"]:focus em s strong,
+a[href^="#"]:focus em strong s,
+a[href^="#"]:focus strong s em,
+a[href^="#"]:focus strong em s,
+em s a[href^="#"]:focus strong,
+em s strong a[href^="#"]:focus,
+em a[href^="#"]:focus s strong,
+em a[href^="#"]:focus strong s,
+em strong s a[href^="#"]:focus,
+em strong a[href^="#"]:focus s,
+strong s a[href^="#"]:focus em,
+strong s em a[href^="#"]:focus,
+strong a[href^="#"]:focus s em,
+strong a[href^="#"]:focus em s,
+strong em s a[href^="#"]:focus,
+strong em a[href^="#"]:focus s {
+  background-color: transparent;
+}
+s a[href^="#"]:focus em strong code,
+s a[href^="#"]:focus strong em code,
+s em a[href^="#"]:focus strong code,
+s em strong a[href^="#"]:focus code,
+s strong a[href^="#"]:focus em code,
+s strong em a[href^="#"]:focus code,
+a[href^="#"]:focus s em strong code,
+a[href^="#"]:focus s strong em code,
+a[href^="#"]:focus em s strong code,
+a[href^="#"]:focus em strong s code,
+a[href^="#"]:focus strong s em code,
+a[href^="#"]:focus strong em s code,
+em s a[href^="#"]:focus strong code,
+em s strong a[href^="#"]:focus code,
+em a[href^="#"]:focus s strong code,
+em a[href^="#"]:focus strong s code,
+em strong s a[href^="#"]:focus code,
+em strong a[href^="#"]:focus s code,
+strong s a[href^="#"]:focus em code,
+strong s em a[href^="#"]:focus code,
+strong a[href^="#"]:focus s em code,
+strong a[href^="#"]:focus em s code,
+strong em s a[href^="#"]:focus code,
+strong em a[href^="#"]:focus s code {
+  border-color: currentColor;
+  text-decoration-color: currentColor;
+  background-color: #000;
 }
 pre code {
   background-color: transparent !important;
 }
 kbd {
-  color: #ddd;
-  background-color: #151515;
-  background-image: linear-gradient(45deg, #000, #151515);
-  border-color: #191919 #131313 #131313 #191919;
-  box-shadow: 0em 0.15em 0 0.05em #000;
+  color: #eee;
+  background-color: #515151;
+  background-image: linear-gradient(100deg, rgba(0,0,0,0.086) 3%, rgba(255,255,255,0.067) 90%), linear-gradient(175deg, rgba(0,0,0,0.086) 2%, rgba(255,255,255,0.067) 79%);
+  border-color: #333 #222 #222 #333;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+  box-shadow: 0em 0.2em 0 0.05em #111, inset 0 0 0.1em 0.05em rgba(255,255,255,0.133);
 }
 hr {
   color: rgba(128,128,128,0.45);
@@ -1168,6 +2952,43 @@ hr {
 }
 hr::before {
   box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.51);
+}
+blockquote {
+  color: #bbb;
+  border-color: #794513;
+  background-color: rgba(255,255,255,0.079);
+}
+details {
+  background-color: rgba(0,0,0,0.219);
+  box-shadow: inset 0 0 0.25em rgba(0,0,0,0.515);
+}
+summary:focus,
+summary:active {
+  color: #7d5;
+}
+table {
+  color: #b4b4b4;
+  border-color: #000;
+  background-color: #3c3c3c;
+}
+thead tr {
+  border-color: #111;
+}
+th {
+  border-color: #000;
+}
+td {
+  border-color: #222;
+}
+thead {
+  color: #666;
+  background-color: #151515;
+}
+tbody tr:nth-child(odd) {
+  background-color: transparent;
+}
+tbody tr:nth-child(even) {
+  background-color: rgba(255,255,255,0.032);
 }
 @media screen {
   .markdown-article-back-to-top[href^="#"],

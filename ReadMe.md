@@ -31,15 +31,15 @@
 
 ## 此物何用
 
-本工具用于构建一组层叠样式表（即 CSS ）文件，本工具亦提供了一组现成的层叠样式表文件。凡这些样式表，均可用于美化采用超文本标记语言（即 HTML ）格式存储的文章。且不必同时取用多个样式表文件，仅取其一足矣。
+本工具用于构建一组层叠样式表（即 CSS ）文件。本工具亦提供了一组现成的层叠样式表文件。凡这些样式表，均可用于美化采用超文本标记语言（即 HTML）格式的文章。且不必同时取用多个样式表文件，仅取其一足矣。
 
 本品还额外提供了一个很小巧的 JavaScript 接口，使得其它 JavaScript 工具包亦可较方便地以程序化之方式使用这些层叠样式表（ CSS ）文件之内容。详见下文《[以程序化之方式取用本工具提供之内容](#以程序化之方式取用本工具提供之内容)》一节。
 
-**于开发者而言，本品亦是一个构件工具，用于相对方便地构建出新的 CSS 文件，以便诸君自定义 HTML 文章之样式。**
+> 不妨强调，于开发者而言，本品可以是一个样式表构建工具，用以相对方便地构建出新的符合特定喜欢或需求的 CSS 文件。
 
 
 
-## 文档集章节
+## 文档集
 
 > 以下章节均存在于单独的文件中，并非本文章之部分。
 
@@ -54,20 +54,53 @@
 
 ## 应用效果示例
 
-一图胜千言。以下各图展示了一篇应用了本工具之默认 CSS 样式的文章之样貌。
+本工具配备了两篇范文，汉语一篇，英语一篇，均套用了本工具之默认样式，以示效果。
 
-> 以下各图较大，文件大小在 **百万字节** 级别。
+一图胜千言。以下为范文之截图。
 
-### 应用默认浅色主题的范文截图
+> 以下各图较大，文件大小在**百万字节**级别。若网络不佳不便阅图，亦可下载 HTML 文件观察其面貌。
+> 
+> HTML 范文
+>
+> -   《[HTML 范文（汉语版，浅色）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/html/example.zh-hans-cn.default-light-colored-theme.html)》
+> -   《[HTML 范文（汉语版，深色）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/html/example.zh-hans-cn.default-dark-colored-theme.html)》
+> -   《[HTML 范文（英语版，浅色）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/html/example.en-us.default-light-colored-theme.html)》
+> -   《[HTML 范文（英语版，深色）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/html/example.en-us.default-dark-colored-theme.html)》
 
-- [示例：简体中文范文配默认浅色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/示例：简体中文范文配默认浅色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
-- [Snapshot: In default light-colored theme, in a wide window, with toc collapsed](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
+
+### 范文富有特色的大幅截图
 
 
-### 应用默认深色主题的范文截图
+1.  应用了**默认浅色主题**的范文之截图
 
-- [示例：简体中文范文配默认深色主题，在宽大尺寸浏览器中的效果（目录已收叠）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/示例：简体中文范文配默认深色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
-- [Snapshot: In default dark-colored theme, in a wide window, with toc collapsed](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/example_en-US_default-dark-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
+    -  《示例：简体中文范文配默认**浅色**主题，在宽大尺寸浏览器中的效果（目录已收叠）》
+
+
+        - [由（本说明书的）解析程序自动决定之存放地点的版本](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/示例：简体中文范文配默认浅色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
+
+        - [存放在 Gitee 中的版本，便于中国大陆地区查阅](https://gitee.com/nanchang-wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns/blob/master/%E6%96%87%E6%A1%A3%E9%9B%86/%E6%96%87%E7%AB%A0%E6%8E%92%E7%89%88%E4%B8%8E%E9%85%8D%E8%89%B2%E6%95%88%E6%9E%9C%E7%A4%BA%E4%BE%8B%E9%9B%86/%E4%BB%A5-html-%E6%A0%BC%E5%BC%8F%E6%B8%B2%E6%9F%93%E5%A5%BD%E7%9A%84%E6%96%87%E7%AB%A0%E6%88%90%E5%93%81/%E5%90%84%E6%96%87%E7%AB%A0%E6%9C%80%E7%BB%88%E5%91%88%E7%8E%B0%E6%95%88%E6%9E%9C%E4%B9%8B%E6%88%AA%E5%9B%BE/%E7%A4%BA%E4%BE%8B%EF%BC%9A%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E8%8C%83%E6%96%87%E9%85%8D%E9%BB%98%E8%AE%A4%E6%B5%85%E8%89%B2%E4%B8%BB%E9%A2%98%EF%BC%8C1-%E5%9C%A8%E5%AE%BD%E5%A4%A7%E5%B0%BA%E5%AF%B8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84%E6%95%88%E6%9E%9C%EF%BC%88%E7%9B%AE%E5%BD%95%E5%B7%B2%E6%94%B6%E5%8F%A0%EF%BC%89.png)
+
+
+    -  《示例：In default **light-colored** theme, in a wide window, with toc collapsed》。
+
+        -   [由（本说明书的）解析程序自动决定之存放地点的版本](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
+
+        -   [存放在 Gitee 中的版本，便于中国大陆地区查阅](https://gitee.com/nanchang-wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns/blob/master/%E6%96%87%E6%A1%A3%E9%9B%86/%E6%96%87%E7%AB%A0%E6%8E%92%E7%89%88%E4%B8%8E%E9%85%8D%E8%89%B2%E6%95%88%E6%9E%9C%E7%A4%BA%E4%BE%8B%E9%9B%86/%E4%BB%A5-html-%E6%A0%BC%E5%BC%8F%E6%B8%B2%E6%9F%93%E5%A5%BD%E7%9A%84%E6%96%87%E7%AB%A0%E6%88%90%E5%93%81/%E5%90%84%E6%96%87%E7%AB%A0%E6%9C%80%E7%BB%88%E5%91%88%E7%8E%B0%E6%95%88%E6%9E%9C%E4%B9%8B%E6%88%AA%E5%9B%BE/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
+
+
+1.  应用了**默认深色主题**的范文之截图
+
+    -   《示例：简体中文范文配默认**深色**主题，在宽大尺寸浏览器中的效果（目录已收叠）》
+
+        -   [由（本说明书的）解析程序自动决定之存放地点的版本](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/示例：简体中文范文配默认深色主题，1-在宽大尺寸浏览器中的效果（目录已收叠）.png)
+
+        -   [存放在 Gitee 中的版本，便于中国大陆地区查阅](https://gitee.com/nanchang-wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns/blob/master/%E6%96%87%E6%A1%A3%E9%9B%86/%E6%96%87%E7%AB%A0%E6%8E%92%E7%89%88%E4%B8%8E%E9%85%8D%E8%89%B2%E6%95%88%E6%9E%9C%E7%A4%BA%E4%BE%8B%E9%9B%86/%E4%BB%A5-html-%E6%A0%BC%E5%BC%8F%E6%B8%B2%E6%9F%93%E5%A5%BD%E7%9A%84%E6%96%87%E7%AB%A0%E6%88%90%E5%93%81/%E5%90%84%E6%96%87%E7%AB%A0%E6%9C%80%E7%BB%88%E5%91%88%E7%8E%B0%E6%95%88%E6%9E%9C%E4%B9%8B%E6%88%AA%E5%9B%BE/%E7%A4%BA%E4%BE%8B%EF%BC%9A%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E8%8C%83%E6%96%87%E9%85%8D%E9%BB%98%E8%AE%A4%E6%B7%B1%E8%89%B2%E4%B8%BB%E9%A2%98%EF%BC%8C1-%E5%9C%A8%E5%AE%BD%E5%A4%A7%E5%B0%BA%E5%AF%B8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84%E6%95%88%E6%9E%9C%EF%BC%88%E7%9B%AE%E5%BD%95%E5%B7%B2%E6%94%B6%E5%8F%A0%EF%BC%89.png)
+
+    -   《示例：In default **dark-colored** theme, in a wide window, with toc collapsed》。
+
+        -   [由（本说明书的）解析程序自动决定之存放地点的版本](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/example_en-US_default-dark-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
+
+        -   [存放在 Gitee 中的版本，便于中国大陆地区查阅](https://gitee.com/nanchang-wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns/blob/master/%E6%96%87%E6%A1%A3%E9%9B%86/%E6%96%87%E7%AB%A0%E6%8E%92%E7%89%88%E4%B8%8E%E9%85%8D%E8%89%B2%E6%95%88%E6%9E%9C%E7%A4%BA%E4%BE%8B%E9%9B%86/%E4%BB%A5-html-%E6%A0%BC%E5%BC%8F%E6%B8%B2%E6%9F%93%E5%A5%BD%E7%9A%84%E6%96%87%E7%AB%A0%E6%88%90%E5%93%81/%E5%90%84%E6%96%87%E7%AB%A0%E6%9C%80%E7%BB%88%E5%91%88%E7%8E%B0%E6%95%88%E6%9E%9C%E4%B9%8B%E6%88%AA%E5%9B%BE/example_en-US_default-dark-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
 
 
 ### 范文的所有截图
@@ -75,9 +108,9 @@
 两篇范文之截图不止于上文中提及的四幅。更多图例，见：
 
 - 《[应用效果示例（汉语版）](./文档集/说明书/汉语/关于文章排版与配色效果示例集的说明.md)》
-- 《[Application Examples (en-US)](./文档集/说明书/en-US/application-examples.md)》
+- 《[应用效果示例（英语版）](./文档集/说明书/en-US/application-examples.md)》
 
-另附《[示范文章之截图之制作指南](./文档集/说明书/汉语/示范文章之截图之制作指南.md)》
+另，日常制作网页截图是很简单的事情，但本工具之范文篇幅巨大，为其截图确须一定经验和技巧。见《[示范文章之截图之制作指南](./文档集/说明书/汉语/示范文章之截图之制作指南.md)》。
 
 
 
@@ -94,23 +127,29 @@
 
 ## 使用说明
 
-- 本工具仅提供一组层叠样式表（CSS）文件，及配套的 JavaScript 文件（目前仅一个这样的 JavaScript 文件）。不难理解，本工具**并非**用于直接将 Markdown 文件转换为对应的 HTML 文件。本工具假定诸君另有方法，将 Markdown 内容转换成 HTML 内容，仅仅是希望借助本工具提供之 CSS 对 HTML 做进一步的排版美化。于此种情形，用法再简单不过——**自行取用**。
+### 使用须知
+
+- 本工具提供的主体内容仅为一组层叠样式表（CSS）文件，及配套的 JavaScript 文件（目前仅一个这样的 JavaScript 文件）。
+
+    换言之，本工具**并不能**将 Markdown 文件转换为对应的 HTML 文件。本工具假定诸君各自另有办法将 Markdown 内容转换成 HTML 内容，诸君采用本工具仅仅是希望取其中的 CSS 对诸君的 HTML 做进一步的排版美化。于此种情形，用法再简单不过——**自行取用那些 CSS 文件**即可。
 
 
     所谓自行取用，即是说诸君在本项目之发布文件夹中自行找到中意之 CSS 文件（及配套 JavaScript 文件），采用之。且于单一 HTML 文件，在本工具提供之所有 CSS 文件取用其任一足矣，不必取用多者。
 
-    又，取用本工具提供之 CSS 、 JavaScript 文件之内容时，若每每人为复制、粘贴，未免麻烦，且无从实现批量运用、自动化运用。在面对批量运用或自动化运用之要求时，开发人员当然希望能编写程序调集所需资源加以运用。巧了，本工具确实提供了专门的 JavaScript 编程接口，以 **JavaScript 字符串** 之形式提供各 CSS 、 JavaScript 文件之内容。
+    又，取用本工具提供之 CSS 、 JavaScript 文件之内容时，若每每人为复制、粘贴，未免麻烦。尤其是在面对批量运用或自动化运用之要求时，开发人员当然希望能编写程序调集所需资源加以运用。刚巧本工具确实提供了专门的 JavaScript 编程接口，以 **JavaScript 文本（string）** 之形式提供各 CSS 、 JavaScript 文件之内容。见下文《[以程序化之方式取用本工具提供之内容](#以程序化之方式取用本工具提供之内容)》。
 
 
-    > 诸君当然可以自行直接取用本工具中之 CSS 文件，或自行调用本工具之 JavaScript 接口。由此二种途径均可以在你构建 HTML 内容时，利用我的这些 CSS 来美化 HTML 内容。然此二种做法均并非易如反掌，更不能一蹴而就。即，要么须费些功夫，要么须专门学习并积累技术经验。
+    > 不过，不论是手工直接取用本工具中之 CSS 文件，还是调用本工具之 JavaScript 接口取用这些 CSS 文件，都没有解决一部分读者的困难：你们的初衷是要将手头的一些 Markdown 文件转换成 HTML 文件，而采用我提供的这些 CSS 只是锦上添花式的要求。临用之际，单单一个 CSS 文件显然不解燃眉之急。
     >
-    > 如若诸君之初衷是要将手头的一些 Markdown 文件转换成 HTML 文件，临用之际单单一个 CSS 文件显然不解诸君燃眉之急。诸君首先需要的是一款可以进行文件格式转换之工具，而后才考虑如何将本工具提供之 CSS 嵌入 HTML 之中，可是？如此，则诸君面临新的问题，即要么无暇自行搭建工具链来将 Markdown 转换成 HTML，要么干脆不知所措。于此种情形，鄙人毛遂自荐，愿助诸君一臂之力！鄙人另行自创有三个 NPM 包，专用于轻松、快速地从 Markdown 内容构建对应之 HTML 内容。且三者均默认采用本工具发布之 CSS 之内容（和配套 JavaScript 内容）。我在[本说明书之尾部](#相关推广)亦对此三款软件包做了推广。阁下无需另起炉灶了！唯愿三者之任一能对诸君有所裨益！
+    > 此种情形下，诸君首先需要的是一款可以进行文件格式转换之工具，而后才考虑如何将本工具提供之 CSS 嵌入 HTML 之中。
+    >
+    > 那么新的问题来了，我能不能**顺便**推荐一款从 MarkDown 文件至 HTML 文件的转换工具呢？当然！鄙人毛遂自荐，愿助诸君一臂之力！鄙人另行自创有三个 NPM 包，专用于轻松、快速地从 Markdown 内容构建对应之 HTML 内容。且三者均默认采用本工具发布之 CSS 之内容（及配套 JavaScript 内容）。我在[本说明书之尾部](#相关推广)亦对此三款软件包做了推广。诸君无需另起炉灶了！唯愿三者之任一能对君有所裨益！
 
 
 - 如果阁下取用本工具中之 CSS 主题文件另有意图，即与将 Markdown 转换至 HTML 之事毫无干系，那么或许更应该了解如何编写程序调集所需的由本工具提供之 CSS 资源加以运用。见下文《[以程序化之方式取用本工具提供之内容](#以程序化之方式取用本工具提供之内容)》。
 
 
-### 在何处手工取用本工具所生成的文件
+### 手工取用本工具的文件
 
 #### 取用 CSS 文件
 
@@ -127,9 +166,11 @@
 
 在面对批量运用或自动化运用之要求时，开发人员当然希望能编写程序调集所需资源加以运用。本工具确实提供了专门的 JavaScript 编程接口，以 JavaScript 字符串数据的形式提供各 CSS 、 JavaScript 文件之内容。
 
-> 本工具还额外提供了编程接口配套的 TypeScript 类型定义（ `index.d.ts` ）。
+> 本工具还额外提供了编程接口配套的 TypeScript 类型定义：
+>
+> `源代码/发布的源代码/本工具作为其他-javascript-工具之依赖模块时的代码/index.d.ts`
 
-以程序化之方式调用本工具之方法见下例。
+#### 以程序化之方式取用本工具提供之内容之示范代码
 
 > 下例中代码之主体节选自本项目的<br>《`测试集/用于测试本项目之-javascript-接口的测试代码集.js`》。
 
@@ -234,7 +275,7 @@ declare type 范_吴乐川用于美化文章的层叠样式表集_文件简易�
     文件之相对路径: string;
     文件之绝对路径: string;
     文件内容全文: string;
-    
+
     // 以下为陈旧的采用外国字命名之诸接口。
 
     fileName: string;
@@ -244,22 +285,23 @@ declare type 范_吴乐川用于美化文章的层叠样式表集_文件简易�
 };
 ```
 
-#### 获取本工具发布之各排版与配色方案公用的、且目前唯一的 JavaScript 文件
+#### 获取本工具发布之各排版与配色方案公用的（且目前唯一的） JavaScript 文件
 
-**须知本工具提供两类用途不同之 JavaScript 。** 
+首先，**须知本工具提供两类用途不同之 JavaScript 。**
 
-1. 一类是用于注入 HTML 文章以控制 HTML 文章之【纲要】的。
-2. 另一类是本工具提供的程序化接口，它并不直接作用于你的任何 HTML，而仅仅是对外提供本 NPM 包之 CSS 以及第一类 JavaScript 。
+1.  一类是用于注入 HTML 文章以控制 HTML 文章之【纲要】的。
+1.  另一类是本工具提供的程序化接口，它并不直接作用于你的任何 HTML，而仅仅是对外提供本 NPM 包之 CSS 以及第一类 JavaScript 。
 
-为方便指代，不妨称第一类 JavaScript 为所谓“**文章行为之 js** ”，而称第二类 JavaScript 为所谓“**本工具接口之 js** ”，简称“**接口 js** ”。
+为方便指代，不妨：
 
-又，获取本工具发布之各色【文章排版与配色方案】公用的、且目前唯一的“文章行为之 js”时，**允许对该文件之内容进行些许临时定制**。故而，最终获得的内容字符串有异于本工具存储的原始版本。
+1.  称第一类 JavaScript 为所谓“**文章行为之 js** ”，简称“**文章 js**”。目前恰好仅有一个这样的 js 文件。它为本工具发布之各色【文章排版与配色方案】所公用。
+1.  而称第二类 JavaScript 为所谓“**本工具接口之 js** ”，简称“**接口 js** ”。
 
-简而言之，你调用本工具的“接口 js ”中的某接口函数时，可以在接口函数某一项参数传入【配置项集】，以对“文章行为之 js ”之内容做些许定制。
+又，借助“**接口 js**”获取“**文章 js**”之内容时，“接口 js”还**允许对“文章 js”之内容进行些许临时定制**。故而，最终获得的内容字符串有异于本工具存储的原始版本。换言之，你调用本工具的“**接口 js**”中的某接口函数时，可在接口函数的某一项参数传入【配置项集】，以对 “**文章 js**”之内容做些许改变。
 
 > 有两个不同的接口函数各自可以接受该配置项集，但形参位置不同。
-> 1. 一个函数是 `总接口.获取某一已发布之文件之完整内容字符串` ，它在第 3 形参接受上述配置项集，
-> 2. 另一个函数是 `总接口.获取本项目官方选定之所谓默认Javascript之完整内容字符串` ，它在第 2 形参接受上述配置项集。
+> 1.  第一个函数是 `总接口.获取某一已发布之文件之完整内容字符串` ，它在**第 3 形参**接受上述【配置项集】。
+> 1.  第二个函数是 `总接口.获取本项目官方选定之所谓默认Javascript之完整内容字符串` ，它在**第 2 形参**接受上述【配置项集】。
 
 上述【配置项集】之 TypeScript 类型定义如下：
 
@@ -271,13 +313,13 @@ declare type 范_吴乐川用于美化文章的层叠样式表集_拾取默认Ja
      */
 
     为求文章纲要列表简洁明了故意仅显示两层条目以至于较深层级条目形同作废?: boolean;
-    浏览器打开HTML文章最初之时文章纲要列表中凡层级深于该值之条目均应收叠?: boolean;
+    浏览器打开HTML文章最初之时文章纲要列表中凡层级深于该值之条目均应收叠?: number;
     浏览器打开HTML文章最初之时若浏览器窗口足够宽大则直接展开文章纲要列表之面板?: boolean;
-    
+
     // 以下为陈旧的采用外国字命名之诸接口。
 
     shouldShowOnlyTwoLevelsOfTOCItemsAtMost?: boolean;
-    atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan?: boolean;
+    atBeginingShouldCollapseAllTOCItemsOfLevelsGreaterThan?: number;
     atBeginingShouldExpandTOCWhenWindowIsWideEnough?: boolean;
 };
 ```
@@ -292,11 +334,11 @@ declare type 范_吴乐川用于美化文章的层叠样式表集_拾取默认Ja
 
 ## 相关推广
 
-鄙人另有一款 NPM 包，名为“[@wulechuan/generate-html-via-markdown](https://www.npmjs.com/package/@wulechuan/generate-html-via-markdown)”。为便于指称，暂将其叫做“**甲**”。调用甲之接口，可将传入甲的 Markdown 字符串转换成 HTML 字符串。此时，甲默认会采用本工具提供的 CSS 文件来装饰甲自身产生的 HTML 之内容。
+鄙人另有一款 NPM 包，名为“[@wulechuan/generate-html-via-markdown](https://www.npmjs.com/package/@wulechuan/generate-html-via-markdown)”。为便于指称，不妨暂称“**甲**”。调用甲之接口，可将传入该接口的 Markdown 字符串转换成 HTML 字符串。此时，甲默认会采用本工具提供的 CSS 文件来装饰甲自身产生的 HTML 之内容。
 
 鄙人还有一款 NPM 包，名为“[@wulechuan/gulp-markdown-to-html](https://www.npmjs.com/package/@wulechuan/gulp-markdown-to-html)”，且作“**乙**”。乙恰如甲的一个包覆层，使得甲中之功能特性可以适配 [Gulpjs](https://gulpjs.com) 任务流水线。
 
-鄙人还有一款 NPM 包，名为“[@wulechuan/markdown-to-html-via-cli](https://www.npmjs.com/package/@wulechuan/markdown-to-html-via-cli)”，且作“**丙**”。丙恰如甲的另一个包覆层，使得任何人在安装丙后（**无须另行安装甲**），即可在命令行环境轻松使用甲之功能，实现从文件到文件的**批量转换**。且丙设计有多种命令行参数，以便定制输出之 HTML 之具体细节。且诸君毋需担心命令行参数记忆负担过重之问题，仅需“`--help`”一招，即可解君之忧。
+鄙人还有一款 NPM 包，名为“[@wulechuan/markdown-to-html-via-cli](https://www.npmjs.com/package/@wulechuan/markdown-to-html-via-cli)”，且作“**丙**”。丙恰如甲的另一个包覆层，使得任何人在安装丙后（**无须另行安装甲**），即可在命令行环境轻松使用甲之功能，实现从文件到文件的**批量转换**。且丙设计有多种命令行参数，以便定制输出之 HTML 之具体细节。诸君毋需担心命令行参数记忆负担过重之问题，仅需“`--help`”一招，即可解君之忧。
 
 
 
@@ -304,13 +346,7 @@ declare type 范_吴乐川用于美化文章的层叠样式表集_拾取默认Ja
 
 ## 未来计划
 
-- 避免使用 `rem` 作为层叠样式表的长度单位，而改用 `em` ，特别是要避免输出的层叠样式表对 `rem` 进行配置。理由是倘若本工具产生之层叠样式表如果系用作美化某复杂 Web 应用之局部之文章，本工具提供的层叠样式表不应该粗暴篡改 `rem` 之取值。
-
-    > 该项工作已经在进行，全靠业余之投入，截止 2021-03-13 仍未完成。
-
-- 考虑引入更多的 Stylus 变量，来控制主题。但我有疑虑。过分工程化可能反而导致源代码难以理解，不便定制。
-
-- 覆盖 Typora 中“纲要列表”的原有样式？
+暂无。
 
 
 ## 版本 6 及更旧版本之源代码业已删除
@@ -326,7 +362,7 @@ declare type 范_吴乐川用于美化文章的层叠样式表集_拾取默认Ja
 
 WTFPL
 
-> 注意：
+> ### 注意
 >
 > 我未研究过许可证的约束。因此姑且声明为 WTFPL 类型。但实际上该许可证类型可能与我采用的开源模块有冲突。
 

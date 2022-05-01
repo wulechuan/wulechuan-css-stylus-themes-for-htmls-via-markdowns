@@ -6,9 +6,9 @@
 /* 以下 CSS 是除代码块之外的页面整体着色方案。*/
 
 {_selectorOf_article_root} {
-    color: #888;
-    background-color: #1e1e1e;
-    box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.79);
+    color: #a9a9ab;
+    background-color: #2c2b2a;
+    box-shadow: 0 0 0.4em rgba(0, 0, 0, 0.51);
 }
 
 
@@ -18,38 +18,26 @@
 {__wrappingSelectorOf_markdownArticleBaseThemingRules} {
 
     a {
-        transition-property: visibility, opacity, color, background-color, border, border-radius, transform;
-        transition-duration: 0.3s;
 
-        &:visited,
-        & {
-            color: #79f;
-        }
-
-        &:hover,
-        &:focus,
-        &:active {
-            color: #9bf;
+        &,
+        strong, em, b, i, code {
+            transition-property: visibility, opacity, color, border-color, background-color, text-decoration-color, outline-color, border-radius, transform;
+            transition-duration: 0.3s;
         }
     }
 
-    a[href^="#"] {
 
-        &:visited,
-        & {
-            color: #6c5;
-        }
 
-        &:hover,
-        &:focus,
-        &:active {
-            color: #9e8;
-        }
+
+
+    a {
+        text-decoration-thickness: 0.1em;
+
+        // 下文的 MIXIN_anchor__combined_with_em_string_and_s 会负责定义与【锚】有关的颜色。
     }
 
     a{_selectorOf_article_headingsPermantLinkAnchors}[href^="#"] {
-        // Permanent links created by
-        // markdown-it plugin: markdown-it-anchor
+        // 此乃由 markdown-it 插件构建出的 “各级标题的永固超链接”的【样式类名】。默认取 .markdown-it-anchor 。
 
         &:visited,
         & {
@@ -57,10 +45,14 @@
         }
     }
 
+
+
+
+
     h1, h2, h3, h4, h5, h6 {
 
         &:hover > a{_selectorOf_article_headingsPermantLinkAnchors}[href^="#"] {
-            color: #6c5;
+            color: #7c6;
         }
     }
 
@@ -72,33 +64,12 @@
             &:focus,
             &:active {
                 color: #9e8;
+                background-color: transparent;
             }
         }
     }
 
 
-
-    // h1, h2 {
-    //     color: #b6b6b6;
-    // }
-
-    // h3, h4 {
-    //     color: #aaa;
-    // }
-
-    // h5, h6,
-    // dt {
-    //     color: #ddd;
-    // }
-
-
-
-    s {
-        color: #944;
-        text-decoration-color: #f44;
-        text-decoration-style: solid;
-        text-decoration-thickness: 3px;
-    }
 
 
 
@@ -122,117 +93,242 @@
 
 
 
+
+
+    code {
+        color: #dad;
+        border-color: rgba(white, 0.219);
+        background-color: #151515;
+        text-shadow: none;
+    }
+
+
+
+
+
+    b,
+    strong {
+        font-style: normal;
+    }
+
+    i,
+    em,
+    em > strong {
+        font-style: italic;
+    }
+
     b,
     i {
-        color: #bbb;
+        color: #aaa;
     }
 
     strong {
-        color: #ec9;
-        background-color: #423824;
+        color: #fd9;
+        background-color: #453927;
+            
+        code { // 见词条 中国科学院资深院士” 、“中国工程院资深院士” 。
+            color: #eda;
+            border-color: rgba(#985, 0.515);
+            background-color: #15151599;
+        }
     }
 
     em {
-        color: #9bd;
-        background-color: #193851;
+        color: #d1b2e3;
+        background-color: #86a5;
+        
+        code { // 见词条 “钱学森弹道” 。
+            color: #dbe;
+            border-color: rgba(#a8b, 0.515);
+            background-color: #15151599;
+        }
     }
 
+
+
+
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    //   当 strong 与 em 并举时，暂称所谓 “ VeryStrong ”，或 “ 最强强调 ” 。
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+
+    // 文字并非【最强强调】形式，且有【删除线】介入，但没有【超链接】。
+    s,
+    s em,
+    em s,
+    s strong,
+    strong s,
+    // 文字并非【最强强调】形式，且同时有【超链接】和【删除线】介入。
+    s a,
+    s a em,
+    s em a,
+    s a strong,
+    s strong a,
+    a s,
+    a s em,
+    a em s,
+    a s strong,
+    a strong s,
+    em a s,
+    em s a,
+    strong a s,
+    strong s a {
+
+        &,     // 见例词 “地球是平的” 。
+        code { // 见例词 “车厘子”、“芝士” 和 “起司” 。
+            color: #a66;
+            text-decoration-color: #de4545;
+            text-decoration-style: solid;
+            text-decoration-thickness: 0.1em;
+        }
+
+        code { // 见例词 “车厘子”、“芝士” 和 “起司” 。
+            border-color: rgba(#b66, 0.15);
+            background-color: #15151566;
+        }
+    }
+
+
+
+    // 文字的【最强强调】形式。其默认样貌。
+    em strong,
     strong em,
-    em strong {
-        color: #fbb;
-        background-color #511919;
-    }
+    em strong,
+    em strong,
+    strong em,
+    strong em {
 
-
-
-    blockquote {
-        color: #b6b6b6;
-        border-color: #794513;
-        background-color: rgba(white, 0.051);
-        // text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.79);
-    }
-
-
-
-    details {
-        background-color: rgba(0, 0, 0, 0.079);
-        box-shadow: inset 0 0 0.25em rgba(0, 0, 0, 0.319);
-    }
-
-    summary:focus,
-    summary:active {
-        color: #7d5;
-    }
-
-
-
-    table {
-        color: #b6b6b6;
-        border-color: #555;
-        background-color: #2b2b2b;
-    }
-
-    thead tr {
-        border-color: #515151;
-    }
-
-    th {
-        border-color: #3a3a3a;
-    }
-
-    td {
-        border-color: #222;
-    }
-
-    thead {
-        color: #000;
-        background-color: #454545;
-    }
-
-    tbody {
-        tr:nth-child(odd) {
-            background-color: transparent;
+        & {
+            color: #ecc; // 见例词  “育种”、“光刻机”、“华为” 和 “福耀玻璃” 附近的字词。
         }
 
-        tr:nth-child(even) {
-            background-color: rgba(white, 0.0319);
+        code { // 见例词  “育种”、“光刻机” 。
+            color: #fdd;
+        }
+
+        & { // 见例词 “粮食育种技术” 和 “高性能光刻机制造技术” 等多处。另见负面例词 “秦桧” 。
+            background-color: #5008;
+        }
+
+        code {
+            border-color: rgba(#b66, 0.515); // 见例词 “育种”、“光刻机” 。
+            background-color: #15151599;     // 见例词 “育种”、“光刻机” 。另见负面例词 “秦桧” 。
         }
     }
 
 
 
-    code,
-    kbd {
-        text-shadow: none !important;
+    // 文字的【最强强调】形式，且有【删除线】介入。
+    s em strong,
+    s strong em,
+    em s strong,
+    em strong s,
+    strong s em,
+    strong em s {
+
+        &,
+        code {
+            color: #866; // 见负面例词 “秦桧” 。
+            text-decoration-style: solid;
+        }
+
+        code { // 见负面例词 “秦桧” 。
+            border-color: rgba(#d77, 0.2);
+            background-color: #444c;
+        }
     }
 
-    code {
-        color: #d8b;
-        border-color: rgba(white, 0.319);
-        background-color: #050505;
-    }
 
-    s > a,
-    s > code {
-        border-color: rgba(#f88, 0.2);
-    }
+
+
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    //
+    //     在 Stylus 语言的 Mixin 的【定义头】（Signature）中或 Mixin 的【调用语句】中：
+    //
+    //         1)  虽然允许包含【行尾注释】或【块注释】，
+    //             但是但【块注释】居然不允许单独成行。
+    //            【行尾注释】则可以在【定义头】中单独成行，却不可用在【调用语句】中单独成行。
+    //             不能单独成行时，注释须位于【形参】或【实参】同一行中。
+    //             其中，【块注释】可以出现在【形参】或【实参】与其所跟逗号之间，
+    //             但不允许出现在【形参】或【实参】的前面。
+    //
+    //         2)  VSCode 相关插件的对【块注释】的着色不正确。
+    //
+    //         3)  不论是【行尾注释】还是【块注释】，
+    //             均不能出现在最末一个【形参】或【实参】的后面，
+    //             除非最末【形参】、最末【实参】之后也带有逗号。
+    //
+    //         4)  【定义头】的结束括弧与【定义主体】的起始花括号之间不能有任何注释，也不能换行。
+    //
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+
+
+
+    // 当 strong 与 em 并举时，暂称所谓 “ VeryStrong ”，或 “ 最强强调 ” 。
+
+
+
+    MIXIN_anchor__combined_with_em_string_and_s(
+        $anchorSelector:                              'a',                 // 可随意取值。但目前仅取过 a 和 a[href^="#"] 两种值。
+
+        $anchorAny_Anything_TextColor:                #3bc,                // 【超链接】默认的文字颜色。
+
+        $anchorAny_Striked_AnyThing_TextColor:        #3bc,                // 【超链接】一旦出现【删除线】，其一切文本的默认着色。            见例词 “SOFTIMAGE.com” 。
+        $anchorAny_Striked_TermBlock_BorderColor:     rgba(white, 0.219),  // 【超链接】一旦出现【删除线】，其内的【术语字块】的边线颜色。     见例词 “SOFTIMAGE.com” 。
+
+        $anchorVeryStrong_AnyThing_TextColor:         #fee,                // 【超链接】的【最强强调】形式，其一切文本的默认着色。
+        $anchorVeryStrong_TermBlock_BorderColor:      #855,                // 【超链接】的【最强强调】形式，其内的【术语字块】 的默认边线颜色。  见负面例词 “发国难财” 。另见正面例词 “华为” 和 “福耀玻璃” 。
+
+        $anchorVeryStrong_Striked_AnyThing_TextColor: #e3a3c3,             // 【超链接】的【最强强调】形式配以【删除线】时，其一切文本的统一颜色。见负面例词 “发国难财” 。
+
+        $anchorAny_Hover_AnyThing_TextColor:          #5df,                // 【超链接】任何情况下 :hover 时，其一切文本的着色。
+        $anchorAny_Hover_AnyThing_BackgroundColor:    transparent,         // 【超链接】任何情况下 :hover 时，其一切文本的衬底色。
+        $anchorAny_Hover_TermBlock_BackgroundColor:   #000,                // 【超链接】任何情况下 :hover 时，其内的【术语字块】的边线颜色。
+    ) // 为了给【实参】添加注释，最末【实参】之后也必须带有逗号！
+
+
+
+    MIXIN_anchor__combined_with_em_string_and_s(
+        $anchorSelector:                              'a[href^="#"]',      // 可随意取值。但目前仅取过 a 和 a[href^="#"] 两种值。
+        
+        $anchorAny_Anything_TextColor:                #7c6,                // 【超链接】默认的文字颜色。
+
+        $anchorAny_Striked_AnyThing_TextColor:        #7c6,                // 【超链接】一旦出现【删除线】，其一切文本的默认着色。            见例词 “假设已经删除的章节的文内链接” 。
+        $anchorAny_Striked_TermBlock_BorderColor:     rgba(white, 0.219),  // 【超链接】一旦出现【删除线】，其内的【术语字块】的边线颜色。     见例词 “假设已经删除的章节的文内链接” 。
+
+        $anchorVeryStrong_AnyThing_TextColor:         #fdd,                // 【超链接】的【最强强调】形式，其一切文本的默认着色。
+        $anchorVeryStrong_TermBlock_BorderColor:      #855,                // 【超链接】的【最强强调】形式，其内的【术语字块】 的默认边线颜色。
+
+        $anchorVeryStrong_Striked_AnyThing_TextColor: #f66,                // 【超链接】的【最强强调】形式配以【删除线】时，其一切文本的统一颜色。
+
+        $anchorAny_Hover_AnyThing_TextColor:          #9e8,                // 【超链接】任何情况下 :hover 时，其一切文本的着色。
+        $anchorAny_Hover_AnyThing_BackgroundColor:    transparent,         // 【超链接】任何情况下 :hover 时，其一切文本的衬底色。
+        $anchorAny_Hover_TermBlock_BackgroundColor:   #000,                // 【超链接】任何情况下 :hover 时，其内的【术语字块】的边线颜色。
+    ) // 为了给【实参】添加注释，最末【实参】之后也必须带有逗号！
+
+
+
+
 
     pre code {
         background-color: transparent !important;
     }
 
     kbd {
-        // color: #fff;
-        // background-color: #789abc;
-        // border-color: #fff;
-        // box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.219);
-
-        color #ddd;
-        background-color: #151515;
-        background-image: linear-gradient(45deg, black, #151515);
-        border-color: #191919 #131313 #131313 #191919;
-        box-shadow: 0em 0.15em 0 0.05em #000;
+        color #eee;
+        background-color: #515151;
+        background-image: linear-gradient(100deg, #00000016 3%, #fff1 90%), linear-gradient(175deg, #00000016 2%, #fff1 79%);
+        border-color: #333 #222 #222 #333;
+        text-shadow: 1px 1px 2px #0009;
+        box-shadow: 0em 0.2em 0 0.05em #111, inset 0 0 0.1em 0.05em #fff2;
     }
+
+
 
 
 
@@ -243,5 +339,62 @@
 
     hr::before {
         box-shadow: inset 1px 1px 2px 0 rgba(0, 0, 0, 0.51);
+    }
+
+
+
+
+
+    blockquote {
+        color: #bbb;
+        border-color: #794513;
+        background-color: rgba(white, 0.079);
+    }
+
+
+
+    details {
+        background-color: rgba(0, 0, 0, 0.219);
+        box-shadow: inset 0 0 0.25em rgba(0, 0, 0, 0.515);
+    }
+
+    summary:focus,
+    summary:active {
+        color: #7d5;
+    }
+
+
+
+    table {
+        color: #b4b4b4;
+        border-color: #000;
+        background-color: #3c3c3c;
+    }
+
+    thead tr {
+        border-color: #111;
+    }
+
+    th {
+        border-color: #000;
+    }
+
+    td {
+        border-color: #222;
+    }
+
+    thead {
+        color: #666;
+        background-color: #151515;
+    }
+
+    tbody {
+        tr:nth-child(odd) {
+            background-color: transparent;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(white, 0.0319);
+        }
     }
 }

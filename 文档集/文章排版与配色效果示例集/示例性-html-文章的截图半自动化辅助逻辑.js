@@ -109,14 +109,18 @@
         if (darkThemeIsApplied) {
             styleTagForTOCItemAnchorsFakeHover.innerHTML = `
             html body nav.markdown-article-toc li > a[href^="#"].${cssClassNameOfTOCItemAnchorsFakeHovering} {
-                border-color: rgba(255, 255, 255, 0.1) transparent;
-                background-image: linear-gradient(to right, transparent 0.25em, rgba(255, 255, 255, 0.1) 4em, transparent)
+                color: #6f9 !important;
+                border-color: rgba(255, 255, 255, 0.1) transparent!important;
+                background-color: #dfe1!important;
+                background-image: linear-gradient(to right, transparent 0.25em, rgba(255, 255, 255, 0.1) 4em, transparent) !important;
             }`
         } else {
             styleTagForTOCItemAnchorsFakeHover.innerHTML = `
             html body nav.markdown-article-toc li > a[href^="#"].${cssClassNameOfTOCItemAnchorsFakeHovering} {
-                border-color: rgba(255, 255, 255, 0.19) transparent;
-                background-image: linear-gradient(to right, transparent 0.25em, rgba(255, 255, 255, 0.1) 4em, transparent)
+                color: #6d8 !important;
+                border-color: rgba(255, 255, 255, 0.19) transparent !important;
+                background-color: #dfe1 !important;
+                background-image: linear-gradient(to right, transparent 0.25em, rgba(255, 255, 255, 0.1) 4em, transparent) !important;
             }`
         }
 
@@ -252,12 +256,15 @@
             tocItemAnchorToFakeHover,
             articleScrollYOffset,
             tocPanelScrollY,
+            elementToScrollArticleDownTo,
         } = rawConfig
-        const articleScrollY = rawConfig.elementToScrollArticleDownTo.offsetTop + articleScrollYOffset
 
-        // console.log('-'.repeat(19))
-        // console.log(tocItemAnchorToFakeHover)
-        // console.log(articleScrollY)
+        const articleScrollY = elementToScrollArticleDownTo.offsetTop + articleScrollYOffset
+
+        console.debug('-'.repeat(19))
+        console.debug('will scroll to near to', elementToScrollArticleDownTo)
+        console.debug('will scroll these many pixels:', articleScrollY)
+        console.debug('will highlight this TOC item:', tocItemAnchorToFakeHover)
 
         return {
             articleScrollY,
@@ -274,7 +281,9 @@
         } = decideWindowScrollingTopValueAndTOCItemToHover()
 
 
-        if (markdownArticleScrollingDOM === window) {
+        const isToScrollWindow = markdownArticleScrollingDOM === window
+        console.debug('isToScrollWindow', isToScrollWindow, 'scrollY/scrollTop will be', articleScrollY)
+        if (isToScrollWindow) {
             markdownArticleScrollingDOM.scrollY   = articleScrollY
         } else {
             markdownArticleScrollingDOM.scrollTop = articleScrollY

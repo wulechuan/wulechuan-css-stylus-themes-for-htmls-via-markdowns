@@ -1,3 +1,28 @@
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+//
+//     在 Stylus 语言的 Mixin 的【定义头】（Signature）中或 Mixin 的【调用语句】中：
+//
+//         1)  虽然允许包含【行尾注释】或【块注释】，
+//             但是但【块注释】居然不允许单独成行。
+//            【行尾注释】则可以在【定义头】中单独成行，却不可用在【调用语句】中单独成行。
+//             不能单独成行时，注释须位于【形参】或【实参】同一行中。
+//             其中，【块注释】可以出现在【形参】或【实参】与其所跟逗号之间，
+//             但不允许出现在【形参】或【实参】的前面。
+//
+//         2)  VSCode 相关插件的对【块注释】的着色不正确。
+//
+//         3)  不论是【行尾注释】还是【块注释】，
+//             均不能出现在最末一个【形参】或【实参】的后面，
+//             除非最末【形参】、最末【实参】之后也带有逗号。
+//
+//         4)  【定义头】的结束括弧与【定义主体】的起始花括号之间不能有任何注释，也不能换行。
+//
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+
+
+
+
 MIXIN_DefineFireFoxScrollBar($BaseColor = black) {
     $TrackColor       = rgba($BaseColor, 0.15)
     // $TrackColor_hover = rgba($BaseColor, 0.19)
@@ -87,3 +112,284 @@ MIXIN_DefineWebkitScrollBar($BaseColor = black, $SizeScale = 1) {
     }
 }
 
+
+
+
+
+MIXIN_anchor__combined_with_em_string_and_s(
+    $anchorSelector,                              // 可随意取值。但外界调用本 MIXIN 时，目前仅取过 a 和 a[href^="#"] 两种值。
+
+    // 当 strong 与 em 并举时，暂称所谓 “ VeryStrong ”，或 “ 最强强调 ” 。
+
+    $anchorAny_Anything_TextColor,                // 【超链接】默认的文字颜色。
+
+    $anchorAny_Striked_AnyThing_TextColor,        // 【超链接】一旦出现【删除线】，其一切文本的默认着色。
+    $anchorAny_Striked_TermBlock_BorderColor,     // 【超链接】一旦出现【删除线】，其内的【术语字块】的边线颜色。
+
+    $anchorVeryStrong_AnyThing_TextColor,         // 【超链接】的【最强强调】形式，其一切文本的默认着色。
+    $anchorVeryStrong_TermBlock_BorderColor,      // 【超链接】的【最强强调】形式，其内的【术语字块】 的默认边线颜色。
+
+    $anchorVeryStrong_Striked_AnyThing_TextColor, // 【超链接】的【最强强调】形式配以【删除线】时，其一切文本的统一颜色。
+
+    $anchorAny_Hover_AnyThing_TextColor,          // 【超链接】任何情况下 :hover 时，其一切文本的着色。
+    $anchorAny_Hover_AnyThing_BackgroundColor,    // 【超链接】任何情况下 :hover 时，其一切文本的衬底色。
+    $anchorAny_Hover_TermBlock_BackgroundColor,   // 【超链接】任何情况下 :hover 时，其内的【术语字块】的边线颜色。
+) {
+    // 为了给【实参】添加注释，最末【实参】之后也必须带有逗号！
+
+
+
+
+    // 最基本的配置。
+    {$anchorSelector} {
+
+        &,
+        &:visited {
+            color: $anchorAny_Anything_TextColor;
+        }
+    }
+
+
+
+
+
+    // 【超链接】文字的最强强调形式，没有 :hover，但有【删除线】介入。
+    s {$anchorSelector},
+    s {$anchorSelector} em,
+    s em {$anchorSelector},
+    s {$anchorSelector} strong,
+    s strong {$anchorSelector},
+    // -----------
+    {$anchorSelector} s,
+    {$anchorSelector} s em,
+    {$anchorSelector} em s,
+    {$anchorSelector} s strong,
+    {$anchorSelector} strong s,
+    em {$anchorSelector} s,
+    em s {$anchorSelector},
+    strong {$anchorSelector} s,
+    strong s {$anchorSelector} {
+
+        &,
+        code {
+            color: $anchorAny_Striked_AnyThing_TextColor;
+        }
+
+        code {
+            border-color: $anchorAny_Striked_TermBlock_BorderColor;
+        }
+    }
+
+
+
+    // 【超链接】文字的最强强调形式，没有 :hover，没有【删除线】介入。
+    {$anchorSelector} em strong,
+    {$anchorSelector} strong em,
+    em {$anchorSelector} strong,
+    em strong {$anchorSelector},
+    strong {$anchorSelector} em,
+    strong em {$anchorSelector} {
+
+        &,
+        code {
+            color: $anchorVeryStrong_AnyThing_TextColor;
+        }
+
+        code {
+            border-color: $anchorVeryStrong_TermBlock_BorderColor;
+        }
+    }
+
+
+
+    // 【超链接】文字的最强强调形式，没有 :hover，但有【删除线】介入。
+    s {$anchorSelector} em strong,
+    s {$anchorSelector} strong em,
+    s em {$anchorSelector} strong,
+    s em strong {$anchorSelector},
+    s strong {$anchorSelector} em,
+    s strong em {$anchorSelector},
+    // -----------
+    {$anchorSelector} s em strong,
+    {$anchorSelector} s strong em,
+    {$anchorSelector} em s strong,
+    {$anchorSelector} em strong s,
+    {$anchorSelector} strong s em,
+    {$anchorSelector} strong em s,
+    // -----------
+    em s {$anchorSelector} strong,
+    em s strong {$anchorSelector},
+    em {$anchorSelector} s strong,
+    em {$anchorSelector} strong s,
+    em strong s {$anchorSelector},
+    em strong {$anchorSelector} s,
+    // -----------
+    strong s {$anchorSelector} em,
+    strong s em {$anchorSelector},
+    strong {$anchorSelector} s em,
+    strong {$anchorSelector} em s,
+    strong em s {$anchorSelector},
+    strong em {$anchorSelector} s {
+
+        &,
+        code {
+            color: $anchorVeryStrong_Striked_AnyThing_TextColor;
+        }
+    }
+
+
+
+
+
+    // * * * * * * * * * * * //
+    //        :hover         //
+    //        :active        //
+    //        :focus         //
+    // * * * * * * * * * * * //
+
+    $anchorSelector_2 = unquote($anchorSelector)
+
+    _MIXIN_anchor__combined_with_em_string_and_s__hover_active_focus(
+        $anchorSelector:                           unquote('%s:hover' % $anchorSelector_2),
+        $anchorAny_Hover_AnyThing_TextColor,
+        $anchorAny_Hover_AnyThing_BackgroundColor,
+        $anchorAny_Hover_TermBlock_BorderColor:    unquote('currentColor'),
+        $anchorAny_Hover_TermBlock_BackgroundColor,
+    )
+
+
+    _MIXIN_anchor__combined_with_em_string_and_s__hover_active_focus(
+        $anchorSelector:                           unquote('%s:active' % $anchorSelector_2),
+        $anchorAny_Hover_AnyThing_TextColor,
+        $anchorAny_Hover_AnyThing_BackgroundColor,
+        $anchorAny_Hover_TermBlock_BorderColor:    unquote('currentColor'),
+        $anchorAny_Hover_TermBlock_BackgroundColor,
+    )
+
+
+    _MIXIN_anchor__combined_with_em_string_and_s__hover_active_focus(
+        $anchorSelector:                           unquote('%s:focus' % $anchorSelector_2),
+        $anchorAny_Hover_AnyThing_TextColor,
+        $anchorAny_Hover_AnyThing_BackgroundColor,
+        $anchorAny_Hover_TermBlock_BorderColor:    unquote('currentColor'),
+        $anchorAny_Hover_TermBlock_BackgroundColor,
+    )
+} // MIXIN 之定义结束于此。
+
+
+
+_MIXIN_anchor__combined_with_em_string_and_s__hover_active_focus(
+    $anchorSelector,
+    $anchorAny_Hover_AnyThing_TextColor,
+    $anchorAny_Hover_AnyThing_BackgroundColor,
+    $anchorAny_Hover_TermBlock_BorderColor,
+    $anchorAny_Hover_TermBlock_BackgroundColor,
+) {
+    // 为了给【实参】添加注释，最末【实参】之后也必须带有逗号！
+
+
+
+
+
+    // 属性集相同的【规则】故意写若干遍。
+    // 目的是将【选择器】分类，以免在浏览器中出现过长的选择器列表。
+
+    $BLOCK_everything = @block {
+
+        &,
+        code {
+            color: $anchorAny_Hover_AnyThing_TextColor;
+        }
+
+        & {
+            background-color: $anchorAny_Hover_AnyThing_BackgroundColor;
+        }
+
+        code {
+            border-color: $anchorAny_Hover_TermBlock_BorderColor;
+            text-decoration-color: $anchorAny_Hover_TermBlock_BorderColor;
+            background-color: $anchorAny_Hover_TermBlock_BackgroundColor;
+        }
+    }
+
+
+
+    // 【超链接】文字并非最强强调形式，有 :hover（或 :focus 、 :active），但没有【删除线】介入。
+    {$anchorSelector} {
+        {$BLOCK_everything}
+    }
+
+
+
+    {$anchorSelector} em,
+    em {$anchorSelector},
+    {$anchorSelector} strong,
+    strong {$anchorSelector} {
+        {$BLOCK_everything}
+    }
+
+
+
+    // 【超链接】文字并非最强强调形式，有 :hover（或 :focus 、 :active），且有【删除线】介入。
+    s {$anchorSelector},
+    s {$anchorSelector} em,
+    s em {$anchorSelector},
+    s {$anchorSelector} strong,
+    s strong {$anchorSelector},
+    {$anchorSelector} s,
+    {$anchorSelector} s em,
+    {$anchorSelector} em s,
+    {$anchorSelector} s strong,
+    {$anchorSelector} strong s,
+    em {$anchorSelector} s,
+    em s {$anchorSelector},
+    strong {$anchorSelector} s,
+    strong s {$anchorSelector} {
+        {$BLOCK_everything}
+    }
+
+
+
+    // 【超链接】文字的最强强调形式，有 :hover（或 :focus 、 :active），但没有【删除线】介入。
+    {$anchorSelector} em strong,
+    {$anchorSelector} strong em,
+    em {$anchorSelector} strong,
+    em strong {$anchorSelector},
+    strong {$anchorSelector} em,
+    strong em {$anchorSelector}{
+        {$BLOCK_everything}
+    }
+
+
+
+    // 【超链接】文字的最强强调形式，有 :hover（或 :focus 、 :active），且有【删除线】介入。
+    s {$anchorSelector} em strong,
+    s {$anchorSelector} strong em,
+    s em {$anchorSelector} strong,
+    s em strong {$anchorSelector},
+    s strong {$anchorSelector} em,
+    s strong em {$anchorSelector},
+    // -----------
+    {$anchorSelector} s em strong,
+    {$anchorSelector} s strong em,
+    {$anchorSelector} em s strong,
+    {$anchorSelector} em strong s,
+    {$anchorSelector} strong s em,
+    {$anchorSelector} strong em s,
+    // -----------
+    em s {$anchorSelector} strong,
+    em s strong {$anchorSelector},
+    em {$anchorSelector} s strong,
+    em {$anchorSelector} strong s,
+    em strong s {$anchorSelector},
+    em strong {$anchorSelector} s,
+    // -----------
+    strong s {$anchorSelector} em,
+    strong s em {$anchorSelector},
+    strong {$anchorSelector} s em,
+    strong {$anchorSelector} em s,
+    strong em s {$anchorSelector},
+    strong em {$anchorSelector} s{
+        {$BLOCK_everything}
+    }
+}

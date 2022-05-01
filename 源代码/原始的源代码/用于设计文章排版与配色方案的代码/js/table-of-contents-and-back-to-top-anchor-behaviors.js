@@ -17,9 +17,9 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
     const printDoubleLine = '='.repeat(fullWidth)
 
     const emailAddress = 'wulechuan@live.com'
-    const timeStamp = '北京时间 2021-03-21'
+    const timeStamp = '北京时间 2022-05-01'
 
-    const welcomeZhHansCN = '欢迎使用吴乐川设计的用于控制文章目录之交互的控制器。'
+    const welcomeZhHansCN = '欢迎使用吴乐川设计的用于“控制文章目录之交互”的控制器。'
     const welcomeEn = 'Welcome to wulechuan\'s article TOC controller.'
 
     const words = '中国人——特别是汉族人，理应坚持广泛、规范地使用汉语。凡非必要之情形不说外国话、不用外国字。此乃天经地义！\n然则每当必要，亦不排斥采用外国之语言。不妨博世界之学问，养中国之精神。\n本人亦支持少数民族坚持采用自己民族的传统语言。仍须强调，凡中国人，皆应会用汉语、积极使用汉语，此乃中华各民族之大一统之必由。'
@@ -52,9 +52,9 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
     console.log(
         `\n${
             printDoubleLine
-        }\n\n${
+        }\n\n%c${
             welcomeZhHansCN
-        }\n（ ${
+        }%c\n（ ${
             welcomeEn
         } ）\n\n${
             ' '.repeat(fullWidth - emailAddress.length)
@@ -74,7 +74,22 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
             wordLines.join('\n')
         }\n\n${
             printDoubleLine
-        }\n\n\n`
+        }\n\n\n`,
+
+        [
+            'font-family: sans-serif;',
+            'font-size: 1.25em;',
+            'display: inline-block;',
+            'vertical-align: baseline;',
+            'color: #000;',
+            'text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.51);',
+            'background-color: #ffe0be;',
+            'border-radius: 3px;',
+            'margin: 0.5em 0;',
+            'padding: 0.5em 1em 0.5em 1.5em;',
+        ].join(''),
+
+        null
     )
 
     const cssClassNameTOCExists                  = 'markdown-article-toc-exists'
