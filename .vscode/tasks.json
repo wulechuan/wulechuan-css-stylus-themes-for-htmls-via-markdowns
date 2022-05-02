@@ -7,7 +7,8 @@
             "label": "将代码依次推送至多个集得源",
             "type": "shell",
             "command": ".Push-将代码依次推送至多个集得源.ps1",
-            "group": "none"
+            "group": "none",
+            "problemMatcher": []
         },
         {
             "label": "每当制作集得之版本之前",
