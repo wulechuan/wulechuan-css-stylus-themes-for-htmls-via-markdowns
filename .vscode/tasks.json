@@ -4,6 +4,20 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "更新所有npm依赖包至最新版本（PowerShell）",
+            "type": "shell",
+            "command": ".\\用于研发阶段的命令行工具\\PowerShell\\Update-更新所有npm依赖包至最新版本.ps1",
+            "group": "none",
+            "problemMatcher": []
+        },
+        {
+            "label": "更新所有npm依赖包至最新版本（Bash）",
+            "type": "shell",
+            "command": "./用于研发阶段的命令行工具/bash/Update-更新所有npm依赖包至最新版本.sh",
+            "group": "none",
+            "problemMatcher": []
+        },
+        {
             "label": "每当制作集得之版本之前",
             "type": "shell",
             "command": "npm  run  每当制作集得之版本之前",
@@ -11,11 +25,18 @@
             "problemMatcher": []
         },
         {
-            "label": "将代码依次推送至多个集得源",
+            "label": "将代码依次推送至多个集得源（PowerShell）",
             "type": "shell",
             "command": ".Push-将代码依次推送至多个集得源.ps1",
             "group": "none",
             "problemMatcher": []
+        },
+        {
+            "label": "将代码依次推送至多个集得源（Bash）",
+            "type": "shell",
+            "command": "./push-将代码依次推送至多个集得源.sh",
+            "group": "none",
+            "problemMatcher": [],
         },
     ]
 }
