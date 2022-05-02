@@ -4,18 +4,18 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "每当制作集得之版本之前",
+            "type": "shell",
+            "command": "npm  run  每当制作集得之版本之前",
+            "group": "none",
+            "problemMatcher": []
+        },
+        {
             "label": "将代码依次推送至多个集得源",
             "type": "shell",
             "command": ".Push-将代码依次推送至多个集得源.ps1",
             "group": "none",
             "problemMatcher": []
         },
-        {
-            "label": "每当制作集得之版本之前",
-            "type": "shell",
-            "command": "npm  run  每当制作集得之版本之前",
-            "group": "none",
-            "problemMatcher": []
-        }
     ]
 }
