@@ -36,7 +36,7 @@ I've purposely prepared an example markdown article. I generate 2 HTML files out
 
 - [example.en-us.default-light-colored-theme.html](../../文章排版与配色效果示例集/以-html-格式渲染好的文章成品/html/example.en-us.default-light-colored-theme.html)
 
-##### The Snapshots(Pictures) of the HTML Files in FireFox
+##### The Snapshots(Pictures) of the HTML Files in Microsoft Edge Browser
 
 > Some picture files are very large, file sizes in mega bytes.
 
@@ -56,7 +56,7 @@ I've purposely prepared an example markdown article. I generate 2 HTML files out
 
 - [example.en-us.default-dark-colored-theme.html](../../文章排版与配色效果示例集/以-html-格式渲染好的文章成品/html/example.en-us.default-dark-colored-theme.html)
 
-##### The Snapshots(Pictures) of the HTML File in FireFox Browser
+##### The Snapshots(Pictures) of the HTML File in Microsoft Edge Browser
 
 > Some picture files are very large, file sizes in mega bytes.
 

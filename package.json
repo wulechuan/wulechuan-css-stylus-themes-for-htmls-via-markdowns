@@ -2,8 +2,8 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "吴乐川 <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "7.6.0",
-  "description": "此为吴乐川的《HTML 文章排版与配色之方案集与相关制作工具》。本工具可用于构建一组层叠样式表（即 CSS ）文件，本工具亦提供了一组现成的层叠样式表文件。凡这些样式表，均可用于美化采用超文本标记语言（即 HTML ）格式存储的文章。且不必同时取用多个样式表文件，仅取其一足矣。",
+  "version": "7.6.1",
+  "description": "此为吴乐川的《HTML 文章排版与配色之方案集与相关制作工具》。本工具可用于构建一组层叠样式表（即 CSS ）文件。本工具亦提供了一组现成的层叠样式表文件。凡这些样式表，均可用于美化超文本标记语言（即 HTML）格式的文章。于单一文章，不必同时取用多个样式表文件，仅取其一足矣。",
   "directories": {
     "source": "源代码/原始的源代码",
     "dist": "源代码/发布的源代码",
@@ -12,6 +12,7 @@
   },
   "main": "源代码/发布的源代码/本工具作为其他-javascript-工具之依赖模块时的代码/index.js",
   "types": "源代码/发布的源代码/本工具作为其他-javascript-工具之依赖模块时的代码/index.d.ts",
+  "type": "commonjs",
   "scripts": {
     "eslint": "eslint    ./.eslintrc.js    ./gulpfile.esm.js/**/*.js    ./文档集/文章排版与配色效果示例集/*.js    ./测试集/*.js    ./源代码/发布的源代码/本工具作为其他-javascript-工具之依赖模块时的代码/*.js    ./源代码/原始的源代码/用于设计文章排版与配色方案的代码/js/**/*.js    ./本项目之全局配置项集.js",
     "open-firefox-for-snapshots": "start    firefox    ./测试集/产生的临时文件/示例性-html-文件集（均嵌有半自动化截图辅助逻辑）/example.en-us.default-light-colored-theme.html    ./测试集/产生的临时文件/示例性-html-文件集（均嵌有半自动化截图辅助逻辑）/example.en-us.default-dark-colored-theme.html    ./测试集/产生的临时文件/示例性-html-文件集（均嵌有半自动化截图辅助逻辑）/example.zh-hans-cn.default-light-colored-theme.html    ./测试集/产生的临时文件/示例性-html-文件集（均嵌有半自动化截图辅助逻辑）/example.zh-hans-cn.default-dark-colored-theme.html",
@@ -31,7 +32,8 @@
     "test": "npm     run  eslint        &&        npm  run  _test-all-without-linting-without-browser    &&    npm  run  open-firefox-for-snapshots    &&    npm  run  open-dev-htmls",
     "build": "npm    run  eslint        &&        npm  run  _build                                       &&    npm  run  update-example-htmls",
     "build-2": "npm  run  eslint        &&        npm  run  _build-2                                     &&    npm  run  update-example-htmls-2",
-    "每当制作集得之版本之前": "npm  i    &&    npm  test",
+    "发布新图片之前对开发者做出提醒": "node  ./文档集/文章排版与配色效果示例集/供-nodejs-调用--发布新图片前的必要步骤.js    &    code   ./文档集/文章排版与配色效果示例集/发布新图片前的必要步骤.md",
+    "每当制作集得之版本之前": "npm  i    &&    npm  test    &&    npm  run  发布新图片之前对开发者做出提醒",
     "prepublishOnly": "npm       i    &&    npm  test"
   },
   "dependencies": {

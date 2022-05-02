@@ -1,6 +1,7 @@
+# 吴乐川的 HTML 文章排版与配色之方案集
+
 <link rel="stylesheet" href="./源代码/发布的源代码/文章排版与配色方案集/层叠样式表/wulechuan-styles-for-html-via-markdown--vscode.default.min.css">
 
-# 吴乐川的 HTML 文章排版与配色之方案集
 
 > 中国人——特别是汉族人，理应坚持广泛、规范地使用汉语。凡非必要之情形不说外国话、不用外国字。此乃天经地义！然则每当必要，亦不排斥采用外国之语言。不妨 **博世界之学问，养中国之精神** 。
 >
@@ -29,13 +30,35 @@
 </dl>
 
 
+
+
+
+## 源代码仓库
+
+| <span style="display:inline-block;width:180px;">提供仓库服务之组织</span> | <span style="display:inline-block;width:150px;">仓库组织之国别</span> | 仓库地址 |
+| ------------- | :----------: | ------- |
+| 码云           | 中华人民共和国 | [https://gitee.com/nanchang-wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns](https://gitee.com/nanchang-wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns) |
+| 阿里云之代码仓库 | 中华人民共和国 | [https://code.aliyun.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns](https://code.aliyun.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns) |
+| GitHub         | 美           | [https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns](https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns) |
+
+
+
 ## 此物何用
 
-本工具用于构建一组层叠样式表（即 CSS ）文件。本工具亦提供了一组现成的层叠样式表文件。凡这些样式表，均可用于美化采用超文本标记语言（即 HTML）格式的文章。且不必同时取用多个样式表文件，仅取其一足矣。
+本工具提供两类基本功能。且二者紧密相关。
 
-本品还额外提供了一个很小巧的 JavaScript 接口，使得其它 JavaScript 工具包亦可较方便地以程序化之方式使用这些层叠样式表（ CSS ）文件之内容。详见下文《[以程序化之方式取用本工具提供之内容](#以程序化之方式取用本工具提供之内容)》一节。
+1.  本工具用于构建一组层叠样式表（即外国话所谓 CSS）文件。
 
-> 不妨强调，于开发者而言，本品可以是一个样式表构建工具，用以相对方便地构建出新的符合特定喜欢或需求的 CSS 文件。
+
+2.  本工具亦提供了一组现成的层叠样式表文件。
+
+凡这些样式表，不论是本工具现成提供的还是开发者采用本工具自己创建的，均可用于美化采用超文本标记语言（即 HTML）格式的文章。于任一文章，不必同时取用多个样式表文件，仅取其一足矣。
+
+本品还提供了一个 JavaScript 编程接口，使得其它 JavaScript 工具包亦可以程序化之方式使用这些层叠样式表文件之内容。详见下文《[以程序化之方式取用本工具提供之内容](#以程序化之方式取用本工具提供之内容)》一节。
+
+
+> 不妨强调，于开发者而言，本品可以是一个样式表**构建工具**，用以相对方便地构建出新的符合特定喜好或需求的样式表文件。
+
 
 
 
@@ -56,19 +79,28 @@
 
 本工具配备了两篇范文，汉语一篇，英语一篇，均套用了本工具之默认样式，以示效果。
 
-一图胜千言。以下为范文之截图。
+### 已转换为 HTML 格式的范文副本
 
-> 以下各图较大，文件大小在**百万字节**级别。若网络不佳不便阅图，亦可下载 HTML 文件观察其面貌。
-> 
-> HTML 范文
->
-> -   《[HTML 范文（汉语版，浅色）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/html/example.zh-hans-cn.default-light-colored-theme.html)》
-> -   《[HTML 范文（汉语版，深色）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/html/example.zh-hans-cn.default-dark-colored-theme.html)》
-> -   《[HTML 范文（英语版，浅色）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/html/example.en-us.default-light-colored-theme.html)》
-> -   《[HTML 范文（英语版，深色）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/html/example.en-us.default-dark-colored-theme.html)》
+范文之截图可以较好地展示文章之（视觉层面的）样貌。但截图文件往往较大，有些竟在**百万字节**级别。因此，不妨在此先给出 HTML 文件。截图在后文也会一并给出。
 
 
-### 范文富有特色的大幅截图
+HTML 范文如下：
+
+-   《[HTML 范文（汉语版，浅色）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/html/example.zh-hans-cn.default-light-colored-theme.html)》
+-   《[HTML 范文（汉语版，深色）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/html/example.zh-hans-cn.default-dark-colored-theme.html)》
+-   《[HTML 范文（英语版，浅色）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/html/example.en-us.default-light-colored-theme.html)》
+-   《[HTML 范文（英语版，深色）](./文档集/文章排版与配色效果示例集/以-html-格式渲染好的文章成品/html/example.en-us.default-dark-colored-theme.html)》
+
+
+
+### HTML 范文的截图
+
+一图胜千言。以下将给出范文之截图。
+
+> 以下各图较大，文件大小在**百万字节**级别。若网络不佳不便阅图，亦可改为下载 HTML 文件观察其面貌。见上文《[已转换为 HTML 格式的范文副本](#已转换为%20HTML%20格式的范文副本)》。
+
+
+#### 范文富有特色的大幅截图
 
 
 1.  应用了**默认浅色主题**的范文之截图
@@ -103,25 +135,18 @@
         -   [存放在 Gitee 中的版本，便于中国大陆地区查阅](https://gitee.com/nanchang-wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns/blob/master/%E6%96%87%E6%A1%A3%E9%9B%86/%E6%96%87%E7%AB%A0%E6%8E%92%E7%89%88%E4%B8%8E%E9%85%8D%E8%89%B2%E6%95%88%E6%9E%9C%E7%A4%BA%E4%BE%8B%E9%9B%86/%E4%BB%A5-html-%E6%A0%BC%E5%BC%8F%E6%B8%B2%E6%9F%93%E5%A5%BD%E7%9A%84%E6%96%87%E7%AB%A0%E6%88%90%E5%93%81/%E5%90%84%E6%96%87%E7%AB%A0%E6%9C%80%E7%BB%88%E5%91%88%E7%8E%B0%E6%95%88%E6%9E%9C%E4%B9%8B%E6%88%AA%E5%9B%BE/example_en-US_default-dark-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
 
 
-### 范文的所有截图
+#### 范文的所有截图
 
 两篇范文之截图不止于上文中提及的四幅。更多图例，见：
 
 - 《[应用效果示例（汉语版）](./文档集/说明书/汉语/关于文章排版与配色效果示例集的说明.md)》
 - 《[应用效果示例（英语版）](./文档集/说明书/en-US/application-examples.md)》
 
+#### 范文截图制作指南
+
 另，日常制作网页截图是很简单的事情，但本工具之范文篇幅巨大，为其截图确须一定经验和技巧。见《[示范文章之截图之制作指南](./文档集/说明书/汉语/示范文章之截图之制作指南.md)》。
 
 
-
-
-## 源代码仓库
-
-| <span style="display:inline-block;width:180px;">提供仓库服务之组织</span> | <span style="display:inline-block;width:150px;">仓库组织之国别</span> | 仓库地址 |
-| ------------- | :----------: | ------- |
-| 码云           | 中华人民共和国 | [https://gitee.com/nanchang-wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns](https://gitee.com/nanchang-wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns) |
-| 阿里云之代码仓库 | 中华人民共和国 | [https://code.aliyun.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns](https://code.aliyun.com/wulechuan/wulechuan-themes-for-htmls-via-markdowns) |
-| GitHub         | 美           | [https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns](https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns) |
 
 
 
@@ -129,35 +154,35 @@
 
 ### 使用须知
 
-- 本工具提供的主体内容仅为一组层叠样式表（CSS）文件，及配套的 JavaScript 文件（目前仅一个这样的 JavaScript 文件）。
+本工具提供一组层叠样式表（CSS）文件，及配套的 JavaScript 文件（目前仅一个这样的 JavaScript 文件）。它们可用于装点 HTML 文章之样貌，也为文章提供额外的交互行为。应该指出，被装点的文章可以是任何人以任何方式创建的 HTML 文件，但常见的情形往往是这些 HTML 文件系从 MarkDown 文件转换而得。**但重点在于本工具提供的主体内容仅限层叠样式表文件。**
 
-    换言之，本工具**并不能**将 Markdown 文件转换为对应的 HTML 文件。本工具假定诸君各自另有办法将 Markdown 内容转换成 HTML 内容，诸君采用本工具仅仅是希望取其中的 CSS 对诸君的 HTML 做进一步的排版美化。于此种情形，用法再简单不过——**自行取用那些 CSS 文件**即可。
-
-
-    所谓自行取用，即是说诸君在本项目之发布文件夹中自行找到中意之 CSS 文件（及配套 JavaScript 文件），采用之。且于单一 HTML 文件，在本工具提供之所有 CSS 文件取用其任一足矣，不必取用多者。
-
-    又，取用本工具提供之 CSS 、 JavaScript 文件之内容时，若每每人为复制、粘贴，未免麻烦。尤其是在面对批量运用或自动化运用之要求时，开发人员当然希望能编写程序调集所需资源加以运用。刚巧本工具确实提供了专门的 JavaScript 编程接口，以 **JavaScript 文本（string）** 之形式提供各 CSS 、 JavaScript 文件之内容。见下文《[以程序化之方式取用本工具提供之内容](#以程序化之方式取用本工具提供之内容)》。
+换言之，本工具**并不能**将 Markdown 文件转换为对应的 HTML 文件。本工具假定诸君各自另有办法将 Markdown 内容转换成 HTML 内容，诸君采用本工具仅仅是希望取其中的 CSS 对诸君的 HTML 做进一步的排版美化。于此种情形，用法再简单不过——**自行取用那些 CSS 文件**即可。
 
 
-    > 不过，不论是手工直接取用本工具中之 CSS 文件，还是调用本工具之 JavaScript 接口取用这些 CSS 文件，都没有解决一部分读者的困难：你们的初衷是要将手头的一些 Markdown 文件转换成 HTML 文件，而采用我提供的这些 CSS 只是锦上添花式的要求。临用之际，单单一个 CSS 文件显然不解燃眉之急。
-    >
-    > 此种情形下，诸君首先需要的是一款可以进行文件格式转换之工具，而后才考虑如何将本工具提供之 CSS 嵌入 HTML 之中。
-    >
-    > 那么新的问题来了，我能不能**顺便**推荐一款从 MarkDown 文件至 HTML 文件的转换工具呢？当然！鄙人毛遂自荐，愿助诸君一臂之力！鄙人另行自创有三个 NPM 包，专用于轻松、快速地从 Markdown 内容构建对应之 HTML 内容。且三者均默认采用本工具发布之 CSS 之内容（及配套 JavaScript 内容）。我在[本说明书之尾部](#相关推广)亦对此三款软件包做了推广。诸君无需另起炉灶了！唯愿三者之任一能对君有所裨益！
+所谓自行取用，即是说诸君在本项目之发布文件夹中自行找到中意之 CSS 文件（及配套 JavaScript 文件），采用之。且于单一 HTML 文件，在本工具提供之所有 CSS 文件取用其任一足矣，不必取用多者。
+
+又，取用本工具提供之 CSS 、 JavaScript 文件之内容时，若每每人为复制、粘贴，未免麻烦。尤其是在面对批量运用或自动化运用之要求时，开发人员当然希望能编写程序调集所需资源加以运用。刚巧本工具确实提供了专门的 JavaScript 编程接口，以 **JavaScript 文本（string）** 之形式提供各 CSS 、 JavaScript 文件之内容。见下文《[以程序化之方式取用本工具提供之内容](#以程序化之方式取用本工具提供之内容)》。
 
 
-- 如果阁下取用本工具中之 CSS 主题文件另有意图，即与将 Markdown 转换至 HTML 之事毫无干系，那么或许更应该了解如何编写程序调集所需的由本工具提供之 CSS 资源加以运用。见下文《[以程序化之方式取用本工具提供之内容](#以程序化之方式取用本工具提供之内容)》。
+> 不过，不论是手工直接取用本工具中之 CSS 文件，还是调用本工具之 JavaScript 接口取用这些 CSS 文件，都没有解决一部分读者的困难：你们的初衷是要将手头的一些 Markdown 文件转换成 HTML 文件，而采用我提供的这些 CSS 只是锦上添花式的要求。临用之际，单单一个 CSS 文件显然不解燃眉之急。
+>
+> 此种情形下，诸君首先需要的是一款可以进行文件格式转换之工具，而后才考虑如何将本工具提供之 CSS 嵌入 HTML 之中。
+>
+> 那么新的问题来了，我能不能**顺便**推荐几款能将 MarkDown 文件转换至 HTML 文件的工具呢？当然！鄙人毛遂自荐，愿助诸君一臂之力！鄙人另行自创有三个工具，专用于轻松、快速地从 Markdown 内容构建对应之 HTML 内容。且三者均默认采用本工具发布之 CSS 之内容（及配套 JavaScript 内容）。我在[本说明书之尾部](#相关工具之推广)亦对此三款软件包做了推广。诸君无需另起炉灶了！唯愿三者之任一能对君有所裨益！
+
+
+又，如果阁下取用本工具中之 CSS 主题文件另有意图，即与将 Markdown 转换至 HTML 之事毫无干系，那么或许更应该了解如何编写程序调集所需的由本工具提供之 CSS 资源加以运用。见下文《[以程序化之方式取用本工具提供之内容](#以程序化之方式取用本工具提供之内容)》。
 
 
 ### 手工取用本工具的文件
 
 #### 取用 CSS 文件
 
-请在 `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表` 文件夹下自行获取所需文件。
+请在 `./源代码/发布的源代码/文章排版与配色方案集/层叠样式表` 文件夹下自行获取所需的样式表文件。
 
 #### 取用 Javascript 文件
 
-请在 `./源代码/发布的源代码/文章排版与配色方案集/javascript` 文件夹下自行获取所需文件。
+请在 `./源代码/发布的源代码/文章排版与配色方案集/javascript` 文件夹下自行获取所需的 JavaScript 文件。
 
 
 ### 以程序化之方式取用本工具提供之内容
@@ -166,13 +191,13 @@
 
 在面对批量运用或自动化运用之要求时，开发人员当然希望能编写程序调集所需资源加以运用。本工具确实提供了专门的 JavaScript 编程接口，以 JavaScript 字符串数据的形式提供各 CSS 、 JavaScript 文件之内容。
 
-> 本工具还额外提供了编程接口配套的 TypeScript 类型定义：
->
+> 本工具还额外提供了编程接口配套的 TypeScript 类型定义：\
 > `源代码/发布的源代码/本工具作为其他-javascript-工具之依赖模块时的代码/index.d.ts`
 
 #### 以程序化之方式取用本工具提供之内容之示范代码
 
-> 下例中代码之主体节选自本项目的<br>《`测试集/用于测试本项目之-javascript-接口的测试代码集.js`》。
+> 下例中代码之主体节选自本项目的\
+> 《`测试集/用于测试本项目之-javascript-接口的测试代码集.js`》。
 
 ```js
 const {
@@ -265,7 +290,7 @@ const 这还是目前唯一的Javascript文件之内容全文 = 获取某一已�
 ```
 
 
-#### 所谓“文件简易描述项”
+#### 本工具特有的所谓“文件简易描述项”
 
 其 TypeScript 类型定义如下：
 
@@ -300,8 +325,11 @@ declare type 范_吴乐川用于美化文章的层叠样式表集_文件简易�
 又，借助“**接口 js**”获取“**文章 js**”之内容时，“接口 js”还**允许对“文章 js”之内容进行些许临时定制**。故而，最终获得的内容字符串有异于本工具存储的原始版本。换言之，你调用本工具的“**接口 js**”中的某接口函数时，可在接口函数的某一项参数传入【配置项集】，以对 “**文章 js**”之内容做些许改变。
 
 > 有两个不同的接口函数各自可以接受该配置项集，但形参位置不同。
-> 1.  第一个函数是 `总接口.获取某一已发布之文件之完整内容字符串` ，它在**第 3 形参**接受上述【配置项集】。
-> 1.  第二个函数是 `总接口.获取本项目官方选定之所谓默认Javascript之完整内容字符串` ，它在**第 2 形参**接受上述【配置项集】。
+> 1.  第一个函数是\
+> `总接口.获取某一已发布之文件之完整内容字符串` ，它在**第 3 形参**接受上述【配置项集】。
+>
+> 1.  第二个函数是\
+> `总接口.获取本项目官方选定之所谓默认Javascript之完整内容字符串` ，它在**第 2 形参**接受上述【配置项集】。
 
 上述【配置项集】之 TypeScript 类型定义如下：
 
@@ -332,7 +360,7 @@ declare type 范_吴乐川用于美化文章的层叠样式表集_拾取默认Ja
 -----
 
 
-## 相关推广
+## 相关工具之推广
 
 鄙人另有一款 NPM 包，名为“[@wulechuan/generate-html-via-markdown](https://www.npmjs.com/package/@wulechuan/generate-html-via-markdown)”。为便于指称，不妨暂称“**甲**”。调用甲之接口，可将传入该接口的 Markdown 字符串转换成 HTML 字符串。此时，甲默认会采用本工具提供的 CSS 文件来装饰甲自身产生的 HTML 之内容。
 
@@ -355,6 +383,12 @@ declare type 范_吴乐川用于美化文章的层叠样式表集_拾取默认Ja
 
 1.  旧版代码不复存在。
 2.  当前的范文截图常常与代码所能产出之真正面貌有所差异，因为范文更新进度多半时候落后于代码，也落后于 NPM 版本发布。
+
+    > 最末发布的截图系针对本工具之 `v7.6.0` 版，各图均制作于 2022 年 5 月 1 日。
+    >
+    > 但若再有新图发布替换旧图，亦可因为本人遗漏对此文之修订而令上述版本、发布日期均不实。
+
+
 3.  未来是否因为代码仓库累计尺寸巨大而再次清空代码仓库从头提交代码，亦未可知。
 
 
