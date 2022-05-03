@@ -18,10 +18,17 @@
         //     "problemMatcher": []
         // },
         {
+            "label": "开始研发",
+            "type": "shell",
+            "command": "npm  start",
+            "group": "none",
+            "problemMatcher": []
+        },
+        {
             "label": "每当制作集得之版本之前",
             "type": "shell",
             "command": "npm  run  每当制作集得之版本之前",
-            "group": "none",
+            "group": "build",
             "problemMatcher": []
         },
         {
