@@ -2,7 +2,7 @@
   "name": "@wulechuan/css-stylus-markdown-themes",
   "author": "吴乐川 <wulechuan@live.com>",
   "license": "WTFPL",
-  "version": "7.6.1",
+  "version": "7.6.2",
   "description": "此为吴乐川的《HTML 文章排版与配色之方案集与相关制作工具》。本工具可用于构建一组层叠样式表（即 CSS ）文件。本工具亦提供了一组现成的层叠样式表文件。凡这些样式表，均可用于美化超文本标记语言（即 HTML）格式的文章。于单一文章，不必同时取用多个样式表文件，仅取其一足矣。",
   "directories": {
     "source": "源代码/原始的源代码",
@@ -40,8 +40,8 @@
     "globby": "^11.1.0"
   },
   "devDependencies": {
-    "@wulechuan/cli-scripts--git-push": "^2.0.2",
-    "@wulechuan/generate-html-via-markdown": "^3.2.1",
+    "@wulechuan/cli-scripts--git-push": "^2.0.3",
+    "@wulechuan/generate-html-via-markdown": "^3.2.2",
     "@wulechuan/gulp-classical-task-cycle": "^0.3.0",
     "chalk": "^4.1.2",
     "cssnano": "^5.1.7",

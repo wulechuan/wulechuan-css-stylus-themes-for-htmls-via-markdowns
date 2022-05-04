@@ -14,7 +14,7 @@
  *
  *                                          吾乃南昌吴乐川是也
  *                                          wulechuan@live.com
- *                                                  2021-03-21
+ *                                                  2022-05-03
  *
  *
  *
@@ -1362,6 +1362,24 @@ body {
 .markdown-article em,
 .markdown-article strong {
   font-weight: 500;
+}
+.markdown-article h1 em,
+.markdown-article h2 em,
+.markdown-article h3 em,
+.markdown-article h4 em,
+.markdown-article h5 em,
+.markdown-article h6 em,
+.markdown-article h1 strong,
+.markdown-article h2 strong,
+.markdown-article h3 strong,
+.markdown-article h4 strong,
+.markdown-article h5 strong,
+.markdown-article h6 strong {
+  font-weight: 600;
+}
+.markdown-article dt em,
+.markdown-article dt strong {
+  font-weight: inherit;
 }
 .markdown-article b,
 .markdown-article em strong,
