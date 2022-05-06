@@ -14,7 +14,7 @@
  *
  *                                          吾乃南昌吴乐川是也
  *                                          wulechuan@live.com
- *                                                  2022-05-03
+ *                                                  2022-05-06
  *
  *
  *
@@ -48,14 +48,14 @@ body {
   margin: 0;
 }
 body {
-  padding-top: 3.75em;
+  padding-top: 4.0625em;
   padding-right: 1.25em;
   padding-bottom: 7.5em;
   padding-left: 1.25em;
 }
 @media screen and (min-width: 2190px) {
   body {
-    padding-top: 5.25em;
+    padding-top: 5.6875em;
     padding-right: 1.75em;
     padding-bottom: 10.5em;
     padding-left: 1.75em;
@@ -63,7 +63,7 @@ body {
 }
 @media screen and (min-width: 2879px) {
   body {
-    padding-top: 7.5em;
+    padding-top: 8.125em;
     padding-right: 2.5em;
     padding-bottom: 15em;
     padding-left: 2.5em;
@@ -80,7 +80,7 @@ body {
 .markdown-article [lang*="zh-"],
 .markdown-article [lang*="-hans"],
 .markdown-article [lang*="-CN"] {
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
 }
 .markdown-article a {
   font-size: inherit;
@@ -234,7 +234,7 @@ body {
 .markdown-article [lang*="zh-"] h2,
 .markdown-article [lang*="-hans"] h2,
 .markdown-article [lang*="-CN"] h2 {
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
 }
 .markdown-article h5 + h6,
 .markdown-article h4 + h5,
@@ -299,7 +299,8 @@ body {
   margin-bottom: 0.5em;
 }
 .markdown-article li > p {
-  margin-left: 0;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
 }
 .markdown-article h1 + p,
 .markdown-article h2 + p,
@@ -319,7 +320,7 @@ body {
 .markdown-article [lang*="zh-"] p,
 .markdown-article [lang*="-hans"] p,
 .markdown-article [lang*="-CN"] p {
-  text-indent: 2.4em;
+  text-indent: 2.2em;
 }
 .markdown-article [lang*="zh-" i] li > p:only-of-type,
 .markdown-article [lang*="-hans" i] li > p:only-of-type,
@@ -440,7 +441,7 @@ body {
 }
 .markdown-article video {
   display: block;
-  width: calc(100% - 2em);
+  width: calc(100% - 1em);
   margin: 1.5em auto;
 }
 .markdown-article blockquote {
@@ -456,17 +457,20 @@ body {
   max-width: calc(100% - 4em);
 }
 .markdown-article details {
-  margin: 0.5em 1em 1.5em;
-  padding: 0.5em 1em;
+  margin: 0.5em 1.5em 1.5em;
+  padding: 0.5em 1.5em;
 }
 .markdown-article li > details {
   margin-left: 0;
   margin-right: 0;
 }
 .markdown-article summary {
+  font-size: 1.1em;
   cursor: pointer;
-  padding: 0.25em 0.5em;
+  padding: 0.15em 0.5em 0.15em 1em;
   margin: 0.25em -0.25em;
+  text-indent: -0.85em;
+  font-weight: bold;
 }
 .markdown-article pre + details {
   margin-top: -0.5em;
@@ -501,8 +505,6 @@ body {
   white-space: pre-wrap;
   margin: 0.1em;
   padding: 0.15em 0.2em;
-  position: relative;
-  top: -0.05em;
   cursor: text;
 }
 .markdown-article [lang*="zh-" i] code,
@@ -511,7 +513,7 @@ body {
 .markdown-article [lang*="zh-"] code,
 .markdown-article [lang*="-hans"] code,
 .markdown-article [lang*="-CN"] code {
-  padding-left: 0.4em;
+  padding-left: 0.25em;
 }
 .markdown-article strong code,
 .markdown-article em code {
@@ -700,24 +702,34 @@ body {
   transform: scaleX(-1);
 }
 @media (max-width: 600px) {
+  .markdown-article h1,
+  .markdown-article h2,
+  .markdown-article h3 {
+    padding-left: 1em;
+  }
+  .markdown-article h4,
+  .markdown-article h5,
+  .markdown-article h6 {
+    padding-left: 0.8em;
+  }
   .markdown-article h1 {
-    font-size: 1.8em;
+    font-size: 2.25em;
   }
   .markdown-article h2 {
-    font-size: 1.6em;
+    font-size: 1.9em;
   }
   .markdown-article h3 {
-    font-size: 1.4em;
+    font-size: 1.6em;
   }
   .markdown-article h4 {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
   .markdown-article h5 {
-    font-size: 1.1em;
+    font-size: 1.2em;
   }
   .markdown-article h6,
   .markdown-article dt {
-    font-size: 1em;
+    font-size: 1.1em;
   }
   .markdown-article ul,
   .markdown-article ol {
@@ -805,9 +817,18 @@ body {
 }
 .markdown-article .header-anchor,
 .markdown-article a.header-anchor {
-  margin-left: -1em;
-  text-decoration-line: none;
+  margin: -0.2em -0.15em 0em -1.35em;
+  padding: 0.25em 0;
+  width: 1.5em;
+  box-sizing: border-box;
+  text-align: center;
   font-weight: normal;
+  border-radius: 0.25em;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration-line: none;
 }
 .markdown-article blockquote > h6 .header-anchor,
 .markdown-article th > h6 .header-anchor,
@@ -848,7 +869,9 @@ body {
   }
   .header-anchor,
   a.header-anchor {
-    margin-left: -0.5em;
+    margin-left: -1.2em;
+    margin-right: -0.2em;
+    width: 1em;
   }
 }
 .markdown-article-back-to-top {
@@ -930,12 +953,14 @@ input,
 textarea,
 select,
 option {
-  font-family: '微软雅黑', 'Microsoft YaHei UI', 'Microsoft YaHei', 'Segoe UI', 'Lucida Grande', Helvetica, sans-serif;
+  font-family: serif;
+}
+code {
+  font-family: inherit;
 }
 kbd,
-pre,
-code {
-  font-family: 'Cascadia Code', 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft YaHei UI', 'Microsoft YaHei', '微软雅黑', monospace;
+pre > code {
+  font-family: monospace, serif;
 }
 html {
   background-color: #0d0d0d;
@@ -1116,6 +1141,7 @@ body {
 .markdown-article h5:hover > a.header-anchor[href^="#"],
 .markdown-article h6:hover > a.header-anchor[href^="#"] {
   color: #7c6;
+  background-color: rgba(255,255,255,0.039);
 }
 .markdown-article h1 > a.header-anchor[href^="#"]:hover,
 .markdown-article h2 > a.header-anchor[href^="#"]:hover,
@@ -1136,7 +1162,7 @@ body {
 .markdown-article h5 > a.header-anchor[href^="#"]:active,
 .markdown-article h6 > a.header-anchor[href^="#"]:active {
   color: #9e8;
-  background-color: transparent;
+  background-color: rgba(255,255,255,0.075);
 }
 .markdown-article img {
   color: #555;
@@ -2982,7 +3008,7 @@ body {
 }
 .markdown-article summary:focus,
 .markdown-article summary:active {
-  color: #7d5;
+  color: #69e;
 }
 .markdown-article table {
   color: #b4b4b4;
@@ -3196,9 +3222,18 @@ pre,
   color: #a78057;
 }
 .hljs-symbol,
-.hljs-bullet,
-.hljs-link {
+.hljs-bullet {
   color: #3af;
+}
+.hljs-link {
+  color: #59c;
+}
+.hljs-link:hover {
+  color: #7be;
+}
+.hljs-link .punctuation {
+  color: inherit;
+  background-color: transparent;
 }
 .hljs-keyword.var {
   color: #a67;

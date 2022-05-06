@@ -82,12 +82,57 @@
 
     {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
         width: TOCPanel_width_whenWindowWidthNoMoreThan_600px;
+
+        animation-duration: 0.219s;
+        animation-delay: 0s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: both;
+
+        animation-name: wlc-animation__toc_panel_slides_in;
+        @keyframes      wlc-animation__toc_panel_slides_in {
+            0% {
+                transform: translateX(-101%);
+            }
+            to {
+                transform: none;
+            }
+        }
     }
 
     .markdown-article-toc-toggling-button,
     .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
-        left: (TOCPanel_width_whenWindowWidthNoMoreThan_600px / 2);
-        transform: translateX(-50%);
-        border-radius: 219px;
+        top: 1.33em;
+        font-size: 0.8em;
+    }
+
+    if true {
+
+        .markdown-article-toc-toggling-button,
+        .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
+            left: -1em;
+            padding-left: 1.5em;
+            transform: translateX(0);
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+        }
+
+        {languageSelectors('zh', 'hans', 'CN')} {
+
+            .markdown-article-toc-toggling-button,
+            .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
+                padding-left: 2em;
+            }
+        }
+
+    } else {
+
+        .markdown-article-toc-toggling-button,
+        .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
+            left: (TOCPanel_width_whenWindowWidthNoMoreThan_600px / 2);
+            transform: translateX(-50%);
+            border-bottom-left-radius: 515px;
+            border-top-left-radius: 515px;
+        }
+
     }
 }

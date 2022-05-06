@@ -16,6 +16,20 @@ if (_shouldMarkImportantForValueOf_fontFamily) {
     // }
 }
 
+{_selectorsOf_fontFamily_inlineCodes_akaTerms} {
+    if lookup('_fontFamilyValueOf_inlineCodes_akaTerms') {
+        font-family: _fontFamilyValueOf_inlineCodes_akaTerms;
+    } else {
+        font-family: inherit unquote(__fontFamily_importantMark);
+        // font-family: 'Cascadia Code', 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft YaHei UI', 'Microsoft YaHei', '微软雅黑', monospace unquote(__fontFamily_importantMark);
+    }
+}
+
 {_selectorsOf_fontFamily_monospaceFontFamilyCarriers} {
-    font-family: 'Cascadia Code', 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft YaHei UI', 'Microsoft YaHei', '微软雅黑', monospace unquote(__fontFamily_importantMark);
+    if lookup('_fontFamilyValueOf_blockCodes_akaProgramingSnippets') {
+        font-family: _fontFamilyValueOf_blockCodes_akaProgramingSnippets;
+    } else {
+        font-family: monospace unquote(__fontFamily_importantMark);
+        // font-family: 'Cascadia Code', 'PT Mono', 'consolas', 'Courier New', Courier, 'Microsoft YaHei UI', 'Microsoft YaHei', '微软雅黑', monospace unquote(__fontFamily_importantMark);
+    }
 }

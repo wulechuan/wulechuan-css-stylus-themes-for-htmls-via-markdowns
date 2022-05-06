@@ -200,7 +200,19 @@ pre,
 }
 
 .hljs-symbol,
-.hljs-bullet,
-.hljs-link {
+.hljs-bullet {
     color: #3af;
+}
+
+.hljs-link {
+    color: #59c;
+
+    &:hover {
+        color: #7be;
+    }
+
+    .punctuation {
+        color: inherit;
+        background-color: transparent;
+    }
 }

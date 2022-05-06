@@ -24,15 +24,25 @@
 
 
 
+    $TOCTogglingButton_PaddingRight = 0.75em;
+    $TOCTogglingButton_InnerFontSize = 0.8em;
+
     .markdown-article-toc-toggling-button {
         user-select: none;
-        box-sizing: content-box;
-        display: block;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
         border: 1px solid transparent;
-        height: 1em;
-        width: 1.8em;
-        padding: 0.25em 1em;
-        border-radius: 0 219px 219px 0;
+        box-sizing: content-box;
+        height: 1.25em;
+        width: 3em;
+        line-height: 1.25;
+        padding-top: 0.15em;
+        padding-bottom: 0.15em;
+        padding-right: $TOCTogglingButton_PaddingRight;
+        border-radius: 0 515px 515px 0;
         white-space: nowrap;
 
         position: fixed;
@@ -54,26 +64,42 @@
     .markdown-article-toc-is-visible .markdown-article-toc-toggling-button {
         left: (TOCPanel_width__default / 2);
         transform: translateX(-50%);
-        border-top-left-radius: 219px;
-        border-bottom-left-radius: 219px;
+        border-top-left-radius: 515px;
+        border-bottom-left-radius: 515px;
     }
 
     .markdown-article-toc-toggling-button::before {
-        display block
-        font-size 0.8em
-        height 1.25em
-        line-height 1.25em
-        overflow visible
-        content: 'TOC';
-        font-family: sans-serif;
+        font-size: $TOCTogglingButton_InnerFontSize;
+        font-weight: bolder;
+        font-family: inherit;
+    }
+
+
+
+    MIXIN_TOCTogglingButton_CalculatePaddingLeft(LetterSpacing) {
+        padding-left: ($TOCTogglingButton_PaddingRight + LetterSpacing * $TOCTogglingButton_InnerFontSize);
+
+        &::before {
+            letter-spacing: LetterSpacing;
+        }
+    }
+
+    .markdown-article-toc-toggling-button {
+        MIXIN_TOCTogglingButton_CalculatePaddingLeft(LetterSpacing: 0.1em);
+
+        &::before {
+            content: 'TOC';
+        }
     }
 
     {languageSelectors('zh', 'hans', 'CN')} {
 
-        .markdown-article-toc-toggling-button::before {
-            content: '目录';
-            font-family: inherit;
-            line-height 1.1em
+        .markdown-article-toc-toggling-button {
+            MIXIN_TOCTogglingButton_CalculatePaddingLeft(LetterSpacing: 0.75em);
+
+            &::before {
+                content: '目录';
+            }
         }
     }
 }

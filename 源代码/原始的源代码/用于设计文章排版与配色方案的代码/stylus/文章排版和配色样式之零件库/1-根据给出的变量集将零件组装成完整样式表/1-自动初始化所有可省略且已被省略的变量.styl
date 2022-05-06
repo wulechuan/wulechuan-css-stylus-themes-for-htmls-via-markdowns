@@ -1,14 +1,13 @@
 @import '../../utils/apply-default-value-to-variable-if-needed'
 
 applyDefaultValueToAGlobalVariableIfNeeded(
-    variableName: '_selectorsOf_fontFamily_monospaceFontFamilyCarriers',
-    defaultValue: 'kbd, pre, code'
-)
-
-applyDefaultValueToAGlobalVariableIfNeeded(
     variableName: '_selectorOf_article_rootParent',
     defaultValue: 'body'
 )
+
+
+
+
 
 if lookup('_selectorOf_article_root') {
     applyDefaultValueToAGlobalVariableIfNeeded(
@@ -48,6 +47,23 @@ if lookup('_selectorOf_article_root') {
         )
     }
 }
+
+
+
+
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_selectorsOf_fontFamily_inlineCodes_akaTerms',
+    defaultValue: 'code'
+)
+
+applyDefaultValueToAGlobalVariableIfNeeded(
+    variableName: '_selectorsOf_fontFamily_monospaceFontFamilyCarriers',
+    defaultValue: 'kbd, pre > code'
+)
+
+
+
 
 
 applyDefaultValueToAGlobalVariableIfNeeded(

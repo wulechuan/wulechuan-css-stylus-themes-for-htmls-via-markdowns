@@ -17,7 +17,7 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
     const printDoubleLine = '='.repeat(fullWidth)
 
     const emailAddress = 'wulechuan@live.com'
-    const timeStamp = '北京时间 2022-05-01'
+    const timeStamp = '北京时间 2022-05-06'
 
     const welcomeZhHansCN = '欢迎使用吴乐川设计的用于“控制文章目录之交互”的控制器。'
     const welcomeEn = 'Welcome to wulechuan\'s article TOC controller.'

@@ -41,7 +41,7 @@
 
         &:visited,
         & {
-            color: #e8e8e8;
+            color: #d3d3d3;
         }
     }
 
@@ -52,7 +52,8 @@
     h1, h2, h3, h4, h5, h6 {
 
         &:hover > a{_selectorOf_article_headingsPermantLinkAnchors}[href^="#"] {
-            color: #22aa22;
+            color: #272;
+            background-color: #0000000a;
         }
     }
 
@@ -63,8 +64,8 @@
             &:hover,
             &:focus,
             &:active {
-                color: #66de66;
-                background-color: transparent;
+                color: #393;
+                background-color: #00000013;
             }
         }
     }
@@ -97,7 +98,7 @@
 
     code {
         color: #c5b;
-        border-color: rgba(black, 0.15);
+        border-color: rgba(black, 0.219);
         background-color: #fff;
         text-shadow: none;
     }
@@ -127,20 +128,20 @@
         background-color: #cfbd;
 
         code { // 见词条 中国科学院资深院士” 、“中国工程院资深院士” 。
-            color: #232;
-            border-color: rgba(#595, 0.79);
-            background-color: #fff9;
+            color: #135105;
+            border-color: rgba(#494, 0.79);
+            background-color: #fffb;
         }
     }
 
     em {
         color: black;
-        background-color: #feba;
+        background-color: #feb8;
 
         code { // 见词条 “钱学森弹道” 。
-            color: #220;
-            border-color: rgba(#aa7, 0.79);
-            background-color: #fff6;
+            color: #630;
+            border-color: rgba(#871, 0.79);
+            background-color: #fffa;
         }
     }
 
@@ -179,13 +180,13 @@
         &,     // 见例词 “地球是平的” 。
         code { // 见例词 “车厘子”、“芝士” 和 “起司” 。
             color: #ebb;
-            text-decoration-color: #de4545;
+            text-decoration-color: #da3838;
             text-decoration-style: solid;
             text-decoration-thickness: 0.1em;
         }
 
         code { // 见例词 “车厘子”、“芝士” 和 “起司” 。
-            border-color: rgba(red, 0.1);
+            border-color: rgba(red, 0.12);
             background-color: #fff66;
         }
     }
@@ -201,20 +202,20 @@
     strong em {
 
         & {
-            color: #500; // 见例词  “育种”、“光刻机”、“华为” 和 “福耀玻璃” 附近的字词。
+            color: #300; // 见例词  “育种”、“光刻机”、“华为” 和 “福耀玻璃” 附近的字词。
         }
 
         code { // 见例词  “育种”、“光刻机” 。
-            color: #300;
+            color: #100;
         }
 
         & { // 见例词 “粮食育种技术” 和 “高性能光刻机制造技术” 等多处。另见负面例词 “秦桧” 。
-            background-color: #ffe7e7;
+            background-color: #ffe9e9;
         }
 
         code {
-            border-color: #a66;      // 见例词 “育种”、“光刻机” 。
-            background-color: #fff7; // 见例词 “育种”、“光刻机” 。另见负面例词 “秦桧” 。
+            border-color: #955;      // 见例词 “育种”、“光刻机” 。
+            background-color: #fff9; // 见例词 “育种”、“光刻机” 。另见负面例词 “秦桧” 。
         }
     }
 
@@ -266,8 +267,6 @@
 
 
 
-
-
     // 当 strong 与 em 并举时，暂称所谓 “ VeryStrong ”，或 “ 最强强调 ” 。
 
 
@@ -275,9 +274,9 @@
     MIXIN_anchor__combined_with_em_string_and_s(
         $anchorSelector:                              'a',                 // 可随意取值。但目前仅取过 a 和 a[href^="#"] 两种值。
 
-        $anchorAny_Anything_TextColor:                #69f,                // 【超链接】默认的文字颜色。
+        $anchorAny_Anything_TextColor:                #48c,                // 【超链接】默认的文字颜色。
 
-        $anchorAny_Striked_AnyThing_TextColor:        #69f,                // 【超链接】一旦出现【删除线】，其一切文本的默认着色。            见例词 “SOFTIMAGE.com” 。
+        $anchorAny_Striked_AnyThing_TextColor:        #48c,                // 【超链接】一旦出现【删除线】，其一切文本的默认着色。            见例词 “SOFTIMAGE.com” 。
         $anchorAny_Striked_TermBlock_BorderColor:     rgba(black, 0.15),   // 【超链接】一旦出现【删除线】，其内的【术语字块】的边线颜色。     见例词 “SOFTIMAGE.com” 。
 
         $anchorVeryStrong_AnyThing_TextColor:         #300,                // 【超链接】的【最强强调】形式，其一切文本的默认着色。
@@ -285,7 +284,7 @@
 
         $anchorVeryStrong_Striked_AnyThing_TextColor: #e3a3c3,             // 【超链接】的【最强强调】形式配以【删除线】时，其一切文本的统一颜色。见负面例词 “发国难财” 。
 
-        $anchorAny_Hover_AnyThing_TextColor:          #35f,                // 【超链接】任何情况下 :hover 时，其一切文本的着色。
+        $anchorAny_Hover_AnyThing_TextColor:          #069,                // 【超链接】任何情况下 :hover 时，其一切文本的着色。
         $anchorAny_Hover_AnyThing_BackgroundColor:    transparent,         // 【超链接】任何情况下 :hover 时，其一切文本的衬底色。
         $anchorAny_Hover_TermBlock_BackgroundColor:   #fff,                // 【超链接】任何情况下 :hover 时，其内的【术语字块】的边线颜色。
     ) // 为了给【实参】添加注释，最末【实参】之后也必须带有逗号！
@@ -295,9 +294,9 @@
     MIXIN_anchor__combined_with_em_string_and_s(
         $anchorSelector:                              'a[href^="#"]',      // 可随意取值。但目前仅取过 a 和 a[href^="#"] 两种值。
 
-        $anchorAny_Anything_TextColor:                #22aa22,             // 【超链接】默认的文字颜色。
+        $anchorAny_Anything_TextColor:                #3a3,                // 【超链接】默认的文字颜色。
 
-        $anchorAny_Striked_AnyThing_TextColor:        #22aa22,             // 【超链接】一旦出现【删除线】，其一切文本的默认着色。            见例词 “假设已经删除的章节的文内链接” 。
+        $anchorAny_Striked_AnyThing_TextColor:        #3a3,                // 【超链接】一旦出现【删除线】，其一切文本的默认着色。            见例词 “假设已经删除的章节的文内链接” 。
         $anchorAny_Striked_TermBlock_BorderColor:     rgba(black, 0.15),   // 【超链接】一旦出现【删除线】，其内的【术语字块】的边线颜色。     见例词 “假设已经删除的章节的文内链接” 。
 
         $anchorVeryStrong_AnyThing_TextColor:         #300,                // 【超链接】的【最强强调】形式，其一切文本的默认着色。
@@ -305,7 +304,7 @@
 
         $anchorVeryStrong_Striked_AnyThing_TextColor: #f66,                // 【超链接】的【最强强调】形式配以【删除线】时，其一切文本的统一颜色。
 
-        $anchorAny_Hover_AnyThing_TextColor:          #66de66,             // 【超链接】任何情况下 :hover 时，其一切文本的着色。
+        $anchorAny_Hover_AnyThing_TextColor:          #282,                // 【超链接】任何情况下 :hover 时，其一切文本的着色。
         $anchorAny_Hover_AnyThing_BackgroundColor:    transparent,         // 【超链接】任何情况下 :hover 时，其一切文本的衬底色。
         $anchorAny_Hover_TermBlock_BackgroundColor:   #fff,                // 【超链接】任何情况下 :hover 时，其内的【术语字块】的边线颜色。
     ) // 为了给【实参】添加注释，最末【实参】之后也必须带有逗号！
@@ -367,7 +366,7 @@
 
     summary:focus,
     summary:active {
-        color: #3d3;
+        color: #d90;
     }
 
 

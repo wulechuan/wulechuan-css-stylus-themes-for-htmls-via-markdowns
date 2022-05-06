@@ -33,7 +33,8 @@ _selectorOf_article_headingsPermantLinkAnchors     = '.header-anchor'
 
 
 _selectorsOf_fontFamily_baseFontFamilyCarriers      = _selectorOf_article_root
-_selectorsOf_fontFamily_monospaceFontFamilyCarriers = 'kbd, pre, code'
+_selectorsOf_fontFamily_inlineCodes_akaTerms        = 'code'
+_selectorsOf_fontFamily_monospaceFontFamilyCarriers = 'kbd, pre > code'
 _selectorsOf_fontSize_baseFontSizeCarriers          = _selectorOf_article_root
 
 

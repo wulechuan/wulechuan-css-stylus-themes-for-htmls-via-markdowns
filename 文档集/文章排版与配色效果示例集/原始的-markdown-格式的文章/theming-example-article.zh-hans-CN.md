@@ -267,12 +267,12 @@ CSS Object Model 是一组允许用 JavaScript 操纵 CSS 的 API。 它是继 D
 > }
 > ```
 >
-> 后期于 4.0、5.1、7.0 分别发力，提供了令业界赞叹的特性集。其中，自 2008 年春发布的 7.0 始，其提供的“交互式创作环境（ICE）”借助可视化节点图可轻松操控庞大的数据流，构建逻辑规则，控制粒子系统，产生变幻无穷的效果。见图（来源于[维基百科](https://en.wikipedia.org/wiki/Autodesk_Softimage#ICE_Interactive_Creative_Environment)）：
+> 后期于 4.0 版、5.1 版、7.0 版几次发力，提供了令业界赞叹的特性集。其中，自 2008 年春发布的 7.0 版始，其提供的“交互式创作环境（ICE）”借助可视化节点图可轻松操控庞大的数据流，构建逻辑规则，控制粒子系统，产生变幻无穷的效果。见图（来源于[维基百科](https://en.wikipedia.org/wiki/Autodesk_Softimage#ICE_Interactive_Creative_Environment)）：
 > ![This simple ICE graph deforms an input object (in the example a sphere was used) based on its vertex indices](./illustrates/softimage_xsi_2011_ice_graph.jpg)
 >
-> 同年（2008 年）11 月 18 日，欧特克公司宣布全资收购 SOFTIMAGE 公司，并将其所有产品更名为小写形式，如 “Softimage|xsi”。
+> 同年（2008 年）11 月 18 日，欧特克公司宣布全资收购 SOFTIMAGE 公司，并将其所有产品更名为小写（但首字母大写）的形式，即 “Softimage|xsi”。
 >
-> 2014 年 3 月，欧特克公司发布 SOFTIMAGE 全线产品的停产声明。Softimage|xsi 2015 将成为该软件最后的发行版本。其中诸多优秀功能（特别是 ICE）将被逐一移植到 Maya 中。自此，争斗多年的 Maya 和 SOFTIMAGE|XSI，以前者“吞噬”后者而告终。
+> 2014 年 3 月，欧特克公司发布 SOFTIMAGE 全线产品的停产声明。Softimage|xsi 2015 版将成为该软件最后的发行版本。其中诸多优秀功能（特别是 ICE）将被逐一移植到 Maya 中。自此，争斗多年的 Maya 和 SOFTIMAGE|XSI，以前者“吞噬”后者而告终。
 >
 > >（注：Alias 公司早于 SOFTIMAGE 公司被欧特克收购。因此 Maya 早于 SOFTIMAGE|XSI 归为欧特克旗下的产品）。
 
