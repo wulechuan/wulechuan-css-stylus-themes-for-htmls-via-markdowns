@@ -832,7 +832,11 @@ body {
   text-indent: 0;
 }
 .markdown-article .hidden-spacebar-between-head-linkage-and-head-text {
-  display: none;
+  display: inline-block;
+  width: 1px;
+  height: 1px;
+  margin-right: -1px;
+  overflow: hidden;
 }
 .markdown-article .header-anchor,
 .markdown-article a.header-anchor {
@@ -4403,5 +4407,9 @@ pre,
   }
   .hidden-spacebar-between-head-linkage-and-head-text {
     display: inline;
+    width: auto;
+    height: auto;
+    margin-right: 0;
+    overflow: visible;
   }
 }

@@ -352,7 +352,7 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
             if (/^ /.test(firstTextElementContent)) {
                 const singleSpacebar = document.createElement('span')
                 singleSpacebar.className = 'hidden-spacebar-between-head-linkage-and-head-text'
-                singleSpacebar.innerText = ' '
+                singleSpacebar.innerHTML = '&nbsp;'
 
                 hElement.insertBefore(singleSpacebar, firstTextElement)
 
