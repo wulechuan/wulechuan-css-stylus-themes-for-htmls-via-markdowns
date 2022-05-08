@@ -35,7 +35,8 @@ const 产出诸HTML文件之存放文件夹之相对路径  = './测试集/产�
 const 自英国话文章产出之HTML文件之名称     = 'default-theming-example.--DEV--.en-us.html'
 const 自汉语文章产出之HTML文件之名称 = 'default-theming-example.--DEV--.zh-hans-cn.html'
 const 须额外嵌入各产出之HTML文件之文件之相对路径之列表 = [
-    // '文档集/文章排版与配色效果示例集/示例性-html-文章的-title-标签之内容自动配置之逻辑.js',
+    // '文档集/文章排版与配色效果示例集/示例性-html-文章的-html-title-标签之内容自动配置之逻辑.js',
+    // '文档集/文章排版与配色效果示例集/示例性-html-文章的-为制作截图而偷换-font-family-之逻辑.js',
     // '文档集/文章排版与配色效果示例集/示例性-html-文章的截图半自动化辅助逻辑.js',
 ]
 

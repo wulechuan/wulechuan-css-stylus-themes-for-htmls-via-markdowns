@@ -78,10 +78,21 @@
     }
 
     pre {
+        display: block;
+        box-sizing: border-box;
+        padding: 0 5em 0 0;
+        margin: 0.5em 2em 2em;
+        max-height: 75vh;
+        overflow: auto;
+
+        // 此处的 white-space nowrap 用以配合内层 code 的 display inline-block ， 最终实现代码块右侧的额外留白。
+        white-space: nowrap;
+
+
 
         &,
         // > code *, // Why? For Typora? I forgot.
-        > code { // source code blocks
+        > code {
             letter-spacing: 0;
             white-space: pre;
             word-wrap: normal;
@@ -90,45 +101,42 @@
             position: static;
             top: auto;
             cursor: auto;
+
+            // If content entities (e.g. comments), have
+            // a semi-transparent background-color,
+            // then value of 1.5 works fine with the "PT Mono" font face.
+            // **BUT** still not perfect!
+            // line-height: 1.5;
+
+            // If content entities (e.g. comments), have
+            // a semi-transparent background-color,
+            // then value of 1.65 works fine with the "Consolas" font face.
+            // **BUT** still not perfect!
+            // line-height: 1.65;
+
+            // Now I decide that nothing have a semi-transparent
+            // background-color.
+            line-height: 1.6;
         }
 
-        > code { // source code blocks
+        > code {
+            display: inline-block;
             box-sizing: border-box;
-            display: block;
-            width: 100%;
-            line-height: inherit;
-            padding: 0.25em 0.5em;
             border: none !important;
-            margin: 0 !important;
             border-radius: 0;
-            overflow-x: auto;
         }
     }
 
+    &,
+    {languageSelectors('zh', 'hans', 'CN')} {
 
+        pre {
 
-    pre {
-        // If content entities (e.g. comments), have
-        // a semi-transparent background-color,
-        // then value of 1.5 works fine with the "PT Mono" font face.
-        // **BUT** still not perfect!
-        // line-height: 1.5;
-
-        // If content entities (e.g. comments), have
-        // a semi-transparent background-color,
-        // then value of 1.65 works fine with the "Consolas" font face.
-        // **BUT** still not perfect!
-        // line-height: 1.65;
-
-        // Now I decide that nothing have a semi-transparent
-        // background-color.
-        line-height: 1.6;
-
-
-        display: block;
-        box-sizing: border-box;
-        padding: 0.5em;
-        margin: 0.5em 2em 2em;
+            > code {
+                padding: 0.5em 1em;
+                margin: 0 !important;
+            }
+        }
     }
 
 
@@ -146,6 +154,12 @@
 
         > pre {
             margin-right: 0;
+            padding-right: 0;
+            // width: 100%;
+
+            // > code {
+            //     min-width: 20em;
+            // }
         }
     }
 

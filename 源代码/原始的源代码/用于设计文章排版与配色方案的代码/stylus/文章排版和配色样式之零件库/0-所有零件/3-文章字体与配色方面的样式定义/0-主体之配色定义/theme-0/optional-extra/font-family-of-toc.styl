@@ -5,12 +5,12 @@
 {_selectorOf_TOC_byMarkdownItTOCDoneRight} {
     if (_selectorsOf_fontFamily_baseFontFamilyCarriers == 'body' || _selectorsOf_fontFamily_baseFontFamilyCarriers == 'html') {
         if (_fontFamilyValueOf_articleTOCRoot) {
-            font-family _fontFamilyValueOf_articleTOCRoot
+            font-family: _fontFamilyValueOf_articleTOCRoot;
             p(s('\n    【文章纲要列表】采用了明确的【字体族】，为\n        “%s” 。\n    另需指出，这并非意味着其采用之【字体族】必定不同于文章主体采用之【字体族】。\n', unquote(join(', ', _fontFamilyValueOf_articleTOCRoot))))
         }
     } else {
         if (_fontFamilyValueOf_articleTOCRoot) {
-            font-family _fontFamilyValueOf_articleFontFamilyCarrier
+            font-family: _fontFamilyValueOf_articleFontFamilyCarrier;
         } else {
             warn('\n    文章主体之【字体族】未定义在 <html> 或 <body> 标签上，\n    同时【文章纲要列表】未有明确之【字体族】之定义！\n')
         }

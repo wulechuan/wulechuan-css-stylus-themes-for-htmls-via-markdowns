@@ -40,6 +40,7 @@ I've purposely prepared an example markdown article. I generate 2 HTML files out
 
 > Some picture files are very large, file sizes in mega bytes.
 
+- [Snapshot: Code blocks (vertical scrolling deliberately disabled so as to reveal entire blocks)](../../文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/示例：代码着色块（故意禁止垂直滚动条已便展现各代码块全貌）.png)
 - [Snapshot: In default light-colored theme, in a wide window, with TOC collapsed](../../文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-collapsed.png)
 - [Snapshot: In default light-colored theme, in a wide window, with TOC expanded](../../文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/example_en-US_default-light-colored-theme_1-in-a-wide-window_with-toc-expanded.png)
 - [Snapshot: In default light-colored theme, in a window of medium width, with TOC collapsed](../../文章排版与配色效果示例集/以-html-格式渲染好的文章成品/各文章最终呈现效果之截图/example_en-US_default-light-colored-theme_2-in-a-window-of-medium-width_with-toc-collapsed.png)

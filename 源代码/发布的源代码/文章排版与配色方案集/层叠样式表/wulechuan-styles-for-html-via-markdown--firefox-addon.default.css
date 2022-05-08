@@ -14,7 +14,7 @@
  *
  *                                          吾乃南昌吴乐川是也
  *                                          wulechuan@live.com
- *                                                  2022-05-06
+ *                                                  2022-05-08
  *
  *
  *
@@ -454,12 +454,12 @@ blockquote {
   display: inline-block;
   vertical-align: top;
   border-style: solid;
-  padding: 1px 1.25em 1px 1.15em;
+  padding: 1px 1.25em 1px 1.1em;
   margin-top: 0;
   margin-bottom: 1.5em;
-  margin-left: 3em;
+  margin-left: 2.5em;
   margin-right: 1em;
-  max-width: calc(100% - 4em);
+  max-width: calc(100% - 3.5em);
 }
 details {
   margin: 0.5em 1.5em 1.5em;
@@ -540,6 +540,15 @@ kbd {
   font-size: 80%;
   letter-spacing: 0;
 }
+pre {
+  display: block;
+  box-sizing: border-box;
+  padding: 0 5em 0 0;
+  margin: 0.5em 2em 2em;
+  max-height: 75vh;
+  overflow: auto;
+  white-space: nowrap;
+}
 pre,
 pre > code {
   letter-spacing: 0;
@@ -550,24 +559,23 @@ pre > code {
   position: static;
   top: auto;
   cursor: auto;
+  line-height: 1.6;
 }
 pre > code {
+  display: inline-block;
   box-sizing: border-box;
-  display: block;
-  width: 100%;
-  line-height: inherit;
-  padding: 0.25em 0.5em;
   border: none !important;
-  margin: 0 !important;
   border-radius: 0;
-  overflow-x: auto;
 }
-pre {
-  line-height: 1.6;
-  display: block;
-  box-sizing: border-box;
-  padding: 0.5em;
-  margin: 0.5em 2em 2em;
+pre > code,
+[lang*="zh-" i] pre > code,
+[lang*="-hans" i] pre > code,
+[lang*="-CN" i] pre > code,
+[lang*="zh-"] pre > code,
+[lang*="-hans"] pre > code,
+[lang*="-CN"] pre > code {
+  padding: 0.5em 1em;
+  margin: 0 !important;
 }
 td > pre,
 li > pre {
@@ -576,6 +584,7 @@ li > pre {
 }
 td > pre {
   margin-right: 0;
+  padding-right: 0;
 }
 li > pre:first-child {
   margin-top: 0;
@@ -706,16 +715,24 @@ hr::after {
   background-image: inherit !important;
   transform: scaleX(-1);
 }
+@media (max-width: 900px) {
+  pre {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  table,
+  pre {
+    max-width: 100%;
+  }
+}
 @media (max-width: 600px) {
   h1,
   h2,
-  h3 {
-    padding-left: 1em;
-  }
+  h3,
   h4,
   h5,
   h6 {
-    padding-left: 0.8em;
+    padding-left: 1.25em;
   }
   h1 {
     font-size: 2.25em;
@@ -742,8 +759,8 @@ hr::after {
     padding-right: 0;
   }
   p {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
   }
   blockquote {
     margin-left: 0;
@@ -757,8 +774,7 @@ hr::after {
     margin-right: 0;
   }
   table {
-    max-width: none;
-    width: 100%;
+    max-width: 100%;
   }
   td {
     max-width: 400px;
@@ -820,12 +836,18 @@ hr::after {
 [lang*="-CN"] .centered {
   text-indent: 0;
 }
+.hidden-spacebar-between-head-linkage-and-head-text {
+  display: none;
+}
 .header-anchor,
 a.header-anchor {
-  margin: -0.2em -0.15em 0em -1.35em;
-  padding: 0.25em 0;
-  width: 1.5em;
+  margin-top: -0.2em;
+  margin-bottom: 0em;
+  margin-left: -1.65em;
+  margin-right: 0.15em;
   box-sizing: border-box;
+  padding: 0.25em 0;
+  min-width: 1.5em;
   text-align: center;
   font-weight: normal;
   border-radius: 0.25em;
@@ -856,6 +878,12 @@ td > h1 .header-anchor {
   display: none;
 }
 @media (max-width: 900px) {
+  .header-anchor,
+  a.header-anchor {
+    margin-left: -1.35em;
+    margin-right: 0.15em;
+    min-width: 1.2em;
+  }
   .markdownRoot {
     padding-top: 3em;
     padding-bottom: 7em;
@@ -867,16 +895,16 @@ td > h1 .header-anchor {
   }
 }
 @media (max-width: 600px) {
+  .header-anchor,
+  a.header-anchor {
+    margin-left: -1.2em;
+    margin-right: 0.2em;
+    min-width: 1em;
+  }
   .markdown-article-toc-is-visible .markdownRoot,
   .markdownRoot {
     padding-left: 1.5em;
     padding-right: 1.5em;
-  }
-  .header-anchor,
-  a.header-anchor {
-    margin-left: -1.2em;
-    margin-right: -0.2em;
-    width: 1em;
   }
 }
 input#__markdown-viewer__show-tools:not(:checked)~.toggleable {
@@ -3334,5 +3362,8 @@ pre,
   h2,
   h3 {
     page-break-after: avoid;
+  }
+  .hidden-spacebar-between-head-linkage-and-head-text {
+    display: inline;
   }
 }

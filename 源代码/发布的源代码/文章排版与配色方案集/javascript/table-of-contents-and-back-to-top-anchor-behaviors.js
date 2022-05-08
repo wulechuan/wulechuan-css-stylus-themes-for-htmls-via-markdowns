@@ -17,7 +17,7 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
     const printDoubleLine = '='.repeat(fullWidth)
 
     const emailAddress = 'wulechuan@live.com'
-    const timeStamp = '北京时间 2022-05-06'
+    const timeStamp = '北京时间 2022-05-08'
 
     const welcomeZhHansCN = '欢迎使用吴乐川设计的用于“控制文章目录之交互”的控制器。'
     const welcomeEn = 'Welcome to wulechuan\'s article TOC controller.'
@@ -335,4 +335,29 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
             }
         }
     }
+})()
+
+;(function () {
+    const allH1ToH6Elements = Array.from(
+        document.querySelectorAll('h1, h2, h3, h4, h5, h6')
+    )
+
+    allH1ToH6Elements.forEach(hElement => {
+        const headeLinkAnchor = hElement.querySelector('.header-anchor')
+        if (headeLinkAnchor) {
+            const firstTextElement = headeLinkAnchor.nextSibling
+            // console.debug(`${hElement.tagName} "${firstTextElement.nodeValue}"`)
+            const firstTextElementContent = firstTextElement.nodeValue
+
+            if (/^ /.test(firstTextElementContent)) {
+                const singleSpacebar = document.createElement('span')
+                singleSpacebar.className = 'hidden-spacebar-between-head-linkage-and-head-text'
+                singleSpacebar.innerText = ' '
+
+                hElement.insertBefore(singleSpacebar, firstTextElement)
+
+                firstTextElement.nodeValue = firstTextElementContent.slice(1)
+            }
+        }
+    })
 })()

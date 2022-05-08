@@ -14,7 +14,7 @@
  *
  *                                          吾乃南昌吴乐川是也
  *                                          wulechuan@live.com
- *                                                  2022-05-06
+ *                                                  2022-05-08
  *
  *
  *
@@ -449,12 +449,12 @@ body {
   display: inline-block;
   vertical-align: top;
   border-style: solid;
-  padding: 1px 1.25em 1px 1.15em;
+  padding: 1px 1.25em 1px 1.1em;
   margin-top: 0;
   margin-bottom: 1.5em;
-  margin-left: 3em;
+  margin-left: 2.5em;
   margin-right: 1em;
-  max-width: calc(100% - 4em);
+  max-width: calc(100% - 3.5em);
 }
 .markdown-article details {
   margin: 0.5em 1.5em 1.5em;
@@ -535,6 +535,15 @@ body {
   font-size: 80%;
   letter-spacing: 0;
 }
+.markdown-article pre {
+  display: block;
+  box-sizing: border-box;
+  padding: 0 5em 0 0;
+  margin: 0.5em 2em 2em;
+  max-height: 75vh;
+  overflow: auto;
+  white-space: nowrap;
+}
 .markdown-article pre,
 .markdown-article pre > code {
   letter-spacing: 0;
@@ -545,24 +554,23 @@ body {
   position: static;
   top: auto;
   cursor: auto;
+  line-height: 1.6;
 }
 .markdown-article pre > code {
+  display: inline-block;
   box-sizing: border-box;
-  display: block;
-  width: 100%;
-  line-height: inherit;
-  padding: 0.25em 0.5em;
   border: none !important;
-  margin: 0 !important;
   border-radius: 0;
-  overflow-x: auto;
 }
-.markdown-article pre {
-  line-height: 1.6;
-  display: block;
-  box-sizing: border-box;
-  padding: 0.5em;
-  margin: 0.5em 2em 2em;
+.markdown-article pre > code,
+.markdown-article [lang*="zh-" i] pre > code,
+.markdown-article [lang*="-hans" i] pre > code,
+.markdown-article [lang*="-CN" i] pre > code,
+.markdown-article [lang*="zh-"] pre > code,
+.markdown-article [lang*="-hans"] pre > code,
+.markdown-article [lang*="-CN"] pre > code {
+  padding: 0.5em 1em;
+  margin: 0 !important;
 }
 .markdown-article td > pre,
 .markdown-article li > pre {
@@ -571,6 +579,7 @@ body {
 }
 .markdown-article td > pre {
   margin-right: 0;
+  padding-right: 0;
 }
 .markdown-article li > pre:first-child {
   margin-top: 0;
@@ -701,16 +710,24 @@ body {
   background-image: inherit !important;
   transform: scaleX(-1);
 }
+@media (max-width: 900px) {
+  .markdown-article pre {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .markdown-article table,
+  .markdown-article pre {
+    max-width: 100%;
+  }
+}
 @media (max-width: 600px) {
   .markdown-article h1,
   .markdown-article h2,
-  .markdown-article h3 {
-    padding-left: 1em;
-  }
+  .markdown-article h3,
   .markdown-article h4,
   .markdown-article h5,
   .markdown-article h6 {
-    padding-left: 0.8em;
+    padding-left: 1.25em;
   }
   .markdown-article h1 {
     font-size: 2.25em;
@@ -737,8 +754,8 @@ body {
     padding-right: 0;
   }
   .markdown-article p {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
   }
   .markdown-article blockquote {
     margin-left: 0;
@@ -752,8 +769,7 @@ body {
     margin-right: 0;
   }
   .markdown-article table {
-    max-width: none;
-    width: 100%;
+    max-width: 100%;
   }
   .markdown-article td {
     max-width: 400px;
@@ -815,12 +831,18 @@ body {
 .markdown-article [lang*="-CN"] .centered {
   text-indent: 0;
 }
+.markdown-article .hidden-spacebar-between-head-linkage-and-head-text {
+  display: none;
+}
 .markdown-article .header-anchor,
 .markdown-article a.header-anchor {
-  margin: -0.2em -0.15em 0em -1.35em;
-  padding: 0.25em 0;
-  width: 1.5em;
+  margin-top: -0.2em;
+  margin-bottom: 0em;
+  margin-left: -1.65em;
+  margin-right: 0.15em;
   box-sizing: border-box;
+  padding: 0.25em 0;
+  min-width: 1.5em;
   text-align: center;
   font-weight: normal;
   border-radius: 0.25em;
@@ -851,6 +873,12 @@ body {
   display: none;
 }
 @media (max-width: 900px) {
+  .header-anchor,
+  a.header-anchor {
+    margin-left: -1.35em;
+    margin-right: 0.15em;
+    min-width: 1.2em;
+  }
   .markdown-article {
     padding-top: 3em;
     padding-bottom: 7em;
@@ -862,16 +890,16 @@ body {
   }
 }
 @media (max-width: 600px) {
+  .header-anchor,
+  a.header-anchor {
+    margin-left: -1.2em;
+    margin-right: 0.2em;
+    min-width: 1em;
+  }
   .markdown-article-toc-is-visible .markdown-article,
   .markdown-article {
     padding-left: 1.5em;
     padding-right: 1.5em;
-  }
-  .header-anchor,
-  a.header-anchor {
-    margin-left: -1.2em;
-    margin-right: -0.2em;
-    width: 1em;
   }
 }
 .markdown-article-back-to-top {
@@ -3055,57 +3083,53 @@ body {
 .hljs-link {
   text-decoration-line: underline;
 }
-pre > code {
+pre {
 /* autoprefixer: off */
   scrollbar-color: rgba(204,204,204,0.75) rgba(204,204,204,0.15);
   scrollbar-width: thin;
 }
-pre > code::-webkit-scrollbar {
+pre::-webkit-scrollbar {
   border-radius: 0;
   width: 0.75em;
   height: 0.75em;
 }
-pre > code::-webkit-scrollbar:hover {
+pre::-webkit-scrollbar:hover {
   background-color: rgba(255,255,255,0.15);
 }
-pre > code::-webkit-resizer,
-pre > code::-webkit-scrollbar-corner,
-pre > code::-webkit-scrollbar-button,
-pre > code::-webkit-scrollbar-thumb,
-pre > code::-webkit-scrollbar-track,
-pre > code::-webkit-scrollbar-track-piece {
+pre::-webkit-resizer,
+pre::-webkit-scrollbar-corner,
+pre::-webkit-scrollbar-button,
+pre::-webkit-scrollbar-thumb,
+pre::-webkit-scrollbar-track,
+pre::-webkit-scrollbar-track-piece {
   border-radius: 1em;
   border-style: solid;
   border-color: transparent;
   background-clip: content-box;
 }
-pre > code::-webkit-scrollbar-button {
+pre::-webkit-scrollbar-button {
   display: none;
 }
-pre > code::-webkit-scrollbar-thumb {
+pre::-webkit-scrollbar-thumb {
   border-width: 0.3em;
   background-color: rgba(255,255,255,0.45);
 }
-pre > code::-webkit-scrollbar-thumb:hover {
+pre::-webkit-scrollbar-thumb:hover {
   background-color: #fff;
 }
-pre > code::-webkit-scrollbar-track {
+pre::-webkit-scrollbar-track {
   border-width: 0.2em;
   background-color: rgba(255,255,255,0.1);
   box-shadow: inset 0 0 0 0.05em rgba(255,255,255,0.1);
 }
-pre > code::-webkit-scrollbar-track:hover {
+pre::-webkit-scrollbar-track:hover {
   box-shadow: inset 0 0 0 0.05em rgba(255,255,255,0.515);
 }
-pre > code::-webkit-scrollbar-track-piece {
+pre::-webkit-scrollbar-track-piece {
   display: none;
 }
-pre > code::-webkit-scrollbar-corner {
+pre::-webkit-scrollbar-corner {
   display: none;
-}
-pre > code .hljs-comment {
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
 }
 pre,
 .hljs {
@@ -3127,6 +3151,10 @@ pre,
 .hljs-quote {
   color: #4c5;
   background-color: #000;
+}
+.hljs-comment {
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
 }
 .hljs-tag {
   color: #555;
@@ -3809,5 +3837,8 @@ pre,
   h2,
   h3 {
     page-break-after: avoid;
+  }
+  .hidden-spacebar-between-head-linkage-and-head-text {
+    display: inline;
   }
 }

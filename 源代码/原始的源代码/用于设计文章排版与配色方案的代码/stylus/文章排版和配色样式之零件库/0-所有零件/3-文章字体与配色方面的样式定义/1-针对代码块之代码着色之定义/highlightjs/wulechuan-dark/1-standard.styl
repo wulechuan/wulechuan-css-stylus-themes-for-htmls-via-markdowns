@@ -16,14 +16,10 @@
     text-decoration-line: underline;
 }
 
-pre > code {
-    MIXIN_DefineWebkitScrollBar(white);
+pre {
+    MIXIN_DefineWebkitScrollBar(white, $SizeScale: 1);
+    // MIXIN_DefineWebkitScrollBar(white, $SizeScale: 1.2);
     MIXIN_DefineFireFoxScrollBar(#ccc);
-
-    .hljs-comment {
-        padding-top: 0.2em;
-        padding-bottom: 0.2em;
-    }
 }
 
 
@@ -52,6 +48,11 @@ pre,
     color: #4c5;
     // background-color: #102315;
     background-color: black;
+}
+
+.hljs-comment {
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
 }
 
 .hljs-tag {

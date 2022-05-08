@@ -16,14 +16,14 @@ A link to a section of the page itselfs should look a bit different from a link 
 
 See some lists below:
 
-- Reprehenderit aute ea pariatur tempor labore. Ullamco do incididunt sint velit duis ipsum irure amet voluptate. Cupidatat et do occaecat `nulla`. Nulla voluptate enim aute `magna do` non nisi qui qui et et irure. Dolore mollit dolore adipisicing consectetur sit. Aliquip fugiat Lorem in sunt Lorem aliqua ex in sunt.
+- Reprehenderit aute ea pariatur tempor labore. Ullamco do incididunt sint velit duis ipsum irure amet voluptate. Cupidatat et do occaecat `nulla`. Nulla voluptate enim aute **emphasized texts _italic phrase_ nisi qui qui et et irure. Dolore mollit dolore adipisicing consectetur sit.** Aliquip fugiat Lorem in sunt Lorem aliqua ex in sunt.
 
-    Nisi minim nulla elit non ut labore **aliquip et deserunt** culpa. Sint amet est laborum eu irure voluptate. In id et proident nulla pariatur ex cupidatat labore aliqua.
+    Nisi minim nulla elit non ut labore **aliquip et deserunt** culpa. Sint amet est laborum eu irure voluptate. In id et proident nulla pariatur ex cupi-datat labore aliqua.
 
-- Non adipisicing consectetur laborum quis anim ea consequat.
+- Non adipisicing consectetur [`SOFTIMAGE.com`](https://www.softimage.com/) quis anim ea consequat.
 
     - Aliqua excepteur nostrud ad `ullamco` minim commodo esse
-    - elit elit ea nulla.
+    - elit ~~[a linkage that simply does not exist](https://www.1.2.3.4.org/)~~ nulla.
     - Sint est elit sint minim.
 
 - Sunt ex eiusmod reprehenderit ullamco _fugiat_ ex duis cupidatat velit. Cillum commodo mollit dolore occaecat. Nulla Lorem deserunt minim ea nostrud reprehenderit do qui anim duis dolor.

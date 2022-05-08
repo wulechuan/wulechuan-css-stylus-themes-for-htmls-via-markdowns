@@ -21,18 +21,24 @@
         // blockquote {
         //     font-size: 100%;
         // }
+
+        pre {
+            margin-left:  0;
+            margin-right: 0;
+        }
+
+        table,
+        pre {
+            max-width: 100%;
+        }
     }
 
     @media (max-width: 600px) {
 
-        h1, h2, h3 {
-            padding-left: 1em;
+        h1, h2, h3, h4, h5, h6 {
+            padding-left: 1.25em;
         }
 
-        h4, h5, h6 {
-            padding-left: 0.8em;
-        }
-        
         h1 {
             font-size: 2.25em;
         }
@@ -63,8 +69,8 @@
         }
 
         p {
-            margin-left: 0;
-            margin-right: 0;
+            margin-left: 0.25em;
+            margin-right: 0.25em;
         }
 
         blockquote {
@@ -81,8 +87,8 @@
         }
 
         table {
-            max-width: none;
-            width: 100%;
+            max-width: 100%;
+            // width: 100%;
         }
 
         td {
@@ -94,7 +100,8 @@
             margin-right: 0;
         }
 
-        /* blockquote, */ table {
+        // blockquote,
+        table {
 
             pre > code {
                 white-space: normal !important;
