@@ -1,9 +1,86 @@
 #
 
+param(
+    [Alias('Delete', 'Remove', '先删')]
+    [Switch] $安装之前先删除旧有的_node_modules_文件夹
+)
+
+
+
+
+
+# -------------------------------------------------------
+#           删除 node_modules 文件夹
+# -------------------------------------------------------
+
+Write-Host
+
+Write-Host  -NoNewline  -F 'Cyan' '===== 删除 '
+Write-Host  -NoNewline  -F 'Cyan' 'node_modules'
+Write-Host              -F 'Cyan' '文件夹 ======================================'
+
+Write-Host
+
+if ($安装之前先删除旧有的_node_modules_文件夹) {
+    if (Test-Path '.\node_modules') {
+        Remove-Item -Recurse -Force -Path .\node_modules
+
+        if (-not $?) {
+            Exit $?
+        }
+
+        Write-Host '已删除。'
+    } else {
+        Write-Host 'node_modules 文件夹并不存在。不必执行。'
+    }
+} else {
+    Write-Host '已略过。 node_modules 文件夹并未删除。'
+}
+
+
+
+
+
+# -------------------------------------------------------
+#           删除 package-lock.json 文件
+# -------------------------------------------------------
+
+Write-Host
+Write-Host
+Write-Host
+Write-Host
+Write-Host
+
+Write-Host  -NoNewline  -F 'Green' '===== 删除 '
+Write-Host  -NoNewline  -F 'Green' 'package-lock.json'
+Write-Host              -F 'Green' '文件 ==================================='
+
+Write-Host
+
+if (Test-Path '.\package-lock.json') {
+    Remove-Item -Force -Path .\package-lock.json
+
+    if (-not $?) {
+        Exit $?
+    }
+
+    Write-Host '已删除。'
+} else {
+    Write-Host 'package-lock.json 文件并不存在。不必执行。'
+}
+
+
+
+
+
 # -------------------------------------------------------
 #           特定版本之【产品依赖包】
 # -------------------------------------------------------
 
+Write-Host
+Write-Host
+Write-Host
+Write-Host
 Write-Host
 
 Write-Host  -NoNewline  -F 'DarkRed'                '===== npm i    '

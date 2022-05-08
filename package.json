@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@wulechuan/cli-scripts--git-push": "^2.0.4",
-    "@wulechuan/generate-html-via-markdown": "^3.2.4",
+    "@wulechuan/generate-html-via-markdown": "^3.2.5",
     "@wulechuan/gulp-classical-task-cycle": "^0.3.0",
     "chalk": "^4.1.2",
     "cssnano": "^5.1.7",
