@@ -17,7 +17,7 @@ Write-Host
 
 Write-Host  -NoNewline  -F 'Cyan' '===== 删除 '
 Write-Host  -NoNewline  -F 'Cyan' 'node_modules'
-Write-Host              -F 'Cyan' '文件夹 ======================================'
+Write-Host              -F 'Cyan' ' 文件夹 ====================================='
 
 Write-Host
 
@@ -53,7 +53,7 @@ Write-Host
 
 Write-Host  -NoNewline  -F 'Green' '===== 删除 '
 Write-Host  -NoNewline  -F 'Green' 'package-lock.json'
-Write-Host              -F 'Green' '文件 ==================================='
+Write-Host              -F 'Green' ' 文件 =================================='
 
 Write-Host
 
@@ -231,7 +231,7 @@ Write-Host  '暂无。'
     
     
     
-    # -------------------------------------------------------
+# -------------------------------------------------------
 #           结束
 # -------------------------------------------------------
 
