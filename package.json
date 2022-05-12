@@ -40,7 +40,7 @@
     "globby": "^11.1.0"
   },
   "devDependencies": {
-    "@wulechuan/cli-scripts--git-push": "^2.1.0",
+    "@wulechuan/cli-scripts--git-push": "^3.0.3",
     "@wulechuan/generate-html-via-markdown": "^3.2.5",
     "@wulechuan/gulp-classical-task-cycle": "^0.3.0",
     "chalk": "^4.1.2",
