@@ -6,7 +6,7 @@
         {
             "label": "更新所有npm依赖包至最新版本（PowerShell）",
             "type": "shell",
-            "command": ".\\用于研发阶段的命令行工具\\PowerShell\\Update-更新所有npm依赖包至最新版本.ps1  -先删",
+            "command": ".\\用于研发阶段的命令行工具\\PowerShell\\Update-更新所有npm依赖包至最新版本.ps1  -安装之前先删除旧有的_node_modules_文件夹",
             "group": "none",
             "problemMatcher": []
         },
