@@ -9,8 +9,11 @@
 {_selectorOf_article_root} {
 
     & {
-        line-height: 1.6;
-        padding: 6em 4em 14em 4em;
+        line-height: 1.8;
+        padding-top: 6em;
+        padding-bottom: 14em;
+        padding-left: 4em;
+        padding-right: 4em;
         max-width: 51em;
         min-height: 60em;
         margin: 0 auto;
@@ -28,34 +31,54 @@
     }
 }
 
-.markdown-article-toc-is-visible {
+// .markdown-article-toc-is-visible {
 
-    {_selectorOf_article_root} {
-        padding-left:  3em;
-        padding-right: 3em;
-    }
-}
+//     {_selectorOf_article_root} {
+//         padding-left:  3em;
+//         padding-right: 3em;
+//     }
+// }
 
 
 
 {__wrappingSelectorOf_markdownArticleLayoutRoot} {
 
-    .document-author {
+    .author,
+    .document-author,
+    .article-author {
         text-indent: 0;
         text-align: center;
     }
 
+    .text-centered,
     .centered {
         text-indent: 0;
         text-align: center;
     }
 
+    .align-rightwards,
+    .text-align-rightwards,
+    .texts-align-rightwards {
+        text-indent: 0;
+        text-align: right;
+    }
+
     {languageSelectors('zh', 'hans', 'CN')} {
-        .document-author {
+
+        .author,
+        .document-author,
+        .article-author {
             text-indent: 0;
         }
 
+        .text-centered,
         .centered {
+            text-indent: 0;
+        }
+
+        .align-rightwards,
+        .text-align-rightwards,
+        .texts-align-rightwards {
             text-indent: 0;
         }
     }
@@ -73,7 +96,7 @@
     /* markdown-it plugin: markdown-it-anchor */
     {_selectorOf_article_headingsPermantLinkAnchors},
     a{_selectorOf_article_headingsPermantLinkAnchors} {
-        margin-top: -0.2em;
+        margin-top: -0.1667em;
         margin-bottom: 0em;
         margin-left:  -1.65em;
         margin-right: 0.15em;
