@@ -14,7 +14,7 @@
  *
  *                                          吾乃南昌吴乐川是也
  *                                          wulechuan@live.com
- *                                                  2022-05-08
+ *                                                  2022-05-14
  *
  *
  *
@@ -126,101 +126,35 @@ body {
 .markdown-article h5,
 .markdown-article h6,
 .markdown-article dt {
-  text-align: justify;
-  margin-left: -0.5em;
-  margin-right: -0.5em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  border-width: 0;
   cursor: text;
+  text-indent: 0;
 }
-.markdown-article h1 {
-  font-size: 2.75em;
-  line-height: 1.667;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 3em;
-  margin-bottom: 1em;
+.markdown-article h1,
+.markdown-article h2 {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  text-align: center;
 }
 .markdown-article h1 p,
-.markdown-article h1 small {
+.markdown-article h2 p,
+.markdown-article h1 small,
+.markdown-article h2 small {
   font-size: 0.667em;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  text-align: left;
+  text-align: justify;
   line-height: 1.33;
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 .markdown-article h1 small p,
-.markdown-article h1 p small {
+.markdown-article h2 small p,
+.markdown-article h1 p small,
+.markdown-article h2 p small {
   font-size: 100%;
-}
-.markdown-article [lang*="zh-" i] h1 small,
-.markdown-article [lang*="-hans" i] h1 small,
-.markdown-article [lang*="-CN" i] h1 small,
-.markdown-article [lang*="zh-"] h1 small,
-.markdown-article [lang*="-hans"] h1 small,
-.markdown-article [lang*="-CN"] h1 small,
-.markdown-article [lang*="zh-" i] h1 p,
-.markdown-article [lang*="-hans" i] h1 p,
-.markdown-article [lang*="-CN" i] h1 p,
-.markdown-article [lang*="zh-"] h1 p,
-.markdown-article [lang*="-hans"] h1 p,
-.markdown-article [lang*="-CN"] h1 p {
-  text-indent: -2.7em;
-  margin-left: 3.7em;
-}
-.markdown-article h2 {
-  font-size: 2.2em;
-  line-height: 1.667;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 4em;
-  margin-bottom: 1em;
-}
-.markdown-article h3 {
-  font-size: 1.75em;
-  line-height: 1.667;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 3.5em;
-  margin-bottom: 1em;
-}
-.markdown-article h4 {
-  font-size: 1.33em;
-  line-height: 1.667;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 3em;
-  margin-bottom: 1em;
-}
-.markdown-article h5 {
-  font-size: 1.2em;
-  line-height: 1.667;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 3em;
-  margin-bottom: 0.75em;
-}
-.markdown-article h6,
-.markdown-article dt {
-  font-size: 1.1em;
-  line-height: 1.667;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 1.5em;
-  margin-bottom: 0.75em;
-}
-.markdown-article h1,
-.markdown-article h2,
-.markdown-article h3,
-.markdown-article h4,
-.markdown-article h5,
-.markdown-article h6,
-.markdown-article dt {
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
-  border-width: 0;
 }
 .markdown-article [lang*="zh-" i] h1,
 .markdown-article [lang*="-hans" i] h1,
@@ -236,11 +170,104 @@ body {
 .markdown-article [lang*="-CN"] h2 {
   letter-spacing: 0.1em;
 }
+.markdown-article [lang*="zh-" i] h1 small,
+.markdown-article [lang*="-hans" i] h1 small,
+.markdown-article [lang*="-CN" i] h1 small,
+.markdown-article [lang*="zh-"] h1 small,
+.markdown-article [lang*="-hans"] h1 small,
+.markdown-article [lang*="-CN"] h1 small,
+.markdown-article [lang*="zh-" i] h2 small,
+.markdown-article [lang*="-hans" i] h2 small,
+.markdown-article [lang*="-CN" i] h2 small,
+.markdown-article [lang*="zh-"] h2 small,
+.markdown-article [lang*="-hans"] h2 small,
+.markdown-article [lang*="-CN"] h2 small,
+.markdown-article [lang*="zh-" i] h1 p,
+.markdown-article [lang*="-hans" i] h1 p,
+.markdown-article [lang*="-CN" i] h1 p,
+.markdown-article [lang*="zh-"] h1 p,
+.markdown-article [lang*="-hans"] h1 p,
+.markdown-article [lang*="-CN"] h1 p,
+.markdown-article [lang*="zh-" i] h2 p,
+.markdown-article [lang*="-hans" i] h2 p,
+.markdown-article [lang*="-CN" i] h2 p,
+.markdown-article [lang*="zh-"] h2 p,
+.markdown-article [lang*="-hans"] h2 p,
+.markdown-article [lang*="-CN"] h2 p {
+  text-indent: -2.7em;
+  margin-left: 3.7em;
+}
+.markdown-article h3,
+.markdown-article h4,
+.markdown-article h5,
+.markdown-article h6 {
+  text-align: justify;
+  margin-left: -0.75em;
+  margin-right: -0.75em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+.markdown-article h1 {
+  font-size: 2.75em;
+  line-height: 1.333;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+.markdown-article h2 {
+  font-size: 2.2em;
+  line-height: 1.333;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 4em;
+  margin-bottom: 1em;
+}
+.markdown-article h3 {
+  font-size: 1.75em;
+  line-height: 1.333;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 3.5em;
+  margin-bottom: 1em;
+}
+.markdown-article h4 {
+  font-size: 1.33em;
+  line-height: 1.333;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+.markdown-article h5 {
+  font-size: 1.2em;
+  line-height: 1.333;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 3em;
+  margin-bottom: 0.75em;
+}
+.markdown-article h6,
+.markdown-article dt {
+  font-size: 1.1em;
+  line-height: 1.333;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+.markdown-article dt {
+  text-align: justify;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
 .markdown-article h5 + h6,
 .markdown-article h4 + h5,
 .markdown-article h3 + h4,
 .markdown-article h2 + h3 {
-  margin-top: 0.5em;
+  margin-top: -1em;
 }
 .markdown-article blockquote > h6,
 .markdown-article th > h6,
@@ -279,10 +306,56 @@ body {
 .markdown-article td > h1 ~ p:last-child {
   margin-bottom: 1.25em;
 }
+.markdown-article blockquote > h6,
+.markdown-article [lang*="zh-" i] blockquote > h6,
+.markdown-article [lang*="-hans" i] blockquote > h6,
+.markdown-article [lang*="-CN" i] blockquote > h6,
+.markdown-article [lang*="zh-"] blockquote > h6,
+.markdown-article [lang*="-hans"] blockquote > h6,
+.markdown-article [lang*="-CN"] blockquote > h6,
+.markdown-article blockquote > h5,
+.markdown-article [lang*="zh-" i] blockquote > h5,
+.markdown-article [lang*="-hans" i] blockquote > h5,
+.markdown-article [lang*="-CN" i] blockquote > h5,
+.markdown-article [lang*="zh-"] blockquote > h5,
+.markdown-article [lang*="-hans"] blockquote > h5,
+.markdown-article [lang*="-CN"] blockquote > h5,
+.markdown-article blockquote > h4,
+.markdown-article [lang*="zh-" i] blockquote > h4,
+.markdown-article [lang*="-hans" i] blockquote > h4,
+.markdown-article [lang*="-CN" i] blockquote > h4,
+.markdown-article [lang*="zh-"] blockquote > h4,
+.markdown-article [lang*="-hans"] blockquote > h4,
+.markdown-article [lang*="-CN"] blockquote > h4,
+.markdown-article blockquote > h3,
+.markdown-article [lang*="zh-" i] blockquote > h3,
+.markdown-article [lang*="-hans" i] blockquote > h3,
+.markdown-article [lang*="-CN" i] blockquote > h3,
+.markdown-article [lang*="zh-"] blockquote > h3,
+.markdown-article [lang*="-hans"] blockquote > h3,
+.markdown-article [lang*="-CN"] blockquote > h3,
+.markdown-article blockquote > h2,
+.markdown-article [lang*="zh-" i] blockquote > h2,
+.markdown-article [lang*="-hans" i] blockquote > h2,
+.markdown-article [lang*="-CN" i] blockquote > h2,
+.markdown-article [lang*="zh-"] blockquote > h2,
+.markdown-article [lang*="-hans"] blockquote > h2,
+.markdown-article [lang*="-CN"] blockquote > h2,
+.markdown-article blockquote > h1,
+.markdown-article [lang*="zh-" i] blockquote > h1,
+.markdown-article [lang*="-hans" i] blockquote > h1,
+.markdown-article [lang*="-CN" i] blockquote > h1,
+.markdown-article [lang*="zh-"] blockquote > h1,
+.markdown-article [lang*="-hans"] blockquote > h1,
+.markdown-article [lang*="-CN"] blockquote > h1 {
+  margin-left: -0.75em;
+  margin-right: -0.75em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
 .markdown-article p {
   cursor: text;
   text-align: justify;
-  line-height: 1.8;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   padding-left: 0.5em;
@@ -297,6 +370,19 @@ body {
   margin-right: 0.5em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+}
+.markdown-article blockquote > p:first-child {
+  margin-top: 1em;
+}
+.markdown-article blockquote > p:last-child {
+  margin-bottom: 0.75em;
+}
+.markdown-article blockquote > p:only-of-type {
+  text-indent: 0;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  margin-left: 0;
+  margin-right: 0;
 }
 .markdown-article li > p {
   margin-left: -0.5em;
@@ -378,6 +464,7 @@ body {
   border-style: none;
   margin: 0.5em auto 1em auto;
   text-align: center;
+  text-indent: 0;
   font-size: 100%;
   white-space: normal;
   word-break: break-word;
@@ -449,7 +536,7 @@ body {
   display: inline-block;
   vertical-align: top;
   border-style: solid;
-  padding: 1px 1.25em 1px 1.1em;
+  padding: 0.25em 1.5em 0.25em 1em;
   margin-top: 0;
   margin-bottom: 1.5em;
   margin-left: 2.5em;
@@ -620,7 +707,6 @@ body {
 .markdown-article li,
 .markdown-article dd {
   text-align: justify;
-  line-height: 1.8;
 }
 .markdown-article li {
   margin: 1em 0;
@@ -722,7 +808,12 @@ body {
 }
 @media (max-width: 600px) {
   .markdown-article h1,
-  .markdown-article h2,
+  .markdown-article h2 {
+    text-align: justify;
+    padding-left: 1.2em;
+    margin-left: -0.5em;
+    margin-right: -0.5em;
+  }
   .markdown-article h3,
   .markdown-article h4,
   .markdown-article h5,
@@ -793,8 +884,11 @@ body {
   scroll-behavior: smooth;
 }
 .markdown-article {
-  line-height: 1.6;
-  padding: 6em 4em 14em 4em;
+  line-height: 1.8;
+  padding-top: 6em;
+  padding-bottom: 14em;
+  padding-left: 4em;
+  padding-right: 4em;
   max-width: 51em;
   min-height: 60em;
   margin: 0 auto;
@@ -803,32 +897,75 @@ body {
 .markdown-article > h1:first-child {
   margin-top: 1em;
 }
-.markdown-article-toc-is-visible .markdown-article {
-  padding-left: 3em;
-  padding-right: 3em;
-}
-.markdown-article .document-author {
+.markdown-article .author,
+.markdown-article .document-author,
+.markdown-article .article-author {
   text-indent: 0;
   text-align: center;
 }
+.markdown-article .text-centered,
 .markdown-article .centered {
   text-indent: 0;
   text-align: center;
 }
+.markdown-article .align-rightwards,
+.markdown-article .text-align-rightwards,
+.markdown-article .texts-align-rightwards {
+  text-indent: 0;
+  text-align: right;
+}
+.markdown-article [lang*="zh-" i] .author,
+.markdown-article [lang*="-hans" i] .author,
+.markdown-article [lang*="-CN" i] .author,
+.markdown-article [lang*="zh-"] .author,
+.markdown-article [lang*="-hans"] .author,
+.markdown-article [lang*="-CN"] .author,
 .markdown-article [lang*="zh-" i] .document-author,
 .markdown-article [lang*="-hans" i] .document-author,
 .markdown-article [lang*="-CN" i] .document-author,
 .markdown-article [lang*="zh-"] .document-author,
 .markdown-article [lang*="-hans"] .document-author,
-.markdown-article [lang*="-CN"] .document-author {
+.markdown-article [lang*="-CN"] .document-author,
+.markdown-article [lang*="zh-" i] .article-author,
+.markdown-article [lang*="-hans" i] .article-author,
+.markdown-article [lang*="-CN" i] .article-author,
+.markdown-article [lang*="zh-"] .article-author,
+.markdown-article [lang*="-hans"] .article-author,
+.markdown-article [lang*="-CN"] .article-author {
   text-indent: 0;
 }
+.markdown-article [lang*="zh-" i] .text-centered,
+.markdown-article [lang*="-hans" i] .text-centered,
+.markdown-article [lang*="-CN" i] .text-centered,
+.markdown-article [lang*="zh-"] .text-centered,
+.markdown-article [lang*="-hans"] .text-centered,
+.markdown-article [lang*="-CN"] .text-centered,
 .markdown-article [lang*="zh-" i] .centered,
 .markdown-article [lang*="-hans" i] .centered,
 .markdown-article [lang*="-CN" i] .centered,
 .markdown-article [lang*="zh-"] .centered,
 .markdown-article [lang*="-hans"] .centered,
 .markdown-article [lang*="-CN"] .centered {
+  text-indent: 0;
+}
+.markdown-article [lang*="zh-" i] .align-rightwards,
+.markdown-article [lang*="-hans" i] .align-rightwards,
+.markdown-article [lang*="-CN" i] .align-rightwards,
+.markdown-article [lang*="zh-"] .align-rightwards,
+.markdown-article [lang*="-hans"] .align-rightwards,
+.markdown-article [lang*="-CN"] .align-rightwards,
+.markdown-article [lang*="zh-" i] .text-align-rightwards,
+.markdown-article [lang*="-hans" i] .text-align-rightwards,
+.markdown-article [lang*="-CN" i] .text-align-rightwards,
+.markdown-article [lang*="zh-"] .text-align-rightwards,
+.markdown-article [lang*="-hans"] .text-align-rightwards,
+.markdown-article [lang*="-CN"] .text-align-rightwards,
+.markdown-article [lang*="zh-" i] .texts-align-rightwards,
+.markdown-article [lang*="-hans" i] .texts-align-rightwards,
+.markdown-article [lang*="-CN" i] .texts-align-rightwards,
+.markdown-article [lang*="zh-"] .texts-align-rightwards,
+.markdown-article [lang*="-hans"] .texts-align-rightwards,
+.markdown-article [lang*="-CN"] .texts-align-rightwards {
   text-indent: 0;
 }
 .markdown-article .hidden-spacebar-between-head-linkage-and-head-text {
@@ -840,7 +977,7 @@ body {
 }
 .markdown-article .header-anchor,
 .markdown-article a.header-anchor {
-  margin-top: -0.2em;
+  margin-top: -0.1667em;
   margin-bottom: 0em;
   margin-left: -1.65em;
   margin-right: 0.15em;
@@ -1050,13 +1187,9 @@ body {
 }
 .markdown-article h1 {
   font-weight: 400;
-  text-indent: 0;
-  text-align: center;
 }
 .markdown-article h2 {
   font-weight: 400;
-  text-indent: 0;
-  text-align: center;
 }
 .markdown-article h3 {
   font-weight: 400;

@@ -14,7 +14,7 @@
  *
  *                                          吾乃南昌吴乐川是也
  *                                          wulechuan@live.com
- *                                                  2022-05-08
+ *                                                  2022-05-14
  *
  *
  *
@@ -131,101 +131,35 @@ h4,
 h5,
 h6,
 dt {
-  text-align: justify;
-  margin-left: -0.5em;
-  margin-right: -0.5em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  border-width: 0;
   cursor: text;
+  text-indent: 0;
 }
-h1 {
-  font-size: 2.75em;
-  line-height: 1.667;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 3em;
-  margin-bottom: 1em;
+h1,
+h2 {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  text-align: center;
 }
 h1 p,
-h1 small {
+h2 p,
+h1 small,
+h2 small {
   font-size: 0.667em;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  text-align: left;
+  text-align: justify;
   line-height: 1.33;
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 h1 small p,
-h1 p small {
+h2 small p,
+h1 p small,
+h2 p small {
   font-size: 100%;
-}
-[lang*="zh-" i] h1 small,
-[lang*="-hans" i] h1 small,
-[lang*="-CN" i] h1 small,
-[lang*="zh-"] h1 small,
-[lang*="-hans"] h1 small,
-[lang*="-CN"] h1 small,
-[lang*="zh-" i] h1 p,
-[lang*="-hans" i] h1 p,
-[lang*="-CN" i] h1 p,
-[lang*="zh-"] h1 p,
-[lang*="-hans"] h1 p,
-[lang*="-CN"] h1 p {
-  text-indent: -2.7em;
-  margin-left: 3.7em;
-}
-h2 {
-  font-size: 2.2em;
-  line-height: 1.667;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 4em;
-  margin-bottom: 1em;
-}
-h3 {
-  font-size: 1.75em;
-  line-height: 1.667;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 3.5em;
-  margin-bottom: 1em;
-}
-h4 {
-  font-size: 1.33em;
-  line-height: 1.667;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 3em;
-  margin-bottom: 1em;
-}
-h5 {
-  font-size: 1.2em;
-  line-height: 1.667;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 3em;
-  margin-bottom: 0.75em;
-}
-h6,
-dt {
-  font-size: 1.1em;
-  line-height: 1.667;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  margin-top: 1.5em;
-  margin-bottom: 0.75em;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-dt {
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
-  border-width: 0;
 }
 [lang*="zh-" i] h1,
 [lang*="-hans" i] h1,
@@ -241,11 +175,104 @@ dt {
 [lang*="-CN"] h2 {
   letter-spacing: 0.1em;
 }
+[lang*="zh-" i] h1 small,
+[lang*="-hans" i] h1 small,
+[lang*="-CN" i] h1 small,
+[lang*="zh-"] h1 small,
+[lang*="-hans"] h1 small,
+[lang*="-CN"] h1 small,
+[lang*="zh-" i] h2 small,
+[lang*="-hans" i] h2 small,
+[lang*="-CN" i] h2 small,
+[lang*="zh-"] h2 small,
+[lang*="-hans"] h2 small,
+[lang*="-CN"] h2 small,
+[lang*="zh-" i] h1 p,
+[lang*="-hans" i] h1 p,
+[lang*="-CN" i] h1 p,
+[lang*="zh-"] h1 p,
+[lang*="-hans"] h1 p,
+[lang*="-CN"] h1 p,
+[lang*="zh-" i] h2 p,
+[lang*="-hans" i] h2 p,
+[lang*="-CN" i] h2 p,
+[lang*="zh-"] h2 p,
+[lang*="-hans"] h2 p,
+[lang*="-CN"] h2 p {
+  text-indent: -2.7em;
+  margin-left: 3.7em;
+}
+h3,
+h4,
+h5,
+h6 {
+  text-align: justify;
+  margin-left: -0.75em;
+  margin-right: -0.75em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
+h1 {
+  font-size: 2.75em;
+  line-height: 1.333;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+h2 {
+  font-size: 2.2em;
+  line-height: 1.333;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 4em;
+  margin-bottom: 1em;
+}
+h3 {
+  font-size: 1.75em;
+  line-height: 1.333;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 3.5em;
+  margin-bottom: 1em;
+}
+h4 {
+  font-size: 1.33em;
+  line-height: 1.333;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+h5 {
+  font-size: 1.2em;
+  line-height: 1.333;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 3em;
+  margin-bottom: 0.75em;
+}
+h6,
+dt {
+  font-size: 1.1em;
+  line-height: 1.333;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+dt {
+  text-align: justify;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
 h5 + h6,
 h4 + h5,
 h3 + h4,
 h2 + h3 {
-  margin-top: 0.5em;
+  margin-top: -1em;
 }
 blockquote > h6,
 th > h6,
@@ -284,10 +311,56 @@ th > h1 ~ p:last-child,
 td > h1 ~ p:last-child {
   margin-bottom: 1.25em;
 }
+blockquote > h6,
+[lang*="zh-" i] blockquote > h6,
+[lang*="-hans" i] blockquote > h6,
+[lang*="-CN" i] blockquote > h6,
+[lang*="zh-"] blockquote > h6,
+[lang*="-hans"] blockquote > h6,
+[lang*="-CN"] blockquote > h6,
+blockquote > h5,
+[lang*="zh-" i] blockquote > h5,
+[lang*="-hans" i] blockquote > h5,
+[lang*="-CN" i] blockquote > h5,
+[lang*="zh-"] blockquote > h5,
+[lang*="-hans"] blockquote > h5,
+[lang*="-CN"] blockquote > h5,
+blockquote > h4,
+[lang*="zh-" i] blockquote > h4,
+[lang*="-hans" i] blockquote > h4,
+[lang*="-CN" i] blockquote > h4,
+[lang*="zh-"] blockquote > h4,
+[lang*="-hans"] blockquote > h4,
+[lang*="-CN"] blockquote > h4,
+blockquote > h3,
+[lang*="zh-" i] blockquote > h3,
+[lang*="-hans" i] blockquote > h3,
+[lang*="-CN" i] blockquote > h3,
+[lang*="zh-"] blockquote > h3,
+[lang*="-hans"] blockquote > h3,
+[lang*="-CN"] blockquote > h3,
+blockquote > h2,
+[lang*="zh-" i] blockquote > h2,
+[lang*="-hans" i] blockquote > h2,
+[lang*="-CN" i] blockquote > h2,
+[lang*="zh-"] blockquote > h2,
+[lang*="-hans"] blockquote > h2,
+[lang*="-CN"] blockquote > h2,
+blockquote > h1,
+[lang*="zh-" i] blockquote > h1,
+[lang*="-hans" i] blockquote > h1,
+[lang*="-CN" i] blockquote > h1,
+[lang*="zh-"] blockquote > h1,
+[lang*="-hans"] blockquote > h1,
+[lang*="-CN"] blockquote > h1 {
+  margin-left: -0.75em;
+  margin-right: -0.75em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+}
 p {
   cursor: text;
   text-align: justify;
-  line-height: 1.8;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
   padding-left: 0.5em;
@@ -302,6 +375,19 @@ blockquote > p {
   margin-right: 0.5em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+}
+blockquote > p:first-child {
+  margin-top: 1em;
+}
+blockquote > p:last-child {
+  margin-bottom: 0.75em;
+}
+blockquote > p:only-of-type {
+  text-indent: 0;
+  margin-top: 0.25em;
+  margin-bottom: 0.25em;
+  margin-left: 0;
+  margin-right: 0;
 }
 li > p {
   margin-left: -0.5em;
@@ -383,6 +469,7 @@ img {
   border-style: none;
   margin: 0.5em auto 1em auto;
   text-align: center;
+  text-indent: 0;
   font-size: 100%;
   white-space: normal;
   word-break: break-word;
@@ -454,7 +541,7 @@ blockquote {
   display: inline-block;
   vertical-align: top;
   border-style: solid;
-  padding: 1px 1.25em 1px 1.1em;
+  padding: 0.25em 1.5em 0.25em 1em;
   margin-top: 0;
   margin-bottom: 1.5em;
   margin-left: 2.5em;
@@ -625,7 +712,6 @@ label[for] {
 li,
 dd {
   text-align: justify;
-  line-height: 1.8;
 }
 li {
   margin: 1em 0;
@@ -727,7 +813,12 @@ hr::after {
 }
 @media (max-width: 600px) {
   h1,
-  h2,
+  h2 {
+    text-align: justify;
+    padding-left: 1.2em;
+    margin-left: -0.5em;
+    margin-right: -0.5em;
+  }
   h3,
   h4,
   h5,
@@ -798,8 +889,11 @@ hr::after {
   scroll-behavior: smooth;
 }
 .markdownRoot {
-  line-height: 1.6;
-  padding: 6em 4em 14em 4em;
+  line-height: 1.8;
+  padding-top: 6em;
+  padding-bottom: 14em;
+  padding-left: 4em;
+  padding-right: 4em;
   max-width: 51em;
   min-height: 60em;
   margin: 0 auto;
@@ -808,32 +902,75 @@ hr::after {
 .markdownRoot > h1:first-child {
   margin-top: 1em;
 }
-.markdown-article-toc-is-visible .markdownRoot {
-  padding-left: 3em;
-  padding-right: 3em;
-}
-.document-author {
+.author,
+.document-author,
+.article-author {
   text-indent: 0;
   text-align: center;
 }
+.text-centered,
 .centered {
   text-indent: 0;
   text-align: center;
 }
+.align-rightwards,
+.text-align-rightwards,
+.texts-align-rightwards {
+  text-indent: 0;
+  text-align: right;
+}
+[lang*="zh-" i] .author,
+[lang*="-hans" i] .author,
+[lang*="-CN" i] .author,
+[lang*="zh-"] .author,
+[lang*="-hans"] .author,
+[lang*="-CN"] .author,
 [lang*="zh-" i] .document-author,
 [lang*="-hans" i] .document-author,
 [lang*="-CN" i] .document-author,
 [lang*="zh-"] .document-author,
 [lang*="-hans"] .document-author,
-[lang*="-CN"] .document-author {
+[lang*="-CN"] .document-author,
+[lang*="zh-" i] .article-author,
+[lang*="-hans" i] .article-author,
+[lang*="-CN" i] .article-author,
+[lang*="zh-"] .article-author,
+[lang*="-hans"] .article-author,
+[lang*="-CN"] .article-author {
   text-indent: 0;
 }
+[lang*="zh-" i] .text-centered,
+[lang*="-hans" i] .text-centered,
+[lang*="-CN" i] .text-centered,
+[lang*="zh-"] .text-centered,
+[lang*="-hans"] .text-centered,
+[lang*="-CN"] .text-centered,
 [lang*="zh-" i] .centered,
 [lang*="-hans" i] .centered,
 [lang*="-CN" i] .centered,
 [lang*="zh-"] .centered,
 [lang*="-hans"] .centered,
 [lang*="-CN"] .centered {
+  text-indent: 0;
+}
+[lang*="zh-" i] .align-rightwards,
+[lang*="-hans" i] .align-rightwards,
+[lang*="-CN" i] .align-rightwards,
+[lang*="zh-"] .align-rightwards,
+[lang*="-hans"] .align-rightwards,
+[lang*="-CN"] .align-rightwards,
+[lang*="zh-" i] .text-align-rightwards,
+[lang*="-hans" i] .text-align-rightwards,
+[lang*="-CN" i] .text-align-rightwards,
+[lang*="zh-"] .text-align-rightwards,
+[lang*="-hans"] .text-align-rightwards,
+[lang*="-CN"] .text-align-rightwards,
+[lang*="zh-" i] .texts-align-rightwards,
+[lang*="-hans" i] .texts-align-rightwards,
+[lang*="-CN" i] .texts-align-rightwards,
+[lang*="zh-"] .texts-align-rightwards,
+[lang*="-hans"] .texts-align-rightwards,
+[lang*="-CN"] .texts-align-rightwards {
   text-indent: 0;
 }
 .hidden-spacebar-between-head-linkage-and-head-text {
@@ -845,7 +982,7 @@ hr::after {
 }
 .header-anchor,
 a.header-anchor {
-  margin-top: -0.2em;
+  margin-top: -0.1667em;
   margin-bottom: 0em;
   margin-left: -1.65em;
   margin-right: 0.15em;
@@ -1192,13 +1329,9 @@ body {
 }
 h1 {
   font-weight: 400;
-  text-indent: 0;
-  text-align: center;
 }
 h2 {
   font-weight: 400;
-  text-indent: 0;
-  text-align: center;
 }
 h3 {
   font-weight: 400;

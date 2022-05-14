@@ -181,7 +181,8 @@ npm  i  -D `
     'gulp-rename@latest' `
     'gulp-stylus@latest' `
     'gulp-terser@latest' `
-    'postcss@latest'
+    'postcss@latest' `
+    'stylus@latest'
 
 
 

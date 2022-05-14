@@ -26,7 +26,7 @@
     "start-2": "gulp                 --silent  devSingleThemeOnce    &&    npm  run  open-dev-htmls    &&    gulp  --silent  devSingleTheme",
     "start": "gulp                             devSingleThemeOnce    &&    npm  run  open-dev-htmls    &&    gulp            devSingleTheme",
     "_test-package-interfaces": "node  ./测试集/用于测试本项目之-javascript-接口的测试代码集.js",
-    "_test-all-without-linting-without-browser": "npm  run  _test-package-interfaces                     &&    npm  run  _build-2    &&    npm  run  _update-example-htmls-2    &&    gulp  devSingleThemeOnce",
+    "_test-all-without-linting-without-browser": "npm  run  _build-2                                     &&    npm  run  _test-package-interfaces    &&    npm  run  _update-example-htmls-2    &&    gulp  devSingleThemeOnce",
     "update-example-htmls": "npm                       run  _update-example-htmls                        &&    npm  run  open-firefox-for-snapshots",
     "update-example-htmls-2": "npm                     run  _update-example-htmls-2                      &&    npm  run  open-firefox-for-snapshots",
     "test": "npm     run  eslint        &&        npm  run  _test-all-without-linting-without-browser    &&    npm  run  open-firefox-for-snapshots    &&    npm  run  open-dev-htmls",
@@ -56,7 +56,8 @@
     "gulp-rename": "^2.0.0",
     "gulp-stylus": "^2.7.1",
     "gulp-terser": "^2.1.0",
-    "postcss": "^8.4.13"
+    "postcss": "^8.4.13",
+    "stylus": "^0.57.0"
   },
   "homepage": "https://github.com/wulechuan/wulechuan-css-stylus-themes-for-htmls-via-markdowns#readme",
   "repository": {

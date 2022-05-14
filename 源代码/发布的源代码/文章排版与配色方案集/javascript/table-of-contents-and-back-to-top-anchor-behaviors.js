@@ -17,7 +17,7 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
     const printDoubleLine = '='.repeat(fullWidth)
 
     const emailAddress = 'wulechuan@live.com'
-    const timeStamp = '北京时间 2022-05-08'
+    const timeStamp = '北京时间 2022-05-14'
 
     const welcomeZhHansCN = '欢迎使用吴乐川设计的用于“控制文章目录之交互”的控制器。'
     const welcomeEn = 'Welcome to wulechuan\'s article TOC controller.'
@@ -171,6 +171,7 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
          * because otherwise when Javascript is not allowed,
          * why do we need a button that cannot work?
          */
+
 
 
         let tocTogglingButton = document.querySelector(`.${cssClassNameTOCTogglingButton}`)
@@ -337,7 +338,9 @@ window.atBeginingShouldExpandTOCWhenWindowIsWideEnough = false
     }
 })()
 
-;(function () {
+
+
+;(function 处理各级标题的永固链接于文本之间的空格 () {
     const allH1ToH6Elements = Array.from(
         document.querySelectorAll('h1, h2, h3, h4, h5, h6')
     )
