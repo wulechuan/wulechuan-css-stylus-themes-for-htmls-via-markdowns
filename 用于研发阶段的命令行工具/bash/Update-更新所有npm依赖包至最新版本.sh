@@ -1,5 +1,11 @@
 #!/bin/sh
 
+source  "`pwd`/用于研发阶段的命令行工具/bash/Write-Json.sh"
+
+
+
+
+
 # -------------------------------------------------------
 #           特定版本之【产品依赖包】
 # -------------------------------------------------------
@@ -137,11 +143,25 @@ echo
 echo
 echo
 
-echo  -e  '\e[94m===== 其他交代 =====================================================\e[0;0m'
+echo  -e  "\e[94m===== 其他交代 =====================================================\e[0;0m"
 
 echo
 
-echo  '暂无。'
+echo -e "\e[33m以下是在 package.json 中的特殊记载及其解释\e[0;0m"
+echo
+echo '{'
+Write-JsonKey          -Indent 1 'overrides' -ValueIsObject
+Write-JsonKey          -Indent 2 'stylus' -ValueIsObject
+echo
+Write-JsonCommentLine  -Indent 3 '// 实验证明，截止 2022-05-15 ，'
+Write-JsonCommentLine  -Indent 3 '// Stylus 依赖的 glob 不能采用最晚近的 v7.2.2 版。'
+Write-JsonCommentLine  -Indent 3 '// glob 不能采用 v7.2.1 版不存在。'
+Write-JsonCommentLine  -Indent 3 '// 故最高仅能采用 v7.2.0 版。'
+Write-JsonKey          -Indent 3 'glob'
+Write-JsonValue_String -IsValueOfLastKey '7.2.0'
+Write-JsonObjectEnd    -Indent 2
+Write-JsonObjectEnd    -Indent 1
+echo '}'
 
 
 

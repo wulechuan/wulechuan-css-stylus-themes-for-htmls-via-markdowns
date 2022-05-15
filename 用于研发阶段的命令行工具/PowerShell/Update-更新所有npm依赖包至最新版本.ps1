@@ -226,12 +226,104 @@ Write-Host  -F 'Blue'        '===== 其他交代 ===============================
 
 Write-Host
 
-Write-Host  '暂无。'
+function Write-JsonKey {
+    Param (
+        [int]   $IndentationLevel,
+        [string]$Key,
+        [switch]$ValueIsObject,
+        [switch]$ValueIsArray
+    )
+
+    if ($IndentationLevel -gt 0) {
+        (1..$IndentationLevel).ForEach{ Write-Host -No '    ' }
+    }
+
+    Write-Host -No    '"'
+    Write-Host -No -F 'DarkGreen' "$Key"
+    Write-Host -No    '": '
+
+    if ($ValueIsObject -or $ValueIsArray) {
+        if ($ValueIsObject) {
+            Write-Host    '{'
+        } else {
+            Write-Host    '['
+        }
+    }
+}
+
+function Write-JsonObjectEnd {
+    Param (
+        [int]$IndentationLevel
+    )
+
+    if ($IndentationLevel -gt 0) {
+        (1..$IndentationLevel).ForEach{ Write-Host -No '    ' }
+    }
+    
+    Write-Host '}'
+}
+
+function Write-JsonArrayEnd {
+    Param (
+        [int]$IndentationLevel
+    )
+
+    if ($IndentationLevel -gt 0) {
+        (1..$IndentationLevel).ForEach{ Write-Host -No '    ' }
+    }
+    
+    Write-Host ']'
+}
+
+function Write-JsonValue_String {
+    Param (
+        [switch]$IsValueOfLastKey,
+        [string]$valueOfString
+    )
+
+    Write-Host -No    '"'
+    Write-Host -No -F 'White' "$valueOfString"
+    Write-Host -No    '"'
+    if (-not $IsValueOfLastKey) {
+        Write-Host -No ','
+    }
+    Write-Host
+}
+
+function Write-JsonCommentLine {
+    Param (
+        [int]   $IndentationLevel,
+        [string]$comment
+    )
+
+    if ($IndentationLevel -gt 0) {
+        (1..$IndentationLevel).ForEach{ Write-Host -No '    ' }
+    }
+
+    # Write-Host  -No  -F 'DarkGray'  '// '
+    Write-Host       -F 'Red'       "$comment"
+}
+
+Write-Host -F 'Yellow' '以下是在 package.json 中的特殊记载及其解释'
+Write-Host
+Write-Host '{'
+Write-JsonKey          -Indent 1 'overrides' -ValueIsObject
+Write-JsonKey          -Indent 2 'stylus' -ValueIsObject
+Write-Host
+Write-JsonCommentLine  -Indent 3 '// 实验证明，截止 2022-05-15 ，'
+Write-JsonCommentLine  -Indent 3 '// Stylus 依赖的 glob 不能采用最晚近的 v7.2.2 版。'
+Write-JsonCommentLine  -Indent 3 '// glob 不能采用 v7.2.1 版不存在。'
+Write-JsonCommentLine  -Indent 3 '// 故最高仅能采用 v7.2.0 版。'
+Write-JsonKey          -Indent 3 'glob'
+Write-JsonValue_String -IsValueOfLastKey '7.2.0'
+Write-JsonObjectEnd    -Indent 2
+Write-JsonObjectEnd    -Indent 1
+Write-Host '}'
 
 
-    
-    
-    
+
+
+
 # -------------------------------------------------------
 #           结束
 # -------------------------------------------------------

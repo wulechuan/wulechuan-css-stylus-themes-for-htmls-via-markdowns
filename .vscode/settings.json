@@ -2,7 +2,7 @@
     "files.exclude": {
         "**/node_modules": true,
         "**/.DS_Store": true,
-        "package-lock.json": true
+        // "package-lock.json": true
     },
     "search.exclude": {
         "**/node_modules": true,

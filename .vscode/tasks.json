@@ -13,7 +13,7 @@
         // {
         //     "label": "更新所有npm依赖包至最新版本（Bash）",
         //     "type": "shell",
-        //     "command": "./用于研发阶段的命令行工具/bash/Update-更新所有npm依赖包至最新版本.sh",
+        //     "command": "bash -c 'source ./用于研发阶段的命令行工具/bash/Update-更新所有npm依赖包至最新版本.sh'",
         //     "group": "none",
         //     "problemMatcher": []
         // },

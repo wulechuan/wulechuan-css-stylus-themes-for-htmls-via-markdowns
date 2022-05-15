@@ -36,6 +36,11 @@
     "每当制作集得之版本之前": "npm  i    &&    npm  test    &&    npm  run  发布新图片之前对开发者做出提醒",
     "prepublishOnly": "npm       i    &&    npm  test"
   },
+  "overrides": {
+    "stylus": {
+      "glob": "7.2.0"
+    }
+  },
   "dependencies": {
     "globby": "^11.1.0"
   },
