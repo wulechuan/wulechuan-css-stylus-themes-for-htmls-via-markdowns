@@ -22,4 +22,5 @@ node_modules
 
 
 # ----- 本计算机专用资料 ---------------
-# 暂无。
+# package-lock.json
+.vscode/**/tasks-吴乐川备份*

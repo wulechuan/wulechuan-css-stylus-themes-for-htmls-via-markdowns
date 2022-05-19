@@ -7,7 +7,7 @@ module.exports = {
         'eslint:recommended',
     ],
     parserOptions: {
-        ecmaVersion: 2018,
+        ecmaVersion: 2021,
         ecmaFeatures: {
             experimentalObjectRestSpread: true,
         },

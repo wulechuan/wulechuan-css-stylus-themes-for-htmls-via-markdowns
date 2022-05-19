@@ -15,9 +15,9 @@ param(
 
 Write-Host
 
-Write-Host  -NoNewline  -F 'Cyan' '===== 删除 '
+Write-Host  -NoNewline  -F 'Cyan' '═════ 删除 '
 Write-Host  -NoNewline  -F 'Cyan' 'node_modules'
-Write-Host              -F 'Cyan' ' 文件夹 ====================================='
+Write-Host              -F 'Cyan' ' 文件夹 ═════════════════════════════════════'
 
 Write-Host
 
@@ -51,9 +51,9 @@ Write-Host
 Write-Host
 Write-Host
 
-Write-Host  -NoNewline  -F 'Green' '===== 删除 '
+Write-Host  -NoNewline  -F 'Green' '═════ 删除 '
 Write-Host  -NoNewline  -F 'Green' 'package-lock.json'
-Write-Host              -F 'Green' ' 文件 =================================='
+Write-Host              -F 'Green' ' 文件 ══════════════════════════════════'
 
 Write-Host
 
@@ -83,9 +83,9 @@ Write-Host
 Write-Host
 Write-Host
 
-Write-Host  -NoNewline  -F 'DarkRed'                '===== npm i    '
+Write-Host  -NoNewline  -F 'DarkRed'                '═════ npm i    '
 Write-Host  -NoNewline  -F 'White'    -B 'DarkRed'  '特定版本'
-Write-Host              -F 'DarkRed'                '之【产品依赖包】 ============================'
+Write-Host              -F 'DarkRed'                '之【产品依赖包】 ════════════════════════════'
 
 Write-Host
 
@@ -110,9 +110,9 @@ Write-Host
 Write-Host
 Write-Host
 
-Write-Host  -NoNewline  -F 'DarkRed'                '===== npm i    '
+Write-Host  -NoNewline  -F 'DarkRed'                '═════ npm i    '
 Write-Host  -NoNewline  -F 'DarkRed'                '最末版本'
-Write-Host              -F 'DarkRed'                '之【产品依赖包】 ============================'
+Write-Host              -F 'DarkRed'                '之【产品依赖包】 ════════════════════════════'
 
 Write-Host
 
@@ -132,9 +132,9 @@ Write-Host
 Write-Host
 Write-Host
 
-Write-Host  -NoNewline  -F 'DarkGreen'              '===== npm i -D '
+Write-Host  -NoNewline  -F 'DarkGreen'              '═════ npm i -D '
 Write-Host  -NoNewline  -F 'Black'      -B 'Green'  '特定版本'
-Write-Host              -F 'DarkGreen'              '之【研发依赖包】 ============================'
+Write-Host              -F 'DarkGreen'              '之【研发依赖包】 ════════════════════════════'
 
 Write-Host
 
@@ -159,9 +159,9 @@ Write-Host
 Write-Host
 Write-Host
 
-Write-Host  -NoNewline  -F 'DarkGreen'              '===== npm i -D '
+Write-Host  -NoNewline  -F 'DarkGreen'              '═════ npm i -D '
 Write-Host  -NoNewline  -F 'DarkGreen'              '最末版本'
-Write-Host              -F 'DarkGreen'              '之【研发依赖包】 ============================'
+Write-Host              -F 'DarkGreen'              '之【研发依赖包】 ════════════════════════════'
 
 Write-Host
 
@@ -200,7 +200,7 @@ Write-Host
 Write-Host
 Write-Host
 
-Write-Host  -F 'DarkYellow'  '===== 更新与研发相关的数据库 ======================================='
+Write-Host  -F 'DarkYellow'  '═════ 更新与研发相关的数据库 ═══════════════════════════════════════'
 
 Write-Host
 Write-Host
@@ -222,7 +222,7 @@ Write-Host
 Write-Host
 Write-Host
 
-Write-Host  -F 'Blue'        '===== 其他交代 ====================================================='
+Write-Host  -F 'Blue'        '═════ 其他交代 ═════════════════════════════════════════════════════'
 
 Write-Host
 

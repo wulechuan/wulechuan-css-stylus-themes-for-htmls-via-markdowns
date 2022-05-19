@@ -1,22 +1,24 @@
+/**
+ * 参阅： https://go.microsoft.com/fwlink/?LinkId=733558
+ */
+
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "tasks": [
         {
             "label": "更新所有npm依赖包至最新版本（PowerShell）",
             "type": "shell",
-            "command": ".\\用于研发阶段的命令行工具\\PowerShell\\Update-更新所有npm依赖包至最新版本.ps1  -安装之前先删除旧有的_node_modules_文件夹",
+            "command": ".\\用于研发阶段的命令行工具集\\PowerShell\\Update-更新所有npm依赖包至最新版本.ps1  -安装之前先删除旧有的_node_modules_文件夹",
             "group": "none",
             "problemMatcher": []
         },
-        // {
-        //     "label": "更新所有npm依赖包至最新版本（Bash）",
-        //     "type": "shell",
-        //     "command": "bash -c 'source ./用于研发阶段的命令行工具/bash/Update-更新所有npm依赖包至最新版本.sh'",
-        //     "group": "none",
-        //     "problemMatcher": []
-        // },
+        {
+            "label": "更新所有npm依赖包至最新版本（Bash）",
+            "type": "shell",
+            "command": "bash -c 'source ./用于研发阶段的命令行工具集/bash/Update-更新所有npm依赖包至最新版本.sh  --安装之前先删除旧有的_node_modules_文件夹'",
+            "group": "none",
+            "problemMatcher": []
+        },
         {
             "label": "开始研发",
             "type": "shell",
@@ -32,18 +34,18 @@
             "problemMatcher": []
         },
         {
-            "label": "将代码依次推送至多个集得源（PowerShell）",
             "type": "shell",
-            "command": ".Push-将代码依次推送至多个集得源.ps1",
+            "command": "pwsh  -Command '.\\用于研发阶段的命令行工具集\\PowerShell\\Push-将代码依次推送至多个集得源.ps1'",
             "group": "none",
-            "problemMatcher": []
+            "problemMatcher": [],
+            "label": "将代码依次推送至多个集得源（PowerShell）"
         },
-        // {
-        //     "label": "将代码依次推送至多个集得源（Bash）",
-        //     "type": "shell",
-        //     "command": "./push-将代码依次推送至多个集得源.sh",
-        //     "group": "none",
-        //     "problemMatcher": [],
-        // },
+        {
+            "type": "shell",
+            "command": "bash  -c 'source  ./用于研发阶段的命令行工具集/bash/push-将代码依次推送至多个集得源.sh'",
+            "group": "none",
+            "problemMatcher": [],
+            "label": "将代码依次推送至多个集得源（Bash）"
+        }
     ]
 }

@@ -31,7 +31,7 @@ function Write-JsonKey {
         done
     fi
 
-    echo -en "\"\e[32m${key}\e[0;0m\": "
+    echo -en "\"\e[0;32m${key}\e[0;0m\": "
 
     if [ $valueIsObject == 1 ]; then
         echo '{'
@@ -93,7 +93,7 @@ function Write-JsonValue_String {
 
     value="$1"
 
-    echo -en "\"\e[39m${value}\e[0;0m\""
+    echo -en "\"\e[0;39m${value}\e[0;0m\""
 
     if [ ! $isValueOfLastKey ]; then
         echo -n ','
@@ -122,5 +122,5 @@ function Write-JsonCommentLine {
         done
     fi
 
-    echo -e "\e[31m${comment}\e[0;0m"
+    echo -e "\e[0;91m${comment}\e[0;0m"
 }

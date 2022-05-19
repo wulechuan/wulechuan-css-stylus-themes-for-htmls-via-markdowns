@@ -1,6 +1,6 @@
 #!/bin/bash
 
-.  './node_modules/@wulechuan/cli-scripts--git-push/源代码/bash/吴乐川-集得源管理工具集.sh'
+source  './node_modules/@wulechuan/cli-scripts--git-push/源代码/发布的源代码/bash/吴乐川-集得源管理工具集.sh'
 
 吴乐川-集得上推至一个或多个源-显示开始之提示语
 

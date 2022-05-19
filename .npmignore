@@ -21,7 +21,7 @@ tsconfig.json
 # ----- 仅面向研发阶段的诸工具 ----------
 *.sh
 *.ps1
-用于研发阶段的命令行工具
+用于研发阶段的命令行工具集
 gulpfile.esm.js
 --gulp-采用require函数的版本/
 
