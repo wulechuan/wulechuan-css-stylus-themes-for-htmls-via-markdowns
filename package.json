@@ -45,9 +45,9 @@
     "globby": "^11.1.0"
   },
   "devDependencies": {
-    "@wulechuan/cli-scripts--git-push": "^6.0.6",
-    "@wulechuan/cli-scripts--npm-project-helpers": "^1.0.7",
-    "@wulechuan/generate-html-via-markdown": "^3.2.5",
+    "@wulechuan/cli-scripts--git-push": "^6.0.8",
+    "@wulechuan/cli-scripts--npm-project-helpers": "^1.1.2",
+    "@wulechuan/generate-html-via-markdown": "^3.3.0",
     "@wulechuan/gulp-classical-task-cycle": "^0.3.0",
     "chalk": "^4.1.2",
     "cssnano": "^5.1.9",

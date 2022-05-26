@@ -42,7 +42,7 @@ function 完整流程  {
 
     # ───────────────────────────────────────────────────────────────
     #  3) 安装依赖包。【产品级】、【甲】类。
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     #     顺便提醒，虽然一般而言 latest 版本应恰为最高版本，但并不确保。
     # ───────────────────────────────────────────────────────────────
 
@@ -63,17 +63,19 @@ function 完整流程  {
 
         # echo  'npm  i  ????????@0.0.0'
 
-        echo
-        echo  -en  "\e[0;31m"
-        Write-Line-without-line-break
-        echo  -e   "\e[0;0m"
-        echo
+        echo  -en  "\n\e[0;31m"; Write-Line-without-line-break; echo  -e  "\e[0;0m"
 
         if [ $ShouldDryRun -eq 0 ]; then
 
             # ───────────────────────────
 
-            [ 0 ]
+            # [ 0 ]        # 当本 else 语句块中没有其它语句时，这句必须存在。
+
+            # ───────────────────────────
+            # 暂无任务。故此处无任何信息。
+            # ───────────────────────────
+
+            # 不妨把任务写在这里。
 
             # ───────────────────────────
 
@@ -111,13 +113,13 @@ function 完整流程  {
         echo  '    npm  i \'
         echo  '        globby@^11'
 
-        echo
-        echo  -en  "\e[0;31m"
-        Write-Line-without-line-break
-        echo  -e   "\e[0;0m"
-        echo
+        echo  -en  "\n\e[0;31m"; Write-Line-without-line-break; echo  -e  "\e[0;0m"
 
         if [ $ShouldDryRun -eq 0 ]; then
+
+            # ───────────────────────────
+
+            # [ 0 ]        # 当本 else 语句块中没有其它语句时，这句必须存在。
 
             # ───────────────────────────
             # globby
@@ -144,7 +146,7 @@ function 完整流程  {
 
     # ───────────────────────────────────────────────────────────────
     #  3) 安装依赖包。【研发级】、【甲】类。
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     #     顺便提醒，虽然一般而言 latest 版本应恰为最高版本，但并不确保。
     # ───────────────────────────────────────────────────────────────
 
@@ -165,6 +167,7 @@ function 完整流程  {
 
         echo  '    npm  i  -D \'
         echo  '        @wulechuan/cli-scripts--git-push@latest \'
+        echo  '        @wulechuan/cli-scripts--npm-project-helpers@latest \'
         echo  '        @wulechuan/generate-html-via-markdown@latest \'
         echo  '        @wulechuan/gulp-classical-task-cycle@latest \'
         echo  '        cssnano@latest \'
@@ -182,17 +185,19 @@ function 完整流程  {
         echo  '        postcss@latest \'
         echo  '        stylus@latest'
 
-        echo
-        echo  -en  "\e[0;32m"
-        Write-Line-without-line-break
-        echo  -e   "\e[0;0m"
-        echo
+        echo  -en  "\n\e[0;32m"; Write-Line-without-line-break; echo  -e  "\e[0;0m"
 
         if [ $ShouldDryRun -eq 0 ]; then
 
             # ───────────────────────────
+
+            # [ 0 ]        # 当本 else 语句块中没有其它语句时，这句必须存在。
+
+            # ───────────────────────────
+
             npm  i  -D \
                 @wulechuan/cli-scripts--git-push@latest \
+                @wulechuan/cli-scripts--npm-project-helpers@latest \
                 @wulechuan/generate-html-via-markdown@latest \
                 @wulechuan/gulp-classical-task-cycle@latest \
                 cssnano@latest \
@@ -209,6 +214,7 @@ function 完整流程  {
                 gulp-terser@latest \
                 postcss@latest \
                 stylus@latest
+
             # ───────────────────────────
 
         fi
@@ -245,16 +251,16 @@ function 完整流程  {
         echo  '    npm  i  -D \'
         echo  '        chalk@^4'
 
-        echo
-        echo  -en  "\e[0;32m"
-        Write-Line-without-line-break
-        echo  -e   "\e[0;0m"
-        echo
+        echo  -en  "\n\e[0;32m"; Write-Line-without-line-break; echo  -e  "\e[0;0m"
 
         if [ $ShouldDryRun -eq 0 ]; then
 
             # ───────────────────────────
-            # chalk 
+
+            # [ 0 ]        # 当本 else 语句块中没有其它语句时，这句必须存在。
+
+            # ───────────────────────────
+            # chalk
             #     不能更新至第 5 或更晚的版本。
             #     因为自第 5 版始， chalk 仅支持 ES Module 语法。
             # ───────────────────────────
@@ -278,7 +284,7 @@ function 完整流程  {
 
     # ───────────────────────────────────────────────────────────────
     #  4) 更新与研发相关的数据库。
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     #     例如： Browserslist:caniuse-lite
     # ───────────────────────────────────────────────────────────────
 
@@ -290,13 +296,27 @@ function 完整流程  {
 
     else
 
-        if [ $ShouldDryRun -eq 1 ]; then
+        # ───────────────────────────
 
-            # ───────────────────────────
-            npx  browserslist@latest  --update-db
-            # ───────────────────────────
+        # [ 0 ]        # 当本 else 语句块中没有其它语句时，这句必须存在。
 
+        # ───────────────────────────
+
+        if true; then
+            if [ $ShouldDryRun -eq 1 ]; then
+                echo  -en  "   \e[0;33m【仿真演练】\e[0;0m\n    "
+            fi
+
+            echo  'npx  browserslist@latest  --update-db'
+
+            if [ $ShouldDryRun -eq 0 ]; then
+                npx  browserslist@latest  --update-db
+            fi
+
+            echo
         fi
+
+        # ───────────────────────────
 
     fi
 
@@ -320,32 +340,35 @@ function 完整流程  {
 
     else
 
-        if [ $ShouldDryRun -eq 1 ]; then
+        # ───────────────────────────
+        # 此处不妨做些关于当前 npm 项目的必要交代。
+        # 例如注意事项、关键步骤等等。
+        # ───────────────────────────
 
-            # ───────────────────────────
-            # 此处不妨做些关于当前 npm 项目的必要交代。
-            # 例如注意事项、关键步骤等等。
-            # ───────────────────────────
+        # [ 0 ]        # 当本 else 语句块中没有其它语句时，这句必须存在。
 
-            echo -e "\e[33m以下是在 package.json 中的特殊记载及其解释\e[0;0m"
-            echo
-            echo '{'
-            Write-吴乐川打印_JSON_键          -Indent 1 'overrides' -ValueIsObject
-            Write-吴乐川打印_JSON_键          -Indent 2 'stylus' -ValueIsObject
-            echo
-            Write-吴乐川打印_JSON_注释_并换行  -Indent 3 '// 实验证明，截止 2022-05-15 ，'
-            Write-吴乐川打印_JSON_注释_并换行  -Indent 3 '// Stylus 依赖的 glob 不能采用最晚近的 v7.2.2 版。'
-            Write-吴乐川打印_JSON_注释_并换行  -Indent 3 '// glob 不能采用 v7.2.1 版不存在。'
-            Write-吴乐川打印_JSON_注释_并换行  -Indent 3 '// 故最高仅能采用 v7.2.0 版。'
-            Write-吴乐川打印_JSON_键          -Indent 3 'glob'
-            Write-乐川打印_JSON_值_文本型      -IsValueOfLastKey '7.2.0'
-            Write-吴乐川打印_JSON_某字典结束    -Indent 2
-            Write-吴乐川打印_JSON_某字典结束    -Indent 1
-            Write-吴乐川打印_JSON_某字典结束    -Indent 0
+        # ───────────────────────────
 
-            # ───────────────────────────
+        echo -e "\e[33m以下是在 package.json 中的特殊记载及其解释\e[0;0m"
+        echo
 
-        fi
+        echo '{'
+
+        Write-吴乐川打印_JSON_键          -Indent 1 'overrides' -ValueIsObject
+        Write-吴乐川打印_JSON_键          -Indent 2 'stylus' -ValueIsObject
+        echo
+        Write-吴乐川打印_JSON_注释_并换行  -Indent 3 '// 实验证明，截止 2022-05-15 ，'
+        Write-吴乐川打印_JSON_注释_并换行  -Indent 3 '// Stylus 依赖的 glob 不能采用最晚近的 v7.2.2 版。'
+        Write-吴乐川打印_JSON_注释_并换行  -Indent 3 '// glob 不能采用 v7.2.1 版不存在。'
+        Write-吴乐川打印_JSON_注释_并换行  -Indent 3 '// 故最高仅能采用 v7.2.0 版。'
+        Write-吴乐川打印_JSON_键          -Indent 3 'glob'
+        Write-吴乐川打印_JSON_值_文本型    -IsValueOfLastKey '7.2.0'
+        Write-吴乐川打印_JSON_某字典结束    -Indent 2
+        Write-吴乐川打印_JSON_某字典结束    -Indent 1
+
+        echo '}'
+
+        # ───────────────────────────
 
     fi
 

@@ -54,7 +54,7 @@ BEGIN {
 
     if ("$PWD" -match "\\用于研发阶段的命令行工具集\\PowerShell`$") {
         ${private:执行本命令前的工作路径} = "$PWD"
-        Set-Location '..\..\' # 确保进程的当前路径为接受本工具集服务的 npm 包的根文件夹。
+        Set-Location ..\..\ # 确保进程的当前路径为接受本工具集服务的 npm 包的根文件夹。
         Write-Host "`n【当下工作路径】临时变更为：`n    '$PWD'"
     }
 
