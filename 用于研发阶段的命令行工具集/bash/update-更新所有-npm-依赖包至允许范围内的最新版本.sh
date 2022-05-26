@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source  './node_modules/@wulechuan/cli-scripts--npm-project-helpers/源代码/发布的源代码/bash/吴乐川-管理某-npm-项目的依赖包等资源.sh'
 source  './node_modules/@wulechuan/cli-scripts--npm-project-helpers/源代码/发布的源代码/bash/吴乐川-打印-json.sh'
+source  './node_modules/@wulechuan/cli-scripts--npm-project-helpers/源代码/发布的源代码/bash/吴乐川-管理某-npm-项目的依赖包等资源.sh'
 
 SHOULD_REMOVE_NODE_MODULES_FIRST=1
 SHOULD_REMOVE_PACKAGE_LOCK_JSON_FIRST=1
