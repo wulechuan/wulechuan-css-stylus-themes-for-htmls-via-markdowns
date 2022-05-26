@@ -45,13 +45,14 @@
     "globby": "^11.1.0"
   },
   "devDependencies": {
-    "@wulechuan/cli-scripts--git-push": "^5.0.1",
+    "@wulechuan/cli-scripts--git-push": "^6.0.5",
+    "@wulechuan/cli-scripts--npm-project-helpers": "^1.0.5",
     "@wulechuan/generate-html-via-markdown": "^3.2.5",
     "@wulechuan/gulp-classical-task-cycle": "^0.3.0",
     "chalk": "^4.1.2",
-    "cssnano": "^5.1.8",
-    "del": "^6.1.0",
-    "eslint": "^8.15.0",
+    "cssnano": "^5.1.9",
+    "del": "^6.1.1",
+    "eslint": "^8.16.0",
     "esm": "^3.2.25",
     "fs-extra": "^10.1.0",
     "gulp": "^4.0.2",
