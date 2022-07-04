@@ -121,7 +121,7 @@ function 完整流程 {
 
     Write-吴乐川管理某_npm_项目__打印提示语__更新与研发相关的数据库  --应仅作仿真演练 $ShouldDryRun
 
-    if true; then
+    if false; then
 
         echo  '暂无。'
 
@@ -133,7 +133,7 @@ function 完整流程 {
 
         # ──────────────────────────────────────────────────────
 
-        if false; then
+        if true; then
             if [ "$ShouldDryRun" == true ]; then
                 echo  -en  "   \e[0;33m【仿真演练】\e[0;0m\n    "
             fi
